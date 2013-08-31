@@ -110,7 +110,7 @@ docpadConfig = {
 		getting_started: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'docs/00_getting_started'
+				relativeOutDirPath: $startsWith: 'documentation/00_getting_started'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -119,7 +119,7 @@ docpadConfig = {
 				docCategory = 'doc'
 				layout = 'doc'
 				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ["/docs/#{name}"]
+				urls = ["/documentation/#{name}"]
 				categoryName = 'getting_started'
 				categoryTitle = 'Getting Started'
 				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
@@ -136,7 +136,7 @@ docpadConfig = {
 		community: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'docs/01_community'
+				relativeOutDirPath: $startsWith: 'documentation/01_community'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -146,9 +146,9 @@ docpadConfig = {
 				categoryName = 'community'
 				categoryTitle = 'Community'
 				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ["/docs/#{name}"]
+				urls = ["/documentation/#{name}"]
 				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('docs/', '')
+				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
 				document.setMetaDefaults({
 					layout
 					url: urls[0]
@@ -160,7 +160,7 @@ docpadConfig = {
 		handbook: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'docs/02_handbook'
+				relativeOutDirPath: $startsWith: 'documentation/02_handbook'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -170,38 +170,36 @@ docpadConfig = {
 				categoryName = 'handbook'
 				categoryTitle = "Handbook"
 				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ["/docs/#{name}"]
+				urls = ["/documentation/#{name}"]
 				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('docs/', '')
+				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
 				document.setMetaDefaults({
 					layout
 					url: urls[0]
-					editUrl
 					categoryName
-					categoryTitle
-				}).addUrl(urls)
+          categoryTitle
+          editUrl
+        }).addUrl(urls)
 
 		resources: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'docs/03_resources'
+				relativeOutDirPath: $startsWith: 'documentation/03_resources'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
 			database.findAllLive(query, sorting).on 'add', (document) ->
 				a = document.attributes
 				layout = 'doc'
-				docCategory = 'doc'
 				categoryName = 'resources'
 				categoryTitle = 'Resources'
 				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ["/docs/#{name}"]
+				urls = ["/documentation/#{name}"]
 				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('docs/', '')
+				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
 				document.setMetaDefaults({
 					layout
 					url: urls[0]
-					docCategory
 					categoryName
 					categoryTitle
 					editUrl
@@ -210,7 +208,7 @@ docpadConfig = {
 		rootDocuments: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'docs'
+				relativeOutDirPath: $startsWith: 'documentation'
 				body: $ne: ""
 				rootDoc: true
 			sorting = [categoryDirectory:1, relativeDirPath:1]
@@ -220,9 +218,9 @@ docpadConfig = {
 				layout = 'doc'
 				categoryName = 'resources'
 				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ["/docs/#{name}"]
+				urls = ["/documentation/#{name}"]
 				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('docs/', '')
+				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
 				document.setMetaDefaults({
 					layout
 					url: urls[0]

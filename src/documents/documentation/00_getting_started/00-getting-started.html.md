@@ -11,11 +11,11 @@ HaxeFlixel is an opensource library that makes heavy use of the Haxe Toolkit and
 
 The basic steps to get started on Windows and Mac are:
 
-1. [Install Haxe](/docs/install-haxe)
-2. [Install OpenFL](/docs/install-openfl)
-3. [Install HaxeFlixel](/docs/install-haxeflixel)
-4. [Compile Hello World](/docs/hello-world-command-line)
-5. [Choose An IDE](/docs/choose-an-ide)
+1. [Install Haxe](/documentation/install-haxe)
+2. [Install OpenFL](/documentation/install-openfl)
+3. [Install HaxeFlixel](/documentation/install-haxeflixel)
+4. [Compile Hello World](/documentation/hello-world-command-line)
+5. [Choose An IDE](/documentation/choose-an-ide)
 
 If you are planning to use linux:
 
@@ -23,8 +23,8 @@ If you are planning to use linux:
 
 With a working installation you can now:
 
-- [Compile Hello World](/docs/compile-hello-world)
-- [Choose An IDE](/docs/choose-an-ide)
+- [Compile Hello World](/documentation/compile-hello-world)
+- [Choose An IDE](/documentation/choose-an-ide)
 
 ----
 

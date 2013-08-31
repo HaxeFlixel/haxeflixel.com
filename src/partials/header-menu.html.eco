@@ -20,10 +20,10 @@
                         <a href="/demos">Demos</a>
                         </li>
                         <li <%= @adocs %>>
-                        <a href="/docs">Docs</a>
+                        <a href="/documentation">Documentation</a>
                         </li>
                         <li>
-                            <a href="#">Community</a>
+                            <a href="#">Forum</a>
                         </li>
                     </ul>
 
