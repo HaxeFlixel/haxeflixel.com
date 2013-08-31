@@ -1,0 +1,32 @@
+---
+title: "Docs"
+layout: "docs"
+---
+
+<div class="row">
+
+    <div class="col-md-3">
+
+        <%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {title:'Getting Started'}) %>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {title:'Community'}) %>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {title:'HaxeFlixel Handbook'}) %>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {title:'Resources'}) %>
+
+    </div>
+
+</div>

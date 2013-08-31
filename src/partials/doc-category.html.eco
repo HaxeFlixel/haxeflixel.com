@@ -1,0 +1,13 @@
+<div class="">
+    <% for doc in @docs.toJSON(): %>
+    <% if doc.title is @title: %>
+    <a href="<%= doc.url %>"><h2><%= doc.categoryTitle %></h2></a>
+    <% end %>
+    <% end %>
+
+    <div class="list-group">
+        <% for doc in @docs.toJSON(): %>
+        <a href="<%= doc.url %>" class="list-group-item"><%= doc.title %></a>
+        <% end %>
+    </div>
+</div>

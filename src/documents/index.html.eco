@@ -1,0 +1,131 @@
+---
+layout: 'home'
+title: 'Home'
+---
+
+<div class="container">
+    <div class="home-header home-section">
+
+        <a href="docs/about" class="home-big-logo" title="About HaxeFlixel">
+            <img src="images/haxeflixel.svg" width="200">
+        </a>
+
+        <h1>HaxeFlixel</h1>
+
+        <p class="lead-line">Create cross-platform games easier and free,<br> all with one codebase.</p>
+
+        <p>
+            <a class="home-button" href="/download">Download</a>
+            <a class="home-button" href="/docs/getting-started">Getting Started</a>
+        </p>
+
+        <div class="home-social">
+
+            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
+                    allowtransparency="true"
+                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+
+            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
+                    allowtransparency="true"
+                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"></iframe>
+
+            <a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en"
+               data-size="large">Follow @haxeflixel</a>
+
+            <script>!function (d, s, id)
+            {
+                var js, fjs = d.getElementsByTagName (s)[0];
+                if (!d.getElementById (id))
+                {
+                    js = d.createElement (s);
+                    js.id = id;
+                    js.src = "//platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore (js, fjs);
+                }
+            } (document, "script", "twitter-wjs");</script>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="home-section">
+
+        <p class="lead-line-large">Cross compile your games <a href="about"><i>natively</i></a> to:</p>
+
+        <div class="platform-demos-home">
+            <img width="80px" src="images/targets/linux-logo.svg">
+            <img width="80px" src="images/targets/apple-logo.svg">
+            <img width="80px" src="images/targets/windows-logo.svg">
+            <img width="80px" src="images/targets/android-logo.svg">
+            <img width="80px" src="images/targets/ios-logo.svg">
+            <img width="80px" src="images/targets/neko-logo.jpg">
+            <img width="148px" src="images/targets/ouya-logo.svg">
+            <img width="80px" src="images/targets/blackberry-logo.svg">
+            <img width="80px" src="images/targets/flash-logo.svg">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="home-section-features">
+
+        <div class="row">
+            <div class="col-lg-5">
+
+                <h3>Features:</h3>
+                <ul>
+                    <li>Develop from Linux, Mac and Windows</li>
+                    <li>Display thousands of moving objects</li>
+                    <li>GPU acceleration with native targets</li>
+                    <li>Physics and Collisions for groups &amp; objects</li>
+                    <li>Advanced physics with Nape support</li>
+                    <li>Easily generate and emit particles</li>
+                    <li>Advanced Tilemap support</li>
+                    <li>Advanced multi camera system</li>
+                    <li>Powerful interactive debugger</li>
+                </ul>
+                <br>
+
+                <p><a class="home-button" href="">Learn more</a>
+
+                <p>
+
+            </div>
+
+            <div class="col-lg-7">
+                <ul id="slider6" class="rslides">
+                    <li><img src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
+                        <p class="caption">This is a caption 1</p></li>
+
+                    <li><img alt="900x500" src="<%= @getThumbnail("/demos/FlxBloom.png", "zoomcrop", { w: 650, h:360 }) %>">
+                        <p class="caption">This is a caption 2</p></li>
+
+                    <li><img alt="900x500" src="<%= @getThumbnail("/demos/FlxBlur.png", "zoomcrop", { w: 650, h:360 }) %>">
+                        <p class="caption">This is a caption 3</p></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="demos-home home-section">
+
+        <p class="lead-line-large">Browse and learn from our <a href="/demos">34 Demos!</h3></p>
+
+        <% for demo in @getCollection('homepage_demos').toJSON(): %>
+
+        <a href="<%= demo.url %>" property="dc:title">
+            <img src="<%= @getThumbnail("/demos/#{demo.thumb}", "zoomcrop", { w: 160, h:160 }) %>" alt="">
+        </a>
+
+        <% end %>
+
+    </div>
+
+    <hr>
+
+</div>

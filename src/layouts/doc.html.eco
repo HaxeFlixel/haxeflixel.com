@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css"]).toHTML()} ) %>
+
+<body>
+
+<%- @partial('header-menu.html.eco', {adocs:"class='active'"}) %>
+
+<div class="container container-main">
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="doc-nav affix">
+                <%- @partial('doc-menu.html.eco', {document:@document}, {documents:@getCollection(@document.categoryName).toJSON()}, {rootDocuments:@getCollection('rootDocuments').toJSON() } ) %>
+            </div>
+        </div>
+
+        <div class="col-md-9 doc-content" role="main">
+            <h1 class="title"><%= @document.title %></h1>
+
+            <%- @content %>
+
+            <br>
+            <hr>
+
+            <ul class="pager">
+                <% if @getPagerPrevious(@document.categoryName): %>
+
+                <li class="previous">
+                    <a href="<%= @getPagerPrevious(@document.categoryName).attributes.url %>">< <%= @getPagerPrevious(@document.categoryName).attributes.title %></a>
+                </li>
+                <% end %>
+
+
+                <% if @getPagerNext(@document.categoryName): %>
+                <li class="next">
+                    <a href="<%= @getPagerNext(@document.categoryName).attributes.url %>"><%= @getPagerNext(@document.categoryName).attributes.title %> ></a>
+                </li>
+                <% end %>
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+<%-@partial('footer.html')%>
+
+<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+
+</body>
+
+</html>
