@@ -1,4 +1,4 @@
----
+```
 title: "FlxBunnyMark"
 layout: demo
 tags: ['homepage_demo']
@@ -7,7 +7,7 @@ thumb: "FlxBunnyMark.png"
 swf: "FlxBunnyMark.swf"
 SWFHeight: 480
 SWFWidth: 640
----
+```
 
 This is a HaxeFlixel port of the BunnyMark Benchmark. 
 

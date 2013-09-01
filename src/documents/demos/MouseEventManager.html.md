@@ -1,8 +1,8 @@
 ```
 title: "Mouse Event Manager"
 layout: demo
-pageOrder: 1
 tags: ['homepage_demo']
+pageOrder: 1
 thumb: "MouseEventManager.png"
 swf: "MouseEventManager.swf"
 SWFHeight: 480
