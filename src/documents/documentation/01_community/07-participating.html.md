@@ -11,7 +11,9 @@ Contributing code to HaxeFlixel is done all through the official git repositorie
 
 ###Feature branches
 
-Git feature branches allow work to be developed that may have deep breaking changes on the codebase. The general rule is to simply fork the project and create a new branch and name it using a name that best describes the feature your developing. 
+Git feature branches allow work to be developed that may have deep breaking changes on the codebase. The general rule is to simply fork the project and create a new branch and name it using a name that best describes the feature your developing.
+
+https://www.atlassian.com/git/workflows#!workflow-feature-branch
 
 When you have recieved feedback made tests.
 
