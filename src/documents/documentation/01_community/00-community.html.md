@@ -99,11 +99,13 @@ src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel-demos&amp
 
 ----
 
-## \#haxeflixel on IRC Freenode
+### On IRC chat
+
+[HaxeFlixel on IRC](irc://chat.freenode.net/#haxeflixel)
 
 ----
 
-##Twitter @haxeflixel
+### Twitter @haxeflixel
 
 <a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="large">Follow @haxeflixel</a>
 
