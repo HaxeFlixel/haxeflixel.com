@@ -19,6 +19,8 @@
         <div class="col-md-9 doc-content" role="main">
             <h1 class="title"><%= @document.title %></h1>
 
+            <a title="Edit" href="<%= @document.editUrl %>" class="btn btn-sm btn-edit"><span class="glyphicon glyphicon-edit"></span> </a>
+
             <%- @content %>
 
             <br>

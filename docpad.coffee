@@ -122,8 +122,8 @@ docpadConfig = {
 				urls = ["/documentation/#{name}"]
 				categoryName = 'getting_started'
 				categoryTitle = 'Getting Started'
-				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('docs/', '')
+				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					docCategory
 					layout
@@ -147,8 +147,8 @@ docpadConfig = {
 				categoryTitle = 'Community'
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
+				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
 					url: urls[0]
@@ -171,8 +171,8 @@ docpadConfig = {
 				categoryTitle = "Handbook"
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
+				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
 					url: urls[0]
@@ -195,8 +195,8 @@ docpadConfig = {
 				categoryTitle = 'Resources'
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
+				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
 					url: urls[0]
@@ -219,8 +219,8 @@ docpadConfig = {
 				categoryName = 'resources'
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/haxeflixel/flixel-docs/"
-				editUrl = githubEditUrl + a.relativePath.replace('documentation/', '')
+				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
 					url: urls[0]
