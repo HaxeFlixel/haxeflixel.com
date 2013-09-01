@@ -13,7 +13,7 @@ title: "Flash Develop"
 Flash Develop is 
 
 ###Strengths
-- Most likely the most popular and widley used Haxe IDE
+- Most likely the most popular and widely used Haxe IDE
 - Stable and reliable
 - Project system
 - Autocompletion

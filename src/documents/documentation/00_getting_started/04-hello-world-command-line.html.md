@@ -7,7 +7,7 @@ Using the command line with HaxeFlixel is just a matter using the haxelib run pr
 
 #### Create A Folder
 
-First create a new folder, or use md foldername (windows) or mkdir foldername (linux) then cd ./foldername into it eg;
+First create a new folder, or use md "Folder Name" (windows) or mkdir "Folder Name" (linux) then cd ./"Folder Name" into it eg;
 
 ```
 mkdir ./HelloWorld
@@ -39,7 +39,7 @@ haxelib run flixel [help] [-name "Your Project Name"] [-class MainProjectClass] 
 	-screen WIDTH HEIGHT
 ```
 
-From the provided help you can see using the tool is as simple as the following command, dont close your command line yet as we will come back to it to compile this project;
+From the provided help you can see using the tool is as simple as the following command, don't close your command line yet as we will come back to it to compile this project;
 
 ``` haxe
 haxelib run flixel -name "Hello World"

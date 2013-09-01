@@ -15,7 +15,7 @@ title: "Intellij Idea"
 
 Intellij Idea is a fully featured IDE with advanced features that include impressive Version Control Integration, Refactoring, Code Formatting, Code Analysis and more.
 
-Haxe support is provided through an opensource plugin.
+Haxe support is provided through an open source plugin.
 
 ###Strengths
 
@@ -26,5 +26,5 @@ Haxe support is provided through an opensource plugin.
 
 ###Limitations
 - Errors around compiler conditionals
-- Although it supports most of the Haxe language sytax, it is not yet complete.
+- Although it supports most of the Haxe language syntax, it is not yet complete.
 

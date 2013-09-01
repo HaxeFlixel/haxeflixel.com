@@ -7,4 +7,4 @@ rootDoc: true
 
 
 
-Here we are collectig code snippets, tutorails and general informaiton for game development with HaxeFlixel. If you want to add to this list 
+Here we are collecting code snippets, tutorials and general information for game development with HaxeFlixel. If you want to add to this list

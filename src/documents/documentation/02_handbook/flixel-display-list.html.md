@@ -9,7 +9,7 @@ OpenFL has a [display list](http://www.adobe.com/devnet/flash/quickstart/display
 
 It is a common misconception for Flash Developers to assume that FlxSprites in Flixel work like the flash Sprites. FlxSprites also do not share the Event system Flash Sprites have, so addEventListener is also not available or necessary in most situations.
 
-For performance reasons Flixel has its own independant display list and it renders all of its FlxSprites onto a single flash DisplayObject with each FlxCamera. For this reason you cannot add a flash.display.sprite to a FlxState and you cannot add a FlxSprite to the main flash stage.
+For performance reasons Flixel has its own independent display list and it renders all of its FlxSprites onto a single flash DisplayObject with each FlxCamera. For this reason you cannot add a flash.display.sprite to a FlxState and you cannot add a FlxSprite to the main flash stage.
 
 You can see the display objects used in a typical Flixel game in this diagram. Note you can still place display objects above or below Flixel's camera.
 

@@ -13,7 +13,7 @@ Contributing code to HaxeFlixel is done all through the official git repositorie
 
 Git feature branches allow work to be developed that may have deep breaking changes on the codebase. The general rule is to simply fork the project and create a new branch and name it using a name that best describes the feature your developing. 
 
-When you have recieved feedback made tests.
+When you have relieved feedback made tests.
 
 - Link to a working demo of your feature, bugfix etc.
 - Include a summary explaining the reason and logic behind your changes.

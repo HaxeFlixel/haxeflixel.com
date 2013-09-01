@@ -17,7 +17,7 @@ The processing power of mobile cpus are often the biggest bottleneck when compar
 
 #### Memory
 
-Memory on mobile devices as you can imagine does not compare to the desktop. When we talk about memory it relates to how many textures your game can store to render as well as the amount of raw data and objects in your game's runtime state. Memory lets you cache objects for quick runtime access instead of creating objects during your gameplay which may cause skipping and low performance. This is why HaxeFlixel uses destroy method and has implimented support for texture atlas'.
+Memory on mobile devices as you can imagine does not compare to the desktop. When we talk about memory it relates to how many textures your game can store to render as well as the amount of raw data and objects in your game's runtime state. Memory lets you cache objects for quick runtime access instead of creating objects during your gameplay which may cause skipping and low performance. This is why HaxeFlixel uses destroy method and has implemented support for texture atlas'.
 
 #### Texture Size Limits
 

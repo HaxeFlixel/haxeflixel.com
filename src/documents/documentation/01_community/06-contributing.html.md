@@ -2,9 +2,9 @@
 title: "Contributing"
 ```
 
-We are always looking for contributors to this project. Being opensource and powered by people all over the world you can help in many ways, even if its not monetary.
+We are always looking for contributors to this project. Being open source and powered by people all over the world you can help in many ways, even if its not monetary.
 
-HaxeFlixel is a an opensource project with humble beginnings sparked from a passion for the technology and game development. Everyone working on the project has come together from a friendly and flexible approach to make this library and community an enjoyable and robust solution for cross platform 2D games. 
+HaxeFlixel is a an [open-source](http://en.wikipedia.org/wiki/Open-source_software) project with humble beginnings sparked from a passion for the technology and game development. Everyone working on the project has come together from a friendly and flexible approach to make this library and community an enjoyable and robust solution for cross platform 2D games.
 
 ### Donations
 
@@ -35,4 +35,4 @@ Help spread the word of HaxeFlixel:
 
 ### Improve and add to this website
 
-This website is opensource built with the docpad system. We encourage anyone to edit and improve the site on the github repository. Changes made will then be merged and pushed to our server. Please use the edit links on the site or read the website docs.
+This website is [open-source](http://en.wikipedia.org/wiki/Open-source_software) built with the [Docpad](https://github.com/bevry/docpad) system. We encourage anyone to edit and improve the site on the github repository. Changes made will then be merged and pushed to our server. Please use the edit links on the site or read the website docs.

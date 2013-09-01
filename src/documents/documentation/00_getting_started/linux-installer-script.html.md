@@ -7,7 +7,7 @@ Please review this script for a custom install or run this as a usual bash scrip
 ```
 #!/bin/bash
 
-#Install Haxe3 dev, Neko and openfl on Ubuntu x64
+#Install Haxe3 dev, Neko and OpenFL on Ubuntu x64
 #Warning this does not work on x32 linux
 
 #based on help from Jason O'Neil's script

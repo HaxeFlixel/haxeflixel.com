@@ -36,4 +36,4 @@ This will let you get the first FlxBasic class that has exists == true, this is 
 
 #### kill();
 
-This will recursivley kill() all objects so that they will be ready for use with getFirstAvailable.
+This will recursively kill() all objects so that they will be ready for use with getFirstAvailable.

@@ -8,7 +8,7 @@ title: HaxeFlixel Website
 
 This website is built using the Docpad system and hosted on github.
 
-The Forum is using opensource forum software called Discourse.
+The Forum is using open source forum software called Discourse.
 
 We are using Docpad to generate a static site that is hosted on our server. 
 

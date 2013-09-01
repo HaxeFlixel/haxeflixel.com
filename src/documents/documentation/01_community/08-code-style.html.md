@@ -12,7 +12,7 @@ HaxeFlixel is following most of the key style found in the original Flixel libra
 
 ####Functions
 
-Capitalized letters for function paramaters:
+Capitalized letters for function parameters:
 
 ``` haxe
 function translate( Words:String, Fish:BableFish ):Void
@@ -57,7 +57,7 @@ function createAwesome( Boring:Stuff, Creative:Things ):Void {
 }
 ```
 
-If the logic is simple enough it is acceptable to ommit using them completly:
+If the logic is simple enough it is acceptable to ommit using them completely:
 
 ``` haxe
 function createAwesome():Bool
@@ -78,12 +78,12 @@ private var _awesome:Awesome;
 
 ####Strictly Type ambiguous variables
 
-The Haxe compiler does not require you to decalare the Type of a variable in some contexts however doing so improves the readability of the code:
+The Haxe compiler does not require you to declare the Type of a variable in some contexts however doing so improves the readability of the code:
 
 ``` haxe
 var mystery:Answer = createAnAnswer();
 
-//This is unessisary
+//This is unnecessary
 var name:String = "Merlin";
 var number:Int = 32;
 
