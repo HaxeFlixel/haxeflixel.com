@@ -25,3 +25,15 @@ You should see the following:
 ![](/images/haxe-mac.png)
 
 ![](/images/haxe-windows.png)
+
+## Haxelib
+
+When you install Haxe you also get Haxe's own package manager and utility called [HaxeLib](http://lib.haxe.org/).
+Please make sure you are running the latest version with the self update command:
+
+```
+haxelib selfupdate
+```
+
+You can see more of how to use [Haxelib here](http://haxe.org/doc/haxelib/using_haxelib) and browse community Haxe
+libraries on the [official site](http://lib.haxe.org/).
