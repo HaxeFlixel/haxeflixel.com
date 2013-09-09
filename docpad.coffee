@@ -41,6 +41,8 @@ docpadConfig = {
 				"//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
 				"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
 				"/vendor/twitter-bootstrap-3/js/dropdown.js",
+				"/vendor/twitter-bootstrap-3/js/transition.js",
+				"/vendor/twitter-bootstrap-3/js/carousel.js",
 				"/vendor/twitter-bootstrap-3/js/collapse.js",
 				"/scripts/script.js"
 			]
@@ -116,7 +118,6 @@ docpadConfig = {
 
 			database.findAllLive(query, sorting).on 'add', (document) ->
 				a = document.attributes
-				docCategory = 'doc'
 				layout = 'doc'
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
@@ -125,7 +126,6 @@ docpadConfig = {
 				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
 				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
-					docCategory
 					layout
 					url: urls[0]
 					categoryName
@@ -240,7 +240,7 @@ docpadConfig = {
 
 		#live reload is slow with this on
 		pygments:
-			enabled: true
+			enabled: false
 
 }
 

@@ -72,7 +72,8 @@ title: 'Home'
     <div class="home-section-features">
 
         <div class="row">
-            <div class="col-lg-5">
+
+            <div class="col-md-5">
 
                 <h3>Features:</h3>
                 <ul>
@@ -94,23 +95,42 @@ title: 'Home'
 
             </div>
 
-            <div class="col-lg-7">
-                <ul id="slider6" class="rslides">
-                    <li><img src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
-                        <p class="caption">This is a caption 1</p></li>
+	        <div class="col-md-7">
 
-                    <li><img alt="900x500" src="<%= @getThumbnail("/demos/FlxBloom.png", "zoomcrop", { w: 650, h:360 }) %>">
-                        <p class="caption">This is a caption 2</p></li>
+		        <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
+			        <ol class="carousel-indicators">
+				        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+				        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+				        <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+			        </ol>
+			        <div class="carousel-inner">
+				        <div class="item">
+					        <img alt="" src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
+				        </div>
+				        <div class="item">
+					        <img alt="" src="<%= @getThumbnail("/demos/FlxCaveGenerator.png", "zoomcrop", { w: 650, h:360 }) %>">
+				        </div>
+				        <div class="item active">
+					        <img alt="" src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
+				        </div>
+			        </div>
+			        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+				        <span class="icon-prev"></span>
+			        </a>
+			        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+				        <span class="icon-next"></span>
+			        </a>
+		        </div>
 
-                    <li><img alt="900x500" src="<%= @getThumbnail("/demos/FlxBlur.png", "zoomcrop", { w: 650, h:360 }) %>">
-                        <p class="caption">This is a caption 3</p></li>
-                </ul>
-            </div>
+	        </div>
+
         </div>
 
     </div>
 
     <hr>
+
+
 
     <div class="demos-home home-section">
 
