@@ -77,19 +77,21 @@ title: 'Home'
 
                 <h3>Features:</h3>
                 <ul>
-                    <li>Develop from Linux, Mac and Windows</li>
+                    <li>Develop from Linux, Mac or Windows</li>
                     <li>Display thousands of moving objects</li>
                     <li>GPU acceleration with native targets</li>
                     <li>Physics and Collisions for groups &amp; objects</li>
                     <li>Advanced physics with Nape support</li>
+                    <li>Use cross compiled C++ code instead of a VM</li>
                     <li>Easily generate and emit particles</li>
                     <li>Advanced Tilemap support</li>
                     <li>Advanced multi camera system</li>
-                    <li>Powerful interactive debugger</li>
+                    <li>Powerful interactive debugger and console</li>
+                    <li>Based on an Open Source framework and stack including the compiler and language</li>
                 </ul>
                 <br>
 
-                <p><a class="home-button" href="">Learn more</a>
+                <p><a class="home-button" href="/documentation/about">Learn more</a>
 
                 <p>
 
@@ -100,8 +102,8 @@ title: 'Home'
 		        <div id="carousel-home" class="carousel slide">
 			        <ol class="carousel-indicators">
 				        <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
-				        <li data-target="#carousel-home" data-slide-to="1" class=""></li>
-				        <li data-target="#carousel-home" data-slide-to="2" class=""></li>
+				        <li data-target="#carousel-home" data-slide-to="1"></li>
+				        <li data-target="#carousel-home" data-slide-to="2"></li>
 			        </ol>
 			        <div class="carousel-inner">
 				        <div class="item">
@@ -147,5 +149,56 @@ title: 'Home'
     </div>
 
     <hr>
+
+
+
+
+
+	<div id="carousel-tweets" class="carousel slide">
+
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-tweets" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-tweets" data-slide-to="1"></li>
+			<li data-target="#carousel-tweets" data-slide-to="2"></li>
+			<li data-target="#carousel-tweets" data-slide-to="3"></li>
+		</ol>
+
+		<div class="carousel-inner">
+
+			<div class="item">
+				<h4>Paul Gene Thompson ‏@PaulGene</h4>
+				<blockquote>Need to say a big thanks to all the #haxeflixel team. specialty @teormech.
+					Also you all need to try #haxeflixel its the dogs dangly bits.</blockquote>
+			</div>
+
+			<div class="item">
+				<h4>Adam Atomic ‏@ADAMATOMIC</h4>
+				<blockquote>just a quick reminder that there’s a totally crazy magical free open source > crossplatform version of Flixel out there http://www.haxeflixel.com</blockquote>
+			</div>
+
+			<div class="item">
+				<h4>Alkyon Studios ‏@Alkyon_Studios</h4>
+				<blockquote>@HaxeFlixel is great for multiplatform indie games (#Flash, #iOS, #Android, > #HTML5...). Very glad to have chosen it for our current project.</blockquote>
+			</div>
+
+			<div class="item">
+				<h4>Alkyon Studios ‏@Alkyon_Studios</h4>
+				<blockquote>@HaxeFlixel is great for multiplatform indie games (#Flash, #iOS, #Android, > #HTML5...). Very glad to have chosen it for our current project.</blockquote>
+			</div>
+
+			<div class="item active">
+				<h4>Victor Grunn ‏@VictorGrunns</h4>
+				<blockquote>@HaxeFlixel This program was the reason I took up Haxe, and I'm glad I did. It's nice to see Flixel rocketing ahead with development.</blockquote>
+			</div>
+
+		</div>
+		<a class="left carousel-control" href="#carousel-tweets" data-slide="prev">
+			<span class="icon-prev"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-tweets" data-slide="next">
+			<span class="icon-next"></span>
+		</a>
+	</div>
+
 
 </div>

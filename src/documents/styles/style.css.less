@@ -35,6 +35,32 @@ blockquote {
   background-color: #F8F9FF;
 }
 
+.columns-2 {
+	.columns(2);
+}
+
+.members-list img {
+  max-width: 40px;
+  float: left;
+}
+
+//anchor links adjustment
+h3:before {
+  display: block;
+  content: " ";
+  margin-top: -60px;
+  height: 60px;
+  visibility: hidden;
+}
+
+.columns-2 > h3 {
+  margin: 0;
+}
+
+.columns-2 > ul {
+  margin-bottom: 0;
+}
+
 @active-color: #000000;
 
 /* Navbar
