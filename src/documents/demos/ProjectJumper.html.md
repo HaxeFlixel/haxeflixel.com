@@ -19,7 +19,7 @@ SWFWidth: 640
 
 **The original tutorial series by Chipacabra:**
 
-Note that this tutorial is outdated and lots of things might not apply to Haxe or HaxeFlixel, as the game was originally created with AS3-flixel.
+Note that this tutorial is was originally written for AS3-Flixel. The concepts are still valid for HaxeFlixel you can see the entire demo was ported to HaxeFlixel to work the same.
 
 *   ​[Project Jumper Part 0: No, seriously, what the heck am I doing?](http://chipacabra.blogspot.de/2010/11/project-jumper-part-0.html)
 *   [Project Jumper Part 1: Let's get organized](http://chipacabra.blogspot.de/2010/12/project-jumper-part-1.html)

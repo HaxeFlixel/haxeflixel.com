@@ -2,7 +2,12 @@
 title: "Contributing"
 ```
 
-We are always looking for contributors to this project. Being open source and powered by people all over the world you can help in many ways, even if its not monetary.
+
+//todo
+
+
+We welcome new contributors to this project.
+Being open source and followed by people all over the world, you can help in many ways.
 
 HaxeFlixel is a an [open-source](http://en.wikipedia.org/wiki/Open-source_software) project with humble beginnings sparked from a passion for the technology and game development. Everyone working on the project has come together from a friendly and flexible approach to make this library and community an enjoyable and robust solution for cross platform 2D games.
 
