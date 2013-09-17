@@ -4,9 +4,10 @@ title: "XML Project Format"
 
 //todo
 
+Every Open Flash Library project uses an XML file ( Previously known as *.nmml in NME ) to setup the compile settings for your projects depending on your chosen target. This includes stage size, source paths, asset paths and more.
 
+This is a complete specification of the XML file:
 
-Every Open Flash Library project uses an XML file ( Previously known *.nmml in NME ) to setup the compile settings for your projects depending on your chosen target. This includes stage size, source paths, asset paths and more.
+[gist:1763850]
 
-You can read the official documentation on the Project Format here:
-https://github.com/openfl/openfl/wiki/Project-format
+[Click here to see the Project.xml from the default HaxeFlixel template.](http://github.com/HaxeFlixel/flixel-templates/blob/master/default/Project.xml.tpl)
