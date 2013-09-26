@@ -2,15 +2,13 @@
 title: "Code Style"
 ```
 
-//todo
-
-
-
-HaxeFlixel is following most of the key style found in the original Flixel library. Over the most recent HaxeFlixel releases a large amount of the codebase has been modified to follow these style choices.
+HaxeFlixel is following most of the key style found in the original Flixel AS3 library.
+Over the most recent HaxeFlixel releases a large amount of the codebase has been modified to follow these style choices.
+If you encounter code in the codebase that does not fall under these guidelines please submit a pull-request.
 
 ----
 
-####Functions
+#### Functions
 
 Capitalized letters for function parameters:
 
@@ -24,7 +22,7 @@ Instead of:
 function translate( words:String, fish:BableFish ):Void
 ```
 
-#####Simplify the function names:
+##### Simplify the function names:
 
 ```
 function shootEnemy(Target:Enemy, Bullet:BulletType):Void
@@ -57,26 +55,32 @@ function createAwesome( Boring:Stuff, Creative:Things ):Void {
 }
 ```
 
-If the logic is simple enough it is acceptable to ommit using them completely:
+If the logic is simple enough it is acceptable to omit using them completely:
 
 ``` haxe
 function createAwesome():Bool
-	return _surprize;
+	return _surprise;
 ```
 
 ----
 
-####Local variables
+#### Local Variables
 
-Use an underscore for private local variables:
+Use an underscore prefix for any private variable:
 
 ``` haxe
 private var _awesome:Awesome;
 ```
 
+Do not use a prefix for a public variable:
+
+``` haxe
+public var awesome:Awesome;
+```
+
 ----
 
-####Strictly Type ambiguous variables
+#### Strictly Type ambiguous variables
 
 The Haxe compiler does not require you to declare the Type of a variable in some contexts however doing so improves the readability of the code:
 
@@ -87,7 +91,23 @@ var mystery:Answer = createAnAnswer();
 var name:String = "Merlin";
 var number:Int = 32;
 
-//This is ok
+//This is preferred
 var name = "Merlin";
 var number = 32;
+```
+
+----
+
+#### Use of .this
+
+When the use of this.foo is not necessary:
+
+``` haxe
+//Inside a FlxSprite
+
+//This is unnecessary
+if (this.animation.finished)
+
+//This is preferred
+if (animation.finished)
 ```
