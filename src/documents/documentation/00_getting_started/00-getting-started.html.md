@@ -30,6 +30,6 @@ With a working installation you can now:
 
 Time to complete this installation is close to 20 minutes, mostly due to downloading the components.
 
-If you require some help, ask a question in the [community forums](http://www.haxeflixel.com/community/).
+If you require some help, ask a question in the [community forums](http://www.haxeflixel.com/community/) also worth checking out [#haxeflixel on IRC](irc://chat.freenode.net/#haxeflixel).
 
-you can think of a way to improve this guide you can edit these pages on Github.
+If you can think of a way to improve this guide, please help us by submitting a pull request on github or starting a discussion in the forums.

@@ -11,40 +11,63 @@ HaxeFlixel 3.x is an evolution of the original Flixel api and while most of the 
 
 In an effort to help with this process there is a find and replace convert command included with the Flixel Tools. You can see what it replaces here.
 
-
-
 ## FrontEnds and the FlxG refactor
 
 Frontends in HaxeFlixel 3.x are a new structure to the core of Flixel and which tackles the often criticized bloated collection of static methods in FlxG.
 
-Frontends are accessed in `FlxG` in a similar fasion to what Flixel devs are used to however careful thought has been given to organise them into logical shortcuts.
-These frontend shortcuts separate the code of `FlxG` to let it be easier to maintain, access and explore.
+Frontends are accessed in `FlxG.fontend` in a similar fasion to what Flixel devs are used to. Careful thought has been given to organise them into logical shortcuts. This way the api will be easier browse, remember and maintain.
 
 For example in HaxeFlixel 2.x to add a `FlxCamera` you would use `FlxG.addCamera(camera:FlxCamera);`, this `addCamera` method has been moved into a `camera` frontend with all the other `camera` related shortcuts.
 So the code in HaxeFlixel 3.x to add a `FlxCamera` is now `FlxG.cameras.add(camera:FlxCamera)`.
 
+The Flixel FrontEnds are as follows:
 
+* FlxG.inputs
+* FlxG.console
+* FlxG.log
+* FlxG.bmpLog
+* FlxG.watch
+* FlxG.debugger	 
+* FlxG.vcr
+* FlxG.bitmap	 
+* FlxG.cameras
+* FlxG.plugins
+* FlxG.sound
 
+More detail on the FrontEnds can be read on the [FrontEnd docs page](/documentation/flxg-frontends).
+
+## Package Structure
+
+Goodbye org package, HaxeFlixel now has no `org` package. This was a decision the core developers agreed upon making the package structure more simple and focused on the HaxeFlixel project.
+
+## Core Assets
+
+HaxeFlixel has system Assets for its debugger buttons, system sounds etc these assets were previously stored in every project in the assets/data folder. HaxeFlixel 3.x uses the OpenFL include.xml in core HaxeFlixel to omit the need to include them in every project. 
+
+So you dont need to have system assets anymore, everything in your project's `./assets/*` folder should only be the assets you create.
+
+## New Debugger and Interactive Console
+
+HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugger system by default redirects the core `trace()` command to the log. Alternativley you can use `FlxG.log.add()` , `FlxG.watch.add()`, `FlxG.log.warn` and more.
+
+### FlxG Changes
+
+| HaxeFlixel 2.x                          | HaxeFlixel 3.x                             |
+| --------------------------------------- | ------------------------------------------ |
+| FlxG.getLibraryName()                   | FlxG.libraryName                           |
+| FlxG.DEBUGGER_STANDARD				  | FlxDebugger.STANDARD   				       |
+| FlxG.DEBUGGER_MICRO					  | FlxDebugger.MICRO	   				       |
+| FlxG.DEBUGGER_BIG					      | FlxDebugger.BIG		   			 		   |
+| FlxG.DEBUGGER_TOP					      | FlxDebugger.TOP		    			   	   |
+| FlxG.DEBUGGER_LEFT					  | FlxDebugger.LEFT		                   |
+| FlxG.DEBUGGER_RIGHT					  | FlxDebugger.RIGHT                          |
+| FlxG.random					          | FlxRandom.float                            |
 
 ________
 
 //todo format the lists from FlxTools code
 
-
-    /**
-		 * FlxG refactor / frontEnds
-		 */
-
-		add(		"FlxG.getLibraryName()",	"FlxG.libraryName");
-
-		add(		"FlxG.DEBUGGER_STANDARD",	"FlxDebugger.STANDARD",				"system.debug.FlxDebugger");
-		add(		"FlxG.DEBUGGER_MICRO",		"FlxDebugger.MICRO",				"system.debug.FlxDebugger");
-		add(		"FlxG.DEBUGGER_BIG",		"FlxDebugger.BIG",					"system.debug.FlxDebugger");
-		add(		"FlxG.DEBUGGER_TOP",		"FlxDebugger.TOP",					"system.debug.FlxDebugger");
-		add(		"FlxG.DEBUGGER_LEFT",		"FlxDebugger.LEFT",					"system.debug.FlxDebugger");
-		add(		"FlxG.DEBUGGER_RIGHT",		"FlxDebugger.RIGHT",				"system.debug.FlxDebugger");
-
-		addFunction("FlxG.random",				"FlxRandom.float",					"util.FlxRandom");
+		addFunction("",				"",					"util.FlxRandom");
 		addFunction("FlxG.shuffle",				"FlxArrayUtil.shuffle",				"util.FlxRandom");
 		addFunction("FlxG.getRandom",			"FlxArrayUtil.getRandom",			"util.FlxRandom");
 		addFunction("FlxG.globalSeed",			"FlxRandom.globalSeed",				"util.FlxRandom");
@@ -163,10 +186,3 @@ ________
 		addFunction("FlxG.removeBitmap",		"FlxG.bitmap.remove");
 		addFunction("FlxG.clearBitmapCache",	"FlxG.bitmap.clearCache");
 		addFunction("FlxG.clearAssetsCache",	"FlxG.bitmap.clearAssetsCache");
-
-
-##Package Structure
-
-##Core Assets
-
-##Interactive Console

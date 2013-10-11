@@ -50,7 +50,7 @@ src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel-demos&amp
 
 ### On IRC chat
 
-[HaxeFlixel on IRC](irc://chat.freenode.net/#haxeflixel)
+[#haxeflixel on IRC](irc://chat.freenode.net/#haxeflixel)
 
 ----
 
