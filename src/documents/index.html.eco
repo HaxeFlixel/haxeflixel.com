@@ -52,7 +52,7 @@ title: 'Home'
 
     <div class="home-section">
 
-        <p class="lead-line-large">Cross compile your games <a href="about"><i>natively</i></a> to:</p>
+        <p class="lead-line-large">Cross compile your games <a href="documentation/about"><i>natively</i></a> to:</p>
 
         <div class="platform-demos-home">
             <img width="80px" src="images/targets/linux-logo.svg">
@@ -192,10 +192,10 @@ title: 'Home'
 			</div>
 
 		</div>
-		<a class="left carousel-control" href="#carousel-tweets" data-slide="prev">
+		<a class="left carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="prev">
 			<span class="icon-prev"></span>
 		</a>
-		<a class="right carousel-control" href="#carousel-tweets" data-slide="next">
+		<a class="right carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="next">
 			<span class="icon-next"></span>
 		</a>
 	</div>

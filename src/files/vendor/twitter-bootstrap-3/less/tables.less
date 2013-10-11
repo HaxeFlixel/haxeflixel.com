@@ -26,7 +26,7 @@ th {
         padding: @table-cell-padding;
         line-height: @line-height-base;
         vertical-align: top;
-        border-top: 1px solid @table-border-color;
+        border: 1px solid @table-border-color;
       }
     }
   }
@@ -36,15 +36,15 @@ th {
     border-bottom: 2px solid @table-border-color;
   }
   // Remove top border from thead by default
-  caption + thead,
-  colgroup + thead,
-  thead:first-child {
-    tr:first-child {
-      th, td {
-        border-top: 0;
-      }
-    }
-  }
+  //caption + thead,
+  //colgroup + thead,
+  //thead:first-child {
+  //  tr:first-child {
+  //    th, td {
+  //      border-top: 0;
+  //    }
+  //  }
+  //}
   // Account for multiple tbody instances
   tbody + tbody {
     border-top: 2px solid @table-border-color;
