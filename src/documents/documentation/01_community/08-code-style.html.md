@@ -78,6 +78,11 @@ Do not use a prefix for a public variable:
 public var awesome:Awesome;
 ```
 
+##### Private and Public
+
+Declare private members after public members where possible.
+Public fields are more important than private members for people looking at the class for reference.
+
 ----
 
 #### Strictly Type ambiguous variables
