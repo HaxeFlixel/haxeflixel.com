@@ -49,7 +49,7 @@ flixel template -n <name>
 
 You can compile all demos for specified platform using __testdemos__ command (flash if not specified):
 
-Valid platforms (don't forget the __-__: flash, neko, windows, mac, linux, ios, android, html5 (experimental)
+Valid platforms (don't forget the __-__): flash, neko, windows, mac, linux, ios, android, html5 (experimental)
 
 ```
 flixel testdemos -<platform>
