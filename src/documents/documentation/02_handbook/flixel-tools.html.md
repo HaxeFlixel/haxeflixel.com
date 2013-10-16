@@ -49,10 +49,10 @@ flixel template -n <name>
 
 You can compile all demos for specified platform using __testdemos__ command (flash if not specified):
 
-Valid platforms: flash, neko, windows, mac, linux, ios, android, html5 (experimental)
+Valid platforms (don't forget the __-__: flash, neko, windows, mac, linux, ios, android, html5 (experimental)
 
 ```
-flixel testdemos <platform>
+flixel testdemos -<platform>
 ```
 - Currently the templates created are only compatible with the latest [dev branch of flixel](https://github.com/HaxeFlixel/flixel). For flixel 2.x use the command: ```haxelib run flixel new -name <name>```
 
