@@ -2,12 +2,6 @@
 title: "Flixel Tools"
 ```
 
-
-//todo
-
-
-
-
 To make HaxeFlixel development easier a set of command line tools has been developed with [Haxe](http://haxe.org) and [Neko](http://nekovm.org). With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an opensource tool and additions/improvements from the community are welcome at the [Flixel Tools Github repository](https://github.com/HaxeFlixel/flixel-tools).
 
 ###Installation:
@@ -52,4 +46,11 @@ To create a new default game template use the following, with -n option being th
 ```
 flixel template -n <name>
 ```
-- Currently the templates created are only compatible with the latest dev branch of flixel. For flixel 2.x use the command: ```haxelib run flixel new -name <name>```
+
+Create a new demo (in the current directory):
+
+```
+flixel create <name_or_number>
+```
+- Currently the templates created are only compatible with the latest [dev branch of flixel](https://github.com/HaxeFlixel/flixel). For flixel 2.x use the command: ```haxelib run flixel new -name <name>```
+
