@@ -156,13 +156,6 @@ title: 'Home'
 
 	<div id="carousel-tweets" class="carousel slide">
 
-		<ol class="carousel-indicators">
-			<li data-target="#carousel-tweets" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel-tweets" data-slide-to="1"></li>
-			<li data-target="#carousel-tweets" data-slide-to="2"></li>
-			<li data-target="#carousel-tweets" data-slide-to="3"></li>
-		</ol>
-
 		<div class="carousel-inner">
 
 			<div class="item">
@@ -181,11 +174,6 @@ title: 'Home'
 				<blockquote>@HaxeFlixel is great for multiplatform indie games (#Flash, #iOS, #Android, > #HTML5...). Very glad to have chosen it for our current project.</blockquote>
 			</div>
 
-			<div class="item">
-				<h4>Alkyon Studios ‏@Alkyon_Studios</h4>
-				<blockquote>@HaxeFlixel is great for multiplatform indie games (#Flash, #iOS, #Android, > #HTML5...). Very glad to have chosen it for our current project.</blockquote>
-			</div>
-
 			<div class="item active">
 				<h4>Victor Grunn ‏@VictorGrunns</h4>
 				<blockquote>@HaxeFlixel This program was the reason I took up Haxe, and I'm glad I did. It's nice to see Flixel rocketing ahead with development.</blockquote>
@@ -193,10 +181,10 @@ title: 'Home'
 
 		</div>
 		<a class="left carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="prev">
-			<span class="icon-prev"></span>
+			<span class="icon-prev tweet-prev"></span>
 		</a>
 		<a class="right carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="next">
-			<span class="icon-next"></span>
+			<span class="icon-next tweet-next"></span>
 		</a>
 	</div>
 
