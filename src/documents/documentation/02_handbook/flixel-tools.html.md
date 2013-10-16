@@ -47,7 +47,7 @@ To create a new default game template use the following, with -n option being th
 flixel template -n <name>
 ```
 
-Compile all demos for specified platform (flash if not specified):
+You can compile all demos for specified platform using __test demos__ command (flash if not specified):
 
 Valid platforms: flash, neko, windows, mac, linux, ios, android, html5 (experimental)
 
