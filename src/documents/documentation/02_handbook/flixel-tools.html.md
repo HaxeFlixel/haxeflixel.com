@@ -47,10 +47,12 @@ To create a new default game template use the following, with -n option being th
 flixel template -n <name>
 ```
 
-Create a new demo (in the current directory):
+Compile all demos for specified platform (flash if not specified):
+
+Valid platforms: flash, neko, windows, mac, linux, ios, android, html5 (experimental)
 
 ```
-flixel create <name_or_number>
+flixel testdemos <platform>
 ```
 - Currently the templates created are only compatible with the latest [dev branch of flixel](https://github.com/HaxeFlixel/flixel). For flixel 2.x use the command: ```haxelib run flixel new -name <name>```
 
