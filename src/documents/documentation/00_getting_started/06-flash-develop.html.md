@@ -2,11 +2,6 @@
 title: "Flash Develop"
 ```
 
-
-
-//todo
-
-
 [Flash Develop](http://www.flashdevelop.org/) is an [open source IDE](https://github.com/fdorg/flashdevelop) with in-built Haxe integration and is one of the most popular Haxe IDE's. FlashDevelop offers first class support for Haxe development.
 
 *   Great completion &amp; code generation

@@ -2,9 +2,7 @@
 title: "Contributing"
 ```
 
-
 //todo
-
 
 We welcome new contributors to this project.
 Being open source and followed by people all over the world, you can help in many ways.

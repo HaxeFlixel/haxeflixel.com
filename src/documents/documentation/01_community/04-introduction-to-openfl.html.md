@@ -2,7 +2,7 @@
 title: "Introduction to OpenFL"
 ```
 
-![](/images/openfl.jpg)
+<img src="/images/openfl.jpg" width="100%" />
 
 The Open Flash Library ( OpenFL ) previously known as NME, is an innovative framework designed to provide fast, productive development for Windows, Mac, Linux, iOS, Android, BlackBerry, Flash and HTML5 – all using the same source code.
 
@@ -14,8 +14,10 @@ OpenFL targets include native cross compiled C++ for Desktop and Mobile as well 
 
 OpenFL provides HaxeFlixel with a familiar Flash Api as well as an extended set of features for Native targets. This includes the use of GPU accelerated texture batching through drawTiles, Multi-threading and more.
 
-OpenFL also provides a number of professional services http://www.openfl.org/services/
+OpenFL also provides a number of [professional services](http://www.openfl.org/company/services/):
 
 *   [App marketing](http://www.openfl.org/services/app-installs/ "App Marketing")
 *   [App publishing](http://www.openfl.org/services/publishing-game-porting/ "App Publishing")
 *   [Enterprise](http://www.openfl.org/services/enterprise/ "Enterprise")
+
+Developers can also benefit from their [premium memberships](http://www.openfl.org/membership/).

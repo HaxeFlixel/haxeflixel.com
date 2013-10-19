@@ -3,8 +3,8 @@ title: "Community"
 rootDoc: true
 ```
 
-
 //todo
+
 bountysource.com
 
 HaxeFlixel is a collaborative project where from contributors all over the world.

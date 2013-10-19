@@ -44,9 +44,9 @@ The Flixel FrontEnds are as follows:
 * FlxG.log
 * FlxG.bmpLog
 * FlxG.watch
-* FlxG.debugger	 
+* FlxG.debugger  
 * FlxG.vcr
-* FlxG.bitmap	 
+* FlxG.bitmap    
 * FlxG.cameras
 * FlxG.plugins
 * FlxG.sound
@@ -68,134 +68,111 @@ HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugg
 | HaxeFlixel 2.x                          | HaxeFlixel 3.x                             |
 | --------------------------------------- | ------------------------------------------ |
 | FlxG.getLibraryName()                   | FlxG.libraryName                           |
-| FlxG.DEBUGGER_STANDARD				  | FlxDebugger.STANDARD   				       |
-| FlxG.DEBUGGER_MICRO					  | FlxDebugger.MICRO	   				       |
-| FlxG.DEBUGGER_BIG					      | FlxDebugger.BIG		   			 		   |
-| FlxG.DEBUGGER_TOP					      | FlxDebugger.TOP		    			   	   |
-| FlxG.DEBUGGER_LEFT					  | FlxDebugger.LEFT		                   |
-| FlxG.DEBUGGER_RIGHT					  | FlxDebugger.RIGHT                          |
-| FlxG.random					          | FlxRandom.float                            |
+| FlxG.setDebuggerLayout                  | FlxG.debugger.setLayout                    |
+| FlxG.log                                | trace()                                    |
+| FlxG.resetDebuggerLayout                | FlxG.debugger.resetLayout                  |
+| FlxG.visualDebug                        | FlxG.debugger.visualDebug                  |
+| FlxG.toggleKeys                         | FlxG.debugger.toggleKeys                   |
+| FlxG.DEBUGGER_STANDARD                  | FlxDebugger.STANDARD                       |
+| FlxG.DEBUGGER_MICRO                     | FlxDebugger.MICRO                          |
+| FlxG.DEBUGGER_BIG                       | FlxDebugger.BIG                            |
+| FlxG.DEBUGGER_TOP                       | FlxDebugger.TOP                            |
+| FlxG.DEBUGGER_LEFT                      | FlxDebugger.LEFT                           |
+| FlxG.DEBUGGER_RIGHT                     | FlxDebugger.RIGHT                          |
+| FlxG.random                             | FlxRandom.float                            |
+| FlxG.shuffle                            | FlxArrayUtil.shuffle                       |
+| FlxG.getRandom                          | FlxArrayUtil.getRandom                     |
+| FlxG.globalSeed                         | FlxRandom.globalSeed                       |
+| FlxG.tween                              | FlxTween.multiVar                          |
+| FlxG.resetInput                         | FlxG.inputs.reset                          |
+| FlxG.RED                                | FlxColor.RED                               |
+| FlxG.GREEN                              | FlxColor.GREEN                             |
+| FlxG.BLUE                               | FlxColor.BLUE                              |
+| FlxG.PINK                               | FlxColor.PINK                              |
+| FlxG.WHITE                              | FlxColor.WHITE                             |
+| FlxG.BLACK                              | FlxColor.BLACK                             |
+| FlxG.TRANSPARENT                        | FlxColor.TRANSPARENT                       |
+| FlxG.DEG                                | FlxAngle.TO_DEG                            |
+| FlxG.RAD                                | FlxAngle.TO_RAD                            |
+| FlxG.flashGfx                           | FlxSpriteUtil.flashGfx                     |
+| FlxG.flashGfxSprite                     | FlxSpriteUtil.flashGfxSprite               |
+| FlxG.levels                             | Reg.levels                                 |
+| FlxG.scores                             | Reg.scores                                 |
+| FlxG.score                              | Reg.score                                  |
+| FlxG.saves                              | Reg.saves                                  |
+| FlxG.save                               | Reg.save                                   |
+| FlxG.addCamera                          | FlxG.cameras.add                           |
+| FlxG.useBufferLocking                   | FlxG.cameras.useBufferLocking              |
+| FlxG.lockCameras                        | FlxG.cameras.lock                          |
+| FlxG.renderCameras                      | FlxG.cameras.render                        |
+| FlxG.unlockCameras                      | FlxG.cameras.unlock                        |
+| FlxG.removeCamera                       | FlxG.cameras.remove                        |
+| FlxG.resetCameras                       | FlxG.cameras.reset                         |
+| FlxG.shake                              | FlxG.cameras.shake                         |
+| FlxG.bgColor                            | FlxG.cameras.bgColor                       |
 
-________
 
-//todo format the lists from FlxTools code
 
-		addFunction("",				"",					"util.FlxRandom");
-		addFunction("FlxG.shuffle",				"FlxArrayUtil.shuffle",				"util.FlxRandom");
-		addFunction("FlxG.getRandom",			"FlxArrayUtil.getRandom",			"util.FlxRandom");
-		addFunction("FlxG.globalSeed",			"FlxRandom.globalSeed",				"util.FlxRandom");
 
-		addFunction("FlxG.tween",				"FlxTween.multiVar",				"tweens.FlxTween");
+        addFunction("FlxG.warn",               "FlxG.log.warn");
+        addFunction("FlxG.error",               "FlxG.log.error");
+        addFunction("FlxG.notice",              "FlxG.log.notice");
+        addFunction("FlxG.advancedLog",         "FlxG.log.advanced");
+        addFunction("FlxG.clearLog",            "FlxG.log.clear");
 
-		addFunction("FlxG.resetInput",			"FlxG.inputs.reset");
+        // WatchFrontEnd
+        addFunction("FlxG.watch",               "FlxG.watch.add");
+        addFunction("FlxG.unwatch",             "FlxG.watch.remove");
 
-		add(		"FlxG.RED",					"FlxColor.RED",						"util.FlxColor");
-		add(		"FlxG.GREEN",				"FlxColor.GREEN",					"util.FlxColor");
-		add(		"FlxG.BLUE",				"FlxColor.BLUE",					"util.FlxColor");
-		add(		"FlxG.PINK",				"FlxColor.PINK",					"util.FlxColor");
-		add(		"FlxG.WHITE",				"FlxColor.WHITE",					"util.FlxColor");
-		add(		"FlxG.BLACK",				"FlxColor.BLACK",					"util.FlxColor" );
-		add(		"FlxG.TRANSPARENT",			"FlxColor.TRANSPARENT",				"util.FlxColor");
 
-		add(		"FlxG.DEG",					"FlxAngle.TO_DEG",					"util.FlxAngle");
-		add(		"FlxG.RAD",					"FlxAngle.TO_RAD",					"util.FlxAngle");
 
-		add(		"FlxG.flashGfx",			"FlxSpriteUtil.flashGfx",			"util.FlxSpriteUtil");
-		add(		"FlxG.flashGfxSprite",		"FlxSpriteUtil.flashGfxSprite",		"util.FlxSpriteUtil");
 
-		add(		"FlxG.levels",				"Reg.levels");
-		add(		"FlxG.level",				"Reg.level");
-		add(		"FlxG.scores",				"Reg.scores");
-		add(		"FlxG.score",				"Reg.score");
-		add(		"FlxG.saves",				"Reg.saves");
-		add(		"FlxG.save",				"Reg.save");
 
-		// CameraFrontEnd
-		addFunction("FlxG.addCamera",			"FlxG.cameras.add");
-		addFunction("FlxG.useBufferLocking",	"FlxG.cameras.useBufferLocking");
-		addFunction("FlxG.lockCameras",			"FlxG.cameras.lock");
-		addFunction("FlxG.renderCameras",		"FlxG.cameras.render");
-		addFunction("FlxG.unlockCameras",		"FlxG.cameras.unlock");
-		addFunction("FlxG.addCamera",			"FlxG.cameras.add");
-		addFunction("FlxG.removeCamera",		"FlxG.cameras.remove");
-		addFunction("FlxG.resetCameras",		"FlxG.cameras.reset");
-		addFunction("FlxG.shake",				"FlxG.cameras.shake");
 
-		// A hacky solution to avoid breaking FlxG.flashFramerate
-		addFunction("FlxG.flashFramerate",		"tempFlashFramerate");
-		addFunction("FlxG.flash",				"FlxG.cameras.flash");
-		addFunction("tempFlashFramerate",		"FlxG.flashFramerate");
 
-		addFunction("FlxG.fade",				"FlxG.cameras.fade");
-		add(		"FlxG.bgColor",				"FlxG.cameras.bgColor");
+        // SoundFrontEnd
+        addFunction("FlxG.play",                "FlxG.sound.play");
+        addFunction("FlxG.playMusic",           "FlxG.sound.playMusic");
+        addFunction("FlxG.loadSound",           "FlxG.sound.load");
+        addFunction("FlxG.addSound",            "FlxG.sound.add");
+        addFunction("FlxG.stream",              "FlxG.sound.stream");
+        addFunction("FlxG.destroySounds",       "FlxG.sound.destroySounds");
+        addFunction("FlxG.updateSounds",        "FlxG.sound.updateSounds");
+        addFunction("FlxG.pauseSounds",         "FlxG.sound.pauseSounds");
+        addFunction("FlxG.resumeSounds",        "FlxG.sound.resumeSounds");
 
-		// add("FlxG.cameras", "FlxG.cameras.list");
-		// Causes problems in other contexts like;
-		// FlxG.cameras.list.add(camera);
+        add(        "FlxG.music",               "FlxG.sound.music");
+        add(        "FlxG.sounds",              "FlxG.sound.list");
+        add(        "FlxG.mute",                "FlxG.sound.muted");
+        add(        "FlxG.volume",              "FlxG.sound.volume");
+        add(        "FlxG.volumeHandler",       "FlxG.sound.volumeHandler");
+        add(        "FlxG.keyVolumeUp",         "FlxG.sound.keyVolumeUp");
+        add(        "FlxG.keyVolumeDown",       "FlxG.sound.keyVolumeDown");
+        add(        "FlxG.keyMute",             "FlxG.sound.keyMute");
 
-		// DebuggerFrontEnd
-		addFunction("FlxG.setDebuggerLayout",	"FlxG.debugger.setLayout");
-		addFunction("FlxG.resetDebuggerLayout",	"FlxG.debugger.resetLayout");
+        // PluginFrontEnd
+        addFunction("FlxG.addPlugin",           "FlxG.plugins.add");
+        addFunction("FlxG.getPlugin",           "FlxG.plugins.get");
+        addFunction("FlxG.removePlugin",        "FlxG.plugins.remove");
+        addFunction("FlxG.removePluginType",    "FlxG.plugins.removeType");
+        addFunction("FlxG.updatePlugins",       "FlxG.plugins.update");
+        addFunction("FlxG.drawPlugins",         "FlxG.plugins.draw");
 
-		add(		"FlxG.visualDebug",			"FlxG.debugger.visualDebug");
-		add(		"FlxG.toggleKeys",			"FlxG.debugger.toggleKeys");
+        add(        "FlxG.plugins",             "FlxG.plugins.list");
 
-		// LogFrontEnd
-		addFunction("FlxG.log",					"trace");
+        // VCRFrontEnd
+        addFunction("FlxG.loadReplay",          "FlxG.vcr.loadReplay");
+        addFunction("FlxG.reloadReplay",        "FlxG.vcr.reloadReplay");
+        addFunction("FlxG.stopReplay",          "FlxG.vcr.stopReplay");
+        addFunction("FlxG.recordReplay",        "FlxG.vcr.startRecording");
+        addFunction("FlxG.stopRecording",       "FlxG.vcr.stopRecording");
 
-		addFunction("FlxG.warn",				"FlxG.log.warn");
-		addFunction("FlxG.error",				"FlxG.log.error");
-		addFunction("FlxG.notice",				"FlxG.log.notice");
-		addFunction("FlxG.advancedLog",			"FlxG.log.advanced");
-		addFunction("FlxG.clearLog",			"FlxG.log.clear");
-
-		// WatchFrontEnd
-		addFunction("FlxG.watch",				"FlxG.watch.add");
-		addFunction("FlxG.unwatch",				"FlxG.watch.remove");
-
-		// SoundFrontEnd
-		addFunction("FlxG.play",				"FlxG.sound.play");
-		addFunction("FlxG.playMusic",			"FlxG.sound.playMusic");
-		addFunction("FlxG.loadSound",			"FlxG.sound.load");
-		addFunction("FlxG.addSound",			"FlxG.sound.add");
-		addFunction("FlxG.stream",				"FlxG.sound.stream");
-		addFunction("FlxG.destroySounds",		"FlxG.sound.destroySounds");
-		addFunction("FlxG.updateSounds",		"FlxG.sound.updateSounds");
-		addFunction("FlxG.pauseSounds",			"FlxG.sound.pauseSounds");
-		addFunction("FlxG.resumeSounds",		"FlxG.sound.resumeSounds");
-
-		add(		"FlxG.music",				"FlxG.sound.music");
-		add(		"FlxG.sounds",				"FlxG.sound.list");
-		add(		"FlxG.mute",				"FlxG.sound.muted");
-		add(		"FlxG.volume",				"FlxG.sound.volume");
-		add(		"FlxG.volumeHandler",		"FlxG.sound.volumeHandler");
-		add(		"FlxG.keyVolumeUp",			"FlxG.sound.keyVolumeUp");
-		add(		"FlxG.keyVolumeDown",		"FlxG.sound.keyVolumeDown");
-		add(		"FlxG.keyMute",				"FlxG.sound.keyMute");
-
-		// PluginFrontEnd
-		addFunction("FlxG.addPlugin",			"FlxG.plugins.add");
-		addFunction("FlxG.getPlugin",			"FlxG.plugins.get");
-		addFunction("FlxG.removePlugin",		"FlxG.plugins.remove");
-		addFunction("FlxG.removePluginType",	"FlxG.plugins.removeType");
-		addFunction("FlxG.updatePlugins",		"FlxG.plugins.update");
-		addFunction("FlxG.drawPlugins",			"FlxG.plugins.draw");
-
-		add(		"FlxG.plugins",				"FlxG.plugins.list");
-
-		// VCRFrontEnd
-		addFunction("FlxG.loadReplay",			"FlxG.vcr.loadReplay");
-		addFunction("FlxG.reloadReplay",		"FlxG.vcr.reloadReplay");
-		addFunction("FlxG.stopReplay",			"FlxG.vcr.stopReplay");
-		addFunction("FlxG.recordReplay",		"FlxG.vcr.startRecording");
-		addFunction("FlxG.stopRecording",		"FlxG.vcr.stopRecording");
-
-		// BitmapFrontEnd
-		addFunction("FlxG.checkBitmapCache",	"FlxG.bitmap.checkCache");
-		addFunction("FlxG.createBitmap",		"FlxG.bitmap.create");
-		addFunction("FlxG.addBitmap",			"FlxG.bitmap.add");
-		addFunction("FlxG.getCacheKeyFor",		"FlxG.bitmap.getCacheKeyFor");
-		addFunction("FlxG.getUniqueBitmapKey",	"FlxG.bitmap.getUniqueKey");
-		addFunction("FlxG.removeBitmap",		"FlxG.bitmap.remove");
-		addFunction("FlxG.clearBitmapCache",	"FlxG.bitmap.clearCache");
-		addFunction("FlxG.clearAssetsCache",	"FlxG.bitmap.clearAssetsCache");
+        // BitmapFrontEnd
+        addFunction("FlxG.checkBitmapCache",    "FlxG.bitmap.checkCache");
+        addFunction("FlxG.createBitmap",        "FlxG.bitmap.create");
+        addFunction("FlxG.addBitmap",           "FlxG.bitmap.add");
+        addFunction("FlxG.getCacheKeyFor",      "FlxG.bitmap.getCacheKeyFor");
+        addFunction("FlxG.getUniqueBitmapKey",  "FlxG.bitmap.getUniqueKey");
+        addFunction("FlxG.removeBitmap",        "FlxG.bitmap.remove");
+        addFunction("FlxG.clearBitmapCache",    "FlxG.bitmap.clearCache");
+        addFunction("FlxG.clearAssetsCache",    "FlxG.bitmap.clearAssetsCache");
