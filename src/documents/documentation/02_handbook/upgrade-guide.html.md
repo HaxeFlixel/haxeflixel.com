@@ -110,69 +110,47 @@ HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugg
 | FlxG.resetCameras                       | FlxG.cameras.reset                         |
 | FlxG.shake                              | FlxG.cameras.shake                         |
 | FlxG.bgColor                            | FlxG.cameras.bgColor                       |
-
-
-
-
-        addFunction("FlxG.warn",               "FlxG.log.warn");
-        addFunction("FlxG.error",               "FlxG.log.error");
-        addFunction("FlxG.notice",              "FlxG.log.notice");
-        addFunction("FlxG.advancedLog",         "FlxG.log.advanced");
-        addFunction("FlxG.clearLog",            "FlxG.log.clear");
-
-        // WatchFrontEnd
-        addFunction("FlxG.watch",               "FlxG.watch.add");
-        addFunction("FlxG.unwatch",             "FlxG.watch.remove");
-
-
-
-
-
-
-
-        // SoundFrontEnd
-        addFunction("FlxG.play",                "FlxG.sound.play");
-        addFunction("FlxG.playMusic",           "FlxG.sound.playMusic");
-        addFunction("FlxG.loadSound",           "FlxG.sound.load");
-        addFunction("FlxG.addSound",            "FlxG.sound.add");
-        addFunction("FlxG.stream",              "FlxG.sound.stream");
-        addFunction("FlxG.destroySounds",       "FlxG.sound.destroySounds");
-        addFunction("FlxG.updateSounds",        "FlxG.sound.updateSounds");
-        addFunction("FlxG.pauseSounds",         "FlxG.sound.pauseSounds");
-        addFunction("FlxG.resumeSounds",        "FlxG.sound.resumeSounds");
-
-        add(        "FlxG.music",               "FlxG.sound.music");
-        add(        "FlxG.sounds",              "FlxG.sound.list");
-        add(        "FlxG.mute",                "FlxG.sound.muted");
-        add(        "FlxG.volume",              "FlxG.sound.volume");
-        add(        "FlxG.volumeHandler",       "FlxG.sound.volumeHandler");
-        add(        "FlxG.keyVolumeUp",         "FlxG.sound.keyVolumeUp");
-        add(        "FlxG.keyVolumeDown",       "FlxG.sound.keyVolumeDown");
-        add(        "FlxG.keyMute",             "FlxG.sound.keyMute");
-
-        // PluginFrontEnd
-        addFunction("FlxG.addPlugin",           "FlxG.plugins.add");
-        addFunction("FlxG.getPlugin",           "FlxG.plugins.get");
-        addFunction("FlxG.removePlugin",        "FlxG.plugins.remove");
-        addFunction("FlxG.removePluginType",    "FlxG.plugins.removeType");
-        addFunction("FlxG.updatePlugins",       "FlxG.plugins.update");
-        addFunction("FlxG.drawPlugins",         "FlxG.plugins.draw");
-
-        add(        "FlxG.plugins",             "FlxG.plugins.list");
-
-        // VCRFrontEnd
-        addFunction("FlxG.loadReplay",          "FlxG.vcr.loadReplay");
-        addFunction("FlxG.reloadReplay",        "FlxG.vcr.reloadReplay");
-        addFunction("FlxG.stopReplay",          "FlxG.vcr.stopReplay");
-        addFunction("FlxG.recordReplay",        "FlxG.vcr.startRecording");
-        addFunction("FlxG.stopRecording",       "FlxG.vcr.stopRecording");
-
-        // BitmapFrontEnd
-        addFunction("FlxG.checkBitmapCache",    "FlxG.bitmap.checkCache");
-        addFunction("FlxG.createBitmap",        "FlxG.bitmap.create");
-        addFunction("FlxG.addBitmap",           "FlxG.bitmap.add");
-        addFunction("FlxG.getCacheKeyFor",      "FlxG.bitmap.getCacheKeyFor");
-        addFunction("FlxG.getUniqueBitmapKey",  "FlxG.bitmap.getUniqueKey");
-        addFunction("FlxG.removeBitmap",        "FlxG.bitmap.remove");
-        addFunction("FlxG.clearBitmapCache",    "FlxG.bitmap.clearCache");
-        addFunction("FlxG.clearAssetsCache",    "FlxG.bitmap.clearAssetsCache");
+| FlxG.warn                               | FlxG.log.warn                              |
+| FlxG.error                              | FlxG.log.error                             |
+| FlxG.notice                             | FlxG.log.notice                            |
+| FlxG.advancedLog                        | FlxG.log.advanced                          |
+| FlxG.clearLog                           | FlxG.log.clear                             |
+| FlxG.watch                              | FlxG.watch.add                             |
+| FlxG.unwatch                            | FlxG.watch.remove                          |
+| FlxG.play                               | FlxG.sound.play                            |
+| FlxG.playMusic                          | FlxG.sound.playMusic                       |
+| FlxG.loadSound                          | FlxG.sound.load                            |
+| FlxG.addSound                           | FlxG.sound.add                             |
+| FlxG.stream                             | FlxG.sound.stream                          |
+| FlxG.destroySounds                      | FlxG.sound.destroySounds                   |
+| FlxG.updateSounds                       | FlxG.sound.updateSounds                    |
+| FlxG.pauseSounds                        | FlxG.sound.pauseSounds                     |
+| FlxG.resumeSounds                       | FlxG.sound.resumeSounds                    |
+| FlxG.music                              | FlxG.sound.music                           |
+| FlxG.sounds                             | FlxG.sound.list                            |
+| FlxG.mute                               | FlxG.sound.muted                           |
+| FlxG.volume                             | FlxG.sound.volume                          |
+| FlxG.volumeHandler                      | FlxG.sound.volumeHandler                   |
+| FlxG.keyVolumeUp                        | FlxG.sound.keyVolumeUp                     |
+| FlxG.keyVolumeDown                      | FlxG.sound.keyVolumeDown                   |
+| FlxG.keyMute                            | FlxG.sound.keyMute                         |
+| FlxG.addPlugin                          | FlxG.plugins.add                           |
+| FlxG.getPlugin                          | FlxG.plugins.get                           |
+| FlxG.removePlugin                       | FlxG.plugins.remove                        |
+| FlxG.removePluginType                   | FlxG.plugins.removeType                    |
+| FlxG.updatePlugins                      | FlxG.plugins.update                        |
+| FlxG.drawPlugins                        | FlxG.plugins.draw                          |
+| FlxG.plugins                            | FlxG.plugins.list                          |
+| FlxG.loadReplay                         | FlxG.vcr.loadReplay                        |
+| FlxG.reloadReplay                       | FlxG.vcr.reloadReplay                      |
+| FlxG.stopReplay                         | FlxG.vcr.stopReplay                        |
+| FlxG.recordReplay                       | FlxG.vcr.startRecording                    |
+| FlxG.stopRecording                      | FlxG.vcr.stopRecording                     |
+| FlxG.checkBitmapCache                   | FlxG.bitmap.checkCache                     |
+| FlxG.createBitmap                       | FlxG.bitmap.create                         |
+| FlxG.addBitmap                          | FlxG.bitmap.add                            |
+| FlxG.removeBitmap                       | FlxG.bitmap.remove                         |
+| FlxG.getCacheKeyFor                     | FlxG.bitmap.getCacheKeyFor                 |
+| FlxG.getUniqueBitmapKey                 | FlxG.bitmap.getUniqueKey                   |
+| FlxG.clearBitmapCache                   | FlxG.bitmap.clearCache                     |
+| FlxG.clearAssetsCache                   | FlxG.bitmap.clearAssetsCache               |

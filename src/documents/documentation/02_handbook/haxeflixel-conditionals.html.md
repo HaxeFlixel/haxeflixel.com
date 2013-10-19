@@ -2,12 +2,6 @@
 title: "HaxeFlixel Conditionals"
 ```
 
-//todo
-
-
-
-
-
 ### What is "conditional compilation"?
 
 [Conditional compilation macros](http://haxe.org/ref/conditionals) are a powerful feature Haxe offers to optimize your code by only compiling certain parts of it. For example, the following pseudo-code optimizes inputs based on the target platform:
@@ -31,11 +25,17 @@ Basically, this means that for web or desktop targets, we want to have mouse and
 
 For more information on what defines are available, by default check out the [OpenFL documentation](http://www.openfl.org/archive/developer/documentation/conditional-compilation/) on this topic.
 
- 
-
 ### HaxeFlixel specific defines
 
-If you had a look at the OpenFL documentation, you might have found out that you can also set your own defines. When working with OpenFL, it's convenient to do so in the NMML project file. HaxeFlixel makes heavy use of this feature and allows you to optimize your game using the following defines (a list of them can also be found in the [template](https://github.com/HaxeFlixel/flixel-templates/blob/master/default/Project.xml.tpl)):
+If you had a look at the OpenFL documentation, you might have found out that you can also set your own defines. When working with OpenFL, it's convenient to do so in the Project XML file.
+HaxeFlixel makes use of this feature and allows you to optimize your game using the following defines (a list of them can also be found in the [template](https://github.com/HaxeFlixel/flixel-templates/blob/master/default/Project.xml.tpl)):
+
+```
+// Example xml node to enable to Flixel record system.
+
+<haxedef name="FLX_RECORD" />
+
+```
 
 #### FLX_THREADING
 
