@@ -2,7 +2,7 @@
 title: "Upgrade Guide"
 ```
 
-##Upgrading to HaxeFlixel 3.0
+## Upgrading to HaxeFlixel 3.0
 
 HaxeFlixel 3.0 is an evolution of the original Flixel api and while most of the API is very similar and quickly learnt, it requires some renames and modifications to update your code. 
 
@@ -18,11 +18,11 @@ We wanted to slim down up the core classes, which meant moving non-essential fun
 
 * __FlxU is now gone__, we've moved all its functionality to [several utility classes](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util) that specific contain functionality, ex: _[FlxArrayUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxArrayUtil.hx), [FlxAngle](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxAngle.hx), [FlxMath](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxMath.hx), [FlxRandom](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxRandom.hx), [FlxSpriteUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxSpriteUtil.hx), [FlxVelocity](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxVelocity.hx), [etc](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util)_.
 
-#### Package Structure
+### Package Structure
 
 HaxeFlixel no longer has an `org` package. Everything is now included as ```flixel.package.Class``` This was a decision the core developers agreed upon, to make the package structure simpler and detach HaxeFlixel from old flash conventions.
 
-## FrontEnds and the FlxG refactor
+### FrontEnds and the FlxG refactor
 
 Frontends in HaxeFlixel 3.x are a new structure to the core of Flixel and which tackles the often criticized bloated collection of static methods in FlxG.
 
@@ -47,13 +47,13 @@ The Flixel FrontEnds are as follows:
 
 More detail on the FrontEnds can be read on the [FrontEnd docs page](/documentation/flxg-frontends).
 
-## Core Assets
+### Core Assets
 
 HaxeFlixel has system Assets for its debugger buttons, system sounds etc these assets were previously stored in every project in the assets/data folder. HaxeFlixel 3.x uses the OpenFL include.xml in core HaxeFlixel to omit the need to include them in every project. 
 
 So you dont need to have system assets anymore, everything in your project's `./assets/*` folder should only be the assets you create.
 
-## New Debugger and Interactive Console
+### New Debugger and Interactive Console
 
 HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugger system by default redirects the core `trace()` command to the log. Alternativley you can use `FlxG.log.add()` , `FlxG.watch.add()`, `FlxG.log.warn` and more.
 
