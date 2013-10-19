@@ -9,24 +9,18 @@ HaxeFlixel 3.0 is an evolution of the original Flixel api and while most of the 
 ### Major changes from version 2.10
 
 We wanted to slim down up the core classes, which meant moving non-essential functionality into separate classes. We've also continued to focus on improving stability and adding features to the engine. Here's a quick overview of the biggest changes:
-- Moved __animation logic from [FlxSprite](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/FlxSprite.hx)__, into new [FlxAnimationController](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/animation/FlxAnimationController.hx) class. All animation logic is now accessed through __mySprite.animation__, ex: ```mySprite.animation.add(...);```
-- Added new [FlxKeyShortcuts](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/system/input/keyboard/FlxKeyShortcuts.hx) class, which replaces FlxG.keys. __FlxG.keys.pressed is no longer a function__, it's now an object, ex: ```if( FlxG.keys.pressed.ANY ) {...}```
-- Added new [FlxSpriteGroup](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/group/FlxSpriteGroup.hx) class, which __allows an FlxGroup to behave like an FlxSprite__. This is a powerful new construct that will simplify building UI controls.
-- __FlxU is now gone__, we've moved all its functionality to [several utility classes](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util) that specific contain functionality, ex: _[FlxArrayUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxArrayUtil.hx), [FlxAngle](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxAngle.hx), [FlxMath](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxMath.hx), [FlxRandom](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxRandom.hx), [FlxSpriteUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxSpriteUtil.hx), [FlxVelocity](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxVelocity.hx), [etc](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util)_.
+
+* Moved __animation logic from [FlxSprite](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/FlxSprite.hx)__, into new [FlxAnimationController](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/animation/FlxAnimationController.hx) class. All animation logic is now accessed through __mySprite.animation__, ex: ```mySprite.animation.add(...);```
+
+* Added new [FlxKeyShortcuts](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/system/input/keyboard/FlxKeyShortcuts.hx) class, which replaces FlxG.keys. __FlxG.keys.pressed is no longer a function__, it's now an object, ex: ```if( FlxG.keys.pressed.ANY ) {...}```
+
+* Added new [FlxSpriteGroup](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/group/FlxSpriteGroup.hx) class, which __allows an FlxGroup to behave like an FlxSprite__. This is a powerful new construct that will simplify building UI controls.
+
+* __FlxU is now gone__, we've moved all its functionality to [several utility classes](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util) that specific contain functionality, ex: _[FlxArrayUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxArrayUtil.hx), [FlxAngle](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxAngle.hx), [FlxMath](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxMath.hx), [FlxRandom](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxRandom.hx), [FlxSpriteUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxSpriteUtil.hx), [FlxVelocity](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxVelocity.hx), [etc](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util)_.
 
 #### Package Structure
 
 HaxeFlixel no longer has an `org` package. Everything is now included as ```flixel.package.Class``` This was a decision the core developers agreed upon, to make the package structure simpler and detach HaxeFlixel from old flash conventions.
-
-
-## Solving upgrade issues
-
-### FlxSprite errors
-
-- I'm getting an error with addAnimation, play, or stop functions
-- 
-
-### FlxG.keys errors
 
 ## FrontEnds and the FlxG refactor
 
