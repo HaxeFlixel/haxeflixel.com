@@ -53,9 +53,7 @@ in the wiki section. These pages are open for the community to edit and add thei
 
 ### Upgrade Guide
 
-Please review our [upgrade guide](/documentation/community/upgrade-guide) for detailed steps on updating your HaxeFlixel 2.x projects.
-
-................
+Please review our [upgrade guide](/documentation/upgrade-guide) for detailed steps on updating your HaxeFlixel 2.x projects.
 
 ### Whats next for Flixel?
 
