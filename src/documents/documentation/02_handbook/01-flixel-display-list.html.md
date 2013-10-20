@@ -13,4 +13,4 @@ For performance reasons Flixel has its own independent display list and it rende
 
 You can see the display objects used in a typical Flixel game in this diagram. Note you can still place display objects above or below Flixel's camera.
 
-![](/images/flixel-display-list.png)
+<img src="/images/flixel-display-list.png" style="max-width:400px" />

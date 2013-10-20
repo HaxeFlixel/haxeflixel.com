@@ -4,11 +4,11 @@ title: "FlxState"
 
 This is the basis for your game's levels and menus each described in a "state" structure. The state is a way of organising your game objects for the state that the game is currently in. For example, when you create level 0 of your game its much more organized to only have the code for that level, not every level. A typical Flixel game will have a separate FlxState class for every level and menu.
 
-![](http://www.haxeflixel.com/sites/haxeflixel.com/files/flixel-state-0.png)
+<img src="/images/flixel-state-0.png" width="100%" />
 
 In each FlxState all the FlxSprites are added to be rendered.
 
-![](http://www.haxeflixel.com/sites/haxeflixel.com/files/flixel-state-1.png)
+<img src="/images/flixel-state-1.png" width="100%" />
 
 ### Important Methods
 

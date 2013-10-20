@@ -50,7 +50,7 @@ This method is destructive to the sprite and should be used when you want to mak
 
 Flixel supports spritesheet animation.
 
-![](http://haxeflixel.com/sites/haxeflixel.com/files/sprite-animation-example.png)
+![](/images/sprite-animation-example.png)
 
 ```
 player.loadImage("assets/player.png", true, true, 32, 32);

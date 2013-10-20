@@ -3,10 +3,6 @@ title: "Community"
 rootDoc: true
 ```
 
-//todo
-
-bountysource.com
-
 HaxeFlixel is a collaborative project where from contributors all over the world.
 
 ## Forums
@@ -18,9 +14,9 @@ HaxeFlixel is a collaborative project where from contributors all over the world
 All our code is on github under the [HaxeFlixel](http://github.com/haxeflixel) account.
 This account is shared by a [core team](https://github.com/HaxeFlixel?tab=members) which ensures this project has great longevity.
 
-### Core Members
+### Sponsor a project on:
 
-
+bountysource.com
 
 ### Contributors
 

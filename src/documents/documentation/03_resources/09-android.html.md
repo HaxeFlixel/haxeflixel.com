@@ -2,14 +2,7 @@
 title: "Android"
 ```
 
-
-//todo
-
-
-
-
-
-<!-- haxe-logo.svg > openfl-logo-svg > ![Android](/images/targets/android-logo.svg){width:20} -->
+<img src="/images/targets/android-logo.svg" width="160px" style="float:left; padding:10px" />
 
 The Android target makes use of a chain of frameworks to compile your native Android game from Haxe code. OpenFL uses the [Hxcpp](http://lib.haxe.org/p/hxcpp) and the [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html) specifically so no virtual machine is involved.
 
@@ -21,17 +14,17 @@ With [OpenFL](http://openfl.org) using native-code and OpenGL with [LibSDL](http
 ----
 
 ```
-	#if cpp
-	//your android code
-	#end
+#if cpp
+//your android code
+#end
 
-	#if android
-	//your android code
-	#end
+#if android
+//your android code
+#end
 
-	#if mobile
-	//your android code
-	#end
+#if mobile
+//your android code
+#end
 ```
 
 ### Project XML settings
@@ -61,7 +54,9 @@ Sublime Text, Flash Develop and Intellij Idea support Android compilation throug
 
 The basic command to compile and test Android:
 
-	openfl test android
+```
+openfl test android
+```
 
 Run this command from the root folder of your project, the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.
 
@@ -69,6 +64,8 @@ Run this command from the root folder of your project, the default project.xml w
 
 If you want to use the Android emulator, add “-emulator” when running/testing. Be sure your virtual device is API >=15 and has GPU enabled.
 
-	openfl test android -emulator
+```
+openfl test android -emulator
+```
 
 ----

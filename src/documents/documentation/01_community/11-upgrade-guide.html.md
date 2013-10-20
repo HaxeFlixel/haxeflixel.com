@@ -2,9 +2,9 @@
 title: "Upgrade Guide"
 ```
 
-## Upgrading to HaxeFlixel 3.0
+## Upgrading from HaxeFlixel 2.x to 3.0
 
-HaxeFlixel 3.0 is an evolution of the original Flixel api and while most of the API is very similar and quickly learnt, it requires some renames and modifications to update your code. 
+HaxeFlixel 3.0 is an evolution of the original Flixel api and while most of the API is very similar and quickly learnt, it requires some renames and modifications to update your code.
 
 ### Major changes from version 2.10
 
@@ -57,7 +57,20 @@ So you dont need to have system assets anymore, everything in your project's `./
 
 HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugger system by default redirects the core `trace()` command to the log. Alternativley you can use `FlxG.log.add()` , `FlxG.watch.add()`, `FlxG.log.warn` and more.
 
+#### Automatic find and replace
+
+A collection of most of the api name changes were collected for the [flixel-tools command line tool](/documentation/community/flixel-tools).
+You can see what it [replaces here](https://github.com/HaxeFlixel/flixel-tools/blob/dev/src/legacy/FindAndReplace.hx).
+
+To run the find and replace the command is simple:
+
+```
+flixel convert
+```
+
 ### FlxG Changes
+
+The main changes that developer's will notice is as follows:
 
 | HaxeFlixel 2.x                          | HaxeFlixel 3.x                             |
 | --------------------------------------- | ------------------------------------------ |

@@ -2,11 +2,6 @@
 title: "Mobile Targets"
 ```
 
-//todo
-
-
-
-
 With the penetration of mobile devices in the world ignoring mobile targets for your games and applications is ignoring a huge audience.
 
 Mobile devices even though amazing have particular bottlenecks not present on desktop targets. The bottleneck most significant to HaxeFlixel games is the low powered cpu. HaxeFlixel's answer to this is to make use of gpu acceleration provided by OpenFL.
