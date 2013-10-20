@@ -160,5 +160,4 @@ openfl test neko
 
 If you struggled through any part of this tutorial ask a question on our [forum](/forum) :)
 
-
-![](/images/hello-world.jpg)
+<img src="/images/hello-world.jpg" style="width:100%;" />

@@ -20,16 +20,15 @@ haxelib install flixel
 
 ----
 
-![](/images/install-flixel.jpg)
+<img src="/images/install-flixel.jpg" style="width:100%;" />
 
 You will notice that haxelib automatically downloads HaxeFlixel for you:
 
-![](/images/flixel-downloading.jpg)
+<img src="/images/flixel-downloading.jpg" style="width:100%;" />
 
 Haxelib will notice the dependency of openfl and may prompt you to install it if you have not installed it yet:
 
-![](/images/flixel-installed.jpg)
-
+<img src="/images/flixel-installed.jpg" style="width:100%;" />
 
 ----
 

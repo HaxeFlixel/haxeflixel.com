@@ -12,13 +12,13 @@ The Haxe Toolkit is available from [haxe.org](http://haxe.org/download) for Wind
 
 Here is what the installer will look like on Mac and Windows:
 
-![](/images/install_haxe_osx.png)
+<img src="/images/install-haxe-osx.png" style="width:100%;" />
 
-![](/images/install-haxe-windows.png)
+<img src="/images/install-haxe-windows.png" style="width:100%;" />
 
 ### Test Haxe
 
-For a simple test to see if Haxe is now working on your ssytem, open a new terminal window and type:
+For a simple test to see if Haxe is now working on your system, open a new terminal window and type:
 
 ```
 haxe
@@ -26,9 +26,9 @@ haxe
 
 You should see the following:
 
-![](/images/haxe-mac.png)
+<img src="/images/haxe-mac.png" style="width:100%;" />
 
-![](/images/haxe-windows.png)
+<img src="/images/haxe-windows.png" style="width:100%;" />
 
 ## Haxelib
 
