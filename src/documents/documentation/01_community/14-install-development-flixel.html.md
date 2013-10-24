@@ -26,7 +26,7 @@ haxelib list
 
 **Update haxelib**
 
-In some cases, your haxelib is not up-to-date. This can cause problems when trying to download the latest flixel snapshot from git. In order to update haxelib, please type in the following command into your console
+In some cases, your haxelib is not up-to-date. This can cause problems when trying to download the latest flixel snapshot from git. In order to update haxelib, please type in the following command into your console:
 
 ```
 haxelib selfupdate
@@ -34,7 +34,7 @@ haxelib selfupdate
 
 ![console screen of haxelib selfupdate](http://s18.postimg.org/r86v2iw3d/haxelib_selfupdate_1.png)
 
-You should be prompted to run the update.hxml. Just type in the command as it's on the screen
+You should be prompted to run the update.hxml. Just type in the command as it's on the screen:
 
 ```
 haxe update.hxml
@@ -42,15 +42,22 @@ haxe update.hxml
 
 **Install flixel from git**
 
-Now you are ready to obtain the newest version. Please input the following command into your console
+Now you are ready to obtain the newest version. Please input the following command into your console:
 
 ```
-haxelib git flixel https://github.com/HaxeFlixel/flixel
+haxelib git flixel https://github.com/HaxeFlixel/flixel dev
 ```
+
+You may also want to install the additional flixel addons repository so that you can compile demos that require it:
+
+```
+haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons.git
+```
+
 
 **Testing your new flixel with the breakout demo**
 
-Everything is setup and just giddy to run those juicy 3.0 demos :) Let's not make 'em wait! Grab the flixel-demo repository and navigate to 'Demos/flixel-demos/Arcade Classics/Breakout'. Start the game by writing
+Everything is setup and just giddy to run those juicy 3.0 demos :) Let's not make 'em wait! Grab the flixel-demo repository and navigate to 'Demos/flixel-demos/Arcade Classics/Breakout'. Start the game by writing:
 
 ```
 openfl test neko
