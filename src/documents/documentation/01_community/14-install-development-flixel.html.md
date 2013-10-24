@@ -48,7 +48,7 @@ Now you are ready to obtain the newest version. Please input the following comma
 haxelib git flixel https://github.com/HaxeFlixel/flixel dev
 ```
 
-You may also want to install the additional flixel addons repository so that you can compile demos that require it:
+You may also want to install the additional [flixel addons](https://github.com/HaxeFlixel/flixel-addons) repository so that you can compile demos that require it:
 
 ```
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons.git
