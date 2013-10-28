@@ -20,7 +20,7 @@ We wanted to slim down up the core classes, which meant moving non-essential fun
 
 ### Package Structure
 
-HaxeFlixel no longer has an `org` package. Everything is now included as ```flixel.package.Class``` This was a decision the core developers agreed upon, to make the package structure simpler and detach HaxeFlixel from old flash conventions.
+HaxeFlixel no longer has an `org` package. Everything is now included as ```flixel.package.Class```. For most cases you can just remove the ```org.``` from your import statements. This was a decision the core developers agreed upon, to make the package structure simpler and detach HaxeFlixel from old flash conventions.
 
 ### FrontEnds and the FlxG refactor
 
