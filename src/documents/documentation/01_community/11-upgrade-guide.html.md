@@ -28,7 +28,7 @@ This was a decision the core developers agreed upon, to make the package structu
 
 Frontends in HaxeFlixel 3.x are a new structure to the core of Flixel and which tackles the often criticized bloated collection of static methods in FlxG.
 
-Frontends are accessed in `FlxG.fontend` in a similar fasion to what Flixel devs are used to. Careful thought has been given to organise them into logical shortcuts. This way the api will be easier browse, remember and maintain.
+Frontends are accessed in `FlxG.frontend` in a similar fasion to what Flixel devs are used to. Careful thought has been given to organise them into logical shortcuts. This way the api will be easier browse, remember and maintain.
 
 For example in HaxeFlixel 2.x to add a `FlxCamera` you would use `FlxG.addCamera(camera:FlxCamera);`, this `addCamera` method has been moved into a `camera` frontend with all the other `camera` related shortcuts.
 So the code in HaxeFlixel 3.x to add a `FlxCamera` is now `FlxG.cameras.add(camera:FlxCamera)`.
