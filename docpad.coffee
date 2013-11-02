@@ -34,6 +34,7 @@ docpadConfig = {
 				"/styles/bootstrap.css"
 				"/styles/style.css"
 				"/styles/site.css"
+				"/styles/monokai-sublime.css"
 			]
 
 			# Scripts
@@ -237,9 +238,9 @@ docpadConfig = {
 		markedOptions:
 		  	gfm: true
 
-		#live reload is slow with this on
-		pygments:
-			enabled: false
+		highlightjs:
+        	aliases:
+            	haxe: 'as3'
 
 }
 

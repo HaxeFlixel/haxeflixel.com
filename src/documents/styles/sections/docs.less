@@ -59,6 +59,26 @@
   font-size: 90%;
 }
 
+.sideBySide{
+  width:48%;
+  float:left;
+}
+
+.spacer-right{
+  margin-right:20px;
+}
+
+.clear{
+  clear:both;
+}
+
+@media (max-width: @screen-md-min) {
+  .sideBySide{
+    width:100%;
+    float:none;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .doc-nav .nav > .active > ul {
     display: block;
