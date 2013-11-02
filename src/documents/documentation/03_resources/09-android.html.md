@@ -30,7 +30,7 @@ With [OpenFL](http://openfl.org) using native-code and OpenGL with [LibSDL](http
 ### Project XML settings
 ----
 
-By default, mobile platforms use a window width and height of 0, which is a special value that uses the resolution of the current display.
+Mobile platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.
 
 ```
 <window width="0" height="0" background="#FFFFFF" fps="60" />
@@ -49,7 +49,7 @@ OpenFL also exposes the following specific settings for the Android target:
 
 Sublime Text, Flash Develop and Intellij Idea support Android compilation through their GUI.
 
-### Command line
+#### Command line
 ----
 
 The basic command to compile and test Android:

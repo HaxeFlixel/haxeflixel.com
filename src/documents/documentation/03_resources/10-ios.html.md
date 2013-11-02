@@ -33,7 +33,7 @@ IOS uses GPU accelerated Texture Batching for the best possible performance in m
 ### Project XML settings
 ----
 
-By default, mobile platforms use a window width and height of 0, which is a special value that uses the resolution of the current display.
+Mobile platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.
 
 ```
 <window width="0" height="0" background="#FFFFFF" fps="60" />
