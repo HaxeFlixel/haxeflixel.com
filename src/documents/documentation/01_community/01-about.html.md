@@ -63,12 +63,56 @@ Everyone is highly encouraged to contribute to HaxeFlixel itself and the resourc
 
 <ul class="members-list">
 
-	<%-@partial('member.html.eco', {name:"Beeblerox", avatar:"/images/developers/Beeblerox.jpeg", githuburl:"http://github.com/beeblebrox", info:"The founding member and Author of HaxeFlixel, Alexander completed the first version of HaxeFlixel during 2011, his work is the reason for the project's success.",}) %>
-	<%-@partial('member.html.eco', {name:"Chris", avatar:"/images/developers/impaler.jpeg", githuburl:"http://github.com/impaler", info:"Chris is a generalist developer who has worked on various features and bug fixes for the engine and tools. Chris is also responsible for our logo, website and forum and is a long time member of the project.",}) %>
-	<%-@partial('member.html.eco', {name:"CrazySam", githuburl:"http://github.com/crazysam", avatar:"/images/developers/crazysam.png", info:"Sam is a formidable programmer who spends his working days doing GUI programming with AAA titles. Sam is also a passionate Indie developer and community organiser in the Baltimore area. He is responsible for many optimisations and improvements to the engine and has been a part of it shortly after it began.",}) %>
-	<%-@partial('member.html.eco', {name:"Gama11", githuburl:"http://github.com/gama11", avatar:"/images/developers/Gama11.png", info:"Gama11 is a highly valued contributor who has taken great pride in making our codebase consistent and structured. Jens took the lead on the HaxeFlixel 3.x API refactor and improvements to the codebase structure general.",}) %>
-	<%-@partial('member.html.eco', {name:"Larsiusprime", githuburl:"http://github.com/larsiusprime", avatar:"/images/developers/larsiusprime.jpeg", info:"Lars is veteran Flixel developer who is best known for his main Indie game Defender's Quest. Lars is also the main dev behind making the flixel-ui framework.",}) %>
-	<%-@partial('member.html.eco', {name:"ProG4mr", githuburl:"http://github.com/ProG4mr", avatar:"/images/developers/ProG4mr.jpeg", info:"Tiago is the programmer to thank for our Nape Physics support. Tiago has a flair for great demos and style and is a great multi talented developer.",}) %>
-	<%-@partial('member.html.eco', {name:"Sergey Miryanov", githuburl:"http://github.com/sergey-miryanov", avatar:"/images/developers/sergey-miryanov.jpeg", info:"Sergey is an accomplished programmer who is a highly valued voice in discussions and planning for changes in the codebase. Sergey is a long time participator in the HaxeFlixel project.",}) %>
+    <li>
+	<a href="http://github.com/beeblebrox">
+		<h4>Beeblerox</h4>
+	</a>
+	<img style="float:left; margin-right: 14px;" src="/images/developers/Beeblerox.jpeg">
+	<p>The founding member and Author of HaxeFlixel, Alexander completed the first version of HaxeFlixel during 2011, his work is the reason for the project's success.</p>
+</li>
+    <li>
+	<a href="http://github.com/impaler">
+		<h4>Chris</h4>
+	</a>
+	<img style="float:left; margin-right: 14px;" src="/images/developers/impaler.jpeg">
+	<p>Chris is a generalist developer who has worked on various features and bug fixes for the engine and tools. Chris is also responsible for our logo, website and forum and is a long time member of the project.</p>
+</li>
+    <li>
+	<a href="http://github.com/crazysam">
+		<h4>CrazySam</h4>
+	</a>
+	<img style="float:left; margin-right: 14px;" src="/images/developers/crazysam.png">
+	<p>Sam is a formidable programmer who spends his working days doing GUI programming with AAA titles. Sam is also a passionate Indie developer and community organiser in the Baltimore area. He is responsible for many optimisations and improvements to the engine and has been a part of it shortly after it began.</p>
+</li>
+    <li>
+	<a href="http://github.com/gama11">
+		<h4>Gama11</h4>
+	</a>
+	<img style="float:left; margin-right: 14px;" src="/images/developers/Gama11.png">
+	<p>Gama11 is a highly valued contributor who has taken great pride in making our codebase consistent and structured. Jens took the lead on the HaxeFlixel 3.x API refactor and improvements to the codebase structure general.</p>
+</li>
+    <li>
+	<a href="http://github.com/larsiusprime">
+		<h4>Larsiusprime</h4>
+	</a>
+	<img style="float:left; margin-right: 14px;" src="/images/developers/larsiusprime.jpeg">
+	<p>Lars is veteran Flixel developer who is best known for his main Indie game Defender's Quest. Lars is also the main dev behind making the flixel-ui framework.</p>
+</li>
+    <li>
+	<a href="http://github.com/ProG4mr">
+		<h4>ProG4mr</h4>
+	</a>
+	<img style="float:left; margin-right: 14px;" src="/images/developers/ProG4mr.jpeg">
+	<p>Tiago is the programmer to thank for our Nape Physics support. Tiago has a flair for great demos and style and is a great multi talented developer.</p>
+</li>
+    <li>
+	<a href="http://github.com/sergey-miryanov">
+		<h4>Sergey Miryanov</h4>
+	</a>
+	<img style="float:left; margin-right: 14px;" src="/images/developers/sergey-miryanov.jpeg">
+	<p>Sergey is an accomplished programmer who is a highly valued voice in discussions and planning for changes in the codebase. Sergey is a long time participator in the HaxeFlixel project.</p>
+</li>
+
+</ul>
 
 </ul>
