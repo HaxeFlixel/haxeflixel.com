@@ -26,7 +26,8 @@ reinventing the wheel each time. In this sense Flixel will always be a large cod
 Flixel is now more organized and logical. Let us explain why.
 
 However big the changes which there are many, it is still easy for existing Flixel users to learn and adopt.
-With our users in mind we have a project to assist you in updating old code. This tool is mostly a simple Find and Replace script that will ..............
+
+With our users in mind we have a project to assist you in updating old code. This tool is mostly a simple Find and Replace script that will replace old api calls with the new ones where its easily automated. This tool is not a perfect conversion tool but a handy tool to make the updating process quicker. Checkout the [flixel-tools docs](/documentation/flixel-tools) for more info.
 
 ### Our Codebase:
 
