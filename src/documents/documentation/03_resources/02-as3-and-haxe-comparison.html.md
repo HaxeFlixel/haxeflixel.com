@@ -2,19 +2,6 @@
 title: AS3 and Haxe Comparison
 ```
 
-<style type="text/css">.sideBySide{
-width:48%;
-float:left;
-}
-
-.spacer-right{
-margin-right:20px;
-}
-.clear{
-clear:both;
-}
-</style>
-
 This document aims to give developers familiar with Actionscript 3 a quickstart to Haxe. For more Haxe specific documentation please refer to the main Haxe.org website:
 
 - <a href="http://haxe.org/ref/syntax">Haxe Syntax</a>
@@ -37,7 +24,7 @@ This guide is based off from [OpenFL's guide](http://www.openfl.org/developer/do
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 Boolean
 int
 Number
@@ -51,7 +38,7 @@ Vector.&lt;String&gt;
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 Bool
 Int
 Float
@@ -72,7 +59,7 @@ Array&lt;String&gt;
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 package com.example.myapplication {
 
 }
@@ -82,7 +69,7 @@ package com.example.myapplication {
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 package com.example.myapplication;
 </pre>
 </div>
@@ -97,7 +84,7 @@ package com.example.myapplication;
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 public class MyClass {
 
    public function MyClass () {
@@ -112,7 +99,7 @@ public class MyClass {
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 class MyClass {
 
    public function new () {
@@ -134,7 +121,7 @@ class MyClass {
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 for (var i:uint = 0; i &lt; 100; i++) {
 
 }
@@ -152,7 +139,7 @@ for (var propertyName:String in object) {
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 for (i in 0...100) {
 
 }
@@ -178,7 +165,7 @@ for (propertyName in fields) {
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 switch (value) {
 
    case 1:
@@ -196,7 +183,7 @@ switch (value) {
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 switch (value) {
 
    case 1:
@@ -219,7 +206,7 @@ switch (value) {
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 var hi = "Hello World";
 
 // type is Object
@@ -230,7 +217,7 @@ var hi = "Hello World";
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 var hi = "Hello World";
 
 // type is String
@@ -248,7 +235,7 @@ var hi = "Hello World";
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 var car:Car = vehicle as Car;
 
 var toString:String = String (10);
@@ -260,7 +247,7 @@ var toInteger:int = int (10.1);
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 var car:Car = cast vehicle;
 
 // or for a safe cast:
@@ -283,7 +270,7 @@ var toInteger = Std.int (10.1);
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 if (vehicle is Car) {
 
 }
@@ -299,7 +286,7 @@ type = Class (getDefinitionByName (name);
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 if (Std.is (vehicle, Car)) {
 
 }
@@ -319,7 +306,7 @@ name = Type.getClassName (type);
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 if (object == null) {
 
 }
@@ -333,7 +320,7 @@ if (!object) {
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 if (object == null) {
 
 }
@@ -350,7 +337,7 @@ if (object == null) {
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 var table:Object = new Object ();
 table["key"] = 100;
 
@@ -369,7 +356,7 @@ delete table["key"];
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 var table = new Hash&lt;Int&gt; ();
 table.set ("key", 100);
 
@@ -395,7 +382,7 @@ table.remove ("key");
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 function test (...params):void {
 
 }
@@ -407,7 +394,7 @@ test (1, 2, 3);
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 function test (params:Array&lt;Dynamic&gt;) {
 
 }
@@ -426,7 +413,7 @@ Reflect.makeVarArgs (test) (1, 2, 3);
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 var foo = object["foo"];
 
 bar.apply (this, [ "hi" ]);
@@ -436,7 +423,7 @@ bar.apply (this, [ "hi" ]);
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 var foo = Reflect.field (object, "foo");
 
 Reflect.callMethod (this, bar, [ "hi" ]);
@@ -453,7 +440,7 @@ Reflect.callMethod (this, bar, [ "hi" ]);
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 function hello (msg:String):void {
 
 }
@@ -465,7 +452,7 @@ var type:Function = hello;
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 function hello (msg:String):Void {
 
 }
@@ -486,7 +473,7 @@ var type:String-&gt;Void = hello;
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 function get x ():Number {
 
    return _x;
@@ -504,7 +491,7 @@ function set x (value:Number):void {
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 public var x (getX, setX):Float;
 
 function getX ():Float {
@@ -531,7 +518,7 @@ function setX (value:Float):Float {
 <div class="sideBySide spacer-right">
 <h4>As3</h4>
 
-<pre class="brush:as3;" contenteditable="false">
+<pre class="highlighted">
 function get x ():Float {
 
    return _x;
@@ -543,7 +530,7 @@ function get x ():Float {
 <div class="sideBySide">
 <h4>Haxe</h4>
 
-<pre class="brush:hx;" contenteditable="false">
+<pre class="highlighted">
 public var x (default, null):Float;
 
 // null allows private access
