@@ -15,7 +15,6 @@ The basic steps to get started on Windows and Mac are:
 2. [Install OpenFL](/documentation/install-openfl)
 3. [Install HaxeFlixel](/documentation/install-haxeflixel)
 4. [Compile Hello World](/documentation/hello-world-command-line)
-5. [Choose An IDE](/documentation/choose-an-ide)
 
 If you are planning to use linux:
 
