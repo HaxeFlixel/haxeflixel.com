@@ -52,7 +52,7 @@ OpenFL also exposes the following specific settings for the Android target:
 
 Sublime Text, Flash Develop and Intellij Idea support Android compilation through their GUI.
 
-### Command line
+#### Command line
 ----
 
 The basic command to compile and test IOS:
@@ -65,10 +65,10 @@ Run this command from the root folder of your project, the default project.xml w
 
 ----
 
-If you want to use the IOS emulator, add “-emulator” when running/testing.
+If you want to use the IOS emulator, add “-simulator when running/testing.
 
 ```
-openfl test ios -emulator
+openfl test ios -simulator
 ```
 
 ----

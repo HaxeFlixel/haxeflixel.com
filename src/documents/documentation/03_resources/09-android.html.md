@@ -62,10 +62,10 @@ Run this command from the root folder of your project, the default project.xml w
 
 ----
 
-If you want to use the Android emulator, add “-emulator” when running/testing. Be sure your virtual device is API >=15 and has GPU enabled.
+If you want to use the Android simulator, add “-simulator when running/testing. Be sure your virtual device is API >=15 and has GPU enabled.
 
 ```
-openfl test android -emulator
+openfl test android -simulator
 ```
 
 ----
