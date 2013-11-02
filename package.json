@@ -15,7 +15,8 @@
     "docpad-plugin-eco": "~2.0.2",
     "docpad-plugin-cleanurls": "~2.5.1",
     "docpad-plugin-marked": "~2.1.1",
-    "docpad-plugin-highlightjs": "~2.1.8"
+    "docpad-plugin-highlightjs": "~2.1.8",
+    "docpad-plugin-gist": "~2.1.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

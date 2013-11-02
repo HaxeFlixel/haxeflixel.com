@@ -123,7 +123,7 @@ docpadConfig = {
 				urls = ["/documentation/#{name}"]
 				categoryName = 'getting_started'
 				categoryTitle = 'Getting Started'
-				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				githubEditUrl = "https://github.com/haxeflixel/haxeflixel.com/blob/master/src/documents/"
 				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
@@ -147,7 +147,7 @@ docpadConfig = {
 				categoryTitle = 'Community'
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				githubEditUrl = "https://github.com/haxeflixel/haxeflixel.com/blob/master/src/documents/"
 				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
@@ -171,7 +171,7 @@ docpadConfig = {
 				categoryTitle = "Handbook"
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				githubEditUrl = "https://github.com/haxeflixel/haxeflixel.com/blob/master/src/documents/"
 				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
@@ -195,7 +195,7 @@ docpadConfig = {
 				categoryTitle = 'Resources'
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				githubEditUrl = "https://github.com/haxeflixel/haxeflixel.com/blob/master/src/documents/"
 				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
@@ -219,7 +219,7 @@ docpadConfig = {
 				categoryName = 'resources'
 				name = a.basename.replace(/^[\-0-9]+/,'')
 				urls = ["/documentation/#{name}"]
-				githubEditUrl = "https://github.com/impaler/haxeflixel.com/edit/master/src/documents/"
+				githubEditUrl = "https://github.com/haxeflixel/haxeflixel.com/blob/master/src/documents/"
 				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
