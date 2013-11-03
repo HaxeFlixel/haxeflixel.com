@@ -240,7 +240,7 @@ docpadConfig = {
 
 		highlightjs:
         	aliases:
-            	haxe: 'as3'
+            	haxe: 'actionscript'
 
 }
 

@@ -7,7 +7,9 @@ The Haxe Toolkit is available from [haxe.org](http://haxe.org/download) for Wind
 [Download Haxe Installer](http://haxe.org/download)
 
 > HaxeFlixel 1.x requires Haxe 2.10
+
 > HaxeFlixel 2.x requires Haxe 3
+
 > HaxeFlixel 3.x requires Haxe 3
 
 Here is what the installer will look like on Mac and Windows:
