@@ -116,6 +116,17 @@
   }
 }
 
+.highlighted .container {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline;
+}
+
+.highlighted .container:before, .highlighted .container:after {
+    clear: none;
+    content: none;
+}
+
 @media screen and (min-width: 1200px) {
   .doc-nav.affix-bottom,
   .doc-nav.affix {
