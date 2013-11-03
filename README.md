@@ -16,6 +16,4 @@ You can compile this website yourself with a local install of Docpad, pull reque
 
 3. [Open http://localhost:9778/](http://localhost:9778/)
 
-4. Start hacking away by modifying the `src` directory.
-
-* Note that the pygments syntax highlighter makes compiling very slow, you can disable it under plugins in the [docpad.coffee](https://github.com/HaxeFlixel/haxeflixel.com/blob/master/docpad.coffee#L241) file in root.
+4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save the files you modify.
