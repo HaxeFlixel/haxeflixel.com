@@ -77,6 +77,9 @@ flixel help
 
 //see the new template tool options with:
 flixel help template
+
+//Shorthand version to create a template with a custom name
+flixel tpl -n "CustomProject"
 ```
 
 #### Automatic find and replace
