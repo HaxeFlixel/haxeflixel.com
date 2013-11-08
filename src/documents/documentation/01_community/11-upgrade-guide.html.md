@@ -59,6 +59,26 @@ So you dont need to have system assets anymore, everything in your project's `./
 
 HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugger system by default redirects the core `trace()` command to the log. Alternativley you can use `FlxG.log.add()` , `FlxG.watch.add()`, `FlxG.log.warn` and more.
 
+### New Flixel Command Line Tools
+
+Our command line tools have been moved to an optional repository, so the old `haxelib run flixel new` command will not work.
+Install the tools from haxelib just like flixel and run setup and follow the prompts:
+
+```
+haxelib install flixel-tools
+
+haxelib run flixel-tools setup
+```
+
+Now you can use the commands with just `flixel`, try the help command for more info.
+
+```
+flixel help
+
+//see the new template tool options with:
+flixel help template
+```
+
 #### Automatic find and replace
 
 A collection of most of the api name changes were collected for the [flixel-tools command line tool](/documentation/community/flixel-tools).
