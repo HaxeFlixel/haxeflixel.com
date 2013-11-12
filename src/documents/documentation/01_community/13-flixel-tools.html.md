@@ -4,20 +4,19 @@ title: "Flixel Tools"
 
 To make HaxeFlixel development easier a set of command line tools has been developed with [Haxe](http://haxe.org) and [Neko](http://nekovm.org). With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an opensource tool and additions/improvements from the community are welcome at the [Flixel Tools Github repository](https://github.com/HaxeFlixel/flixel-tools).
 
-###Installation:
+### Installation:
 
-- You need to make sure you have git installed, [git](http://git-scm.com/download/).
-
-- Please make sure you are also running the latest version of haxelib you can make sure with the command:
-```haxelib selfupdate```
-
-####Run the following set of commands to install the tools:
-
-To clone this repo to your haxelib directory:
+The latest stable release of the tools is published just like flixel on Haxelib, so installing is easy:
 
 ```
-haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools.git
+haxelib install flixel-tools
 ```
+
+#### GIT
+
+You need to make sure you have git installed, [git](http://git-scm.com/download/).
+
+### Setup the Tools
 
 To set the tools up initially / to be able to use the `flixel` alias in your console:
 
@@ -25,13 +24,7 @@ To set the tools up initially / to be able to use the `flixel` alias in your con
 haxelib run flixel-tools setup
 ```
 
-To clone the [flixel-demos](https://github.com/HaxeFlixel/flixel-demos) repo (for demo creation):
-
-```
-flixel download
-```
-
-###Commands
+### Commands
 
 Create a new demo (in the current directory):
 
@@ -54,5 +47,21 @@ Valid platforms (don't forget the __-__): flash, neko, windows, mac, linux, ios,
 ```
 flixel testdemos -<platform>
 ```
+
 - Currently the templates created are only compatible with the latest [dev branch of flixel](https://github.com/HaxeFlixel/flixel). For flixel 2.x use the command: ```haxelib run flixel new -name <name>```
 
+### Install the tools from git:
+
+- Please make sure you are also running the latest version of haxelib you can make sure with the command:
+
+```
+haxelib selfupdate
+```
+
+#### Run the following set of commands to install the tools:
+
+To clone this repo to your haxelib directory:
+
+```
+haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools.git
+```

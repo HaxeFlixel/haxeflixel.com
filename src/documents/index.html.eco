@@ -89,11 +89,10 @@ title: 'Home'
                     <li>Powerful interactive debugger and console</li>
                     <li>Based on an Open Source framework and stack including the compiler and language</li>
                 </ul>
+
                 <br>
 
-                <p><a class="home-button" href="/documentation/about">Learn more</a>
-
-                <p>
+                <p><a class="home-button" href="/documentation/about">Learn more</a></p>
 
             </div>
 
@@ -136,7 +135,7 @@ title: 'Home'
 
     <div class="demos-home home-section">
 
-        <p class="lead-line-large">Browse and learn from our <a href="/demos">34 Demos!</h3></p>
+        <p class="lead-line-large">Browse and learn from our <a href="/demos">Demos</h3></p>
 
         <% for demo in @getCollection('homepage_demos').toJSON(): %>
 
@@ -151,7 +150,29 @@ title: 'Home'
     <hr>
 
 
+   <div class="home-section">
 
+        <p class="lead-line-large">Made with cross platform open source tech</p>
+
+        <img src="/images/haxe.svg" alt="" width="180">
+
+        <p>+</p>
+
+        <img src="/images/openfl-logo.svg" alt="" width="180">
+
+        <p>+</p>
+
+        <img src="/images/flixel.svg" alt="" height="180">
+        
+        <p>=</p>
+
+        <img src="/images/haxeflixel.svg" alt="" width="200">
+
+        <p><a class="home-button" href="/documentation/about">Learn more</a></p>
+
+    </div>
+
+    <hr>
 
 
 	<div id="carousel-tweets" class="carousel slide">
