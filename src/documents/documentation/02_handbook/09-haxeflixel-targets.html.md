@@ -4,16 +4,16 @@ title: "HaxeFlixel Targets"
 
 HaxeFlixel currently supports the following targets through OpenFL:
 
-#### Desktop
+#### [Desktop](/documentation/desktop-targets)
 
 - Windows
 - Mac
 - Linux
 
-#### Mobile
+#### [Mobile](/documentation/mobile-targets)
 
-- [IOS](/documentation/resources/ios)
-- [Android](/documentation/resources/android)
+- [IOS](/documentation/ios)
+- [Android](/documentation/android)
 - Blackberry
 - WebOS
 

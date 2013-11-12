@@ -9,7 +9,7 @@ Using the command line with HaxeFlixel is made easier with our custom built flix
 
 Installing the tools is as easy as installing flixel:
 
-```
+``` bash
 haxelib install flixel-tools
 ```
 
@@ -17,7 +17,7 @@ haxelib install flixel-tools
 
 Setup the tools so that it can download dependencies for the commands and set your preferences:
 
-```
+``` bash
 haxelib run flixel-tools setup
 ```
 
@@ -25,34 +25,19 @@ haxelib run flixel-tools setup
 
 HaxeFlixel requires a basic structure of files for any project that you can automatically create with a simple command. To see the parameters of this command type;
 
-```
-haxelib run flixel help
-```
-
-You should get the following output;
-
-```
-Flixel project template creation tool.
-
-haxelib run flixel [help] [-name "Your Project Name"] [-class MainProjectClass] [-screen WIDTH HEIGHT]
-
-	help - this screen
-	-name "Your Project Name"
-	-class MainProjectClass
-	-screen WIDTH HEIGHT
+``` bash
+flixel tpl -n "Hello World"
 ```
 
-From the provided help you can see using the tool is as simple as the following command, don't close your command line yet as we will come back to it to compile this project;
+The extended docs for the flixel-tools can be [found here](/documentation/flixel-tools).
 
-``` haxe
-haxelib run flixel -name "Hello World"
-```
-
-If you check your folder all the files for your project are now created automatically.
+You will now see a new Hello World folder with all the files for your project created automatically.
 
 #### Add the Hello World FlxText
 
-Adding the text as as simple as opening the MenuState.hx file in the newly created source folder. The file will look like this;
+Adding the text as as simple as opening the MenuState.hx file in the newly created source folder.
+
+The file will look like this:
 
 ``` haxe
 package;
@@ -96,13 +81,13 @@ class MenuState extends FlxState
 }
 ```
 
-All you need to do is add the following in the create() method;
+All you need to do is add the following in the create() method:
 
 ``` haxe
 add(new FlxText(0, 0, 100, "Hello World!")); 
 ```
 
-Your MenuState.hx should now look like this;
+Your MenuState.hx should now look like this:
 
 ``` haxe
 package;
@@ -149,15 +134,17 @@ class MenuState extends FlxState
 }
 ```
 
+Save MenuState.hx and return to your command line window. Now we can compile Hello World with openfl.
 
+Without running the [OpenFL setup](/documentation/install-openfl) commands you can compile to Flash and Neko out of the box.
 
-Save MenuState.hx and return to your command line window. Now we can compile Hello World with openfl. Without running setup commands you can compile to Flash and Neko out of the box, test it from the following commands.
+Test your project from the following commands:
 
-```
+``` bash
 openfl test flash
 ```
 
-```
+``` bash
 openfl test neko
 ```
 
