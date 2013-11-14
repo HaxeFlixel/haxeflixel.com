@@ -10,13 +10,30 @@ HaxeFlixel 3.0 is an evolution of the original Flixel api and while most of the 
 
 We wanted to slim down up the core classes, which meant moving non-essential functionality into separate classes. We've also continued to focus on improving stability and adding features to the engine. Here's a quick overview of the biggest changes:
 
-* Moved __animation logic from [FlxSprite](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/FlxSprite.hx)__, into new [FlxAnimationController](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/animation/FlxAnimationController.hx) class. All animation logic is now accessed through __mySprite.animation__, ex: ```mySprite.animation.add(...);```
+* Moved __animation logic from [FlxSprite](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/FlxSprite.hx)__, into new [FlxAnimationController](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/animation/FlxAnimationController.hx) class. All animation logic is now accessed through __mySprite.animation__, eg: 
+
+```
+mySprite.animation.add(...);
+
+mySprite.animation.play(...);
+
+mySprite.animation.frameName = "String";
+
+mySprite.animation.frameIndex = Int;
+
+//inspect the advanced api features such as
+addByNames, addByStringIndicies, addByIndicies, addByPrefix, findSpriteFrame, randomFrame ...
+
+```
+
 
 * Added new [FlxKeyShortcuts](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/system/input/keyboard/FlxKeyShortcuts.hx) class, which replaces FlxG.keys. __FlxG.keys.pressed is no longer a function__, it's now an object, ex: ```if( FlxG.keys.pressed.ANY ) {...}```
 
 * Added new [FlxSpriteGroup](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/group/FlxSpriteGroup.hx) class, which __allows an FlxGroup to behave like an FlxSprite__. This is a powerful new construct that will simplify building UI controls.
 
 * __FlxU is now gone__, we've moved all its functionality to [several utility classes](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util) that specific contain functionality, ex: _[FlxArrayUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxArrayUtil.hx), [FlxAngle](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxAngle.hx), [FlxMath](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxMath.hx), [FlxRandom](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxRandom.hx), [FlxSpriteUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxSpriteUtil.hx), [FlxVelocity](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxVelocity.hx), [etc](https://github.com/HaxeFlixel/flixel/tree/dev/flixel/util)_.
+
+* __FlxSprite Filters__ are now in a separate FlxSpriteFilter utility class.
 
 ### Package Structure
 

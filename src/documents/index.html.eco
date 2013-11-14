@@ -150,25 +150,34 @@ title: 'Home'
     <hr>
 
 
-   <div class="home-section">
+   <div class="home-section-powered">
 
-        <p class="lead-line-large">Made with cross platform open source tech</p>
+        <p class="lead-line-large">Powered by open source cross platform tech:</p>
+
+        <br/>
 
         <img src="/images/haxe.svg" alt="" width="180">
 
-        <p>+</p>
+        <span>+</span>
 
         <img src="/images/openfl-logo.svg" alt="" width="180">
 
-        <p>+</p>
+        <span>+</span>
 
         <img src="/images/flixel.svg" alt="" height="180">
         
-        <p>=</p>
+        <span>=</span>
 
         <img src="/images/haxeflixel.svg" alt="" width="200">
 
-        <p><a class="home-button" href="/documentation/about">Learn more</a></p>
+        </p>
+
+        <br/>
+
+        <a class="home-button" href="/documentation/about">Learn more</a>
+
+        <br/>
+        <br/>
 
     </div>
 
