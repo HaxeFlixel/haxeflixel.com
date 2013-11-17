@@ -107,12 +107,15 @@ title: 'Home'
 			        <div class="carousel-inner">
 				        <div class="item">
 					        <img alt="" src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
+                            <p>Create a variety of games including platformers, rpgs, tower defence, puzzles and more.</p>
 				        </div>
 				        <div class="item">
 					        <img alt="" src="<%= @getThumbnail("/demos/FlxCaveGenerator.png", "zoomcrop", { w: 650, h:360 }) %>">
+                            <p>Utilize community code and demos to learn and extend.</p>
 				        </div>
 				        <div class="item active">
 					        <img alt="" src="<%= @getThumbnail("/demos/FlxTween.png", "zoomcrop", { w: 650, h:360 }) %>">
+                            <p>Extensive core with utilities for Physics, Tweening, Math and more.</p>
 				        </div>
 			        </div>
 			        <a class="left carousel-control" href="#carousel-home" data-slide="prev">
