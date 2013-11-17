@@ -8,13 +8,12 @@
   },
   "dependencies": {
     "docpad": "~6.54.4",
-    "docpad-plugin-partials": "~2.8.0",
-    "docpad-plugin-livereload": "~2.5.3",
+    "docpad-plugin-thumbnails": "~2.1.1",
+    "docpad-plugin-partials": "~2.8.1",
     "docpad-plugin-less": "~2.2.0",
-    "docpad-plugin-thumbnails": "~2.1.0",
     "docpad-plugin-eco": "~2.0.2",
     "docpad-plugin-cleanurls": "~2.5.1",
-    "docpad-plugin-marked": "~2.1.1",
+    "docpad-plugin-marked": "~2.1.2",
     "docpad-plugin-highlightjs": "~2.1.8",
     "docpad-plugin-gist": "~2.1.1"
   },

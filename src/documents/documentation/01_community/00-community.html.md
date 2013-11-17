@@ -7,7 +7,7 @@ HaxeFlixel is a collaborative project where from contributors all over the world
 
 ## Forums
 
-[Our community Forum](http://www.haxeflixel.com)
+[Our community Forum](http://forum.haxeflixel.com)
 
 ## Github
 

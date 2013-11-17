@@ -242,6 +242,9 @@ docpadConfig = {
         	aliases:
             	haxe: 'actionscript'
 
+        thumbnails:
+        	imageMagick: true
+
 }
 
 # Export our DocPad Configuration

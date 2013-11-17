@@ -21,7 +21,7 @@ For AS3 developers you can get a quickstart on Haxe from this;
 
 We also invite you to talk with our community in the forums and IRC :)
 
-*   [Forum](www.haxeflixel.com/community)
+*   [Forum](http://haxeflixel.com/documentation/community)
 *   \#haxeflixel on freenode
 
 Furthermore this wiki and website is the front of HaxeFlixel information and we welcome additions from users like you :)
