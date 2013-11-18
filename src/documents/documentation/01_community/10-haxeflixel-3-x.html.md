@@ -13,10 +13,10 @@ have significant progress on each.
 
 #### What happened to HaxeFlixel 2.0?
 
-With the API changes we believe it only makes sense to avoid confusion for legacy Flixel 2.55 users no
+With the API changes we believe it only makes sense to avoid confusion for legacy Flixel 2.55 users not
 to expect the same API for the latest release of HaxeFlixel. Instead 3.0 is an evolution of the original
 Flixel api with a focus on logic names and structure that makes more sense to the end user a more sensible
-package structure which should make it more easier to maintain.
+package structure which should make it easier to maintain.
 
 
 #### So what has changed, is Flixel still bloated?
