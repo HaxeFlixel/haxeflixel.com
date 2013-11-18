@@ -22,6 +22,9 @@
                         <li <%= @adocs %>>
                         <a href="/documentation">Documentation</a>
                         </li>
+                        <li>
+                        <a href="forum.haxeflixel.com">Forum</a>
+                        </li>
                     </ul>
 
                 </div>
