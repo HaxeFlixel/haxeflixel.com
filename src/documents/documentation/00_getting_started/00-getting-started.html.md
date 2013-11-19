@@ -5,7 +5,9 @@ rootDoc: true
 
 Welcome to HaxeFlixel, here we will show you how to setup your system to start making games with Mac, Linux or Windows.
 
-HaxeFlixel is an [open-source](http://en.wikipedia.org/wiki/Open-source_software) library that makes heavy use of the Haxe Toolkit and the Open Flash Library. These two systems have to be installed and setup prior to using HaxeFlixel. It is helpful if you have some basic knowledge of programming and installing software.
+HaxeFlixel is an [open-source](http://en.wikipedia.org/wiki/Open-source_software) library that makes heavy use of the [Haxe Toolkit](http://haxe.org) and the [Open Flash Library](http://openfl.org). 
+
+All you need to get started is basic knowledge of programming and software to get started.
 
 ----
 
@@ -23,12 +25,11 @@ If you are planning to use linux:
 With a working installation you can now:
 
 - [Compile Hello World](/documentation/compile-hello-world)
-- [Choose An IDE](/documentation/choose-an-ide)
 
 ----
 
 Time to complete this installation is close to 20 minutes, mostly due to downloading the components.
 
-If you require some help, ask a question in the [community forums](http://www.haxeflixel.com/community/) also worth checking out [#haxeflixel on IRC](irc://chat.freenode.net/#haxeflixel).
+If you require some help, ask a question in the [community forums](http://www.forum.haxeflixel.com) also worth checking out [#haxeflixel on IRC](irc://chat.freenode.net/#haxeflixel).
 
 If you can think of a way to improve this guide, please help us by submitting a pull request on github or starting a discussion in the forums.

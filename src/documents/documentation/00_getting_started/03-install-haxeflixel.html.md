@@ -2,33 +2,34 @@
 title: "Install HaxeFlixel"
 ```
 
-Installing HaxeFlixel is made simple through Haxe's package manager Haxelib.
-Using [Haxelib](http://haxe.org/doc/haxelib/using_haxelib) will let you install the latest stable version of HaxeFlixel.
+Installing HaxeFlixel is made simple through Haxe's own package manager [Haxelib](http://lib.haxe.org/).
 
-### Development version
-
-Developers maybe interested in installing bleeding edge code on the development git branch, see [instructions here](/documentation/install-development-flixel).
-We caution use of this branch as it may not have the same amount of testing as the stable version.
+Using [Haxelib](http://haxe.org/doc/haxelib/using_haxelib) will easily let you install and update to the latest stable version of HaxeFlixel.
 
 ### Install the Stable Version
 
 You can install the stable version from haxelib from the following command.
 
-```
+``` bash
 haxelib install flixel
 ```
 
+
+### Development version
+
+Developers maybe interested in installing bleeding edge code on the development git branch, see [instructions here](/documentation/install-development-flixel).
+
 ----
 
-<img src="/images/install-flixel.jpg" style="width:100%;" />
+<img src="http://haxeflixel.com/images/install-flixel.jpg" style="width:100%;" />
 
 You will notice that haxelib automatically downloads HaxeFlixel for you:
 
-<img src="/images/flixel-downloading.jpg" style="width:100%;" />
+<img src="http://haxeflixel.com/images/flixel-downloading.jpg" style="width:100%;" />
 
 Haxelib will notice the dependency of openfl and may prompt you to install it if you have not installed it yet:
 
-<img src="/images/flixel-installed.jpg" style="width:100%;" />
+<img src="http://haxeflixel.com/images/flixel-installed.jpg" style="width:100%;" />
 
 ----
 
