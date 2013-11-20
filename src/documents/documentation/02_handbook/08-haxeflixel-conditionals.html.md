@@ -71,7 +71,7 @@ This allows you to optimize your game by compiling it without any gamepad-relate
 
 #### FLX_NO_SOUNDTRAY
 
-This disables the flixel core sound tray, which appears whenever your adjust the volume via the 0 (mute the game), + or - keys. Note that this does not disable the ability to control the game's volume using these hotkeys, just the soundtray itself. You can disable volume control entirely by setting FlxG.sound.muteKeys, FlxG.sound.volumeUpKeys and FlxG.sound.voluemDownKeys to null.
+This disables the flixel core sound tray, which appears whenever your adjust the volume via the 0 (mute the game), + or - keys. Note that this does not disable the ability to control the game's volume using these hotkeys, just the soundtray itself. You can disable volume control entirely by setting FlxG.sound.muteKeys, FlxG.sound.volumeUpKeys and FlxG.sound.volumeDownKeys to null.
 
 #### FLX_NO_FOCUS_LOST_SCREEN
 
