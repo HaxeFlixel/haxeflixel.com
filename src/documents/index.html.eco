@@ -12,7 +12,7 @@ title: 'Home'
 
         <h1>HaxeFlixel</h1>
 
-        <p class="lead-line">Create cross-platform games easier and free,<br> all with one codebase.</p>
+        <p class="lead-line">Create cross-platform games easier and free.<br> All with one codebase.</p>
 
         <p>
             <a class="home-button" href="/download">Download</a>
@@ -52,7 +52,7 @@ title: 'Home'
 
     <div class="home-section">
 
-        <p class="lead-line-large">Cross compile your games <a href="documentation/about"><i>natively</i></a> to:</p>
+        <p class="lead-line-large">Cross-compile your games <a href="documentation/about">natively</a> to:</p>
 
         <div class="platform-demos-home">
             <img width="80px" height="90px" src="images/targets/linux-logo.svg">
@@ -79,15 +79,15 @@ title: 'Home'
                 <ul>
                     <li>Develop from Linux, Mac or Windows</li>
                     <li>Display thousands of moving objects</li>
-                    <li>GPU acceleration with native targets</li>
-                    <li>Physics and Collisions for groups &amp; objects</li>
+                    <li>GPU acceleration on native targets</li>
+                    <li>Physics and collisions for groups &amp; objects</li>
                     <li>Advanced physics with Nape support</li>
-                    <li>Use cross compiled C++ code instead of a VM</li>
-                    <li>Easily generate and emit particles</li>
+                    <li>Use cross-compiled C++ code instead of a VM</li>
+                    <li>Easy creation of particle effects</li>
                     <li>Advanced Tilemap support</li>
-                    <li>Advanced multi camera system</li>
+                    <li>Advanced multi-camera system</li>
                     <li>Powerful interactive debugger and console</li>
-                    <li>Based on an Open Source framework and stack including the compiler and language</li>
+                    <li>Entirely based on open source software</li>
                 </ul>
 
                 <br>
@@ -155,31 +155,26 @@ title: 'Home'
 
    <div class="home-section-powered">
 
-        <p class="lead-line-large">Powered by open source cross platform tech:</p>
+        <p class="lead-line-large">Powered by open source cross-platform tech:</p>
 
         <br/>
 
-        <img src="/images/haxe.svg" alt="" width="180">
+        <img src="/images/haxe.svg" alt="Haxe Logo" width="120">
 
-        <span>+</span>
+        <span><b>+</b></span>
 
-        <img src="/images/openfl-logo.svg" alt="" width="180">
+        <img src="/images/openfl-logo.svg" alt="OpenFL Logo" width="120">
 
-        <span>+</span>
+        <span><b>+</b></span>
 
-        <img src="/images/flixel.svg" alt="" height="180">
+        <img src="/images/flixel.svg" alt="Flixel Logo" height="120">
         
-        <span>=</span>
+        <span><b>=</b></span>
 
-        <img src="/images/haxeflixel.svg" alt="" width="200">
+        <img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" width="135">
 
         </p>
 
-        <br/>
-
-        <a class="home-button" href="/documentation/about">Learn more</a>
-
-        <br/>
         <br/>
 
     </div>
@@ -191,28 +186,28 @@ title: 'Home'
 
 		<div class="carousel-inner">
 
-			<div class="item">
-				<h4>Paul Gene Thompson ‏@PaulGene</h4>
-				<blockquote>Need to say a big thanks to all the #haxeflixel team. specialty @teormech.
-					Also you all need to try #haxeflixel its the dogs dangly bits.</blockquote>
-			</div>
-
-			<div class="item">
-				<h4>Adam Atomic ‏@ADAMATOMIC</h4>
-				<blockquote>just a quick reminder that there’s a totally crazy magical free open source > crossplatform version of Flixel out there http://www.haxeflixel.com</blockquote>
-			</div>
-
-			<div class="item">
-				<h4>Alkyon Studios ‏@Alkyon_Studios</h4>
-				<blockquote>@HaxeFlixel is great for multiplatform indie games (#Flash, #iOS, #Android, > #HTML5...). Very glad to have chosen it for our current project.</blockquote>
-			</div>
-
 			<div class="item active">
-				<h4>Victor Grunn ‏@VictorGrunns</h4>
-				<blockquote>@HaxeFlixel This program was the reason I took up Haxe, and I'm glad I did. It's nice to see Flixel rocketing ahead with development.</blockquote>
+				<blockquote class="twitter-tweet" lang="en"><p>just a quick reminder that there’s a totally crazy magical free open source crossplatform version of Flixel out there <a href="http://t.co/btks480iBI">http://t.co/btks480iBI</a></p>&mdash; Adam (@ADAMATOMIC) <a href="https://twitter.com/ADAMATOMIC/statuses/359773481937813504">23. Juli 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+			
+			<div class="item">
+				<blockquote class="twitter-tweet" lang="en"><p>Need to say a big thanks to all the <a href="https://twitter.com/search?q=%23haxeflixel&amp;src=hash">#haxeflixel</a> team.. specialty <a href="https://twitter.com/teormech">@teormech</a>. Also you all need to try <a href="https://twitter.com/search?q=%23haxeflixel&amp;src=hash">#haxeflixel</a> its the dogs dangly bits.</p>&mdash; Paul Gene Thompson (@PaulGene) <a href="https://twitter.com/PaulGene/statuses/366988372893368320">12. August 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 
+			<div class="item">
+				<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/HaxeFlixel">@HaxeFlixel</a> is great for multiplatform indie games (<a href="https://twitter.com/search?q=%23Flash&amp;src=hash">#Flash</a>, <a href="https://twitter.com/search?q=%23iOS&amp;src=hash">#iOS</a>, <a href="https://twitter.com/search?q=%23Android&amp;src=hash">#Android</a>, <a href="https://twitter.com/search?q=%23HTML5&amp;src=hash">#HTML5</a>...). Very glad to have chosen it for our current project.</p>&mdash; Alkyon Studios (@Alkyon_Studios) <a href="https://twitter.com/Alkyon_Studios/statuses/365746659155640320">9. August 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+
+			<div class="item">
+				<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/HaxeFlixel">@HaxeFlixel</a> This program was the reason I took up Haxe, and I&#39;m glad I did. It&#39;s nice to see Flixel rocketing ahead with development.</p>&mdash; Victor Grunn (@VictorGrunn) <a href="https://twitter.com/VictorGrunn/statuses/363561387181608960">3. August 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+			
+			<div class="item">
+				<blockquote class="twitter-tweet" lang="en"><p>Wow, HaxeFlixel website is really outstanding now: <a href="http://t.co/EdD138ZOza">http://t.co/EdD138ZOza</a></p>&mdash; Philippe Elsass (@elsassph) <a href="https://twitter.com/elsassph/statuses/361217005887557632">27. Juli 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+			
 		</div>
+		
 		<a class="left carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="prev">
 			<span class="icon-prev tweet-prev"></span>
 		</a>
@@ -220,6 +215,5 @@ title: 'Home'
 			<span class="icon-next tweet-next"></span>
 		</a>
 	</div>
-
 
 </div>
