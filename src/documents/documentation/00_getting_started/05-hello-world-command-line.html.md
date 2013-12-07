@@ -35,7 +35,7 @@ You will now see a new Hello World folder with all the files for your project cr
 
 #### Add the Hello World FlxText
 
-Adding the text as as simple as opening the MenuState.hx file in the newly created source folder.
+Adding the text is as simple as opening the MenuState.hx file in the newly created source folder.
 
 The file will look like this:
 
