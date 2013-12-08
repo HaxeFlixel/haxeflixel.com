@@ -22,10 +22,6 @@ If you are planning to use linux:
 
 - [Review or use our installer script]()
 
-With a working installation you can now:
-
-- [Compile Hello World](/documentation/compile-hello-world)
-
 ----
 
 Time to complete this installation is close to 20 minutes, mostly due to downloading the components.
