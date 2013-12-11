@@ -2,7 +2,7 @@
 title: "FlxNapeDemo"
 layout: demo
 pageOrder: 1
-thumb: "FlxNapeDemo.png"
+thumb: "FlxNapeDemo.jpg"
 swf: "FlxNapeDemo.swf"
 SWFHeight: 480
 SWFWidth: 640

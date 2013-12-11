@@ -2,7 +2,7 @@
 title: "FlxCameraDemo"
 layout: demo
 pageOrder: 1
-thumb: "FlxCameraDemo.png"
+thumb: "FlxCameraDemo.jpg"
 swf: "FlxCameraDemo.swf"
 SWFHeight: 480
 SWFWidth: 640
