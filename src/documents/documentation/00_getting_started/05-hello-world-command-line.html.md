@@ -21,6 +21,8 @@ Setup the tools so that it can download dependencies for the commands and set yo
 haxelib run flixel-tools setup
 ```
 
+You need to have a working installation of [git](http://git-scm.com/) to generate templates or demos, since flixel-tools uses the haxelib git command to download [flixel-templates](https://github.com/HaxeFlixel/flixel-templates) and [flixel-demos](https://github.com/HaxeFlixel/flixel-demos). Be sure to choose the *Run Git from the Command Prompt* option because the git command needs to be available in the console.
+
 #### Create a new HaxeFlixel Project Template
 
 HaxeFlixel requires a basic structure of files for any project that you can automatically create with a simple command. To see the parameters of this command type;
