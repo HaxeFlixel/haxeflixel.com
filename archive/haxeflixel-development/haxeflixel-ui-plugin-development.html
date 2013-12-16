@@ -1,0 +1,2213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<!--
+ __  __     ______     __  __     ______     ______   __         __     __  __     ______     __
+/\ \_\ \   /\  __ \   /\_\_\_\   /\  ___\   /\  ___\ /\ \       /\ \   /\_\_\_\   /\  ___\   /\ \
+\ \  __ \  \ \  __ \  \/_/\_\/_  \ \  __\   \ \  __\ \ \ \____  \ \ \  \/_/\_\/_  \ \  __\   \ \ \____
+ \ \_\ \_\  \ \_\ \_\   /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\   /\_\/\_\  \ \_____\  \ \_____\
+  \/_/\/_/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/   \/_/\/_/   \/_____/   \/_____/
+
+0.2.1 bootstrap
+-->
+
+<html class="cssgradients" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+
+<!-- Mirrored from 10.211.55.13/haxeflixel-development/haxeflixel-ui-plugin-development by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="haxeflixel-ui-plugin-development.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortlink" href="http://10.211.55.13/node/224" />
+    <title>HaxeFlixel UI plugin development? | HaxeFlixel</title>
+    <link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_791YXBaKKm1ORM_7huSKEsIV9tSWq6wmRkERhuXpN6w.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_zHujuv7dvyvVeC2yIxRC-mNyBvEKEOO0ScWypJ-I-Mw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://10.211.55.13/sites/default/files/css/css_9rLhsDfWBDg6Xxfquvx2pTl-5xS8V2aWAGAgJJiO1LA.css" media="all" />
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+.panels-flexible-new .panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-new .panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-new-main {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-new-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-new {
+  width: auto;
+}
+
+.panels-flexible-region-new-center {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-new-main-row-inside {
+  padding-right: 0px;
+}
+
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_Lsj1hnFgUgcY_hv5ipXfmm5GWxFLNZGdCJOsxxBFxv0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="print" />
+    <style type="text/css">
+        body{
+            margin-top: 120px;
+        }
+
+        #archive-warning {
+            background: none repeat scroll 0 0 #000000;
+            color: #FFFFFF;
+            display: block;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+        #archive-warning h2 {
+            color: red;
+        }
+    </style>
+
+    <script type="text/javascript" src="../sites/default/files/js/js_0gj6QcpfRH2jzTbCQqf7kEkm4MXY0UA_sRhwPc8jC1o.js"></script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_KgCNQm_jdlbuilvxNQyCuzPIxbaHFd56Yhs0Gn31sJo.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_03PhocEaUymZGTRCa-nb226qVvl6eCiXz1vDVlRSXaw.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_DuCBxVBnmwlqi-FUiwD_uvjmLVBk6uphM_23_gbOteI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.absolute_messages, {"dismiss":{"status":false,"warning":false,"error":false},"dismiss_time":{"status":"","warning":"","error":""},"dismiss_all_count":2});
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_ZF6SOT9PTq0iEPo7-RfzYnr1x_D1rzKhlMMRiuLfQXE.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-35511281-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/default/files/js/js_uPcOSUjKf0Oc3qqo5JwAHcqGd498cAMC3xR3Hs-oqV8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"haxeflixel_bootstrap","theme_token":"ZkUnA8Ink2_N9Qsx5xBXMaX-XWlHS4DSaANDtEOpC20","js":{"sites\/all\/modules\/contrib\/syntaxhighlighter\/syntaxhighlighter.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shCore.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushAS3.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushBash.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushCpp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushHaxe.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJScript.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJava.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPhp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPlain.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushXml.js":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.js":1,"0":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/radix\/assets\/javascripts\/modernizr-2.6.1.min.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/radix-script.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/haxeflixel_core\/layouts.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.css":1,"sites\/all\/modules\/contrib\/ckeditor\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shCore.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shThemeRDark.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.structure.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.images.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"0":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/screen.css":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-print.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/print.css":1}},"quote_nest":"2","views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:e62ad390faaef91285c16882474b94b7":{"view_name":"similar_content","view_display_id":"default","view_args":"HaxeFlixel\/UI\/plugin\/development?","view_path":"node\/224","view_base_path":null,"view_dom_id":"e62ad390faaef91285c16882474b94b7","pager_element":"0"}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+    </script>
+    <![endif]-->
+</head>
+<body class="main-body">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div id="archive-warning">
+
+    <h3>We have moved to a <a href="http://www.haxeflixel.com/forum">new forum</a> :)</h3>
+
+    <p>You are viewing a read-only archive of the old forum. You can continue to post topics in the new <a href="http://www.haxeflixel.com/forum">forum here.</a></p>
+
+</div>
+
+<header id="header" class="header" role="header">
+    <div class="container">
+
+        <div class = "home-logo-button">
+            <a href = "../index.html">
+                <img src = "../sites/all/themes/haxeflixel_bootstrap/assets/images/haxeflixel-logo.png" alt = "HaxeFlixel"/>
+            </a>
+        </div>
+
+        <div id="navigation" class="navbar">
+            <div class="navbar-inner">
+                <div class="container clearfix">
+
+                    <a class="btn btn-navbar btn-navbar-menu" data-toggle="collapse" data-target=".nav-menu-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <a class="btn btn-navbar btn-navbar-search" data-toggle="collapse" data-target=".nav-search-collapse">
+                        <span class="icon-search"></span>
+                    </a>
+
+                    <div class="nav-collapse nav-menu-collapse">
+                        <div class="inner">
+                            <ul id="main-menu-user" class="menu nav">
+                <li class="first expanded dropdown open">
+                    <a title="" href="http://forum.haxeflixel.com/user/">
+                        <span>Login / Signup</span></span>
+                    </a>
+                </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/demos/">
+                    Demos
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/documentation">
+                    Documentation
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://forum.haxeflixel.com/">
+                    Forum
+                </a>
+            </li>
+
+            </ul>                        </div>
+                    </div>
+
+                    <div class="nav-collapse nav-search-collapse">
+                        <div class="inner">
+                                                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+</header>
+<div id="main-wrapper" class="container">
+    <div id="main" class="main-container-style">
+                    <div id="breadcrumb" class="">
+                <div class="">
+                    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="../forum.html"><span>Forums</span></a> » <a href="../haxeflixel-development.html"><span>HaxeFlixel Development</span></a></div>                </div>
+            </div>
+                        <div id="content">
+            <a id="main-content"></a>
+            <div id="page-header">
+                <div class="">
+                                                        </div>
+            </div>
+<div class="container">
+    <div class="forum-container">
+      <div class="panel-pane pane-node-title" >
+  
+      
+  
+  <div class="pane-content">
+    <h1>HaxeFlixel UI plugin development?</h1>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-forum-body-view" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="http://10.211.55.13/user/249"><span><img class="forum-created-avatar-img" src="../sites/default/files/styles/40px/public/avatars/thumb512_1d6a8.jpg?itok=R5Ud-2pm" width="40" height="40" alt="" />larsiusprime</a>, <i class="icon-time"></i>  10 months 2 weeks ago</span><div class="btn-group forum-top-buttons"></div><hr><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey guys, I had a random question...</p><p>&nbsp;</p><p>I feel like 90% of the work in my games is user interface design, and the only real thing that I feel like I'm missing from the old, slow-as-butt vanilla flash is the great UI stuff.&nbsp; Most flixel games are pretty action-oriented so the lack of a lot of nice user interface widgets isn't always a big deal. For me though, it's a gap in the framework and I figure this is a wheel we could all do without reinventing.</p><p>&nbsp;</p><p>So, when I start getting underway with Defender's Quest 2 I was thinking it might be smart to split off the user interface development as a new FlxPowerTools plugin?</p><p>&nbsp;</p><p>Has anything like this been done before beyond basic stuff like buttons?</p><p>&nbsp;</p><p>Here's what I'd like to cover:</p><p>&nbsp;</p><p>-xml-based layout system that lets you generate user-interfaces without having to hard-code and position everything</p><p>-radio buttons</p><p>-checkboxes</p><p>-input text fields</p><p>-scroll buttons / scroll bar</p><p>-(obviously everything should be skinnable)</p><p>-tooltips</p><p>-tab navigation</p><p>&nbsp;</p><p>I've implemented a bunch of this stuff in an okay-but-not-great way in Defender's Quest 1, but I would like to improve the quality. I don't have a lot of experience with working on collaborative projects and making code that's up to those kind of standards, so I'd love to swap notes and learn how to contribute and give back to a cool project like this and have everyone benefit from it.</p><p>&nbsp;</p><p>Would this be valuable to anyone?</p></div></div></div><br><div id="forum-comments" class="comment-wrapper">
+  <a id="comment-925"></a>
+<div class="forum-post clearfix en posted-by-295 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/gravatar_1.png?itok=hNm8st9Z" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/925#comment-925" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>There've been a few discussions on this on the forum, but no obvious "winner".... Here are some of the control packs that have been mentioned:</p><p>&nbsp;</p><p>YAHUI:</p><p><a href="https://github.com/ianharrigan/YAHUI">https://github.com/ianharrigan/YAHUI</a></p><p><a href="https://groups.google.com/forum/?fromgroups=#!topic/haxelang/RwaF0uQkgc4">https://groups.google.com/forum/?fromgroups=#!topic/haxelang/RwaF0uQkgc4</a></p><p>&nbsp;</p><p>StablexUI</p><p><a href="http://stablex.ru/">http://stablex.ru/</a></p><p>&nbsp;</p><p>asWing:</p><p><a style="font-size: 16px; text-align: inherit;" href="http://www.aswing.org/?p=405">http://www.aswing.org/?p=405</a></p><p style="font-size: 16px; text-align: left;"><a style="font-size: 16px; text-align: inherit;" href="http://www.aswing.org/?page_id=7">http://www.aswing.org/?page_id=7</a></p><p style="font-size: 16px; text-align: left;">&nbsp;</p><p style="font-size: 16px; text-align: left;">MinimalComponents</p><p style="text-align: left;"><a href="https://github.com/Beeblerox/MinimalCompsHX">https://github.com/Beeblerox/MinimalCompsHX</a></p><p style="text-align: left;">&nbsp;</p><p><span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">Omni Components, though the link I found for it appears to be dead:</span></p><p><a href="https://github.com/impaler/Omni-Components">https://github.com/impaler/Omni-Components</a></p><p>&nbsp;</p><p style="font-size: 16px; text-align: left;">and a discussion here:</p><p style="font-size: 16px; text-align: left;"><a href="http://www.haxeflixel.com/forum/general-discussion/best-controls-package-use-haxeflixel">http://www.haxeflixel.com/forum/general-discussion/best-controls-package...</a></p><p style="font-size: 16px; text-align: left;">&nbsp;</p><p style="font-size: 16px; text-align: left;">I personally like the look of YAHUI, and know that the author @ianharrigan is actively working on it:&nbsp;<span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">I haven't got it fully integrated with HaxeFlixel though.... I'm sure anything you've done would be a nice addition to the list as well. I'll try and post a sample of where I've got to with YAHUI sometime soon....</span></p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-926"></a>
+<div class="forum-post clearfix en posted-by-159 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/sinnus" title="View user profile." class="username"><span>sinnus</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatar_selection/mushroom.png?itok=2LMS5k1r" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/926#comment-926" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://www.haxeflixel.com/users/bradparks">bradparks</a>, do you know the way how to integrate NME UI libraries with HaxeFlixel? (I suppose the UI libraties uses Sprite &nbsp; class but HaxeFlixel draws directly on Sprite.)</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            Non compos mentis                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-927"></a>
+<div class="forum-post clearfix en posted-by-295 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/gravatar_1.png?itok=hNm8st9Z" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/927#comment-927" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>That's a part that I haven't worked out successfully.... Here's a discussion about this exact point:</p><p>&nbsp;</p><p><a href="http://www.haxeflixel.com/forum/help/add-sprite-flxstate">http://www.haxeflixel.com/forum/help/add-sprite-flxstate</a></p><p>&nbsp;</p><p>I just put a sample with the latest YAHUI and a HaxeFlixel demo here:</p><p>&nbsp;</p><p><a href="https://dl.dropbox.com/u/274922/yahui_haxe_flixel_test.zip">https://dl.dropbox.com/u/274922/yahui_haxe_flixel_test.zip</a></p><p>&nbsp;</p><p>It's really rough, and looks bad from a YAHUI perspective, but that's just me copying in the Yahui demo and seeing if I could get that running at all.</p><p>&nbsp;</p><p>The problem I'm having is that it seems that having YAHUI above the "game" doesn't allow the YAHUI stuff to get inputs.</p><p>&nbsp;</p><p>The demo here:</p><p>- is based off the "TileMapDemo" from HaxeFlixel</p><p>- only adds the Yahui stuff rignt now. Just uncomment this line in Main.hx and it'll add the TileMap stuff</p><p>&nbsp; &nbsp; &nbsp; //main.addChild(new TileMapDemo());</p><p>&nbsp;- Yahui is blocking the display of the TileMap stuff</p><p>- I changed the yahui/core/Screen.hx file, to return a sprite from the "initialize" method to try and get this to work. It's commented in the source.</p><p>- This copy of Yahui is from this morning (pulled this am)</p><p>&nbsp;</p><p>If anyone could get this working, I'd be super appreciative ;-)</p><p>&nbsp;</p><p>Thanks!</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-928"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/928#comment-928" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Cool! Thanks for that :)</p><p>&nbsp;</p><p>The only real benefit I think my stuff has is that it's already written in Flixel, albeit As3 flixel, and version 2.35 at that...</p><p>&nbsp;</p><p>If you want to see it in action, you can look at Defender's Quest here:</p><p><a href="http://www.defendersquest.com/play_demo.html">http://www.defendersquest.com/play_demo.html</a></p><p>&nbsp;</p><p>It's got basic stuff like radio buttons, checkmarks, tabs, text entry fields, and everything is tab-navigatable. &nbsp;It was just loose widgets though - I did everything the hard way with Defender's Quest 1 in as3, ie, all the actual layout, labeling, and callback setup is done by hard-coding, etc - kind of a mess.</p><p>&nbsp;</p><p>I've started building a newer, cleaner version in HaxeFlixel which will be part of my eventual port of the engine, that all starts with a "FlxUI" object, which builds off a flxgroup, and reads from an xml file to do the layout, and then lets you assign callbacks, etc, and instantiate any widgets you want. &nbsp;That way I can build-in things like tab-navigation and localization (including alt. translation labels as well as per-locale positioning of elements, because German Text Is Always Twice As Long(TM) )</p><p>&nbsp;</p><p>Anyone got a good link for how to get started with contributing to a github project? I've never done anything but clone other people's repositories, but I can throw up my WIP code just so you guys can see what I've got and tell me if there's anything you can use there, and/or integrate with stuff other people have done.&nbsp;</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-929"></a>
+<div class="forum-post clearfix en posted-by-294 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/prog4mr" title="View user profile." class="username"><span>ProG4mr</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatar_selection/mushroom.png?itok=2LMS5k1r" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/929#comment-929" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey, UI is a feature that is really missing in haxe + nme in my opinion.</p><p>&nbsp;</p><p>I think any effort in this area is more than welcome, not only for flixel but the whole haxe and nme platform.</p><p>&nbsp;</p><p>In my opinion aswing is simply the best UI out there, but the only problem is that the development stopped (or seems to have stopped) and new UI projects are starting because ppl feel its a too much complicated project.</p><p>&nbsp;</p><p>Have a look at the configuration possibilities of the aswing interface components:</p><p>&nbsp;</p><p><a href="https://www.dropbox.com/s/9m660244whugxxy/AsWingIntro_en.swf">https://www.dropbox.com/s/9m660244whugxxy/AsWingIntro_en.swf</a></p><p>&nbsp;</p><p>I would say it is almost perfect, its highly costumizable also, i have tested it on mobile android and it works great. it has a few issues for non flash platforms (frames drag, some text input isses etc..), i fixed some of them myself (tooltips for cpp) but then halted waiting to see what will be the next UI standart for haxe.</p><p>&nbsp;</p><p>I have been considering to fork aswing myself, but its quite a big move, and maybe someone else will come up with something better (aswing comes back, or YAUI gets as good as aswing), it looks like haxe will still miss a complete UI solution for a while tho.</p><p>&nbsp;</p><p>@sinnus you can call FlxG.stage.addChild(yourUISprite), you will maybe have some issues with input but those can be fixed.</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-930"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/930#comment-930" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Okay, wow, AsWing is pretty amazing.</p><p>&nbsp;</p><p>As for flixel though, how hard would it be to integrate something like AsWing? I'm assuming it's using the vector engine, so to get native flixel components out of it might be a bit challenging, right? I suppose you could just layer it on top of your flixel game, but that might suit everyone's needs.</p><p>&nbsp;</p><p>Thoughts?</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-931"></a>
+<div class="forum-post clearfix en posted-by-295 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/gravatar_1.png?itok=hNm8st9Z" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/931#comment-931" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>i'm not too familiar with it, but AsWing doesn't seem too skinnable, which I think is a big problem. I don't want my game's UI to look like Windows &nbsp;95 ;-) Are there any demos of drastically different skins anywhere? I'd love to see them!</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-950"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/950#comment-950" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@bradparks AsWing is entirely skinable since its based on a port of the very old Java Swing ui framework, look up the LAF classes "look and feel". Its really an impressive feat getting all that working in as3/haxe I have taken notes from its invalidation cycle to try and get a simpler version to my own.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-932"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/932#comment-932" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Well, in any case, regardless of what's the "best" solution, I'm committed to making a lightweight, heavily-skinnable, localizable, tab-navigatable, haxe-flixel-based UI for my own purposes, so I guess my question is a little narrower:</p><p>&nbsp;</p><p>1) Would this be of value to the Haxe/Flixel community?</p><p>2) If yes, what's the best way for me to get started? Just dump my stuff on GitHub and start posting about it?</p><p>3) Any major requests for stuff it should do?</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-933"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/933#comment-933" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Having a UI toolkit native to Flixel would be EXTREMELY VALUABLE. HaxeFlixel is looking to be a great engine to target mobile and in my opinion, the new "<a href="http://www.gamasutra.com/view/news/184465/2013_The_year_of_the_microconsole.php#.UQvpjL-9Z8E" target="_blank">microconsole</a>" markets (in adition to Flash and PC/Mac). Having a comprehensive UI solution based on bitmaps would be of great benefit to all. Having you spearhead the project would be fantastic, considering your experience building a complex UI for Defenders Quest.</p><p>&nbsp;</p><p>I recommend you download <a href="http://code.google.com/p/gitextensions/" target="_blank">GitExtensions </a>if you're on windows. It's the best GUI client for woking on git that I could find. You have two options regarding how to set up your git. You could clone <a href="https://github.com/Beeblerox/HaxeFlixel" target="_blank">Beeblerox's HaxeFlixel</a>&nbsp;and start making your changes there, using GitExtensions to commit and then push changes into your own clone of HaxeFlixel (and using pull requests to have Beeblerox integrate your changes into the main repo). The other option is to <a href="https://github.com/new" target="_blank">create a new repo</a> just for your plugin, and clone that repo directly into your a folder within the plugins directory of HaxeFlixel.&nbsp;</p><p>&nbsp;</p><p>Getting started with git is kind of ridiculous. There's a lot to get used to, but once you're going it's awesome and simple. I'm usually available on Skype (you can find my skypename on my user page), I will do my best to help you in any way I can.<span style="font-size: 16px;"><br /></span></p><p>&nbsp;</p><p>I think having a native&nbsp;<span style="font-size: 16px;">HaxeFlixel UI&nbsp;</span><span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">is the most powerful and flexible solution. Go for it!</span></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-934"></a>
+<div class="forum-post clearfix en posted-by-295 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/gravatar_1.png?itok=hNm8st9Z" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/934#comment-934" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>hey @<a class="username" style="font-size: 15.555556297302246px; line-height: 23.99305534362793px;" title="View user profile." href="http://haxeflixel.com/users/larsiusprime">larsiusprime</a>&nbsp;.... definitely put yours up in a git repo somewhere... I think it's totally worth pursuing, since it sounds like you've done alot of the work already.... I'm a git noob myself, and I'm on a mac, but need to start figuring out how to do things with it other than "fork".....</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-935"></a>
+<div class="forum-post clearfix en posted-by-190 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/tiago-ling-alexandre" title="View user profile." class="username"><span>Tiago Ling Alexandre</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatar_selection/alien-00.jpg?itok=nkzQLZzl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/935#comment-935" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I imagine a simple UI system for HaxeFlixel like this (would work with flash only, afaik):&nbsp;</p><p>&nbsp;</p><p>1. Load swf with sprites / movieclips (vectors);</p><p>2. Read xml to get names / positions / sizes / etc;</p><p>3. Adjust the sprites size, position, color, etc according to xml;</p><p>4. Bake the sprites into BitmapDatas and store them inside a class like FlxAssets or something;</p><p>5. Instantiate components directly without having to call loadGraphics;</p><p>&nbsp;</p><p>The user could use the standard style provided with flixel, or could pass a different xml through FlxPreloader to load his specific assets.&nbsp;</p><p>&nbsp;</p><p>This could effectively reduce the number of assets for a lot of things.</p><p>&nbsp;</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-936"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/936#comment-936" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Cool....I'll get started with that as soon as I clear this with my biz partner, I'm pretty sure he'll be up for it in any case.</p><p>&nbsp;</p><p>Is GitExtensions better than say, the GitHub app?</p><p>&nbsp;</p><p>EDIT: Anthony's cool with it, so as soon as I figure my way around Git I'll get started with this. Thanks all!</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-937"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/937#comment-937" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@<a class="username" style="font-size: 16px; line-height: 24px; color: #24b226;" title="View user profile." href="http://haxeflixel.com/users/tiago-ling-alexandre">Tiago Ling</a>: I think doing anything with .swf &nbsp;files is a bad idea, since that's not supported by cpp targets as far as I know.</p><p>&nbsp;</p><p>@<a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://haxeflixel.com/users/larsiusprime">larsiusprime</a>:&nbsp;<span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">"</span><span style="font-size: 16px;">Is GitExtensions better than say, the GitHub app?"</span></p><p><span style="font-size: 16px;">&gt;&gt; I found the GitHub app to be awefully pretty and completely unusable. It wasn't easy to change the location of my cloned repos, and the UI is super custom, it looks nothing like a normal windows app, which really put me off. That was my experience though, maybe it'll be better for you, give it a shot!</span></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-938"></a>
+<div class="forum-post clearfix en posted-by-159 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/sinnus" title="View user profile." class="username"><span>sinnus</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatar_selection/mushroom.png?itok=2LMS5k1r" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/938#comment-938" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I agree with&nbsp;<a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://www.haxeflixel.com/users/crazysam">crazysam</a>. Flash only approach is not good because many people choose Haxe NME and HaxeFlixel because of iOS/Android platforms. It's a big power of Haxe NME.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            Non compos mentis                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-939"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/939#comment-939" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Alright, installing GitExtensions now, I'll give that a shot as the GitHub app was a bit confusing to me.&nbsp;</p><p>&nbsp;</p><p>@crazysam - just sent you a contact request on Skype.</p><p>&nbsp;</p><p>I'll get this up in the next few days :) So far I've got only a bit of it ported to haxe already but I'll start with a simple layout system and buttons and we'll build from there. &nbsp;Once I've got it up we'll talk about architecture and general design decisions before I plunge too far into it?&nbsp;</p><p>&nbsp;</p><p>Additionally, I'll dump all my old as3-flixel loose widgets in their own folder with a cheap demo as raw source material to look at.&nbsp;</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-940"></a>
+<div class="forum-post clearfix en posted-by-295 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/gravatar_1.png?itok=hNm8st9Z" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/940#comment-940" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>i've got no clue as to how good it really works, but SWF's for visuals can be done in NME:</p><p>&nbsp;</p><p><a href="http://www.joshuagranick.com/blog/2012/01/24/embedding-swfs-makes-nme-meme-friendly/">http://www.joshuagranick.com/blog/2012/01/24/embedding-swfs-makes-nme-me...</a></p><p>&nbsp;</p><p>I don't think any code bindings (like click events or anything) can be used with them, but that cat animation is all SWF and works in C++ targets too!</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-941"></a>
+<div class="forum-post clearfix en posted-by-190 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/tiago-ling-alexandre" title="View user profile." class="username"><span>Tiago Ling Alexandre</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatar_selection/alien-00.jpg?itok=nkzQLZzl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/941#comment-941" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@bradparks,</p><p>&nbsp;</p><p>I thought of swf for just one reason: the ability to scale and change your assets without reducing image quality (since vector graphics are just a bunch of coordinates). This way, you could use a base button, a base window, etc, instead of having many of the same asset in many different sizes. Once the swf is loaded at runtime, the UI plugin could scale &nbsp;it / change color / etc and then call BitmapData.draw to flatten it into a a bitmap which could be used by Flixel.</p><p>&nbsp;</p><p>In this case, the swf would be used just to encapsulate the DisplayObjects (vectors). If NME is really capable of dealing with vectors in C++ it would be great, in fact, it would be one of the best news for me.</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-942"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/942#comment-942" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@Tiago :</p><p>&nbsp;</p><p>If the above example works as advertised, there's no reason this couldn't be built into the asset pipeline of an otherwise bitmap-focused Haxe/Flixel UI library. Although complicated SWF stuff (animations, effects) would be hard to support, basic vector-y assets would be nice, especially for variable sized things (buttons, chrome, etc).&nbsp;</p><p>&nbsp;</p><p>SVG support would also be handy :D</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-943"></a>
+<div class="forum-post clearfix en posted-by-273 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/realyuniquename" title="View user profile." class="username"><span>RealyUniqueName</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/catinfrared_1.jpg?itok=w6lc12YD" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/943#comment-943" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey, everyone.</p><p>&nbsp;</p><p>I'm working on StablexUI and it covers everything listed in first post of the thread (except scroll bars, wich i'm going to implement next week).</p><p>&nbsp;</p><p>I think it can be easily integrated with HaxeFlixel, because StablexUI widgets can be attached to any nme.display.DisplayobjectContainer instance (Sprites, MovieClips, Stage).</p><p>I am not familiar with flixel yet, but i've heard flixel is using sprite to render graphics. So i think it's even possible to make flixel render to StablexUI widget.</p><p>You can access any gui component by it's ID (and several other ways), you can also write handlers with haxe right in xml to separate gui logic from game logic.</p><p>&nbsp;</p><p>Feel free to ask any question if interested.</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-944"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/944#comment-944" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@RealyUniqueName:</p><p>&nbsp;</p><p>Flixel basically overrides the central flash rendering loop with its own, using a single BitmapData to draw to at runtime based on its own internal logic and special object types, so this is the chief challenge, and the reason most UI libraries aren't easily compatibile with it. &nbsp;</p><p>&nbsp;</p><p>That said, a lot of flixel components are built on top of native flash ones, like TextField (with per-target abstractions for non-flash targets).</p><p>&nbsp;</p><p>Do you have a link to your library?</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-945"></a>
+<div class="forum-post clearfix en posted-by-273 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/realyuniquename" title="View user profile." class="username"><span>RealyUniqueName</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/catinfrared_1.jpg?itok=w6lc12YD" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/945#comment-945" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><a href="https://github.com/RealyUniqueName/StablexUI">https://github.com/RealyUniqueName/StablexUI</a></p><p>&nbsp;</p><p>Can you point me to file(s) &nbsp;in flixel wich handle render loop?</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-946"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/946#comment-946" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Here you go:</p><p><a href="https://github.com/Beeblerox/HaxeFlixel/blob/flixelNME/src/org/flixel/FlxGame.hx">https://github.com/Beeblerox/HaxeFlixel/blob/flixelNME/src/org/flixel/Fl...</a></p><p>&nbsp;</p><p>Look up the draw() function</p><p>&nbsp;</p><p>Here's the implementation for one of the core objects, FlxSprite:</p><p><a href="https://github.com/Beeblerox/HaxeFlixel/blob/flixelNME/src/org/flixel/FlxSprite.hx">https://github.com/Beeblerox/HaxeFlixel/blob/flixelNME/src/org/flixel/Fl...</a></p><p>&nbsp;</p><p>Everything boils down to drawing to a single bitmapdata framebuffer.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-947"></a>
+<div class="forum-post clearfix en posted-by-273 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/realyuniquename" title="View user profile." class="username"><span>RealyUniqueName</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/catinfrared_1.jpg?itok=w6lc12YD" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/947#comment-947" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Here is screenshot with Flixel "Hello world" project with integrated StablexUI for cpp/neko target (propgress bar, button and tooltip):&nbsp;<a style="font-size: 16px;" href="http://stablex.ru/ui/demo/Flixel_StablexUI.jpg">http://stablex.ru/ui/demo/Flixel_StablexUI.jpg</a></p><p>"Hello world" project was taken here:&nbsp;<a style="font-size: 16px;" href="http://www.haxeflixel.com/articles/getting-started">http://www.haxeflixel.com/articles/getting-started</a></p><p>&nbsp;</p><p>Here is little "how to":</p><p>Create "hello world" project. Open Main.hx and find following lines:</p>var demo:FlxGame = new ProjectClass();
+addChild(demo);
+<p>&nbsp;</p><p>Replace it with:</p>var demo:FlxGame = new ProjectClass();
+
+demo.addEventListener(Event.ADDED_TO_STAGE, function(e:Event){
+    UIBuilder.init();
+    Lib.current.stage.addChild( UIBuilder.buildFn('ui.xml')() );
+});
+
+addChild(demo);
+<p>&nbsp;</p><p>That is all )</p><p>&nbsp;</p><p>The only wierd-looking thing is a flixel cursor. It is moving under StablexUI components )</p><p>&nbsp;</p><p>I have issues with haxe compiler on my system, so it is possible that flash example won't work in Chrome browser (it is not Flixel or StablexUI related):&nbsp;<a style="font-size: 16px; text-align: inherit;" href="http://stablex.ru/hello_world.swf">http://stablex.ru/hello_world.swf</a></p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-949"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/949#comment-949" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@<a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://www.haxeflixel.com/users/realyuniquename">RealyUniqueName</a>&nbsp;<span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">Its not weird at all that the Flixel cursor is moving under it.&nbsp;</span><span style="font-size: 16px; text-align: inherit;">Flixel is rendering it inside itself and the components sprite is on top. You need to disable the Flixel cursor and write your own.</span></p><p>&nbsp;</p><p>Flixel does not use any of the native as3 cursor api and in nme cpp there is no such native support.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-948"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/948#comment-948" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@<a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://haxeflixel.com/users/larsiusprime">larsiusprime</a>&nbsp;<span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">Fanastic if you can share your work</span><span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">, I think github is like the facebook of online colaborative vcs, its not that there arent alternatives that are free and opensource&nbsp;<a href="http://www.gitlabhq.com/">http://www.gitlabhq.com/</a>, its just that its where everyone is and their hosting is pretty reliable considering their scale. You can also host free private and public repos on bitbucket.org.</span></p><p>&nbsp;</p><p>I am curious about any limitations/difficulties you found with&nbsp;<span style="font-size: 16px;">Defender's Quest ui or are you just wanting to improve your codebase generally. I have found complex ui is very hard to get the subtle things right and it takes time.&nbsp;</span><span style="font-size: 16px;">At present developers are creating their own gui's as they go, so a few gui framework choices would be nice. I doubt one could cater for every requirement and use case.</span><span style="font-size: 16px;">&nbsp;</span></p><p>&nbsp;</p><p><span style="font-size: 16px;">The only thing I worry about&nbsp;</span><span style="font-size: 16px;">a flixel based ui is an</span><span style="font-size: 16px;">&nbsp;overhead for things like complicated scrollcontainers etc and I am not sure how you would do a scrollrect for that matter, maybe have to use cameras ???. We need scrollcontainers with many people wanting their flixel games on mobile.&nbsp;</span></p><p>&nbsp;</p><p><span style="font-size: 16px;">On thatnote if anyone doing mobile wants a native approach and has some java/objective-c skills help out&nbsp;<a href="https://github.com/Randonee/Basis">https://github.com/Randonee/Basis</a> get native ui for haxe. I prefer however a more flexible theme system for games etc.</span></p><p>&nbsp;</p><p>I am personally working on a more broader ui set that I want to use to make apps and games with. So I am using the classic nme.display.Sprite and drawing on it through an abstracted drawing interface class.&nbsp;<span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">I'll commit my refactor of it soon and show it off with a post probably next week.&nbsp;</span><span style="font-size: 16px; text-align: inherit;">Its bascically a much improved&nbsp;<a href="https://github.com/impaler/As3-Bloom">https://github.com/impaler/As3-Bloom</a> that Xin and I worked on.</span></p><p>&nbsp;</p><p>&nbsp;</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-951"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/951#comment-951" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey guys! It's ready!</p><p>&nbsp;</p><p><a href="https://github.com/larsiusprime/haxe-flx-ui">https://github.com/larsiusprime/haxe-flx-ui</a></p><p>&nbsp;</p><p>To test it out - clone the repository to somewhere on your computer, then you'll need to supply it with a flixel library at the top level of the cloned directory, named "flixel."&nbsp;</p><p>&nbsp;</p><p>The project is already set up to compile a basic example with at title screen and cheap mockup of a save slot screen. I'm using freely licensed fonts, sprites from opengameart.org, and my own cheapo assets I'm dedicating to the public domain.&nbsp;</p><p>&nbsp;</p><p>All layout is currently xml based, and I'll be interested in discussions about what you guys think of this format. I have a lot of widgets that still need to be ported over from Defender's Quest's AS3 codebase, so it's mostly just buttons, sprites, and layout code for now, though it should soon be able to support a lot more than that.&nbsp;</p><p>&nbsp;</p><p>Let me know what you think!</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-952"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/952#comment-952" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@<a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://haxeflixel.com/users/larsiusprime">larsiusprime</a>&nbsp;thanks man it compiles without error on windows cpp and flash, someone could get it working on neko with a little work. One general idea for doing ui on multiple targets is some scale-9 slice scaling, so you could precache(important for cpu constrained mobile cpp targets) the bitmaps to the screensize before the game starts and draw from there. I am using these classes for my own gui wip <a href="https://github.com/impaler/Omni-Components/blob/dev/source/omni/components/utils/BitmapScaleSliceUtil.hx">https://github.com/impaler/Omni-Components/blob/dev/source/omni/componen...</a>.</p><p>&nbsp;</p><p>As for xml formats I prefer to work with simple classes, its why I always avoided flex like the plauge :/ I plan to expand the basic idea of&nbsp;<a href="http://blog.soulwire.co.uk/code/actionscript-3/simple-flash-prototype-gui-tool">http://blog.soulwire.co.uk/code/actionscript-3/simple-flash-prototype-gu...</a> for my components. But thats just a choice like someones favourite color, cheers&nbsp;<img title="Laughing" src="http://haxeflixel.com/sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif" alt="Laughing" border="0" /></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-953"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/953#comment-953" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey thanks!</p><p>&nbsp;</p><p>Yeah, 9-slice scaling is a big priority, something I want to get in pretty early, that could save us a lot of time. I wonder if performance-wise there it's best to do something like the FlxTileBlocks where it just caches a minimal amount of graphic and then blits it at runtime, or cache the final state of the scaled element? Any advice there?</p><p>&nbsp;</p><p>As for data format, there's no reason this can't be set up so you can just generate stuff at runtime, the real advantage of a data-based format is that it will let non-programmers and dedicated UI designers make stuff, especially if we can build an "in-flixel" editor for it, that can import/export to data in real time. Ideally this should support both xml and JSON, I'll investigate if there's any limitation in supporting both.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-954"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/954#comment-954" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Yes thats what my classes do, you could do similar with FlxTileBlock, although I think one FlxSprite with the correct bitmapdata to draw would be less complicated. All of this bitmap drawing and number of objects becomes an issue for mobile.</p><p>&nbsp;</p><p>So since your ui library is flixel based you could make use of Beeblerox's automatic&nbsp;<span style="font-size: 16px;">texture atlas'. So with the result of bitmaps from the scaling with the classes I linked to you can generate a spritesheet for the ui. So ideally when your app starts it could find out the screen resolution etc and automatically create texture atlas' from that. I dont think anyone does this yet it would be awesome.</span></p><p>&nbsp;</p><p><span style="font-size: 16px;">Cool about an&nbsp;</span><span style="font-size: 16px;">"in-flixel" editor, yes I know some designers prefer xml what a shame&nbsp;<img title="Tongue Out" src="http://haxeflixel.com/sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif" alt="Tongue Out" border="0" /></span><span style="font-size: 16px;"><br /></span></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-955"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/955#comment-955" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>maybe I'll port 9-slice component from <a href="http://forums.flixel.org/index.php/topic,3358.msg19864.html#msg19864">here </a>this weekend.</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-956"></a>
+<div class="forum-post clearfix en posted-by-295 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/gravatar_1.png?itok=hNm8st9Z" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/956#comment-956" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>hey! I know YAHUI has 9 slice stuff in it.... it's MIT and it's here (<span style="font-size: 12.222222328186035px; background-color: #ffffcc; color: #990000; white-space: pre;">paintScale9)</span></p><p>&nbsp;</p><p><a href="https://github.com/ianharrigan/YAHUI/blob/master/src/yahui/style/StyleHelper.hx#L45">https://github.com/ianharrigan/YAHUI/blob/master/src/yahui/style/StyleHe...</a></p><p>&nbsp;</p><p>&nbsp;</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-957"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/957#comment-957" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Either of these solutions would be great. &nbsp;Once we have a 9-slice scaling FlxWhatever, then it will be pretty easy to start whipping up re-sizable chrome elements and so forth. &nbsp;</p><p>&nbsp;</p><p>Any other votes on whether it's best to cache the resultant scaled image after the 9-slice scaling?</p><p>&nbsp;</p><p>Also - another thought: from the looks of it, both of these classes implement scaling for the interior pieces (top, bottom, sides), which will work fine for smooth and untextured UI elements, but as pixel art stuff often has texture to it, it might be smart to add an optional parameter to our eventual implementation that makes the interior pieces tile instead of scale to preserve that integrity. T<span style="font-size: 16px; line-height: 1.3em; text-align: inherit;">o avoid noisy repetition, the artist could supply an oversized original asset, so that it just crops the interior pieces for smaller widgets and tiles for bigger ones.</span></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-958"></a>
+<div class="forum-post clearfix en posted-by-292 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/zzzzzzerg" title="View user profile." class="username"><span>zzzzzzerg</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/a1c799903e10a1a53b2d419a00c48622_1.png?itok=z6ISN8Z3" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/958#comment-958" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Maybe I'm not very carefully read all this topic and maybe HaxeFlixel have this feature, but I don't find a way to do sprite clipping that will be strictly required for properly implement scroll view, tables etc.</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-959"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/959#comment-959" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@<span class="username">zzzzzzerg this can be done for flash target, but impossible (or very-very hard to achieve) on other<br /></span></p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-961"></a>
+<div class="forum-post clearfix en posted-by-292 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/zzzzzzerg" title="View user profile." class="username"><span>zzzzzzerg</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/a1c799903e10a1a53b2d419a00c48622_1.png?itok=z6ISN8Z3" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/961#comment-961" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Cameras don't use such technique for clipping views?</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-964"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/964#comment-964" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>cameras and flxsprites works in very different ways, and yes you can use cameras for clipping but it would be very limited solution</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div></div><a id="comment-960"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/960#comment-960" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Here's what I'm thinking:</p><p>&nbsp;</p><p>My current implementation uses an extension of FlxGroup called FlxGroupX, which basically allows you to move the whole group around as a unit without having to call reset(). In the as3 legacy code I'm porting from, FlxGroupX also has the ability to cache the entire contents as a single composited bitmap and render that instead of the individual members, so that you can apply transparency to the group and get a composited image with 50% transparency, rather than 50% chrome on top of 50% transparent buttons, etc.&nbsp;</p><p>&nbsp;</p><p>Of course, I might be doing things completely wrong here XD, so please let me know.&nbsp;</p><p>&nbsp;</p><p>If I port that functionality over, a thing I could do for scroll panes could make use of that: the scroll pane would have a FlxGroupX as its content, and it could use specific rendering code to only draw the portion in focus. &nbsp;Special care would have to be taken to properly "dirty" and "refresh" the FlxGroupX so that buttons, etc, would update and draw properly.&nbsp;</p><p>&nbsp;</p><p>As an optimization, whatever solution is used, bounds checks could turn visibility on/off for the scroll content group members that are out of visible range.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-962"></a>
+<div class="forum-post clearfix en posted-by-294 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/prog4mr" title="View user profile." class="username"><span>ProG4mr</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatar_selection/mushroom.png?itok=2LMS5k1r" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/962#comment-962" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey, i just want to say that supporting an independent / dedicated UI project may be a good idea, because:</p><p>&nbsp;</p><p>- It may have applications besides flixel + games.</p><p>- Its better for the haxe language/community in general.</p><p>- The existing UI project may already have a good structure, and now needs improments and features.</p><p>- Its <strong>a lot easier</strong> to use the mouse features of nme Sprites than of FlxSprites.</p><p>- Its easier to manage and work more efficiently for it.&nbsp;</p><p>- Its more likelly to end up having better quality.</p><p>- Its more useful to help growing a single unified project than reinventing the wheel.</p><p>&nbsp;</p><p>With that said StableX may be a good choice from what i have seen:</p><p>&nbsp;</p><p>- It has a simple yet effective structure.</p><p>- More components with new behaviors can be added with ease.</p><p>- It has very good xml support.</p><p>- Component skins support both vector and raster images.</p><p>- Already has basic components.</p><p>- Its focused on compatibility with other targets (html5, cpp etc..).</p><p>&nbsp;</p><p>I havent looked deeply into the source code, but i was surprised with the simple idea of it, tho some parts can be improved to be more easy / intuitive to use, i think it provides a good base that can be improved and scaled a lot in the future.&nbsp;</p><p>&nbsp;</p><p>Btw it is really easy to include a UI like StableX in flixel, it is encapsulated inside a Sprite, and it has got no dependencies on other components and has no strange runtime requirements, a simple solution is adding it to the stage :</p><p>stage.add(stablexSprite) and then send and listen events to and from stage to make the two libs communicate.</p><p>&nbsp;</p><p>Peace,&nbsp;</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-967"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/967#comment-967" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@<a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://haxeflixel.com/users/prog4mr">ProG4mr</a>&nbsp;your points are mostly what I am thinking and is why I will continue to make my own non flixel components.&nbsp;<span style="font-size: 16px;">StableX</span><span style="font-size: 16px;">&nbsp;has some steady quality work I am just bias to wanting a different structure and style system. Ideally too drawTiles support should be around for nme components to work on mobile which I have started playing with.&nbsp;</span></p><p>&nbsp;</p><p><span style="font-size: 16px;">There are now even a couple more nme UI projects I have seen being worked on around the place, I wouldnt say any of them are feature complete or tested enough to be considered production quality yet. Maybe in a few months itll be closer, its going to be great change from having no UI frameworks for nme&nbsp;<img title="Laughing" src="http://haxeflixel.com/sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif" alt="Laughing" border="0" /></span></p><p>&nbsp;</p><p><span style="font-size: 16px;">@</span><a class="username" style="font-size: 16px; line-height: 24px;" title="View user profile." href="http://haxeflixel.com/users/larsiusprime">larsiusprime</a>&nbsp;I played Defender's quest the other day its quite an inspiration and addictive, all the best with your port. You should get great performance from native targets do you plan on doing desktop only?</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-963"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/963#comment-963" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@ProG4mer:</p><p>&nbsp;</p><p>I think your points are definitely valid!&nbsp;</p><p>&nbsp;</p><p>For the record, I don't see this as an either-or kind of thing - we can support more than one project here to meet everyone's uses.</p><p>&nbsp;</p><p>My project already exists, and I'm just going to work on it in the open rather than in the dark like I've been doing, and if anybody finds it useful, that's fine by me :) It's scope is limited, but I think there's a big enough niche case for it to be useful to certain Flixel users.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-965"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/965#comment-965" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I'm with Lars on this one. The strength of Flixel is its many components, addons, and utilities built by the community over many years. Not everything is gold with Flixel, but when it comes to getting you started with a simple game there's nothing quicker.</p><p>&nbsp;</p><p>A Flixel based UI solution that is skinnable would be an awesome addition to HaxeFlixel. In addition, a major feature like this could be a strong motivation for some of the guys in the <a href="http://forums.flixel.org/index.php/">Flixel.org forums</a> to admit that the pure actionscript version of Flixel is dead, and get some more people to join our community.</p><p>&nbsp;</p><p>HaxeFlixel is very strong at the moment because Beeblerox is a great programmer with crazy russian hacker skillz, and he's passionate about this project. But we need more people with the chops and motivation to extend HaxeFlixel and most importantly NME itself. Not sure recruiting people from the Flixel community would help us much in this regard, but growing our userbase won't hurt.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-966"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/966#comment-966" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Cool - so, I should be able to put some time in on this each week as it is directly related to me getting off my butt and starting on Defender's Quest II coding, so I have some procedural questions:</p><p>&nbsp;</p><p>1) Who's interested in working with me on this? (I'm okay with it just being me, but help would be nice :)&nbsp;</p><p>2) What's the best way to roadmap this? Talk about it here, set up a project management page? (I like pivotal tracker myself)</p><p>&nbsp;</p><p>My first focus will be to port all my Defender's Quest as3 widgets to the current scheme and get them basically functional. Once that is done, I will turn my attention to new elements such as chrome, more flexibile buttons/widgets (especially 9-slice-scale ones!), skinning, etc, as well as the layout system and hopefully an in-engine editor.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-968"></a>
+<div class="forum-post clearfix en posted-by-294 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/prog4mr" title="View user profile." class="username"><span>ProG4mr</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatar_selection/mushroom.png?itok=2LMS5k1r" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/968#comment-968" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Yes, im also waiting for a UI project to become the standart, doesent need to be mega complete, but i must be sure it is consistent enough for me to port any apps to use that UI. I checked YAHUI again today, it seems to be going a very good way also.&nbsp;</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-969"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/969#comment-969" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Okay, I just added support for 9-slice scaling.&nbsp;</p><p>&nbsp;</p><p>There's little visual change in the example project, but all chrome and button elements are now drawn with 9-slice scaling!&nbsp;</p><p>&nbsp;</p><p>I added Flx9SliceSprite, which is a simple FlxSprite descendant that wraps YAHUI's 9slice scaling code (I picked that b/c it had an explicit MIT license attached). Also, I added some more code to FlxUI to let it construct "chrome" elements (just simple Flx9SliceSprites) as well as load Flx9SliceSprites for buttons as well.</p><p>&nbsp;</p><p>Static button example:</p>&lt;definition id="big_button_blue" width="93" height="31" text_x="-2" text_y="0"&gt;
+	&lt;text id="hilight" use_def="sans14c"/&gt;
+	&lt;text id="normal" use_def="sans14c"/&gt;
+	&lt;graphic id="normal" image="ui/buttons/button_blue_up"/&gt;
+	&lt;graphic id="hilight" image="ui/buttons/button_blue_over"/&gt;
+&lt;/definition&gt;
+<p>&nbsp;</p><p>9-slice button example:</p>&lt;definition id="big_button_blue" width="93" height="31" text_x="-2" text_y="0"&gt;
+	&lt;text id="hilight" use_def="sans14c"/&gt;
+	&lt;text id="normal" use_def="sans14c"/&gt;
+	&lt;graphic id="normal" image="ui/buttons/blue" slice9="6,6,12,12"/&gt;
+	&lt;graphic id="hilight" image="ui/buttons/blue_over" slice9="6,6,12,12"/&gt;
+&lt;/definition&gt;
+<p>&nbsp;</p><p>So pretty simple stuff for now. Right now, each chrome element is it's own single png file, Ideally I'd like to set something up with spritesheets, so you could have all your chrome and buttons in one neatly-packed sheet, but I know there's a lot of stuff going on in the background with generating atlases and caching and stuff, so I decided for a simple implementation first and then I'll check with you guys so I don't double-cache or create extra work, etc.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-970"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/970#comment-970" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 5 days ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Today's latest commit adds optional support for tiling for the middle parts instead of scaling.</p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-971"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/971#comment-971" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 14 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Today's commit adds support for Checkboxes and Radio button groups.&nbsp;</p><p>&nbsp;</p><p>Should we move this thread into "Development" ?</p><p>&nbsp;</p><p><img style="vertical-align: middle;" src="http://www.files.fortressofdoors.com/images/flxui_test2.jpg" alt="CheckBoxes &amp; RadioGroups for Haxe-Flx-UI" width="600" height="450" /></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-972"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/972#comment-972" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        10 months 11 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Lookin good lars, I moved it to development and made it a sticky<em>.</em></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div><a id="comment-973"></a>
+<div class="forum-post clearfix en posted-by-249 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/thumb512_1.jpg?itok=-RzYubsl" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/973#comment-973" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        9 months 4 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Today's commit adds support for toggle-buttons and for tabbed menus.</p><p>&nbsp;</p><p>Toggle-buttons are simple two-state buttons. You create these out of two separate buttons - one for the pressed state, one for the unpressed state, so that you have as much visual control as possible. In the example project I use this to make the text move by one pixel vertically and horizontally when pushed "down."</p><p>&nbsp;</p><p>Tab menus are essentially a small window with a self-contained FlxUI within it. &nbsp;Interactivity/Visibility for each tab's contents is turned on/off based on which tab is currently selected - so no need to worry about clicking on invisible things in other tabs!</p><p>&nbsp;</p><p><img src="http://www.files.fortressofdoors.com/images/flxui_test3.jpg" alt="" width="600" height="450" /></p></div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>I guess <a href="http://www.defendersquest.com/">Defender's Quest</a> is kind of cool.</p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-974"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/974#comment-974" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        9 months 4 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Wow! Huge progress in a such small time!</p></div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="haxeflixel-ui-plugin-development2679.html?page=1">2</a></li>
+<li class="pager-next"><a title="Go to next page" href="haxeflixel-ui-plugin-development2679.html?page=1">next ›</a></li>
+<li class="pager-last last"><a title="Go to last page" href="haxeflixel-ui-plugin-development2679.html?page=1">last »</a></li>
+</ul></div>        </div>
+<hr><div class="login-btn-area"><a href="http://10.211.55.13/user/login?destination=node/224#comment-form" class="btn btn-info">Login to comment</a></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1" >
+  
+      
+  
+  <div class="pane-content">
+    <hr>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-similar-content-pane" >
+  
+        <h4 class="pane-title">Search results for HaxeFlixel UI plugin development?</h4>
+    
+  
+  <div class="pane-content">
+    <div class="view view-similar-content view-id-similar_content view-display-id-default view-dom-id-e62ad390faaef91285c16882474b94b7">
+        
+  
+  
+      <div class="view-content row-fluid">
+      <table class="table table-bordered views-table cols-2" >
+                <thead>
+        <tr>
+                            <th class="views-field views-field-title" >
+                    Title                </th>
+                            <th class="views-field views-field-type" >
+                    Type                </th>
+                    </tr>
+        </thead>
+        <tbody>
+            <tr class="odd views-row-first">
+                            <td class="views-field views-field-title" >
+                    <a href="../help/hidingblocking-flxbuttons-solved.html"><span>Hiding/Blocking FlxButtons? [solved]</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even">
+                            <td class="views-field views-field-title" >
+                    <a href="../general-discussion/rotated-pixel-perfect-collision.html"><span>Rotated pixel perfect collision?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="odd">
+                            <td class="views-field views-field-title" >
+                    <a href="../general-discussion/solved-using-flxtween-complete-functions.html"><span>[SOLVED] Using FlxTween Complete Functions?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even views-row-last">
+                            <td class="views-field views-field-title" >
+                    <a href="../general-discussion/solved-cross-platform-time-tracking.html"><span>[SOLVED] Cross-platform time tracking?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+        </tbody>
+</table>     </div>
+  
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="haxeflixel-ui-plugin-development2679.html?page=1">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="http://10.211.55.13/haxeflixel-development/haxeflixel-ui-plugin-development?page=2">3</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a href="haxeflixel-ui-plugin-development2679.html?page=1">›</a></li>
+<li class="pager-last last"><a href="http://10.211.55.13/haxeflixel-development/haxeflixel-ui-plugin-development?page=165">»</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<footer id="footer" class="footer-bg" role="footer">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <ul class="footer-menu">
+                    <li><a href="http://www.haxe.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/haxe-logo.png" width="26px"/></a></li>
+                    <li><a href="http://www.openfl.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/nme-logo.png" width="26px"/></a></li>
+                    <li><a href="http://haxeflixel.com/documentation/">Documentation</a></li>
+                    <li><a href="http://haxeflixel.com/demos/">Demos</a></li>
+                </ul>
+            </div>
+            <div class="span6">
+                <div class="footer-social-links">
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;"></iframe>
+
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;"></iframe>
+
+                    <iframe allowtransparency="true" frameborder="0" scrolling="no"
+                            src="http://platform.twitter.com/widgets/follow_button.html?screen_name=haxeflixel"
+                            style="width:230px; height:26px;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+</footer>  <script type="text/javascript" src="../sites/default/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+
+<div class="bg_highlight"></div>
+
+</body>
+
+
+<!-- Mirrored from 10.211.55.13/haxeflixel-development/haxeflixel-ui-plugin-development by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:40 GMT -->
+</html>

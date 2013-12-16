@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<!--
+ __  __     ______     __  __     ______     ______   __         __     __  __     ______     __
+/\ \_\ \   /\  __ \   /\_\_\_\   /\  ___\   /\  ___\ /\ \       /\ \   /\_\_\_\   /\  ___\   /\ \
+\ \  __ \  \ \  __ \  \/_/\_\/_  \ \  __\   \ \  __\ \ \ \____  \ \ \  \/_/\_\/_  \ \  __\   \ \ \____
+ \ \_\ \_\  \ \_\ \_\   /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\   /\_\/\_\  \ \_____\  \ \_____\
+  \/_/\/_/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/   \/_/\/_/   \/_____/   \/_____/
+
+0.2.1 bootstrap
+-->
+
+<html class="cssgradients" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+
+<!-- Mirrored from 10.211.55.13/general-discussion/flxgamepad-and-android-issues by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="flxgamepad-and-android-issues.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortlink" href="http://10.211.55.13/node/734" />
+    <title>FlxGamePad and Android Issues | HaxeFlixel</title>
+    <link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_791YXBaKKm1ORM_7huSKEsIV9tSWq6wmRkERhuXpN6w.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_zHujuv7dvyvVeC2yIxRC-mNyBvEKEOO0ScWypJ-I-Mw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://10.211.55.13/sites/default/files/css/css_9rLhsDfWBDg6Xxfquvx2pTl-5xS8V2aWAGAgJJiO1LA.css" media="all" />
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+.panels-flexible-new .panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-new .panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-new-main {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-new-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-new {
+  width: auto;
+}
+
+.panels-flexible-region-new-center {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-new-main-row-inside {
+  padding-right: 0px;
+}
+
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_Lsj1hnFgUgcY_hv5ipXfmm5GWxFLNZGdCJOsxxBFxv0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="print" />
+    <style type="text/css">
+        body{
+            margin-top: 120px;
+        }
+
+        #archive-warning {
+            background: none repeat scroll 0 0 #000000;
+            color: #FFFFFF;
+            display: block;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+        #archive-warning h2 {
+            color: red;
+        }
+    </style>
+
+    <script type="text/javascript" src="../sites/default/files/js/js_0gj6QcpfRH2jzTbCQqf7kEkm4MXY0UA_sRhwPc8jC1o.js"></script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_KgCNQm_jdlbuilvxNQyCuzPIxbaHFd56Yhs0Gn31sJo.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_03PhocEaUymZGTRCa-nb226qVvl6eCiXz1vDVlRSXaw.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_DuCBxVBnmwlqi-FUiwD_uvjmLVBk6uphM_23_gbOteI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.absolute_messages, {"dismiss":{"status":false,"warning":false,"error":false},"dismiss_time":{"status":"","warning":"","error":""},"dismiss_all_count":2});
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_ZF6SOT9PTq0iEPo7-RfzYnr1x_D1rzKhlMMRiuLfQXE.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-35511281-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/default/files/js/js_uPcOSUjKf0Oc3qqo5JwAHcqGd498cAMC3xR3Hs-oqV8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"haxeflixel_bootstrap","theme_token":"EPuIF15zGwH8CaXOD3LGptRjxpNQ2w0sQNgz8K0Vc9E","js":{"sites\/all\/modules\/contrib\/syntaxhighlighter\/syntaxhighlighter.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shCore.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushAS3.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushBash.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushCpp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushHaxe.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJScript.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJava.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPhp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPlain.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushXml.js":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.js":1,"0":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/radix\/assets\/javascripts\/modernizr-2.6.1.min.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/radix-script.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/haxeflixel_core\/layouts.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.css":1,"sites\/all\/modules\/contrib\/ckeditor\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shCore.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shThemeRDark.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.structure.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.images.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"0":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/screen.css":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-print.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/print.css":1}},"quote_nest":"2","views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:51e823ea40064b8988fdb80bfe7b61cb":{"view_name":"similar_content","view_display_id":"default","view_args":"FlxGamePad\/and\/Android\/Issues","view_path":"node\/734","view_base_path":null,"view_dom_id":"51e823ea40064b8988fdb80bfe7b61cb","pager_element":"0"}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+    </script>
+    <![endif]-->
+</head>
+<body class="main-body">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div id="archive-warning">
+
+    <h3>We have moved to a <a href="http://www.haxeflixel.com/forum">new forum</a> :)</h3>
+
+    <p>You are viewing a read-only archive of the old forum. You can continue to post topics in the new <a href="http://www.haxeflixel.com/forum">forum here.</a></p>
+
+</div>
+
+<header id="header" class="header" role="header">
+    <div class="container">
+
+        <div class = "home-logo-button">
+            <a href = "../index.html">
+                <img src = "../sites/all/themes/haxeflixel_bootstrap/assets/images/haxeflixel-logo.png" alt = "HaxeFlixel"/>
+            </a>
+        </div>
+
+        <div id="navigation" class="navbar">
+            <div class="navbar-inner">
+                <div class="container clearfix">
+
+                    <a class="btn btn-navbar btn-navbar-menu" data-toggle="collapse" data-target=".nav-menu-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <a class="btn btn-navbar btn-navbar-search" data-toggle="collapse" data-target=".nav-search-collapse">
+                        <span class="icon-search"></span>
+                    </a>
+
+                    <div class="nav-collapse nav-menu-collapse">
+                        <div class="inner">
+                            <ul id="main-menu-user" class="menu nav">
+                <li class="first expanded dropdown open">
+                    <a title="" href="http://forum.haxeflixel.com/user/">
+                        <span>Login / Signup</span></span>
+                    </a>
+                </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/demos/">
+                    Demos
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/documentation">
+                    Documentation
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://forum.haxeflixel.com/">
+                    Forum
+                </a>
+            </li>
+
+            </ul>                        </div>
+                    </div>
+
+                    <div class="nav-collapse nav-search-collapse">
+                        <div class="inner">
+                                                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+</header>
+<div id="main-wrapper" class="container">
+    <div id="main" class="main-container-style">
+                    <div id="breadcrumb" class="">
+                <div class="">
+                    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="../forum.html"><span>Forums</span></a> » <a href="../general-discussion.html"><span>General discussion</span></a></div>                </div>
+            </div>
+                        <div id="content">
+            <a id="main-content"></a>
+            <div id="page-header">
+                <div class="">
+                                                        </div>
+            </div>
+<div class="container">
+    <div class="forum-container">
+      <div class="panel-pane pane-node-title" >
+  
+      
+  
+  <div class="pane-content">
+    <h1>FlxGamePad and Android Issues</h1>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-forum-body-view" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="http://10.211.55.13/user/2804"><span>miserium</a>, <i class="icon-time"></i>  2 months 22 hours ago</span><div class="btn-group forum-top-buttons"></div><hr><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>I'm having issues with the FlxGamePad on Android. I don't believe it handles multi-touch correctly. If I use left, right, and A buttons, and I am holding down one of them, if I touch one of the other buttons, the original button I was holding is no longer considered pressed. So for example, hold down the Right key to run to the right, hit the A button to jump, and all of a sudden I'm not moving right anymore because the Right button has become un-pressed. I'd like to think it's me doing something wrong, because otherwise it makes the gamepad largely useless. Here's what I'm doing for input handling:</p>
+
+
+if (FlxG.keys.LEFT || FlxG.keys.A || this.pad.buttonLeft.status == FlxButton.PRESSED)
+{
+	//run left
+}
+
+if (FlxG.keys.RIGHT || FlxG.keys.D || this.pad.buttonRight.status == FlxButton.PRESSED)
+{
+	//run right
+}
+
+if ((FlxG.keys.justPressed("SPACE") || this.pad.buttonA.status == FlxButton.PRESSED) &amp;&amp; (player.isTouching(this.player.downDirection) || canDoubleJump))
+{				
+	//jump
+}
+
+if (FlxG.keys.justReleased("LEFT") || FlxG.keys.justReleased("A") || FlxG.keys.justReleased("RIGHT") || FlxG.keys.justReleased("D") || (this.pad.buttonLeft.status == FlxButton.NORMAL &amp;&amp; this.pad.buttonRight.status == FlxButton.NORMAL))
+{
+	//stop
+}
+
+<p>Is there anything I'm doing that's just not the right way of handling the input or does multi-touch really not work?</p>
+
+<p>Thanks!</p>
+</div></div></div><br><div id="forum-comments" class="comment-wrapper">
+  <a id="comment-3405"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3405#comment-3405" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 22 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Could you provide a working demo with multiple buttons we can tap at the same time and reproduce this issue? If you provide us with some code you'll get your issue fixed quicker.</p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3408"></a>
+<div class="forum-post clearfix en posted-by-2804 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/miserium" title="View user profile." class="username"><span>miserium</span></a><a href="http://10.211.55.13/user/0"></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3408#comment-3408" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 17 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Sure - here is about the simplest example I could put together:</p>
+
+<p><a href="http://www.newtzgames.com/files/test.zip">http://www.newtzgames.com/files/test.zip</a></p>
+
+<p>And here's the built APK:</p>
+
+<p><a href="http://www.newtzgames.com/files/gamepad-debug.apk">http://www.newtzgames.com/files/gamepad-debug.apk</a></p>
+
+<p>In the demo on an Android device, touch and hold down any button and the label will update to show its pressed status. While holding it down, tap anywhere else on the screen and you'll see the original button is no longer pressed (I actually didn't realize that touching anywhere on the screen caused this - I originally thought it was the act of touching a second button).</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3409"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3409#comment-3409" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 13 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>It appears you're using an outdated version of the engine which&nbsp;<span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">is no longer maintained (which means I can't test your project). Upgrading to the development version of the engine might be a bit of a pain in the butt right now, but it will be well worth it in the long run:&nbsp;</span><a href="https://github.com/HaxeFlixel/flixel#for-developers" style="font-style: normal; font-variant: normal; line-height: 30px; font-size: 17px;">How to use development version of the engine</a><span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">.</span></p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3411"></a>
+<div class="forum-post clearfix en posted-by-2804 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/miserium" title="View user profile." class="username"><span>miserium</span></a><a href="http://10.211.55.13/user/0"></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3411#comment-3411" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 11 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hmmm, so upgraded to git dev, but it looks like quite a bit has changed and it doesn't look like there is a project template included in the git version that you can run through haxelib to set up a project? I'm afraid my haxe xml file is probably incorrect now to begin with.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3412"></a>
+<div class="forum-post clearfix en posted-by-2804 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/miserium" title="View user profile." class="username"><span>miserium</span></a><a href="http://10.211.55.13/user/0"></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3412#comment-3412" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 10 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Well I got a lot farther by looking at the git flixel-templates repo, and I'm down to only one error left. I've modified my keypress checks to be like this (which I think is correct):</p>
+
+<p>&nbsp;</p>
+
+
+if (FlxG.keys.pressed().LEFT)
+{
+  ...
+}
+
+<p>&nbsp;</p>
+
+<p>But I get a compiler error saying:</p>
+
+
+source/com/newtzgames/gravity/controllers/PlayerController.hx:123: characters 7-24 : flixel.system.input.keyboard.FlxKeyList cannot be called
+
+<p>I don't have the code surrounded in any conditional compilations, so I don't know any other reason why it would be telling me it can't be called. What am I doing wrong?</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3413"></a>
+<div class="forum-post clearfix en posted-by-2804 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/miserium" title="View user profile." class="username"><span>miserium</span></a><a href="http://10.211.55.13/user/0"></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3413#comment-3413" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 9 hours ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Doh nevermind, I was accessing them like a function instead of a property. All better! Now back to trying out the touch input again.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3414"></a>
+<div class="forum-post clearfix en posted-by-2804 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/miserium" title="View user profile." class="username"><span>miserium</span></a><a href="http://10.211.55.13/user/0"></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3414#comment-3414" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        1 month 4 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>K the problem is still present in the newest version of the engine. Here's a new example and new apk:</p>
+
+<p><a href="http://www.newtzgames.com/files/gamepad.zip" style="font-style: normal; font-variant: normal; line-height: 30px; font-size: 17px;">http://www.newtzgames.com/files/gamepad.zip</a></p>
+
+<p><a href="http://www.newtzgames.com/files/gamepad-debug.apk" style="font-style: normal; font-variant: normal; line-height: 30px; font-size: 17px;">http://www.newtzgames.com/files/gamepad-debug.apk</a></p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3419"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3419#comment-3419" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        1 month 4 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Thanks for taking the time to do the upgrade and re-test the issue. I'll be looking into this issue in the next few days.</p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3441"></a>
+<div class="forum-post clearfix en posted-by-2804 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/miserium" title="View user profile." class="username"><span>miserium</span></a><a href="http://10.211.55.13/user/0"></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3441#comment-3441" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        1 month 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey Sam, I don't know if you've taken a look at this yet, but I spent a decent amount of time looking into it and I have a couple of observations:</p>
+
+<p>1. FlxTypedButton - There are issues in a few places in here because the touches don't take into consideration what touch ID the touch events are for. And because the update() method actually wires itself up for the TOUCH_END events (which I think is a mistake to do so since the FlxTouchManager already handles it), any touch end event will essentially trigger the onMouseUp method in FlxTypedButton of EVERY button, since they don't keep track of the touch point ID.</p>
+
+<p>2. FlxTouchManager - The handleTouchBegin method, when reusing a touch from the cache, doesn't update the touch position. As a result, if a touch was&nbsp;just released and very quickly another touch occurs at a different location, the new TouchEvent&nbsp;has the same touch point ID and as a result the same touch instance from the cache&nbsp;is now being re-used. However, the touch still thinks its at the previous touch's location, so the wrong button press occurs.</p>
+
+<p>I've made some decent changes to both classes&nbsp;to get things to a point where I think it's much better, but I still periodically see some odd behavior, which could just be from my inexperience with the libraries. I could issue a pull request on the repo if you're interested in seeing what I did.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3446"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3446#comment-3446" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        1 month 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I haven't yet looked at this issue (currently working on an HTML5 game with <a href="http://phaser.io/">Phaser</a>, doing some investigation into the competition, to get ideas on how to improve HaxeFlixel).&nbsp;</p>
+
+<p>Everyone benefits from improvements made to the engine, so of course&nbsp;<span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">I'm absolutely interested in reviewing a pull request to improve the touch behavior. I'll review your code and provide suggestions for improvements.</span></p>
+
+<p><span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">When you make the pull, please specify what kind of strange behaviors you still notice with the fixed code (it would be helpful if we have a demo that showcases some of this behavior). That way I can keep an eye out for any suspicious looking code that might cause those issues.</span></p>
+
+<p><span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">Thank you very much for taking an in-depth look at this issue.</span></p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>        </div>
+<hr><div class="login-btn-area"><a href="http://10.211.55.13/user/login?destination=node/734#comment-form" class="btn btn-info">Login to comment</a></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1" >
+  
+      
+  
+  <div class="pane-content">
+    <hr>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-similar-content-pane" >
+  
+        <h4 class="pane-title">Search results for FlxGamePad and Android Issues</h4>
+    
+  
+  <div class="pane-content">
+    <div class="view view-similar-content view-id-similar_content view-display-id-default view-dom-id-51e823ea40064b8988fdb80bfe7b61cb">
+        
+  
+  
+      <div class="view-content row-fluid">
+      <table class="table table-bordered views-table cols-2" >
+                <thead>
+        <tr>
+                            <th class="views-field views-field-title" >
+                    Title                </th>
+                            <th class="views-field views-field-type" >
+                    Type                </th>
+                    </tr>
+        </thead>
+        <tbody>
+            <tr class="odd views-row-first">
+                            <td class="views-field views-field-title" >
+                    <a href="../help/hidingblocking-flxbuttons-solved.html"><span>Hiding/Blocking FlxButtons? [solved]</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even">
+                            <td class="views-field views-field-title" >
+                    <a href="rotated-pixel-perfect-collision.html"><span>Rotated pixel perfect collision?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="odd">
+                            <td class="views-field views-field-title" >
+                    <a href="solved-using-flxtween-complete-functions.html"><span>[SOLVED] Using FlxTween Complete Functions?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even views-row-last">
+                            <td class="views-field views-field-title" >
+                    <a href="solved-cross-platform-time-tracking.html"><span>[SOLVED] Cross-platform time tracking?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+        </tbody>
+</table>     </div>
+  
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="http://10.211.55.13/general-discussion/flxgamepad-and-android-issues?page=1">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="http://10.211.55.13/general-discussion/flxgamepad-and-android-issues?page=2">3</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a href="http://10.211.55.13/general-discussion/flxgamepad-and-android-issues?page=1">›</a></li>
+<li class="pager-last last"><a href="http://10.211.55.13/general-discussion/flxgamepad-and-android-issues?page=165">»</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<footer id="footer" class="footer-bg" role="footer">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <ul class="footer-menu">
+                    <li><a href="http://www.haxe.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/haxe-logo.png" width="26px"/></a></li>
+                    <li><a href="http://www.openfl.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/nme-logo.png" width="26px"/></a></li>
+                    <li><a href="http://haxeflixel.com/documentation/">Documentation</a></li>
+                    <li><a href="http://haxeflixel.com/demos/">Demos</a></li>
+                </ul>
+            </div>
+            <div class="span6">
+                <div class="footer-social-links">
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;"></iframe>
+
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;"></iframe>
+
+                    <iframe allowtransparency="true" frameborder="0" scrolling="no"
+                            src="http://platform.twitter.com/widgets/follow_button.html?screen_name=haxeflixel"
+                            style="width:230px; height:26px;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+</footer>  <script type="text/javascript" src="../sites/default/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+
+<div class="bg_highlight"></div>
+
+</body>
+
+
+<!-- Mirrored from 10.211.55.13/general-discussion/flxgamepad-and-android-issues by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:39 GMT -->
+</html>

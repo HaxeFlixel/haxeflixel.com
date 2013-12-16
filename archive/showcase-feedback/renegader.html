@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<!--
+ __  __     ______     __  __     ______     ______   __         __     __  __     ______     __
+/\ \_\ \   /\  __ \   /\_\_\_\   /\  ___\   /\  ___\ /\ \       /\ \   /\_\_\_\   /\  ___\   /\ \
+\ \  __ \  \ \  __ \  \/_/\_\/_  \ \  __\   \ \  __\ \ \ \____  \ \ \  \/_/\_\/_  \ \  __\   \ \ \____
+ \ \_\ \_\  \ \_\ \_\   /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\   /\_\/\_\  \ \_____\  \ \_____\
+  \/_/\/_/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/   \/_/\/_/   \/_____/   \/_____/
+
+0.2.1 bootstrap
+-->
+
+<html class="cssgradients" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+
+<!-- Mirrored from 10.211.55.13/showcase-feedback/renegader by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="renegader.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortlink" href="http://10.211.55.13/node/556" />
+    <title>Renegader | HaxeFlixel</title>
+    <link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_791YXBaKKm1ORM_7huSKEsIV9tSWq6wmRkERhuXpN6w.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_zHujuv7dvyvVeC2yIxRC-mNyBvEKEOO0ScWypJ-I-Mw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://10.211.55.13/sites/default/files/css/css_9rLhsDfWBDg6Xxfquvx2pTl-5xS8V2aWAGAgJJiO1LA.css" media="all" />
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+.panels-flexible-new .panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-new .panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-new-main {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-new-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-new {
+  width: auto;
+}
+
+.panels-flexible-region-new-center {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-new-main-row-inside {
+  padding-right: 0px;
+}
+
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_Lsj1hnFgUgcY_hv5ipXfmm5GWxFLNZGdCJOsxxBFxv0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="print" />
+    <style type="text/css">
+        body{
+            margin-top: 120px;
+        }
+
+        #archive-warning {
+            background: none repeat scroll 0 0 #000000;
+            color: #FFFFFF;
+            display: block;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+        #archive-warning h2 {
+            color: red;
+        }
+    </style>
+
+    <script type="text/javascript" src="../sites/default/files/js/js_0gj6QcpfRH2jzTbCQqf7kEkm4MXY0UA_sRhwPc8jC1o.js"></script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_KgCNQm_jdlbuilvxNQyCuzPIxbaHFd56Yhs0Gn31sJo.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_03PhocEaUymZGTRCa-nb226qVvl6eCiXz1vDVlRSXaw.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_DuCBxVBnmwlqi-FUiwD_uvjmLVBk6uphM_23_gbOteI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.absolute_messages, {"dismiss":{"status":false,"warning":false,"error":false},"dismiss_time":{"status":"","warning":"","error":""},"dismiss_all_count":2});
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_ZF6SOT9PTq0iEPo7-RfzYnr1x_D1rzKhlMMRiuLfQXE.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-35511281-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/default/files/js/js_uPcOSUjKf0Oc3qqo5JwAHcqGd498cAMC3xR3Hs-oqV8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"haxeflixel_bootstrap","theme_token":"0Bto944pWjsgP7f1Q41dZuDvawg31aado141pk49axE","js":{"sites\/all\/modules\/contrib\/syntaxhighlighter\/syntaxhighlighter.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shCore.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushAS3.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushBash.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushCpp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushHaxe.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJScript.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJava.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPhp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPlain.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushXml.js":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.js":1,"0":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/radix\/assets\/javascripts\/modernizr-2.6.1.min.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/radix-script.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/haxeflixel_core\/layouts.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.css":1,"sites\/all\/modules\/contrib\/ckeditor\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shCore.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shThemeRDark.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.structure.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.images.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"0":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/screen.css":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-print.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/print.css":1}},"quote_nest":"2","views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:56b2d9ce4ba0e7f021b7cc367ed84d8d":{"view_name":"similar_content","view_display_id":"default","view_args":"Renegader","view_path":"node\/556","view_base_path":null,"view_dom_id":"56b2d9ce4ba0e7f021b7cc367ed84d8d","pager_element":"0"}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+    </script>
+    <![endif]-->
+</head>
+<body class="main-body">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div id="archive-warning">
+
+    <h3>We have moved to a <a href="http://www.haxeflixel.com/forum">new forum</a> :)</h3>
+
+    <p>You are viewing a read-only archive of the old forum. You can continue to post topics in the new <a href="http://www.haxeflixel.com/forum">forum here.</a></p>
+
+</div>
+
+<header id="header" class="header" role="header">
+    <div class="container">
+
+        <div class = "home-logo-button">
+            <a href = "../index.html">
+                <img src = "../sites/all/themes/haxeflixel_bootstrap/assets/images/haxeflixel-logo.png" alt = "HaxeFlixel"/>
+            </a>
+        </div>
+
+        <div id="navigation" class="navbar">
+            <div class="navbar-inner">
+                <div class="container clearfix">
+
+                    <a class="btn btn-navbar btn-navbar-menu" data-toggle="collapse" data-target=".nav-menu-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <a class="btn btn-navbar btn-navbar-search" data-toggle="collapse" data-target=".nav-search-collapse">
+                        <span class="icon-search"></span>
+                    </a>
+
+                    <div class="nav-collapse nav-menu-collapse">
+                        <div class="inner">
+                            <ul id="main-menu-user" class="menu nav">
+                <li class="first expanded dropdown open">
+                    <a title="" href="http://forum.haxeflixel.com/user/">
+                        <span>Login / Signup</span></span>
+                    </a>
+                </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/demos/">
+                    Demos
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/documentation">
+                    Documentation
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://forum.haxeflixel.com/">
+                    Forum
+                </a>
+            </li>
+
+            </ul>                        </div>
+                    </div>
+
+                    <div class="nav-collapse nav-search-collapse">
+                        <div class="inner">
+                                                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+</header>
+<div id="main-wrapper" class="container">
+    <div id="main" class="main-container-style">
+                    <div id="breadcrumb" class="">
+                <div class="">
+                    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="../forum.html"><span>Forums</span></a> » <a href="../showcase-feedback.html"><span>Showcase / Feedback</span></a></div>                </div>
+            </div>
+                        <div id="content">
+            <a id="main-content"></a>
+            <div id="page-header">
+                <div class="">
+                                                        </div>
+            </div>
+<div class="container">
+    <div class="forum-container">
+      <div class="panel-pane pane-node-title" >
+  
+      
+  
+  <div class="pane-content">
+    <h1>Renegader</h1>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-forum-body-view" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="http://10.211.55.13/user/278"><span><img class="forum-created-avatar-img" src="../sites/default/files/styles/40px/public/avatars/avatar_1614e.jpg?itok=l13aMkjB" width="40" height="40" alt="" />Ongaku</a>, <i class="icon-time"></i>  4 months 3 weeks ago</span><div class="btn-group forum-top-buttons"></div><hr><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hi everyone, I'm not a programmer but I like hitting walls (not to hard)...</p>
+
+<p>... and eventually break them.</p>
+
+<p>Some time ago I started making a game with the Flashpunk framework, but then work happened and I stopped. Eventually I&nbsp;was shown HaxeFlixel and immideatly got excited just for the possibility of building&nbsp;a game for anything with a beating CPU, in a kind of&nbsp;simple manner. &nbsp;Off course I forgot everything about programming, I'm more of a graphics person,&nbsp;so I'm currently starting fresh.</p>
+
+<p>My game is an endless runner with a spy hunter feel,&nbsp;right now you just dodge and shoot the baddies. In the future&nbsp;I would like to add enemies that shoot at the player and some&nbsp;<span style="font-size: 17px;">power-ups (rapid-fire, invencibility, etc). So here's what I have to port&nbsp;</span><span style="font-size: 17px;">and finish</span><span style="font-size: 17px;">:&nbsp;</span></p>
+
+<p><a href="https://dl.dropboxusercontent.com/u/8946481/gameDev/renegader_v5.swf" style="font-size: 17px;">https://dl.dropboxusercontent.com/u/8946481/gameDev/renegader_v5.swf</a>&nbsp;</p>
+
+<p>(press Z to fire)</p>
+
+<p><span style="font-size: 17px;">I would appreciate some feedback of you guys, in particular regarding the scrolling background.&nbsp;</span></p>
+
+<p><strong><span style="font-size: 17px;">Since I'm starting fresh I thought of two ways I could do it :</span></strong></p>
+
+<p><strong>1</strong> - Using one image (just like old version)&nbsp;through the&nbsp;FlxBackdrop class to make it scroll. The only problem I'm having right now (trying to test this) is getting the FlxBackdrop class to work (but thats a problem&nbsp;for a different section of the forum).</p>
+
+<p><strong>2</strong>- Make a tiled road, and scroll the hell out of it. This way I could have a dynamic road, also I would have to create it&nbsp;programmaticly&nbsp;which means&nbsp;more walls to hit. But in the long run I see good things by this approach at least graphics wise (different areas, a water level :P).&nbsp;<span style="font-size: 17px;">It seems I would have to&nbsp;</span><span style="font-size: 17px;">create</span><span style="font-size: 17px;">&nbsp;an array with a set of rules to generate my map. On top of that I would have to make it scroll.</span></p>
+
+<p>What do you guys think ?</p>
+
+<p><span style="font-size: 17px;">Sorry for the long post, and thanks for reading,&nbsp;anything you would like to suggest I'm all eyes on the boards.</span></p>
+</div></div></div><br><div id="forum-comments" class="comment-wrapper">
+  <a id="comment-2721"></a>
+<div class="forum-post clearfix en posted-by-306 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/gama11" title="View user profile." class="username"><span>Gama11</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/kongava_1.png?itok=ZsOJRQPK" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2721#comment-2721" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        4 months 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hey there,</p>
+
+<p>I really like thsoe graphics! Anyone immediately notices that you're a "graphics person". :) That doesn't have to mean that you can't do programming, though!&nbsp;</p>
+
+<p>First off, when it comes to controls, always allow different options. I know some people that refuse to play any game with the arrow keys, because they're used to using their left hand for directional movement. It takes about 1 minute to implement WASD movement. Same for "Z to start", could as well be "any key". ;D</p>
+
+<p>The game doesn't <em>feel </em>very good right now. Being taken back to the title screen immediately after you die feels very wrong. There need to be soundeffects, explosions and all that fun stuff.</p>
+
+<p>Some soundeffects in general would be great. Check out</p>
+
+<ul>
+	<li><a href="http://freesound.org/">http://freesound.org/</a></li>
+	<li><a href="http://www.bfxr.net/">http://www.bfxr.net/</a></li>
+</ul>
+
+<p>The title screen is a little static right now. Could use some animations, like the title flying across the screen, or scaling up to its current size.. The possibilities are endless. Have a look at FlxTween!</p>
+
+<p>You absolutely need to keep track of the "current best" in a game like this, and display in-game and <span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">preferably&nbsp;</span>on the menu as well.</p>
+
+<p>The score text could be a bit more readable. Maybe add a drop shadow to the text, or a slightly&nbsp;opaque, black FlxSprite.</p>
+
+<p>You should probably hide the mouse, it's not needed in this game.</p>
+
+<p>I took me way too long to find out that you can shoot with Z. Not that obvious, actually! Again, needs soundeffects. I initially thought this game was purely about avoiding. Destroyed enemies need to have particle explosions (via FlxEmitter!). Also, it's no fun that you have to repeatedly mash a key to shoot. That just annoys the player. What reason would the player have not to shoot at all times? Correct, there's absolutely none. So either limit this ability (seems a little OP anyway?) or make it an auto-fire.</p>
+
+<p>How could this be "limited"? Well, for one, you could switch the gun with a rockte launcher. Again, giant explosions, those are fun. Ammo would be limited and you could pick it up every so often. Using your weapon you do as a last resort.</p>
+
+<p>The game ends a bit too quickly for my taste right now. Either implement a life system (about 3 seems right?) or let the game start out a bit slower. Not sure if it ramps up, but it definitely starts <em>too </em>quick. Keep in mind, as the dev, you sense ot difficulty is totally off, having played the game over and over again.</p>
+
+<p>While the graphics are good, there's not <em>nearly </em>enough variation and things quickly start to look very boring. Literally every single enemy uses the same color scheme, and there only seem to be two types of enemy vehicles anyway. Same for the background, which you were asking for specifically. Although it currently doesn't bother me quite as much, honestly.</p>
+
+<p>On a technical level, tilemaps would allow for some very advanced backgrounds. FlxBackdrop not so much I guess.</p>
+
+<p>Don't take the player back to the title screen once he dies. Do everything you can to make him play again! I'd just display some game over message and if any key is pressed (except for escape, which takes you back to the menu), a new game is started. Some games even go as far as restarting the game immediately without asking the player!</p>
+
+<p>The game needs some music! Check out&nbsp;<a href="http://www.newgrounds.com/audio/">http://www.newgrounds.com/audio/</a>&nbsp;for some free, but awesome stuff.</p>
+
+<p>Phew, I guess that's enough for now. Sorry for the wall of text, hope it helps! :)</p>
+
+<p>&nbsp;</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2724"></a>
+<div class="forum-post clearfix en posted-by-278 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/ongaku" title="View user profile." class="username"><span>Ongaku</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/avatar_1.jpg?itok=MhZTHbOo" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2724#comment-2724" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        4 months 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Awesome reply&nbsp;, it helps alot and I think you're 100% right in everything you said,&nbsp;some of the things were already&nbsp;on my todo list, others like the WASD &nbsp;type playing I wasn't aware it would bother people that much, thanks for the tip.</p>
+
+<p><span style="font-size: 17px;">About the gameloop, right now its only&nbsp;the barebones, pretty much&nbsp;all messed up, but it's nice to keep a lot of the things you said in mind when I begin to polish it :)</span></p>
+
+<p>The sound,&nbsp;I plan on&nbsp;dusting off my nanoloop cartridge, plug it through some stuff and make some noise, im a bit of sound person too :P</p>
+
+<p><span style="font-size: 17px;">Right now my major concern is to get the basic systems working on HaxeFlixel, background scrolling, player controls and all that "basic" stuff. That should keep me busy for a long time, because as I said I'm&nbsp;starting from scratch learning all the coding and syntax parts again.</span></p>
+
+<p>Again thanks for the awesome reply !</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2732"></a>
+<div class="forum-post clearfix en posted-by-265 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/gib" title="View user profile." class="username"><span>Gib</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/bowiepuddi_1.png?itok=cRUBvht3" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2732#comment-2732" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        4 months 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>This is a bit plain right now. Like, the gameplay after 10s&nbsp;and 5m still is the same. No room for improvement or learning, as there is no new things to master.</p>
+
+<p>Moving the character feels a bit rough too. I guess you're doing something like&nbsp;</p>
+
+
+if(right pressed) x += 2;
+
+<p>&nbsp;</p>
+
+<p>Try instead doing something like&nbsp;</p>
+
+
+if(right pressed) speedHorizontal += acceleration;
+speedHorizontal *= friction; 
+x += speedHorizontal;
+
+<p>&nbsp;</p>
+
+<p>I guess Flixel can&nbsp;do the smooth movement thing&nbsp;on its own, but I've never actually tried.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Also the graphics were nice. Having inspiration is a thing, we all have, but try to do your own thing instead of copying others, it will&nbsp;be more rewarding for sure :)</p>
+
+<p><img alt="" src="http://gyazo.com/8542847e612fdce071bafdeac61b18cc.png" style="width: 473px; height: 338px;" /></p>
+
+<p><img alt="" src="http://www.bikervoodoo.com/wp-content/uploads/2008/03/kanedas-bike.jpg" style="width: 563px; height: 422px;" /></p>
+
+<p>&nbsp;</p>
+
+<p>Good luck on this one, and keep us informed of your progress!</p>
+
+<p>&nbsp;</p>
+
+<p>EDIT: Just noticed it, but the flashing effect when hitting an enemy is nice! This is the kind of feedback/polish you need&nbsp;to make a juicy game :D</p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.armeljgibson.com/">Website</a> | <a href="https://twitter.com/Gib">Twitter</a></p>                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2733"></a>
+<div class="forum-post clearfix en posted-by-278 post-by-starter clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/ongaku" title="View user profile." class="username"><span>Ongaku</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/avatar_1.jpg?itok=MhZTHbOo" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2733#comment-2733" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        4 months 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Oh no,&nbsp;I thought I would never be caught !&nbsp;</p>
+
+<p>Joking aside,&nbsp;Its true I got very "inspired" by&nbsp;Akira and off course you're not the first one to notice the shameless rip off ;) &nbsp;</p>
+
+<p>Right now I'm ok with the copy&nbsp;but depending on where am I going with this game, it&nbsp;may change (juicy game maybe :P). But I'm not alone in loving this camera angle and bike pose&nbsp;<a href="http://kotaku.com/everyone-wants-to-ride-motorcycles-like-in-akira-877851402">http://kotaku.com/everyone-wants-to-ride-motorcycles-like-in-akira-877851402</a>&nbsp;Hahaha :D</p>
+
+<p><span style="font-size: 17px;">About the controls, you're right I went through&nbsp;the old code and It's&nbsp;doing&nbsp;that (x += int). I will try the other way and see how it goes.</span></p>
+
+<p>Thanks for the tips and feedback, it really helps !</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>        </div>
+<hr><div class="login-btn-area"><a href="http://10.211.55.13/user/login?destination=node/556#comment-form" class="btn btn-info">Login to comment</a></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1" >
+  
+      
+  
+  <div class="pane-content">
+    <hr>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-similar-content-pane" >
+  
+        <h4 class="pane-title">Search results for Renegader</h4>
+    
+  
+  <div class="pane-content">
+    <div class="view view-similar-content view-id-similar_content view-display-id-default view-dom-id-56b2d9ce4ba0e7f021b7cc367ed84d8d">
+        
+  
+  
+      <div class="view-content row-fluid">
+      <table class="table table-bordered views-table cols-2" >
+                <thead>
+        <tr>
+                            <th class="views-field views-field-title" >
+                    Title                </th>
+                            <th class="views-field views-field-type" >
+                    Type                </th>
+                    </tr>
+        </thead>
+        <tbody>
+            <tr class="odd views-row-first">
+                            <td class="views-field views-field-title" >
+                    <a href="../help/hidingblocking-flxbuttons-solved.html"><span>Hiding/Blocking FlxButtons? [solved]</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even">
+                            <td class="views-field views-field-title" >
+                    <a href="../general-discussion/rotated-pixel-perfect-collision.html"><span>Rotated pixel perfect collision?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="odd">
+                            <td class="views-field views-field-title" >
+                    <a href="../general-discussion/solved-using-flxtween-complete-functions.html"><span>[SOLVED] Using FlxTween Complete Functions?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even views-row-last">
+                            <td class="views-field views-field-title" >
+                    <a href="../general-discussion/solved-cross-platform-time-tracking.html"><span>[SOLVED] Cross-platform time tracking?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+        </tbody>
+</table>     </div>
+  
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="http://10.211.55.13/showcase-feedback/renegader?page=1">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="http://10.211.55.13/showcase-feedback/renegader?page=2">3</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a href="http://10.211.55.13/showcase-feedback/renegader?page=1">›</a></li>
+<li class="pager-last last"><a href="http://10.211.55.13/showcase-feedback/renegader?page=165">»</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<footer id="footer" class="footer-bg" role="footer">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <ul class="footer-menu">
+                    <li><a href="http://www.haxe.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/haxe-logo.png" width="26px"/></a></li>
+                    <li><a href="http://www.openfl.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/nme-logo.png" width="26px"/></a></li>
+                    <li><a href="http://haxeflixel.com/documentation/">Documentation</a></li>
+                    <li><a href="http://haxeflixel.com/demos/">Demos</a></li>
+                </ul>
+            </div>
+            <div class="span6">
+                <div class="footer-social-links">
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;"></iframe>
+
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;"></iframe>
+
+                    <iframe allowtransparency="true" frameborder="0" scrolling="no"
+                            src="http://platform.twitter.com/widgets/follow_button.html?screen_name=haxeflixel"
+                            style="width:230px; height:26px;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+</footer>  <script type="text/javascript" src="../sites/default/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+
+<div class="bg_highlight"></div>
+
+</body>
+
+
+<!-- Mirrored from 10.211.55.13/showcase-feedback/renegader by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:40 GMT -->
+</html>

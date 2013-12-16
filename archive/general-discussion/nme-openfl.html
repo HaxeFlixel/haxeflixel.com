@@ -1,0 +1,1036 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<!--
+ __  __     ______     __  __     ______     ______   __         __     __  __     ______     __
+/\ \_\ \   /\  __ \   /\_\_\_\   /\  ___\   /\  ___\ /\ \       /\ \   /\_\_\_\   /\  ___\   /\ \
+\ \  __ \  \ \  __ \  \/_/\_\/_  \ \  __\   \ \  __\ \ \ \____  \ \ \  \/_/\_\/_  \ \  __\   \ \ \____
+ \ \_\ \_\  \ \_\ \_\   /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\   /\_\/\_\  \ \_____\  \ \_____\
+  \/_/\/_/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/   \/_/\/_/   \/_____/   \/_____/
+
+0.2.1 bootstrap
+-->
+
+<html class="cssgradients" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+
+<!-- Mirrored from 10.211.55.13/general-discussion/nme-openfl by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="nme-openfl.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortlink" href="http://10.211.55.13/node/424" />
+    <title>NME -&gt; OpenFL | HaxeFlixel</title>
+    <link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_791YXBaKKm1ORM_7huSKEsIV9tSWq6wmRkERhuXpN6w.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_zHujuv7dvyvVeC2yIxRC-mNyBvEKEOO0ScWypJ-I-Mw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://10.211.55.13/sites/default/files/css/css_9rLhsDfWBDg6Xxfquvx2pTl-5xS8V2aWAGAgJJiO1LA.css" media="all" />
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+.panels-flexible-new .panels-flexible-region {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-region-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-column {
+  padding: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-first {
+  padding-left: 0;
+}
+
+.panels-flexible-new .panels-flexible-column-inside-last {
+  padding-right: 0;
+}
+
+.panels-flexible-new .panels-flexible-row {
+  padding: 0 0 0.5em 0;
+  margin: 0;
+}
+
+.panels-flexible-new .panels-flexible-row-last {
+  padding-bottom: 0;
+}
+
+.panels-flexible-column-new-main {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-new-inside {
+  padding-right: 0px;
+}
+
+.panels-flexible-new {
+  width: auto;
+}
+
+.panels-flexible-region-new-center {
+  float: left;
+  width: 99.0000%;
+}
+
+.panels-flexible-row-new-main-row-inside {
+  padding-right: 0px;
+}
+
+
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_Lsj1hnFgUgcY_hv5ipXfmm5GWxFLNZGdCJOsxxBFxv0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="print" />
+    <style type="text/css">
+        body{
+            margin-top: 120px;
+        }
+
+        #archive-warning {
+            background: none repeat scroll 0 0 #000000;
+            color: #FFFFFF;
+            display: block;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+        #archive-warning h2 {
+            color: red;
+        }
+    </style>
+
+    <script type="text/javascript" src="../sites/default/files/js/js_0gj6QcpfRH2jzTbCQqf7kEkm4MXY0UA_sRhwPc8jC1o.js"></script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_KgCNQm_jdlbuilvxNQyCuzPIxbaHFd56Yhs0Gn31sJo.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_03PhocEaUymZGTRCa-nb226qVvl6eCiXz1vDVlRSXaw.js"></script>
+<script type="text/javascript" src="../sites/default/files/js/js_DuCBxVBnmwlqi-FUiwD_uvjmLVBk6uphM_23_gbOteI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.absolute_messages, {"dismiss":{"status":false,"warning":false,"error":false},"dismiss_time":{"status":"","warning":"","error":""},"dismiss_all_count":2});
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://10.211.55.13/sites/default/files/js/js_ZF6SOT9PTq0iEPo7-RfzYnr1x_D1rzKhlMMRiuLfQXE.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-35511281-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/default/files/js/js_uPcOSUjKf0Oc3qqo5JwAHcqGd498cAMC3xR3Hs-oqV8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"haxeflixel_bootstrap","theme_token":"U9cDKhu1VEEncGkN1Qcs6jWh8-BpgkR4mA4fr2CI6ms","js":{"sites\/all\/modules\/contrib\/syntaxhighlighter\/syntaxhighlighter.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shCore.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushAS3.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushBash.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushCpp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushHaxe.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJScript.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJava.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPhp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPlain.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushXml.js":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.js":1,"0":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/radix\/assets\/javascripts\/modernizr-2.6.1.min.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/radix-script.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/haxeflixel_core\/layouts.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.css":1,"sites\/all\/modules\/contrib\/ckeditor\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shCore.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shThemeRDark.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.structure.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.images.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"0":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/screen.css":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-print.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/print.css":1}},"quote_nest":"2","views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:b940d32e42140920b1198bf1939c3c18":{"view_name":"similar_content","view_display_id":"default","view_args":"NME\/-\u0026gt;\/OpenFL","view_path":"node\/424","view_base_path":null,"view_dom_id":"b940d32e42140920b1198bf1939c3c18","pager_element":"0"}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+    </script>
+    <![endif]-->
+</head>
+<body class="main-body">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div id="archive-warning">
+
+    <h3>We have moved to a <a href="http://www.haxeflixel.com/forum">new forum</a> :)</h3>
+
+    <p>You are viewing a read-only archive of the old forum. You can continue to post topics in the new <a href="http://www.haxeflixel.com/forum">forum here.</a></p>
+
+</div>
+
+<header id="header" class="header" role="header">
+    <div class="container">
+
+        <div class = "home-logo-button">
+            <a href = "../index.html">
+                <img src = "../sites/all/themes/haxeflixel_bootstrap/assets/images/haxeflixel-logo.png" alt = "HaxeFlixel"/>
+            </a>
+        </div>
+
+        <div id="navigation" class="navbar">
+            <div class="navbar-inner">
+                <div class="container clearfix">
+
+                    <a class="btn btn-navbar btn-navbar-menu" data-toggle="collapse" data-target=".nav-menu-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <a class="btn btn-navbar btn-navbar-search" data-toggle="collapse" data-target=".nav-search-collapse">
+                        <span class="icon-search"></span>
+                    </a>
+
+                    <div class="nav-collapse nav-menu-collapse">
+                        <div class="inner">
+                            <ul id="main-menu-user" class="menu nav">
+                <li class="first expanded dropdown open">
+                    <a title="" href="http://forum.haxeflixel.com/user/">
+                        <span>Login / Signup</span></span>
+                    </a>
+                </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/demos/">
+                    Demos
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/documentation">
+                    Documentation
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://forum.haxeflixel.com/">
+                    Forum
+                </a>
+            </li>
+
+            </ul>                        </div>
+                    </div>
+
+                    <div class="nav-collapse nav-search-collapse">
+                        <div class="inner">
+                                                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+</header>
+<div id="main-wrapper" class="container">
+    <div id="main" class="main-container-style">
+                    <div id="breadcrumb" class="">
+                <div class="">
+                    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="../forum.html"><span>Forums</span></a> » <a href="../general-discussion.html"><span>General discussion</span></a></div>                </div>
+            </div>
+                        <div id="content">
+            <a id="main-content"></a>
+            <div id="page-header">
+                <div class="">
+                                                        </div>
+            </div>
+<div class="container">
+    <div class="forum-container">
+      <div class="panel-pane pane-node-title" >
+  
+      
+  
+  <div class="pane-content">
+    <h1>NME -&gt; OpenFL</h1>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-forum-body-view" >
+  
+      
+  
+  <div class="pane-content">
+    <a href="http://10.211.55.13/user/285"><span><img class="forum-created-avatar-img" src="../sites/default/files/styles/40px/public/avatars/WOW_Tripod_01_1920x1080_1e7ec.jpg?itok=T2mtcnli" width="40" height="40" alt="" />Tripod</a>, <i class="icon-time"></i>  6 months 3 weeks ago</span><div class="btn-group forum-top-buttons"></div><hr><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>What do you think about NME transforming into OpenFL?</p>
+</div></div></div><br><div id="forum-comments" class="comment-wrapper">
+  <a id="comment-2094"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2094#comment-2094" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Well as far as I can tell its mostly about a name change, focus on a consistent api and getting better tests written. It certainly doesn't loose anything NME had before the change. What I dont know much about is the details and impact of the some of the refractor of the tools mentioned.</p>
+
+<p>The name will certainly receive the same superficial criticism flash does unfortunately, however people who understand why the flash api and actionscript like languages are so widely being "saved" and used in things like StageXL,&nbsp; Scaleform, Loom etc. NME has always been about the flash api so I think its an honest and strong move forward.</p>
+
+<p>I think the long term challenge for openfl will be getting developers to understand its not about the 'flash runtime' its about the language, workflow and toolset for future runtimes without Adobe. I agree that focus on webgl, ecmascripten and use of Haxe makes openfl a great answer to people who were counting on AS NEXT that Adobe killed.</p>
+
+<p>I enjoyed Joshua's talk;</p>
+
+<p><a href="http://vimeo.com/66996045">http://vimeo.com/66996045</a></p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2095"></a>
+<div class="forum-post clearfix en posted-by-295 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/gravatar_1.png?itok=hNm8st9Z" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2095#comment-2095" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Here's a post by <a class="Sg Ob Tc" href="https://plus.google.com/100343108333442407381" rel="author" style="color: rgb(38, 38, 38); cursor: pointer; font-weight: bold; -webkit-transition: color 0.218s; transition: color 0.218s;">Andreas Rønning</a>&nbsp;that summarizes the announcement:</p>
+
+<p><a href="https://plus.google.com/100343108333442407381/posts/CZaEsN8cLv9">https://plus.google.com/100343108333442407381/posts/CZaEsN8cLv9</a></p>
+
+<blockquote>
+<p>Bullet points from today's&nbsp;<a class="ot-hashtag" href="https://plus.google.com/s/%23NME" style="color: rgb(66, 127, 237); cursor: pointer; text-decoration: none; font-weight: bold; -webkit-transition: color 0.218s; transition: color 0.218s; font-family: Roboto, arial, sans-serif; font-size: 13px; line-height: 18px;">#NME</a>&nbsp;announcements at&nbsp;<a class="ot-hashtag" href="https://plus.google.com/s/%23wwx" style="color: rgb(66, 127, 237); cursor: pointer; text-decoration: none; font-weight: bold; -webkit-transition: color 0.218s; transition: color 0.218s; font-family: Roboto, arial, sans-serif; font-size: 13px; line-height: 18px;">#wwx</a>&nbsp;&nbsp;<br />
+(as far as I gathered, so correct me!)<br />
+<br />
+* Rebrand from NME to&nbsp;<a class="ot-hashtag" href="https://plus.google.com/s/%23OpenFL" style="color: rgb(66, 127, 237); cursor: pointer; text-decoration: none; font-weight: bold; -webkit-transition: color 0.218s; transition: color 0.218s; font-family: Roboto, arial, sans-serif; font-size: 13px; line-height: 18px;">#OpenFL</a>&nbsp;(Open Flash Library) to give a proper unique name and aid web searches and community efforts<br />
+* New focus on codebase flexibility and extensibility<br />
+* New focus on testable code, with all features undergoing unit testing across targets<br />
+* Haxe3 only<br />
+* Aims to offer stable, reliable OpenGL contexts on native targets and HTML5 through WebGL<br />
+* WebGL API used for OGL on native targets (this is a good thing IMHO)<br />
+* No specific aid to use Stage3D target (though with H3D and HXSL I personally wonder what more aid we'd ever need for that)<br />
+* Officially backed by the Haxe Foundation<br />
+* Codebase restructured to omit nme package; Common root package for all targets now is "flash", while library additions are under "openfl"<br />
+*&nbsp;<a class="ot-anchor" href="http://openfl.org/" rel="nofollow" style="color: rgb(66, 127, 237); cursor: pointer; text-decoration: none; -webkit-transition: color 0.218s; transition: color 0.218s; font-family: Roboto, arial, sans-serif; font-size: 13px; line-height: 18px;">openfl.org</a>&nbsp;is the website, but it's currently under construction (Where's the animated construction worker gif Joshua?!)</p>
+</blockquote>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2096"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2096#comment-2096" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 3 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I enjoyed Joshua's presentation. And here is what i liked:</p>
+
+<ul>
+	<li>plans to develop other new crossplatform API (like Tilesheet and GLView - these classes gives us even more means and freedom to create something new).</li>
+	<li>cross-platform hardware accelerated graphics for web, desktop and mobile targets using openGL API (maybe they will do it for flash also. who knows?)</li>
+	<li>and i liked question from the audience about possible new targets (Java and C#) - maybe we will get them someday (but not in near future).</li>
+</ul>
+
+<p>I hope and believe, they will make it better.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2097"></a>
+<div class="forum-post clearfix en posted-by-234 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/jah2488" title="View user profile." class="username"><span>jah2488</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-234-1383798848.jpg?itok=ECh3BTxB" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2097#comment-2097" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I really like what I've heard so far about OpenFL and think its a step in the right direction. It did also get me thinking about what exactly is required, if anything, to move HaxeFlixel&nbsp;to OpenFL and Haxe 3. I know there has been a lot of work so far to maintain compatibility, but I also haven't seen any discussion on it.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2098"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2098#comment-2098" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@jah2488 transition to openfl is almost done but there are some issues with asset embedding for flash target at the moment. I'll release second alpha as soon as they will be fixed. But i've released Haxe3 compatible flixel-2.0.0-alpha on haxelib yesterday (which works with NME 3.5.6)</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2099"></a>
+<div class="forum-post clearfix en posted-by-234 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/jah2488" title="View user profile." class="username"><span>jah2488</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-234-1383798848.jpg?itok=ECh3BTxB" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2099#comment-2099" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@Beeblerox Excited&nbsp;to hear that. Perhaps I'll try it out this weekend.</p>
+
+<p>Out of curiosity, is there a roadmap for haxeflixel? Like any sort of milestone for what could be considered the starting ground for a new version or is it more of a perpetual improvement process? Either way works, I just wasn't sure which was the current method.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2100"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2100#comment-2100" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@jah2488 there is no roadmap. i just release new version when i'm feeling that it's time for it. but you can take part in the process of decision which new features should appear next</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2101"></a>
+<div class="forum-post clearfix en posted-by-234 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/jah2488" title="View user profile." class="username"><span>jah2488</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-234-1383798848.jpg?itok=ECh3BTxB" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2101#comment-2101" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@Beeblerox&nbsp;That makes sense. Although I have no desire to start making decisions about the future of Haxe Flixel I'd love to be able to take part of the process as well as start working on the code base itself.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2102"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2102#comment-2102" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>@jah2488 Welcome aboard!</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2103"></a>
+<div class="forum-post clearfix en posted-by-293 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/halfdaydeemo" title="View user profile." class="username"><span>HalfDayDeemo</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-293-1372798220.png?itok=qipptATe" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2103#comment-2103" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>I started using HaxeFlixel a few months ago (Hi btw! Great framework.), and while I have been following the whole&nbsp;NME--&gt;OpenFL stuff I'm still a little unsure about what it all means with regard to HaxeFlixel.</p>
+
+<p>Could someone summarize for me? Will HaxeFlixel just use OpenFL from now on? Do my projects need converting? Are the feature sets the same? What benefits does OpenFL offer?</p>
+
+<p>Much appreciated.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2104"></a>
+<div class="forum-post clearfix en posted-by-302 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/zaphod-beeblebrox-small-001_1.jpg?itok=XMjBlUQL" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2104#comment-2104" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>HaxeFlixel works with OpenFl already. Main conversion you'll have to make is to fix imports (replace nme.* with flash.* in most cases). Engine have same features and keep evolving, son don't afraid of this change.</p>
+
+<p>OpenFl codebase has been splitted in several functional parts (openfl - base lib, openfl-tools - command line tools, openfl-native - implementation for native targets and openfl-html5 - html5 target). It allows to update them independently and make it faster, so i believe it is a good change.</p>
+
+<p>OpenFl isn't just rebranding of good old NME, but it's a redefined architecture, and i hope it will make this lib faster and easier to understand and work with for newcomers (especially from ActionScript background)</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-2105"></a>
+<div class="forum-post clearfix en posted-by-293 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/halfdaydeemo" title="View user profile." class="username"><span>HalfDayDeemo</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-293-1372798220.png?itok=qipptATe" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2105#comment-2105" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><blockquote class="quote-msg quote-nest-1 odd"><div class="quote-author"><em class="placeholder">Beeblerox</em> wrote:</div></p>
+
+<p><span style="line-height:1.6em">&nbsp;i hope it will make this lib faster and easier to understand and work with for newcomers (especially from </span>ActionScript<span style="line-height:1.6em"> background)</span></p>
+
+<p></blockquote></p>
+
+<p>&nbsp;</p>
+
+<p>Great, because that's me! Thanks for the concise explaination. So basically there shouldn't be anything stopping me from taking my existing project HaxeFlixel&nbsp;and moving to OpenFL?&nbsp;Provided I make sure I pull down all the right stuff for OpenFL.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>
+<div class="indented"><a id="comment-2106"></a>
+<div class="forum-post clearfix en posted-by-306 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/gama11" title="View user profile." class="username"><span>Gama11</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/kongava_1.png?itok=ZsOJRQPK" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2106#comment-2106" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        6 months 1 week ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><blockquote class="quote-msg quote-nest-1 odd"><div class="quote-author"><em class="placeholder">JimmyDeemo</em> wrote:</div></p>
+
+<p>&nbsp;</p>
+
+<blockquote><em>Beeblerox</em> wrote:
+
+<p>&nbsp;i hope it will make this lib faster and easier to understand and work with for newcomers (especially from ActionScript background)</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p>Great, because that's me! Thanks for the concise explaination. So basically there shouldn't be anything stopping me from taking my existing project HaxeFlixel&nbsp;and moving to OpenFL?&nbsp;Provided I make sure I pull down all the right stuff for OpenFL.</p>
+
+<p></blockquote></p>
+
+<p>&nbsp;</p>
+
+<p>No, you shouldn't really have any trouble with it. If you use FlashDevelop though, you should make sure to use <a href="http://www.flashdevelop.org/community/viewtopic.php?f=9&amp;t=3529">the latest build</a>&nbsp;(4.4.3) which supports compiling via openfl. You just need to rename the .nmml to an .xml file which tells FD you're using openfl - don't forget to change the build file in the project properties as well. Or get the latest HaxeFlixel version from GitHub, which already has that change.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div></div></div><a id="comment-2462"></a>
+<div class="forum-post clearfix en posted-by-301 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/17873_75x75_1.gif?itok=EVyh8gn8" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2462#comment-2462" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        5 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>The development team of HaxeFlixel is looking at ways to allow developers to <span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">easily&nbsp;</span>port their existing NME projects to OpenFL. I encourage you to continue using the stable HaxeFlixel + NME workflow, the team is aware that porting and upgrading is a pain, and we'll do what we can to make that process easy.</p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p><a href="http://www.sambatista.com/">website</a><span>,&nbsp;</span><a href="https://github.com/crazysam" target="_blank">github</a><span>,&nbsp;</span><a href="https://twitter.com/crazysam0" target="_blank">twitter</a>,&nbsp;skype: crazysam1</p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-2464"></a>
+<div class="forum-post clearfix en posted-by-293 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/halfdaydeemo" title="View user profile." class="username"><span>HalfDayDeemo</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-293-1372798220.png?itok=qipptATe" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/2464#comment-2464" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        5 months 2 weeks ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p><blockquote class="quote-msg quote-nest-1 odd"><div class="quote-author"><em class="placeholder">crazysam</em> wrote:</div></p>
+
+<p>the team is aware that porting and upgrading is a pain</p>
+
+<p></blockquote></p>
+
+<p>I actually found it quite easy, although in all honesty I had a simple prototype.</p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3393"></a>
+<div class="forum-post clearfix en posted-by-2800 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/trusktr" title="View user profile." class="username"><span>trusktr</span></a><a href="http://10.211.55.13/user/0"></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3393#comment-3393" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 3 days ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Hi. I don't think the move to the "OpenFL" name was the best choice. The NME (HaxeNME to be specific) branding got me attracted to this project in the first place. "OpenFL"&nbsp; is generic and tied to a product (Flash) that is dying. NME was *not* Flash. It was Haxe API the mirrored Flash ability and could be compiled to Flash.</p>
+
+<p>Please read and comment on my message to Joshua Granick (creator of NME) about the move to the "OpenFL" branding so we may have a chance of bringing NME back.</p>
+
+<p><a href="http://www.gamefromscratch.com/post/2013/06/04/Well-so-much-for-using-Haxe-RIP-NME.aspx#comment-1081426677">http://www.gamefromscratch.com/post/2013/06/04/Well-so-much-for-using-Ha...</a></p>
+</div></div></div>
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div><a id="comment-3394"></a>
+<div class="forum-post clearfix en posted-by-305 clearfix">
+    <div class="media">
+
+            <div class="author-panel-comment">
+                <div class="author-pane-comment"><a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><a href="http://10.211.55.13/user/0"><img src="http://10.211.55.13/sites/default/files/styles/comment_avatar/public/avatars/picture-305-1375680223.jpg?itok=Qgl1D75b" width="90" height="90" alt="" /></a></div>                <div class="comment-sidebar"></div>            </div>
+
+            <div class="comment-container">
+
+                <div class="comment-header">
+
+                    <div class="comment-submitted">
+                        <a href="http://10.211.55.13/comment/3394#comment-3394" class="permalink pull-right" rel="bookmark"><span><i title="Comment Permalink" class="comment-inline-icon icon-comment"></i></span></a>                        2 months 3 days ago
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    
+                    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><blockquote>
+<p><span style="font-size: 17px; font-style: normal; font-variant: normal; line-height: 30px;">NME was *not* Flash. It was Haxe API the mirrored Flash ability and could be compiled to Flash.</span></p>
+</blockquote>
+
+<p>I stuggle with your description of NME here, the Open Flash Library name has grown on me. NME has always been an alternative implimentation of the Flash API, OpenFL separates what they have expanded upon, ie the openfl.* packages while also making it easier to maintain and develop for with new backends besides NME.&nbsp;Joshua has said many times before and you just have to look at the repositories, he&nbsp;is not the creator of NME or the genious who made Hxcpp, Haxe, SDL, Neko. OpenFL&nbsp;and NME has&nbsp;always been a project that combines the work from many&nbsp;talented open source&nbsp;developers, including Josh.</p>
+
+<p>I think the new branding and focus of OpenFL has been great, Josh&nbsp;continues to make this framework some of the best around for cross platform dev. Thanks Josh!</p>
+</div></div></div>
+                    
+                        <hr>
+
+                        <div class="user-signature clearfix">
+                            <p>impaler@&nbsp;<a href="https://twitter.com/impaler12">twitter</a> || <a href="https://github.com/impaler">github</a></p>
+                        </div>
+
+                        <hr>
+
+                    
+                
+                
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+</div>        </div>
+<hr><div class="login-btn-area"><a href="http://10.211.55.13/user/login?destination=node/424#comment-form" class="btn btn-info">Login to comment</a></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1" >
+  
+      
+  
+  <div class="pane-content">
+    <hr>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-similar-content-pane" >
+  
+        <h4 class="pane-title">Search results for NME -&gt; OpenFL</h4>
+    
+  
+  <div class="pane-content">
+    <div class="view view-similar-content view-id-similar_content view-display-id-default view-dom-id-b940d32e42140920b1198bf1939c3c18">
+        
+  
+  
+      <div class="view-content row-fluid">
+      <table class="table table-bordered views-table cols-2" >
+                <thead>
+        <tr>
+                            <th class="views-field views-field-title" >
+                    Title                </th>
+                            <th class="views-field views-field-type" >
+                    Type                </th>
+                    </tr>
+        </thead>
+        <tbody>
+            <tr class="odd views-row-first">
+                            <td class="views-field views-field-title" >
+                    <a href="../help/hidingblocking-flxbuttons-solved.html"><span>Hiding/Blocking FlxButtons? [solved]</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even">
+                            <td class="views-field views-field-title" >
+                    <a href="rotated-pixel-perfect-collision.html"><span>Rotated pixel perfect collision?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="odd">
+                            <td class="views-field views-field-title" >
+                    <a href="solved-using-flxtween-complete-functions.html"><span>[SOLVED] Using FlxTween Complete Functions?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+            <tr class="even views-row-last">
+                            <td class="views-field views-field-title" >
+                    <a href="solved-cross-platform-time-tracking.html"><span>[SOLVED] Cross-platform time tracking?</span></a>                </td>
+                            <td class="views-field views-field-type" >
+                    Forum topic                </td>
+                    </tr>
+        </tbody>
+</table>     </div>
+  
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="http://10.211.55.13/general-discussion/nme-openfl?page=1">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="http://10.211.55.13/general-discussion/nme-openfl?page=2">3</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a href="http://10.211.55.13/general-discussion/nme-openfl?page=1">›</a></li>
+<li class="pager-last last"><a href="http://10.211.55.13/general-discussion/nme-openfl?page=165">»</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<footer id="footer" class="footer-bg" role="footer">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <ul class="footer-menu">
+                    <li><a href="http://www.haxe.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/haxe-logo.png" width="26px"/></a></li>
+                    <li><a href="http://www.openfl.org/"><img src="../sites/all/themes/haxeflixel_bootstrap/assets/images/nme-logo.png" width="26px"/></a></li>
+                    <li><a href="http://haxeflixel.com/documentation/">Documentation</a></li>
+                    <li><a href="http://haxeflixel.com/demos/">Demos</a></li>
+                </ul>
+            </div>
+            <div class="span6">
+                <div class="footer-social-links">
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;"></iframe>
+
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;"></iframe>
+
+                    <iframe allowtransparency="true" frameborder="0" scrolling="no"
+                            src="http://platform.twitter.com/widgets/follow_button.html?screen_name=haxeflixel"
+                            style="width:230px; height:26px;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+</footer>  <script type="text/javascript" src="../sites/default/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+
+<div class="bg_highlight"></div>
+
+</body>
+
+
+<!-- Mirrored from 10.211.55.13/general-discussion/nme-openfl by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:39 GMT -->
+</html>

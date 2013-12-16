@@ -1,0 +1,813 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<!--
+ __  __     ______     __  __     ______     ______   __         __     __  __     ______     __
+/\ \_\ \   /\  __ \   /\_\_\_\   /\  ___\   /\  ___\ /\ \       /\ \   /\_\_\_\   /\  ___\   /\ \
+\ \  __ \  \ \  __ \  \/_/\_\/_  \ \  __\   \ \  __\ \ \ \____  \ \ \  \/_/\_\/_  \ \  __\   \ \ \____
+ \ \_\ \_\  \ \_\ \_\   /\_\/\_\  \ \_____\  \ \_\    \ \_____\  \ \_\   /\_\/\_\  \ \_____\  \ \_____\
+  \/_/\/_/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/     \/_____/   \/_/   \/_/\/_/   \/_____/   \/_____/
+
+0.2.1 bootstrap
+-->
+
+<html class="cssgradients" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+
+<!-- Mirrored from 10.211.55.13/haxeflixel-development?order=title&sort=asc by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" type="application/rss+xml" title="RSS - HaxeFlixel Development" href="http://10.211.55.13/taxonomy/term/21/feed" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <title>HaxeFlixel Development | HaxeFlixel</title>
+    <link type="text/css" rel="stylesheet" href="sites/default/files/css/css_791YXBaKKm1ORM_7huSKEsIV9tSWq6wmRkERhuXpN6w.css" media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_zHujuv7dvyvVeC2yIxRC-mNyBvEKEOO0ScWypJ-I-Mw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_WEQ3aicsrD_BNwADlzm35tSt5mQCzjeCmbW-mPXBUAE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_Lsj1hnFgUgcY_hv5ipXfmm5GWxFLNZGdCJOsxxBFxv0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="print" />
+    <style type="text/css">
+        body{
+            margin-top: 120px;
+        }
+
+        #archive-warning {
+            background: none repeat scroll 0 0 #000000;
+            color: #FFFFFF;
+            display: block;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+        #archive-warning h2 {
+            color: red;
+        }
+    </style>
+
+    <script type="text/javascript" src="sites/default/files/js/js_0gj6QcpfRH2jzTbCQqf7kEkm4MXY0UA_sRhwPc8jC1o.js"></script>
+<script type="text/javascript" src="sites/default/files/js/js_03PhocEaUymZGTRCa-nb226qVvl6eCiXz1vDVlRSXaw.js"></script>
+<script type="text/javascript" src="sites/default/files/js/js_DuCBxVBnmwlqi-FUiwD_uvjmLVBk6uphM_23_gbOteI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.absolute_messages, {"dismiss":{"status":false,"warning":false,"error":false},"dismiss_time":{"status":"","warning":"","error":""},"dismiss_all_count":2});
+//--><!]]>
+</script>
+<script type="text/javascript" src="sites/default/files/js/js_2NcV9pMupWSg5QD0YgMHA3VBytz0szC-zoJIF2oM32o.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-35511281-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="sites/default/files/js/js_uPcOSUjKf0Oc3qqo5JwAHcqGd498cAMC3xR3Hs-oqV8.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"haxeflixel_bootstrap","theme_token":"W2bRKTbYJ1hS4mySNDcdSC7IrBAsvgyeF8ZEGlsCEUo","js":{"sites\/all\/modules\/contrib\/syntaxhighlighter\/syntaxhighlighter.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shCore.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushAS3.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushBash.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushCpp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushHaxe.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJScript.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushJava.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPhp.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushPlain.js":1,"sites\/all\/libraries\/syntaxhighlighter\/scripts\/shBrushXml.js":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.js":1,"0":1,"sites\/all\/modules\/contrib\/panels\/js\/panels.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"misc\/tableheader.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/jump-menu.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/radix\/assets\/javascripts\/modernizr-2.6.1.min.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/radix-script.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/javascripts\/script.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/haxeflixel_core\/layouts.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/absolute_messages\/absolute_messages.css":1,"sites\/all\/modules\/contrib\/ckeditor\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shCore.css":1,"sites\/all\/libraries\/syntaxhighlighter\/styles\/shThemeRDark.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.structure.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/forum\/haxeflixel\/advanced-forum.haxeflixel.images.css":1,"public:\/\/ctools\/css\/5400ad51d46d5c046086382cc7559493_0.css":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-style.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/screen.css":1,"sites\/all\/themes\/radix\/assets\/stylesheets\/radix-print.css":1,"sites\/all\/themes\/haxeflixel_bootstrap\/assets\/stylesheets\/print.css":1}},"quote_nest":"2","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]>
+    <script>
+    document.createElement('header');
+    document.createElement('nav');
+    document.createElement('section');
+    document.createElement('article');
+    document.createElement('aside');
+    document.createElement('footer');
+    </script>
+    <![endif]-->
+</head>
+<body class="main-body">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div id="archive-warning">
+
+    <h3>We have moved to a <a href="http://www.haxeflixel.com/forum">new forum</a> :)</h3>
+
+    <p>You are viewing a read-only archive of the old forum. You can continue to post topics in the new <a href="http://www.haxeflixel.com/forum">forum here.</a></p>
+
+</div>
+
+<header id="header" class="header" role="header">
+    <div class="container">
+
+        <div class = "home-logo-button">
+            <a href = "index.html">
+                <img src = "sites/all/themes/haxeflixel_bootstrap/assets/images/haxeflixel-logo.png" alt = "HaxeFlixel"/>
+            </a>
+        </div>
+
+        <div id="navigation" class="navbar">
+            <div class="navbar-inner">
+                <div class="container clearfix">
+
+                    <a class="btn btn-navbar btn-navbar-menu" data-toggle="collapse" data-target=".nav-menu-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <a class="btn btn-navbar btn-navbar-search" data-toggle="collapse" data-target=".nav-search-collapse">
+                        <span class="icon-search"></span>
+                    </a>
+
+                    <div class="nav-collapse nav-menu-collapse">
+                        <div class="inner">
+                            <ul id="main-menu-user" class="menu nav">
+                <li class="first expanded dropdown open">
+                    <a title="" href="http://forum.haxeflixel.com/user/">
+                        <span>Login / Signup</span></span>
+                    </a>
+                </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/demos/">
+                    Demos
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://haxeflixel.com/documentation">
+                    Documentation
+                </a>
+            </li>
+
+            <li class="first">
+                <a class="" title="" href="http://forum.haxeflixel.com/">
+                    Forum
+                </a>
+            </li>
+
+            </ul>                        </div>
+                    </div>
+
+                    <div class="nav-collapse nav-search-collapse">
+                        <div class="inner">
+                                                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+</header>
+<div id="main-wrapper" class="container">
+    <div id="main" class="main-container-style">
+                    <div id="breadcrumb" class="">
+                <div class="">
+                    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="forum.html"><span>Forums</span></a></div>                </div>
+            </div>
+                        <div id="content">
+            <a id="main-content"></a>
+
+            <div id="page-header">
+
+                <div class="">
+                                            <div class="page-header">
+
+                            <h1 class="title">HaxeFlixel Development</h1>
+
+<!--                            <a href="/forum/markasread" class="btn new-post-forums">Mark All Read</a>-->
+                            <a href="https://groups.google.com/forum/#!newtopic/haxeflixel" class="btn new-post-forums">New Post</a>
+
+                        </div>
+
+
+                    
+
+
+                                                        </div>
+            </div>
+
+<div class="panel-flexible panels-flexible-70 clearfix" id="forum">
+<div class="panel-flexible-inside panels-flexible-70-inside">
+<div class="panels-flexible-region panels-flexible-region-70-center panels-flexible-region-first panels-flexible-region-last">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-70-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-forum-topic-list" >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class = "view view-advanced-forum-topic-list view-id-advanced_forum_topic_list view-display-id-default view-dom-id-419137ee2d2480b16bde53060f095b77">
+    
+
+
+
+<div class = "view-content">
+     <div id="forum-topic-list">
+  
+  <table class="table table-bordered forum-table forum-table-topics forum-table forum-table-topics sticky-enabled cols-4">
+    <thead>
+      <tr>
+                  <th class="views-field views-field-title active">
+            <a href="http://10.211.55.13/haxeflixel-development?order=title&amp;sort=desc" title="sort by Title" class="active"><span>Title<img src="http://10.211.55.13/misc/arrow-desc.png" width="13" height="13" alt="sort descending" title="sort descending" /></span></a>          </th>
+                  <th class="views-field views-field-comment-count">
+            <a href="haxeflixel-developmentc0a3.html?order=comment_count&amp;sort=asc" title="sort by Replies" class="active"><span>Replies</span></a>          </th>
+                  <th class="views-field views-field-last-updated">
+            <a href="http://10.211.55.13/haxeflixel-development?order=last_updated&amp;sort=desc" title="sort by Last post" class="active"><span>Last post</span></a>          </th>
+                  <th class="views-field views-field-picture">
+            Picture          </th>
+              </tr>
+    </thead>
+    <tbody>
+              <tr class="sticky forum-last-sticky odd views-row-first">
+                                                  <td class="views-field views-field-title active">
+                                               <span class="sticky-label">Sticky:</span>
+                              <a href="haxeflixel-development/how-to-use-development-version.html" title="I added a For Developers section on the flixel REAME."><span><span class="forum-topic-title">How to use development version</span> </span></a> <br /> by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a> » <em class="placeholder">3 months 3 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             3<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/gltovar" title="View user profile." class="username"><span>gltovar</span></a><br /><em class="placeholder">2 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/crazysam"><span><img src="sites/default/files/styles/40px/public/avatars/17873_75x75_17226.gif?itok=Mo3IT2GL" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/add-a-tag-to-store-custom-data-in-flixel-objects" title="It will be more handy to have something like nape&#039;s userData in game objects. I&#039;ve seen this method used in many frameworks."><span><span class="forum-topic-title">Add a tag to store custom data in flixel objects</span> </span></a> <br /> by <a href="http://10.211.55.13/users/henryt" title="View user profile." class="username"><span>Henry.T</span></a> » <em class="placeholder">6 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             14<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">6 months 1 day</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/henryt"><span><img src="sites/default/files/styles/40px/public/avatars/picture-304-13733674811d71.jpg?itok=GIcFXMG1" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/adding-one-sprite-to-multiple-groups.html" title="Recently Beeblerox helped me to find a strange bug, I had 2 similar sprites (same code), but one sprite had framerate two times than the other(animation was moving faster), the bug was that when I "><span><span class="forum-topic-title">Adding one sprite to multiple groups</span> </span></a> <br /> by <a href="http://10.211.55.13/users/tripod" title="View user profile." class="username"><span>Tripod</span></a> » <em class="placeholder">1 month 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             7<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/secv" title="View user profile." class="username"><span>secv</span></a><br /><em class="placeholder">1 month 1 day</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/tripod"><span><img src="sites/default/files/styles/40px/public/avatars/WOW_Tripod_01_1920x1080_1e7ec.jpg?itok=T2mtcnli" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/alpha-tilemapblend-modes-in-new-flixel.html" title="Hey, I was wondering if the following were fixed in the new Flixel before I go about upgrading, since if they&#039;re not fixed I won&#039;t bother at the moment as old Flixel is working really well for me o"><span><span class="forum-topic-title">alpha tilemap/blend modes in new flixel</span> </span></a> <br /> by <a href="http://10.211.55.13/users/seagaia" title="View user profile." class="username"><span>seagaia</span></a> » <em class="placeholder">1 week 4 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             4<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/seagaia" title="View user profile." class="username"><span>seagaia</span></a><br /><em class="placeholder">1 week 3 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/seagaia"><span><img src="sites/default/files/styles/40px/public/avatar_selection/mario06f6.png?itok=cbCUvuXi" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/alphamask-sprites-on-cpp-target" title="We are currently working on a small sidescroller game and try to implement a moving lamp in a cave."><span><span class="forum-topic-title">alphamask sprites on cpp target</span> </span></a> <br /> by <a href="http://10.211.55.13/users/bytecombo" title="View user profile." class="username"><span>bytecombo</span></a> » <em class="placeholder">7 months 6 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             3<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/seagaia" title="View user profile." class="username"><span>seagaia</span></a><br /><em class="placeholder">7 months 1 day</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/bytecombo"><span><img src="sites/default/files/styles/40px/public/avatar_selection/mushroom860c.png?itok=Wa9y7R_P" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/android-compilation-problem" title="I recently had a problem compiling to android target, it was always telling me that JAVA_HOME is pointing to jre7, while in reality it was pointing to the jdk1.6_. "><span><span class="forum-topic-title">Android compilation problem</span> </span></a> <br /> by <a href="http://10.211.55.13/users/tripod" title="View user profile." class="username"><span>Tripod</span></a> » <em class="placeholder">8 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><br /><em class="placeholder">8 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/tripod"><span><img src="sites/default/files/styles/40px/public/avatars/WOW_Tripod_01_1920x1080_1e7ec.jpg?itok=T2mtcnli" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/announcement-for-contributors" title="The experimental branch has been deleted, that means most big changes are complete, and every contributor shoul"><span><span class="forum-topic-title">Announcement for Contributors</span> </span></a> <br /> by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a> » <em class="placeholder">4 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/skrivener" title="View user profile." class="username"><span>Skrivener</span></a><br /><em class="placeholder">4 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/crazysam"><span><img src="sites/default/files/styles/40px/public/avatars/17873_75x75_17226.gif?itok=Mo3IT2GL" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/audio-errors-in-108" title="Hi,  I updated Flixel to version 1.08 and now it doesn&#039;t find any mp3 sounds i successfully used in the older version.  "><span><span class="forum-topic-title">Audio errors in 1.08</span> </span></a> <br /> by <a href="http://10.211.55.13/users/tiago-ling-alexandre" title="View user profile." class="username"><span>Tiago Ling Alexandre</span></a> » <em class="placeholder">11 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><br /><em class="placeholder">11 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/tiago-ling-alexandre"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-002afe.jpg?itok=5EnRVMJH" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/axonometric-2d-iso-library" title="Hello,
+
+ 
+
+Here I come with the port of Axonometric lib from flixel.
+
+ 
+
+It permits you to create 2D isometric tilemaps easily.
+
+ "><span><span class="forum-topic-title">Axonometric - 2D iso library</span> </span></a> <br /> by <a href="http://10.211.55.13/users/masadow" title="View user profile." class="username"><span>Masadow</span></a> » <em class="placeholder">7 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             3<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/masadow" title="View user profile." class="username"><span>Masadow</span></a><br /><em class="placeholder">7 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/masadow"><span><img src="sites/default/files/styles/40px/public/avatar_selection/mushroom860c.png?itok=Wa9y7R_P" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/best-practices-for-multi-platform-development" title="Hey everyone "><span><span class="forum-topic-title">Best practices for multi platform development</span> </span></a> <br /> by <a href="http://10.211.55.13/users/filya1" title="View user profile." class="username"><span>filya1</span></a> » <em class="placeholder">9 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             16<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">9 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/filya1"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-010901.jpg?itok=SrUcAfD_" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/bitmapint32-vs-int" title="Hi all, "><span><span class="forum-topic-title">BitmapInt32 vs Int?</span> </span></a> <br /> by <a href="http://10.211.55.13/users/oconnor0" title="View user profile." class="username"><span>oconnor0</span></a> » <em class="placeholder">10 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             6<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">10 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/oconnor0"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-010901.jpg?itok=SrUcAfD_" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/blackberry-export-suddenly-crashes.html" title="After the compile fix for blackberry in this post: http://forum.haxeflixel.com/ha"><span><span class="forum-topic-title">Blackberry export suddenly crashes</span> </span></a> <br /> by <a href="http://10.211.55.13/users/kinerius" title="View user profile." class="username"><span>Kinerius</span></a> » <em class="placeholder">3 weeks 5 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/kinerius" title="View user profile." class="username"><span>Kinerius</span></a><br /><em class="placeholder">3 weeks 4 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/blackberry-target-isnt-working-in-current-version.html"><span><span class="forum-topic-title">Blackberry target isnt working in current version</span> </span></a> <br /> by <a href="http://10.211.55.13/users/kinerius" title="View user profile." class="username"><span>Kinerius</span></a> » <em class="placeholder">1 month 10 hours</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             3<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">3 weeks 6 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/blank-screen-on-blackberry-simulator" title="I tried to compile my project to blackberry. Unfortunately I haven&#039;t PlayBook so I must use simulator to test. After compilation and start-up of application I can&#039;t see anything."><span><span class="forum-topic-title">Blank screen on Blackberry simulator</span> </span></a> <br /> by <a href="http://10.211.55.13/users/dynax" title="View user profile." class="username"><span>dynax</span></a> » <em class="placeholder">10 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             11<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><br /><em class="placeholder">10 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/dynax"><span><img src="sites/default/files/styles/40px/public/avatars/picture-267-1372697148b765.jpg?itok=-Zu452cv" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/blendmode-error-when-targeting-desktop" title="I used this tutorial to create lighting in my game, and it works great in Flash, but doesn&#039;t render properly in"><span><span class="forum-topic-title">BlendMode error when targeting Desktop</span> </span></a> <br /> by <a href="http://10.211.55.13/users/stevrrr" title="View user profile." class="username"><span>stevrrr</span></a> » <em class="placeholder">5 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             5<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/xraven13" title="View user profile." class="username"><span>xraven13</span></a><br /><em class="placeholder">4 months 6 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/stevrrr"><span><img src="sites/default/files/styles/40px/public/avatars/picture-277-1373306811bae5.png?itok=Zk6UURxy" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/bug-with-108-and-compiling-to-android" title="Hi,Wanted to compile some samples and my new test project to android platform. This always results in the same bug:"><span><span class="forum-topic-title">Bug with 1.08 and compiling to android</span> </span></a> <br /> by <a href="http://10.211.55.13/users/ragingdave" title="View user profile." class="username"><span>RagingDave</span></a> » <em class="placeholder">11 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/igghera" title="View user profile." class="username"><span>igghera</span></a><br /><em class="placeholder">11 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/ragingdave"><span><img src="http://10.211.55.13/sites/default/files/styles/40px/public/avatars/raging_dave2_1.png?itok=AAWxOVHa" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/bug-with-108-on-flash-and-windows-target" title="I got this error when compiling windows target and this on flash target"><span><span class="forum-topic-title">Bug with 1.08 on flash and windows target</span> </span></a> <br /> by <a href="http://10.211.55.13/users/cyphertext" title="View user profile." class="username"><span>cyphertext</span></a> » <em class="placeholder">11 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             5<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/cyphertext" title="View user profile." class="username"><span>cyphertext</span></a><br /><em class="placeholder">11 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/cyphertext"><span><img src="sites/default/files/styles/40px/public/avatar_selection/mario06f6.png?itok=cbCUvuXi" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/built-in-debug-console" title="Hey!"><span><span class="forum-topic-title">Built in Debug Console!</span> </span></a> <br /> by <a href="http://10.211.55.13/users/bradparks" title="View user profile." class="username"><span>bradparks</span></a> » <em class="placeholder">11 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             11<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/tomph" title="View user profile." class="username"><span>tomph</span></a><br /><em class="placeholder">10 months 21 hours</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/bradparks"><span><img src="sites/default/files/styles/40px/public/avatars/gravatar_1ad71.png?itok=QICsHUAj" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/camera-gui" title="Hi, I actually use 2 cameras. One for the game which is zoomable and another one for the minimap. "><span><span class="forum-topic-title">Camera &amp; GUI</span> </span></a> <br /> by <a href="http://10.211.55.13/users/masadow" title="View user profile." class="username"><span>Masadow</span></a> » <em class="placeholder">7 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             5<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/masadow" title="View user profile." class="username"><span>Masadow</span></a><br /><em class="placeholder">7 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/masadow"><span><img src="sites/default/files/styles/40px/public/avatar_selection/mushroom860c.png?itok=Wa9y7R_P" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/chance-class.html" title="Hey everyone !"><span><span class="forum-topic-title">Chance class</span> </span></a> <br /> by <a href="http://10.211.55.13/users/xraven13" title="View user profile." class="username"><span>xraven13</span></a> » <em class="placeholder">1 month 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">1 month 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/xraven13"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-010901.jpg?itok=SrUcAfD_" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/community-testing" title="There&#039;s been a surge of interest in the engine lately and quite a few people have made pull requests on the repo."><span><span class="forum-topic-title">Community Testing</span> </span></a> <br /> by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a> » <em class="placeholder">7 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             7<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">7 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/crazysam"><span><img src="sites/default/files/styles/40px/public/avatars/17873_75x75_17226.gif?itok=Mo3IT2GL" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/comparison-to-as3-flixel" title="I was interested in looking where Haxeflixel is currently performance wise compared to the as3 version."><span><span class="forum-topic-title">Comparison to As3 Flixel</span> </span></a> <br /> by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a> » <em class="placeholder">1 year 6 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             8<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><br /><em class="placeholder">1 year 6 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/chris"><span><img src="sites/default/files/styles/40px/public/avatars/picture-305-1375680223dad2.jpg?itok=ziJbk0NM" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/cpp-target-windows-add-draw-order-problem" title="While creating my game prototype I ran into a problem with the cpp target.I thought the draw order of sprites and text and stuff was depending on the order of &#039;add()&#039; in the code."><span><span class="forum-topic-title">cpp target (windows) &#039;add&#039; draw order problem</span> </span></a> <br /> by <a href="http://10.211.55.13/users/micuurloon" title="View user profile." class="username"><span>MicUurloon</span></a> » <em class="placeholder">1 year 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             7<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><br /><em class="placeholder">11 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/micuurloon"><span><img src="sites/default/files/styles/40px/public/avatars/mic_12fcc.png?itok=DG12CsOb" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/debug-console-on-ouya.html" title="So I&#039;m trying to get trace statements when I&#039;m testing on my OUYA. Unfortunately trace inside my flixel extended classes just outputs to the debug console."><span><span class="forum-topic-title">Debug Console on OUYA?</span> </span></a> <br /> by <a href="http://10.211.55.13/users/too-dx" title="View user profile." class="username"><span>TOO DX</span></a> » <em class="placeholder">4 months 17 hours</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             4<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/too-dx" title="View user profile." class="username"><span>TOO DX</span></a><br /><em class="placeholder">2 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/too-dx"><span><img src="sites/default/files/styles/40px/public/avatars/toodx-auston_1ea6e.png?itok=8Rxq9rMe" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/direct-pixel-manipulation-in-flxsprite-does-not-update" title="Hi, I noticed in FlxSprite the function resetHelpers cannot be called directly. This causes problems when I want to use copyPixels on the pixels member and then update."><span><span class="forum-topic-title">Direct pixel manipulation in FlxSprite does not update</span> </span></a> <br /> by <a href="http://10.211.55.13/users/garfunkel" title="View user profile." class="username"><span>Garfunkel</span></a> » <em class="placeholder">9 months 3 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/garfunkel" title="View user profile." class="username"><span>Garfunkel</span></a><br /><em class="placeholder">8 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/garfunkel"><span><img src="sites/default/files/styles/40px/public/avatars/furgasIcon_1f931.png?itok=fF05tKWW" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/do-we-need-multicamera-support-in-haxeflixel.html" title="Hello Everybody!"><span><span class="forum-topic-title">Do we need multicamera support in HaxeFlixel?</span> </span></a> <br /> by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a> » <em class="placeholder">1 month 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             5<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/goshki" title="View user profile." class="username"><span>goshki</span></a><br /><em class="placeholder">1 month 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/beeblerox"><span><img src="sites/default/files/styles/40px/public/avatars/zaphod-beeblebrox-small-001_190d1.jpg?itok=onX_qBsU" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/dont-move-release.html" title="
+"><span><span class="forum-topic-title">Don&#039;t Move [Release]</span> </span></a> <br /> by <a href="http://10.211.55.13/users/stevrrr" title="View user profile." class="username"><span>stevrrr</span></a> » <em class="placeholder">3 months 3 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/stevrrr" title="View user profile." class="username"><span>stevrrr</span></a><br /><em class="placeholder">3 months 3 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/stevrrr"><span><img src="sites/default/files/styles/40px/public/avatars/picture-277-1373306811bae5.png?itok=Zk6UURxy" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/double-click-event-for-any-keyboard-button" title="Use like this :"><span><span class="forum-topic-title">Double click event for any keyboard button</span> </span></a> <br /> by <a href="http://10.211.55.13/users/xraven13" title="View user profile." class="username"><span>xraven13</span></a> » <em class="placeholder">5 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><br /><em class="placeholder">5 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/xraven13"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-010901.jpg?itok=SrUcAfD_" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/doubts-in-haxeflixel-development.html" title="I am an android developer and now want to develop cross platform games usign haxeflixel + openfl+haxe. I am looking forward to from where I would start."><span><span class="forum-topic-title">Doubts in haxeflixel development</span> </span></a> <br /> by <a href="http://10.211.55.13/users/prasharonnet" title="View user profile." class="username"><span>prasharonnet</span></a> » <em class="placeholder">2 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             3<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/gltovar" title="View user profile." class="username"><span>gltovar</span></a><br /><em class="placeholder">2 weeks 4 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/drawing-process" title="Hello,
+
+ 
+
+I don&#039;t really understand the drawing process in other target than flash.
+
+I mean, what is this draw stack ? How does it works ?"><span><span class="forum-topic-title">Drawing process</span> </span></a> <br /> by <a href="http://10.211.55.13/users/masadow" title="View user profile." class="username"><span>Masadow</span></a> » <em class="placeholder">6 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/masadow" title="View user profile." class="username"><span>Masadow</span></a><br /><em class="placeholder">6 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/masadow"><span><img src="sites/default/files/styles/40px/public/avatar_selection/mushroom860c.png?itok=Wa9y7R_P" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/effects-bulge-lens-warp.html" title="Just wondering if there is support for image effects such as bulge, lense etc? Also, I &#039;ve read that blend modes are only supported via the flash client, is that true?
+
+ "><span><span class="forum-topic-title">Effects (bulge, lens, warp)</span> </span></a> <br /> by <a href="http://10.211.55.13/users/thomas-morrison" title="View user profile." class="username"><span>Thomas Morrison</span></a> » <em class="placeholder">2 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">2 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/error-in-flxg-when-targeting-html5" title="I get the following error when I try to release for HTML5: &quot;C:\Program Files (x86)\Motion-Twin\haxe\lib/flixel/1,08/org/flixel/FlxG.hx:903: lines 903-927 : Class not found : UInt"><span><span class="forum-topic-title">Error in FlxG when targeting HTML5</span> </span></a> <br /> by <a href="http://10.211.55.13/users/stevrrr" title="View user profile." class="username"><span>stevrrr</span></a> » <em class="placeholder">9 months 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             10<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/stevrrr" title="View user profile." class="username"><span>stevrrr</span></a><br /><em class="placeholder">5 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/stevrrr"><span><img src="sites/default/files/styles/40px/public/avatars/picture-277-1373306811bae5.png?itok=Zk6UURxy" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/error-in-flxspriteupdateframedata-on-dev-branch.html" title="Hi Everyone
+
+I&#039;m currently getting a strage error with flixel in one of our games, this error only seems to crop up after the state has been reloaded multiple times (over 10ish)."><span><span class="forum-topic-title">error in FlxSprite::updateFrameData on Dev branch</span> </span></a> <br /> by <a href="http://10.211.55.13/users/rsearle" title="View user profile." class="username"><span>rsearle</span></a> » <em class="placeholder">3 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/rsearle" title="View user profile." class="username"><span>rsearle</span></a><br /><em class="placeholder">3 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flashdevelop-build-failed-with-no-message" title="Just sharing my experience and solution (ie. this is not a question)."><span><span class="forum-topic-title">FlashDevelop Build Failed with no message</span> </span></a> <br /> by <a href="http://10.211.55.13/users/skrivener" title="View user profile." class="username"><span>Skrivener</span></a> » <em class="placeholder">5 months 1 day</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/crazysam" title="View user profile." class="username"><span>crazysam</span></a><br /><em class="placeholder">5 months 18 hours</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/skrivener"><span><img src="http://10.211.55.13/sites/default/files/styles/40px/public/avatars/picture-117-1375328617.png?itok=wMA1F606" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flixel-particle-emitters" title="Thanks to BeebleRox the blend mode ADD on cpp looks very cool in emitters.
+ 
+There is much room to play with the settings here, we can get some great effects.
+ "><span><span class="forum-topic-title">Flixel Particle Emitters</span> </span></a> <br /> by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a> » <em class="placeholder">1 year 1 month</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             4<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><br /><em class="placeholder">1 year 1 month</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/chris"><span><img src="sites/default/files/styles/40px/public/avatars/picture-305-1375680223dad2.jpg?itok=ziJbk0NM" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flixel-preloader-very-slow" title="Hi,I&#039;ve just tried the haxelib new-project command, literally just the haxelib run flixel new -name &quot;hello_world&quot;. "><span><span class="forum-topic-title">Flixel preloader very slow?</span> </span></a> <br /> by <a href="http://10.211.55.13/users/tametick" title="View user profile." class="username"><span>tametick</span></a> » <em class="placeholder">10 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><br /><em class="placeholder">10 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/tametick"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-010901.jpg?itok=SrUcAfD_" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxextendedsprite-flxmousecontrol-click-handling-too-slow" title="Hi, "><span><span class="forum-topic-title">FlxExtendedSprite / FlxMouseControl click handling too slow</span> </span></a> <br /> by <a href="http://10.211.55.13/users/tiago-ling-alexandre" title="View user profile." class="username"><span>Tiago Ling Alexandre</span></a> » <em class="placeholder">9 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><br /><em class="placeholder">9 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/tiago-ling-alexandre"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-002afe.jpg?itok=5EnRVMJH" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxgamereset-or-flxgswitchstate-cause-weird-local-scope-pointer-bugs-solved" title=" I just installed haxe flixel a few days ago, so I think I have the latest version. I&#039;m using the Flash target.  "><span><span class="forum-topic-title">FlxGame.reset() or FlxG.switchState() cause weird, local-scope pointer bugs (SOLVED)</span> </span></a> <br /> by <a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a> » <em class="placeholder">1 year 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             5<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><br /><em class="placeholder">1 year 2 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/larsiusprime"><span><img src="sites/default/files/styles/40px/public/avatars/thumb512_1d6a8.jpg?itok=R5Ud-2pm" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxgradient-horizontal-in-flash-radial-in-neko-android" title="I found this just now
+this ois the same code using flxGradient of PhotonStorm"><span><span class="forum-topic-title">FlxGradient// horizontal in flash &amp; radial in neko android :/</span> </span></a> <br /> by <a href="http://10.211.55.13/users/peko" title="View user profile." class="username"><span>Peko</span></a> » <em class="placeholder">6 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/peko" title="View user profile." class="username"><span>Peko</span></a><br /><em class="placeholder">6 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/peko"><span><img src="sites/default/files/styles/40px/public/avatars/n603441006_4783_12faa.jpg?itok=gtnoMf3l" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/flxgroup-iterator-and-flxtimer.html" title="I&#039;ve got two questions/suggestions
+
+When using a FlxTypedGroup what&#039;s the best way to iterate through all the members?
+
+I was using:"><span><span class="forum-topic-title">FlxGroup Iterator and FlxTimer</span> </span></a> <br /> by <a href="http://10.211.55.13/users/roboprez" title="View user profile." class="username"><span>roboprez</span></a> » <em class="placeholder">2 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/secv" title="View user profile." class="username"><span>secv</span></a><br /><em class="placeholder">2 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxsoundmanager" title="Somewhat inspired by various posts here and elsewhere I have built a basic sound manager class to improve organizing and working with sounds:"><span><span class="forum-topic-title">FlxSoundManager</span> </span></a> <br /> by <a href="http://10.211.55.13/users/skrivener" title="View user profile." class="username"><span>Skrivener</span></a> » <em class="placeholder">5 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             7<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/larsiusprime" title="View user profile." class="username"><span>larsiusprime</span></a><br /><em class="placeholder">3 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/skrivener"><span><img src="http://10.211.55.13/sites/default/files/styles/40px/public/avatars/picture-117-1375328617.png?itok=wMA1F606" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxspinesprite-bone-based-animation-class-using-spine" title="Hey ! "><span><span class="forum-topic-title">FlxSpineSprite ( bone based animation class using Spine )</span> </span></a> <br /> by <a href="http://10.211.55.13/users/xraven13" title="View user profile." class="username"><span>xraven13</span></a> » <em class="placeholder">5 months 6 days</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/xraven13" title="View user profile." class="username"><span>xraven13</span></a><br /><em class="placeholder">5 months 6 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/xraven13"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-010901.jpg?itok=SrUcAfD_" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/flxspritemakegraphic-not-working-as-expected.html" title="I&#039;m currently just experimenting with HaxeFlixel after downloading flixel 3.0.0-dev from Github a few days ago."><span><span class="forum-topic-title">FlxSprite.makeGraphic not working as expected</span> </span></a> <br /> by <a href="http://10.211.55.13/users/soulbeaver" title="View user profile." class="username"><span>SoulBeaver</span></a> » <em class="placeholder">3 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             3<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/avvi" title="View user profile." class="username"><span>Avvi</span></a><br /><em class="placeholder">3 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxtext-doesnt-float-up-by-velocity" title="Hi! I&#039;m try to float up some FlxText (like FlxSprite in Space Shooter example), but code doesn&#039;t work. If I use code from Space Shooter example - all works fine. "><span><span class="forum-topic-title">FlxText doesn&#039;t float up by velocity</span> </span></a> <br /> by <a href="http://10.211.55.13/users/zzzzzzerg" title="View user profile." class="username"><span>zzzzzzerg</span></a> » <em class="placeholder">11 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/chris" title="View user profile." class="username"><span>Chris</span></a><br /><em class="placeholder">11 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/zzzzzzerg"><span><img src="http://10.211.55.13/sites/default/files/styles/40px/public/avatars/a1c799903e10a1a53b2d419a00c48622_1.png?itok=N4sfIqdz" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxtilemaploadmap-gridsheet-seems-buggy-on-cppneko" title="I&#039;ve been copying tiles from the tilemap using FlxTilemap.tileToFlxSprite(). That returned some garbage pixels.I traced it to FlxG.addBitmap(). "><span><span class="forum-topic-title">FlxTilemap.loadMap (grid/sheet) seems buggy on cpp/neko</span> </span></a> <br /> by <a href="http://10.211.55.13/users/garfunkel" title="View user profile." class="username"><span>Garfunkel</span></a> » <em class="placeholder">9 months 1 day</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             9<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/garfunkel" title="View user profile." class="username"><span>Garfunkel</span></a><br /><em class="placeholder">8 months 4 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/garfunkel"><span><img src="sites/default/files/styles/40px/public/avatars/furgasIcon_1f931.png?itok=fF05tKWW" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/flxtween-delay-not-waiting-max-duration-before-completing.html" title="Hey, this is a total lazy way of doing this but I have a 3 stage tween."><span><span class="forum-topic-title">FlxTween Delay not waiting max duration before completing</span> </span></a> <br /> by <a href="http://10.211.55.13/users/gltovar" title="View user profile." class="username"><span>gltovar</span></a> » <em class="placeholder">3 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             2<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/gltovar" title="View user profile." class="username"><span>gltovar</span></a><br /><em class="placeholder">3 months 3 weeks</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/flxweapon" title="Hi!! I was trying to use FlxWeapon and I got a few errors:  "><span><span class="forum-topic-title">FlxWeapon</span> </span></a> <br /> by <a href="http://10.211.55.13/users/hamnos" title="View user profile." class="username"><span>Hamnos</span></a> » <em class="placeholder">1 year 1 day</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><br /><em class="placeholder">1 year 1 day</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/hamnos"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-002afe.jpg?itok=5EnRVMJH" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/font-not-showing-numbers" title="Hey Everybody, "><span><span class="forum-topic-title">Font not showing numbers</span> </span></a> <br /> by <a href="http://10.211.55.13/users/jcorace" title="View user profile." class="username"><span>JCorace</span></a> » <em class="placeholder">7 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             1<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/beeblerox" title="View user profile." class="username"><span>Beeblerox</span></a><br /><em class="placeholder">7 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/jcorace"><span><img src="http://10.211.55.13/sites/default/files/styles/40px/public/avatars/thumb_1.png?itok=qNKb6_w5" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="odd">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="http://10.211.55.13/haxeflixel-development/fonts-not-showing-on-androidios" title="Hi guys,  I am running a bunch of demos to understand the power of HaxeFlixel, which is fantastic, thanks for the effort you put in it. "><span><span class="forum-topic-title">Fonts not showing on android/ios</span> </span></a> <br /> by <a href="http://10.211.55.13/users/igghera" title="View user profile." class="username"><span>igghera</span></a> » <em class="placeholder">11 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             7<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/nestorvc" title="View user profile." class="username"><span>nestorvc</span></a><br /><em class="placeholder">10 months 1 week</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                             <a href="http://10.211.55.13/users/igghera"><span><img src="sites/default/files/styles/40px/public/avatar_selection/alien-002afe.jpg?itok=5EnRVMJH" width="40" height="40" alt="" /></span></a>              </td>
+                              </tr>
+              <tr class="even views-row-last">
+                                                  <td class="views-field views-field-title active">
+                                             <a href="haxeflixel-development/fps-drops-to-1.html" title="On flash build on any example, when I&#039;m moving mouse over a flash player FPS drops to 1. Without mouse movement it runs at 60FPS . It also drops a little bit with android build."><span><span class="forum-topic-title">FPS drops to 1</span> </span></a> <br /> by <a href="http://10.211.55.13/users/yzigames" title="View user profile." class="username"><span>yzigames</span></a> » <em class="placeholder">1 month 1 week</em> ago              </td>
+                                        <td class="views-field views-field-comment-count">
+                                             5<br />               </td>
+                                        <td class="views-field views-field-last-updated">
+                                             by <a href="http://10.211.55.13/users/gltovar" title="View user profile." class="username"><span>gltovar</span></a><br /><em class="placeholder">2 weeks 4 days</em> ago              </td>
+                                        <td class="views-field views-field-picture">
+                                                           </td>
+                              </tr>
+          </tbody>
+  </table>
+</div></div>
+    
+<div class = "forum-pager clearfix" id = "forum-pager-bottom"><h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="http://10.211.55.13/haxeflixel-development?page=1&amp;order=title&amp;sort=asc">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="http://10.211.55.13/haxeflixel-development?page=2&amp;order=title&amp;sort=asc">3</a></li>
+<li class="pager-next"><a href="http://10.211.55.13/haxeflixel-development?page=1&amp;order=title&amp;sort=asc">›</a></li>
+<li class="pager-last last"><a href="http://10.211.55.13/haxeflixel-development?page=2&amp;order=title&amp;sort=asc">»</a></li>
+</ul></div></div>
+    
+
+</div> 
+
+
+
+
+  </div>
+
+  
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<footer id="footer" class="footer-bg" role="footer">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <ul class="footer-menu">
+                    <li><a href="http://www.haxe.org/"><img src="sites/all/themes/haxeflixel_bootstrap/assets/images/haxe-logo.png" width="26px"/></a></li>
+                    <li><a href="http://www.openfl.org/"><img src="sites/all/themes/haxeflixel_bootstrap/assets/images/nme-logo.png" width="26px"/></a></li>
+                    <li><a href="http://haxeflixel.com/documentation/">Documentation</a></li>
+                    <li><a href="http://haxeflixel.com/demos/">Demos</a></li>
+                </ul>
+            </div>
+            <div class="span6">
+                <div class="footer-social-links">
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;"></iframe>
+
+                    <iframe width="110px" scrolling="0" height="26px" frameborder="0" allowtransparency="true"
+                            src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;"></iframe>
+
+                    <iframe allowtransparency="true" frameborder="0" scrolling="no"
+                            src="http://platform.twitter.com/widgets/follow_button.html?screen_name=haxeflixel"
+                            style="width:230px; height:26px;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+</footer>  <script type="text/javascript" src="sites/default/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+
+<div class="bg_highlight"></div>
+
+</body>
+
+
+<!-- Mirrored from 10.211.55.13/haxeflixel-development?order=title&sort=asc by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 16 Dec 2013 10:13:39 GMT -->
+</html>
