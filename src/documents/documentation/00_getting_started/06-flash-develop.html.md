@@ -5,7 +5,7 @@ title: "Flash Develop"
 [Flash Develop](http://www.flashdevelop.org/) is an [open source IDE](https://github.com/fdorg/flashdevelop) with in-built Haxe integration and is one of the most popular Haxe IDE's. FlashDevelop offers first class support for Haxe development.
 
 *   Great completion &amp; code generation
-*   Haxe /&nbsp;NME Project&nbsp;compilation gui
+*   Haxe /&nbsp;OpenFL Project&nbsp;compilation gui
 *   Flash debugging
 *   Advanced snippet completion (code templates) and integrated snippet editor.
 *   SWF/SWC exploration
@@ -22,4 +22,4 @@ Flash Develop is windows only but works fine under virtualization. Installing Fl
 *   TortoiseSVN or TortoiseGit (required if using the source control) Download: [TortoiseSVN](http://tortoisesvn.net/downloads.html), [TortoiseGit](http://code.google.com/p/tortoisegit/downloads/list)
 *   Java 1.6+ 32-bit runtime (JRE)&nbsp;(required if using the Flex SDK)&nbsp;[Flex SDK Download](http://opensource.adobe.com/wiki/display/flexsdk/Downloads)
 
-Developers can also contribute to Flash Develop through their [Github repository]([open source IDE](https://github.com/fdorg/flashdevelop)).
+You can contribute to FlashDevelop through their [Github repository](https://github.com/fdorg/flashdevelop).
