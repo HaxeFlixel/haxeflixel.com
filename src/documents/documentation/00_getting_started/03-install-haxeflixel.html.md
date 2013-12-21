@@ -2,36 +2,29 @@
 title: "Install HaxeFlixel"
 ```
 
-Installing HaxeFlixel is made simple through Haxe's own package manager [Haxelib](http://lib.haxe.org/).
-
-Using [Haxelib](http://haxe.org/doc/haxelib/using_haxelib) will easily let you install and update to the latest stable version of HaxeFlixel.
-
-### Install the Stable Version
-
-You can install the stable version from haxelib from the following command.
+You can install the latest stable version from haxelib with the following command:
 
 ``` bash
 haxelib install flixel
 ```
 
+After this, you can compile to Flash and Neko out of the box. 
+To compile to desktop and mobile targets, you have to make sure you have run their respective `lime setup` command (see previous step).
 
-### Development version
+## Updating HaxeFlixel
 
-Developers maybe interested in installing bleeding edge code on the development git branch, see [instructions here](/documentation/install-development-flixel).
+You can use the following command to just update flixel:
+	
+``` bash
+haxelib update flixel
+```
 
-----
+Alternatively, you can update all libraries at once with this command:
+	
+``` bash
+haxelib upgrade
+```	
 
-<img src="http://haxeflixel.com/images/install-flixel.jpg" style="width:100%;" />
+## Development version
 
-You will notice that haxelib automatically downloads HaxeFlixel for you:
-
-<img src="http://haxeflixel.com/images/flixel-downloading.jpg" style="width:100%;" />
-
-Haxelib will notice the dependency of openfl and may prompt you to install it if you have not installed it yet:
-
-<img src="http://haxeflixel.com/images/flixel-installed.jpg" style="width:100%;" />
-
-----
-
-The latest release version of HaxeFlixel is now on your system you can now start compiling flash and neko out of the box.
-To compile to Desktop and Mobile targets you have to make sure you have run the `openfl setup` commands in the previous step.
+If you are interested in using bleeding edge code from the development branch [on GitHub](https://github.com/HaxeFlixel/flixel), see [instructions here](/documentation/install-development-flixel).

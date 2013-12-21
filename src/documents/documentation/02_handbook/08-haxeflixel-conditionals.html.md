@@ -37,10 +37,6 @@ HaxeFlixel makes use of this feature and allows you to optimize your game using 
 
 ```
 
-#### FLX_THREADING
-
-This define enables threading for cpp targets and might help boost the performance of your game a bit. Keep in mind that threading support is experimental at the moment, and thus bugs are not out of the question.
-
 #### FLX_RECORD
 
 Flixel features a powerful recording / playback feature which captures mouse and keyboard input. Since it's used rarely, we decided that it makes sense to turn it off by default. Setting this define however will enable it again.
