@@ -4,9 +4,9 @@ title: "Game Development Tools"
 
 Creating your Games is that much easier with the right tools. Help us create a list here;
 
-#### [LundumDare List](http://www.ludumdare.com/compo/tools/)
+#### [LudumDare List](http://www.ludumdare.com/compo/tools/)
 
-LundumDare hosts a great list of tools for general game development.
+LudumDare hosts a great list of tools for general game development.
 
 #### [PixelProspector](http://www.pixelprospector.com/indie-resources/)
 
@@ -28,3 +28,15 @@ Inkscape supports many advanced SVG features (markers, clones, alpha blending, e
 Blender is 3D creation for everyone, free to use for any purpose. Free Software, great community, and 100% open.
 With Blender you can Model, Shade, Animate, Render and Composite.
 [Blender Features](http://www.blender.org/features-gallery/features/)
+
+#### [LMMS](http://lmms.sourceforge.net/)
+
+LMMS is a free cross-platform software which allows you to produce music with your computer.
+
+#### [SFXR](http://www.drpetter.se/project_sfxr.html)
+
+SFXR is sound generator, widely used for creating sound effects for LD games.
+
+#### [BFXR](http://www.bfxr.net/)
+
+BFXR is version of SFXR ported to AS3. BFXR has more features than original SFXR. It has moved in the direction of increased complexity and range of expression.
