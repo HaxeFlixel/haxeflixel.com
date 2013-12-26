@@ -54,10 +54,10 @@ Flixel supports spritesheet animation.
 
 ```
 player.loadImage("assets/player.png", true, true, 32, 32);
-player.addAnimation("walk", [0, 1, 2, 3], 5, true);
-player.play("walk");
+player.animation.add("walk", [0, 1, 2, 3], 5, true);
+player.animation.play("walk");
 
 loadImage(file, animated, flip support, frame width, frame height)
 
-addAnimation(name, frames, frame rate, looped)
+animation.add(name, frames, frame rate, looped)
 ```
