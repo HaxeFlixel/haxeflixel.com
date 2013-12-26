@@ -13,7 +13,7 @@ layout: "full-width"
 
 <script type="text/javascript">
   document.getElementById('forum_embed').src =
-     'https://groups.google.com/forum/embed/?place=forum/haxeflixel'
-     + '&showsearch=true&showpopout=true&showtabs=true'
-     + '&parenturl=' + encodeURIComponent(window.location.href);
+	 'https://groups.google.com/forum/embed/?place=forum/haxeflixel'
+	 + '&showsearch=true&showpopout=true&showtabs=true'
+	 + '&parenturl=' + encodeURIComponent(window.location.href);
 </script>

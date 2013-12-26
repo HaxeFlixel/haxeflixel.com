@@ -5,28 +5,28 @@ layout: "documentation"
 
 <div class="row">
 
-    <div class="col-md-3">
+	<div class="col-md-3">
 
-        <%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {title:'Getting Started'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {title:'Getting Started'}) %>
 
-    </div>
+	</div>
 
-    <div class="col-md-3">
+	<div class="col-md-3">
 
-        <%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {title:'Community'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {title:'Community'}) %>
 
-    </div>
+	</div>
 
-    <div class="col-md-3">
+	<div class="col-md-3">
 
-        <%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {title:'HaxeFlixel Handbook'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {title:'HaxeFlixel Handbook'}) %>
 
-    </div>
+	</div>
 
-    <div class="col-md-3">
+	<div class="col-md-3">
 
-        <%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {title:'Resources'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {title:'Resources'}) %>
 
-    </div>
+	</div>
 
 </div>

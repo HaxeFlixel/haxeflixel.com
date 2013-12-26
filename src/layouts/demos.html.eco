@@ -8,14 +8,14 @@
 <%- @partial('header-menu.html.eco', {ademos:"class='active'"}) %>
 
 <div class="container container-main">
-    <h1 class="title"><%= @document.title %></h1>
+	<h1 class="title"><%= @document.title %></h1>
 
-    <iframe width="180px" scrolling="0" height="30px" frameborder="0" id="flixel-demos-header"
-            allowtransparency="true"
-            src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-demos&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="flixel-demos-header"
+			allowtransparency="true"
+			src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-demos&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 
 
-    <%- @content %>
+	<%- @content %>
 </div>
 
 <%- @partial('footer.html') %>

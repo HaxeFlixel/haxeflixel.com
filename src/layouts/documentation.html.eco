@@ -8,9 +8,9 @@
 <%- @partial('header-menu.html.eco', {adocs:"class='active'"}) %>
 
 <div class="container container-main">
-    <h1 class="title"><%= @document.title %></h1>
+	<h1 class="title"><%= @document.title %></h1>
 
-    <%- @content %>
+	<%- @content %>
 </div>
 
 <%- @partial('footer.html') %>

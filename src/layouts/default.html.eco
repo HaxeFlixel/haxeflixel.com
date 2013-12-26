@@ -8,11 +8,11 @@
 <%- @partial('header-menu.html.eco') %>
 
 <div class="container container-main">
-    <div class="container-main-content">
-        <h1 class="title"><%= @document.title %></h1>
+	<div class="container-main-content">
+		<h1 class="title"><%= @document.title %></h1>
 
-        <%- @content %>
-    </div>
+		<%- @content %>
+	</div>
 </div>
 
 <%-@partial('footer.html')%>

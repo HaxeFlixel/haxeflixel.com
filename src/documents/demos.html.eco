@@ -5,15 +5,15 @@ layout: "demos"
 
 <div class="demo-page center-align-a">
 
-    <% for demo in @getCollection('demos').toJSON(): %>
+	<% for demo in @getCollection('demos').toJSON(): %>
 
-    <a href="<%= demo.url %>" property="dc:title">
-        <p><%= demo.title %></p>
+	<a href="<%= demo.url %>" property="dc:title">
+		<p><%= demo.title %></p>
 
-        <img src="<%= @getThumbnail("/demos/#{demo.thumb}", "zoomcrop", { w: 240, h:240 }) %>" alt="Test">
-    </a>
+		<img src="<%= @getThumbnail("/demos/#{demo.thumb}", "zoomcrop", { w: 240, h:240 }) %>" alt="Test">
+	</a>
 
-    <% end %>
+	<% end %>
 
 </div>
 

@@ -4,182 +4,182 @@ title: 'Home'
 ---
 
 <div class="container">
-    <div class="home-header home-section">
+	<div class="home-header home-section">
 
-        <a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
-            <img src="images/haxeflixel.svg" width="200">
-        </a>
+		<a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
+			<img src="images/haxeflixel.svg" width="200">
+		</a>
 
-        <h1>HaxeFlixel</h1>
+		<h1>HaxeFlixel</h1>
 
-        <p class="lead-line">Create cross-platform games easier and free.<br> All with one codebase.</p>
+		<p class="lead-line">Create cross-platform games easier and free.<br> All with one codebase.</p>
 
-        <p>
-            <a class="home-button" href="/download">Download</a>
-            <a class="home-button" href="/documentation/getting-started">Getting Started</a>
-        </p>
+		<p>
+			<a class="home-button" href="/download">Download</a>
+			<a class="home-button" href="/documentation/getting-started">Getting Started</a>
+		</p>
 
-        <div class="home-social">
+		<div class="home-social">
 
-            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
-                    allowtransparency="true"
-                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+			<iframe width="160px" scrolling="0" height="30px" frameborder="0"
+					allowtransparency="true"
+					src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 
-            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
-                    allowtransparency="true"
-                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"></iframe>
+			<iframe width="160px" scrolling="0" height="30px" frameborder="0"
+					allowtransparency="true"
+					src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"></iframe>
 
-            <a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en"
-               data-size="large">Follow @haxeflixel</a>
+			<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en"
+			   data-size="large">Follow @haxeflixel</a>
 
-            <script>!function (d, s, id)
-            {
-                var js, fjs = d.getElementsByTagName (s)[0];
-                if (!d.getElementById (id))
-                {
-                    js = d.createElement (s);
-                    js.id = id;
-                    js.src = "//platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore (js, fjs);
-                }
-            } (document, "script", "twitter-wjs");</script>
+			<script>!function (d, s, id)
+			{
+				var js, fjs = d.getElementsByTagName (s)[0];
+				if (!d.getElementById (id))
+				{
+					js = d.createElement (s);
+					js.id = id;
+					js.src = "//platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore (js, fjs);
+				}
+			} (document, "script", "twitter-wjs");</script>
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 
-    <hr>
+	<hr>
 
-    <div class="home-section">
+	<div class="home-section">
 
-        <p class="lead-line-large">Cross-compile your games <a href="documentation/about">natively</a> to:</p>
+		<p class="lead-line-large">Cross-compile your games <a href="documentation/about">natively</a> to:</p>
 
-        <div class="platform-demos-home">
-            <img width="80px" height="90px" src="images/targets/linux-logo.svg">
-            <img width="80px" height="92px" src="images/targets/apple-logo.svg">
-            <img width="80px" height="80px" src="images/targets/windows-logo.svg">
-            <img width="80px" height="90px" src="images/targets/android-logo.svg">
-            <img width="80px" height="67px" src="images/targets/ios-logo.svg">
-            <img width="80px" height="80px" src="images/targets/neko-logo.jpg">
-            <img width="148px" height="63px" src="images/targets/ouya-logo.svg">
-            <img width="80px" height="65px" src="images/targets/blackberry-logo.svg">
-            <img width="80px" height="80px" src="images/targets/flash-logo.svg">
-        </div>
-    </div>
+		<div class="platform-demos-home">
+			<img width="80px" height="90px" src="images/targets/linux-logo.svg">
+			<img width="80px" height="92px" src="images/targets/apple-logo.svg">
+			<img width="80px" height="80px" src="images/targets/windows-logo.svg">
+			<img width="80px" height="90px" src="images/targets/android-logo.svg">
+			<img width="80px" height="67px" src="images/targets/ios-logo.svg">
+			<img width="80px" height="80px" src="images/targets/neko-logo.jpg">
+			<img width="148px" height="63px" src="images/targets/ouya-logo.svg">
+			<img width="80px" height="65px" src="images/targets/blackberry-logo.svg">
+			<img width="80px" height="80px" src="images/targets/flash-logo.svg">
+		</div>
+	</div>
 
-    <hr>
+	<hr>
 
-    <div class="home-section-features">
+	<div class="home-section-features">
 
-        <div class="row">
+		<div class="row">
 
-            <div class="col-md-5">
+			<div class="col-md-5">
 
-                <h3>Features:</h3>
-                <ul>
-                    <li>Develop from Linux, Mac or Windows</li>
-                    <li>Display thousands of moving objects</li>
-                    <li>GPU acceleration on native targets</li>
-                    <li>Physics and collisions for groups &amp; objects</li>
-                    <li>Advanced physics with Nape support</li>
-                    <li>Use cross-compiled C++ code instead of a VM</li>
-                    <li>Easy creation of particle effects</li>
-                    <li>Advanced Tilemap support</li>
-                    <li>Advanced multi-camera system</li>
-                    <li>Powerful interactive debugger and console</li>
-                    <li>Entirely based on open source software</li>
-                </ul>
+				<h3>Features:</h3>
+				<ul>
+					<li>Develop from Linux, Mac or Windows</li>
+					<li>Display thousands of moving objects</li>
+					<li>GPU acceleration on native targets</li>
+					<li>Physics and collisions for groups &amp; objects</li>
+					<li>Advanced physics with Nape support</li>
+					<li>Use cross-compiled C++ code instead of a VM</li>
+					<li>Easy creation of particle effects</li>
+					<li>Advanced Tilemap support</li>
+					<li>Advanced multi-camera system</li>
+					<li>Powerful interactive debugger and console</li>
+					<li>Entirely based on open source software</li>
+				</ul>
 
-                <br>
+				<br>
 
-                <p><a class="home-button" href="/documentation/about">Learn more</a></p>
+				<p><a class="home-button" href="/documentation/about">Learn more</a></p>
 
-            </div>
+			</div>
 
-	        <div class="col-md-7">
+			<div class="col-md-7">
 
-		        <div id="carousel-home" class="carousel slide">
-			        <ol class="carousel-indicators">
-				        <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
-				        <li data-target="#carousel-home" data-slide-to="1"></li>
-				        <li data-target="#carousel-home" data-slide-to="2"></li>
-			        </ol>
-			        <div class="carousel-inner">
-				        <div class="item">
-					        <img alt="" src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
-                            <p>Create a variety of games including platformers, rpgs, tower defence, puzzles and more.</p>
-				        </div>
-				        <div class="item">
-					        <img alt="" src="<%= @getThumbnail("/demos/FlxCaveGenerator.png", "zoomcrop", { w: 650, h:360 }) %>">
-                            <p>Utilize community code and demos to learn and extend.</p>
-				        </div>
-				        <div class="item active">
-					        <img alt="" src="<%= @getThumbnail("/demos/FlxTween.png", "zoomcrop", { w: 650, h:360 }) %>">
-                            <p>Extensive core with utilities for Physics, Tweening, Math and more.</p>
-				        </div>
-			        </div>
-			        <a class="left carousel-control" href="#carousel-home" data-slide="prev">
-				        <span class="icon-prev"></span>
-			        </a>
-			        <a class="right carousel-control" href="#carousel-home" data-slide="next">
-				        <span class="icon-next"></span>
-			        </a>
-		        </div>
+				<div id="carousel-home" class="carousel slide">
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-home" data-slide-to="1"></li>
+						<li data-target="#carousel-home" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item">
+							<img alt="" src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
+							<p>Create a variety of games including platformers, rpgs, tower defence, puzzles and more.</p>
+						</div>
+						<div class="item">
+							<img alt="" src="<%= @getThumbnail("/demos/FlxCaveGenerator.png", "zoomcrop", { w: 650, h:360 }) %>">
+							<p>Utilize community code and demos to learn and extend.</p>
+						</div>
+						<div class="item active">
+							<img alt="" src="<%= @getThumbnail("/demos/FlxTween.png", "zoomcrop", { w: 650, h:360 }) %>">
+							<p>Extensive core with utilities for Physics, Tweening, Math and more.</p>
+						</div>
+					</div>
+					<a class="left carousel-control" href="#carousel-home" data-slide="prev">
+						<span class="icon-prev"></span>
+					</a>
+					<a class="right carousel-control" href="#carousel-home" data-slide="next">
+						<span class="icon-next"></span>
+					</a>
+				</div>
 
-	        </div>
+			</div>
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 
-    <hr>
+	<hr>
 
 
 
-    <div class="demos-home home-section">
+	<div class="demos-home home-section">
 
-        <p class="lead-line-large">Browse and learn from our <a href="/demos">Demos</h3></p>
+		<p class="lead-line-large">Browse and learn from our <a href="/demos">Demos</h3></p>
 
-        <% for demo in @getCollection('homepage_demos').toJSON(): %>
+		<% for demo in @getCollection('homepage_demos').toJSON(): %>
 
-        <a href="<%= demo.url %>" property="dc:title">
-            <img src="<%= @getThumbnail("/demos/#{demo.thumb}", "zoomcrop", { w: 160, h:160 }) %>" alt="">
-        </a>
+		<a href="<%= demo.url %>" property="dc:title">
+			<img src="<%= @getThumbnail("/demos/#{demo.thumb}", "zoomcrop", { w: 160, h:160 }) %>" alt="">
+		</a>
 
-        <% end %>
+		<% end %>
 
-    </div>
+	</div>
 
-    <hr>
+	<hr>
 
 
    <div class="home-section-powered">
 
-        <p class="lead-line-large">Powered by open source cross-platform tech:</p>
+		<p class="lead-line-large">Powered by open source cross-platform tech:</p>
 
-        <br/>
+		<br/>
 
-        <img src="/images/haxe.svg" alt="Haxe Logo" width="120">
+		<img src="/images/haxe.svg" alt="Haxe Logo" width="120">
 
-        <span><b>+</b></span>
+		<span><b>+</b></span>
 
-        <img src="/images/openfl-logo.svg" alt="OpenFL Logo" width="120">
+		<img src="/images/openfl-logo.svg" alt="OpenFL Logo" width="120">
 
-        <span><b>+</b></span>
+		<span><b>+</b></span>
 
-        <img src="/images/flixel.svg" alt="Flixel Logo" height="120">
-        
-        <span><b>=</b></span>
+		<img src="/images/flixel.svg" alt="Flixel Logo" height="120">
 
-        <img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" width="135">
+		<span><b>=</b></span>
 
-        </p>
+		<img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" width="135">
 
-        <br/>
+		</p>
 
-    </div>
+		<br/>
 
-    <hr>
+	</div>
+
+	<hr>
 
 
 	<div id="carousel-tweets" class="carousel slide">
@@ -189,7 +189,7 @@ title: 'Home'
 			<div class="item active">
 				<blockquote class="twitter-tweet" lang="en"><p>just a quick reminder that there’s a totally crazy magical free open source crossplatform version of Flixel out there <a href="http://t.co/btks480iBI">http://t.co/btks480iBI</a></p>&mdash; Adam (@ADAMATOMIC) <a href="https://twitter.com/ADAMATOMIC/statuses/359773481937813504">23. Juli 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
-			
+
 			<div class="item">
 				<blockquote class="twitter-tweet" lang="en"><p>Need to say a big thanks to all the <a href="https://twitter.com/search?q=%23haxeflixel&amp;src=hash">#haxeflixel</a> team.. specialty <a href="https://twitter.com/teormech">@teormech</a>. Also you all need to try <a href="https://twitter.com/search?q=%23haxeflixel&amp;src=hash">#haxeflixel</a> its the dogs dangly bits.</p>&mdash; Paul Gene Thompson (@PaulGene) <a href="https://twitter.com/PaulGene/statuses/366988372893368320">12. August 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
@@ -201,13 +201,13 @@ title: 'Home'
 			<div class="item">
 				<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/HaxeFlixel">@HaxeFlixel</a> This program was the reason I took up Haxe, and I&#39;m glad I did. It&#39;s nice to see Flixel rocketing ahead with development.</p>&mdash; Victor Grunn (@VictorGrunn) <a href="https://twitter.com/VictorGrunn/statuses/363561387181608960">3. August 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
-			
+
 			<div class="item">
 				<blockquote class="twitter-tweet" lang="en"><p>Wow, HaxeFlixel website is really outstanding now: <a href="http://t.co/EdD138ZOza">http://t.co/EdD138ZOza</a></p>&mdash; Philippe Elsass (@elsassph) <a href="https://twitter.com/elsassph/statuses/361217005887557632">27. Juli 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
-			
+
 		</div>
-		
+
 		<a class="left carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="prev">
 			<span class="icon-prev tweet-prev"></span>
 		</a>
