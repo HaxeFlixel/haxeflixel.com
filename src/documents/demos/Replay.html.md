@@ -2,10 +2,9 @@
 title: "Replay"
 layout: demo
 pageOrder: 1
-thumb: "Replay.png"
-swf: "Replay.swf"
-SWFHeight: 480
-SWFWidth: 640
+SWFHeight: 300
+SWFWidth: 400
+source: "Flixel%20Features/Replay"
 ```
 
 A port of the [Replay demo](https://github.com/guoboism/Flixel_Replay_DEMO/) by [Guoboism](https://github.com/guoboism)&nbsp;featured on&nbsp;[flixel.org/features](http://flixel.org/features.html)..

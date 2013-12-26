@@ -2,10 +2,9 @@
 title: "FlxSpriteFilters"
 layout: demo
 pageOrder: 1
-thumb: "FlxSpriteFilters.jpg"
-swf: "FlxSpriteFilters.swf"
 SWFHeight: 480
 SWFWidth: 640
+source: "Effects/FlxSpriteFilters"
 ```
 
-FlxSpriteFilters demo shows bitmap filters being applied and updated on flxSprites using FlxSpriteFilter class.
+This demo shows bitmap filters being applied and updated on FlxSprites using the FlxSpriteFilter class.

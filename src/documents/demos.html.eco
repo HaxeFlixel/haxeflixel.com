@@ -10,7 +10,7 @@ layout: "demos"
 	<a href="<%= demo.url %>" property="dc:title">
 		<p><%= demo.title %></p>
 
-		<img src="<%= @getThumbnail("/demos/#{demo.thumb}", "zoomcrop", { w: 240, h:240 }) %>" alt="Test">
+		<img src="<%= @getThumbnail("/demos/images/#{demo.title}.png", "zoomcrop", { w: 190, h:190 }) %>" alt="#{demo.title}">
 	</a>
 
 	<% end %>

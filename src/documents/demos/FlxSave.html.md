@@ -2,10 +2,9 @@
 title: "FlxSave"
 layout: demo
 pageOrder: 1
-thumb: "FlxSave.png"
-swf: "FlxSave.swf"
-SWFHeight: 480
-SWFWidth: 640
+SWFHeight: 300
+SWFWidth: 400
+source: "Flixel%20Features/Save"
 ```
 
 A port of the [Save Demo](https://github.com/TestSubject06/SaveDemo) by [Zachary Tarvit](https://twitter.com/TestSubject06) featured on [flixel.org/features](http://flixel.org/features.html).

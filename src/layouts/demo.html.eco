@@ -13,7 +13,6 @@
 	<br>
 
 	<div id="demoSWF">
-		<img src="<%= @getThumbnail("/demos/#{@document.thumb}", "zoomcrop", { w: @document.SWFWidth, h:@document.SWFHeight }) %>" alt="Test">
 		<p><a href="http://www.adobe.com/go/getflashplayer"><img
 				src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
 				alt="Get Adobe Flash player"/></a></p>
@@ -23,7 +22,8 @@
 		<div class="demo-content">
 
 			<br>
-			<hr>
+				
+			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/<%= @document.source %>" class="btn btn-sm btn-source" target="_blank"><span class="glyphicon glyphicon-book"></span> Source </a>
 
 			<h1 class="title"><%= @document.title %></h1>
 
@@ -35,7 +35,7 @@
 				<% if @getPagerPrevious('demos'): %>
 				<li class="previous">
 					<a href="<%= @getPagerPrevious('demos').attributes.url %>" title="Previous"> <
-						<img src="<%= @getThumbnail("/demos/#{@getPagerPrevious('demos').attributes.thumb}", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
+						<img src="<%= @getThumbnail("/demos/images/#{@getPagerPrevious('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
 					</a>
 				</li>
 				<% end %>
@@ -43,7 +43,7 @@
 				<% unless @getPagerPrevious('demos')?: %>
 				<li class="previous">
 					<a href="<%= @getLast('demos').attributes.url %>" title="Previous"> <
-						<img src="<%= @getThumbnail("/demos/#{@getLast('demos').attributes.thumb}", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
+						<img src="<%= @getThumbnail("/demos/images/#{@getLast('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
 					</a>
 				</li>
 				<% end %>
@@ -51,7 +51,7 @@
 				<% if @getPagerNext('demos'): %>
 				<li class="next">
 					<a href="<%= @getPagerNext('demos').attributes.url %>" title="Next">
-						<img src="<%= @getThumbnail("/demos/#{@getPagerNext('demos').attributes.thumb}", "zoomcrop", {w: 70, h:70 }) %>" alt="Next">
+						<img src="<%= @getThumbnail("/demos/images/#{@getPagerNext('demos').attributes.title}.png", "zoomcrop", {w: 70, h:70 }) %>" alt="Next">
 						>
 					</a>
 				</li>
@@ -60,7 +60,7 @@
 				<% unless @getPagerNext('demos')?: %>
 				<li class="next">
 					<a href="<%= @getFirst('demos').attributes.url %>" title="Next">
-						<img src="<%= @getThumbnail("/demos/#{@getFirst('demos').attributes.thumb}", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
+						<img src="<%= @getThumbnail("/demos/images/#{@getFirst('demos').attributes.title}.png", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
 						>
 					</a>
 				</li>
@@ -80,7 +80,7 @@
 
 <script type="text/javascript">
 	var attributes = {wmode: "direct"};
-	swfobject.embedSWF ("<%= "/demos/#{@document.swf}" %>", "demoSWF", "<%= @document.SWFWidth %>", "<%= @document.SWFHeight %>", "11.8.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
+	swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.SWFWidth %>", "<%= @document.SWFHeight %>", "11.8.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
 </script>
 
 </body>

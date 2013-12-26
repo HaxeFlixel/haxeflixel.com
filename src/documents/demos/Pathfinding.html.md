@@ -2,10 +2,9 @@
 title: "Pathfinding"
 layout: demo
 pageOrder: 1
-thumb: "Pathfinding.png"
-swf: "Pathfinding.swf"
-SWFHeight: 480
-SWFWidth: 640
+SWFHeight: 300
+SWFWidth: 400
+source: "Flixel%20Features/Pathfinding"
 ```
 
 A port and improvement of the [Pahtfinding Demo](https://code.google.com/p/mightiesthero-flash-game-dev-tips/source/browse/FlxPathFinding/src/PlayState.as) by&nbsp;[Bengsiswanto Hendrawan](http://mightiesthero.blogspot.de/)&nbsp;&nbsp;featured on&nbsp;[flixel.org/features](http://flixel.org/features.html).

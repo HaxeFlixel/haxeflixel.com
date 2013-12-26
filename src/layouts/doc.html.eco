@@ -19,7 +19,7 @@
 		<div class="col-md-9 doc-content" role="main">
 			<h1 class="title"><%= @document.title %></h1>
 
-			<a href="<%= @document.editUrl %>" class="btn btn-sm btn-edit"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="<%= @document.editUrl %>" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<%- @content %>
 

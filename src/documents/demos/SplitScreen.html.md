@@ -3,10 +3,9 @@ title: "Split Screen"
 layout: demo
 tags: ['homepage_demo']
 pageOrder: 1
-thumb: "SplitScreen.png"
-swf: "SplitScreen.swf"
-SWFHeight: 480
-SWFWidth: 640
+SWFHeight: 300
+SWFWidth: 400
+source: "Flixel%20Features/SplitScreen"
 ```
 
 A port and improvement of the [Split Screen demo](https://github.com/phmongeau/SplitScreen) by [Philippe Mongeau](https://twitter.com/phmongeau) featured on [flixel.org/features](http://flixel.org/features.html).

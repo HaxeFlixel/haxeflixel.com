@@ -135,7 +135,6 @@ title: 'Home'
 	<hr>
 
 
-
 	<div class="demos-home home-section">
 
 		<p class="lead-line-large">Browse and learn from our <a href="/demos">Demos</h3></p>
@@ -143,7 +142,7 @@ title: 'Home'
 		<% for demo in @getCollection('homepage_demos').toJSON(): %>
 
 		<a href="<%= demo.url %>" property="dc:title">
-			<img src="<%= @getThumbnail("/demos/#{demo.thumb}", "zoomcrop", { w: 160, h:160 }) %>" alt="">
+			<img src="<%= @getThumbnail("/demos/images/#{demo.title}.png", "zoomcrop", { w: 160, h:160 }) %>" alt="#{demo.title}">
 		</a>
 
 		<% end %>

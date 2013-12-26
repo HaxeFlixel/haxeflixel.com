@@ -3,10 +3,9 @@ title: "RPG Interface"
 layout: demo
 tags: ['homepage_demo']
 pageOrder: 1
-thumb: "RPGInterface.jpg"
-swf: "RPGInterface.swf"
-SWFHeight: 480
-SWFWidth: 640
+SWFHeight: 600
+SWFWidth: 800
+source: "User%20Interface/RPG%20Interface"
 ```
 
 This is a simple demonstration of the flixel-ui engine in a fictional RPG.

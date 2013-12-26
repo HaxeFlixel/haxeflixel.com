@@ -3,10 +3,9 @@ title: "FlxTween"
 layout: demo
 tags: ['homepage_demo']
 pageOrder: 1
-thumb: "FlxTween.png"
-swf: "FlxTween.swf"
 SWFHeight: 480
 SWFWidth: 640
+source: "Effects/FlxTween"
 ```
 
 HaxeFlixel has advanced tweening built in for interpolation over time.

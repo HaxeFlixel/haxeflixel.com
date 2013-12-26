@@ -2,10 +2,9 @@
 title: "Particles"
 layout: demo
 pageOrder: 1
-thumb: "Particles.png"
-swf: "Particles.swf"
-SWFHeight: 400
-SWFWidth: 300
+SWFHeight: 300
+SWFWidth: 400
+source: "Flixel%20Features/Particles"
 ```
 
 A port of the [Particles Demo](https://github.com/TestSubject06/ParticlesDemo/)&nbsp;by&nbsp;[Zachary Tarvit](https://twitter.com/TestSubject06)&nbsp;featured on&nbsp;[flixel.org/features](http://flixel.org/features.html).
