@@ -35,7 +35,7 @@ LMMS is a free cross-platform software which allows you to produce music with yo
 
 #### [SFXR](http://www.drpetter.se/project_sfxr.html)
 
-SFXR is sound generator, widely used for creating sound effects for LD games.
+SFXR is a sound generator, widely used for creating sound effects for LD games.
 
 #### [BFXR](http://www.bfxr.net/)
 
