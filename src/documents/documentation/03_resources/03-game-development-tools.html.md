@@ -39,4 +39,4 @@ SFXR is a sound generator, widely used for creating sound effects for LD games.
 
 #### [BFXR](http://www.bfxr.net/)
 
-BFXR is version of SFXR ported to AS3. BFXR has more features than original SFXR. It has moved in the direction of increased complexity and range of expression.
+BFXR is an improved AS3 port of SFXR with more features. It has moved in the direction of increased complexity and range of expression.
