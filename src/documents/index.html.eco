@@ -106,15 +106,15 @@ title: 'Home'
 					</ol>
 					<div class="carousel-inner">
 						<div class="item">
-							<img alt="" src="<%= @getThumbnail("/demos/Mode.png", "zoomcrop", { w: 650, h:360 }) %>">
-							<p>Create a variety of games including platformers, rpgs, tower defence, puzzles and more.</p>
+							<img alt="" src="<%= @getThumbnail("/demos/images/Mode.png", "zoomcrop", { w: 650, h:360 }) %>"></a>
+							<p>Highly flexible, allowing you to create games of any genre: platformer, RPG, tower defence, puzzle etc.</p>
 						</div>
 						<div class="item">
-							<img alt="" src="<%= @getThumbnail("/demos/FlxCaveGenerator.png", "zoomcrop", { w: 650, h:360 }) %>">
-							<p>Utilize community code and demos to learn and extend.</p>
+							<img alt="" src="<%= @getThumbnail("/demos/images/FlxCaveGenerator.png", "zoomcrop", { w: 650, h:360 }) %>">
+							<p>Utilize community code and demos to learn and extend and become a part of the community yourself.</p>
 						</div>
 						<div class="item active">
-							<img alt="" src="<%= @getThumbnail("/demos/FlxTween.png", "zoomcrop", { w: 650, h:360 }) %>">
+							<img alt="" src="<%= @getThumbnail("/demos/images/FlxTween.png", "zoomcrop", { w: 650, h:360 }) %>">
 							<p>Extensive core with utilities for Physics, Tweening, Math and more.</p>
 						</div>
 					</div>
@@ -204,14 +204,18 @@ title: 'Home'
 			<div class="item">
 				<blockquote class="twitter-tweet" lang="en"><p>Wow, HaxeFlixel website is really outstanding now: <a href="http://t.co/EdD138ZOza">http://t.co/EdD138ZOza</a></p>&mdash; Philippe Elsass (@elsassph) <a href="https://twitter.com/elsassph/statuses/361217005887557632">27. Juli 2013</a></blockquote><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
-
+			
+			<div class="item">
+				<blockquote class="twitter-tweet" lang="en"><p>Wow! Some big and welcome changes in <a href="https://twitter.com/HaxeFlixel">@HaxeFlixel</a> 3.x: <a href="http://t.co/Z1h1ubuP2n">http://t.co/Z1h1ubuP2n</a></p>&mdash; Ido Yehieli (@tametick) <a href="https://twitter.com/tametick/statuses/416354079376289793">26. Dezember 2013</a></blockquote>
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
 		</div>
 
 		<a class="left carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="prev">
-			<span class="icon-prev tweet-prev"></span>
+			<span class="icon-prev tweet-prev" style="color:black"></span>
 		</a>
 		<a class="right carousel-control carousel-tweet-control" href="#carousel-tweets" data-slide="next">
-			<span class="icon-next tweet-next"></span>
+			<span class="icon-next tweet-next" style="color:black"></span>
 		</a>
 	</div>
 
