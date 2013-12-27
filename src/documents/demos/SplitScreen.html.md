@@ -1,7 +1,6 @@
 ```
 title: "Split Screen"
 layout: demo
-tags: ['homepage_demo']
 pageOrder: 1
 SWFHeight: 300
 SWFWidth: 400

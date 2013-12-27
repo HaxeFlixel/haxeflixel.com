@@ -1,7 +1,6 @@
 ```
 title: "RPG Interface"
 layout: demo
-tags: ['homepage_demo']
 pageOrder: 1
 SWFHeight: 600
 SWFWidth: 800
