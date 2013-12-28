@@ -32,8 +32,8 @@ docpadConfig = {
 			# Styles
 			styles: [
 				"/styles/bootstrap.css?v=1.1",
-				"/styles/style.css?v=1.1",
-				"/styles/site.css?v=1.1",
+				"/styles/style.css?v=1.2",
+				"/styles/site.css?v=1.2",
 				"/styles/monokai-sublime.css?v=1.1"
 			]
 
