@@ -1,0 +1,3 @@
+[submodule "flixel-templates"]
+	path = src/files/downloads
+	url = https://github.com/HaxeFlixel/flixel-templates
