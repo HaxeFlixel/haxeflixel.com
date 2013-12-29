@@ -55,7 +55,7 @@ Sublime Text, Flash Develop and Intellij Idea support Android compilation throug
 The basic command to compile and test Android:
 
 ```
-openfl test android
+lime test android
 ```
 
 Run this command from the root folder of your project, the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.
@@ -65,7 +65,7 @@ Run this command from the root folder of your project, the default project.xml w
 If you want to use the Android simulator, add “-simulator when running/testing. Be sure your virtual device is API >=15 and has GPU enabled.
 
 ```
-openfl test android -simulator
+lime test android -simulator
 ```
 
 ----
