@@ -75,7 +75,7 @@ private var _awesome:Awesome;
 Do not use a prefix for a public variable:
 
 ``` haxe
-private var awesome:Awesome;
+public var awesome:Awesome;
 ```
 
 ##### Private and Public
