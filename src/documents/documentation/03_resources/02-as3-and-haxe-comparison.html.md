@@ -4,25 +4,32 @@ title: AS3 and Haxe Comparison
 
 This document aims to give developers familiar with Actionscript 3 a quickstart to Haxe. For more Haxe specific documentation please refer to the main Haxe.org website:
 
-- <a href="http://haxe.org/ref/syntax">Haxe Syntax</a>
+- [Haxe Syntax](http://haxe.org/ref/syntax)
+- [Haxe Language Reference](http://haxe.org/ref)
 
-- <a href="http://haxe.org/ref">Haxe Language Reference</a>
+#### Additional Features
 
-<h4>Additional Features</h4>
+In addition to most of the features of Actionscript 3, Haxe includes support for:
 
-In addition to most of the features of Actionscript 3, Haxe includes support for&nbsp;<a href="http://haxe.org/ref/enums" target="_blank">enums</a>,&nbsp;<a href="http://haxe.org/ref/type_params" target="_blank">type parameters</a>&nbsp;(generics),&nbsp;<a href="http://haxe.org/ref/type_advanced" target="_blank">structures</a>,<a href="http://haxe.org/ref/type_advanced" target="_blank">typedefs</a>,&nbsp;<a href="http://haxe.org/ref/iterators" target="_blank">custom iterators</a>,&nbsp;<a href="http://haxe.org/ref/conditionals" target="_blank">conditional compilation</a>,&nbsp;<a href="http://haxe.org/ref/inline" target="_blank">inlining</a>&nbsp;and&nbsp;<a href="http://haxe.org/ref" target="_blank">more</a>.
+* [enums](http://haxe.org/ref/enums)
+* [type parameters](http://haxe.org/ref/type_params)
+* [structures](http://haxe.org/ref/type_advanced)
+* [custom iterators](http://haxe.org/ref/iterators)
+* [conditional compilation](http://haxe.org/ref/conditionals)
+* [inlining](http://haxe.org/ref/inline)
+* and more!
 
 ----
 
-###Haxe & As3 common syntax comparison
+###Haxe & AS3 common syntax comparison
 
 This guide is based off from [OpenFL's guide](http://www.openfl.org/developer/documentation/actionscript-developers/).
 
-<h3>Basic Types</h3>
+###Basic Types
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+AS3
 
 <pre class="highlighted">
 Boolean
@@ -57,7 +64,7 @@ Array&lt;String&gt;
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 package com.example.myapplication {
@@ -82,7 +89,7 @@ package com.example.myapplication;
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 public class MyClass {
@@ -119,7 +126,7 @@ class MyClass {
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 for (var i:uint = 0; i &lt; 100; i++) {
@@ -163,7 +170,7 @@ for (propertyName in fields) {
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 switch (value) {
@@ -204,7 +211,7 @@ switch (value) {
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 var hi = "Hello World";
@@ -233,7 +240,7 @@ var hi = "Hello World";
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 var car:Car = vehicle as Car;
@@ -268,7 +275,7 @@ var toInteger = Std.int (10.1);
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 if (vehicle is Car) {
@@ -304,7 +311,7 @@ name = Type.getClassName (type);
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 if (object == null) {
@@ -335,7 +342,7 @@ if (object == null) {
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 var table:Object = new Object ();
@@ -380,7 +387,7 @@ table.remove ("key");
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 function test (...params):void {
@@ -411,7 +418,7 @@ Reflect.makeVarArgs (test) (1, 2, 3);
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 var foo = object["foo"];
@@ -438,7 +445,7 @@ Reflect.callMethod (this, bar, [ "hi" ]);
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 function hello (msg:String):void {
@@ -471,7 +478,7 @@ var type:String-&gt;Void = hello;
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 function get x ():Number {
@@ -516,7 +523,7 @@ function setX (value:Float):Float {
 
 <div>
 <div class="sideBySide spacer-right">
-<h4>As3</h4>
+<h4>AS3</h4>
 
 <pre class="highlighted">
 function get x ():Float {
