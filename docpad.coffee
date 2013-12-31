@@ -132,7 +132,7 @@ docpadConfig = {
 				urls = ["/documentation/#{name}"]
 				categoryName = 'getting_started'
 				categoryTitle = 'Getting Started'
-				githubEditUrl = "https://github.com/haxeflixel/haxeflixel.com/blob/master/src/documents/"
+				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/"
 				editUrl = githubEditUrl + a.relativePath
 				document.setMetaDefaults({
 					layout
