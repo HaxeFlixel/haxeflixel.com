@@ -1,6 +1,15 @@
+pathUtil = require('path')
+
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
+
+	# =================================
+	# Ignore the api docs from the flixel-docs repo
+
+    ignorePaths: [
+            __dirname + '/src/documents/documentation/api'
+    ]
 
 	# =================================
 	# Template Data
@@ -112,7 +121,7 @@ docpadConfig = {
 		getting_started: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/00_getting_started'
+				relativeOutDirPath: $startsWith: 'documentation/documentation/00_getting_started'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -136,7 +145,7 @@ docpadConfig = {
 		community: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/01_community'
+				relativeOutDirPath: $startsWith: 'documentation/documentation/01_community'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -160,7 +169,7 @@ docpadConfig = {
 		handbook: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/02_handbook'
+				relativeOutDirPath: $startsWith: 'documentation/documentation/02_handbook'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -184,7 +193,7 @@ docpadConfig = {
 		resources: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/03_resources'
+				relativeOutDirPath: $startsWith: 'documentation/documentation/03_resources'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -244,6 +253,14 @@ docpadConfig = {
 
         thumbnails:
         	imageMagick: true
+
+ 		repocloner:
+            repos: [
+                    name: 'HaxeFlixel Documentation'
+                    branch: 'master'
+                    path: 'src/documents/documentation'
+                    url: 'https://github.com/HaxeFlixel/flixel-docs.git'
+            ]
 
 }
 
