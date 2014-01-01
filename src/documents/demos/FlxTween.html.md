@@ -1,7 +1,6 @@
 ```
 title: "FlxTween"
 layout: demo
-tags: ['homepage_demo']
 pageOrder: 1
 SWFHeight: 480
 SWFWidth: 640
