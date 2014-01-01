@@ -128,8 +128,7 @@ docpadConfig = {
 			database.findAllLive(query, sorting).on 'add', (document) ->
 				a = document.attributes
 				layout = 'doc'
-				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ['/documentation/#{name}']
+				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
 				categoryName = 'getting_started'
 				categoryTitle = 'Getting Started'
 				githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/edit/master/documentation/00_getting_started/'
@@ -154,8 +153,7 @@ docpadConfig = {
 				layout = 'doc'
 				categoryName = 'community'
 				categoryTitle = 'Community'
-				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ['/documentation/#{name}']
+				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
 				githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/edit/master/documentation/01_community/'
 				editUrl = githubEditUrl + a.basename + '.html.md'
 				document.setMetaDefaults({
@@ -178,8 +176,7 @@ docpadConfig = {
 				layout = 'doc'
 				categoryName = 'handbook'
 				categoryTitle = "Handbook"
-				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ['/documentation/#{name}']
+				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
 				githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/edit/master/documentation/02_handbook/'
 				editUrl = githubEditUrl + a.basename + '.html.md'
 				document.setMetaDefaults({
@@ -202,8 +199,7 @@ docpadConfig = {
 				layout = 'doc'
 				categoryName = 'resources'
 				categoryTitle = 'Resources'
-				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ['/documentation/#{name}']
+				urls = ['/documentation/#{name}' + a.basename.replace(/^[\-0-9]+/,'')]
 				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/edit/master/documentation/03_resources/"
 				editUrl = githubEditUrl + a.basename + '.html.md'
 				document.setMetaDefaults({
@@ -226,8 +222,7 @@ docpadConfig = {
 				a = document.attributes
 				layout = 'doc'
 				categoryName = 'resources'
-				name = a.basename.replace(/^[\-0-9]+/,'')
-				urls = ['/documentation/#{name}']
+				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
 				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/edit/master/documentation/"
 				editUrl = githubEditUrl + a.basename
 				document.setMetaDefaults({
