@@ -11,14 +11,15 @@ You can compile this website yourself with a local install of Docpad, pull reque
 	git clone https://github.com/HaxeFlixel/haxeflixel.com.git
 	cd haxeflixel.com
 	```
-	Now, you either...
-	* ...run `install.bat`, then `run.bat`
-	* ...run the following commands manually:
+	You can run the following commands manually:
 	
-		```batch
-		npm install
-		docpad run
-		```
+	```batch
+	npm install
+	docpad run
+	```
+	Or if you are a windows user:
+	
+	...run `install.bat`, then `run.bat`
 
 3. [Open http://localhost:9778/](http://localhost:9778/)
 
