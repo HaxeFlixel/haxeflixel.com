@@ -24,7 +24,11 @@ You can compile this website yourself with a local install of Docpad, pull reque
 
 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save the files you modify.
 
-###How to add a demo
+### How to add Documentation
+
+Documentation is being pulled periodically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository, please review the readme there for more info.
+
+### How to add a demo
 
 1. Create a `.html.md` file in [`/src/documents/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/demos) following this example:
 	```
