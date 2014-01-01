@@ -1,4 +1,4 @@
-haxeflixel.com
+![](https://raw.github.com/HaxeFlixel/haxeflixel.com/master/src/files/images/flixel-logos/haxeflixel.com.png)
 ==============
 
 You can compile this website yourself with a local install of Docpad, pull requests are welcome.
