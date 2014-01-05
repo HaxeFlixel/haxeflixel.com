@@ -16,7 +16,8 @@
     "docpad-plugin-marked": "~2.1.2",
     "docpad-plugin-highlightjs": "~2.1.8",
     "docpad-plugin-gist": "~2.1.1",
-    "docpad-plugin-repocloner": "~2.2.1"
+    "docpad-plugin-repocloner": "~2.2.1",
+    "docpad-plugin-services": "~2.5.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

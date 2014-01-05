@@ -55,6 +55,9 @@ docpadConfig = {
 				"/vendor/twitter-bootstrap-3/js/carousel.js",
 				"/vendor/twitter-bootstrap-3/js/collapse.js"
 			]
+			
+			services:
+            	googleAnalytics: 'UA-35511281-1'
 
 		# -----------------------------
 		# Helper Functions
