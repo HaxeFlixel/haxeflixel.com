@@ -22,10 +22,10 @@
 						<li <%= @adocs %>>
 						<a href="/documentation">Documentation</a>
 						</li>
-						<li>
+						<li <%= @adownloads %>>
 						<a href="/downloads">Downloads</a>
 						</li>
-						<li>
+						<li <%= @aforum %>>
 						<a href="/forum">Forum</a>
 						</li>
 					</ul>
