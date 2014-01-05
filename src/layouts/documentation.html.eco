@@ -10,6 +10,12 @@
 <div class="container container-main">
 	<h1 class="title"><%= @document.title %></h1>
 
+	<p>The HaxeFlixel documentation is provided from the <a href="https://github.com/HaxeFlixel/flixel-docs">flixel-docs repository</a> and is open for contributions on github that will be pushed here.</p>
+
+	<p>You can also find api documentaiton <a href="http://api.haxeflixel.com">api.haxeflixel.com</a> and further relevant <a href="/documentation/api-docs">api docs here</a>.</p>
+
+	<br>
+
 	<%- @content %>
 </div>
 
