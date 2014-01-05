@@ -1,4 +1,4 @@
-haxeflixel.com
+![](https://raw.github.com/HaxeFlixel/haxeflixel.com/master/src/files/images/flixel-logos/haxeflixel.com.png)
 ==============
 
 You can compile this website yourself with a local install of Docpad, pull requests are welcome.
@@ -11,20 +11,25 @@ You can compile this website yourself with a local install of Docpad, pull reque
 	git clone https://github.com/HaxeFlixel/haxeflixel.com.git
 	cd haxeflixel.com
 	```
-	Now, you either...
-	* ...run `install.bat`, then `run.bat`
-	* ...run the following commands manually:
+	You can run the following commands manually:
 	
-		```batch
-		npm install
-		docpad run
-		```
+	```batch
+	npm install
+	docpad run
+	```
+	Or if you are a windows user:
+	
+	...run `install.bat`, then `run.bat`
 
 3. [Open http://localhost:9778/](http://localhost:9778/)
 
 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save the files you modify.
 
-###How to add a demo
+### How to add Documentation
+
+Documentation is being pulled periodically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository, please review the readme there for more info.
+
+### How to add a demo
 
 1. Create a `.html.md` file in [`/src/documents/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/demos) following this example:
 	```
