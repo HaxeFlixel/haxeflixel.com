@@ -22,8 +22,8 @@
 						<li <%= @adocs %>>
 						<a href="/documentation">Documentation</a>
 						</li>
-						<li <%= @adownloads %>>
-						<a href="/downloads">Downloads</a>
+						<li <%= @aapi %>>
+						<a href="/api">API</a>
 						</li>
 						<li <%= @aforum %>>
 						<a href="/forum">Forum</a>
