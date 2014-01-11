@@ -1,0 +1,68 @@
+---
+title: "Showcase"
+layout: showcases
+---
+
+<div class="center-align-a">
+
+
+<div class="row">
+
+	<% for showcase in @getCollection('showcase').toJSON(): %>
+
+	<div class="col-md-6">
+				
+		<a href="<%= showcase.url %>" property="dc:title">
+			<h3><%= showcase.title %></h3>
+			
+			<img src="<%= @getThumbnail("/showcase/images/#{showcase.thumb}", "zoomcrop", { w: 500, h:260 }) %>" alt="<%= showcase.title %>">
+
+			<div class="showcases-targets">
+
+				<a href="<%= showcase.linux %>" <% if showcase.linux: %>class="showcases-target-active"<% end %>>
+					<img width="40px" height="49px" src="images/targets/linux-logo.svg">
+				</a>
+
+				<a href="<%= showcase.mac %>" <% if showcase.mac: %>class="showcases-target-active"<% end %>>
+					<img width="40px" height="40px" src="images/targets/apple-logo.svg">
+				</a>
+
+				<a href="<%= showcase.windows %>" <% if showcase.windows: %>class="showcases-target-active"<% end %>>
+					<img width="40px" height="40px" src="images/targets/windows-logo.svg">
+				</a>
+
+				<a href="<%= showcase.android %>" <% if showcase.android: %>class="showcases-target-active"<% end %>>
+					<img width="40px" height="40px" src="images/targets/android-logo.svg">
+				</a>
+
+				<a href="<%= showcase.ios %>" <% if showcase.ios: %>class="showcases-target-active"<% end %>>
+					<img width="40px" src="images/targets/ios-logo.svg">
+				</a>
+
+				<a href="<%= showcase.neko %>" <% if showcase.neko: %>class="showcases-target-active"<% end %>>
+					<img width="40px" height="40px" src="images/targets/neko-logo.jpg">
+				</a>
+
+				<a href="<%= showcase.ouya %>" <% if showcase.ouya: %>class="showcases-target-active"<% end %>>
+					<img width="38px" height="38px" src="images/targets/ouya-logo.svg">
+				</a>
+
+				<a href="<%= showcase.blackberry %>" <% if showcase.blackberry: %>class="showcases-target-active"<% end %>>
+					<img width="40px" height="40px" src="images/targets/blackberry-logo.svg">
+				</a>
+
+				<a href="<%= showcase.flash %>" <% if showcase.flash: %>class="showcases-target-active"<% end %>>
+					<img width="40px" height="40px" src="images/targets/flash-logo.svg">
+				</a>
+
+			</div>
+		</a>
+
+	</div>
+
+	<% end %>
+
+</div>
+
+</div>
+

@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="600" height="200" id="svg4058" inkscape:version="0.48.1 " sodipodi:docname="ouya logo.svg" viewbox="0 0 600 200">
-  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1024" inkscape:window-height="715" id="namedview13" showgrid="false" inkscape:zoom="1" inkscape:cx="293.5" inkscape:cy="66" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg4058"/>
-  <defs id="defs4060"/>
-  <metadata id="metadata4063">
-    <rdf:RDF>
-      <cc:Work rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-        <dc:title/>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g transform="matrix(0.70921753,0,0,0.70921753,16.312988,-575.43195)" id="layer1">
-    <g transform="translate(-32.826774,1321.6644)" id="g4050">
-      <path d="m 227.85715,514.50507 a 81.428575,81.428575 0 1 1 -162.85715,0 81.428575,81.428575 0 1 1 162.85715,0 z" transform="matrix(1.0008772,0,0,1.0008772,21.2686,-884.25862)" id="path2999" style="color:#000000;fill:none;stroke:#000000;stroke-width:11.98948383;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" inkscape:connector-curvature="0"/>
-      <path d="m 423.60916,-446.45023 0.49999,87 c 0.22695,39.48771 -32.01164,71.64801 -71.5,71.64801 -39.48836,0 -71.49999,-32.01164 -71.5,-71.5 l 0,-87.14801" id="path2999-6" style="color:#000000;fill:none;stroke:#000000;stroke-width:12.00000095;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" inkscape:connector-curvature="0"/>
-      <path d="m 603.45555,-446.45023 0.5,37.05346 c 0.53281,39.48477 -32.01164,71.648 -71.5,71.648 -39.48836,0 -71.5,-32.01163 -71.5,-71.5 l 0,-37.20146" id="path2999-6-5" style="color:#000000;fill:none;stroke:#000000;stroke-width:12.00000095;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" inkscape:connector-curvature="0"/>
-      <path d="m 532.45878,-292.98077 0,-41.55194" id="path3998" style="fill:#ff0000;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" inkscape:connector-curvature="0"/>
-      <path d="m 636.82793,-292.45023 -0.5,-81.9747 c -0.24085,-39.48763 32.01164,-71.648 71.5,-71.648 39.48836,0 71.5,32.01163 71.5,71.49999 l 0,82.12271" id="path2999-6-43" style="color:#000000;fill:none;stroke:#000000;stroke-width:12.00000095;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" inkscape:connector-curvature="0"/>
-      <path d="m 637.16323,-345.75021 140.57043,0" id="path3998-9" style="fill:#ff0000;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" inkscape:connector-curvature="0"/>
+<svg width="49px" height="49px" viewBox="0 0 49 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="OUYA_Icon_Black" sketch:type="MSLayerGroup" fill="#1A1918">
+            <path d="M35.444,19.704 L35.444,25.182 C35.444,31.213 30.535,36.125 24.498,36.125 C18.465,36.125 13.555,31.213 13.555,25.182 L13.555,19.704 C13.555,18.787 12.81,18.044 11.896,18.044 C10.981,18.044 10.237,18.787 10.237,19.704 L10.237,25.182 C10.237,33.042 16.636,39.442 24.498,39.442 C32.361,39.442 38.761,33.042 38.761,25.182 L38.761,19.704 C38.761,18.787 38.018,18.044 37.104,18.044 C36.188,18.044 35.444,18.787 35.444,19.704 Z" id="Fill-1" sketch:type="MSShapeGroup"></path>
+            <path d="M24.498,0.002 C10.989,0.002 0,10.991 0,24.502 C0,38.01 10.989,49 24.498,49 C38.008,49 49,38.01 49,24.502 C49,10.991 38.008,0.002 24.498,0.002 M24.498,45.629 C12.848,45.629 3.373,36.149 3.373,24.502 C3.373,12.85 12.848,3.375 24.498,3.375 C36.147,3.375 45.628,12.85 45.628,24.502 C45.628,36.149 36.147,45.629 24.498,45.629" id="Fill-3" sketch:type="MSShapeGroup"></path>
+        </g>
     </g>
-  </g>
 </svg>

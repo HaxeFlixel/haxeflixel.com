@@ -16,25 +16,32 @@
 				<div class="navbar-collapse collapse">
 
 					<ul class="nav navbar-nav">
+
 						<li <%= @ademos %>>
-						<a href="/demos">Demos</a>
+							<a href="/demos">Demos</a>
 						</li>
+
+						<li <%= @ashowcase %>>
+							<a href="/showcase">Showcase</a>
+						</li>
+
 						<li <%= @adocs %>>
-						<a href="/documentation">Documentation</a>
+							<a href="/documentation">Documentation</a>
 						</li>
-						<li <%= @aapi %>>
-						<a href="/api">API</a>
-						</li>
+
 						<li <%= @aforum %>>
-						<a href="/forum">Forum</a>
+							<a href="/forum">Forum</a>
 						</li>
+
 					</ul>
+		
+					<%- @partial('search.html') %>
 
 				</div>
 
 			</div>
-		</div>
 
+		</div>
 
 	</nav>
 </header>

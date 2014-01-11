@@ -80,11 +80,23 @@ table {
   padding: 10px;
 }
 
+.search-form {
+  float: right;
+}
+
 /* Site Styles
 -------------------------------------------------- */
 
 .btn {
   .button-style();
+}
+
+.btn-header {
+  float: right;
+  margin-top: -60px;
+  padding: 4px 6px;
+  /* Text on the button not clickable otherwise! */
+  position: relative;
 }
 
 .btn-edit {
@@ -154,6 +166,21 @@ pre .title:before {
 
 .heading-menu-item > a {
   margin-left: 0;
+}
+
+.showcases-targets {
+    padding-top: 10px;
+}
+
+.showcases-targets img {
+  .grayscale();
+  .opacityAll(.2);
+}
+
+.showcases-target-active img {
+  .nograyscale();
+  .opacityAll(1);
+  .hover-scale-fx(1.2);
 }
 
 /* Home Page

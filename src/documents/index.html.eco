@@ -61,7 +61,7 @@ title: 'Home'
 			<img width="80px" height="90px" src="images/targets/android-logo.svg">
 			<img width="80px" height="67px" src="images/targets/ios-logo.svg">
 			<img width="80px" height="80px" src="images/targets/neko-logo.jpg">
-			<img width="148px" height="63px" src="images/targets/ouya-logo.svg">
+			<img width="80px" height="80px" src="images/targets/ouya-logo.svg">
 			<img width="80px" height="65px" src="images/targets/blackberry-logo.svg">
 			<img width="80px" height="80px" src="images/targets/flash-logo.svg">
 		</div>

@@ -5,7 +5,7 @@
 
 <body>
 
-<%- @partial('header-menu.html.eco', {ademos:"class='active'"}) %>
+<%- @partial('header-menu.html.eco', {ashowcase:"class='active'"}) %>
 
 <div class="container container-main">
 
@@ -13,7 +13,7 @@
 
 	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="githubBtn-tr-info"
 			allowtransparency="true"
-			src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-demos&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+			src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=haxeflixel.com&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 
 	<%- @content %>
 	

@@ -118,6 +118,9 @@ docpadConfig = {
 		demos: (database) ->
 			database.findAllLive({layout:$has:'demo'}, [date:-1])
 
+		showcase: (database) ->
+			database.findAllLive({layout:$has:'showcase'}, [date:-1])
+
 		homepage_demos: (database) ->
 			database.findAllLive({tags:$has:'homepage_demo'}, [date:-1])
 
