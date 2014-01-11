@@ -20,39 +20,39 @@ layout: showcases
 			<div class="showcases-targets">
 
 				<a href="<%= showcase.linux %>" <% if showcase.linux: %>class="showcases-target-active"<% end %>>
-					<img width="40px" height="49px" src="images/targets/linux-logo.svg">
+					<img width="40px" height="49px" src="/images/targets/linux-logo.svg">
 				</a>
 
 				<a href="<%= showcase.mac %>" <% if showcase.mac: %>class="showcases-target-active"<% end %>>
-					<img width="40px" height="40px" src="images/targets/apple-logo.svg">
+					<img width="40px" height="40px" src="/images/targets/apple-logo.svg">
 				</a>
 
 				<a href="<%= showcase.windows %>" <% if showcase.windows: %>class="showcases-target-active"<% end %>>
-					<img width="40px" height="40px" src="images/targets/windows-logo.svg">
+					<img width="40px" height="40px" src="/images/targets/windows-logo.svg">
 				</a>
 
 				<a href="<%= showcase.android %>" <% if showcase.android: %>class="showcases-target-active"<% end %>>
-					<img width="40px" height="40px" src="images/targets/android-logo.svg">
+					<img width="40px" height="40px" src="/images/targets/android-logo.svg">
 				</a>
 
 				<a href="<%= showcase.ios %>" <% if showcase.ios: %>class="showcases-target-active"<% end %>>
-					<img width="40px" src="images/targets/ios-logo.svg">
+					<img width="40px" src="/images/targets/ios-logo.svg">
 				</a>
 
 				<a href="<%= showcase.neko %>" <% if showcase.neko: %>class="showcases-target-active"<% end %>>
-					<img width="40px" height="40px" src="images/targets/neko-logo.jpg">
+					<img width="40px" height="40px" src="/images/targets/neko-logo.jpg">
 				</a>
 
 				<a href="<%= showcase.ouya %>" <% if showcase.ouya: %>class="showcases-target-active"<% end %>>
-					<img width="38px" height="38px" src="images/targets/ouya-logo.svg">
+					<img width="38px" height="38px" src="/images/targets/ouya-logo.svg">
 				</a>
 
 				<a href="<%= showcase.blackberry %>" <% if showcase.blackberry: %>class="showcases-target-active"<% end %>>
-					<img width="40px" height="40px" src="images/targets/blackberry-logo.svg">
+					<img width="40px" height="40px" src="/images/targets/blackberry-logo.svg">
 				</a>
 
 				<a href="<%= showcase.flash %>" <% if showcase.flash: %>class="showcases-target-active"<% end %>>
-					<img width="40px" height="40px" src="images/targets/flash-logo.svg">
+					<img width="40px" height="40px" src="/images/targets/flash-logo.svg">
 				</a>
 
 			</div>

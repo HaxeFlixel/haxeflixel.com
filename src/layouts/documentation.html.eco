@@ -10,7 +10,7 @@
 <div class="container container-main">
 	<h1 class="title"><%= @document.title %></h1>
 
-	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="flixel-demos-header"
+	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="githubBtn-tr-info"
 			allowtransparency="true"
 			src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-docs&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 			
