@@ -1,6 +1,7 @@
 ![](https://raw.github.com/HaxeFlixel/haxeflixel.com/master/src/files/images/flixel-logos/haxeflixel.com.png)
 ==============
 
+This is the sourcecode for haxeflixel.com. It is made with a nodejs static site generator called [DocPad](http://docpad.org/).
 You can compile this website yourself with a local install of Docpad, pull requests are welcome.
 
 1. [Install DocPad](http://docpad.org/docs/install)
@@ -11,7 +12,7 @@ You can compile this website yourself with a local install of Docpad, pull reque
 	git clone https://github.com/HaxeFlixel/haxeflixel.com.git
 	cd haxeflixel.com
 	```
-	You can run the following commands manually:
+	To install dependencies and run docpad, run the following commands:
 	
 	```batch
 	npm install
