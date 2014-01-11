@@ -20,6 +20,7 @@ layout: showcases
 		
 		</a>
 				
+			<% if !showcase.released: %>
 			<div class="showcases-targets">
 
 				<img <% if showcase.linux: %>class="showcases-target-active"<% end %> width="40px" height="49px" src="/images/targets/linux-logo.svg">
@@ -41,6 +42,7 @@ layout: showcases
 				<img <% if showcase.flash: %>class="showcases-target-active"<% end %> width="40px" height="40px" src="/images/targets/flash-logo.svg">
 
 			</div>
+			<% end %>
 
 	</div>
 
