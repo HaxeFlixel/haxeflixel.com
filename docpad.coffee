@@ -73,6 +73,12 @@ docpadConfig = {
 			else
 				@site.title
 
+		getShowcaseActive:(status) ->
+			if status
+			    return 'showcases-target-actives'
+		    else
+				return 'showcases-target'
+
 		# Get the prepared site/document description
 		getPreparedDescription: ->
 			# if we have a document description, then we should use that, otherwise use the site's description

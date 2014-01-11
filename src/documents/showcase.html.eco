@@ -20,29 +20,45 @@ layout: showcases
 		
 		</a>
 				
-			<% if !showcase.released: %>
-			<div class="showcases-targets">
+			<div class="showcase-targets">
 
-				<img <% if showcase.linux: %>class="showcases-target-active"<% end %> width="40px" height="49px" src="/images/targets/linux-logo.svg">
+				<span class="<%= @getShowcaseActive(showcase.linux) %>">
+					<img  width="40px" height="49px" src="/images/targets/linux-logo.svg">
+				</span>
 
-				<img <% if showcase.mac: %>class="showcases-target-active"<% end %> width="40px" height="40px" src="/images/targets/apple-logo.svg">
+				<span class="<%= @getShowcaseActive(showcase.mac) %>">
+					<img  width="40px" height="40px" src="/images/targets/apple-logo.svg">
+				</span>
 
-				<img <% if showcase.windows: %>class="showcases-target-active"<% end %> width="40px" height="40px" src="/images/targets/windows-logo.svg">
+				<span class="<%= @getShowcaseActive(showcase.windows) %>">
+					<img  width="40px" height="40px" src="/images/targets/windows-logo.svg">
+				</span>
 
-				<img <% if showcase.android: %>class="showcases-target-active"<% end %> width="40px" height="40px" src="/images/targets/android-logo.svg">
+				<span class="<%= @getShowcaseActive(showcase.android) %>">
+					<img  width="40px" height="40px" src="/images/targets/android-logo.svg">
+				</span>
 
-				<img <% if showcase.ios: %>class="showcases-target-active"<% end %> width="40px" src="/images/targets/ios-logo.svg">
+				<span class="<%= @getShowcaseActive(showcase.ios) %>">
+					<img  width="40px" src="/images/targets/ios-logo.svg">
+				</span>
 
-				<img <% if showcase.neko: %>class="showcases-target-active"<% end %> width="40px" height="40px" src="/images/targets/neko-logo.jpg">
+				<span class="<%= @getShowcaseActive(showcase.neko) %>">
+					<img  width="40px" height="40px" src="/images/targets/neko-logo.jpg">
+				</span>
 
-				<img <% if showcase.ouya: %>class="showcases-target-active"<% end %> width="38px" height="38px" src="/images/targets/ouya-logo.svg">
-				
-				<img <% if showcase.blackberry: %>class="showcases-target-active"<% end %> width="40px" height="40px" src="/images/targets/blackberry-logo.svg">
+				<span class="<%= @getShowcaseActive(showcase.ouya) %>">
+					<img  width="38px" height="38px" src="/images/targets/ouya-logo.svg">
+				</span>	
 
-				<img <% if showcase.flash: %>class="showcases-target-active"<% end %> width="40px" height="40px" src="/images/targets/flash-logo.svg">
+				<span class="<%= @getShowcaseActive(showcase.blackberry) %>">
+					<img  width="40px" height="40px" src="/images/targets/blackberry-logo.svg">
+				</span>
+
+				<span class="<%= @getShowcaseActive(showcase.flash) %>">
+					<img  width="40px" height="40px" src="/images/targets/flash-logo.svg">
+				</span>
 
 			</div>
-			<% end %>
 
 	</div>
 

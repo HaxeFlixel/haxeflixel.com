@@ -84,6 +84,24 @@ table {
   float: right;
 }
 
+@media (max-width: @screen-md-min) {
+  .search-form {
+    display: none;
+  }
+}
+
+@media (max-width: @screen-lg-min) {
+  .search-form {
+    display: none;
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .search-form {
+    display: none;
+  }
+}
+
 /* Site Styles
 -------------------------------------------------- */
 
@@ -168,18 +186,18 @@ pre .title:before {
   margin-left: 0;
 }
 
-.showcases-targets {
+.showcase-targets img {
     padding-top: 10px;
-}
-
-.showcases-targets img {
-  .grayscale();
-  .opacityAll(.2);
 }
 
 .showcases-target-active img {
   .nograyscale();
   .opacityAll(1);
+}
+
+.showcases-target img {
+  .grayscale();
+  .opacityAll(.2);
 }
 
 /* Home Page
