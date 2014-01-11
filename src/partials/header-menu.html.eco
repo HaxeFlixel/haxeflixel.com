@@ -29,6 +29,10 @@
 							<a href="/documentation">Documentation</a>
 						</li>
 
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
 						<li <%= @aforum %>>
 							<a href="/forum">Forum</a>
 						</li>
