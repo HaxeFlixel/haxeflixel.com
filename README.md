@@ -33,6 +33,7 @@ Documentation is being pulled periodically from the [flixel-docs](https://github
 ### How to add a demo
 
 1. Create a `.html.md` file in [`/src/documents/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/demos) following this example:
+
 	```
 		```
 		title: "Demo-Name"
@@ -52,6 +53,28 @@ Documentation is being pulled periodically from the [flixel-docs](https://github
 		
 	```
 `source` points to the subdirectory of [flixel-demos](https://github.com/HaxeFlixel/flixel-demos) that contains the demo. 
+
 2. Add a screenshot of the demo named `Demo-Name.png` to [`/src/files/demos/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/images).
+
 3. Add the actual swf file of the demo named `Demo-Name.swf` to [`/src/files/demos/swf`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/swf). Should be compiled with `FLX_NO_DEBUG` (to show the flixel splash screen) and in release mode if possible!
-	
+
+### How to a Showcase Item
+
+1. Create a `.md` file in [`/src/documents/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/showcase) following this example:
+
+	```
+		```
+		layout: "showcase"
+		title: "BOSSES FOREVER 2.BRO"
+		flash: true
+		windows: true
+		ouya: true
+		mac: true
+		website: "http://www.bossesforever.com/"
+		```
+	```
+
+Note that by setting a target to true on one of the supported targets, the icon will automatically become coloured on the [showcase page](http://haxeflixel.com/showcase).
+
+2. Add a screenshot of the showcase using the same title of used in the `*.md` file eg `BOSSES FOREVER 2.BRO.png` to [`/src/files/showcase/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/showcase/images).
+
