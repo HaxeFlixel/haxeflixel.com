@@ -54,7 +54,7 @@ title: 'Home'
 
 		<p class="lead-line-large">Cross-compile your games <a href="documentation/about">natively</a> to:</p>
 
-		<div class="platform-demos-home">
+		<div class="platform-logos-home">
 			<img width="80px" height="90px" src="images/targets/linux-logo.svg">
 			<img width="80px" height="92px" src="images/targets/apple-logo.svg">
 			<img width="80px" height="80px" src="images/targets/windows-logo.svg">

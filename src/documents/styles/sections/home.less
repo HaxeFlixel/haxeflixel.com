@@ -67,8 +67,15 @@
 }
 
 .platform-logos-home img {
-  margin: 10px;
+  padding: 10px;
+  .opacityAll(.7);
   .hover-scale-fx(1.2);
+  .grayscale();
+}
+
+.platform-logos-home img:hover {
+  .opacityAll(1);
+  .nograyscale();
 }
 
 .platform-demos-home img {
