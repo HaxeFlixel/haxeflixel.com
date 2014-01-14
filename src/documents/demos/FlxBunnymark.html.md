@@ -4,7 +4,7 @@ layout: demo
 pageOrder: 1
 SWFHeight: 480
 SWFWidth: 640
-source: "Other/FlxBunnyMark"
+source: "Performance/FlxBunnyMark"
 ```
 
 This is a HaxeFlixel port of the BunnyMark Benchmark. 
