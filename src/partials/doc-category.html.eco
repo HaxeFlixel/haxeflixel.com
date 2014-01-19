@@ -7,7 +7,10 @@
 
 	<div class="list-group">
 		<% for doc in @docs.toJSON(): %>
-		<a href="<%= doc.url %>" class="list-group-item"><%= doc.title %></a>
+		<a href="<%= doc.url %>" class="list-group-item">
+			<span class="glyphicon glyphicon-<%= doc.icon %>"></span>
+			<%= doc.title %>
+		</a>
 		<% end %>
 	</div>
 </div>
