@@ -9,11 +9,11 @@ layout: showcases
 
 	<% for showcase in @getCollection('showcase').toJSON(): %>
 
-	<div class="col-md-6">
+	<div class="col-md-6 showcase-game">
 		
 		<h3><%= showcase.title %></h3>
 			
-		<a href="<%= showcase.website %>" property="dc:title" target="_blank">
+		<a class="showcase-game-thumbnail" href="<%= showcase.website %>" property="dc:title" target="_blank">
 			
 			<img width="500" height="260" src="<%= @getThumbnail("/showcase/images/#{showcase.title}.png", "zoomcrop", { w: 500, h:260 }) %>" 
 				alt="<%= showcase.title %>" title="<%= showcase.website %>">
@@ -27,11 +27,11 @@ layout: showcases
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.mac) %>">
-					<img  width="40px" height="40px" src="/images/targets/apple-logo.svg">
+					<img  width="26px" height="40px" src="/images/targets/apple-logo.svg">
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.windows) %>">
-					<img  width="40px" height="40px" src="/images/targets/windows-logo.svg">
+					<img  width="30px" height="40px" src="/images/targets/windows-logo.svg">
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.android) %>">
@@ -40,10 +40,6 @@ layout: showcases
 
 				<span class="<%= @getShowcaseActive(showcase.ios) %>">
 					<img  width="40px" src="/images/targets/ios-logo.svg">
-				</span>
-
-				<span class="<%= @getShowcaseActive(showcase.neko) %>">
-					<img  width="40px" height="40px" src="/images/targets/neko-logo.jpg">
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.ouya) %>">
@@ -55,7 +51,7 @@ layout: showcases
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.flash) %>">
-					<img  width="40px" height="40px" src="/images/targets/flash-logo.svg">
+					<img  width="32px" height="40px" src="/images/targets/flash-logo.svg">
 				</span>
 
 			</div>
