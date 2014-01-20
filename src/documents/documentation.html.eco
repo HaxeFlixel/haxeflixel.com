@@ -7,25 +7,25 @@ layout: "documentation"
 
 	<div class="col-md-3">
 
-		<%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {title:'Getting Started'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {icon: 'play', title: 'Getting Started'}) %>
 
 	</div>
 
 	<div class="col-md-3">
 
-		<%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {title:'Community'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {icon: 'globe', title: 'Community'}) %>
 
 	</div>
 
 	<div class="col-md-3">
 
-		<%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {title:'HaxeFlixel Handbook'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {icon: 'book', title: 'HaxeFlixel Handbook'}) %>
 
 	</div>
 
 	<div class="col-md-3">
 
-		<%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {title:'Resources'}) %>
+		<%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {icon: 'folder-open', title:'Resources'}) %>
 
 	</div>
 
