@@ -54,4 +54,7 @@ There is also an impressive choice of Ease types for every Tween type to choose 
 	<li>backIn</li>
 	<li>backOut</li>
 	<li>backInOut</li>
+	<li>elasticIn</li>
+	<li>elasticOut</li>
+	<li>elasticInOut</li>
 </ul>
