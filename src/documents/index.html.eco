@@ -158,11 +158,11 @@ title: 'Home'
 
 		<br/>
 
-		<img src="/images/haxe.svg" alt="Haxe Logo" width="120">
+		<img src="/images/haxe.svg" alt="Haxe Logo" height="120">
 
 		<span><b>+</b></span>
 
-		<img src="/images/openfl-logo.svg" alt="OpenFL Logo" width="120">
+		<img src="/images/openfl.svg" alt="OpenFL Logo" height="120">
 
 		<span><b>+</b></span>
 
@@ -170,7 +170,7 @@ title: 'Home'
 
 		<span><b>=</b></span>
 
-		<img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" width="135">
+		<img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" height="120">
 
 		</p>
 
