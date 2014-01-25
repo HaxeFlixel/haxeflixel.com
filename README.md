@@ -1,8 +1,11 @@
 ![](https://raw.github.com/HaxeFlixel/haxeflixel.com/master/src/files/images/flixel-logos/haxeflixel.com.png)
-==============
 
-This is the sourcecode for haxeflixel.com. It is made with a nodejs static site generator called [DocPad](http://docpad.org/).
-You can compile this website yourself with a local install of Docpad, pull requests are welcome.
+[flixel](https://github.com/HaxeFlixel/flixel) | [addons](https://github.com/HaxeFlixel/flixel-addons) | [ui](https://github.com/HaxeFlixel/flixel-ui) | [demos](https://github.com/HaxeFlixel/flixel-demos) | [tools](https://github.com/HaxeFlixel/flixel-tools) | [templates](https://github.com/HaxeFlixel/flixel-templates) | [docs](https://github.com/HaxeFlixel/flixel-docs) | [haxeflixel.com](https://github.com/HaxeFlixel/haxeflixel.com)
+
+##About
+
+This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with a Node.js static site generator called [DocPad](http://docpad.org/).
+You can compile this website yourself with a local install of DocPad, pull requests are welcome.
 
 1. [Install DocPad](http://docpad.org/docs/install)
 
@@ -26,6 +29,7 @@ You can compile this website yourself with a local install of Docpad, pull reque
 
 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save the files you modify.
 
+##Contributing
 ### How to add Documentation
 
 Documentation is being pulled periodically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository, please review the readme there for more info.
@@ -78,3 +82,7 @@ Documentation is being pulled periodically from the [flixel-docs](https://github
 2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `BOSSES FOREVER 2.BRO.png` to [`/src/files/showcase/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/showcase/images). They are resized and cropped to 500x260, so it's best to use the same ratio.
 
 Showcases that are not officially released yet are only accepted in special cases.
+
+=
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/HaxeFlixel/haxeflixel.com/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
