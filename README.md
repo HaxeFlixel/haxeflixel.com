@@ -30,9 +30,13 @@ You can compile this website yourself with a local install of DocPad, pull reque
 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save the files you modify.
 
 ##Contributing
+
+If you want to contribute and improve our website please work on a [fork](https://github.com/HaxeFlixel/haxeflixel.com/fork) or feature branch. Only working and tested changes will be merged into master. Use the [issue system](https://github.com/HaxeFlixel/haxeflixel.com/issues) for developer support and approval on your changes.
+
+
 ### How to add Documentation
 
-Documentation is being pulled periodically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository, please review the readme there for more info.
+Documentation is being pulled periodically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository, please review the readme there for more info on updating the haxeflixel.com/documentation pages.
 
 ### How to add a demo
 
