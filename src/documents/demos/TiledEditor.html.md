@@ -7,7 +7,7 @@ SWFWidth: 640
 source: "Editors/TiledEditor"
 ```
 
-This sample shows how to load a map from [Tiled Map Editor](https://github.com/HaxeFlixel/flixel-samples/tree/master/TiledEditorDemo).
+This sample shows how to load a map from the [Tiled Map Editor](http://www.mapeditor.org/).
 
 Demo Controls:
 
