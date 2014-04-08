@@ -1,10 +1,10 @@
 ```
-title: "Mouse Event Manager"
+title: "MouseEventManager"
 layout: demo
 pageOrder: 1
 SWFHeight: 480
 SWFWidth: 640
-source: "MouseEventManager"
+source: "Input/MouseEventManager"
 ```
 
 **MouseEventManager** allows FlxSprites to listen to mouse events like MouseDown, MouseUp, MouseOver and MouseOut.
