@@ -1,6 +1,6 @@
 ```
-layout: "showcase"
+layout: showcase
 title: "Even the Ocean"
-website: "http://www.eventheocean.com/"
+website: http://www.eventheocean.com/
 released: false
 ```

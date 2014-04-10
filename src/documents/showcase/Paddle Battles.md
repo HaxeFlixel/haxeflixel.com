@@ -1,8 +1,8 @@
 ```
-layout: "showcase"
+layout: showcase
 title: "Paddle Battles"
-windows: true
-android: true
-flash: true
-website: "http://paddlebattles.tims-world.com/"
+windows: http://paddlebattles.tims-world.com/
+android: https://play.google.com/store/apps/details?id=net.tileisle.paddlebattles
+flash: http://paddlebattles.tims-world.com/
+website: http://paddlebattles.tims-world.com/
 ```

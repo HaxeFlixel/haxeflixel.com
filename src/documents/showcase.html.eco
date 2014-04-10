@@ -23,35 +23,51 @@ layout: showcases
 			<div class="showcase-targets">
 
 				<span class="<%= @getShowcaseActive(showcase.linux) %>">
-					<img  width="40px" height="49px" src="/images/targets/linux-logo.svg">
+					<% if showcase.linux: %><a href="<%= showcase.linux %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="49px" src="/images/targets/linux-logo.svg">
+					<% if showcase.linux: %></a><% end %>
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.mac) %>">
-					<img  width="26px" height="40px" src="/images/targets/apple-logo.svg">
+					<% if showcase.mac: %><a href="<%= showcase.mac %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="26px" height="40px" src="/images/targets/apple-logo.svg">
+					<% if showcase.mac: %></a><% end %>
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.windows) %>">
-					<img  width="30px" height="40px" src="/images/targets/windows-logo.svg">
+					<% if showcase.windows: %><a href="<%= showcase.windows %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="30px" height="40px" src="/images/targets/windows-logo.svg">
+					<% if showcase.windows: %></a><% end %>
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.android) %>">
-					<img  width="40px" height="40px" src="/images/targets/android-logo.svg">
+					<% if showcase.android: %><a href="<%= showcase.android %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="40px" src="/images/targets/android-logo.svg">
+					<% if showcase.android: %></a><% end %>
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.ios) %>">
-					<img  width="40px" src="/images/targets/ios-logo.svg">
+					<% if showcase.ios: %><a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" src="/images/targets/ios-logo.svg">
+					<% if showcase.ios: %></a><% end %>
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.ouya) %>">
-					<img  width="38px" height="38px" src="/images/targets/ouya-logo.svg">
+					<% if showcase.ouya: %><a href="<%= showcase.ouya %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="38px" height="38px" src="/images/targets/ouya-logo.svg">
+					<% if showcase.ouya: %></a><% end %>
 				</span>	
 
 				<span class="<%= @getShowcaseActive(showcase.blackberry) %>">
-					<img  width="40px" height="40px" src="/images/targets/blackberry-logo.svg">
+					<% if showcase.blackberry: %><a href="<%= showcase.blackberry %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="40px" src="/images/targets/blackberry-logo.svg">
+					<% if showcase.blackberry: %></a><% end %>
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.flash) %>">
-					<img  width="32px" height="40px" src="/images/targets/flash-logo.svg">
+					<% if showcase.flash: %><a href="<%= showcase.flash %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="32px" height="40px" src="/images/targets/flash-logo.svg">
+					<% if showcase.flash: %></a><% end %>
 				</span>
 
 			</div>

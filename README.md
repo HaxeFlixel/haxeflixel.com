@@ -74,16 +74,16 @@ Documentation is being pulled periodically from the [flixel-docs](https://github
 
 	```
 		```
-		layout: "showcase"
+		layout: showcase
 		title: "BOSSES FOREVER 2.BRO"
-		flash: true
-		windows: true
-		ouya: true
-		mac: true
-		website: "http://www.bossesforever.com/"
+		flash: http://www.bossesforever.com/
+		windows: http://www.bossesforever.com/
+		ouya: https://www.ouya.tv/game/BOSSES-FOREVER-2BRO/
+		mac: http://www.bossesforever.com/
+		website: http://www.bossesforever.com/
 		```
 	```
-	Note that by setting a target to true on one of the supported targets, the icon will automatically become coloured on the [showcase page](http://haxeflixel.com/showcase).
+	Note that by adding a URL to one of the supported targets, the icon will automatically become coloured on the [showcase page](http://haxeflixel.com/showcase) and link to that URL.
 
 2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `BOSSES FOREVER 2.BRO.png` to [`/src/files/showcase/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/showcase/images). They are resized and cropped to 500x260, so it's best to use the same ratio.
 

@@ -1,7 +1,7 @@
 ```
-layout: "showcase"
+layout: showcase
 title: "GULAG PARADISE"
-mac: true
-windows: true
-website: "http://armeljgibson.com/gulagparadise/"
+mac: http://armeljgibson.com/gulagparadise/
+windows: http://armeljgibson.com/gulagparadise/
+website: http://armeljgibson.com/gulagparadise/
 ```

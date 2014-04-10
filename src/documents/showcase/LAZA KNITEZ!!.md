@@ -1,6 +1,6 @@
 ```
-layout: "showcase"
+layout: showcase
 title: "LAZA KNITEZ!!"
-ouya: true
-website: "http://www.lazaknitez.com/"
+ouya: https://www.ouya.tv/game/LAZA-KNITEZ/
+website: http://www.lazaknitez.com/
 ```

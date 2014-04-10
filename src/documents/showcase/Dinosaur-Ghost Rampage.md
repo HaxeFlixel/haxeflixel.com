@@ -1,7 +1,7 @@
 ```
-layout: "showcase"
+layout: showcase
 title: "Dinosaur-Ghost Rampage"
-windows: true
-flash: true
-website: "http://dinoghost.tims-world.com/"
+windows: http://dinoghost.tims-world.com/
+flash: http://dinoghost.tims-world.com/
+website: http://dinoghost.tims-world.com/
 ```
