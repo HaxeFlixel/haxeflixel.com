@@ -11,3 +11,5 @@ layout: "documentation"
 
 <%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {icon: 'folder-open', title:'Resources'}) %>
 
+<%- @partial('doc-category.html.eco', {docs:@getCollection('tutorial')}, {icon: 'check', title:'Tutorial'}) %>
+
