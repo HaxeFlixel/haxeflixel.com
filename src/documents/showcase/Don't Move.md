@@ -1,7 +1,6 @@
 ```
 layout: showcase
 title: "Don't Move"
-featured: true
 windows: http://steverichey.com/dontmove/
 mac: http://steverichey.com/dontmove/
 linux: http://steverichey.com/dontmove/
