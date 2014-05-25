@@ -220,6 +220,29 @@ docpadConfig = {
 					categoryTitle
 					editUrl
 				}).addUrl(urls)
+				
+		tutorials: (database) ->
+			query =
+				write: true
+				relativeOutDirPath: $startsWith: 'documentation/documentation/04_tutorials'
+				body: $ne: ""
+			sorting = [categoryDirectory:1, filename:1]
+
+			database.findAllLive(query, sorting).on 'add', (document) ->
+				a = document.attributes
+				layout = 'doc'
+				categoryName = 'tutorials'
+				categoryTitle = 'Tutorials'
+				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/"
+				editUrl = githubEditUrl + a.basename + '.html.md'
+				document.setMetaDefaults({
+					layout
+					url: urls[0]
+					categoryName
+					categoryTitle
+					editUrl
+				}).addUrl(urls)
 
 		rootDocuments: (database) ->
 			query =
