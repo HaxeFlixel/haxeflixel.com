@@ -52,7 +52,6 @@ docpadConfig = {
 				"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
 				"/vendor/twitter-bootstrap-3/js/dropdown.js",
 				"/vendor/twitter-bootstrap-3/js/transition.js",
-				"/vendor/twitter-bootstrap-3/js/carousel.js",
 				"/vendor/twitter-bootstrap-3/js/collapse.js"
 			]
 			
