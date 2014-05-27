@@ -1,6 +1,5 @@
 ```
 layout: showcase
-featured: true
 title: "BOSSES FOREVER 2.BRO"
 flash: http://www.bossesforever.com/
 windows: http://www.bossesforever.com/
