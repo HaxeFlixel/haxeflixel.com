@@ -26,6 +26,10 @@ You can compile this website yourself with a local install of DocPad, pull reque
 	Or if you are a windows user:
 	
 	...run `install.bat`, then `run.bat`
+	
+	The website uses [docpad-plugin-thumbnails](https://github.com/rantecki/docpad-plugin-thumbnails)
+	
+	- This requires [GraphicsMagick](http://www.graphicsmagick.org/) or [ImageMagick](http://www.imagemagick.org/) installed.
 
 3. [Open http://localhost:9778/](http://localhost:9778/)
 

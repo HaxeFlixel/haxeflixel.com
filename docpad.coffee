@@ -52,7 +52,6 @@ docpadConfig = {
 				"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
 				"/vendor/twitter-bootstrap-3/js/dropdown.js",
 				"/vendor/twitter-bootstrap-3/js/transition.js",
-				"/vendor/twitter-bootstrap-3/js/carousel.js",
 				"/vendor/twitter-bootstrap-3/js/collapse.js"
 			]
 			
@@ -211,29 +210,6 @@ docpadConfig = {
 				layout = 'doc'
 				categoryName = 'resources'
 				categoryTitle = 'Resources'
-				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/"
-				editUrl = githubEditUrl + a.basename + '.html.md'
-				document.setMetaDefaults({
-					layout
-					url: urls[0]
-					categoryName
-					categoryTitle
-					editUrl
-				}).addUrl(urls)
-				
-		tutorial: (database) ->
-			query =
-				write: true
-				relativeOutDirPath: $startsWith: 'documentation/documentation/03_resources'
-				body: $ne: ""
-			sorting = [categoryDirectory:1, filename:1]
-
-			database.findAllLive(query, sorting).on 'add', (document) ->
-				a = document.attributes
-				layout = 'doc'
-				categoryName = 'tutorial'
-				categoryTitle = 'Tutorial'
 				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
 				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/"
 				editUrl = githubEditUrl + a.basename + '.html.md'
