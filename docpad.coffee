@@ -132,7 +132,7 @@ docpadConfig = {
 		getting_started: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/documentation/00_getting_started'
+				relativeOutDirPath: $endsWith: '00_getting_started'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -155,7 +155,7 @@ docpadConfig = {
 		community: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/documentation/01_community'
+				relativeOutDirPath: $endsWith: '01_community'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -178,7 +178,7 @@ docpadConfig = {
 		handbook: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/documentation/02_handbook'
+				relativeOutDirPath: $endsWith: '02_handbook'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
@@ -201,7 +201,7 @@ docpadConfig = {
 		resources: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/documentation/03_resources'
+				relativeOutDirPath: $endsWith: '03_resources'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
