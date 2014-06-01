@@ -11,6 +11,10 @@ docpadConfig = {
             __dirname + '/src/documents/documentation/api'
     ]
 
+  #docpad-image-thumbnail plugin has not been updated.
+
+  skipUnsupportedPlugins: true
+
 	# =================================
 	# Template Data
 	# These are variables that will be accessible via our templates
@@ -282,15 +286,6 @@ docpadConfig = {
 
         thumbnails:
         	imageMagick: true
-
- 		repocloner:
-            repos: [
-                    name: 'HaxeFlixel Documentation'
-                    branch: 'master'
-                    path: 'src/documents/documentation'
-                    url: 'https://github.com/HaxeFlixel/flixel-docs.git'
-            ]
-
 }
 
 # Export our DocPad Configuration
