@@ -224,7 +224,7 @@ docpadConfig = {
 		tutorials: (database) ->
 			query =
 				write: true
-				relativeOutDirPath: $startsWith: 'documentation/documentation/04_tutorials'
+				relativeOutDirPath: $endsWith: '04_tutorials'
 				body: $ne: ""
 			sorting = [categoryDirectory:1, filename:1]
 
