@@ -23,7 +23,7 @@
 
 			<br>
 				
-			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/<%= @document.source %>" class="btn btn-sm btn-source" target="_blank"><span class="glyphicon glyphicon-book"></span> Source </a>
+			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/<%= @document.source %>/source" class="btn btn-sm btn-source" target="_blank"><span class="glyphicon glyphicon-book"></span> Source </a>
 
 			<h1 class="title"><%= @document.title %></h1>
 
