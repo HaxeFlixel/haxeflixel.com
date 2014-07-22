@@ -25,6 +25,10 @@
 							<a href="/showcase">Showcase</a>
 						</li>
 
+						<li <%= @ablog %>>
+							<a href="/blog">Blog</a>
+						</li>
+
 						<li <%= @adocs %>>
 							<a href="/documentation">Docs</a>
 						</li>
