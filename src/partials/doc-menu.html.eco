@@ -9,7 +9,7 @@
 	<% if doc.categoryName is @document.categoryName: %>
 		<% for doc in @documents: %>
 			<li class=<%= 'active' if doc.title is @document.title %> about="<%= doc.url %>">
-				<a href="<%= doc.url %>"><%= doc.title %></a>
+				<a href="<%= doc.url %>"> <%= @getDocumentMenuTitle(doc.title) %> </a>
 			</li>
 		<% end %>
 	<% end %>
