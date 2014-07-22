@@ -1,0 +1,66 @@
+/* Mixin helpers
+-------------------------------------------------- */
+
+.button-style() {
+  font-size: 20px;
+  background: #ECECEC;
+  border-radius: 10px;
+  padding: 16px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #fff;
+  border: 1px solid #a7a7a7;
+  box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: box-shadow 0.5s;
+
+  &:hover {
+	box-shadow: 0px 2px 1px white inset, 0px -2px 20px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+	top: 2px;
+	position: relative;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5) inset, 0px -2px 20px white, 0px 1px 5px rgba(0, 0, 0, 0.1), 0px 2px 10px rgba(0, 0, 0, 0.1);
+	background: -webkit-linear-gradient(top, #d1d1d1 0%, #ECECEC 100%);
+  }
+}
+
+.hover-scale-fx(@scaleTo:1.2, @duration:.1s, @scaleBack:1) {
+  -moz-transform: scale(@scaleBack);
+  -webkit-transform: scale(@scaleBack);
+  -o-transform: scale(@scaleBack);
+  -ms-transform: scale(@scaleBack);
+  transform: scale(@scaleBack);
+
+  -moz-transition: all @duration ease-in-out;
+  -webkit-transition: all @duration ease-in-out;
+  -ms-transition: all @duration ease-in-out;
+  -o-transition: all @duration ease-in-out;
+  transition: all @duration ease-in-out;
+
+  &:hover {
+	-moz-transform: scale(@scaleTo);
+	-webkit-transform: scale(@scaleTo);
+	-o-transform: scale(@scaleTo);
+	-ms-transform: scale(@scaleTo);
+	transform: scale(@scaleTo);
+  }
+
+}
+
+.grayscale() {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.nograyscale() {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(0%);
+}
+
+.opacityAll(@value:1) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@value*100)";
+  -moz-opacity: @value;
+  -khtml-opacity: @value;
+  opacity: @value;
+}
