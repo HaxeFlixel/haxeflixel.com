@@ -11,7 +11,7 @@
     "npm": "1.3"
   },
   "dependencies": {
-    "docpad": "~6.54.4",
+    "docpad": "*",
     "docpad-plugin-thumbnails": "~2.1.1",
     "docpad-plugin-partials": "~2.8.1",
     "docpad-plugin-less": "~2.2.0",
