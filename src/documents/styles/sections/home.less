@@ -94,23 +94,6 @@
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-#carousel-example-generic {
-  .box-shadow(~"0 1px 5px #696969, 0 -2px 5px #F2F2F2");
-}
-
-.left.carousel-control.carousel-tweet-control, .right.carousel-control.carousel-tweet-control {
-  background: none;
-}
-
-#carousel-tweets {
-	padding-left: 34px;
-	padding-right: 30px;
-	max-width: 500px;
-	height: 240px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 .icon-next.tweet-next {
   right: 0;
   position: absolute;
@@ -126,7 +109,7 @@
 .home-section-powered {
   text-align: center;
   img {
-	.hover-scale-fx(1.03);  
+    .hover-scale-fx(1.03);
   }
 }
 
@@ -135,35 +118,28 @@
   padding: 20px;
 }
 
-#carousel-home p {
+iframe {
   display: block;
-  position: absolute;
-  margin-top: -145px;
-  font-size: 1.2em;
-  color: white;
-  padding: 29px;
-  text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-  width: 100%;
+  margin: 0 auto;
 }
 
 @media (max-width: @screen-md-min) {
   .home-button {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	display:block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display:block;
   }
 }
 
 @media (max-width: @screen-lg-min) {
   .demos-home.home-section {
-	max-width: 700px;
-	margin: 0 auto;
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: @screen-sm-min) {
   .home-header h1 {
-	font-size: 4em;
+    font-size: 4em;
   }
 }
