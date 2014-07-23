@@ -59,6 +59,7 @@ docpadConfig = {
 
       services:
         googleAnalytics: 'UA-35511281-1'
+        disqus: 'haxeflixel'
 
     # -----------------------------
     # Helper Functions
@@ -133,6 +134,7 @@ docpadConfig = {
         a = document.attributes
         contentPreview = a.content.substring(0,150)
         contentPreview = contentPreview + " ..."
+        a.postDate = "posted : " + a.postDate
         document.setMetaDefaults({
           contentPreview
         })

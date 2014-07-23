@@ -13,16 +13,22 @@
 
 <div class="col-md-8">
 
-	<h1 class="title"><%= @document.title %></h1>
+    <h1 class="title"><%= @document.title %></h1>
 
-        <%- @content %>
+    <p class="post-date"><%= @document.postDate %></h1>
+
+    <%- @content %>
+
+    <br>
+    <hr>
+    <br>
+
+    <%- @getDisqus() %>
 
 </div>
 
 <div class="col-md-2"></div>
 </div>
-
-
 
 <%- @partial('footer.html') %>
 
