@@ -1,7 +1,7 @@
 ```
 title: "HaxeFlixel now has a blog!"
 layout: blog-post
-postDate: 12-5-2014
+postDate: 30-7-2014
 ```
 
 The HaxeFlixel project and it's active community of game dev enthusiasts, have opened this 
