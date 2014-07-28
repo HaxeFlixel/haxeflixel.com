@@ -886,7 +886,6 @@ pre .title:before{background-image:none}
 .icon-prev.tweet-prev{right:100%;position:absolute;left:0}
 .home-section-powered{text-align:center}.home-section-powered img{-moz-transform:scale(1);-webkit-transform:scale(1);-o-transform:scale(1);-ms-transform:scale(1);transform:scale(1);-moz-transition:all .1s ease-in-out;-webkit-transition:all .1s ease-in-out;-ms-transition:all .1s ease-in-out;-o-transition:all .1s ease-in-out;transition:all .1s ease-in-out}.home-section-powered img:hover{-moz-transform:scale(1.03);-webkit-transform:scale(1.03);-o-transform:scale(1.03);-ms-transform:scale(1.03);transform:scale(1.03)}
 .home-section-powered span{font-size:48px;padding:20px}
-iframe{display:block;margin:0 auto}
 @media (max-width:992px){.home-button{margin-top:20px;margin-bottom:20px;display:block}}@media (max-width:1200px){.demos-home.home-section{max-width:700px;margin:0 auto}}@media (max-width:768px){.home-header h1{font-size:4em}}pre code{display:block;padding:0.5em;background:#23241f}
 pre .tag,pre code{color:#f8f8f2}
 pre .keyword,pre .function,pre .literal,pre .change,pre .winutils,pre .flow,pre .lisp .title,pre .clojure .built_in,pre .nginx .title,pre .tex .special{color:#66d9ef}
