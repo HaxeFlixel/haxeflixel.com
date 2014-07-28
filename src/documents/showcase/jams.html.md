@@ -1,6 +1,6 @@
 ---
 title: "Game Jams"
-layout: showcases
+layout: jams
 ---
 
 ##Lundum Dare 29
