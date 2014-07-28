@@ -1,0 +1,17 @@
+---
+title: "Page not found"
+layout: blog
+---
+
+<div class="container">
+<div class="row">
+
+<h2>Strange, we are unable to find the page you have requested.</h2>
+
+<p>It might have been removed, lost or never existed.
+You could try and find it using <a href="http://google.com/search?q=site%3A<%= @site.url %> ">search</a>
+
+<p>Otherwise ask on our <a href="/forum">forums</a></p>
+
+</div>
+</div>
