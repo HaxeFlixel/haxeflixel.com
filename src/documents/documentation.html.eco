@@ -1,6 +1,6 @@
 ---
 title: "Documentation"
-layout: "documentation"
+layout: "documentation-layout"
 ---
 
 <%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {icon: 'play', title: 'Getting Started'}) %>

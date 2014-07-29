@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-layout: blog
+layout: blog-layout
 ---
 
 <div class="container">
