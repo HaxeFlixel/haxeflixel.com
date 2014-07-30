@@ -255,9 +255,11 @@ The use cases for groups are vast: pooling to reuse objects, collision detection
 
 <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0.</span>..poolSize)
 {
-    bullets.add(<span class="keyword">new</span> Bullet().kill());
+    <span class="keyword">var</span> bullet = <span class="keyword">new</span> Bullet();
+    bullet.kill();
+    bullets.add(bullet);
 }</code></pre>
-<p>Note how we did not use a regular <code>FlxGroup</code>, but a <code>FlxTypedGroup&lt;Bullet&gt;()</code>. This means that this particular group can only store objects that are instances of the <code>Bullet</code> class or instances of <code>Bullet</code> subclasses. <code>FlxGroup</code> itself is nothing but a shortcut for <code>FlxTypedGroup&lt;FlxBasic&gt;</code>.</p>
+<p>Note how we did not use a regular <code>FlxGroup</code>, but a <code>FlxTypedGroup&lt;Bullet&gt;</code>. This means that this particular group can only store objects that are instances of the <code>Bullet</code> class or instances of <code>Bullet</code> subclasses. <code>FlxGroup</code> itself is nothing but a shortcut for <code>FlxTypedGroup&lt;FlxBasic&gt;</code>.</p>
 <p>Now, say we want to retrieve bullet instance to use in a shoot method:</p>
 <pre class="highlight"><code class="actionscript"><span class="keyword">var</span> bullet = bullets.recycle(Bullet);</code></pre>
 <p>If we had used a regular group here, we would have had to <code>cast</code> the return value of <code>recycle()</code> to a <code>Bullet</code>. By using a <code>FlxTypedGroup&lt;Bullet&gt;</code>, we have the benefit of type-safety.</p>

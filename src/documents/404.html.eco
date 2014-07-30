@@ -1,6 +1,6 @@
 ---
 title: "Page not found"
-layout: blog
+layout: 404-layout
 ---
 
 <div class="container">
