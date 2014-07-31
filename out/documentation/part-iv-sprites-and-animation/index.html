@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>Part IV: Sprites and Animation | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li >
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class='active'>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorials">Tutorials</a><h4>
+	</li>
+
+	
+		
+			<li class= about="/documentation/tutorials">
+				<a href="/documentation/tutorials"> Tutorials </a>
+			</li>
+		
+			<li class= about="/documentation/the-power-of-haxeflixel">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class= about="/documentation/part-i-setup">
+				<a href="/documentation/part-i-setup"> Part I: Setup </a>
+			</li>
+		
+			<li class= about="/documentation/part-ii-testing">
+				<a href="/documentation/part-ii-testing"> Part II: Testing wit ... </a>
+			</li>
+		
+			<li class= about="/documentation/part-iii-groundwork">
+				<a href="/documentation/part-iii-groundwork"> Part III: Groundwork </a>
+			</li>
+		
+			<li class=active about="/documentation/part-iv-sprites-and-animation">
+				<a href="/documentation/part-iv-sprites-and-animation"> Part IV: Sprites and ... </a>
+			</li>
+		
+			<li class= about="/documentation/part-v-tiles-maps-and-collisions">
+				<a href="/documentation/part-v-tiles-maps-and-collisions"> Part V: Tiles, Maps, ... </a>
+			</li>
+		
+			<li class= about="/documentation/part-vi-zoom-and-cameras">
+				<a href="/documentation/part-vi-zoom-and-cameras"> Part VI: Zoom and Cameras </a>
+			</li>
+		
+			<li class= about="/documentation/part-vii-pickups">
+				<a href="/documentation/part-vii-pickups"> Part VII: Pickups </a>
+			</li>
+		
+			<li class= about="/documentation/part-viii-enemies-and-basic-ai">
+				<a href="/documentation/part-viii-enemies-and-basic-ai"> Part VIII: Enemies a ... </a>
+			</li>
+		
+			<li class= about="/documentation/part-ix-ui-and-combat">
+				<a href="/documentation/part-ix-ui-and-combat"> Part IX: UI and Combat </a>
+			</li>
+		
+			<li class= about="/documentation/part-x-winning-and-losing-and-menus">
+				<a href="/documentation/part-x-winning-and-losing-and-menus"> Part X:  Winning and ... </a>
+			</li>
+		
+			<li class= about="/documentation/part-xi-sound-and-music">
+				<a href="/documentation/part-xi-sound-and-music"> Part XI: Sound and Music </a>
+			</li>
+		
+			<li class= about="/documentation/part-xii-multiple-platforms">
+				<a href="/documentation/part-xii-multiple-platforms"> Part XII: Multiple Platforms </a>
+			</li>
+		
+			<li class= about="/documentation/part-xiii-polish-finishing-up-and-juice">
+				<a href="/documentation/part-xiii-polish-finishing-up-and-juice"> Part XIII: Polish, f ... </a>
+			</li>
+		
+			<li class= about="/documentation/conclusion">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Part IV: Sprites and Animation</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/05-part-iv-sprites-and-animation.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>So we have a player sprite that moves around the screen. Great! But… we don&#39;t want it to just look like a block… so let&#39;s add some graphics!</p>
+
+<p>First, you need to have the sprite&#39;s graphic. Using your image editor of choice, you can draw pretty much anything you want, and save it as a Transparent PNG. For our player sprite, we&#39;re going to have it be made up of 16x16 pixel frames, with two different frames for each of the 4-possible facing directions (Left and Right are used by the same 2 frames, since we will be flipping them later).</p>
+
+<p>You can draw it yourself, if you want, or use this image, created by my friend Vicky Hedgecock for this tutorial:</p>
+<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-IV/assets/images/player.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-IV/assets/images/player.png" /></a></p>
+
+<p>Save your file in &quot;assets/images&quot;.</p>
+
+<p>Now we need to actually load the player&#39;s graphic into the sprite. So, bring up your Player class again.</p>
+
+<ol>
+    <li>
+        <p>Remove the makeGraphic line from your constructor (the function called &#39;new&#39; in your class), and replace it with:</p>
+        <p><pre class="highlight"><code class="actionscript">loadGraphic(AssetPaths.player__png, <span class="literal">true</span>, <span class="number">16</span>, <span class="number">16</span>);</code></pre></p>
+        <p>This tells your sprite to use the player.png graphic, that it&#39;s animated, and that each frame is 16x16 pixels. AssetPath is class generated by a neat <a href="http://haxe.org/manual/macros">Haxe macro</a> which builds it&#39;s value from the contents of your Project.xml&#39;s assets tag. Macros are a little complicated, but worth taking a look into at some point. In this case, we use AssetsPath as an easy way to use our assets in code.</p>
+    </li>
+    <li>
+        <p>Next, we want to allow the sprite to be flipped based on its facing value. This makes it so we only need sprites for one direction (Left), and not two (Left and Right).</p>
+        <p>Add the following:</p>
+        <p><pre class="highlight"><code class="actionscript">setFacingFlip(FlxObject.LEFT, <span class="literal">false</span>, <span class="literal">false</span>);
+setFacingFlip(FlxObject.RIGHT, <span class="literal">true</span>, <span class="literal">false</span>);</code></pre></p>
+        <p>All we&#39;re doing here is saying that we don&#39;t want to flip anything when facing Left (because our sprite already faces left), and to flip horizontally when facing Right. We could do the same for Up and Down if we wanted.</p>
+    </li>
+    <li>
+        <p>Now, we need to define our animations. In our case, we want each animation to end with the player in their &#39;neutral&#39; pose (legs together), that way each time we animate the player, it will return to the correct frame as soon as they stop animating. So, add:</p>
+        <p><pre class="highlight"><code class="actionscript">animation.add(<span class="string">"lr"</span>, [<span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>], <span class="number">6</span>, <span class="literal">false</span>);
+animation.add(<span class="string">"u"</span>, [<span class="number">6</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">8</span>], <span class="number">6</span>, <span class="literal">false</span>);
+animation.add(<span class="string">"d"</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>], <span class="number">6</span>, <span class="literal">false</span>);</code></pre></p>
+        <p>We&#39;re finished with the constructor changes, the final step is to change our updateMovement function to tell the player sprite which way to face. So, modify our section which deals with setting the player&#39;s angle to look something like this:</p>
+        <p><pre class="highlight"><code class="actionscript"><span class="keyword">var</span> mA:Float = <span class="number">0</span>; <span class="comment">// our temporary angle</span>
+<span class="keyword">if</span> (_up)  <span class="comment">// the player is pressing UP</span>
+{
+    mA = -<span class="number">90</span>; <span class="comment">// set our angle to -90 (12 o'clock)</span>
+    <span class="keyword">if</span> (_left)
+        mA -= <span class="number">45</span>; <span class="comment">// if the player is also pressing LEFT, subtract 45 degrees from our angle - we're moving up and left</span>
+    <span class="keyword">else</span> <span class="keyword">if</span> (_right)
+        mA += <span class="number">45</span>; <span class="comment">// similarly, if the player is pressing RIGHT, add 45 degrees (up and right)</span>
+    facing = FlxObject.UP; <span class="comment">// the sprite should be facing UP</span>
+}
+<span class="keyword">else</span> <span class="keyword">if</span> (_down) <span class="comment">// the player is pressing DOWN</span>
+{
+    mA = <span class="number">90</span>; <span class="comment">// set our angle to 90 (6 o'clock)</span>
+    <span class="keyword">if</span> (_left)
+        mA += <span class="number">45</span>; <span class="comment">// add 45 degrees if the player is also pressing LEFT</span>
+    <span class="keyword">else</span> <span class="keyword">if</span> (_right)
+        mA -= <span class="number">45</span>; <span class="comment">// or subtract 45 if they are pressing RIGHT</span>
+    facing = FlxObject.DOWN; <span class="comment">// the sprite is facing DOWN</span>
+}
+<span class="keyword">else</span> <span class="keyword">if</span> (_left) <span class="comment">// if the player is not pressing UP or DOWN, but they are pressing LEFT</span>
+{
+    mA = <span class="number">180</span>; <span class="comment">// set our angle to 180 (9 o'clock)</span>
+    facing = FlxObject.LEFT; <span class="comment">// the sprite should be facing LEFT</span>
+}
+<span class="keyword">else</span> <span class="keyword">if</span> (_right) <span class="comment">// the player is not pressing UP, DOWN, or LEFT, and they ARE pressing RIGHT</span>
+{
+    mA = <span class="number">0</span>; <span class="comment">// set our angle to 0 (3 o'clock)</span>
+    facing = FlxObject.RIGHT; <span class="comment">// set the sprite's facing to RIGHT</span>
+}
+FlxAngle.rotatePoint(speed, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, mA, velocity); <span class="comment">// determine our velocity based on angle and speed</span>
+<span class="keyword">if</span> ((velocity.x != <span class="number">0</span> || velocity.y != <span class="number">0</span>) &amp;&amp; touching == FlxObject.NONE) <span class="comment">// if the player is moving (velocity is not 0 for either axis), we need to change the animation to match their facing</span>
+{
+    <span class="keyword">switch</span>(facing)
+    {
+        <span class="keyword">case</span> FlxObject.LEFT, FlxObject.RIGHT:
+            animation.play(<span class="string">"lr"</span>);
+        <span class="keyword">case</span> FlxObject.UP:
+            animation.play(<span class="string">"u"</span>);
+        <span class="keyword">case</span> FlxObject.DOWN:
+            animation.play(<span class="string">"d"</span>);
+    }
+}</code></pre></p>
+        <p>Every time this function gets called, it will check to see which of the directions the player is pressing, and, based on those, which way the sprite should be facing, and which animation should be playing..</p>
+    </li>
+    <li>
+        <p>Save your changes and run your project, and you should see your player sprite animate while being moved, and facing the right direction!</p>
+        <p><img src="/images/tutorial/0006b.png" /></p>
+    </li>
+</ol>
+
+<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-IV">Here is the source</a> for everything up to this point. Next, we&#39;ll talk about maps and collision!</p>
+
+			<br>
+			<hr>
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/part-iii-groundwork">< Part III: Groundwork</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/part-v-tiles-maps-and-collisions">Part V: Tiles, Maps, and Collisions ></a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
+</html>

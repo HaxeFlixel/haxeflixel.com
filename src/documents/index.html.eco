@@ -17,7 +17,6 @@ title: 'Home'
         <p>
             <a class="home-button" href="/download">Download</a>
             <a class="home-button" href="/documentation/getting-started">Getting Started</a>
-			<a class="home-button" href="https://github.com/HaxeFlixel">Find us on GitHub</a>
         </p>
 
         <div class="home-social">
