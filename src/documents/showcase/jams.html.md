@@ -3,7 +3,7 @@ title: "Game Jams"
 layout: jams
 ---
 
-##Lundum Dare 29
+##Ludum Dare 29
 
 1. [Gold Rush](http://www.ludumdare.com/compo/ludum-dare-29/?action=preview&amp;uid=32239) by GiveMeAllYourCats
 
