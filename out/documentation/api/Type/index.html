@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"]};</script><title>Type</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">Type</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The haxe Reflection API allows retrieval of type information at runtime.
+</p>
+<p>This class complements the more lightweight Reflect class, with a focus on
+class and enum instances.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="allEnums"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#allEnums"><span class="identifier">allEnums</span></a>&lt;<span class="type">T</span>&gt;(e:<a class="type" href="./Enum.html">Enum</a>&lt;<span class="type">T</span>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns a list of all constructors of enum <code>e</code> that require no
+</p>
+<pre class="highlight"><code class="delphi">arguments.
+
+This may return the empty <span class="keyword">Array</span> [] <span class="keyword">if</span> all constructors <span class="keyword">of</span> `e` require
+arguments.
+
+Otherwise an instance <span class="keyword">of</span> `e` constructed through each <span class="keyword">of</span> its non-
+argument constructors is returned, <span class="keyword">in</span> the order <span class="keyword">of</span> the <span class="function"><span class="keyword">constructor</span>
+<span class="title">declaration</span>.
+
+<span class="title">If</span> `<span class="title">e</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="createEmptyInstance"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createEmptyInstance"><span class="identifier">createEmptyInstance</span></a>&lt;<span class="type">T</span>&gt;(cl:<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of class <code>cl</code>.
+</p>
+<pre class="highlight"><code class="php">
+<span class="keyword">This</span> <span class="function"><span class="keyword">function</span> <span class="title">guarantees</span> <span class="title">that</span> <span class="title">the</span> <span class="title">class</span> <span class="title">constructor</span> <span class="title">is</span> <span class="title">not</span> <span class="title">called</span>.
+
+<span class="title">If</span> `<span class="title">cl</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="createEnum"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createEnum"><span class="identifier">createEnum</span></a>&lt;<span class="type">T</span>&gt;(e:<a class="type" href="./Enum.html">Enum</a>&lt;<span class="type">T</span>&gt;, constr:<a class="type" href="./String.html">String</a>, ?params:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; = null):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of enum <code>e</code> by calling its constructor <code>constr</code> with
+</p>
+<pre class="highlight"><code class="delphi">arguments `params`.
+
+<span class="keyword">If</span> `e` <span class="keyword">or</span> `constr` is null, <span class="keyword">or</span> <span class="keyword">if</span> enum `e` has no <span class="function"><span class="keyword">constructor</span> <span class="title">named</span>
+`<span class="title">constr</span>`, <span class="title">or</span> <span class="title">if</span> <span class="title">the</span> <span class="title">number</span> <span class="title">of</span> <span class="title">elements</span> <span class="title">in</span> `<span class="title">params</span>` <span class="title">does</span> <span class="title">not</span> <span class="title">match</span> <span class="title">the</span>
+<span class="title">expected</span> <span class="title">number</span> <span class="title">of</span> <span class="title">constructor</span> <span class="title">arguments</span>, <span class="title">or</span> <span class="title">if</span> <span class="title">any</span> <span class="title">argument</span> <span class="title">has</span> <span class="title">an</span>
+<span class="title">invalid</span> <span class="title">type</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="createEnumIndex"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createEnumIndex"><span class="identifier">createEnumIndex</span></a>&lt;<span class="type">T</span>&gt;(e:<a class="type" href="./Enum.html">Enum</a>&lt;<span class="type">T</span>&gt;, index:<a class="type" href="./Int.html">Int</a>, ?params:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; = null):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of enum <code>e</code> by calling its constructor number
+</p>
+<pre class="highlight"><code class="delphi">`<span class="keyword">index</span>` <span class="keyword">with</span> arguments `params`.
+
+The <span class="function"><span class="keyword">constructor</span> <span class="title">indices</span> <span class="title">are</span> <span class="title">preserved</span> <span class="title">from</span> <span class="title">haxe</span> <span class="title">syntax</span>, <span class="title">so</span> <span class="title">the</span> <span class="title">first</span>
+<span class="title">declared</span> <span class="title">is</span> <span class="title">index</span> 0, <span class="title">the</span> <span class="title">next</span> <span class="title">index</span> 1 <span class="title">etc</span>.
+
+<span class="title">If</span> `<span class="title">e</span>` <span class="title">or</span> `<span class="title">constr</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">or</span> <span class="title">if</span> <span class="title">enum</span> `<span class="title">e</span>` <span class="title">has</span> <span class="title">no</span> <span class="title">constructor</span> <span class="title">named</span>
+`<span class="title">constr</span>`, <span class="title">or</span> <span class="title">if</span> <span class="title">the</span> <span class="title">number</span> <span class="title">of</span> <span class="title">elements</span> <span class="title">in</span> `<span class="title">params</span>` <span class="title">does</span> <span class="title">not</span> <span class="title">match</span> <span class="title">the</span>
+<span class="title">expected</span> <span class="title">number</span> <span class="title">of</span> <span class="title">constructor</span> <span class="title">arguments</span>, <span class="title">or</span> <span class="title">if</span> <span class="title">any</span> <span class="title">argument</span> <span class="title">has</span> <span class="title">an</span>
+<span class="title">invalid</span> <span class="title">type</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="createInstance"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createInstance"><span class="identifier">createInstance</span></a>&lt;<span class="type">T</span>&gt;(cl:<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;, args:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of class <code>cl</code>, using <code>args</code> as arguments to the
+</p>
+<pre class="highlight"><code class="java"><span class="class"><span class="keyword">class</span> <span class="title">constructor</span>.
+
+<span class="title">This</span> <span class="title">function</span> <span class="title">guarantees</span> <span class="title">that</span> <span class="title">the</span> <span class="title">class</span> <span class="title">constructor</span> <span class="title">is</span> <span class="title">called</span>.
+
+<span class="title">Default</span> <span class="title">values</span> <span class="title">of</span> <span class="title">constructors</span> <span class="title">arguments</span> <span class="title">are</span> <span class="title">not</span> <span class="title">guaranteed</span> <span class="title">to</span> <span class="title">be</span>
+<span class="title">taken</span> <span class="title">into</span> <span class="title">account</span>.
+
+<span class="title">If</span> `<span class="title">cl</span>` <span class="title">or</span> `<span class="title">args</span>` <span class="title">are</span> <span class="title">null</span>, <span class="title">or</span> <span class="title">if</span> <span class="title">the</span> <span class="title">number</span> <span class="title">of</span> <span class="title">elements</span> <span class="title">in</span> `<span class="title">args</span>` <span class="title">does</span>
+<span class="title">not</span> <span class="title">match</span> <span class="title">the</span> <span class="title">expected</span> <span class="title">number</span> <span class="title">of</span> <span class="title">constructor</span> <span class="title">arguments</span>, <span class="title">or</span> <span class="title">if</span> <span class="title">any</span>
+<span class="title">argument</span> <span class="title">has</span> <span class="title">an</span> <span class="title">invalid</span> <span class="title">type</span>,  <span class="title">or</span> <span class="title">if</span> `<span class="title">cl</span>` <span class="title">has</span> <span class="title">no</span> <span class="title">own</span> <span class="title">constructor</span>, <span class="title">the</span>
+<span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+
+<span class="title">In</span> <span class="title">particular</span>, <span class="title">default</span> <span class="title">values</span> <span class="title">of</span> <span class="title">constructor</span> <span class="title">arguments</span> <span class="title">are</span> <span class="title">not</span>
+<span class="title">guaranteed</span> <span class="title">to</span> <span class="title">be</span> <span class="title">taken</span> <span class="title">into</span> <span class="title">account</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="enumConstructor"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumConstructor"><span class="identifier">enumConstructor</span></a>(e:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns the constructor name of enum instance <code>e</code>.
+</p>
+<pre class="highlight"><code class="delphi">
+The result <span class="keyword">String</span> does <span class="keyword">not</span> contain any <span class="function"><span class="keyword">constructor</span> <span class="title">arguments</span>.
+
+<span class="title">If</span> `<span class="title">e</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="enumEq"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumEq"><span class="identifier">enumEq</span></a>&lt;<span class="type">T</span>&gt;(a:<span class="type">T</span>, b:<span class="type">T</span>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Recursively compares two enum instances <code>a</code> and <code>b</code> by value.
+</p>
+<pre class="highlight"><code class="javascript">
+Unlike `a == b`, <span class="keyword">this</span> <span class="function"><span class="keyword">function</span> <span class="title">performs</span> <span class="title">a</span> <span class="title">deep</span> <span class="title">equality</span> <span class="title">check</span> <span class="title">on</span> <span class="title">the</span>
+<span class="title">arguments</span> <span class="title">of</span> <span class="title">the</span> <span class="title">constructors</span>, <span class="title">if</span> <span class="title">exists</span>.
+
+<span class="title">If</span> `<span class="title">a</span>` <span class="title">or</span> `<span class="title">b</span>` <span class="title">are</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="enumIndex"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumIndex"><span class="identifier">enumIndex</span></a>(e:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Returns the index of enum instance <code>e</code>.
+</p>
+<pre class="highlight"><code class="delphi">
+This corresponds <span class="keyword">to</span> the original syntactic position <span class="keyword">of</span> `e`. The <span class="keyword">index</span> <span class="keyword">of</span>
+the first declared <span class="function"><span class="keyword">constructor</span> <span class="title">is</span> 0, <span class="title">the</span> <span class="title">next</span> <span class="title">one</span> <span class="title">is</span> 1 <span class="title">etc</span>.
+
+<span class="title">If</span> `<span class="title">e</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="enumParameters"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumParameters"><span class="identifier">enumParameters</span></a>(e:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of the constructor arguments of enum instance <code>e</code>.
+</p>
+<pre class="highlight"><code class="applescript">
+If `e` has no arguments, <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> [].
+
+Otherwise <span class="keyword">the</span> <span class="constant">result</span> are <span class="keyword">the</span> values <span class="keyword">that</span> were used <span class="keyword">as</span> arguments <span class="keyword">to</span> `e`,
+<span class="keyword">in</span> <span class="keyword">the</span> order <span class="keyword">of</span> their declaration.
+
+If `e` <span class="keyword">is</span> null, <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="getClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClass"><span class="identifier">getClass</span></a>&lt;<span class="type">T</span>&gt;(o:<span class="type">T</span>):<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns the class of <code>o</code>, if <code>o</code> is a class instance.
+</p>
+<pre class="highlight"><code class="fsharp">
+If `o` is <span class="keyword">null</span> <span class="keyword">or</span> <span class="keyword">of</span> a different <span class="class"><span class="keyword">type</span>, <span class="title">null</span> <span class="title">is</span> <span class="title">returned</span>.</span>
+
+In general, <span class="class"><span class="keyword">type</span> <span class="title">parameter</span> <span class="title">information</span> <span class="title">cannot</span> <span class="title">be</span> <span class="title">obtained</span> <span class="title">at</span> <span class="title">runtime</span>.</span>
+</code></pre></div></div><div class="platform platform-flash"><a name="getClassFields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClassFields"><span class="identifier">getClassFields</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of static fields of class <code>c</code>.
+</p>
+<pre class="highlight"><code class="coffeescript">
+This does <span class="keyword">not</span> include static fields <span class="keyword">of</span> parent classes.
+
+The order <span class="keyword">of</span> the fields <span class="keyword">in</span> the returned Array <span class="keyword">is</span> unspecified.
+
+If `<span class="javascript">c</span>` <span class="keyword">is</span> <span class="literal">null</span>, the result <span class="keyword">is</span> unspecified.
+
+(As3) This method only returns <span class="class"><span class="keyword">class</span> <span class="title">fields</span> <span class="title">that</span> <span class="title">are</span> <span class="title">public</span>.</span>
+</code></pre></div></div><div class="platform platform-flash"><a name="getClassName"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClassName"><span class="identifier">getClassName</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns the name of class <code>c</code>, including its path.
+</p>
+<pre class="highlight"><code class="actionscript">
+If `c` <span class="keyword">is</span> inside a <span class="package"><span class="keyword">package</span>, <span class="title">the</span> <span class="title">package</span> <span class="title">structure</span> <span class="title">is</span> <span class="title">returned</span> <span class="title">dot</span>-
+<span class="title">separated</span>, <span class="title">with</span> <span class="title">another</span> <span class="title">dot</span> <span class="title">separating</span> <span class="title">the</span> <span class="title">class</span> <span class="title">name</span>:
+`<span class="title">pack1</span>.<span class="title">pack2</span>.(...).<span class="title">packN</span>.<span class="title">ClassName</span>`
+<span class="title">If</span> `<span class="title">c</span>` <span class="title">is</span> <span class="title">a</span> <span class="title">sub</span>-<span class="title">type</span> <span class="title">of</span> <span class="title">a</span> <span class="title">haxe</span> <span class="title">module</span>, <span class="title">that</span> <span class="title">module</span> <span class="title">is</span> <span class="title">not</span> <span class="title">part</span> <span class="title">of</span> <span class="title">the</span>
+<span class="title">package</span> <span class="title">structure</span>.
+
+<span class="title">If</span> `<span class="title">c</span>` <span class="title">has</span> <span class="title">no</span> <span class="title">package</span>, <span class="title">the</span> <span class="title">class</span> <span class="title">name</span> <span class="title">is</span> <span class="title">returned</span>.
+
+<span class="title">If</span> `<span class="title">c</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+
+<span class="title">The</span> <span class="title">class</span> <span class="title">name</span> <span class="title">does</span> <span class="title">not</span> <span class="title">include</span> <span class="title">any</span> <span class="title">type</span> <span class="title">parameters</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="getEnum"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getEnum"><span class="identifier">getEnum</span></a>(o:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Returns the enum of enum instance <code>o</code>.
+</p>
+<pre class="highlight"><code class="fsharp">
+An enum instance is the result <span class="keyword">of</span> using an enum constructor. Given an
+`enum Color { Red; }`, `getEnum(Red)` returns `Enum&lt;Color&gt;`.
+
+If `o` is <span class="keyword">null</span>, <span class="keyword">null</span> is returned.
+
+In general, <span class="class"><span class="keyword">type</span> <span class="title">parameter</span> <span class="title">information</span> <span class="title">cannot</span> <span class="title">be</span> <span class="title">obtained</span> <span class="title">at</span> <span class="title">runtime</span>.</span>
+</code></pre></div></div><div class="platform platform-flash"><a name="getEnumConstructs"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getEnumConstructs"><span class="identifier">getEnumConstructs</span></a>(e:<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of the names of all constructors of enum <code>e</code>.
+</p>
+<pre class="highlight"><code class="delphi">
+The order <span class="keyword">of</span> the <span class="function"><span class="keyword">constructor</span> <span class="title">names</span> <span class="title">in</span> <span class="title">the</span> <span class="title">returned</span> <span class="title">Array</span> <span class="title">is</span> <span class="title">preserved</span>
+<span class="title">from</span> <span class="title">the</span> <span class="title">original</span> <span class="title">syntax</span>.
+
+<span class="title">If</span> `<span class="title">c</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="getEnumName"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getEnumName"><span class="identifier">getEnumName</span></a>(e:<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns the name of enum <code>e</code>, including its path.
+</p>
+<pre class="highlight"><code class="actionscript">
+If `e` <span class="keyword">is</span> inside a <span class="package"><span class="keyword">package</span>, <span class="title">the</span> <span class="title">package</span> <span class="title">structure</span> <span class="title">is</span> <span class="title">returned</span> <span class="title">dot</span>-
+<span class="title">separated</span>, <span class="title">with</span> <span class="title">another</span> <span class="title">dot</span> <span class="title">separating</span> <span class="title">the</span> <span class="title">enum</span> <span class="title">name</span>:
+`<span class="title">pack1</span>.<span class="title">pack2</span>.(...).<span class="title">packN</span>.<span class="title">EnumName</span>`
+<span class="title">If</span> `<span class="title">e</span>` <span class="title">is</span> <span class="title">a</span> <span class="title">sub</span>-<span class="title">type</span> <span class="title">of</span> <span class="title">a</span> <span class="title">haxe</span> <span class="title">module</span>, <span class="title">that</span> <span class="title">module</span> <span class="title">is</span> <span class="title">not</span> <span class="title">part</span> <span class="title">of</span> <span class="title">the</span>
+<span class="title">package</span> <span class="title">structure</span>.
+
+<span class="title">If</span> `<span class="title">e</span>` <span class="title">has</span> <span class="title">no</span> <span class="title">package</span>, <span class="title">the</span> <span class="title">enum</span> <span class="title">name</span> <span class="title">is</span> <span class="title">returned</span>.
+
+<span class="title">If</span> `<span class="title">e</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+
+<span class="title">The</span> <span class="title">enum</span> <span class="title">name</span> <span class="title">does</span> <span class="title">not</span> <span class="title">include</span> <span class="title">any</span> <span class="title">type</span> <span class="title">parameters</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="getInstanceFields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getInstanceFields"><span class="identifier">getInstanceFields</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of the instance fields of class <code>c</code>.
+</p>
+<pre class="highlight"><code class="livecodeserver">
+This only includes fields which are known <span class="keyword">at</span> compile-time. In
+particular, <span class="keyword">using</span> getInstanceFields(getClass(obj)) will <span class="operator">not</span> <span class="built_in">include</span>
+<span class="keyword">any</span> fields which were added <span class="built_in">to</span> obj <span class="keyword">at</span> runtime.
+
+The order <span class="operator">of</span> <span class="operator">the</span> fields <span class="operator">in</span> <span class="operator">the</span> returned Array is unspecified.
+
+If `c` is <span class="constant">null</span>, <span class="operator">the</span> <span class="built_in">result</span> is unspecified.
+
+(As3) This method only returns instance fields that are public.
+</code></pre></div></div><div class="platform platform-flash"><a name="getSuperClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getSuperClass"><span class="identifier">getSuperClass</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Returns the super-class of class <code>c</code>.
+</p>
+<pre class="highlight"><code class="java">
+If `c` has no <span class="keyword">super</span> <span class="class"><span class="keyword">class</span>, <span class="title">null</span> <span class="title">is</span> <span class="title">returned</span>.
+
+<span class="title">If</span> `<span class="title">c</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+
+<span class="title">In</span> <span class="title">general</span>, <span class="title">type</span> <span class="title">parameter</span> <span class="title">information</span> <span class="title">cannot</span> <span class="title">be</span> <span class="title">obtained</span> <span class="title">at</span> <span class="title">runtime</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="resolveClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#resolveClass"><span class="identifier">resolveClass</span></a>(name:<a class="type" href="./String.html">String</a>):<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Resolves a class by name.
+</p>
+<pre class="highlight"><code class="php">
+<span class="keyword">If</span> `name` is the path of an existing <span class="class"><span class="keyword">class</span>, <span class="title">that</span> <span class="title">class</span> <span class="title">is</span> <span class="title">returned</span>.
+
+<span class="title">Otherwise</span> <span class="title">null</span> <span class="title">is</span> <span class="title">returned</span>.
+
+<span class="title">If</span> `<span class="title">name</span>` <span class="title">is</span> <span class="title">null</span> <span class="title">or</span> <span class="title">the</span> <span class="title">path</span> <span class="title">to</span> <span class="title">a</span> <span class="title">different</span> <span class="title">type</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span>
+<span class="title">unspecified</span>.
+
+<span class="title">The</span> <span class="title">class</span> <span class="title">name</span> <span class="title">must</span> <span class="title">not</span> <span class="title">include</span> <span class="title">any</span> <span class="title">type</span> <span class="title">parameters</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="resolveEnum"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#resolveEnum"><span class="identifier">resolveEnum</span></a>(name:<a class="type" href="./String.html">String</a>):<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Resolves an enum by name.
+</p>
+<pre class="highlight"><code class="applescript">
+If `<span class="property">name</span>` <span class="keyword">is</span> <span class="keyword">the</span> path <span class="keyword">of</span> an existing enum, <span class="keyword">that</span> enum <span class="keyword">is</span> returned.
+
+Otherwise null <span class="keyword">is</span> returned.
+
+If `<span class="property">name</span>` <span class="keyword">is</span> null <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> unspecified.
+
+If `<span class="property">name</span>` <span class="keyword">is</span> <span class="keyword">the</span> <span class="command">path to</span> a different type, null <span class="keyword">is</span> returned.
+
+The enum <span class="property">name</span> must <span class="keyword">not</span> include any type parameters.
+</code></pre></div></div><div class="platform platform-flash"><a name="typeof"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#typeof"><span class="identifier">typeof</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./ValueType.html">ValueType</a></code></p></h3><div class="doc"><p>Returns the runtime type of value <code>v</code>.
+</p>
+<pre class="highlight"><code class="fsharp">
+The result corresponds <span class="keyword">to</span> the <span class="class"><span class="keyword">type</span> `<span class="title">v</span>` <span class="title">has</span> <span class="title">at</span> <span class="title">runtime</span>, <span class="title">which</span> <span class="title">may</span> <span class="title">vary</span></span>
+per platform. Assumptions regarding this should be minimized <span class="keyword">to</span> avoid
+surprises.
+</code></pre></div></div></div></div></div></body></html>

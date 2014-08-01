@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"]};</script><title>StringTools</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">StringTools</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>This class provides advanced methods on Strings. It is ideally used with
+'using StringTools' and then acts as an extension to the String class.
+</p>
+<p>If the first argument to any of the methods is null, the result is
+unspecified.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="endsWith"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#endsWith"><span class="identifier">endsWith</span></a>(s:<a class="type" href="./String.html">String</a>, end:<a class="type" href="./String.html">String</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if the string <code>s</code> ends with the string <code>end</code>.
+</p>
+<pre class="highlight"><code class="livecodeserver">If `<span class="function"><span class="keyword">end</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.</span>
+
+If `<span class="function"><span class="keyword">end</span>` <span class="title">is</span> <span class="title">the</span> <span class="title">empty</span> <span class="title">String</span> "", <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">true</span>.</span>
+</code></pre></div></div><div class="platform platform-flash"><a name="fastCodeAt"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fastCodeAt"><span class="identifier">fastCodeAt</span></a>(s:<a class="type" href="./String.html">String</a>, index:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Returns the character code at position <code>index</code> of String <code>s</code>.
+</p>
+<pre class="highlight"><code class="applescript">This method <span class="keyword">is</span> faster than String.charCodeAt() <span class="function_start"><span class="keyword">on</span> <span class="title">most</span></span> platforms.
+However, unlike String.charCodeAt(), <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> unspecified <span class="keyword">if</span>
+`index` <span class="keyword">is</span> negative <span class="keyword">or</span> exceeds `s.<span class="property">length</span>`.
+
+This operation <span class="keyword">is</span> <span class="keyword">not</span> guaranteed <span class="keyword">to</span> work <span class="keyword">if</span> `s` <span class="keyword">contains</span> <span class="keyword">the</span> \<span class="number">0</span>
+character.
+</code></pre></div></div><div class="platform platform-flash"><a name="hex"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#hex"><span class="identifier">hex</span></a>(n:<a class="type" href="./Int.html">Int</a>, ?digits:<a class="type" href="./Int.html">Int</a> = null):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Encodes <code>n</code> into a hexadecimal representation.
+</p>
+<pre class="highlight"><code class="applescript">If `digits` <span class="keyword">is</span> specified, <span class="keyword">the</span> resulting String <span class="keyword">is</span> padded <span class="keyword">with</span> <span class="string">"0"</span> <span class="keyword">until</span>
+<span class="keyword">its</span> <span class="property">length</span> <span class="keyword">equals</span> `digits`.
+</code></pre></div></div><div class="platform platform-flash"><a name="htmlEscape"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#htmlEscape"><span class="identifier">htmlEscape</span></a>(s:<a class="type" href="./String.html">String</a>, ?quotes:<a class="type" href="./Bool.html">Bool</a> = null):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Escapes HTML special characters of the string <code>s</code>.
+</p>
+<pre class="highlight"><code class="markdown">The following replacements are made:
+
+<span class="bullet">- </span><span class="code">`&amp;`</span> becomes <span class="code">`&amp;amp`</span>;
+<span class="bullet">- </span><span class="code">`&lt;`</span> becomes <span class="code">`&amp;lt`</span>;
+<span class="bullet">- </span><span class="code">`&gt;`</span> becomes <span class="code">`&amp;gt`</span>;
+
+If <span class="code">`quotes`</span> is true, the following characters are also replaced:
+
+<span class="bullet">- </span><span class="code">`"`</span> becomes <span class="code">`&amp;quot`</span>;
+<span class="bullet">- </span><span class="code">`'`</span> becomes <span class="code">`&amp;#039`</span>;
+</code></pre></div></div><div class="platform platform-flash"><a name="htmlUnescape"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#htmlUnescape"><span class="identifier">htmlUnescape</span></a>(s:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Unescapes HTML special characters of the string <code>s</code>.
+</p>
+<pre class="highlight"><code class="markdown">This is the inverse operation to htmlEscape, i.e. the following always
+holds: htmlUnescape(htmlEscape(s)) == s
+
+The replacements follow:
+
+<span class="bullet">- </span><span class="code">`&amp;amp;`</span> becomes <span class="code">`&amp;`</span>
+<span class="bullet">- </span><span class="code">`&amp;lt;`</span> becomes <span class="code">`&lt;`</span>
+<span class="bullet">- </span><span class="code">`&amp;gt;`</span> becomes <span class="code">`&gt;`</span>
+<span class="bullet">- </span><span class="code">`&amp;quot;`</span> becomes <span class="code">`"`</span>
+<span class="bullet">- </span><span class="code">`&amp;#039;`</span> becomes <span class="code">`'`</span>
+</code></pre></div></div><div class="platform platform-flash"><a name="isEof"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isEof"><span class="identifier">isEof</span></a>(c:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="isSpace"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isSpace"><span class="identifier">isSpace</span></a>(s:<a class="type" href="./String.html">String</a>, pos:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if the character in the string <code>s</code> at position <code>pos</code> is a space.
+</p>
+<pre class="highlight"><code class="applescript">A <span class="property">character</span> <span class="keyword">is</span> considered <span class="keyword">to</span> be a <span class="constant">space</span> <span class="property">character</span> <span class="keyword">if</span> <span class="keyword">its</span> <span class="property">character</span> code
+<span class="keyword">is</span> <span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span> <span class="keyword">or</span> <span class="number">32.</span>
+
+If `s` <span class="keyword">is</span> <span class="keyword">the</span> empty String <span class="string">""</span>, <span class="keyword">or</span> <span class="keyword">if</span> pos <span class="keyword">is</span> <span class="keyword">not</span> a valid position within
+`s`, <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> false.
+</code></pre></div></div><div class="platform platform-flash"><a name="lpad"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#lpad"><span class="identifier">lpad</span></a>(s:<a class="type" href="./String.html">String</a>, c:<a class="type" href="./String.html">String</a>, l:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Concatenates <code>c</code> to <code>s</code> until <code>s.length</code> is at least <code>l</code>.
+</p>
+<pre class="highlight"><code class="applescript">If `c` <span class="keyword">is</span> <span class="keyword">the</span> empty String <span class="string">""</span> <span class="keyword">or</span> <span class="keyword">if</span> `l` <span class="keyword">does</span> <span class="keyword">not</span> exceed `s.<span class="property">length</span>`,
+`s` <span class="keyword">is</span> returned unchanged.
+
+If `c.<span class="property">length</span>` <span class="keyword">is</span> <span class="number">1</span>, <span class="keyword">the</span> resulting String <span class="property">length</span> <span class="keyword">is</span> exactly `l`.
+
+Otherwise <span class="keyword">the</span> <span class="property">length</span> may exceed `l`.
+
+If `c` <span class="keyword">is</span> null, <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="ltrim"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#ltrim"><span class="identifier">ltrim</span></a>(s:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Removes leading space characters of <code>s</code>.
+</p>
+<pre class="highlight"><code class="php"><span class="keyword">This</span> <span class="function"><span class="keyword">function</span> <span class="title">internally</span> <span class="title">calls</span> <span class="title">isSpace</span><span class="params">()</span> <span class="title">to</span> <span class="title">decide</span> <span class="title">which</span> <span class="title">characters</span> <span class="title">to</span>
+<span class="title">remove</span>.
+
+<span class="title">If</span> `<span class="title">s</span>` <span class="title">is</span> <span class="title">the</span> <span class="title">empty</span> <span class="title">String</span> "" <span class="title">or</span> <span class="title">consists</span> <span class="title">only</span> <span class="title">of</span> <span class="title">space</span> <span class="title">characters</span>, <span class="title">the</span>
+<span class="title">result</span> <span class="title">is</span> <span class="title">the</span> <span class="title">empty</span> <span class="title">String</span> "".
+</span></code></pre></div></div><div class="platform platform-flash"><a name="replace"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#replace"><span class="identifier">replace</span></a>(s:<a class="type" href="./String.html">String</a>, sub:<a class="type" href="./String.html">String</a>, by:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Replace all occurences of the String <code>sub</code> in the String <code>s</code> by the
+</p>
+<pre class="highlight"><code class="livecodeserver">String `<span class="keyword">by</span>`.
+
+If `sub` is <span class="operator">the</span> <span class="constant">empty</span> String <span class="string">""</span>, `<span class="keyword">by</span>` is inserted <span class="keyword">after</span> <span class="keyword">each</span> <span class="keyword">character</span>
+<span class="operator">of</span> `s`. If `<span class="keyword">by</span>` is also <span class="operator">the</span> <span class="constant">empty</span> String <span class="string">""</span>, `s` remains unchanged.
+
+This is <span class="operator">a</span> convenience <span class="function"><span class="keyword">function</span> <span class="title">for</span> `<span class="title">s</span>.<span class="title">split</span>(<span class="title">sub</span>).<span class="title">join</span>(<span class="title">by</span>)`.</span>
+
+If `sub` <span class="operator">or</span> `<span class="keyword">by</span>` are <span class="constant">null</span>, <span class="operator">the</span> <span class="built_in">result</span> is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="rpad"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#rpad"><span class="identifier">rpad</span></a>(s:<a class="type" href="./String.html">String</a>, c:<a class="type" href="./String.html">String</a>, l:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Appends <code>c</code> to <code>s</code> until <code>s.length</code> is at least <code>l</code>.
+</p>
+<pre class="highlight"><code class="applescript">If `c` <span class="keyword">is</span> <span class="keyword">the</span> empty String <span class="string">""</span> <span class="keyword">or</span> <span class="keyword">if</span> `l` <span class="keyword">does</span> <span class="keyword">not</span> exceed `s.<span class="property">length</span>`,
+`s` <span class="keyword">is</span> returned unchanged.
+
+If `c.<span class="property">length</span>` <span class="keyword">is</span> <span class="number">1</span>, <span class="keyword">the</span> resulting String <span class="property">length</span> <span class="keyword">is</span> exactly `l`.
+
+Otherwise <span class="keyword">the</span> <span class="property">length</span> may exceed `l`.
+
+If `c` <span class="keyword">is</span> null, <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="rtrim"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#rtrim"><span class="identifier">rtrim</span></a>(s:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Removes trailing space characters of <code>s</code>.
+</p>
+<pre class="highlight"><code class="php"><span class="keyword">This</span> <span class="function"><span class="keyword">function</span> <span class="title">internally</span> <span class="title">calls</span> <span class="title">isSpace</span><span class="params">()</span> <span class="title">to</span> <span class="title">decide</span> <span class="title">which</span> <span class="title">characters</span> <span class="title">to</span>
+<span class="title">remove</span>.
+
+<span class="title">If</span> `<span class="title">s</span>` <span class="title">is</span> <span class="title">the</span> <span class="title">empty</span> <span class="title">String</span> "" <span class="title">or</span> <span class="title">consists</span> <span class="title">only</span> <span class="title">of</span> <span class="title">space</span> <span class="title">characters</span>, <span class="title">the</span>
+<span class="title">result</span> <span class="title">is</span> <span class="title">the</span> <span class="title">empty</span> <span class="title">String</span> "".
+</span></code></pre></div></div><div class="platform platform-flash"><a name="startsWith"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#startsWith"><span class="identifier">startsWith</span></a>(s:<a class="type" href="./String.html">String</a>, start:<a class="type" href="./String.html">String</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if the string <code>s</code> starts with the string <code>start</code>.
+</p>
+<pre class="highlight"><code class="vbscript"><span class="keyword">If</span> `start` <span class="keyword">is</span> <span class="literal">null</span>, the result <span class="keyword">is</span> unspecified.
+
+<span class="keyword">If</span> `start` <span class="keyword">is</span> the <span class="literal">empty</span> <span class="built_in">String</span> <span class="string">""</span>, the result <span class="keyword">is</span> true.
+</code></pre></div></div><div class="platform platform-flash"><a name="trim"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#trim"><span class="identifier">trim</span></a>(s:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Removes leading and trailing space characters of <code>s</code>.
+</p>
+<pre class="highlight"><code class="livecodeserver">This is <span class="operator">a</span> convenience <span class="function"><span class="keyword">function</span> <span class="title">for</span> <span class="title">ltrim</span>(<span class="title">rtrim</span>(<span class="title">s</span>)).</span>
+</code></pre></div></div><div class="platform platform-flash"><a name="urlDecode"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#urlDecode"><span class="identifier">urlDecode</span></a>(s:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Decode an URL using the standard format.</p></div></div><div class="platform platform-flash"><a name="urlEncode"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#urlEncode"><span class="identifier">urlEncode</span></a>(s:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Encode an URL by using the standard format.</p></div></div></div></div></div></body></html>
