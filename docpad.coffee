@@ -126,7 +126,7 @@ docpadConfig = {
   collections:
 
     blog: (database) ->
-      database.findAllLive({layout:$has:'blog-post'}, [date:-1]).on 'add', (document) ->
+      database.findAllLive({layout:$has:'blog-post'}, [date:1]).on 'add', (document) ->
         a = document.attributes
         contentPreview = a.content.substring(0,150)
         contentPreview = contentPreview + " ..."
