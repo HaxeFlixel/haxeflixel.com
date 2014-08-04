@@ -1,3 +1,12 @@
+# For the blog preview page parse the markdown with github flavour.
+marked            = require 'marked'
+markedOptions =
+  pedantic: false
+  gfm: true
+  sanitize: false
+  highlight: null
+marked.setOptions(markedOptions);
+
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
@@ -130,6 +139,7 @@ docpadConfig = {
         a = document.attributes
         contentPreview = a.content.substring(0,150)
         contentPreview = contentPreview + " ..."
+        contentPreview = marked(contentPreview)
         a.postDate = "posted : " + a.postDate
         document.setMetaDefaults({
           contentPreview
