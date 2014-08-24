@@ -88,7 +88,7 @@ that contains the demo.
 [`/src/files/demos/swf`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/swf). 
 Should be compiled with `FLX_NO_DEBUG` (to show the flixel splash screen) and in release mode if possible!
 
-###How to a Showcase Item
+###How to add a Showcase game
 
 1. Create a `.md` file in 
 [`/src/documents/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/showcase) 
