@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"]};</script><title>Reflect</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">Reflect</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The Reflect API is a way to manipulate values dynamicly through an
+abstract interface in an untyped manner. Use with care.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="callMethod"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#callMethod"><span class="identifier">callMethod</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, func:<a class="type" href="./Dynamic.html">Dynamic</a>, args:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Call a method with the given object and arguments.</p></div></div><div class="platform platform-flash"><a name="compare"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#compare"><span class="identifier">compare</span></a>&lt;<span class="type">T</span>&gt;(a:<span class="type">T</span>, b:<span class="type">T</span>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Compares <code>a</code> and <code>b</code>.
+</p>
+<pre class="highlight"><code class="php">
+<span class="keyword">If</span> `a` is less than `b`, the result is negative. <span class="keyword">If</span> `b` is less than
+`a`, the result is positive. <span class="keyword">If</span> `a` <span class="keyword">and</span> `b` are equal, the result is <span class="number">0.</span>
+
+<span class="keyword">This</span> <span class="function"><span class="keyword">function</span> <span class="title">is</span> <span class="title">only</span> <span class="title">defined</span> <span class="title">if</span> `<span class="title">a</span>` <span class="title">and</span> `<span class="title">b</span>` <span class="title">are</span> <span class="title">of</span> <span class="title">the</span> <span class="title">same</span> <span class="title">type</span>.
+
+<span class="title">If</span> <span class="title">that</span> <span class="title">type</span> <span class="title">is</span> <span class="title">a</span> <span class="title">function</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span> <span class="title">and</span>
+`<span class="title">Reflect</span>.<span class="title">compareMethods</span>` <span class="title">should</span> <span class="title">be</span> <span class="title">used</span> <span class="title">instead</span>.
+
+<span class="title">For</span> <span class="title">all</span> <span class="title">other</span> <span class="title">types</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> 0 <span class="title">if</span> `<span class="title">a</span>` <span class="title">and</span> `<span class="title">b</span>` <span class="title">are</span> <span class="title">equal</span>. <span class="title">If</span> <span class="title">they</span>
+<span class="title">are</span> <span class="title">not</span> <span class="title">equal</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">depends</span> <span class="title">on</span> <span class="title">the</span> <span class="title">type</span> <span class="title">and</span> <span class="title">is</span> <span class="title">negative</span> <span class="title">if</span>:
+
+- <span class="title">Numeric</span> <span class="title">types</span>: <span class="title">a</span> <span class="title">is</span> <span class="title">less</span> <span class="title">than</span> <span class="title">b</span>
+- <span class="title">String</span>: <span class="title">a</span> <span class="title">is</span> <span class="title">lexicographically</span> <span class="title">less</span> <span class="title">than</span> <span class="title">b</span>
+- <span class="title">Other</span>: <span class="title">unspecified</span>
+
+<span class="title">If</span> `<span class="title">a</span>` <span class="title">and</span> `<span class="title">b</span>` <span class="title">are</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> 0. <span class="title">If</span> <span class="title">only</span> <span class="title">one</span> <span class="title">of</span> <span class="title">them</span> <span class="title">is</span> <span class="title">null</span>,
+<span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="compareMethods"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#compareMethods"><span class="identifier">compareMethods</span></a>(f1:<a class="type" href="./Dynamic.html">Dynamic</a>, f2:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Compares the functions <code>f1</code> and <code>f2</code>.
+</p>
+<pre class="highlight"><code class="applescript">
+If `f1` <span class="keyword">or</span> `f2` are <span class="keyword">not</span> functions, <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> unspecified.
+
+Otherwise <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> <span class="constant">true</span> <span class="keyword">if</span> `f1` <span class="keyword">and</span> <span class="keyword">the</span> `f2` are physically <span class="keyword">equal</span>,
+<span class="constant">false</span> otherwise.
+</code></pre></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>&lt;<span class="type">T</span>&gt;(o:<span class="type">T</span>):<span class="type">T</span></code></p></h3><div class="doc"><p>Copies the fields of structure <code>o</code>.
+</p>
+<pre class="highlight"><code class="applescript">
+This <span class="keyword">is</span> only guaranteed <span class="keyword">to</span> work <span class="function_start"><span class="keyword">on</span> <span class="title">anonymous</span></span> structures.
+
+If `o` <span class="keyword">is</span> null, <span class="keyword">the</span> <span class="constant">result</span> <span class="keyword">is</span> unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="deleteField"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#deleteField"><span class="identifier">deleteField</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Removes the field named <code>field</code> from structure <code>o</code>.
+</p>
+<pre class="highlight"><code class="livecodeserver">
+This method is only guaranteed <span class="built_in">to</span> work <span class="command"><span class="keyword">on</span> <span class="title">anonymous</span> <span class="title">structures</span>.</span>
+
+If `o` <span class="operator">or</span> `field` are <span class="constant">null</span>, <span class="operator">the</span> <span class="built_in">result</span> is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="field"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#field"><span class="identifier">field</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Returns the value of the field named <code>field</code> on object <code>o</code>.
+</p>
+<pre class="highlight"><code class="delphi">
+<span class="keyword">If</span> `o` is <span class="keyword">not</span> an <span class="keyword">object</span> <span class="keyword">or</span> has no field named `field`, the result is
+null.
+
+<span class="keyword">If</span> the field is defined as a property, its accessors are ignored. Refer
+<span class="keyword">to</span> `Reflect.getProperty` <span class="keyword">for</span> a <span class="function"><span class="keyword">function</span> <span class="title">supporting</span> <span class="title">property</span> <span class="title">accessors</span>.
+
+<span class="title">If</span> `<span class="title">field</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+
+<span class="params">(As3)</span> <span class="title">If</span> <span class="title">used</span> <span class="title">on</span> <span class="title">a</span> <span class="title">property</span> <span class="title">field</span>, <span class="title">the</span> <span class="title">getter</span> <span class="title">will</span> <span class="title">be</span> <span class="title">invoked</span>. <span class="title">It</span> <span class="title">is</span>
+<span class="title">not</span> <span class="title">possible</span> <span class="title">to</span> <span class="title">obtain</span> <span class="title">the</span> <span class="title">value</span> <span class="title">directly</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="fields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fields"><span class="identifier">fields</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns the fields of structure <code>o</code>.
+</p>
+<pre class="highlight"><code class="livecodeserver">
+This method is only guaranteed <span class="built_in">to</span> work <span class="command"><span class="keyword">on</span> <span class="title">anonymous</span> <span class="title">structures</span>. <span class="title">Refer</span> <span class="title">to</span></span>
+`Type.getInstanceFields` <span class="keyword">for</span> <span class="operator">a</span> <span class="function"><span class="keyword">function</span> <span class="title">supporting</span> <span class="title">class</span> <span class="title">instances</span>.</span>
+
+If `o` is <span class="constant">null</span>, <span class="operator">the</span> <span class="built_in">result</span> is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="getProperty"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getProperty"><span class="identifier">getProperty</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Returns the value of the field named <code>field</code> on object <code>o</code>, taking
+</p>
+<pre class="highlight"><code class="php">property getter functions into account.
+
+<span class="keyword">If</span> the field is not a property, <span class="keyword">this</span> <span class="function"><span class="keyword">function</span> <span class="title">behaves</span> <span class="title">like</span>
+`<span class="title">Reflect</span>.<span class="title">field</span>`, <span class="title">but</span> <span class="title">might</span> <span class="title">be</span> <span class="title">slower</span>.
+
+<span class="title">If</span> `<span class="title">o</span>` <span class="title">or</span> `<span class="title">field</span>` <span class="title">are</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="hasField"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#hasField"><span class="identifier">hasField</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if structure <code>o</code> has a field named <code>field</code>.
+</p>
+<pre class="highlight"><code class="delphi">
+This is only guaranteed <span class="keyword">to</span> work <span class="keyword">for</span> anonymous structures. Refer <span class="keyword">to</span>
+`Type.getInstanceFields` <span class="keyword">for</span> a <span class="function"><span class="keyword">function</span> <span class="title">supporting</span> <span class="title">class</span> <span class="title">instances</span>.
+
+<span class="title">If</span> `<span class="title">o</span>` <span class="title">or</span> `<span class="title">field</span>` <span class="title">are</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="isEnumValue"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isEnumValue"><span class="identifier">isEnumValue</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if <code>v</code> is an enum value.
+</p>
+<pre class="highlight"><code class="fsharp">
+The result is <span class="keyword">true</span> <span class="keyword">if</span> `v` is <span class="keyword">of</span> <span class="class"><span class="keyword">type</span> <span class="title">EnumValue</span>, <span class="title">i</span>.<span class="title">e</span>. <span class="title">an</span> <span class="title">enum</span></span>
+constructor.
+
+Otherwise, including <span class="keyword">if</span> `v` is <span class="keyword">null</span>, the result is false.
+</code></pre></div></div><div class="platform platform-flash"><a name="isFunction"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isFunction"><span class="identifier">isFunction</span></a>(f:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Returns true if <code>f</code> is a function, false otherwise.
+</p>
+<pre class="highlight"><code class="d">
+If <span class="string">`f`</span> <span class="keyword">is</span> <span class="literal">null</span>, the result <span class="keyword">is</span> <span class="literal">false</span>.
+</code></pre></div></div><div class="platform platform-flash"><a name="isObject"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isObject"><span class="identifier">isObject</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if <code>v</code> is an object.
+</p>
+<pre class="highlight"><code class="actionscript">
+The result <span class="keyword">is</span> <span class="literal">true</span> <span class="keyword">if</span> `v` <span class="keyword">is</span> one of the following:
+
+- <span class="class"><span class="keyword">class</span> <span class="title">instance</span>
+- <span class="title">structure</span>
+- <span class="title">Class</span>&lt;<span class="title">T</span>&gt;
+- <span class="title">Enum</span>&lt;<span class="title">T</span>&gt;
+
+<span class="title">Otherwise</span>, <span class="title">including</span> <span class="title">if</span> `<span class="title">v</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">false</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="makeVarArgs"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#makeVarArgs"><span class="identifier">makeVarArgs</span></a>(f:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; -&gt;<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#makeVarArgs"><span class="identifier">makeVarArgs</span></a>(f:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; -&gt;<a class="type" href="./Void.html">Void</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Transform a function taking an array of arguments into a function that can
+</p>
+<pre class="highlight"><code class="livecodeserver">be called <span class="operator">with</span> <span class="keyword">any</span> <span class="built_in">number</span> <span class="operator">of</span> arguments.
+</code></pre></div></div><div class="platform platform-flash"><a name="setField"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#setField"><span class="identifier">setField</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>, value:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Sets the field named <code>field</code> of object <code>o</code> to value <code>value</code>.
+</p>
+<pre class="highlight"><code class="php">
+<span class="keyword">If</span> `o` has no field named `field`, <span class="keyword">this</span> <span class="function"><span class="keyword">function</span> <span class="title">is</span> <span class="title">only</span> <span class="title">guaranteed</span> <span class="title">to</span>
+<span class="title">work</span> <span class="title">for</span> <span class="title">anonymous</span> <span class="title">structures</span>.
+
+<span class="title">If</span> `<span class="title">o</span>` <span class="title">or</span> `<span class="title">field</span>` <span class="title">are</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+
+<span class="params">(As3)</span> <span class="title">If</span> <span class="title">used</span> <span class="title">on</span> <span class="title">a</span> <span class="title">property</span> <span class="title">field</span>, <span class="title">the</span> <span class="title">setter</span> <span class="title">will</span> <span class="title">be</span> <span class="title">invoked</span>. <span class="title">It</span> <span class="title">is</span>
+<span class="title">not</span> <span class="title">possible</span> <span class="title">to</span> <span class="title">set</span> <span class="title">the</span> <span class="title">value</span> <span class="title">directly</span>.
+</span></code></pre></div></div><div class="platform platform-flash"><a name="setProperty"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#setProperty"><span class="identifier">setProperty</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>, value:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Sets the field named <code>field</code> of object <code>o</code> to value <code>value</code>, taking
+</p>
+<pre class="highlight"><code class="php">property setter functions into account.
+
+<span class="keyword">If</span> the field is not a property, <span class="keyword">this</span> <span class="function"><span class="keyword">function</span> <span class="title">behaves</span> <span class="title">like</span>
+`<span class="title">Reflect</span>.<span class="title">setField</span>`, <span class="title">but</span> <span class="title">might</span> <span class="title">be</span> <span class="title">slower</span>.
+
+<span class="title">If</span> `<span class="title">field</span>` <span class="title">is</span> <span class="title">null</span>, <span class="title">the</span> <span class="title">result</span> <span class="title">is</span> <span class="title">unspecified</span>.
+</span></code></pre></div></div></div></div></div></body></html>

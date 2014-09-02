@@ -1,10 +1,862 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>AS3 and Haxe Comparison</title>
-		<meta http-equiv="REFRESH" content="0;url=/documentation/as3-and-haxe-comparison">
-	</head>
-	<body>
-		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href="/documentation/as3-and-haxe-comparison">click here</a>.
-	</body>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>AS3 and Haxe Comparison | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li >
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class='active'>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a><h4>
+	</li>
+
+	
+		
+			<li class= about="/documentation/resources">
+				<a href="/documentation/resources"> Resources </a>
+			</li>
+		
+			<li class= about="/documentation/cheat-sheet">
+				<a href="/documentation/cheat-sheet"> Cheat Sheet </a>
+			</li>
+		
+			<li class= about="/documentation/openfl-project-xml-format">
+				<a href="/documentation/openfl-project-xml-format"> XML Project Format </a>
+			</li>
+		
+			<li class=active about="/documentation/as3-and-haxe-comparison">
+				<a href="/documentation/as3-and-haxe-comparison"> AS3 and Haxe Comparison </a>
+			</li>
+		
+			<li class= about="/documentation/game-development-tools">
+				<a href="/documentation/game-development-tools"> Game Development Tools </a>
+			</li>
+		
+			<li class= about="/documentation/compiler-conditionals">
+				<a href="/documentation/compiler-conditionals"> Compiler Conditionals </a>
+			</li>
+		
+			<li class= about="/documentation/native-extensions">
+				<a href="/documentation/native-extensions"> Native Extensions </a>
+			</li>
+		
+			<li class= about="/documentation/using-haxelib">
+				<a href="/documentation/using-haxelib"> Using Haxelib </a>
+			</li>
+		
+			<li class= about="/documentation/faq">
+				<a href="/documentation/faq"> FAQ </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorials">Tutorials</a><h4>
+	</li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">AS3 and Haxe Comparison</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/03-as3-and-haxe-comparison.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>This document aims to give developers familiar with Actionscript 3 a quickstart to Haxe. For more Haxe specific documentation please refer to the main Haxe.org website:</p>
+<ul>
+<li><a href="http://haxe.org/ref/syntax">Haxe Syntax</a></li>
+<li><a href="http://haxe.org/ref">Haxe Language Reference</a></li>
+</ul>
+<h4 id="additional-features">Additional Features</h4>
+<p>In addition to most of the features of Actionscript 3, Haxe includes support for:</p>
+<ul>
+<li><a href="http://haxe.org/ref/enums">enums</a></li>
+<li><a href="http://haxe.org/ref/type_params">type parameters</a></li>
+<li><a href="http://haxe.org/ref/type_advanced">structures</a></li>
+<li><a href="http://haxe.org/ref/iterators">custom iterators</a></li>
+<li><a href="http://haxe.org/ref/conditionals">conditional compilation</a></li>
+<li><a href="http://haxe.org/ref/inline">inlining</a></li>
+<li>and more!</li>
+</ul>
+<hr>
+<h3 id="haxe-as3-common-syntax-comparison">Haxe &amp; AS3 common syntax comparison</h3>
+<p>This guide is based off from <a href="http://www.openfl.org/developer/documentation/actionscript-developers/">OpenFL&#39;s guide</a>.</p>
+<h3 id="basic-types">Basic Types</h3>
+<div>
+<div class="sideBySide spacer-right">
+AS3
+
+<pre class="highlighted">
+Boolean
+int
+Number
+Object
+void
+Array
+Vector.&lt;String&gt;
+</pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+Bool
+Int
+Float
+Dynamic
+Void
+Array&lt;Dynamic&gt;
+Array&lt;String&gt;
+</pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Package Declarations</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+package com.example.myapplication {
+
+}
+</pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+package com.example.myapplication;
+</pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Defining a Class</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+public class MyClass {
+
+   public function MyClass () {
+
+
+   }
+
+}
+</pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+class MyClass {
+
+   public function new () {
+
+
+   }
+
+}
+</pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Loops</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+for (var i:uint = 0; i &lt; 100; i++) {
+
+}
+
+for each (var value:String in items) {
+
+}
+
+for (var propertyName:String in object) {
+
+}
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+for (i in 0...100) {
+
+}
+
+for (value in items) {
+
+}
+
+var fields = Reflect.fields (object);
+for (propertyName in fields) {
+
+}
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Switch Statements</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+switch (value) {
+
+   case 1:
+      trace (&quot;Equal to 1&quot;);
+      break;
+
+   default:
+      trace (&quot;Not equal to 1&quot;);
+      break;
+
+}
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+switch (value) {
+
+   case 1:
+      trace (&quot;Equal to 1&quot;);
+
+   default:
+      trace (&quot;Not equal to 1&quot;);
+
+}
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Type Inference</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+var hi = &quot;Hello World&quot;;
+
+// type is Object
+// fails to compile in strict mode
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+var hi = &quot;Hello World&quot;;
+
+// type is String
+// even works for code completion
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Type Casting</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+var car:Car = vehicle as Car;
+
+var toString:String = String (10);
+var toNumber:Number = Number (&quot;10&quot;);
+var toInteger:int = int (10.1);
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+var car:Car = cast vehicle;
+
+// or for a safe cast:
+
+var car = cast (vehicle, Car);
+
+var toString = Std.string (10);
+var toNumber = Std.parseFloat (&quot;10&quot;);
+var toInteger = Std.int (10.1);
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Type Details</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+if (vehicle is Car) {
+
+}
+
+import flash.utils.getDefinitionByName;
+import flash.utils.getQualifiedClassName;
+
+name = getQualifiedClassName (vehicle);
+type = Class (getDefinitionByName (name);
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+if (Std.is (vehicle, Car)) {
+
+}
+
+type = Type.getClass (vehicle);
+name = Type.getClassName (type);
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Checking for Null</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+if (object == null) {
+
+}
+
+if (!object) {
+
+}
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+if (object == null) {
+
+}
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Hash Tables</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+var table:Object = new Object ();
+table[&quot;key&quot;] = 100;
+
+trace (table.hasOwnProperty (&quot;key&quot;));
+
+for (var key:Object in table) {
+
+   trace (key + &quot; = &quot; + table[key]);
+
+}
+
+delete table[&quot;key&quot;];
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+var table = new Map&lt;String, Int&gt; ();
+table.set (&quot;key&quot;, 100);
+
+trace (table.exists (&quot;key&quot;));
+
+for (key in table.keys ()) {
+
+trace (key + &quot; = &quot; + table.get (key));
+
+}
+
+table.remove (&quot;key&quot;);
+</pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Rest Parameters</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+function test (...params):void {
+
+}
+
+test (1, 2, 3);
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+function test (params:Array&lt;Dynamic&gt;) {
+
+}
+
+Reflect.makeVarArgs (test) (1, 2, 3);
+</pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Reflection</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+var foo = object[&quot;foo&quot;];
+
+bar.apply (this, [ &quot;hi&quot; ]);
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+var foo = Reflect.field (object, &quot;foo&quot;);
+
+Reflect.callMethod (this, bar, [ &quot;hi&quot; ]);
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Function Types</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+function hello (msg:String):void {
+
+}
+
+var type:Function = hello;
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+function hello (msg:String):Void {
+
+}
+
+var type:String-&gt;Void = hello;
+
+// can also use Dynamic
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Getters and Setters</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+function get x ():Number {
+
+   return _x;
+
+}
+
+function set x (value:Number):void {
+
+   _x = value;
+
+}
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+public var x (get, set):Float;
+
+function get_x():Float {
+
+   return _x;
+
+}
+
+function set_x(value:Float):Float {
+
+   return _x = value;
+
+}
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+<p><hr /></p>
+<h3>Read-Only Properties</h3>
+
+<div>
+<div class="sideBySide spacer-right">
+<h4>AS3</h4>
+
+<pre class="highlighted">
+function get x ():Float {
+
+   return _x;
+
+}
+        </pre>
+</div>
+
+<div class="sideBySide">
+<h4>Haxe</h4>
+
+<pre class="highlighted">
+public var x (default, null):Float;
+
+// null allows private access
+// never would restrict all access
+        </pre>
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>
+
+			<br>
+			<hr>
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/openfl-project-xml-format">< XML Project Format</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/game-development-tools">Game Development Tools ></a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
 </html>

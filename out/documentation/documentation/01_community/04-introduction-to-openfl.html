@@ -1,10 +1,356 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Introduction to OpenFL</title>
-		<meta http-equiv="REFRESH" content="0;url=/documentation/introduction-to-openfl">
-	</head>
-	<body>
-		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href="/documentation/introduction-to-openfl">click here</a>.
-	</body>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>Introduction to OpenFL | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li >
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class='active'>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a><h4>
+	</li>
+
+	
+		
+			<li class= about="/documentation/community">
+				<a href="/documentation/community"> Community </a>
+			</li>
+		
+			<li class= about="/documentation/about">
+				<a href="/documentation/about"> About </a>
+			</li>
+		
+			<li class= about="/documentation/why-haxe">
+				<a href="/documentation/why-haxe"> Why a Haxe Version </a>
+			</li>
+		
+			<li class= about="/documentation/introduction-to-haxe">
+				<a href="/documentation/introduction-to-haxe"> Introduction to Haxe </a>
+			</li>
+		
+			<li class=active about="/documentation/introduction-to-openfl">
+				<a href="/documentation/introduction-to-openfl"> Introduction to OpenFL </a>
+			</li>
+		
+			<li class= about="/documentation/contributing">
+				<a href="/documentation/contributing"> Contributing </a>
+			</li>
+		
+			<li class= about="/documentation/code-contributions">
+				<a href="/documentation/code-contributions"> Code Contributions </a>
+			</li>
+		
+			<li class= about="/documentation/code-style">
+				<a href="/documentation/code-style"> Code Style </a>
+			</li>
+		
+			<li class= about="/documentation/website-docs">
+				<a href="/documentation/website-docs"> HaxeFlixel Website </a>
+			</li>
+		
+			<li class= about="/documentation/haxeflixel-3-x">
+				<a href="/documentation/haxeflixel-3-x"> HaxeFlixel 3.x </a>
+			</li>
+		
+			<li class= about="/documentation/upgrade-guide">
+				<a href="/documentation/upgrade-guide"> Upgrade Guide </a>
+			</li>
+		
+			<li class= about="/documentation/flixel-addons">
+				<a href="/documentation/flixel-addons"> flixel-addons </a>
+			</li>
+		
+			<li class= about="/documentation/flixel-tools">
+				<a href="/documentation/flixel-tools"> Flixel Tools </a>
+			</li>
+		
+			<li class= about="/documentation/install-development-flixel">
+				<a href="/documentation/install-development-flixel"> Install development Flixel </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorials">Tutorials</a><h4>
+	</li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Introduction to OpenFL</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/04-introduction-to-openfl.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p><img src="/images/openfl.jpg" width="100%" /></p>
+<p>The <a href="http://www.openfl.org">Open Flash Library</a> ( OpenFL ) previously known as NME, is an innovative framework designed to provide fast, productive development for Windows, Mac, Linux, iOS, Android, BlackBerry, Tizen, Mozilla OS, Flash and HTML5 – all using the same source code.</p>
+<p>OpenFL has a history of providing the Flash API wherever possible however it is also used to extend upon that API. OpenFL is powered with the Haxe Toolkit&#39;s cross-compiler that lets it produce native code such as C++ for its target platforms.</p>
+<p>OpenFL has a an active community of developers building games for the web, consoles, desktop and mobile devices. OpenFL is free to use and modify and it is currently being developed <a href="http://www.github.com/openfl">openly on GitHub</a>. The project made from the combined work of talented and passionate developers over many years has resulted in a mature and advanced platform.</p>
+<p>OpenFL targets include native cross-compiled C++ for Desktop and Mobile targets as well as web targets such as Flash, Html5 and experimental Emscripten. OpenFL is written primarily in the Haxe language as well as platform specific code integrating with SDKs and native APIs.</p>
+<p>OpenFL provides HaxeFlixel with a familiar Flash API as well as an extended set of features for Native targets. This includes the use of GPU accelerated texture batching through drawTiles, multi-threading and more.</p>
+<p>OpenFL also provides a number of <a href="http://www.openfl.org/company/services/">professional services</a>:</p>
+<ul>
+<li><a href="http://www.openfl.org/services/app-installs/" title="App Marketing">App marketing</a></li>
+<li><a href="http://www.openfl.org/services/publishing-game-porting/" title="App Publishing">App publishing</a></li>
+<li><a href="http://www.openfl.org/services/enterprise/" title="Enterprise">Enterprise</a></li>
+</ul>
+<p>Developers can also benefit from their <a href="http://www.openfl.org/membership/">premium memberships</a>.</p>
+
+
+			<br>
+			<hr>
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/introduction-to-haxe">< Introduction to Haxe</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/contributing">Contributing ></a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
 </html>

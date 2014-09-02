@@ -318,13 +318,6 @@ this is mostly legacy from the AS3 Flixel&#39;s code style and hard to change th
 <span class="keyword">var</span> number = <span class="number">32</span>;</code></pre>
 <p>In some contexts however, doing so improves the readability of the code, for example because it&#39;s not immediately obvious what return type a function has:</p>
 <pre class="highlight"><code class="actionscript"><span class="keyword">var</span> mystery:Answer = createAnAnswer();</code></pre>
-<h2 id="use-of-this-">Use of <code>this</code></h2>
-<p>Using the <code>this</code> keyword should never be necessary because function parameters should be capitalized.</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">//This is unnecessary</span>
-<span class="keyword">if</span> (this.animation.finished)
-
-<span class="comment">//This is preferred</span>
-<span class="keyword">if</span> (animation.finished)</code></pre>
 <h2 id="keyword-order">Keyword Order</h2>
 <p>The original AS3 Flixel codebase ordered keywords like <code>static public function</code>.
 HaxeFlixel has changed this convention to be more like every other (Haxe) library, the order of importance is as follows:</p>
