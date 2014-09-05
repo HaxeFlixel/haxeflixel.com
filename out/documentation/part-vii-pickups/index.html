@@ -250,7 +250,7 @@
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0)</span> 
 {</span>
     <span class="keyword">super</span>(X, Y);
-    loadGraphic(AssetPaths.coin&lt;em&gt;_png, <span class="literal">false</span>, <span class="number">8</span>, <span class="number">8</span>);
+    loadGraphic(AssetsPath.coin&lt;em&gt;_png, <span class="literal">false</span>, <span class="number">8</span>, <span class="number">8</span>);
 }</code></pre></p>
     </li>
     <li>
@@ -263,7 +263,7 @@
     </li>
     <li>
         <p>In the create function, after we add our walls, and before we initialize our player, we need to initialize and add our Coin group:</p>
-        <p><pre class="highlight"><code class="actionscript">_grpCoins = <span class="keyword">new</span> FlxTypedGroup&lt;Coin&gt;();
+        <p><pre class="highlight"><code class="actionscript">_grpCoins = <span class="keyword">new</span> FlxTypedGroup&lt;Coin&gt;;
 add(_grpCoins);</code></pre></p>
     </li>
     <li>

@@ -308,7 +308,7 @@ add(_btnPlay);</code></pre></p>
 
 <ol>
     <li>
-        <p>In the Project list on the right side of your screen, right-click on your <code>source&#39; folder, and choose</code>Add&#39;, and then `New Class.&#39;.</p>
+        <p>In the Project list on the right side of your screen, right-click on your <code>source</code> folder, and choose <code>Add</code>, and then <code>New Class</code>.</p>
         <p><img src="/images/tutorial/0004.png" /></p>
     </li>
     <li>
@@ -381,7 +381,7 @@ add(_player);</code></pre></p>
     </li>
     <li>
         <p>While there are plenty of ways to handle player movement, it can be simpler to add it to the Player class. We&#39;ll want to add a new function that will watch for player input and respond to it, so, make a new function:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">movement</span><span class="params">()</span><span class="type">:Void</span>
+        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">updateMovement</span><span class="params">()</span><span class="type">:Void</span>
 {</span>
 }</code></pre></p>
     </li>
@@ -448,13 +448,13 @@ velocity.y = Speed;</code></pre></p>
     <li>
         <p>Next, close the bracket from your &#39;if&#39; statement from earlier:</p>
         <p><pre class="highlight"><code class="actionscript">}</code></pre></p>
-        <p>...and that&#39;s the end of our movement() function!</p>
+        <p>...and that&#39;s the end of our updateMovement function!</p>
     </li>
     <li>
         <p>The only thing left to do is to add a call to this function in our update() function, and we&#39;re good to go!</p>
         <p>Just before the <code>super.update();</code>, add:</p>
-        <p><pre class="highlight"><code class="actionscript">movement();</code></pre></p>
-        <p>The update function, as you should remember, is called each &#39;frame&#39; of the game. So, each time our PlayState gets its update called, when it calls update on all of its members, it will trigger the player&#39;s update which will check our movement() logic, adjust the player&#39;s velocity accordingly, and then call its super.update(), which will take the velocity that we&#39;ve just changed into account and figures out where the player sprite should move.</p>
+        <p><pre class="highlight"><code class="actionscript">updateMovement();</code></pre></p>
+        <p>The update function, as you should remember, is called each &#39;frame&#39; of the game. So, each time our PlayState gets its update called, when it calls update on all of its members, it will trigger the player&#39;s update which will check our updateMovement logic, adjust the player&#39;s velocity accordingly, and then call its super.update(), which will take the velocity that we&#39;ve just changed into account and figures out where the player sprite should move.</p>
     </li>
 </ol>
 

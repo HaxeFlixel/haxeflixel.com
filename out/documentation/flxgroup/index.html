@@ -268,7 +268,7 @@ The use cases for groups are vast: pooling to reuse objects, collision detection
 <h4 id="remove-object-t-t">remove(Object:T):T</h4>
 <p>Removes an object from a group, it will return the object you removed.</p>
 <h4 id="getfirstavailable-objectclass-class-lt-t-gt-null-t">getFirstAvailable(ObjectClass:Class&lt;T&gt; = null):T</h4>
-<p>This will let you get the first FlxBasic object that has exists == false, this is typically used in object pooling when object may have used the kill() method. Note if you destory() objects they will be made null in the FlxGroup and you wont be able to reuse them.</p>
+<p>This will let you get the first FlxBasic class that has exists == true, this is typically used in object pooling when object may have used the kill() method. Note if you destory() objects they will be made null in the FlxGroup and you wont be able to reuse them.</p>
 <h4 id="kill-">kill();</h4>
 <p>This will recursively kill() all objects so that they will be ready for use with getFirstAvailable.</p>
 <h4 id="callall-functionname-string-args-array-lt-dynamic-gt-null-recurse-bool-true-">callAll(FunctionName:String, Args:Array&lt;Dynamic&gt; = null, Recurse:Bool = true);</h4>
