@@ -129,13 +129,12 @@ docpadConfig = {
       return docsCollection.models[docsCollection.length-1]
 
   # =================================
-  # Collections
-  # These are special collections that our website makes available to us
 
   collections:
 
     blog: (database) ->
-      database.findAllLive({layout:$has:'blog-post'}, [date:1]).on 'add', (document) ->
+      sorting = [filename:-1]
+      database.findAllLive({layout:$has:'blog-post'}, sorting).on 'add', (document) ->
         a = document.attributes
         contentPreview = a.content.substring(0,150)
         contentPreview = contentPreview + " ..."
