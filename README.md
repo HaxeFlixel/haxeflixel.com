@@ -5,8 +5,6 @@
 | [tools](https://github.com/HaxeFlixel/flixel-tools) | [templates](https://github.com/HaxeFlixel/flixel-templates) 
 | [docs](https://github.com/HaxeFlixel/flixel-docs) | [haxeflixel.com](https://github.com/HaxeFlixel/haxeflixel.com)
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/HaxeFlixel/haxeflixel.com/trend.png)](https://bitdeli.com/HaxeFlixel "Bitdeli Badge")
-
 ##About
 
 This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with a Node.js static site generator called 
