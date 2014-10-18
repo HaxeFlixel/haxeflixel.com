@@ -167,7 +167,7 @@
 			</li>
 		
 			<li class= about="/documentation/flixel-addons">
-				<a href="/documentation/flixel-addons"> flixel-addons </a>
+				<a href="/documentation/flixel-addons"> Flixel Addons </a>
 			</li>
 		
 			<li class= about="/documentation/flixel-tools">
@@ -249,6 +249,10 @@ If you encounter code in the codebase that does not fall under these guidelines,
 <td><code>FlxG.resizeGame(320, 240);</code></td>
 <td><code>FlxG.resizeGame( 320, 240 );</code></td>
 </tr>
+<tr>
+<td><code>FlxG.resizeGame(320, 240);</code></td>
+<td><code>FlxG.resizeGame (320, 240);</code></td>
+</tr>
 </tbody>
 </table>
 <p>Spaces <em>should</em> be used before the opening brackets of <code>if</code>, <code>for</code>, <code>while</code> and <code>switch</code>:</p>
@@ -292,6 +296,26 @@ and use <code>this</code> to explicitly reference to class members (only when ne
 }</code></pre>
 <p>In the core of HaxeFlixel, there are a lot of method parameters written in capitalized letters (not preferred in Haxe),
 this is mostly legacy from the AS3 Flixel&#39;s code style and hard to change them all. However, newly written functions should follow the lowerCamelCases style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.</p>
+<h2 id="colon-spacing">Colon spacing</h2>
+<p>No extra spaces should be used before and after colons:</p>
+<table>
+<thead>
+<tr>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>var i:Int;</td>
+<td>var i : Int;</td>
+</tr>
+<tr>
+<td>function toString():String</td>
+<td>function toString() : String</td>
+</tr>
+</tbody>
+</table>
 <h2 id="curly-brackets">Curly Brackets</h2>
 <p>Use line breaks in methods, operators etc where possible:</p>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">createAwesome</span><span class="params">(boring:Stuff, creative:Things)</span><span class="type">:Void</span>
@@ -302,11 +326,6 @@ this is mostly legacy from the AS3 Flixel&#39;s code style and hard to change th
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">createAwesome</span><span class="params">(boring:Stuff, creative:Things)</span><span class="type">:Void</span> {</span>
 
 }</code></pre>
-<h2 id="private-and-public-variables">Private and public variables</h2>
-<p>An underscore prefix should be used for any private variable:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _awesome:Awesome;</code></pre>
-<p>Do not use a prefix for a public variable:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="keyword">var</span> awesome:Awesome;</code></pre>
 <h2 id="leveraging-type-inference">Leveraging type inference</h2>
 <p>The Haxe compiler does not require you to declare the type of a variable (<a href="http://haxe.org/ref/type_infer">read more</a>).</p>
 <pre class="highlight"><code class="actionscript"><span class="comment">//This is unnecessary</span>
@@ -371,9 +390,9 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <p>Metadata should always be placed in a new line for increased readability:</p>
 <pre class="highlight"><code class="actionscript">@:isVar 
 @:allow(flixel.tweens.FlxTween)
-<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> _pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
+<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
 <p>as opposed to:</p>
-<pre class="highlight"><code class="actionscript">@:isVar @:allow(flixel.tweens.FlxTween) <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> _pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
+<pre class="highlight"><code class="actionscript">@:isVar @:allow(flixel.tweens.FlxTween) <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
 
 
 			<br>

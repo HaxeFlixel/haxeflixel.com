@@ -1,10 +1,351 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Game Development Tools</title>
-		<meta http-equiv="REFRESH" content="0;url=/documentation/game-development-tools">
-	</head>
-	<body>
-		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href="/documentation/game-development-tools">click here</a>.
-	</body>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>Game Development Tools | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li >
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class='active'>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a><h4>
+	</li>
+
+	
+		
+			<li class= about="/documentation/resources">
+				<a href="/documentation/resources"> Resources </a>
+			</li>
+		
+			<li class= about="/documentation/cheat-sheet">
+				<a href="/documentation/cheat-sheet"> Cheat Sheet </a>
+			</li>
+		
+			<li class= about="/documentation/openfl-project-xml-format">
+				<a href="/documentation/openfl-project-xml-format"> XML Project Format </a>
+			</li>
+		
+			<li class= about="/documentation/as3-and-haxe-comparison">
+				<a href="/documentation/as3-and-haxe-comparison"> AS3 and Haxe Comparison </a>
+			</li>
+		
+			<li class=active about="/documentation/game-development-tools">
+				<a href="/documentation/game-development-tools"> Game Development Tools </a>
+			</li>
+		
+			<li class= about="/documentation/compiler-conditionals">
+				<a href="/documentation/compiler-conditionals"> Compiler Conditionals </a>
+			</li>
+		
+			<li class= about="/documentation/native-extensions">
+				<a href="/documentation/native-extensions"> Native Extensions </a>
+			</li>
+		
+			<li class= about="/documentation/using-haxelib">
+				<a href="/documentation/using-haxelib"> Using Haxelib </a>
+			</li>
+		
+			<li class= about="/documentation/faq">
+				<a href="/documentation/faq"> FAQ </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorials">Tutorials</a><h4>
+	</li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Game Development Tools</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/04-game-development-tools.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<h2 id="graphics-editors">Graphics Editors</h2>
+<h4 id="-gimp-http-www-gimp-org-"><a href="http://www.gimp.org/">Gimp</a></h4>
+<p>Advanced bitmap based image editor that has many capabilities similar to commercial software. It can be used as a simple paint program, an expert quality photo retouching program, an online batch processing system, a mass production image renderer, an image format converter, etc.</p>
+<h4 id="-inkscape-http-www-inkscape-org-"><a href="http://www.inkscape.org/">Inkscape</a></h4>
+<p>Advanced vector image editor with an advanced editing toolset. Inkscape has capabilities similar to commercial software such as Adobe Illustrator, CorelDraw, or Xara X. Inkscape leverages the W3C standard Scalable Vector Graphics (SVG) file format.
+Inkscape supports many advanced SVG features (markers, clones, alpha blending, etc.) and great care is taken in designing a streamlined interface. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more.</p>
+<h2 id="sound-editors">Sound Editors</h2>
+<h4 id="-lmms-http-lmms-sourceforge-net-"><a href="http://lmms.sourceforge.net/">LMMS</a></h4>
+<p>LMMS is a free cross-platform software which allows you to produce music with your computer.</p>
+<h4 id="-sfxr-http-www-drpetter-se-project_sfxr-html-"><a href="http://www.drpetter.se/project_sfxr.html">SFXR</a></h4>
+<p>SFXR is a sound generator, widely used for creating sound effects for LD games.</p>
+<h4 id="-bfxr-http-www-bfxr-net-"><a href="http://www.bfxr.net/">BFXR</a></h4>
+<p>BFXR is an improved AS3 port of SFXR with more features. It has moved in the direction of increased complexity and range of expression.</p>
+<h2 id="map-editors">Map Editors</h2>
+<h3 id="-tiled-map-editor-http-www-mapeditor-org-"><a href="http://www.mapeditor.org/">Tiled Map Editor</a></h3>
+<p>Tiled is a general purpose tile map editor. It is meant to be used for editing maps of any tile-based game, be it an RPG, a platformer or a Breakout clone. <a href="http://haxeflixel.com/demos/TiledEditor/">This demo shows how to load a tiled map</a>.</p>
+<h3 id="-ogmo-editor-http-www-ogmoeditor-com-"><a href="http://www.ogmoeditor.com/">Ogmo Editor</a></h3>
+<p>Ogmo Editor is a generic level editor for indie game developers who use Windows. It also happens to be free and open source. The editor is built to be reconfigurable, so you can set it up to work well for your game project. <a href="http://haxeflixel.com/documentation/part-v-tiles-maps-and-collisions/">This HaxeFlixel tutorial</a> shows how to create levels with Ogmo.</p>
+<h2 id="asset-utilities">Asset Utilities</h2>
+<h3 id="-shoebox-http-renderhjs-net-shoebox-"><a href="http://renderhjs.net/shoebox/">ShoeBox</a></h3>
+<p>ShoeBox is a free Adobe Air based app for Windows and Mac OSX with game and ui related tools. It has many utilities that make asset management easier, such as <a href="http://renderhjs.net/shoebox/packSprites.htm">sprite packing</a>, <a href="http://renderhjs.net/shoebox/extractSprites.htm">sprite extraction</a>, <a href="http://renderhjs.net/shoebox/textureRipper.htm">texture ripping</a>, <a href="http://renderhjs.net/shoebox/bitmapFont.htm">bitmap font creation</a>, and more.</p>
+<h3 id="-texture-packer-https-www-codeandweb-com-texturepacker-"><a href="https://www.codeandweb.com/texturepacker">Texture Packer</a></h3>
+<p>Texture Packer does one thing very well, pack several sprites into one image to reduce the number of image assets your game has to load (which helps reduce load times). It&#39;s easy to use and easy to integrate with HaxeFlixel. <a href="http://haxeflixel.com/demos/TexturePackerAtlas/">This demo shows how to use a TexturePackerAtlas</a>.</p>
+<h2 id="more-resources">More Resources</h2>
+<h4 id="-ludumdare-list-http-www-ludumdare-com-compo-tools-"><a href="http://www.ludumdare.com/compo/tools/">LudumDare List</a></h4>
+<p>LudumDare hosts a great list of tools for general game development.</p>
+<h4 id="-pixelprospector-http-www-pixelprospector-com-indie-resources-"><a href="http://www.pixelprospector.com/indie-resources/">PixelProspector</a></h4>
+<p>Huge list of resources for game dev. A must read for indie developers.</p>
+
+
+			<br>
+			<hr>
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/as3-and-haxe-comparison">< AS3 and Haxe Comparison</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/compiler-conditionals">Compiler Conditionals ></a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
 </html>
