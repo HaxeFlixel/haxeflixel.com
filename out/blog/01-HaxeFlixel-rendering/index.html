@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>Tilesheet rendering | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li class='active'>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li >
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+
+<div class="container container-main">
+<div class="col-md-2"></div>
+
+<div class="col-md-8">
+
+    <h1 class="title">Tilesheet rendering</h1>
+
+    <p class="post-date">posted : 31-7-2014</h1>
+
+    <p>Hi, <a href="https://github.com/gamedevsam">gamedevsam</a> here, I&#39;m a developer and evangelist of HaxeFlixel.</p>
+<p>The following blog post was written by <a href="https://github.com/Beeblerox">Beeblerox</a> (the original creator of HaxeFlixel) and was originally posted on his blog as a two part article (<a href="http://beeblerox.tumblr.com/post/87678385538/tilesheet-rendering-part-1">part 1</a> and <a href="http://beeblerox.tumblr.com/post/87778663958/tilesheet-rendering-part-2-some-details-about-flixel">part 2</a>). In it, he goes into detail on how HaxeFlixel&#39;s rendering system is built on top of OpenFL&#39;s Tilesheet API.</p>
+<hr>
+<p>I want to tell you about tilesheet rendering in flixel, which is used on native targets by default (since some of you might me intereseted in it).</p>
+<p>But let’s start from Tilesheet API and how you work with it (Feel free to skip this part if you know it already).</p>
+<p>Tilesheet class allows you to draw multiple regions of image in one drawcall reasonably fast. These regions can be transformed (rotated, scaled, skewed) and tinted, plus they can have several blend modes (the most usefull is addition mode, which can be used for effects like fire and smoke).</p>
+<p>Let’s assume that you have some image you want to draw - “assets/tiles.png”.</p>
+<p>We are starting from instantiation of Tilesheet object:</p>
+<pre class="highlight"><code class="avrasm">tilesheet = new Tilesheet(Assets<span class="preprocessor">.getBitmap</span>(“assets/tiles<span class="preprocessor">.png</span>”))<span class="comment">;</span></code></pre>
+<p>Then we should define region of image (or tile) we want to draw. This is achieved with addTileRect() method, which takes 2 arguments:</p>
+<ul>
+<li><p>the first one is a Rectangle object - it is actual region of image to draw</p>
+</li>
+<li><p>and the second one is a Pont object, which define “center” point of a tile. Added tile will be rotated around this point, if we apply rotation transformation to it. This point should be inside of a tile (or it will be bounded), so if you add tile with the size 32x32 pixels and the center at (50; 16), then actual center point will be at (32; 16).</p>
+</li>
+</ul>
+<p>Center point argument is optional, and if you omit it then tile will be rotated around it’s middle point.</p>
+<pre class="highlight"><code class="avrasm">// adding tiles to the tilesheet
+tileID1 = tilesheet<span class="preprocessor">.addTileRect</span>(newRectangle(<span class="number">0</span>, <span class="number">0</span>, <span class="number">32</span>, <span class="number">32</span>), new Point(<span class="number">16</span>, <span class="number">16</span>))<span class="comment">;</span>
+tileID2 = tilesheet<span class="preprocessor">.addTileRect</span>(newRectangle(<span class="number">32</span>, <span class="number">0</span>, <span class="number">32</span>, <span class="number">32</span>), new Point(<span class="number">16</span>, <span class="number">16</span>))<span class="comment">;</span></code></pre>
+<p>Then we should have some Graphics object to draw our tiles on.</p>
+<pre class="highlight"><code class="avrasm">sprite = new Sprite()<span class="comment">;</span>
+Lib<span class="preprocessor">.current</span><span class="preprocessor">.stage</span><span class="preprocessor">.addChild</span>(sprite)<span class="comment">;</span>
+graphicsToUse = sprite<span class="preprocessor">.graphics</span><span class="comment">;</span></code></pre>
+<p>To draw the tiles on screen we need three things:</p>
+<p>1) Graphics to draw then on</p>
+<p>2) Draw flag which tells to the program what tile transformations we want to use on our tiles in this drawcall.</p>
+<p>The simplest case is no transformation (we just draw rectangular region of image on specified position):</p>
+<pre class="highlight"><code class="haskell"><span class="title">drawFlag</span> = <span class="number">0</span>;</code></pre>
+<p>You can add tinting:</p>
+<pre class="highlight"><code class="avrasm">drawFlag |= Tilesheet<span class="preprocessor">.TILE</span>_RGB<span class="comment">;</span></code></pre>
+<p>We can add TILE_ALPHA flag to be able to change tile’s alpha:</p>
+<pre class="highlight"><code class="avrasm">drawFlag |= Tilesheet<span class="preprocessor">.TILE</span>_ALPHA<span class="comment">;</span></code></pre>
+<p>There are also <code>TILE_ROTATION</code> and <code>TILE_SCALE</code> (for uniform tile scaling) constants for “simple” transformations of a tile. But if you want to achieve some more complex transformation (like non-uniform scaling or skewing) then you have <code>TILE_TRANS_2x2</code> constant.</p>
+<p>And finally there are <code>TILE_BLEND_ADD</code> constant for addition blending and <code>TILE_SMOOTH</code> for smoothing scaled up graphics.</p>
+<p>3) We also need actual information about tile’s type, position and transformation. The second argument of drawTiles() method - data array - is responsible for it.</p>
+<p>The amount of data for each tile depends on drawFlags value:</p>
+<ul>
+<li>if drawFlags is 0, then you should specify only tile’s position and id:</li>
+</ul>
+<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x1, y1, tileID1, x2, y2, tileID2];</span></code></pre>
+<ul>
+<li>if you’re using uniform scale and rotation then data array will look like this:</li>
+</ul>
+<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x1, y1, tileID1, scale1, angle1, x2, y1, tileID2, scale2, angle2];</span></code></pre>
+<ul>
+<li>if you’re adding tinting and alpha:</li>
+</ul>
+<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x1, y1, tileID1, scale1, angle1, red1, green1, blue1, alpha1,  x2, y1, tileID2, scale2, angle2, red2, green2, blue2, alpha2];</span></code></pre>
+<p>where red, green, blue and alpha are values between 0 and 1 (result color of each pixel will be product of these coefficients and original pixel colors).</p>
+<ul>
+<li>and the most complex case is when you’re using <code>TILE_TRANS_2x2</code>:</li>
+</ul>
+<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x, y, tileID1, a, b, c, d, red, green, blue, alpha];</span></code></pre>
+<p>where (a, b, c, d) are the transfromation matrix coefficients. You can get their values in two ways:</p>
+<p>a) by using Matrix class. For example, if you want to have non-uniform scale and rotation for your tile, then you can get it this way:</p>
+<pre class="highlight"><code class="avrasm">matrix<span class="preprocessor">.identity</span>()<span class="comment">;</span>
+matrix<span class="preprocessor">.scale</span>(scaleX, scaleY)<span class="comment">;</span>
+matrix<span class="preprocessor">.rotate</span>(angle)<span class="comment">;</span>
+data = [<span class="built_in">x</span>, <span class="built_in">y</span>, tileID1, matrix<span class="preprocessor">.a</span>, matrix<span class="preprocessor">.b</span>, matrix<span class="preprocessor">.c</span>, matrix<span class="preprocessor">.d</span>, red, green, blue, alpha]<span class="comment">;</span></code></pre>
+<p>b) or manually if you want to make some optimizations. That’s why drawing methods in flixels are so bloated - i just wanted to except some redundant calculations from it.</p>
+<p>So finally you can draw your tiles on the screen:</p>
+<pre class="highlight"><code class="haskell"><span class="title">tilesheet</span>.drawTiles(graphicsToUse, <span class="keyword">data</span>, false, drawFlags);</code></pre>
+<hr>
+<p>If you want to see some working example, then i recommend you to look at Tiles sample project in nme library: <a href="https://github.com/haxenme/nme/tree/master/samples/20-Tiles"><a href="https://github.com/haxenme/nme/tree/master/samples/20-Tiles">https://github.com/haxenme/nme/tree/master/samples/20-Tiles</a></a></p>
+<hr>
+<p>Now when we know everything we need about Tilesheet class, it’s time to talk about flixel renderer a bit.</p>
+<p>As you remember we need Graphics object to render our tiles. FlxCamera objects contain flashSprite:Sprite variable inside which we have canvas:Sprite which graphics we use for rendering on the camera. We need canvas spite to be nested inside flashSprite for easy camera rotations. So if you don’t plan to implement such feature then you might use just one sprite without nesting.</p>
+<p>We also need data to render and render flags, which reflect what types of transformations (like rotation and tinting) apply to rendered tiles. This information is gathered every render cycle: we iterate through each sprite we have in our game. But to keep drawCalls as low as possible we need some sort of batching, which tries to draw everything with the same graphics in one draw call, and when we change graphics it breaks the batch and starts another. This functionality is split between FlxCamera. FlxSprite class and subclasses and DrawStackItem helper class.</p>
+<p>DrawStackItem objects store information about current batch: Tilesheet object to use for rendering, draw data array, information about draw flags (do we need to tint our tiles in the batch, or use blending), and the link to next DrawStackItem object (DrawStackItems are organized into linked list). Each camera have _headOfDrawStack variable which is head of DrawStackItems linked list.</p>
+<p>FlxSprite draw() method does the following:</p>
+<ul>
+<li><p>it gets DrawStackItem object to use from current FlxCamera. The result of this operation depends on sprite’s graphics, color and blend mode. So if one of these factors isn’t equal to the properties of current DrawStackItem, then current DrawStackItem will be “finalized” (breaks current batch) and new/empty DrawStackItem will be returned to sprite.</p>
+</li>
+<li><p>sprite will add info about itself in current DrawStackItem (positio, tileID, transformation matrix coefficients, tinting and alpha).</p>
+</li>
+</ul>
+<p>After we iterate through all sprites in our game state, game engine start actual render process.</p>
+<p>It iterate through each camera, clear graphics of cameras, fill them with background color (with graphics.drawRect() method), and then each camera iterate through its list of DrawStackItems. This iteration stage takes DrawStackItem’s tilesheet, draw data, draw flag and render it with drawTiles() method on camera’s canvas.graphics.</p>
+<p>That is how tilesheet rendering works in flixel. Feel free to ask me questions about it.</p>
+<hr>
+<p>You can reach Beeblerox on Twitter <a href="https://twitter.com/teormech">@teormech</a>.</p>
+
+
+    <br>
+    <hr>
+    <br>
+
+    <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'haxeflixel';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://haxeflixel.com/blog/01-HaxeFlixel-rendering';
+		window.disqus_identifier = 'blog-01-HaxeFlixel-rendering';
+		window.disqus_title = 'Tilesheet rendering';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<div class="col-md-2"></div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
+</html>

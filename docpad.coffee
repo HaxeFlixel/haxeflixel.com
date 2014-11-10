@@ -1,3 +1,12 @@
+# For the blog preview page parse the markdown with github flavour.
+marked            = require 'marked'
+markedOptions =
+  pedantic: false
+  gfm: true
+  sanitize: false
+  highlight: null
+marked.setOptions(markedOptions);
+
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
@@ -120,16 +129,16 @@ docpadConfig = {
       return docsCollection.models[docsCollection.length-1]
 
   # =================================
-  # Collections
-  # These are special collections that our website makes available to us
 
   collections:
 
     blog: (database) ->
-      database.findAllLive({layout:$has:'blog-post'}, [date:-1]).on 'add', (document) ->
+      sorting = [filename:-1]
+      database.findAllLive({layout:$has:'blog-post'}, sorting).on 'add', (document) ->
         a = document.attributes
         contentPreview = a.content.substring(0,150)
         contentPreview = contentPreview + " ..."
+        contentPreview = marked(contentPreview)
         a.postDate = "posted : " + a.postDate
         document.setMetaDefaults({
           contentPreview

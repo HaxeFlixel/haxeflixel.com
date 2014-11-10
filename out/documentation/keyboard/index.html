@@ -248,7 +248,7 @@
 
 			<p>Keyboard input for HaxeFlixel is provided through the <code>FlxKeyboard</code> class and is available through <code>FlxG.keys</code>.</p>
 <h2 id="key-lists">Key Lists</h2>
-<p>An object of type <code>FlxKeyList</code> contains a <code>Bool</code> for each key on the keyboard. The values are kept as an array internally, but you can easily refer to them by using special instance variables named after the key. For a full list of all available names look at the <code>FlxKeyList</code> documentation <a href="http://api.haxeflixel.com/types/flixel/input/keyboard/FlxKeyList.html">here</a>.</p>
+<p>An object of type <code>FlxKeyList</code> contains a <code>Bool</code> for each key on the keyboard. The values are kept as an array internally, but you can easily refer to them by using special instance variables named after the key. For a full list of all available names look at the <code>FlxKeyList</code> documentation <a href="http://api.haxeflixel.com/flixel/input/keyboard/FlxKeyList.html">here</a>.</p>
 <p><code>FlxKeyboard</code> uses the three key lists <code>pressed</code>, <code>justPressed</code> and <code>justReleased</code> to keep track of the keys. <code>pressed</code> contains <code>true</code> for all keys that are currently pressed. <code>justPressed</code> only contains <code>true</code> for all keys that have been pressed since the last frame.</p>
 <p>Here&#39;s an example of how to put it all together:</p>
 <pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>

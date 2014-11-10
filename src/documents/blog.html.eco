@@ -13,7 +13,7 @@ layout: blog-layout
 		    <h3><%= blog.title %></h3>
         </a>
 
-        <p><%= blog.contentPreview %> <a href="<%= blog.url %>"> read more</a></p>
+        <p><%- blog.contentPreview %> <a href="<%= blog.url %>"> read more</a></p>
 
         <hr>
 
