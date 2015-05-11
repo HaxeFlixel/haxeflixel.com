@@ -275,7 +275,7 @@ add(_btnPlay);</code></pre></p>
         <p>First, we want the button to be in a nicer place. Sure, we could set the x,y coordinates when we create it, but there&#39;s a simpler way to do it.</p>
         <p>Go up to the import section of the class, and, in a new line, type:</p>
         <p><pre class="highlight"><code class="actionscript">using flixel.util.FlxSpriteUtil;</code></pre></p>
-        <p>This is going to allow us to use some of FlxSpriteUtil&#39;s (one of many useful utility classes in HaxeFlixel) functions on our own objects in this class. This is thanks to a Haxe feature called Static Extension, and can be used for some powerful results.</p>
+        <p>This is going to allow us to use some of FlxSpriteUtil&#39;s (one of many useful utility classes in HaxeFlixel) functions on our own objects in this class. This is thanks to a Haxe feature called <a href="http://haxe.org/manual/lf-static-extension.html">Static Extension</a>, and can be used for some powerful results.</p>
     </li>
     <li>
         <p>Back in the create function, add a new line somewhere after we create our FlxButton, and before <code>super.create();</code> (I like to add it before the button is added, but that&#39;s just my preference).</p>
@@ -328,7 +328,7 @@ add(_btnPlay);</code></pre></p>
 {</span>
     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)</span> 
     {</span>
-        <span class="keyword">super</span>(X, Y, ?SimpleGraphic);&lt;br&gt;    }
+        <span class="keyword">super</span>(X, Y, SimpleGraphic);&lt;br&gt;    }
 }</code></pre></p>
         <p>We&#39;ll need to fix this up a bit to make it usable.</p>
     </li>
@@ -339,7 +339,7 @@ add(_btnPlay);</code></pre></p>
         <p>Becomes</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0)</span></span></code></pre></p>
         <p>and</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">super</span>(X, Y, ?SimpleGraphic);</code></pre></p>
+        <p><pre class="highlight"><code class="actionscript"><span class="keyword">super</span>(X, Y, SimpleGraphic);</code></pre></p>
         <p>becomes</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">super</span>(X, Y);</code></pre></p>
         <p>With classes, we use the &#39;super&#39; command to refer to the parent class. So, within out &#39;new&#39; constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.</p>
