@@ -1,7 +1,6 @@
 ```
 layout: showcase
 title: "Spacejacked"
-featured: true
 flash: http://gamejolt.com/games/arcade/spacejacked-endless-mode/50894/
 windows: http://www.indiedb.com/games/spacejacked/downloads
 mac: http://www.indiedb.com/games/spacejacked/downloads
