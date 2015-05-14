@@ -1,6 +1,6 @@
 ---
 title: "Demos"
-layout: "demos"
+layout: "demos-layout"
 ---
 
 <div class="demo-page center-align-a">

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css"]).toHTML()} ) %>
+
+<body>
+
+<%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %>
+
+
+<div class="container container-main">
+
+<div class="col-md-8">
+
+    <h1 class="title"><%= @document.title %></h1>
+
+    <p class="post-date"><%= @document.postDate %></h1>
+
+    <%- @content %>
+
+    <br>
+    <hr>
+    <br>
+
+    <%- @getDisqus() %>
+
+</div>
+
+</div>
+
+<%- @partial('footer.html') %>
+
+<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+
+</body>
+
+</html>

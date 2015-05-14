@@ -1,296 +1,318 @@
-pathUtil = require('path')
+# For the blog preview page parse the markdown with github flavour.
+marked            = require 'marked'
+markedOptions =
+  pedantic: false
+  gfm: true
+  sanitize: false
+  highlight: null
+marked.setOptions(markedOptions);
 
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
 
-	# =================================
-	# Ignore the api docs from the flixel-docs repo
+  # =================================
+  # Ignore the api docs from the flixel-docs repo
 
-    ignorePaths: [
-            __dirname + '/src/documents/documentation/api'
-    ]
+  ignorePaths: [
+    __dirname + '/src/documents/documentation/api'
+  ]
 
-	# =================================
-	# Template Data
-	# These are variables that will be accessible via our templates
-	# To access one of these within our templates, refer to the FAQ: https://github.com/bevry/docpad/wiki/FAQ
+  # =================================
+  # Template Data
+  # These are variables that will be accessible via our templates
+  # To access one of these within our templates, refer to the FAQ: https://github.com/bevry/docpad/wiki/FAQ
 
-	templateData:
+  templateData:
 
-		# Specify some site properties
-		site:
-			# The production url of our website
-			url: "http://haxeflixel.com"
+    # Specify some site properties
+    site:
+      # The production url of our website
+      url: "http://haxeflixel.com"
 
-			# The default title of our website
-			title: "HaxeFlixel 2D Game Framework"
+      # The default title of our website
+      title: "HaxeFlixel 2D Game Framework"
 
-			name: "HaxeFlixel"
+      name: "HaxeFlixel"
 
-			# The website description (for SEO)
-			description: """
-				HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!
-				"""
+      # The website description (for SEO)
+      description: """
+        HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!
+        """
 
-			# The website keywords (for SEO) separated by commas
-			keywords: """
-				gamedev, game development, cross-platform, haxe, flixel
-				"""
+      # The website keywords (for SEO) separated by commas
+      keywords: """
+        gamedev, game development, cross-platform, haxe, flixel
+        """
 
-			# Styles
-			styles: [
-				"/styles/bootstrap.css?v=2.0",
-				"/styles/style.css?v=2.03",
-				"/styles/site.css?v=2.03",
-				"/styles/monokai-sublime.css?v=2.0"
-			]
+      # Styles
+      styles: [
+        "/styles/bootstrap.css",
+        "/styles/style.css",
+        "/styles/site.css",
+        "/styles/monokai-sublime.css"
+      ]
 
-			# Scripts
-			scripts: [
-				"//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
-				"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
-				"/vendor/twitter-bootstrap-3/js/dropdown.js",
-				"/vendor/twitter-bootstrap-3/js/transition.js",
-				"/vendor/twitter-bootstrap-3/js/collapse.js"
-			]
-			
-			services:
-            	googleAnalytics: 'UA-35511281-1'
+      # Scripts
+      scripts: [
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
+        "/vendor/twitter-bootstrap-3/js/dropdown.js",
+        "/vendor/twitter-bootstrap-3/js/transition.js",
+        "/vendor/twitter-bootstrap-3/js/collapse.js"
+      ]
 
-		# -----------------------------
-		# Helper Functions
+      services:
+        googleAnalytics: 'UA-35511281-1'
+        disqus: 'haxeflixel'
 
-		# Get the prepared site/document title
-		# Often we would like to specify particular formatting to our page's title
-		# we can apply that formatting here
-		getPreparedTitle: ->
-			# if we have a document title, then we should use that and suffix the site's title onto it
-			if @document.title
-				"#{@document.title} | #{@site.title}"
-			# if our document does not have it's own title, then we should just use the site's title
-			else
-				@site.title
+    # -----------------------------
+    # Helper Functions
 
-		getShowcaseActive:(status) ->
-			if status
-			    return 'showcases-target-actives'
-		    else
-				return 'showcases-target'
+    # Get the prepared site/document title
+    # Often we would like to specify particular formatting to our page's title
+    # we can apply that formatting here
+    getPreparedTitle: ->
+      # if we have a document title, then we should use that and suffix the site's title onto it
+      if @document.title
+        "#{@document.title} | #{@site.title}"
+      # if our document does not have it's own title, then we should just use the site's title
+      else
+        @site.title
 
-		# Get the prepared site/document description
-		getPreparedDescription: ->
-			# if we have a document description, then we should use that, otherwise use the site's description
-			@document.description or @site.description
+    getDocumentMenuTitle:(title) ->
+      if title.length > 28
+        return "#{title.substring(0,20)} ..."
+      else
+        return title
 
-		# Get the prepared site/document keywords
-		getPreparedKeywords: ->
-			# Merge the document keywords with the site keywords
-			@site.keywords.concat(@document.keywords or []).join(', ')
+    getShowcaseActive:(status) ->
+      if status
+        return 'showcases-target-actives'
+      else
+        return 'showcases-target'
 
-		getThumbCustom:(test) ->
-			url = "/images/demos/"
-			path = "#{url}#{test} "
+    # Get the prepared site/document description
+    getPreparedDescription: ->
+      # if we have a document description, then we should use that, otherwise use the site's description
+      @document.description or @site.description
 
-		getPagerNext:(collection) ->
-			docsCollection = @getCollection(collection)
-			for item,index in docsCollection.models
-				if item.id is @document.id
-					break
-			return docsCollection.models[index+1]
+    # Get the prepared site/document keywords
+    getPreparedKeywords: ->
+      # Merge the document keywords with the site keywords
+      @site.keywords.concat(@document.keywords or []).join(', ')
 
-		getPagerPrevious:(collection) ->
-			docsCollection = @getCollection(collection)
-			for item,index in docsCollection.models
-				if item.id is @document.id
-					break
-			return docsCollection.models[index-1]
+    getThumbCustom:(test) ->
+      url = "/images/demos/"
+      path = "#{url}#{test} "
 
-		getFirst:(collection) ->
-			docsCollection = @getCollection(collection)
-			return docsCollection.models[0]
+    getPagerNext:(collection) ->
+      docsCollection = @getCollection(collection)
+      for item,index in docsCollection.models
+        if item.id is @document.id
+          break
+      return docsCollection.models[index+1]
 
-		getLast:(collection) ->
-			docsCollection = @getCollection(collection)
-			return docsCollection.models[docsCollection.length-1]
+    getPagerPrevious:(collection) ->
+      docsCollection = @getCollection(collection)
+      for item,index in docsCollection.models
+        if item.id is @document.id
+          break
+      return docsCollection.models[index-1]
 
-	# =================================
-	# Collections
-	# These are special collections that our website makes available to us
+    getFirst:(collection) ->
+      docsCollection = @getCollection(collection)
+      return docsCollection.models[0]
 
-	collections:
+    getLast:(collection) ->
+      docsCollection = @getCollection(collection)
+      return docsCollection.models[docsCollection.length-1]
 
-		demos: (database) ->
-			database.findAllLive({layout:$has:'demo'}, [date:-1])
+  # =================================
 
-		showcase: (database) ->
-			database.findAllLive({layout:$has:'showcase'}, [date:-1])
+  collections:
 
-		homepage_demos: (database) ->
-			database.findAllLive({tags:$has:'homepage_demo'}, [date:-1])
+    blog: (database) ->
+      sorting = [filename:-1]
+      database.findAllLive({layout:$has:'blog-post'}, sorting).on 'add', (document) ->
+        a = document.attributes
+        contentPreview = a.content.substring(0,150)
+        contentPreview = contentPreview + " ..."
+        contentPreview = marked(contentPreview)
+        a.postDate = "posted : " + a.postDate
+        document.setMetaDefaults({
+          contentPreview
+        })
 
-		getting_started: (database) ->
-			query =
-				write: true
-				relativeOutDirPath: $endsWith: '00_getting_started'
-				body: $ne: ""
-			sorting = [categoryDirectory:1, filename:1]
+    demos: (database) ->
+      database.findAllLive({layout:$has:'demo'}, [date:-1])
 
-			database.findAllLive(query, sorting).on 'add', (document) ->
-				a = document.attributes
-				layout = 'doc'
-				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-				categoryName = 'getting_started'
-				categoryTitle = 'Getting Started'
-				githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/00_getting_started/'
-				editUrl = githubEditUrl + a.basename + '.html.md'
-				document.setMetaDefaults({
-					layout
-					url: urls[0]
-					categoryName
-					categoryTitle
-					editUrl
-				}).addUrl(urls)
+    showcase: (database) ->
+      database.findAllLive({layout:$has:'showcase'}, [date:-1])
 
-		community: (database) ->
-			query =
-				write: true
-				relativeOutDirPath: $endsWith: '01_community'
-				body: $ne: ""
-			sorting = [categoryDirectory:1, filename:1]
+    homepage_demos: (database) ->
+      database.findAllLive({tags:$has:'homepage_demo'}, [date:-1])
 
-			database.findAllLive(query, sorting).on 'add', (document) ->
-				a = document.attributes
-				layout = 'doc'
-				categoryName = 'community'
-				categoryTitle = 'Community'
-				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-				githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/'
-				editUrl = githubEditUrl + a.basename + '.html.md'
-				document.setMetaDefaults({
-					layout
-					url: urls[0]
-					editUrl
-					categoryName
-					categoryTitle
-				}).addUrl(urls)
+    getting_started: (database) ->
+      query =
+        write: true
+        relativeOutDirPath: $endsWith: '00_getting_started'
+        body: $ne: ""
+      sorting = [categoryDirectory:1, filename:1]
 
-		handbook: (database) ->
-			query =
-				write: true
-				relativeOutDirPath: $endsWith: '02_handbook'
-				body: $ne: ""
-			sorting = [categoryDirectory:1, filename:1]
+      database.findAllLive(query, sorting).on 'add', (document) ->
+        a = document.attributes
+        layout = 'doc'
+        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+        categoryName = 'getting_started'
+        categoryTitle = 'Getting Started'
+        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/00_getting_started/'
+        editUrl = githubEditUrl + a.basename + '.html.md'
+        document.setMetaDefaults({
+          layout
+          url: urls[0]
+          categoryName
+          categoryTitle
+          editUrl
+        }).addUrl(urls)
 
-			database.findAllLive(query, sorting).on 'add', (document) ->
-				a = document.attributes
-				layout = 'doc'
-				categoryName = 'handbook'
-				categoryTitle = "Handbook"
-				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-				githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/'
-				editUrl = githubEditUrl + a.basename + '.html.md'
-				document.setMetaDefaults({
-					layout
-					url: urls[0]
-					categoryName
-					categoryTitle
-					editUrl
-				}).addUrl(urls)
+    community: (database) ->
+      query =
+        write: true
+        relativeOutDirPath: $endsWith: '01_community'
+        body: $ne: ""
+      sorting = [categoryDirectory:1, filename:1]
 
-		resources: (database) ->
-			query =
-				write: true
-				relativeOutDirPath: $endsWith: '03_resources'
-				body: $ne: ""
-			sorting = [categoryDirectory:1, filename:1]
+      database.findAllLive(query, sorting).on 'add', (document) ->
+        a = document.attributes
+        layout = 'doc'
+        categoryName = 'community'
+        categoryTitle = 'Community'
+        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/'
+        editUrl = githubEditUrl + a.basename + '.html.md'
+        document.setMetaDefaults({
+          layout
+          url: urls[0]
+          editUrl
+          categoryName
+          categoryTitle
+        }).addUrl(urls)
 
-			database.findAllLive(query, sorting).on 'add', (document) ->
-				a = document.attributes
-				layout = 'doc'
-				categoryName = 'resources'
-				categoryTitle = 'Resources'
-				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/"
-				editUrl = githubEditUrl + a.basename + '.html.md'
-				document.setMetaDefaults({
-					layout
-					url: urls[0]
-					categoryName
-					categoryTitle
-					editUrl
-				}).addUrl(urls)
-				
-		tutorials: (database) ->
-			query =
-				write: true
-				relativeOutDirPath: $endsWith: '04_tutorials'
-				body: $ne: ""
-			sorting = [categoryDirectory:1, filename:1]
+    handbook: (database) ->
+      query =
+        write: true
+        relativeOutDirPath: $endsWith: '02_handbook'
+        body: $ne: ""
+      sorting = [categoryDirectory:1, filename:1]
 
-			database.findAllLive(query, sorting).on 'add', (document) ->
-				a = document.attributes
-				layout = 'doc'
-				categoryName = 'tutorials'
-				categoryTitle = 'Tutorials'
-				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/"
-				editUrl = githubEditUrl + a.basename + '.html.md'
-				document.setMetaDefaults({
-					layout
-					url: urls[0]
-					categoryName
-					categoryTitle
-					editUrl
-				}).addUrl(urls)
+      database.findAllLive(query, sorting).on 'add', (document) ->
+        a = document.attributes
+        layout = 'doc'
+        categoryName = 'handbook'
+        categoryTitle = "Handbook"
+        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/'
+        editUrl = githubEditUrl + a.basename + '.html.md'
+        document.setMetaDefaults({
+          layout
+          url: urls[0]
+          categoryName
+          categoryTitle
+          editUrl
+        }).addUrl(urls)
 
-		rootDocuments: (database) ->
-			query =
-				write: true
-				relativeOutDirPath: $startsWith: 'documentation'
-				body: $ne: ""
-				rootDoc: true
-			sorting = [categoryDirectory:1, relativeDirPath:1]
+    resources: (database) ->
+      query =
+        write: true
+        relativeOutDirPath: $endsWith: '03_resources'
+        body: $ne: ""
+      sorting = [categoryDirectory:1, filename:1]
 
-			database.findAllLive(query, sorting).on 'add', (document) ->
-				a = document.attributes
-				layout = 'doc'
-				categoryName = 'resources'
-				urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-				githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/"
-				editUrl = githubEditUrl + a.basename
-				document.setMetaDefaults({
-					layout
-					url: urls[0]
-					categoryName
-					editUrl
-				}).addUrl(urls)
+      database.findAllLive(query, sorting).on 'add', (document) ->
+        a = document.attributes
+        layout = 'doc'
+        categoryName = 'resources'
+        categoryTitle = 'Resources'
+        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/"
+        editUrl = githubEditUrl + a.basename + '.html.md'
+        document.setMetaDefaults({
+          layout
+          url: urls[0]
+          categoryName
+          categoryTitle
+          editUrl
+        }).addUrl(urls)
 
-	# =================================
-	# Plugins
+    tutorials: (database) ->
+      query =
+        write: true
+        relativeOutDirPath: $endsWith: '04_tutorials'
+        body: $ne: ""
+      sorting = [categoryDirectory:1, filename:1]
 
-	plugins:
-		cleanurls:
-			enabled: true
+      database.findAllLive(query, sorting).on 'add', (document) ->
+        a = document.attributes
+        layout = 'doc'
+        categoryName = 'tutorials'
+        categoryTitle = 'Tutorials'
+        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/"
+        editUrl = githubEditUrl + a.basename + '.html.md'
+        document.setMetaDefaults({
+          layout
+          url: urls[0]
+          categoryName
+          categoryTitle
+          editUrl
+        }).addUrl(urls)
 
-		markedOptions:
-		  	gfm: true
+    rootDocuments: (database) ->
+      query =
+        write: true
+        relativeOutDirPath: $startsWith: 'documentation'
+        body: $ne: ""
+        rootDoc: true
+      sorting = [categoryDirectory:1, relativeDirPath:1]
 
-		highlightjs:
-        	aliases:
-            	haxe: 'actionscript'
+      database.findAllLive(query, sorting).on 'add', (document) ->
+        a = document.attributes
+        layout = 'doc'
+        categoryName = 'resources'
+        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/"
+        editUrl = githubEditUrl + a.basename
+        document.setMetaDefaults({
+          layout
+          url: urls[0]
+          categoryName
+          editUrl
+        }).addUrl(urls)
 
-        thumbnails:
-        	imageMagick: true
+  # =================================
+  # Plugins
 
- 		repocloner:
-            repos: [
-                    name: 'HaxeFlixel Documentation'
-                    branch: 'master'
-                    path: 'src/documents/documentation'
-                    url: 'https://github.com/HaxeFlixel/flixel-docs.git'
-            ]
+  plugins:
+    cleanurls:
+      enabled: true
 
+    markedOptions:
+      gfm: true
+
+    highlightjs:
+      aliases:
+        haxe: 'actionscript'
+
+    thumbnails:
+      imageMagick: true
+
+    repocloner:
+      repos: [
+        name: 'HaxeFlixelDocumentation'
+        path: 'src/documents/documentation'
+        url: 'https://github.com/HaxeFlixel/flixel-docs.git'
+      ]
 }
 
 # Export our DocPad Configuration

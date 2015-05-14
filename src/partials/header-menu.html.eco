@@ -21,8 +21,23 @@
 							<a href="/demos">Demos</a>
 						</li>
 
-						<li <%= @ashowcase %>>
-							<a href="/showcase">Showcase</a>
+                        <li class="dropdown" <%= @ashowcase %>>
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li <%= @ablog %>>
+							<a href="/blog">Blog</a>
 						</li>
 
 						<li <%= @adocs %>>
@@ -30,7 +45,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com">API</a>
+							<a href="http://api.haxeflixel.com" target="_blank">API</a>
 						</li>
 
 						<li <%= @aforum %>>

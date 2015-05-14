@@ -14,7 +14,7 @@ To activate it, simply add sprites to the manager and implement the event callba
 ```haxe
 import flixel.plugin.MouseEventManager;
 
-MouseEventManager.addSprite(new FlxSprite(), onMouseDown, onMouseUp, onMouseOver, onMouseOut); 
+MouseEventManager.add(new FlxSprite(), onMouseDown, onMouseUp, onMouseOver, onMouseOut); 
 
 function onMouseDown(sprite:FlxSprite) {}
 function onMouseUp(sprite:FlxSprite) {}
