@@ -239,7 +239,7 @@
         <p><img src="/images/tutorial/0015.png" /></p>
     </li>
     <li>
-        <p>We&#39;re going to make our coins be 8x8 pixels. For the coin&#39;s graphic, you can use this image <a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VII/assets/images/coin.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VII/assets/images/coin.png" /></a>, or make your own. Make sure you save this in &quot;assets/images&quot;.</p>
+        <p>We&#39;re going to make our coins be 8x8 pixels. For the coin&#39;s graphic, you can use this image <a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/coin.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/coin.png" /></a>, or make your own. Make sure you save this in &quot;assets/images&quot;.</p>
     </li>
     <li>
         <p>Get back into FlashDevelop, and make a new class:</p>
@@ -267,7 +267,7 @@
 add(_grpCoins);</code></pre></p>
     </li>
     <li>
-        <p>Next, we just want to change our placeEntities function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:</p>
+        <p>Next, we just want to change our <code>placeEntities</code> function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">else</span> <span class="keyword">if</span> (entityName == <span class="string">"coin"</span>)
 {
     _grpCoins.add(<span class="keyword">new</span> Coin(x + <span class="number">4</span>, y + <span class="number">4</span>));
@@ -275,12 +275,12 @@ add(_grpCoins);</code></pre></p>
         <p>This will simply create a new coin, tell it to be at the position defined in the Ogmo file (+4 x and y to center it on the tile), and add it to the Coin group.</p>
     </li>
     <li>
-        <p>Now we need to have the player be able to collect the coins. We&#39;re going to use an overlap check to do this. In update, after your FlxG.collide call, add:</p>
+        <p>Now we need to have the player be able to collect the coins. We&#39;re going to use an overlap check to do this. In update, after your <code>FlxG.collide</code> call, add:</p>
         <p><pre class="highlight"><code class="actionscript">FlxG.overlap(_player, _grpCoins, playerTouchCoin);</code></pre></p>
         <p>This just says: every update, check if there are any overlaps between the player and the coin group, and if there are, call <code>playerTouchCoin</code>.</p>
     </li>
     <li>
-        <p>Let&#39;s add the playerTouchCoin callback now:</p>
+        <p>Let&#39;s add the <code>playerTouchCoin</code> callback now:</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">playerTouchCoin</span><span class="params">(P:Player, C:Coin)</span><span class="type">:Void</span>
 {</span>
     <span class="keyword">if</span> (P.alive &amp;&amp; P.exists &amp;&amp; C.alive &amp;&amp; C.exists)
@@ -313,7 +313,7 @@ add(_grpCoins);</code></pre></p>
 <p>Try out the game now, and you&#39;ll notice the difference when you pick up coins! We&#39;ll do some more of this later on when we start adding &#39;juice&#39; to our game.</p>
 <p><img src="/images/tutorial/0016b.png" /></p>
 
-<p>Check out the <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-VII">source code</a> for what we&#39;ve done so far, and in the next part, we&#39;ll talk about enemies!</p>
+<p>In the next part, we&#39;ll talk about enemies!</p>
 
 			<br>
 			<hr>

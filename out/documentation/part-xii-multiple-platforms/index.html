@@ -240,7 +240,7 @@
 #end</code></pre></p>
     </li>
     <li>
-        <p>In the create function, somewhere after we add our _barVolume object, add:</p>
+        <p>In the create function, somewhere after we add our <code>_barVolume</code> object, add:</p>
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> desktop
 _btnFullScreen = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, _barVolume.y + _barVolume.height + <span class="number">8</span>, FlxG.fullscreen ? <span class="string">"FULLSCREEN"</span> : <span class="string">"WINDOWED"</span>, clickFullscreen);
 _btnFullScreen.screenCenter(<span class="literal">true</span>, <span class="literal">false</span>);
@@ -257,7 +257,7 @@ add(_btnFullScreen);
     _save.data.fullscreen = FlxG.fullscreen;
 }
 #end</code></pre></p>
-        <p>Yes, we wrap the entire function in our conditional - if we&#39;re not building for desktop, this function will not exist. You&#39;ll also notice that we are saving the value of FlxG.fullscreen - this will be used to &#39;remember&#39; the game&#39;s screen state when they next launch the game.</p>
+        <p>Yes, we wrap the entire function in our conditional - if we&#39;re not building for desktop, this function will not exist. You&#39;ll also notice that we are saving the value of <code>FlxG.fullscreen</code> - this will be used to &#39;remember&#39; the game&#39;s screen state when they next launch the game.</p>
     </li>
     <li>
         <p>Make sure you clean up you button in destroy:</p>
@@ -321,32 +321,32 @@ _btnExit = FlxDestroyUtil.destroy(_btnExit);
         <p>This will give your app a package name to be used on the Android Device - it&#39;s best to be as unique as possible.</p>
     </li>
     <li>
-        <p>Next, we need to change our assets around a little bit. Right now, we have &lt;assets path=&quot;assets&quot; /&gt; which just says &quot;load all the assets!&quot;. We want to filter them out a little bit and only load the ones that we actually NEED. While we&#39;re here, we need to make a new version of our music. We need both an mp3 and an ogg version of our music - Flash only allows for mp3 files, however, it is the only platform that can use mp3s (you can read more the reasons why <a href="http://www.openfl.org/blog/2013/09/18/to-mp3-or-not-to-mp3/">here</a>) - besides, ogg is generally a better format to use. You can find free tools on the internet, such as <a href="http://audacity.sourceforge.net/">Audacity</a> to convert your audio file formats if you&#39;re not sure how to do that.</p>
+        <p>Next, we need to change our assets around a little bit. Right now, we have <code>&lt;assets path=&quot;assets&quot; /&gt;</code> which just says &quot;load all the assets!&quot;. We want to filter them out a little bit and only load the ones that we actually NEED. While we&#39;re here, we need to make a new version of our music. We need both an mp3 and an ogg version of our music - Flash only allows for mp3 files, however, it is the only platform that can use mp3s (you can read more the reasons why <a href="http://www.openfl.org/blog/2013/09/18/to-mp3-or-not-to-mp3/">here</a>) - besides, ogg is generally a better format to use. You can find free tools on the internet, such as <a href="http://audacity.sourceforge.net/">Audacity</a> to convert your audio file formats if you&#39;re not sure how to do that.</p>
         <p>Once you have both versions of your music stored in assets/music, replace your assets tag with:</p>
-        <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/data"</span> <span class="attribute">include</span>=<span class="value">"&lt;em&gt;.oel"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/images"</span> <span class="attribute">include</span>=<span class="value">"&lt;/em&gt;.png"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/sounds"</span> <span class="attribute">include</span>=<span class="value">"&lt;em&gt;.wav"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/music"</span> <span class="attribute">include</span>=<span class="value">"&lt;/em&gt;.mp3"</span> <span class="attribute">if</span>=<span class="value">"flash"</span> /&gt;</span>
+        <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/data"</span> <span class="attribute">include</span>=<span class="value">"*.oel"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/images"</span> <span class="attribute">include</span>=<span class="value">"*.png"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/sounds"</span> <span class="attribute">include</span>=<span class="value">"*.wav"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/music"</span> <span class="attribute">include</span>=<span class="value">"*.mp3"</span> <span class="attribute">if</span>=<span class="value">"flash"</span> /&gt;</span>
 <span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/music"</span> <span class="attribute">include</span>=<span class="value">"*.ogg"</span> <span class="attribute">unless</span>=<span class="value">"flash"</span> /&gt;</span></code></pre></p>
         <p>This will simply load the assets from each of our specified folders, grabbing only the files that match the wildcards we&#39;ve specified. For the music, we load mp3 files if we&#39;re building for flash, and ogg if we&#39;re building for anything else.</p>
     </li>
     <li>
         <p>Next, we have some definitions that are mostly commented out. Generally, mobile targets won&#39;t have access to a keyboard or mouse, and desktop targets won&#39;t have access to touch functionality. To make sure our game can handle these platforms properly, we will set some flags based on what target we&#39;re building for.</p>
         <p>Look for a section that looks like this and uncomment it (or just add this to your Project.xml):</p>
-        <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX&lt;em&gt;NO_MOUSE"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
+        <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_MOUSE"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
 <span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_KEYBOARD"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
 <span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_TOUCH"</span> <span class="attribute">if</span>=<span class="value">"desktop"</span> /&gt;</span></code></pre></p>
     </li>
     <li>
-        <p>The last change to our Project.xml file is to make sure we don&#39;t try to use the Debug logic on mobile. At the very bottom of the file, before the closing &lt;/project&gt; tag, add:</p>
+        <p>The last change to our Project.xml file is to make sure we don&#39;t try to use the Debug logic on mobile. At the very bottom of the file, before the closing <code>&lt;/project&gt;</code> tag, add:</p>
         <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_DEBUG"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span></code></pre></p>
     </li>
     <li>
         <p>Now that we have different versions of our music, we need to make sure we play the right version. In Main.hx, at the end of setupGame, replace the line where we start playing our music with:</p>
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> flash
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\&lt;/em&gt;_mp3, <span class="number">1</span>, <span class="literal">true</span>);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, <span class="number">1</span>, <span class="literal">true</span>);
 #<span class="keyword">else</span>
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel&lt;em&gt;Tutorial_Game\&lt;/em&gt;_ogg, <span class="number">1</span>, <span class="literal">true</span>);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__ogg, <span class="number">1</span>, <span class="literal">true</span>);
 #end</code></pre></p>
     </li>
     <li>
@@ -370,7 +370,7 @@ virtualPad = FlxDestroyUtil.destroy(virtualPad);
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> mobile
 virtualPad.visible = <span class="literal">false</span>;
 #end</code></pre></p>
-        <p>And, to make it reappear, in update, somewhere around where we set _inCombat to false, add:</p>
+        <p>And, to make it reappear, in update, somewhere around where we set <code>_inCombat</code> to false, add:</p>
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> mobile
 virtualPad.visible = <span class="literal">true</span>;
 #end</code></pre></p>
@@ -400,7 +400,7 @@ _right = _right || PlayState.virtualPad.buttonRight.status == FlxButton.PRESSED;
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> !FLX_NO_KEYBOARD</code></pre></p>
     </li>
     <li>
-        <p>At the end of our if (!_wait) statement, before the last } we need to add our touch check:</p>
+        <p>At the end of our <code>if (!_wait)</code> statement, before the last <code>}</code> we need to add our touch check:</p>
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> !FLX_NO_TOUCH
 <span class="keyword">var</span> didSelect:Bool = <span class="literal">false</span>;
 <span class="keyword">for</span> (touch <span class="keyword">in</span> FlxG.touches.justReleased())
@@ -432,7 +432,7 @@ _right = _right || PlayState.virtualPad.buttonRight.status == FlxButton.PRESSED;
 
 <p>And that&#39;s everything! You should be able to run your game on Flash, Windows (Neko, too!), and Android and have it work on each with slight variations. And you only have one project and one set of code!</p>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-XII">Here&#39;s the latest code</a>, and next we&#39;ll polish up our game and add a little juice to make it POP!</p>
+<p>Next we&#39;ll polish up our game and add a little juice to make it POP!</p>
 
 			<br>
 			<hr>

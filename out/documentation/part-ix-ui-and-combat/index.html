@@ -278,7 +278,7 @@
         _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="number">4</span>;
     }
 }</code></pre></p>
-        <p>This class extends FlxTypedGroup&lt;FlxSprite&gt; so that it can hold all of our FlxSprite objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 FlxText objects: 1 for Health, and 1 for Money, and 2 FlxSprites, for the icons to go next to the FlxTexts. At the end of our constructor, we have a forEach call - we use this to iterate through each of the items in this group, and it just sets their scrollFactor.x and scrollFactor.y to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.</p>
+        <p>This class extends <code>FlxTypedGroup&lt;FlxSprite&gt;</code> so that it can hold all of our FlxSprite objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 FlxText objects: 1 for Health, and 1 for Money, and 2 FlxSprites, for the icons to go next to the FlxTexts. At the end of our constructor, we have a forEach call - we use this to iterate through each of the items in this group, and it just sets their scrollFactor.x and scrollFactor.y to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.</p>
         <p>Finally, we have a function that we can call from anywhere to tell the HUD what it should display.</p>
     </li>
     <li>
@@ -289,7 +289,7 @@
 <span class="keyword">private</span> <span class="keyword">var</span> _health:Int = <span class="number">3</span>;</code></pre></p>
     </li>
     <li>
-        <p>In the create function, before super.create(), add:</p>
+        <p>In the create function, before <code>super.create()</code>, add:</p>
         <p><pre class="highlight"><code class="actionscript">_hud = <span class="keyword">new</span> HUD();
 add(_hud);</code></pre></p>
     </li>
@@ -313,7 +313,7 @@ _hud.updateHUD(_health, _money);</code></pre></p>
 <ol>
     <li>
         <p>The first component will be our CombatHUD class. This is a pretty big class - it&#39;s going to do most of the heavy lifting with our combat logic. You can see the complete class here:</p>
-        <p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx"><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx</a></a></p>
+        <p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/CombatHUD.hx">CombatHUD.hx</a></p>
         <p>Take some time to read through it to see how it works, then add it to your project.</p>
         <p>You will need to add a small function to our Enemy.hx class, as well:</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">changeEnemy</span><span class="params">(EType:Int)</span><span class="type">:Void</span>
@@ -400,7 +400,7 @@ add(_combatHud);</code></pre></p>
 
 <p>And that should do it! Test out your game and make sure that it works!</p>
 <p><img src="/images/tutorial/0020.png" /></p>
-<p>You can see the <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-IX">source here</a> to make sure you&#39;re on the same page. Next, we&#39;ll cover winning and losing and setting up all our different FlxStates.</p>
+<p>Next, we&#39;ll cover winning and losing and setting up all our different FlxStates.</p>
 
 			<br>
 			<hr>

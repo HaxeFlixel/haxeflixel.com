@@ -227,7 +227,8 @@
 			<p>Now it&#39;s time to make some maps for the player to move around in! To do this, we&#39;re going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel. For this part of the tutorial, we&#39;re just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.</p>
 
 <p>You can make your own, with 16x16 pixel tiles, or use this one:</p>
-<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-V/assets/images/tiles.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-V/assets/images/tiles.png" /></a></p>
+<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/tiles.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/
+assets/images/tiles.png" /></a></p>
 <p>(Note: the first tile should be empty!)</p>
 
 <ol>
@@ -284,15 +285,15 @@
         <p>Save this change. You&#39;re now playing with flixel-addons!</p>
     </li>
     <li>
-        <p>Go back to your PlayState, and,  underneath where you define your <em>player object, add:</p>
+        <p>Go back to your PlayState, and,  underneath where you define your _player object, add:</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _map:FlxOgmoLoader;
 <span class="keyword">private</span> <span class="keyword">var</span> _mWalls:FlxTilemap;</code></pre></p>
         <p>We&#39;re basically just creating an object to hold our Ogmo Map, and then another one to hold the FlxTilemap that we will generate from the Ogmo map.</p>
     </li>
     <li>
         <p>In the create function, before we setup the player object, add:</p>
-        <p><pre class="highlight"><code class="actionscript">_map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001\&lt;/em&gt;_oel);
-&lt;em&gt;mWalls = _map.loadTilemap(AssetPaths.tiles\&lt;/em&gt;_png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
+        <p><pre class="highlight"><code class="actionscript">_map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001__oel);
+_mWalls = _map.loadTilemap(AssetPaths.tiles__png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
 _mWalls.setTileProperties(<span class="number">1</span>, FlxObject.NONE);
 _mWalls.setTileProperties(<span class="number">2</span>, FlxObject.ANY);
 add(_mWalls);</code></pre></p>
@@ -315,12 +316,13 @@ _map.loadEntities(placeEntities, <span class="string">"entities"</span>);</code>
     <span class="keyword">if</span> (entityName == <span class="string">"player"</span>)
     {
         _player.x = x;
-        _player.y = y;&lt;br&gt;    }
+        _player.y = y;
+    }
 }</code></pre></p>
         <p>So, if this function gets passed an entity with the name &quot;player&quot;, it will set our player object&#39;s x and y values to the Entities x and y values (converting them from Strings to Ints).</p>
     </li>
     <li>
-        <p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after super.update(); add:</p>
+        <p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after <code>super.update();</code> add:</p>
         <p><pre class="highlight"><code class="actionscript">FlxG.collide(_player, _mWalls);</code></pre></p>
         <p>All this does is check collision between our player and our walls Tilemap each update, and will deal with overlaps accordingly.</p>
     </li>
@@ -336,7 +338,7 @@ offset.<span class="keyword">set</span>(<span class="number">4</span>, <span cla
     </li>
 </ol>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-V">Here is the source code</a> for what we have so far! In the next part, we&#39;ll talk about some small tweaks to the camera.</p>
+<p>In the next part, we&#39;ll talk about some small tweaks to the camera.</p>
 
 			<br>
 			<hr>

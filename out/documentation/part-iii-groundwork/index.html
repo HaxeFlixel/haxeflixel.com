@@ -268,7 +268,7 @@ add(_btnPlay);</code></pre></p>
 {</span>
     FlxG.switchState(<span class="keyword">new</span> PlayState());
 }</code></pre></p>
-        <p>This function calls FlxG.switchState, which switches the state from whatever the current state is (MenuState) to a new instance of PlayState.</p>
+        <p>This function calls <code>FlxG.switchState</code>, which switches the state from whatever the current state is (MenuState) to a new instance of PlayState.</p>
     </li>
     <li>
         <p>Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we&#39;re missing a few things.</p>
@@ -289,11 +289,11 @@ add(_btnPlay);</code></pre></p>
         <p>This is another utility class. This one gives us safe ways to remove and cleanup objects that we create.</p>
     </li>
     <li>
-        <p>Next, go down to the destroy function, and in a new line right after super.destroy(); add:</p>
+        <p>Next, go down to the destroy function, and in a new line right after <code>super.destroy();</code> add:</p>
         <p><pre class="highlight"><code class="actionscript">_btnPlay = FlxDestroyUtil.destroy(_btnPlay);</code></pre></p>
         <p>This is going to remove our button object from memory, as well as set the variable to null, which allows it to be completely cleared when garbage collection happens.</p>
         <p>It&#39;s good practice to make sure that any class-wide objects you create are properly destroyed, otherwise  you can start to see performance issues.</p>
-        <p>Note: I know we could have skipped this whole part if we had NOT defined _btnPlay as a class-wide variable, and instead just created it in the create function, but we&#39;ll be coming back to this button later on, and it&#39;s good practice to get into the habit of destroying your objects.</p>
+        <p>Note: I know we could have skipped this whole part if we had NOT defined <code>_btnPlay</code> as a class-wide variable, and instead just created it in the create function, but we&#39;ll be coming back to this button later on, and it&#39;s good practice to get into the habit of destroying your objects.</p>
     </li>
     <li>
         <p>If you test your game out now, it should go straight to a black screen with our &#39;Play&#39; button in the middle, and clicking the button will take you to another black screen. If that&#39;s what you get, it works! (Trust me!) So far, so good!</p>
@@ -308,7 +308,7 @@ add(_btnPlay);</code></pre></p>
 
 <ol>
     <li>
-        <p>In the Project list on the right side of your screen, right-click on your <code>source&#39; folder, and choose</code>Add&#39;, and then `New Class.&#39;.</p>
+        <p>In the Project list on the right side of your screen, right-click on your &quot;source&quot; folder, and choose &quot;Add&quot;, and then &quot;New Class.&quot;</p>
         <p><img src="/images/tutorial/0004.png" /></p>
     </li>
     <li>
@@ -328,7 +328,8 @@ add(_btnPlay);</code></pre></p>
 {</span>
     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)</span> 
     {</span>
-        <span class="keyword">super</span>(X, Y, SimpleGraphic);&lt;br&gt;    }
+        <span class="keyword">super</span>(X, Y, SimpleGraphic);
+    }
 }</code></pre></p>
         <p>We&#39;ll need to fix this up a bit to make it usable.</p>
     </li>
@@ -345,7 +346,7 @@ add(_btnPlay);</code></pre></p>
         <p>With classes, we use the &#39;super&#39; command to refer to the parent class. So, within out &#39;new&#39; constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.</p>
     </li>
     <li>
-        <p>Next, we&#39;ll want to create a placeholder image to show us where our Sprite is, so under  super(X, Y);, add:</p>
+        <p>Next, we&#39;ll want to create a placeholder image to show us where our Sprite is, so under <code>super(X, Y);</code>, add:</p>
         <p><pre class="highlight"><code class="actionscript">makeGraphic(<span class="number">16</span>, <span class="number">16</span>, FlxColor.BLUE);</code></pre></p>
         <p>(Make sure that an import is created for FlxColor, and if it isn&#39;t, add it.)</p>
         <p>All we&#39;re doing here is saying that we want to make this sprite&#39;s graphic be a 16x16 pixel blue square.</p>
@@ -354,10 +355,10 @@ add(_btnPlay);</code></pre></p>
         <p>For right now, we just want to get the Player class initialized, make sure that it works, and try adding it to our PlayState. It&#39;s not going to move or do anything yet, that will come in a minute. So save the changes to our Player class, and go back to the PlayState.</p>
         <p>We need to define our Player variable, so underneath the class line, add:</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _player:Player;</code></pre></p>
-        <p>And in the create() function, before super.create(); add:</p>
+        <p>And in the <code>create()</code> function, before super.create(); add:</p>
         <p><pre class="highlight"><code class="actionscript">_player = <span class="keyword">new</span> Player(<span class="number">20</span>, <span class="number">20</span>);
 add(_player);</code></pre></p>
-        <p>This simply assigns a new instance of our Player sprite to our _player variable, telling it to be placed at 20, 20 on the screen, and adds it to our PlayState.</p>
+        <p>This simply assigns a new instance of our Player sprite to our <code>_player</code> variable, telling it to be placed at 20, 20 on the screen, and adds it to our PlayState.</p>
     </li>
     <li>
         <p>If you run your project right now, you should see our blue player on the screen!</p>
@@ -374,7 +375,7 @@ add(_player);</code></pre></p>
     <li>
         <p>In your Player class, above your new constructor, add:</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="keyword">var</span> speed:Float = <span class="number">200</span>;</code></pre></p>
-        <p>Then, in the constructor, after you call makeGraphic, we need to add some drag:</p>
+        <p>Then, in the constructor, after you call <code>makeGraphic</code>, we need to add some drag:</p>
         <p><pre class="highlight"><code class="actionscript">drag.x = drag.y = <span class="number">1600</span>;</code></pre></p>
         <p>Drag, in HaxeFlixel, is sort of a way to slow down an object when it&#39;s not being moved. This will prevent our Player sprite from just running forever in the same direction when the user stops pressing any movement keys.</p>
         <p>This is sort of arbitrary based on what &#39;feels&#39; right - we can come back and tweak the numbers later on.</p>
@@ -448,7 +449,7 @@ velocity.y = Speed;</code></pre></p>
     <li>
         <p>Next, close the bracket from your &#39;if&#39; statement from earlier:</p>
         <p><pre class="highlight"><code class="actionscript">}</code></pre></p>
-        <p>...and that&#39;s the end of our movement() function!</p>
+        <p>...and that&#39;s the end of our <code>movement()</code> function!</p>
     </li>
     <li>
         <p>The only thing left to do is to add a call to this function in our update() function, and we&#39;re good to go!</p>
@@ -460,7 +461,7 @@ velocity.y = Speed;</code></pre></p>
 
 <p>Whew! It sounds a lot more complicated than it really is - if you try out the game right now, you&#39;ll see that you can run around the screen by pressing any combination of arrow keys and WASD!</p>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-III">Here&#39;s the source</a> for the two classes we&#39;ve worked on so far, so you can make sure you&#39;re on the right page. Next, we&#39;ll work on making the player sprite actually look like something!</p>
+<p>Next, we&#39;ll work on making the player sprite actually look like something!</p>
 
 			<br>
 			<hr>
