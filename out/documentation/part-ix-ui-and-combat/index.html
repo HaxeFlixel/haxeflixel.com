@@ -234,7 +234,7 @@
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxBasic</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxG</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">group</span>.<span class="title">FlxGroup</span>;
+<span class="title">import</span> <span class="title">flixel</span>.<span class="title">group</span>.<span class="title">FlxTypedGroup</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">text</span>.<span class="title">FlxText</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">util</span>.<span class="title">FlxColor</span>;
 <span class="title">using</span> <span class="title">flixel</span>.<span class="title">util</span>.<span class="title">FlxSpriteUtil</span>;
@@ -242,7 +242,7 @@
 <span class="title">class</span> <span class="title">HUD</span> <span class="title">extends</span> <span class="title">FlxTypedGroup</span>&lt;<span class="title">FlxSprite</span>&gt;
 {</span>
 
-    <span class="keyword">private</span> <span class="keyword">var</span> _sprBack:FlxSprite;
+    <span class="keyword">private</span> <span class="keyword">var</span> &lt;em&gt;sprBack:FlxSprite;
     <span class="keyword">private</span> <span class="keyword">var</span> _txtHealth:FlxText;
     <span class="keyword">private</span> <span class="keyword">var</span> _txtMoney:FlxText;
     <span class="keyword">private</span> <span class="keyword">var</span> _sprHealth:FlxSprite;
@@ -257,8 +257,8 @@
         _txtHealth.setBorderStyle(FlxText.BORDER_SHADOW, FlxColor.GRAY, <span class="number">1</span>, <span class="number">1</span>);
         _txtMoney = <span class="keyword">new</span> FlxText(<span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="string">"0"</span>, <span class="number">8</span>);
         _txtMoney.setBorderStyle(FlxText.BORDER_SHADOW, FlxColor.GRAY, <span class="number">1</span>, <span class="number">1</span>);
-        _sprHealth = <span class="keyword">new</span> FlxSprite(<span class="number">4</span>, _txtHealth.y + (_txtHealth.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.health&lt;strong&gt;png);
-        _sprMoney = <span class="keyword">new</span> FlxSprite(FlxG.width - <span class="number">12</span>, _txtMoney.y + (_txtMoney.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.coin&lt;/strong&gt;png);
+        _sprHealth = <span class="keyword">new</span> FlxSprite(<span class="number">4</span>, _txtHealth.y + (_txtHealth.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.health\&lt;/em&gt;_png);
+        &lt;em&gt;sprMoney = <span class="keyword">new</span> FlxSprite(FlxG.width - <span class="number">12</span>, _txtMoney.y + (_txtMoney.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.coin\&lt;/em&gt;_png);
         _txtMoney.alignment = <span class="string">"right"</span>;
         _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="number">4</span>;
         add(_sprBack);
@@ -315,6 +315,15 @@ _hud.updateHUD(_health, _money);</code></pre></p>
         <p>The first component will be our CombatHUD class. This is a pretty big class - it&#39;s going to do most of the heavy lifting with our combat logic. You can see the complete class here:</p>
         <p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx"><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx</a></a></p>
         <p>Take some time to read through it to see how it works, then add it to your project.</p>
+        <p>You will need to add a small function to our Enemy.hx class, as well:</p>
+        <p><pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">changeEnemy</span><span class="params">(EType:Int)</span><span class="type">:Void</span>
+{</span>
+    <span class="keyword">if</span> (etype != EType)
+    {
+        etype = EType;
+        loadGraphic(<span class="string">"assets/images/enemy-"</span> + Std.string(etype) + <span class="string">".png"</span>, <span class="literal">true</span>, <span class="number">16</span>, <span class="number">16</span>);
+    }
+}</code></pre></p>
     </li>
     <li>
         <p>Next, we need to get our CombatHUD into our PlayState. Add this to the top of the PlayState Class:</p>
@@ -352,7 +361,8 @@ add(_combatHud);</code></pre></p>
         }
         _inCombat = <span class="literal">false</span>;
         _player.active = <span class="literal">true</span>;
-        _grpEnemies.active = <span class="literal">true</span>;&lt;br&gt;    }
+        _grpEnemies.active = <span class="literal">true</span>;
+    }
 }</code></pre></p>
         <p>So, we&#39;re adding a check to see if the player touches an enemy. If they do, we&#39;ll call a callback to see if we should start combat or not.</p>
         <p>If we&#39;re in combat, we&#39;re simply going to keep checking to see if the combatHUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is VICTORY (one of our 4 enum values), we will kill the enemy, but if the player Fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.</p>
@@ -384,6 +394,7 @@ add(_combatHud);</code></pre></p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (isFlickering())
     <span class="keyword">return</span>;</code></pre></p>
         <p>At the very top, before doing anything else in that function.</p>
+        <p>You will also need to add <pre class="highlight"><code class="actionscript">using flixel.util.FlxSpriteUtil;</code></pre> to the top of the Enemy.hx class.
     </li>
 </ol>
 

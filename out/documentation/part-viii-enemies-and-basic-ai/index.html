@@ -374,10 +374,11 @@ playerPos = FlxPoint.<span class="keyword">get</span>();</code></pre></p>
         }
         <span class="keyword">else</span>
         {
-            _moveDir = FlxRandom.intRanged(<span class="number">0</span>, <span class="number">8</span>) &lt;em&gt; <span class="number">45</span>;
-            FlxAngle.rotatePoint(speed &lt;/em&gt; <span class="number">.5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, _moveDir, velocity);
+            _moveDir = FlxRandom.intRanged(<span class="number">0</span>, <span class="number">8</span>) * <span class="number">45</span>;
+            FlxAngle.rotatePoint(speed * <span class="number">.5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, _moveDir, velocity);
         }
-        _idleTmr = FlxRandom.intRanged(<span class="number">1</span>, <span class="number">4</span>);&lt;br&gt;    }
+        _idleTmr = FlxRandom.intRanged(<span class="number">1</span>, <span class="number">4</span>);
+    }
     <span class="keyword">else</span>
         _idleTmr -= FlxG.elapsed;
     }

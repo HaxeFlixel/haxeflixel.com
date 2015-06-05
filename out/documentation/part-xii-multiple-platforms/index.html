@@ -236,7 +236,7 @@
     <li>
         <p>When we initialize and interact with our button, we only want to do it on &#39;desktop&#39; platforms. So, at the top of the class, add:</p>
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> desktop
-<span class="keyword">private</span> <span class="keyword">var</span> _btnFullScreen:FlxButton;
+<span class="keyword">private</span> <span class="keyword">var</span> &lt;em&gt;btnFullScreen:FlxButton;
 #end</code></pre></p>
     </li>
     <li>
@@ -293,7 +293,7 @@ We do that by adding a new button to the MenuState:</p>
         <p>And, in create:</p>
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> desktop
 _btnExit = <span class="keyword">new</span> FlxButton(FlxG.width - <span class="number">28</span>, <span class="number">8</span>, <span class="string">"X"</span>, clickExit);
-_btnExit.loadGraphic(AssetPaths.button__png, <span class="literal">true</span>, <span class="number">20</span>, <span class="number">20</span>);
+_btnExit.loadGraphic(AssetPaths.button\&lt;/em&gt;_png, <span class="literal">true</span>, <span class="number">20</span>, <span class="number">20</span>);
 add(_btnExit);
 #end</code></pre></p>
         <p>Then our callback function just looks like:</p>
@@ -333,7 +333,7 @@ _btnExit = FlxDestroyUtil.destroy(_btnExit);
     <li>
         <p>Next, we have some definitions that are mostly commented out. Generally, mobile targets won&#39;t have access to a keyboard or mouse, and desktop targets won&#39;t have access to touch functionality. To make sure our game can handle these platforms properly, we will set some flags based on what target we&#39;re building for.</p>
         <p>Look for a section that looks like this and uncomment it (or just add this to your Project.xml):</p>
-        <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_MOUSE"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
+        <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX&lt;em&gt;NO_MOUSE"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
 <span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_KEYBOARD"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
 <span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_TOUCH"</span> <span class="attribute">if</span>=<span class="value">"desktop"</span> /&gt;</span></code></pre></p>
     </li>
@@ -344,9 +344,9 @@ _btnExit = FlxDestroyUtil.destroy(_btnExit);
     <li>
         <p>Now that we have different versions of our music, we need to make sure we play the right version. In Main.hx, at the end of setupGame, replace the line where we start playing our music with:</p>
         <p><pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> flash
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game&lt;strong&gt;mp3, <span class="number">1</span>, <span class="literal">true</span>);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\&lt;/em&gt;_mp3, <span class="number">1</span>, <span class="literal">true</span>);
 #<span class="keyword">else</span>
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game&lt;/strong&gt;ogg, <span class="number">1</span>, <span class="literal">true</span>);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel&lt;em&gt;Tutorial_Game\&lt;/em&gt;_ogg, <span class="number">1</span>, <span class="literal">true</span>);
 #end</code></pre></p>
     </li>
     <li>

@@ -284,15 +284,15 @@
         <p>Save this change. You&#39;re now playing with flixel-addons!</p>
     </li>
     <li>
-        <p>Go back to your PlayState, and,  underneath where you define your _player object, add:</p>
+        <p>Go back to your PlayState, and,  underneath where you define your <em>player object, add:</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _map:FlxOgmoLoader;
 <span class="keyword">private</span> <span class="keyword">var</span> _mWalls:FlxTilemap;</code></pre></p>
         <p>We&#39;re basically just creating an object to hold our Ogmo Map, and then another one to hold the FlxTilemap that we will generate from the Ogmo map.</p>
     </li>
     <li>
         <p>In the create function, before we setup the player object, add:</p>
-        <p><pre class="highlight"><code class="actionscript">_map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001&lt;strong&gt;oel);
-_mWalls = _map.loadTilemap(AssetPaths.tiles&lt;/strong&gt;png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
+        <p><pre class="highlight"><code class="actionscript">_map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001\&lt;/em&gt;_oel);
+&lt;em&gt;mWalls = _map.loadTilemap(AssetPaths.tiles\&lt;/em&gt;_png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
 _mWalls.setTileProperties(<span class="number">1</span>, FlxObject.NONE);
 _mWalls.setTileProperties(<span class="number">2</span>, FlxObject.ANY);
 add(_mWalls);</code></pre></p>

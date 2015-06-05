@@ -250,7 +250,7 @@
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0)</span> 
 {</span>
     <span class="keyword">super</span>(X, Y);
-    loadGraphic(AssetPaths.coin&lt;em&gt;_png, <span class="literal">false</span>, <span class="number">8</span>, <span class="number">8</span>);
+    loadGraphic(AssetPaths.coin__png, <span class="literal">false</span>, <span class="number">8</span>, <span class="number">8</span>);
 }</code></pre></p>
     </li>
     <li>
@@ -258,7 +258,7 @@
     </li>
     <li>
         <p>First, let&#39;s make a FlxGroup to hold all the coins in. In the top of our class, where we defined all our variables so far, add:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _grpCoins:FlxTypedGroup&lt;Coin&gt;;</code></pre></p>
+        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> &lt;em&gt;grpCoins:FlxTypedGroup&lt;Coin&gt;;</code></pre></p>
         <p>FlxGroups are like arrays of Flixel Objects which can be used in a lot of different ways. In this case, since our group will only be containing coins, we will make it a FlxTypedGroup.</p>
     </li>
     <li>
