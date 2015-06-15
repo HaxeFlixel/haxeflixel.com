@@ -309,14 +309,14 @@ add(_btnPlay);</code></pre></p>
 <ol>
     <li>
         <p>In the Project list on the right side of your screen, right-click on your &quot;source&quot; folder, and choose &quot;Add&quot;, and then &quot;New Class.&quot;</p>
-        <p><img src="/images/tutorial/0004.png" /></p>
+        <p><img src="../images/04_tutorials/0004.png" /></p>
     </li>
     <li>
         <p>In the New Haxe Class Dialog that pops up, enter &quot;Player&quot; for &quot;Name&quot;, and next to &quot;Base Class&quot;, click &quot;Browse.&quot; and search for &quot;flixel.FlxSprite&quot; and choose it.</p>
     </li>
     <li>
         <p>Once your screen looks like this, hit &quot;OK&quot;:</p>
-        <p><img src="/images/tutorial/0005.png" /></p>
+        <p><img src="../images/04_tutorials/0005.png" /></p>
     </li>
     <li>
         <p>You should now see a very basic class which extends FlxSprite:</p>
@@ -362,7 +362,7 @@ add(_player);</code></pre></p>
     </li>
     <li>
         <p>If you run your project right now, you should see our blue player on the screen!</p>
-        <p><img src="/images/tutorial/0006.png" /></p>
+        <p><img src="../images/04_tutorials/0006.png" /></p>
         <p>Now let&#39;s get it to move around!</p>
     </li>
 </ol>
@@ -415,9 +415,9 @@ _right = FlxG.keys.anyPressed([<span class="string">"RIGHT"</span>, <span class=
     </li>
     <li>
         <p>Next, we need to determine which direction to move the player, and by how much. There&#39;s a common mistake that I see from people making games which allow for diagonal movement, and that is that if they do something like this:</p>
-        <p><pre class="highlight"><code class="actionscript">velocity.x = Speed;
-velocity.y = Speed;</code></pre></p>
-        <p>While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">the way triangles work</a>. So, for our Player to move, we&#39;re not just going to set its velocity = Speed - that would be too easy! Instead, we&#39;re going to calculate exactly what its velocity should be with Angles!</p>
+        <p><pre class="highlight"><code class="actionscript">velocity.x = speed;
+velocity.y = speed;</code></pre></p>
+        <p>While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">the way triangles work</a>. So, for our player to move, we&#39;re not just going to set its <code>velocity</code> to <code>speed</code> - that would be too easy! Instead, we&#39;re going to calculate exactly what its velocity should be with angles!</p>
         <p>The first part of this is to figure out what angle we want to have the player move based on the keys that are being pressed. In HaxeFlixel, angle 0 is to the right, and -90 (or 270) is up.</p>
         <p><pre class="highlight"><code class="actionscript"><span class="keyword">var</span> mA:Float = <span class="number">0</span>;
 <span class="keyword">if</span> (_up)
