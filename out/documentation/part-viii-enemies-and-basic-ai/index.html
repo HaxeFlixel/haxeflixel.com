@@ -265,18 +265,18 @@
 
      <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">draw</span><span class="params">()</span><span class="type">:Void</span> 
      {</span>
-         <span class="keyword">if</span> ((velocity.x != <span class="number">0</span> || velocity.y != <span class="number">0</span> ) &amp;amp;&amp;amp; touching == FlxObject.NONE)
+         <span class="keyword">if</span> ((velocity.x != <span class="number">0</span> || velocity.y != <span class="number">0</span> ) &amp;&amp; touching == FlxObject.NONE)
          {
              <span class="keyword">if</span> (Math.abs(velocity.x) &gt; Math.abs(velocity.y))
              {
-                 <span class="keyword">if</span> (velocity.x &amp;lt; <span class="number">0</span>)
+                 <span class="keyword">if</span> (velocity.x &lt; <span class="number">0</span>)
                      facing = FlxObject.LEFT;
                  <span class="keyword">else</span>
                      facing = FlxObject.RIGHT;
              }
              <span class="keyword">else</span>
              {
-                 <span class="keyword">if</span> (velocity.y &amp;lt; <span class="number">0</span>)
+                 <span class="keyword">if</span> (velocity.y &lt; <span class="number">0</span>)
                      facing = FlxObject.UP;
                  <span class="keyword">else</span>
                      facing = FlxObject.DOWN;
@@ -353,7 +353,7 @@
      {
          _brain.activeState = chase;
      }
-     <span class="keyword">else</span> <span class="keyword">if</span> (_idleTmr &amp;lt;= <span class="number">0</span>)
+     <span class="keyword">else</span> <span class="keyword">if</span> (_idleTmr &lt;= <span class="number">0</span>)
      {
          <span class="keyword">if</span> (FlxRandom.chanceRoll(<span class="number">1</span>))
          {
