@@ -308,7 +308,7 @@
 <li><p>We need to add the GameOverState. This is going to be a pretty simple FlxState where we show a message - either &quot;Game Over&quot; or &quot;You Win!&quot;, depending on our won flag, and the final score for this player. We will also use flixel&#39;s save/load functionality to compare the previous hi-scores, and, if the new score is higher, replace the saved hi-score, and show the hi-score on the screen.</p>
 <p> Finally, we have a button to take the player back to the main menu.</p>
 <p> Here is the code for that State:</p>
-<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/GameOverState.hx">GameOverState.hx</a></p>
+<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/GameOverState.hx">GameOverState.hx</a></p>
 </li>
 </ol>
 <p>If you test your game, you should be able to trigger the GameOverState by either dying in combat or defeating the boss, and then clicking on the button in the GameOverState will take you back to our MenuState so you can play again. If all of that works, you&#39;re on the right track! But… our MenuState is looking a little bland, now… let&#39;s fix that up!</p>
@@ -347,7 +347,7 @@
 </li>
 <li><p>The OptionsState that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (hi-scores, etc), as well as a simple FlxBar to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will &#39;remember&#39; what volume it was last set to (I know there&#39;s no sound…. yet ;) )</p>
 <p> The code for this State looks like this:</p>
-<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/OptionsState.hx">OptionsState.hx</a></p>
+<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx">OptionsState.hx</a></p>
 <p> Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, goto our Main.hx file, and, in setupGame, after addChild, add:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> _save:FlxSave = <span class="keyword">new</span> FlxSave();
  _save.bind(<span class="string">"flixel-tutorial"</span>);

@@ -248,11 +248,9 @@ We can add it to each of our states&#39; create function like so (right before <
  <span class="keyword">private</span> <span class="keyword">var</span> _sprWave:FlxWaveSprite;</code></pre>
 </li>
 <li><p>In the constructor, we&#39;ll initialize these two objects (add this before we create our _sprBack):</p>
-<pre class="highlight"><code class="markdown"> <span class="code">```</span>haxe</code></pre>
-<p> _sprScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
- _sprWave = new FlxWaveSprite(_sprScreen, WaveMode.ALL, 4, -1, 4);
- add(_sprWave);
- ```</p>
+<pre class="highlight"><code class="actionscript"> _sprScreen = <span class="keyword">new</span> FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
+ _sprWave = <span class="keyword">new</span> FlxWaveSprite(_sprScreen, WaveMode.ALL, <span class="number">4</span>, -<span class="number">1</span>, <span class="number">4</span>);
+ add(_sprWave);</code></pre>
 <p> First, we make our <code>_sprScreen</code>, make it the size of the window, and just leave it empty for now. Then we make a FlxWaveSprite, tell it to target our <code>_sprScreen</code>, and set its properties.</p>
 </li>
 <li><p>Next, in <code>initCombat</code> we want to make our <code>_sprScreen</code> take a copy of whatever is on the camera&#39;s buffer and apply it to itself, and then desaturate the image. Our FlxWaveSprite will always copy whatever is on our <code>_sprScreen</code> every update automatically.</p>
