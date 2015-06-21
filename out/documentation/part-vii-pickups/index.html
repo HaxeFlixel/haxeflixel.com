@@ -225,95 +225,79 @@
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/08-part-vii-pickups.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>Now that we have our little guy running around our map, lets give him something to pickup. We&#39;ll add some simple coins that will add to the player&#39;s score when they are picked up.</p>
-
 <ol>
-    <li>
-        <p>Open up your project in Ogmo again, and go to Project &gt; Edit Project.</p>
-    </li>
-    <li>
-        <p>On the Entities tab, add a new entity:</p>
-        <p><img src="../images/04_tutorials/0014.png" /></p>
-    </li>
-    <li>
-        <p>Open up the level we used before, and, on the &#39;entities&#39; layer, scatter a bunch of coins around:</p>
-        <p><img src="../images/04_tutorials/0015.png" /></p>
-    </li>
-    <li>
-        <p>We&#39;re going to make our coins be 8x8 pixels. For the coin&#39;s graphic, you can use this image <a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/coin.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/coin.png" /></a>, or make your own. Make sure you save this in &quot;assets/images&quot;.</p>
-    </li>
-    <li>
-        <p>Get back into FlashDevelop, and make a new class:</p>
-        <p><img src="../images/04_tutorials/0016.png" /></p>
-    </li>
-    <li>
-        <p>For now, our coin is going to be really simple. Just change the constructor to look like this:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0)</span> 
+<li><p>Open up your project in Ogmo again, and go to Project &gt; Edit Project.</p>
+</li>
+<li><p>On the Entities tab, add a new entity:</p>
+<p> <img src="../images/04_tutorials/0014.png" alt=""></p>
+</li>
+<li><p>Open up the level we used before, and, on the &#39;entities&#39; layer, scatter a bunch of coins around:</p>
+<p> <img src="../images/04_tutorials/0015.png" alt=""></p>
+</li>
+<li><p>We&#39;re going to make our coins be 8x8 pixels. For the coin&#39;s graphic, you can use this image <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/coin.png" alt="">, or make your own. Make sure you save this in &quot;assets/images&quot;.</p>
+</li>
+<li><p>Get back into FlashDevelop, and make a new class:</p>
+<p> <img src="../images/04_tutorials/0016.png" alt=""></p>
+</li>
+<li><p>For now, our coin is going to be really simple. Just change the constructor to look like this:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0)</span> 
+ {</span>
+     <span class="keyword">super</span>(X, Y);
+     loadGraphic(AssetPaths.coin__png, <span class="literal">false</span>, <span class="number">8</span>, <span class="number">8</span>);
+ }</code></pre>
+</li>
+<li><p>Now, head back to the PlayState. We need to change our map logic so that when it is loading the entities, when it sees a coin in our Ogmo file, it will add a coin to our state.</p>
+</li>
+<li><p>First, let&#39;s make a FlxGroup to hold all the coins in. In the top of our class, where we defined all our variables so far, add:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _grpCoins:FlxTypedGroup&lt;Coin&gt;;</code></pre>
+<p> FlxGroups are like arrays of Flixel Objects which can be used in a lot of different ways. In this case, since our group will only be containing coins, we will make it a FlxTypedGroup.</p>
+<p> In the create function, after we add our walls, and before we initialize our player, we need to initialize and add our Coin group:</p>
+<pre class="highlight"><code class="actionscript"> _grpCoins = <span class="keyword">new</span> FlxTypedGroup&lt;Coin&gt;();
+ add(_grpCoins);</code></pre>
+</li>
+<li><p>Next, we just want to change our <code>placeEntities</code> function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">else</span> <span class="keyword">if</span> (entityName == <span class="string">"coin"</span>)
+ {
+     _grpCoins.add(<span class="keyword">new</span> Coin(x + <span class="number">4</span>, y + <span class="number">4</span>));
+ }</code></pre>
+<p> This will simply create a new coin, tell it to be at the position defined in the Ogmo file (+4 x and y to center it on the tile), and add it to the Coin group.</p>
+</li>
+<li><p>Now we need to have the player be able to collect the coins. We&#39;re going to use an overlap check to do this. In update, after your <code>FlxG.collide</code> call, add:</p>
+<pre class="highlight"><code class="actionscript">FlxG.overlap(_player, _grpCoins, playerTouchCoin);</code></pre>
+<p>This just says: every update, check if there are any overlaps between the player and the coin group, and if there are, call <code>playerTouchCoin</code>.</p>
+</li>
+<li><p>Let&#39;s add the <code>playerTouchCoin</code> callback now:</p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">playerTouchCoin</span><span class="params">(P:Player, C:Coin)</span><span class="type">:Void</span>
 {</span>
-    <span class="keyword">super</span>(X, Y);
-    loadGraphic(AssetPaths.coin__png, <span class="literal">false</span>, <span class="number">8</span>, <span class="number">8</span>);
-}</code></pre></p>
-    </li>
-    <li>
-        <p>Now, head back to the PlayState. We need to change our map logic so that when it is loading the entities, when it sees a coin in our Ogmo file, it will add a coin to our state.</p>
-    </li>
-    <li>
-        <p>First, let&#39;s make a FlxGroup to hold all the coins in. In the top of our class, where we defined all our variables so far, add:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> &lt;em&gt;grpCoins:FlxTypedGroup&lt;Coin&gt;;</code></pre></p>
-        <p>FlxGroups are like arrays of Flixel Objects which can be used in a lot of different ways. In this case, since our group will only be containing coins, we will make it a FlxTypedGroup.</p>
-    </li>
-    <li>
-        <p>In the create function, after we add our walls, and before we initialize our player, we need to initialize and add our Coin group:</p>
-        <p><pre class="highlight"><code class="actionscript">_grpCoins = <span class="keyword">new</span> FlxTypedGroup&lt;Coin&gt;();
-add(_grpCoins);</code></pre></p>
-    </li>
-    <li>
-        <p>Next, we just want to change our <code>placeEntities</code> function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">else</span> <span class="keyword">if</span> (entityName == <span class="string">"coin"</span>)
-{
-    _grpCoins.add(<span class="keyword">new</span> Coin(x + <span class="number">4</span>, y + <span class="number">4</span>));
-}</code></pre></p>
-        <p>This will simply create a new coin, tell it to be at the position defined in the Ogmo file (+4 x and y to center it on the tile), and add it to the Coin group.</p>
-    </li>
-    <li>
-        <p>Now we need to have the player be able to collect the coins. We&#39;re going to use an overlap check to do this. In update, after your <code>FlxG.collide</code> call, add:</p>
-        <p><pre class="highlight"><code class="actionscript">FlxG.overlap(_player, _grpCoins, playerTouchCoin);</code></pre></p>
-        <p>This just says: every update, check if there are any overlaps between the player and the coin group, and if there are, call <code>playerTouchCoin</code>.</p>
-    </li>
-    <li>
-        <p>Let&#39;s add the <code>playerTouchCoin</code> callback now:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">playerTouchCoin</span><span class="params">(P:Player, C:Coin)</span><span class="type">:Void</span>
-{</span>
-    <span class="keyword">if</span> (P.alive &amp;&amp; P.exists &amp;&amp; C.alive &amp;&amp; C.exists)
+    <span class="keyword">if</span> (P.alive &amp;amp;&amp;amp; P.exists &amp;amp;&amp;amp; C.alive &amp;amp;&amp;amp; C.exists)
     {
         C.kill();
     }
-}</code></pre></p>
-        <p>This function simply verifies that the player and the coin that overlap each other are both alive and exist, and if so, kill the coin (we&#39;ll add the score a little later on).</p>
-        <p>If you run the game right now, as you walk around the map, each coin you touch will disappear. Works great, but it&#39;s a little boring… Let&#39;s add a little style!</p>
-    </li>
-    <li>
-        <p>Go back to your Coin class, and add these functions:</p>
-            <p><pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">kill</span><span class="params">()</span><span class="type">:Void</span>
+}</code></pre>
+<p>This function simply verifies that the player and the coin that overlap each other are both alive and exist, and if so, kill the coin (we&#39;ll add the score a little later on).</p>
+<p>If you run the game right now, as you walk around the map, each coin you touch will disappear. Works great, but it&#39;s a little boring… Let&#39;s add a little style!</p>
+</li>
+<li><p>Go back to your Coin class, and add these functions:</p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">kill</span><span class="params">()</span><span class="type">:Void</span>
 {</span>
     alive = <span class="literal">false</span>;
     FlxTween.tween(<span class="keyword">this</span>, { alpha:<span class="number">0</span>, y:y - <span class="number">16</span> }, <span class="number">.33</span>, { ease:FlxEase.circOut, complete:finishKill } );
 }
 
-<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">finishKill</span><span class="params">(&lt;/em&gt;)</span><span class="type">:Void</span>
+<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">finishKill</span><span class="params">(_)</span><span class="type">:Void</span>
 {</span>
     exists = <span class="literal">false</span>;
-}</code></pre></p>
-        <p>First, we override the kill function - normally, by calling kill on an object, it will set both the alive and exists properties to false. In this case, we want to make alive as false, but we don&#39;t want to make exists false just yet (objects with exists = false do not get drawn on the screen). Instead, we initialize a FlxTween.</p>
-        <p>FlxTween is a powerful tool that lets you animate an object&#39;s properties. For our coins, we want to make it fade out while also rising up.</p>
-        <p>We set the duration to .33 seconds, and the tween type to ONESHOT so it only happens one time (instead of looping). We are using the &#39;circOut&#39; easing style, to make it look a little nicer, and we want to call the finishKill function when the Tween has completed, which just sets the coin&#39;s exists property to false, removing it from the screen.</p>
-        <p>Normally, the FlxTween complete callback will pass the FlxTween, but the &quot;_&quot; parameter in finishKill just allows us to tell our function that we don&#39;t care about the parameter being passed to it.</p>
-    </li>
+}</code></pre>
+<p>First, we override the kill function - normally, by calling kill on an object, it will set both the alive and exists properties to false. In this case, we want to make alive as false, but we don&#39;t want to make exists false just yet (objects with exists = false do not get drawn on the screen). Instead, we initialize a FlxTween.</p>
+<p>FlxTween is a powerful tool that lets you animate an object&#39;s properties. For our coins, we want to make it fade out while also rising up.</p>
+<p>We set the duration to .33 seconds, and the tween type to ONESHOT so it only happens one time (instead of looping). We are using the &#39;circOut&#39; easing style, to make it look a little nicer, and we want to call the finishKill function when the Tween has completed, which just sets the coin&#39;s exists property to false, removing it from the screen.</p>
+<p>Normally, the FlxTween complete callback will pass the FlxTween, but the &quot;_&quot; parameter in finishKill just allows us to tell our function that we don&#39;t care about the parameter being passed to it.</p>
+</li>
 </ol>
-
 <p>Try out the game now, and you&#39;ll notice the difference when you pick up coins! We&#39;ll do some more of this later on when we start adding &#39;juice&#39; to our game.</p>
-<p><img src="../images/04_tutorials/0016b.png" /></p>
-
+<p><img src="../images/04_tutorials/0016b.png" alt=""></p>
 <p>In the next part, we&#39;ll talk about enemies!</p>
+
 
 			<br>
 			<hr>
