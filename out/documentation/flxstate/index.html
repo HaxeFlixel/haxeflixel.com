@@ -246,23 +246,22 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/06-flxstate.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>This is the basis for your game&#39;s levels and menus each described in a &quot;state&quot; structure. The state is a way of organising your game objects for the state that the game is currently in. For example, when you create level 0 of your game its much more organized to only have the code for that level, not every level. Also it&#39;s good to use switching states to clear your memory, to avoid memory leaks. A typical Flixel game will have a separate FlxState class for every level and menu.</p>
+			<p>This is the basis for your game&#39;s levels and menus, each described in a &quot;state&quot; structure. The state is a way of organising your game objects for the state that the game is currently in. For example, when you create level 0 of your game it&#39;s much more organized to only have the code for that level, not every level. Also it&#39;s good to use switching states to clear your memory, to avoid memory leaks. A typical Flixel game will have a separate FlxState class for every level and menu.</p>
 <p><img src="../images/02_handbook/flixel-state-0.png" width="100%" /></p>
-<p>In each FlxState all the FlxSprites are added to be rendered.</p>
+<p>In each <code>FlxState</code> all the FlxSprites are added to be rendered.</p>
 <p><img src="../images/02_handbook/flixel-state-1.png" width="100%" /></p>
 <h3 id="important-methods">Important Methods</h3>
 <h4 id="create-">create()</h4>
 <p>This is where you setup and create all your state&#39;s objects; for example your level tilemaps, your player sprites, spawn your initial enemies. Flixel runs this method before it starts to render your state so its the perfect place.</p>
-<h4 id="add-object-flxsprite-">add(object:FlxSprite)</h4>
+<h4 id="add-object-flxbasic-">add(object:FlxBasic)</h4>
 <p>This is the place where you add your sprites, tilemaps etc to your state to be rendered. It works similar to the NME display list api addChild().</p>
-<h4 id="remove-object-flxsprite-">remove(object:FlxSprite)</h4>
+<h4 id="remove-object-flxbasic-">remove(object:FlxBasic)</h4>
 <p>This is the place where you remove sprites etc you have added to your state. Everything you remove still exists so you can add it back later. If you&#39;re not going to use the removed object again you might want to consider removing it from memory by setting it as null for example.</p>
 <h4 id="update-">update()</h4>
 <p>This is the place where you can run code on every frame of your game. It&#39;s where you setup your input controls, trigger movement and almost all of your gameplay logic.</p>
 <h4 id="destroy-">destroy()</h4>
 <p>This is a common method throughout Flixel that ensures that you remove objects from the memory. If you don&#39;t properly destroy your objects in your states the objects may not be cleaned up by the garbage collection and consume memory over time.</p>
-<pre class="highlight"><code class="actionscript">
-<span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
 
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
 
@@ -286,8 +285,7 @@
     }
 }</code></pre>
 <p>Here is an example of a simple game state;</p>
-<pre class="highlight"><code class="actionscript">
-<span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
 
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">tile</span>.<span class="title">FlxTilemap</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxObject</span>;
@@ -303,7 +301,7 @@
     <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
     {</span>
         <span class="comment">//create a main player</span>
-        wizard = <span class="keyword">new</span> FlxSprite(<span class="number">200</span>,<span class="number">200</span>,<span class="string">'assets/player.png'</span>);
+        wizard = <span class="keyword">new</span> FlxSprite(<span class="number">200</span>, <span class="number">200</span>,<span class="string">'assets/player.png'</span>);
         wizard.maxVelocity.<span class="keyword">set</span>(<span class="number">80</span>, <span class="number">200</span>);
         wizard.acceleration.y = <span class="number">200</span>; <span class="comment">// gravity</span>
         wizard.drag.x = wizard.maxVelocity.x * <span class="number">4</span>;
@@ -330,7 +328,7 @@
         }
         <span class="keyword">if</span> (FlxG.keys.SPACE &amp;&amp; player.isTouching(FlxObject.FLOOR))
         {
-            wizard.velocity.y = -wizard.maxVelocity.y / <span class="number">2</span>;
+                wizard.velocity.y = -wizard.maxVelocity.y / <span class="number">2</span>;
         }
         super.update();
     }

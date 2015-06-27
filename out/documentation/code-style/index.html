@@ -219,7 +219,7 @@
 			<p>This is HaxeFlixel&#39;s code style. Not the entire codebase conforms for it at the moment, but at least any new code should be written with this in mind.</p>
 <h2 id="line-breaks">Line Breaks</h2>
 <h3 id="before-opening-curly-brackets">Before Opening Curly Brackets</h3>
-<p>There should always be a single line break before a opening curly brackets.</p>
+<p>There should always be a single line break before an opening curly bracket.</p>
 <p><strong>Good:</strong></p>
 <pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span>
 {</span>
@@ -266,7 +266,7 @@
 
 }</code></pre>
 <h3 id="in-function-bodies">In Function Bodies</h3>
-<p>Using line breaks to group code section that logically belong together can help readability like in this example:</p>
+<p>Using line breaks to group code sections that logically belong together can help readability like in this example:</p>
 <pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">resetHelpers</span><span class="params">()</span><span class="type">:Void</span>
 {</span>
     resetFrameSize();
@@ -295,7 +295,7 @@
 <p>...but still gets the idea of what this function does across. The second example has a lot of &quot;noise&quot;-words that don&#39;t provide any additional value. The following function name would still be acceptable, more accurate than example 1 even:</p>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootBulletAtEnemy</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
 <p>However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary. </p>
-<p>An example for a bad / too simple name would be <code>shoot()</code> instead of <code>shootEnemy()</code> in this example.</p>
+<p>An example for a bad / too simple name would be <code>shoot()</code> instead of <code>shootEnemy()</code>.</p>
 <h3 id="spacing">Spacing</h3>
 <p>The equals sign (<code>=</code>) and commas (<code>,</code>) in function headers / calls should always be separated by a single space. Spaces should <em>not</em> be used after opening and before closing brackets.</p>
 <table>
@@ -352,8 +352,7 @@
 </tbody>
 </table>
 <h3 id="parameter-names">Parameter Names</h3>
-<p>Use lowerCamelCases for function parameters 
-and use <code>this</code> to explicitly reference to class members (only when neccessary):</p>
+<p>Use lowerCamelCases for function parameters and use <code>this</code> to explicitly reference to class members (only when neccessary):</p>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">translate</span><span class="params">(words:String, bableFish:BableFish)</span><span class="type">:Void</span>
 {</span>
     this.words = words;
@@ -363,8 +362,7 @@ and use <code>this</code> to explicitly reference to class members (only when ne
 {</span>
     words = Words;
 }</code></pre>
-<p>In the core of HaxeFlixel, there are a lot of method parameters written in capitalized letters (not preferred in Haxe),
-this is mostly legacy from the AS3 Flixel&#39;s code style and hard to change them all. However, newly written functions should follow the lowerCamelCases style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.</p>
+<p>In the core of HaxeFlixel, there are a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel&#39;s code style and hard to change them all. However, newly written functions should follow the lowerCamelCase style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.</p>
 <h2 id="colon-spacing">Colon Spacing</h2>
 <p>No extra spaces should be used before and after colons:</p>
 <table>

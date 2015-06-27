@@ -295,12 +295,8 @@
  }</code></pre>
 </li>
 <li><p>Then, make sure you clean up your sound object again (in destroy):</p>
+<pre class="highlight"><code class="actionscript">_sndStep = FlxDestroyUtil.destroy(_sndStep);</code></pre>
 </li>
-</ol>
-<pre class="highlight"><code class="d"><span class="string">``</span><span class="string">`haxe
-_sndStep = FlxDestroyUtil.destroy(_sndStep);
-`</span><span class="string">``</span></code></pre>
-<ol>
 <li><p>Next, let&#39;s head over to PlayState. We really only need 1 sound to be in the PlayState itself, and that&#39;s the one for picking up a coin. While you could put this into the Coin class, because there could be a lot of coins loaded at once, and because we really can&#39;t pick up more than one coin at a time (so the sounds don&#39;t need to overlap), putting a single coin sound effect in our PlayState saves us a bit of overhead.</p>
 <p>So, just like our other sounds, initialize the variable:</p>
 <pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _sndCoin:FlxSound;</code></pre>
