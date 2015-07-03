@@ -408,10 +408,16 @@
 <p> Next, close the bracket from your &#39;if&#39; statement from earlier.
  ...and that&#39;s the end of our <code>movement()</code> function!</p>
 </li>
-<li><p>The only thing left to do is to add a call to this function in our update() function, and we&#39;re good to go!
- Just before the <code>super.update();</code>, add:</p>
-<pre class="highlight"><code class="actionscript"> movement();</code></pre>
-<p> The update function, as you should remember, is called each &#39;frame&#39; of the game. So, each time our PlayState gets its update called, when it calls update on all of its members, it will trigger the player&#39;s update which will check our movement() logic, adjust the player&#39;s velocity accordingly, and then call its super.update(), which will take the velocity that we&#39;ve just changed into account and figures out where the player sprite should move.</p>
+<li><p>The only thing left to do is to <code>override</code> the <code>update()</code> function in <code>Player.hx</code> as well and call <code>movement()</code> from it. FlashDevelop can generate the necessary boilerplate code for you, just type <code>override</code> and a space, after which a completion popup should appear:</p>
+<p> <img src="../images/04_tutorials/overrideCompletion.png" alt=""></p>
+<p> Select <code>update</code> and press enter.</p>
+<p> Now you just need to add the function call, after which it should look like this:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span> 
+ {</span>
+     movement();
+     super.update();
+ }</code></pre>
+<p> The <code>update()</code> function, as you should remember, is called each &#39;frame&#39; of the game. So, each time our <code>PlayState</code> gets its <code>update()</code> called, it calls <code>update()</code> on all of its <code>members</code>, including the player&#39;s <code>update()</code>. This in turn will run our <code>movement()</code> logic and adjust the player&#39;s <code>velocity</code> accordingly. After that, it call its <code>super.update()</code>, which will take the <code>velocity</code> that we&#39;ve just changed into account and figures out where the player sprite should move to.</p>
 </li>
 </ol>
 <p>Whew! It sounds a lot more complicated than it really is - if you try out the game right now, you&#39;ll see that you can run around the screen by pressing any combination of arrow keys and WASD!</p>
