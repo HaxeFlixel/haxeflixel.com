@@ -294,7 +294,7 @@
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootAtASpecificEnemyWithABulletTypeOf</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
 <p>...but still gets the idea of what this function does across. The second example has a lot of &quot;noise&quot;-words that don&#39;t provide any additional value. The following function name would still be acceptable, more accurate than example 1 even:</p>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootBulletAtEnemy</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
-<p>However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary. </p>
+<p>However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary.</p>
 <p>An example for a bad / too simple name would be <code>shoot()</code> instead of <code>shootEnemy()</code>.</p>
 <h3 id="spacing">Spacing</h3>
 <p>The equals sign (<code>=</code>) and commas (<code>,</code>) in function headers / calls should always be separated by a single space. Spaces should <em>not</em> be used after opening and before closing brackets.</p>
@@ -458,14 +458,14 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <li>getters and setters are the very end of a class (as they should always be private)</li>
 </ol>
 <h2 id="comments">Comments</h2>
-<p>Comments should only be used when you can&#39;t find a way to express the same thing in code. They tend to add noise to the code base and rarely get updated when the code changes, which results in misinformation and inaccurate comments. </p>
+<p>Comments should only be used when you can&#39;t find a way to express the same thing in code. They tend to add noise to the code base and rarely get updated when the code changes, which results in misinformation and inaccurate comments.</p>
 <p>Take the following comment section for example, it does not provide <em>any</em> additional value beyond what the code and the class / parameter names already tell you (one of the reasons why choosing good names is so important!). It should thus be removed completely.</p>
 <pre class="highlight"><code class="actionscript"><span class="comment">/**
  * Sets the position.
- * 
+ *
  * @param    x    The x coordinate.
  * @param    y     The y coordinate.
- */</span> 
+ */</span>
 <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setPosition</span><span class="params">(x:Int, y:Int)</span><span class="type">:Void</span></span></code></pre>
 <h2 id="class-names">Class names</h2>
 <p>All class names should be prefixed by <code>Flx</code>, e.g.:</p>
@@ -475,7 +475,7 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <li><code>FlxSprite</code></li>
 <li>etc..</li>
 </ul>
-<p>Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing. </p>
+<p>Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing.</p>
 <p>This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don&#39;t when writing a game.</p>
 <h2 id="indentation-and-formatting-tabs-and-spaces">Indentation and Formatting / Tabs and spaces</h2>
 <p>Tabs should be used for indentation <em>everywhere</em>.</p>
@@ -483,14 +483,14 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <p>The most common example where formatting is needed are the comment sections for functions:</p>
 <pre class="highlight"><code class="actionscript"><span class="comment">/**
  * Sets the position.
- * 
+ *
  * @param   x   The x coordinate.
  * @param   y   The y coordinate.
- */</span> 
+ */</span>
 <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setPosition</span><span class="params">(x:Int, y:Int)</span><span class="type">:Void</span></span></code></pre>
 <h2 id="position-of-metadata">Position of metadata</h2>
 <p>Metadata should always be placed in a new line for increased readability:</p>
-<pre class="highlight"><code class="actionscript">@:isVar 
+<pre class="highlight"><code class="actionscript">@:isVar
 @:allow(flixel.tweens.FlxTween)
 <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
 <p>as opposed to:</p>
@@ -499,11 +499,13 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <p>There shouldn&#39;t be more than one empty line to separate sections.</p>
 <h2 id="using-switch-case-as-an-expression">Using switch-case as an Expression</h2>
 <p>Unlike in most other languages with object-oriented syntax, everything in Haxe is an expression. This extends to <code>switch-case</code>, meaning that it evaluates to a value. This value can be assinged to a variable, passed to a function or simply returned by a function:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getColor</span><span class="params">(color:Color)</span><span class="type">:Int</span> {</span>
-  <span class="keyword">return</span> <span class="keyword">switch</span> (color) {
+<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getColor</span><span class="params">(color:Color)</span><span class="type">:Int</span>
+{</span>
+  <span class="keyword">return</span> <span class="keyword">switch</span> (color)
+  {
     <span class="keyword">case</span> Color.RED: <span class="number">0xff0000</span>;
     <span class="keyword">case</span> Color.BLUE: <span class="number">0x0000ff</span>;
-    <span class="keyword">case</span> Color.GREEN: <span class="number">0x00ff00</span>;  
+    <span class="keyword">case</span> Color.GREEN: <span class="number">0x00ff00</span>;
   }
 }</code></pre>
 <p>This is preferable to how this code would look like in a lot of other languages, for example C#:</p>
