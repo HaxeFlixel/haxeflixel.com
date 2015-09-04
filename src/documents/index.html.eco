@@ -7,7 +7,7 @@ title: 'Home'
     <div class="home-header home-section">
 
         <a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
-            <img src="images/haxeflixel.svg" width="200">
+            <img src="images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
         </a>
 
         <h1>HaxeFlixel</h1>
@@ -56,15 +56,15 @@ title: 'Home'
         <p class="lead-line-large">Cross-compile your games <a href="documentation/about">natively</a> to:</p>
 
         <div class="platform-logos-home">
-            <img width="80px" height="90px" src="images/targets/linux-logo.svg">
-            <img width="80px" height="92px" src="images/targets/apple-logo.svg">
-            <img width="80px" height="80px" src="images/targets/windows-logo.svg">
-            <img width="80px" height="90px" src="images/targets/android-logo.svg">
-            <img width="80px" height="67px" src="images/targets/ios-logo.svg">
-            <img width="80px" height="80px" src="images/targets/neko-logo.jpg">
-            <img width="80px" height="80px" src="images/targets/ouya-logo.svg">
-            <img width="80px" height="65px" src="images/targets/blackberry-logo.svg">
-            <img width="80px" height="80px" src="images/targets/flash-logo.svg">
+            <img width="80px" height="90px" src="images/targets/linux-logo.svg" alt="Linux">
+            <img width="80px" height="92px" src="images/targets/apple-logo.svg" alt="Mac">
+            <img width="80px" height="80px" src="images/targets/windows-logo.svg" alt="Windows">
+            <img width="80px" height="90px" src="images/targets/android-logo.svg" alt="Android">
+            <img width="80px" height="67px" src="images/targets/ios-logo.svg" alt="iOS">
+            <img width="80px" height="80px" src="images/targets/neko-logo.jpg" alt="Neko">
+            <img width="80px" height="80px" src="images/targets/ouya-logo.svg" alt="OUYA">
+            <img width="80px" height="65px" src="images/targets/blackberry-logo.svg" alt="BlackBerry">
+            <img width="80px" height="80px" src="images/targets/flash-logo.svg" alt="Flash">
         </div>
     </div>
 

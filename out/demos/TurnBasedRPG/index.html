@@ -7,7 +7,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-	<title>Zoi: The Escape | HaxeFlixel 2D Game Framework</title>
+	<title>TurnBasedRPG | HaxeFlixel 2D Game Framework</title>
 
 	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
 	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
@@ -39,18 +39,18 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
 
 					<ul class="nav navbar-nav">
 
-						<li >
+						<li class='active'>
 							<a href="/demos">Demos</a>
 						</li>
 
-                        <li class="dropdown" class='active'>
+                        <li class="dropdown" >
 
                             <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
 
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -101,14 +101,55 @@
 
 <div class="container container-main">
 
-	<h1 class="title">Zoi: The Escape</h1>
+	<br>
+	<br>
 
-	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="githubBtn-tr-info"
-			allowtransparency="true"
-			src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=haxeflixel.com&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+	<div id="demoSWF">
+		<p><a href="http://www.adobe.com/go/getflashplayer"><img
+				src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+				alt="Get Adobe Flash player"/></a></p>
+	</div>
 
-	
-	
+	<div class="container-main-content">
+		<div class="demo-content">
+
+			<br>
+				
+			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/Tutorials/TurnBasedRPG/source" class="btn btn-sm btn-source" target="_blank"><span class="glyphicon glyphicon-book"></span> Source </a>
+
+			<h1 class="title">TurnBasedRPG</h1>
+
+			<p>The Turn Based RPG game from <a href="http://haxeflixel.com/documentation/tutorials">this tutorial</a> by <a href="https://twitter.com/seifertim">SeiferTim</a>.</p>
+
+
+			<hr>
+
+			<ul class="pager">
+				
+
+				
+				<li class="previous">
+					<a href="/demos/FlxAsyncLoop" title="Previous"> <
+						<img src="/demos/images/FlxAsyncLoop.thumb_zoomcrop_w70h70q85.png" alt="Previous">
+					</a>
+				</li>
+				
+
+				
+				<li class="next">
+					<a href="/demos/FlxSpine" title="Next">
+						<img src="/demos/images/FlxSpine.thumb_zoomcrop_w70h70q85.png" alt="Next">
+						>
+					</a>
+				</li>
+				
+
+				
+			</ul>
+
+		</div>
+	</div>
+
 </div>
 
 <footer>
@@ -158,6 +199,12 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-35511281-1');
 ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
 
-</body>
+<script type="text/javascript" src="/vendor/swfobject/swfobject/swfobject.js"></script>
 
+<script type="text/javascript">
+	var attributes = {wmode: "direct"};
+	swfobject.embedSWF ("/demos/swf/TurnBasedRPG.swf", "demoSWF", "640", "480", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
+</script>
+
+</body>
 </html>

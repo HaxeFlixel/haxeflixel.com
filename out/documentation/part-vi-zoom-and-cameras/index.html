@@ -39,7 +39,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -225,29 +225,22 @@
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/07-part-vi-zoom-and-cameras.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>When you run your game now, you&#39;ll notice that everything is really, really small. We&#39;re going to make it more visible by applying some zoom to our game so that we can get a better look at the action. This is a pretty quick change:</p>
-
 <ol>
-    <li>
-        <p>Open the Main.hx file. This class initializes your game, and there are a few things here that you could play with, if you want. We just need to change a couple of the parameters.</p>
-    </li>
-    <li>
-        <p>Change gameWidth and gameHeight to 320 and 240 (half of their original values). You could also change zoom from -1 to 2 if you wanted, but since it&#39;s at  -1, it will auto-calculate the zoom based on the difference between your game&#39;s size and the window dimension (which is defined in Project.xml).</p>
-    </li>
-    <li>
-        <p>If you ran the game right now, everything would be zoomed in, but the player would run off the screen pretty quick - we need to tell the camera to follow the player around.</p>
-        <p>So, open the PlayState again.</p>
-    </li>
-    <li>
-        <p>In the create function, after you add the player and before super.create(), add:</p>
-        <p><pre class="highlight"><code class="actionscript">FlxG.camera.follow(_player, FlxCamera.STYLE_TOPDOWN, <span class="number">1</span>);</code></pre></p>
-        <p>This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother). Note: we &#39;skipped&#39; over the offset parameter, this is a neat feature in Haxe which you can read about <a href="https://github.com/HaxeFoundation/HaxeManual/blob/master/md/manual/types-function-optional-arguments.md">here</a> and <a href="https://github.com/HaxeFoundation/HaxeManual/blob/master/md/manual/types-function-default-values.md">here</a>.</p>
-    </li>
+<li><p>Open the Main.hx file. This class initializes your game, and there are a few things here that you could play with, if you want. We just need to change a couple of the parameters.</p>
+</li>
+<li><p>Change gameWidth and gameHeight to 320 and 240 (half of their original values). You could also change zoom from -1 to 2 if you wanted, but since it&#39;s at  -1, it will auto-calculate the zoom based on the difference between your game&#39;s size and the window dimension (which is defined in Project.xml).</p>
+</li>
+<li><p>If you ran the game right now, everything would be zoomed in, but the player would run off the screen pretty quick - we need to tell the camera to follow the player around. So, open the PlayState again.</p>
+</li>
+<li><p>In the create function, after you add the player and before <code>super.create()</code>, add:</p>
+<pre class="highlight"><code class="actionscript"> FlxG.camera.follow(_player, FlxCamera.STYLE_TOPDOWN, <span class="number">1</span>);</code></pre>
+<p> This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother). Note: we &#39;skipped&#39; over the offset parameter, this is a neat feature in Haxe which you can read about <a href="http://haxe.org/manual/types-function-optional-arguments.html">here</a> and <a href="http://haxe.org/manual/types-function-default-values.html&quot;">here</a>.</p>
+</li>
 </ol>
-
 <p>That&#39;s it! Test out the game and see how it looks!</p>
-<p><img src="/images/tutorial/0013c.png" /></p>
-
+<p><img src="../images/04_tutorials/0013c.png" alt=""></p>
 <p>Next, let&#39;s give the player something to pickup around the map!</p>
+
 
 			<br>
 			<hr>

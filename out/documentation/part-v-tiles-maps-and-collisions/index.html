@@ -39,7 +39,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -225,118 +225,97 @@
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/06-part-v-tiles-maps-and-collisions.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>Now it&#39;s time to make some maps for the player to move around in! To do this, we&#39;re going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel. For this part of the tutorial, we&#39;re just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.</p>
-
 <p>You can make your own, with 16x16 pixel tiles, or use this one:</p>
-<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-V/assets/images/tiles.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-V/assets/images/tiles.png" /></a></p>
+<p><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/tiles.png" alt=""></p>
 <p>(Note: the first tile should be empty!)</p>
-
 <ol>
-    <li>
-        <p>Go to <a href="http://www.ogmoeditor.com/"><a href="http://www.ogmoeditor.com/">http://www.ogmoeditor.com/</a></a> to download and install it, then launch the editor.</p>
-    </li>
-    <li>
-        <p>Go to Project &gt; New Project and name your project whatever you want. I would save it under assets/data.</p>
-    </li>
-    <li>
-        <p>Next, you need to define your project&#39;s settings. Go through each tab, one-by-one, and set it up to look like the following:</p>
-        <p><img src="/images/tutorial/0007.png" /></p>
-        <p><img src="/images/tutorial/0008.png" /></p>
-        <p><img src="/images/tutorial/0008b.png" /></p>
-        <p><img src="/images/tutorial/0009.png" /></p>
-        <p><img src="/images/tutorial/0010.png" /></p>
-    </li>
-    <li>
-        <p>Hit Apply to save your changes. You should now see a screen that looks like this:</p>
-        <p><img src="/images/tutorial/0011.png" /></p>
-    </li>
-    <li>
-        <p>Make sure you&#39;re on the &#39;walls&#39; layer, and, using tools on the right, draw out a simple map. Make sure it&#39;s completely encircled by walls (so the player can&#39;t wander off the map), and make the insides filled with floor tiles. You should end up with something like this:</p>
-        <p><img src="/images/tutorial/0012.png" /></p>
-    </li>
-    <li>
-        <p>Now, switch over to the &#39;entities&#39; layer, and place your player entity somewhere in one of your rooms:</p>
-        <p><img src="/images/tutorial/0013.png" /></p>
-    </li>
-    <li>
-        <p>Go up to Level &gt; Save Level, and save this as &quot;room-001.oel&quot; in &quot;assets/data&quot;.</p>
-    </li>
-    <li>
-        <p>We&#39;re done with Ogmo for now, so save all your changes and exit</p>
-    </li>
+<li><p>Go to <a href="http://www.ogmoeditor.com/"><a href="http://www.ogmoeditor.com">http://www.ogmoeditor.com</a></a> to download and install it, then launch the editor.</p>
+</li>
+<li><p>Go to Project &gt; New Project and name your project whatever you want. I would save it under assets/data.</p>
+</li>
+<li><p>Next, you need to define your project&#39;s settings. Go through each tab, one-by-one, and set it up to look like the following:</p>
+<p> <img src="../images/04_tutorials/0007.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0008.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0008b.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0009.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0010.png" alt=""></p>
+</li>
+<li><p>Hit Apply to save your changes. You should now see a screen that looks like this:</p>
+<p> <img src="../images/04_tutorials/0011.png" alt=""></p>
+</li>
+<li><p>Make sure you&#39;re on the &#39;walls&#39; layer, and, using tools on the right, draw out a simple map. Make sure it&#39;s completely encircled by walls (so the player can&#39;t wander off the map), and make the insides filled with floor tiles. You should end up with something like this:</p>
+<p> <img src="../images/04_tutorials/0012.png" alt=""></p>
+</li>
+<li><p>Now, switch over to the &#39;entities&#39; layer, and place your player entity somewhere in one of your rooms:</p>
+<p> <img src="../images/04_tutorials/0013.png" alt=""></p>
+</li>
+<li><p>Go up to Level &gt; Save Level, and save this as &quot;room-001.oel&quot; in &quot;assets/data&quot;.</p>
+</li>
+<li><p>We&#39;re done with Ogmo for now, so save all your changes and exit.</p>
+</li>
 </ol>
-
 <p>One of the great things about using Ogmo with HaxeFlixel is that there is already a class built to load and use the maps, however, it&#39;s not in the &#39;standard&#39; HaxeFlixel library - we have to install the flixel-addons library to get access to it.</p>
-
 <ol>
-    <li>
-        <p>Open up a new command prompt window, and enter:</p>
-        <p><pre class="highlight"><code class="bash">haxelib install flixel-addons</code></pre></p>
-        <p>This should run and install the new library. Close the command prompt window when it&#39;s finished.</p>
-    </li>
-    <li>
-        <p>Jump back into FlashDevelop and open up your Project.xml file. We need to tell our project to include flixel-addons in the libraries.</p>
-    </li>
-    <li>
-        <p>Look for a line that says:</p>
-        <p><pre class="highlight"><code class="xml"><span class="comment">&lt;!--&lt;haxelib name="flixel-addons" /&gt;--&gt;</span></code></pre></p>
-        <p>and change it to:</p>
-        <p><pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxelib</span> <span class="attribute">name</span>=<span class="value">"flixel-adddons"</span> /&gt;</span></code></pre></p>
-        <p>Save this change. You&#39;re now playing with flixel-addons!</p>
-    </li>
-    <li>
-        <p>Go back to your PlayState, and,  underneath where you define your _player object, add:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _map:FlxOgmoLoader;
-<span class="keyword">private</span> <span class="keyword">var</span> _mWalls:FlxTilemap;</code></pre></p>
-        <p>We&#39;re basically just creating an object to hold our Ogmo Map, and then another one to hold the FlxTilemap that we will generate from the Ogmo map.</p>
-    </li>
-    <li>
-        <p>In the create function, before we setup the player object, add:</p>
-        <p><pre class="highlight"><code class="actionscript">_map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001&lt;strong&gt;oel);
-_mWalls = _map.loadTilemap(AssetPaths.tiles&lt;/strong&gt;png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
-_mWalls.setTileProperties(<span class="number">1</span>, FlxObject.NONE);
-_mWalls.setTileProperties(<span class="number">2</span>, FlxObject.ANY);
-add(_mWalls);</code></pre></p>
-        <p>This just loads our room file into our FlxOgmoLoader object, generates our FlxTilemap from the &#39;walls&#39; layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.</p>
-    </li>
-    <li>
-        <p>Now, we need to make our player object get placed in the right location on the map. So, change where we initialize our player from:</p>
-        <p><pre class="highlight"><code class="actionscript">_player = <span class="keyword">new</span> Player(<span class="number">20</span>, <span class="number">20</span>);</code></pre></p>
-        <p>to:</p>
-        <p><pre class="highlight"><code class="actionscript">_player = <span class="keyword">new</span> Player();
-_map.loadEntities(placeEntities, <span class="string">"entities"</span>);</code></pre></p>
-        <p>We&#39;re simply telling our _map object to loop through all of the entities in our &#39;entities&#39; layer, and call the placeEntities function for each one (which we&#39;re about to make now).</p>
-    </li>
-    <li>
-        <p>Let&#39;s make the placeEntities function now. When we call loadEntities on our map, it will pass the name of the entity, as well as its Xml data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">placeEntities</span><span class="params">(entityName:String, entityData:Xml)</span><span class="type">:Void</span>
-{</span>
-    <span class="keyword">var</span> x:Int = Std.parseInt(entityData.<span class="keyword">get</span>(<span class="string">"x"</span>));
-    <span class="keyword">var</span> y:Int = Std.parseInt(entityData.<span class="keyword">get</span>(<span class="string">"y"</span>));
-    <span class="keyword">if</span> (entityName == <span class="string">"player"</span>)
-    {
-        _player.x = x;
-        _player.y = y;&lt;br&gt;    }
-}</code></pre></p>
-        <p>So, if this function gets passed an entity with the name &quot;player&quot;, it will set our player object&#39;s x and y values to the Entities x and y values (converting them from Strings to Ints).</p>
-    </li>
-    <li>
-        <p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after super.update(); add:</p>
-        <p><pre class="highlight"><code class="actionscript">FlxG.collide(_player, _mWalls);</code></pre></p>
-        <p>All this does is check collision between our player and our walls Tilemap each update, and will deal with overlaps accordingly.</p>
-    </li>
-    <li>
-        <p>Finally, we want to make a small tweak to the player sprite. It&#39;s a good idea to make sure that your player has a decent chance of making it through doorways. Since, by default, our player sprite is the same size as our tiles (16x16 pixels), it makes it so the player has to thread the needle to make it through 1-tile wide doorways. To remedy this, we&#39;re going to change the player sprite&#39;s size and offsets. This won&#39;t change what is actually displayed for the player&#39;s graphic, only the hitbox.</p>
-        <p>So, in the Player class, in the constructor, under where we set the drag, add:</p>
-        <p><pre class="highlight"><code class="actionscript">setSize(<span class="number">8</span>, <span class="number">14</span>);
-offset.<span class="keyword">set</span>(<span class="number">4</span>, <span class="number">2</span>);</code></pre></p>
-    </li>
-    <li>
-        <p>Go ahead and run your project, and you should be able to run around the map.</p>
-        <p><img src="/images/tutorial/0013b.png" /></p>
-    </li>
+<li><p>Open up a new command prompt window, and enter:</p>
+<pre class="highlight"><code class="bash"> haxelib install flixel-addons</code></pre>
+<p> This should run and install the new library. Close the command prompt window when it&#39;s finished.</p>
+</li>
+<li><p>Jump back into FlashDevelop and open up your Project.xml file. We need to tell our project to include flixel-addons in the libraries.</p>
+</li>
+<li><p>Look for a line that says:</p>
+<pre class="highlight"><code class="xml"> <span class="comment">&lt;!--haxelib name="flixel-addons" /--&gt;</span></code></pre>
+<p> and change it to:</p>
+<pre class="highlight"><code class="xml"> <span class="tag">&lt;<span class="title">haxelib</span> <span class="attribute">name</span>=<span class="value">"flixel-adddons"</span> /&gt;</span></code></pre>
+<p> Save this change. You&#39;re now playing with flixel-addons!</p>
+</li>
+<li><p>Go back to your PlayState, and,  underneath where you define your _player object, add:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _map:FlxOgmoLoader;
+ <span class="keyword">private</span> <span class="keyword">var</span> _mWalls:FlxTilemap;</code></pre>
+<p> We&#39;re basically just creating an object to hold our Ogmo Map, and then another one to hold the FlxTilemap that we will generate from the Ogmo map.</p>
+</li>
+<li><p>In the create function, before we setup the player object, add:</p>
+<pre class="highlight"><code class="actionscript"> _map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001__oel);
+ _mWalls = _map.loadTilemap(AssetPaths.tiles__png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
+ _mWalls.setTileProperties(<span class="number">1</span>, FlxObject.NONE);
+ _mWalls.setTileProperties(<span class="number">2</span>, FlxObject.ANY);
+ add(_mWalls);</code></pre>
+<p> This just loads our room file into our FlxOgmoLoader object, generates our FlxTilemap from the &#39;walls&#39; layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.</p>
+</li>
+<li><p>Now, we need to make our player object get placed in the right location on the map. So, change where we initialize our player from:</p>
+<pre class="highlight"><code class="actionscript"> _player = <span class="keyword">new</span> Player(<span class="number">20</span>, <span class="number">20</span>);</code></pre>
+<p> to:</p>
+<pre class="highlight"><code class="actionscript"> _player = <span class="keyword">new</span> Player();
+ _map.loadEntities(placeEntities, <span class="string">"entities"</span>);</code></pre>
+<p> We&#39;re simply telling our _map object to loop through all of the entities in our &#39;entities&#39; layer, and call the placeEntities function for each one (which we&#39;re about to make now).</p>
+</li>
+<li><p>Let&#39;s make the placeEntities function now. When we call loadEntities on our map, it will pass the name of the entity, as well as its Xml data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">placeEntities</span><span class="params">(entityName:String, entityData:Xml)</span><span class="type">:Void</span>
+ {</span>
+     <span class="keyword">var</span> x:Int = Std.parseInt(entityData.<span class="keyword">get</span>(<span class="string">"x"</span>));
+     <span class="keyword">var</span> y:Int = Std.parseInt(entityData.<span class="keyword">get</span>(<span class="string">"y"</span>));
+     <span class="keyword">if</span> (entityName == <span class="string">"player"</span>)
+     {
+         _player.x = x;
+         _player.y = y;
+     }
+ }</code></pre>
+<p> So, if this function gets passed an entity with the name &quot;player&quot;, it will set our player object&#39;s x and y values to the Entities x and y values (converting them from Strings to Ints).</p>
+</li>
+<li><p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after <code>super.update();</code> add:</p>
+<pre class="highlight"><code class="actionscript"> FlxG.collide(_player, _mWalls);</code></pre>
+<p> All this does is check collision between our player and our walls Tilemap each update, and will deal with overlaps accordingly.</p>
+</li>
+<li><p>Finally, we want to make a small tweak to the player sprite. It&#39;s a good idea to make sure that your player has a decent chance of making it through doorways. Since, by default, our player sprite is the same size as our tiles (16x16 pixels), it makes it so the player has to thread the needle to make it through 1-tile wide doorways. To remedy this, we&#39;re going to change the player sprite&#39;s size and offsets. This won&#39;t change what is actually displayed for the player&#39;s graphic, only the hitbox.</p>
+<p> So, in the Player class, in the constructor, under where we set the drag, add:</p>
+<pre class="highlight"><code class="actionscript"> setSize(<span class="number">8</span>, <span class="number">14</span>);
+ offset.<span class="keyword">set</span>(<span class="number">4</span>, <span class="number">2</span>);</code></pre>
+</li>
+<li><p>Go ahead and run your project, and you should be able to run around the map.</p>
+<p><img src="../images/04_tutorials/0013b.png" alt=""></p>
+</li>
 </ol>
+<p>In the next part, we&#39;ll talk about some small tweaks to the camera.</p>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-V">Here is the source code</a> for what we have so far! In the next part, we&#39;ll talk about some small tweaks to the camera.</p>
 
 			<br>
 			<hr>

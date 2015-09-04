@@ -39,7 +39,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -217,13 +217,15 @@
 <h3 id="is-html5-supported-">Is HTML5 supported?</h3>
 <p>Almost, it still is in development.</p>
 <h3 id="will-next-gen-consoles-be-supported-">Will next-gen consoles be supported?</h3>
-<p>Maybe. It&#39;s out of scope of HaxeFlixel, it all depends of OpenFL.</p>
+<p>Eventually, yes! Read more about it <a href="http://haxeflixel.com/forum/?place=msg%2Fhaxeflixel%2FNUOpgGUKMvE%2FLNZB819BLS0J">here</a>.</p>
 <h3 id="my-sounds-are-lagging-">My sounds are lagging!?</h3>
 <p>On some platforms you need to manually cache sounds: <code>FlxG.sound.cache(&quot;sound&quot;);</code> or <code>flixel.system.FlxAssets.cacheSounds();</code> to do all at once.</p>
 <h3 id="my-player-falls-off-screen-after-walking-a-certain-distance-">My player falls off-screen after walking a certain distance!</h3>
 <p>Collisions are limited to the area defined by <code>FlxG.worldBounds</code>. For example in platformers where this area needs to be larger, you need to adjust it manually.</p>
 <h3 id="can-i-make-3d-games-with-haxeflixel-">Can I make 3D games with HaxeFlixel?</h3>
 <p>No, the framework is limited to 2D graphics.</p>
+<h3 id="how-do-i-protect-my-assets-from-being-stolen-">How do I protect my assets from being stolen?</h3>
+<p>If you add <code>embed=&quot;true&quot;</code> to the <code>&lt;assets path=&quot;assets&quot;&gt;</code> tag of the <code>Project.xml</code>, the asset files are embedded into the .exe.</p>
 
 
 			<br>

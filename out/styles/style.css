@@ -91,7 +91,7 @@ blockquote.pull-right small:after{content:'\00A0 \2014'}
 q:before,q:after,blockquote:before,blockquote:after{content:""}
 address{display:block;margin-bottom:22px;font-style:normal;line-height:1.428571429}
 code,pre{font-family:Monaco,Menlo,Consolas,"Courier New",monospace}
-code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;white-space:nowrap;border-radius:4px}
+code{padding:2px 4px;font-size:90%;color:#000;background-color:#f3f3f3;white-space:nowrap;border-radius:4px;border:1px solid #e1e1e8}
 pre{display:block;padding:10.5px;margin:0 0 11px;font-size:15px;line-height:1.428571429;word-break:break-all;word-wrap:break-word;color:#333;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px}pre.prettyprint{margin-bottom:22px}
 pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border:0}
 .pre-scrollable{max-height:340px;overflow-y:scroll}
@@ -835,7 +835,6 @@ a{text-decoration:none;transition:all 0.25s ease 0s}
 a:hover{text-decoration:none}
 a,object{outline:0}
 a.showcaseTarget:hover>img{-moz-transform:scale(1);-webkit-transform:scale(1);-o-transform:scale(1);-ms-transform:scale(1);transform:scale(1);-moz-transition:all .1s ease-in-out;-webkit-transition:all .1s ease-in-out;-ms-transition:all .1s ease-in-out;-o-transition:all .1s ease-in-out;transition:all .1s ease-in-out}a.showcaseTarget:hover>img:hover{-moz-transform:scale(1.1);-webkit-transform:scale(1.1);-o-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
-pre{color:white;background-color:#1B2426 !important;border-radius:10px 10px 10px 10px;border:1px solid #4F4F4F;box-shadow:0 0.25em 0.5em black;padding:14px;margin-top:20px;margin-bottom:20px}
 hr{border-color:lightgray}
 blockquote{background-color:#F8F9FF}
 .columns-2{-webkit-columns:2;-moz-columns:2;columns:2}
@@ -886,16 +885,16 @@ pre .title:before{background-image:none}
 .icon-prev.tweet-prev{right:100%;position:absolute;left:0}
 .home-section-powered{text-align:center}.home-section-powered img{-moz-transform:scale(1);-webkit-transform:scale(1);-o-transform:scale(1);-ms-transform:scale(1);transform:scale(1);-moz-transition:all .1s ease-in-out;-webkit-transition:all .1s ease-in-out;-ms-transition:all .1s ease-in-out;-o-transition:all .1s ease-in-out;transition:all .1s ease-in-out}.home-section-powered img:hover{-moz-transform:scale(1.03);-webkit-transform:scale(1.03);-o-transform:scale(1.03);-ms-transform:scale(1.03);transform:scale(1.03)}
 .home-section-powered span{font-size:48px;padding:20px}
-@media (max-width:992px){.home-button{margin-top:20px;margin-bottom:20px;display:block}}@media (max-width:1200px){.demos-home.home-section{max-width:700px;margin:0 auto}}@media (max-width:768px){.home-header h1{font-size:4em}}pre code{display:block;padding:0.5em;background:#23241f}
-pre .tag,pre code{color:#f8f8f2}
-pre .keyword,pre .function,pre .literal,pre .change,pre .winutils,pre .flow,pre .lisp .title,pre .clojure .built_in,pre .nginx .title,pre .tex .special{color:#66d9ef}
-pre .variable,pre .params{color:#fd9720}
-pre .constant{color:#66d9ef}
-pre .title,pre .class .title,pre .css .class{color:#a6e22e}
-pre .attribute,pre .symbol,pre .symbol .string,pre .tag .title,pre .value,pre .css .tag{color:#f92672}
-pre .number,pre .preprocessor,pre .regexp{color:#ae81ff}
-pre .tag .value,pre .string,pre .css .id,pre .subst,pre .haskell .type,pre .ruby .class .parent,pre .built_in,pre .sql .aggregate,pre .django .template_tag,pre .django .variable,pre .smalltalk .class,pre .django .filter .argument,pre .smalltalk .localvars,pre .smalltalk .array,pre .attr_selector,pre .pseudo,pre .addition,pre .stream,pre .envvar,pre .apache .tag,pre .apache .cbracket,pre .tex .command,pre .prompt{color:#e6db74}
-pre .comment,pre .javadoc,pre .java .annotation,pre .python .decorator,pre .template_comment,pre .pi,pre .doctype,pre .deletion,pre .shebang,pre .apache .sqbracket,pre .tex .formula{color:#75715e}
+@media (max-width:992px){.home-button{margin-top:20px;margin-bottom:20px;display:block}}@media (max-width:1200px){.demos-home.home-section{max-width:700px;margin:0 auto}}@media (max-width:768px){.home-header h1{font-size:4em}}pre code{display:block;background:#f3f3f3}
+pre .tag,pre code{color:#000000}
+pre .keyword,pre .function,pre .literal,pre .change,pre .winutils,pre .flow,pre .lisp .title,pre .clojure .built_in,pre .nginx .title,pre .tex .special{color:#1518FF}
+pre .variable,pre .params{color:#000000}
+pre .constant{color:#000099}
+pre .title,pre .class .title,pre .css .class{color:#0080AA}
+pre .attribute,pre .symbol,pre .symbol .string,pre .tag .title,pre .value,pre .css .tag{color:#A31515}
+pre .number,pre .preprocessor,pre .regexp{color:#000099}
+pre .tag .value,pre .string,pre .css .id,pre .subst,pre .haskell .type,pre .ruby .class .parent,pre .built_in,pre .sql .aggregate,pre .django .template_tag,pre .django .variable,pre .smalltalk .class,pre .django .filter .argument,pre .smalltalk .localvars,pre .smalltalk .array,pre .attr_selector,pre .pseudo,pre .addition,pre .stream,pre .envvar,pre .apache .tag,pre .apache .cbracket,pre .tex .command,pre .prompt{color:#A31515}
+pre .comment,pre .javadoc,pre .java .annotation,pre .python .decorator,pre .template_comment,pre .pi,pre .doctype,pre .deletion,pre .shebang,pre .apache .sqbracket,pre .tex .formula{color:#008000}
 pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula{opacity:0.5}
 pre .xml .javascript,pre .xml .vbscript,pre .xml .css,pre .xml .cdata{opacity:0.5}
 .footer-main{margin-top:60px;background:url("/images/footer-shadow.png") repeat-x scroll 0 0 #515151;min-height:110px;text-shadow:none}

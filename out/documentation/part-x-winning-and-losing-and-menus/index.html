@@ -39,7 +39,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -225,166 +225,144 @@
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/11-part-x-winning-and-losing-and-menus.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>Our game is really starting to come together! Now we need it to feel more like a &#39;game&#39; with a win and lose scenario. For our (very simple) game, we&#39;ll just make it so that if you ever die in combat, you get a Game Over, and when you beat the boss enemy, you Win. Both of these conditions will take you to the same FlxState to show you your score and allow you to play again if you want.</p>
-
 <ol>
-    <li>
-        <p>The first thing we want to do is stop our CombatHUD from stopping once the player has been defeated. So in the doneResultsIn function, remove the <code>if (outcome != DEFEAT)</code> statement.</p>
-    </li>
-    <li>
-        <p>We also need to make sure that when our CombatHUD gets destroyed it cleans up all the objects that it has properly. So add this function:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
-{</span>
-    super.destroy();
-    e = FlxDestroyUtil.destroy(e);
-    _sprBack = FlxDestroyUtil.destroy(_sprBack);
-    _sprPlayer = FlxDestroyUtil.destroy(_sprPlayer);
-    _sprEnemy = FlxDestroyUtil.destroy(_sprEnemy);
-    _enemyHealthBar = FlxDestroyUtil.destroy(_enemyHealthBar);
-    _txtPlayerHealth = FlxDestroyUtil.destroy(_txtPlayerHealth);
-    _damages = FlxDestroyUtil.destroyArray(_damages);
-    _pointer = FlxDestroyUtil.destroy(_pointer);
-    _choices = FlxDestroyUtil.destroyArray(_choices);
-    _results = FlxDestroyUtil.destroy(_results);
-}</code></pre></p>
-        <p>It&#39;s good practice to get into the habit of destroying all your objects in the destroy function of a class.</p>
-    </li>
-    <li>
-        <p>Now, in PlayState, we need to add some flags to see if we&#39;re ending the game, and if the player has &#39;won&#39; or not. So, add:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _ending:Bool;
-<span class="keyword">private</span> <span class="keyword">var</span> _won:Bool;</code></pre></p>
-        <p>To the top of the class.</p>
-    </li>
-    <li>
-        <p>Next, in the update function, right under super.update() add:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (_ending)
-{
-    <span class="keyword">return</span>;
-}</code></pre></p>
-        <p>We don&#39;t want to allow anything else to go on if we&#39;re ending the game and getting ready to switch states.</p>
-    </li>
-    <li>
-        <p>Next, still in update, we&#39;re going to change our combatHud logic to this:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (!_combatHud.visible)
-{
-    _health = _combatHud.playerHealth;
-    _hud.updateHUD(_health, _money);
-    <span class="keyword">if</span> (_combatHud.outcome == DEFEAT)
-    {
-        _ending = <span class="literal">true</span>;
-        FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">false</span>, doneFadeOut);
-    }
-    <span class="keyword">else</span>
-    {
-        <span class="keyword">if</span> (_combatHud.outcome == VICTORY)
-        {
-            _combatHud.e.kill();
-            <span class="keyword">if</span> (_combatHud.e.etype == <span class="number">1</span>)
-            {
-                _won = <span class="literal">true</span>;
-                _ending = <span class="literal">true</span>;
-                FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">false</span>, doneFadeOut);
-            }
-        }
-        <span class="keyword">else</span> 
-        {
-            _combatHud.e.flicker();
-        }
-        _inCombat = <span class="literal">false</span>;
-        _player.active = <span class="literal">true</span>;
-        _grpEnemies.active = <span class="literal">true</span>;
-    }
-}</code></pre></p>
-        <p>This will now check to see if the outcome was DEFEAT, and if it was, it will set our ending flag to true, and then tell the camera to start fading out - calling doneFadeOut when it&#39;s done.</p>
-        <p>Similarly, if the outcome was VICTORY, and the enemy that was just defeated was type 1 (the boss), we set our won flag to true, and also start fading out.</p>
-    </li>
-    <li>
-        <p>When the camera is done fading to black, we call this function, which will switch the state to our GameOverState (which you&#39;ll make in a second), passing it if the player won or not, and how much money they have.</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">doneFadeOut</span><span class="params">()</span><span class="type">:Void</span> 
-{</span>
-    FlxG.switchState(<span class="keyword">new</span> GameOverState(_won, _money));
-}</code></pre></p>
-    </li>
-    <li>
-        <p>Make sure we clean up our objects when this state is destroyed (in the destroy function):</p>
-        <p><pre class="highlight"><code class="actionscript">_player = FlxDestroyUtil.destroy(_player);
-_mWalls = FlxDestroyUtil.destroy(_mWalls);
-_grpCoins = FlxDestroyUtil.destroy(_grpCoins);
-_grpEnemies = FlxDestroyUtil.destroy(_grpEnemies);
-_hud = FlxDestroyUtil.destroy(_hud);
-_combatHud = FlxDestroyUtil.destroy(_combatHud);</code></pre></p>
-    </li>
-    <li>
-        <p>We need to add the GameOverState. This is going to be a pretty simple FlxState where we show a message - either &quot;Game Over&quot; or &quot;You Win!&quot;, depending on our won flag, and the final score for this player. We will also use flixel&#39;s save/load functionality to compare the previous hi-scores, and, if the new score is higher, replace the saved hi-score, and show the hi-score on the screen.</p>
-        <p>Finally, we have a button to take the player back to the main menu.</p>
-        <p>Here is the code for that State:</p>
-        <p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/GameOverState.hx"><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/GameOverState.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/GameOverState.hx</a></a></p>
-    </li>
+<li><p>The first thing we want to do is stop our CombatHUD from stopping once the player has been defeated. So in the doneResultsIn function, remove the <code>if (outcome != DEFEAT)</code> statement.</p>
+</li>
+<li><p>We also need to make sure that when our CombatHUD gets destroyed it cleans up all the objects that it has properly. So add this function:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
+ {</span>
+     super.destroy();
+     e = FlxDestroyUtil.destroy(e);
+     _sprBack = FlxDestroyUtil.destroy(_sprBack);
+     _sprPlayer = FlxDestroyUtil.destroy(_sprPlayer);
+     _sprEnemy = FlxDestroyUtil.destroy(_sprEnemy);
+     _enemyHealthBar = FlxDestroyUtil.destroy(_enemyHealthBar);
+     _txtPlayerHealth = FlxDestroyUtil.destroy(_txtPlayerHealth);
+     _damages = FlxDestroyUtil.destroyArray(_damages);
+     _pointer = FlxDestroyUtil.destroy(_pointer);
+     _choices = FlxDestroyUtil.destroyArray(_choices);
+     _results = FlxDestroyUtil.destroy(_results);
+ }</code></pre>
+<p> It&#39;s good practice to get into the habit of destroying all your objects in the destroy function of a class.</p>
+</li>
+<li><p>Now, in PlayState, we need to add some flags to see if we&#39;re ending the game, and if the player has &#39;won&#39; or not. So, add:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _ending:Bool;
+ <span class="keyword">private</span> <span class="keyword">var</span> _won:Bool;</code></pre>
+<p> To the top of the class.</p>
+</li>
+<li><p>Next, in the update function, right under <code>super.update()</code> add:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (_ending)
+ {
+     <span class="keyword">return</span>;
+ }</code></pre>
+<p> We don&#39;t want to allow anything else to go on if we&#39;re ending the game and getting ready to switch states.</p>
+</li>
+<li><p>Next, still in update, we&#39;re going to change our combatHud logic to this:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (!_combatHud.visible)
+ {
+     _health = _combatHud.playerHealth;
+     _hud.updateHUD(_health, _money);
+     <span class="keyword">if</span> (_combatHud.outcome == DEFEAT)
+     {
+         _ending = <span class="literal">true</span>;
+         FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">false</span>, doneFadeOut);
+     }
+     <span class="keyword">else</span>
+     {
+         <span class="keyword">if</span> (_combatHud.outcome == VICTORY)
+         {
+             _combatHud.e.kill();
+             <span class="keyword">if</span> (_combatHud.e.etype == <span class="number">1</span>)
+             {
+                 _won = <span class="literal">true</span>;
+                 _ending = <span class="literal">true</span>;
+                 FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">false</span>, doneFadeOut);
+             }
+         }
+         <span class="keyword">else</span> 
+         {
+             _combatHud.e.flicker();
+         }
+         _inCombat = <span class="literal">false</span>;
+         _player.active = <span class="literal">true</span>;
+         _grpEnemies.active = <span class="literal">true</span>;
+     }
+ }</code></pre>
+<p> This will now check to see if the outcome was DEFEAT, and if it was, it will set our ending flag to true, and then tell the camera to start fading out - calling doneFadeOut when it&#39;s done.</p>
+<p> Similarly, if the outcome was VICTORY, and the enemy that was just defeated was type 1 (the boss), we set our won flag to true, and also start fading out.</p>
+</li>
+<li><p>When the camera is done fading to black, we call this function, which will switch the state to our GameOverState (which you&#39;ll make in a second), passing it if the player won or not, and how much money they have.</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">doneFadeOut</span><span class="params">()</span><span class="type">:Void</span> 
+ {</span>
+     FlxG.switchState(<span class="keyword">new</span> GameOverState(_won, _money));
+ }</code></pre>
+</li>
+<li><p>Make sure we clean up our objects when this state is destroyed (in the destroy function):</p>
+<pre class="highlight"><code class="actionscript"> _player = FlxDestroyUtil.destroy(_player);
+ _mWalls = FlxDestroyUtil.destroy(_mWalls);
+ _grpCoins = FlxDestroyUtil.destroy(_grpCoins);
+ _grpEnemies = FlxDestroyUtil.destroy(_grpEnemies);
+ _hud = FlxDestroyUtil.destroy(_hud);
+ _combatHud = FlxDestroyUtil.destroy(_combatHud);</code></pre>
+</li>
+<li><p>We need to add the GameOverState. This is going to be a pretty simple FlxState where we show a message - either &quot;Game Over&quot; or &quot;You Win!&quot;, depending on our won flag, and the final score for this player. We will also use flixel&#39;s save/load functionality to compare the previous hi-scores, and, if the new score is higher, replace the saved hi-score, and show the hi-score on the screen.</p>
+<p> Finally, we have a button to take the player back to the main menu.</p>
+<p> Here is the code for that State:</p>
+<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/GameOverState.hx">GameOverState.hx</a></p>
+</li>
 </ol>
-
 <p>If you test your game, you should be able to trigger the GameOverState by either dying in combat or defeating the boss, and then clicking on the button in the GameOverState will take you back to our MenuState so you can play again. If all of that works, you&#39;re on the right track! But… our MenuState is looking a little bland, now… let&#39;s fix that up!</p>
-
-<p><img src="/images/tutorial/0021.png" /></p>
-
+<p><a href="../images/04_tutorials/0021.png"></a></p>
 <ol>
-    <li>
-        <p>Let&#39;s add a title and an options button to the MenuState:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _txtTitle:FlxText;
-<span class="keyword">private</span> <span class="keyword">var</span> _btnOptions:FlxButton;</code></pre></p>
-    </li>
-    <li>
-        <p>Then, in create, we&#39;ll add them to the state (and move the Play button, as well):</p>
-        <p><pre class="highlight"><code class="actionscript">_txtTitle = <span class="keyword">new</span> FlxText(<span class="number">20</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">"HaxeFlixel\nTutorial\nGame"</span>, <span class="number">22</span>);
-_txtTitle.alignment = <span class="string">"center"</span>;
-_txtTitle.screenCenter(<span class="literal">true</span>, <span class="literal">false</span>);
-add(_txtTitle);
+<li><p>Let&#39;s add a title and an options button to the MenuState:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _txtTitle:FlxText;
+ <span class="keyword">private</span> <span class="keyword">var</span> _btnOptions:FlxButton;</code></pre>
+</li>
+<li><p>Then, in create, we&#39;ll add them to the state (and move the Play button, as well):</p>
+<pre class="highlight"><code class="actionscript"> _txtTitle = <span class="keyword">new</span> FlxText(<span class="number">20</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">"HaxeFlixel\nTutorial\nGame"</span>, <span class="number">22</span>);
+ _txtTitle.alignment = <span class="string">"center"</span>;
+ _txtTitle.screenCenter(<span class="literal">true</span>, <span class="literal">false</span>);
+ add(_txtTitle);
 
-_btnPlay = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Play"</span>, clickPlay);
-_btnPlay.x = (FlxG.width / <span class="number">2</span>) - _btnPlay.width - <span class="number">10</span>;
-_btnPlay.y = FlxG.height - _btnPlay.height - <span class="number">10</span>;
-add(_btnPlay);
+ _btnPlay = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Play"</span>, clickPlay);
+ _btnPlay.x = (FlxG.width / <span class="number">2</span>) - _btnPlay.width - <span class="number">10</span>;
+ _btnPlay.y = FlxG.height - _btnPlay.height - <span class="number">10</span>;
+ add(_btnPlay);
 
-_btnOptions = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Options"</span>, clickOptions);
-_btnOptions.x = (FlxG.width / <span class="number">2</span>) + <span class="number">10</span>;
-_btnOptions.y = FlxG.height - _btnOptions.height - <span class="number">10</span>;
-add(_btnOptions);</code></pre></p>
-    </li>
-    <li>
-        <p>Add the function that gets called when the options button is clicked:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">clickOptions</span><span class="params">()</span><span class="type">:Void</span>
-{</span>
-    FlxG.switchState(<span class="keyword">new</span> OptionsState());
-}</code></pre></p>
-    </li>
-    <li>
-        <p>Then, finally, add some clean-up logic to our destroy function:</p>
-        <p><pre class="highlight"><code class="actionscript">_txtTitle = FlxDestroyUtil.destroy(_txtTitle);
-_btnPlay = FlxDestroyUtil.destroy(_btnPlay);
-_btnOptions = FlxDestroyUtil.destroy(_btnOptions);</code></pre></p>
-    </li>
-    <li>
-        <p>The OptionsState that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (hi-scores, etc), as well as a simple FlxBar to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will &#39;remember&#39; what volume it was last set to (I know there&#39;s no sound…. yet ;) )</p>
-        <p>The code for this State looks like this:</p>
-        <p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/OptionsState.hx"><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/OptionsState.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/OptionsState.hx</a></a></p>
-    </li>
-    <li>
-        <p>Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, goto our Main.hx file, and, in setupGame, after addChild, add:</p>
-        <p><pre class="highlight"><code class="actionscript"><span class="keyword">var</span> _save:FlxSave = <span class="keyword">new</span> FlxSave();
-_save.bind(<span class="string">"flixel-tutorial"</span>);
-<span class="keyword">if</span> (_save.data.volume != <span class="literal">null</span>)
-{
-    FlxG.sound.volume = _save.data.volume;
-}
-_save.close();</code></pre></p>
-        <p>Pretty simple: it makes a new FlxSave object, binds it to our &quot;flixel-tutorial&quot; and then checks if there is a volume value stored in it, and if there is, sets our game&#39;s volume to match, and then closes the save.</p>
-    </li>
+ _btnOptions = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Options"</span>, clickOptions);
+ _btnOptions.x = (FlxG.width / <span class="number">2</span>) + <span class="number">10</span>;
+ _btnOptions.y = FlxG.height - _btnOptions.height - <span class="number">10</span>;
+ add(_btnOptions);</code></pre>
+</li>
+<li><p>Add the function that gets called when the options button is clicked:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">clickOptions</span><span class="params">()</span><span class="type">:Void</span>
+ {</span>
+     FlxG.switchState(<span class="keyword">new</span> OptionsState());
+ }</code></pre>
+</li>
+<li><p>Then, finally, add some clean-up logic to our destroy function:</p>
+<pre class="highlight"><code class="actionscript"> _txtTitle = FlxDestroyUtil.destroy(_txtTitle);
+ _btnPlay = FlxDestroyUtil.destroy(_btnPlay);
+ _btnOptions = FlxDestroyUtil.destroy(_btnOptions);</code></pre>
+</li>
+<li><p>The OptionsState that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (hi-scores, etc), as well as a simple FlxBar to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will &#39;remember&#39; what volume it was last set to (I know there&#39;s no sound…. yet ;) )</p>
+<p> The code for this State looks like this:</p>
+<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx">OptionsState.hx</a></p>
+<p> Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, goto our Main.hx file, and, in setupGame, after addChild, add:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> _save:FlxSave = <span class="keyword">new</span> FlxSave();
+ _save.bind(<span class="string">"flixel-tutorial"</span>);
+ <span class="keyword">if</span> (_save.data.volume != <span class="literal">null</span>)
+ {
+     FlxG.sound.volume = _save.data.volume;
+ }
+ _save.close();</code></pre>
+<p> Pretty simple: it makes a new FlxSave object, binds it to our &quot;flixel-tutorial&quot; and then checks if there is a volume value stored in it, and if there is, sets our game&#39;s volume to match, and then closes the save.</p>
+</li>
 </ol>
-
 <p>Test everything out, make sure it&#39;s working, and that if you change your volume under options and then exit the game, it retains the value the next time to get into the options screen.</p>
-
-<p><img src="/images/tutorial/0022.png" /></p>
-
+<p><img src="../images/04_tutorials/0022.png" alt=""></p>
 <p>Looking good! Next time we&#39;ll give our volume something to do by adding sound and music!</p>
-<p>You can check out the current source for everything so far, <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-X">here</a>!</p>
+
 
 			<br>
 			<hr>

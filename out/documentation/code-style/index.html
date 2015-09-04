@@ -39,7 +39,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -216,17 +216,86 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/08-code-style.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>Over the most recent HaxeFlixel releases, a large amount of the codebase has been modified to follow these style choices.
-If you encounter code in the codebase that does not fall under these guidelines, a pull request would be appreciated.</p>
+			<p>This is HaxeFlixel&#39;s code style. Not the entire codebase conforms for it at the moment, but at least any new code should be written with this in mind.</p>
+<h2 id="line-breaks">Line Breaks</h2>
+<h3 id="before-opening-curly-brackets">Before Opening Curly Brackets</h3>
+<p>There should always be a single line break before an opening curly bracket.</p>
+<p><strong>Good:</strong></p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span>
+{</span>
+    <span class="keyword">while</span> (<span class="literal">true</span>)
+    {
+        trace(<span class="string">"looping"</span>);
+        trace(<span class="string">"still looping"</span>);
+    }
+}</code></pre>
+<p><strong>Bad:</strong></p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span> {</span>
+    <span class="keyword">while</span> (<span class="literal">true</span>) {
+        trace(<span class="string">"looping"</span>);
+        trace(<span class="string">"still looping"</span>);
+    }
+}</code></pre>
+<h3 id="omitting-blocks">Omitting Blocks</h3>
+<p>When the body of an <code>if</code>, <code>else</code>, <code>for</code> or <code>while</code> only consists of a single line, omitting the curly brackets is acceptable and often preferable since it drastically reduces the line count.</p>
+<p><strong>Good:</strong></p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">while</span> (<span class="literal">true</span>)
+    trace(<span class="string">"looping"</span>);</code></pre>
+<p>In those cases however, the body should still be in a separate line.</p>
+<p><strong>Bad:</strong></p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">while</span> (<span class="literal">true</span>) trace(<span class="string">"looping"</span>);</code></pre>
+<h3 id="additional-line-breaks">Additional Line Breaks</h3>
+<p>There shouldn&#39;t be any additional line breaks right after a <code>{</code> or before a <code>}</code>.</p>
+<p><strong>Good:</strong></p>
+<pre class="highlight"><code class="actionscript"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>
+{</span>
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
+    {</span>
+        <span class="keyword">super</span>();
+    }
+}</code></pre>
+<p><strong>Bad:</strong></p>
+<pre class="highlight"><code class="actionscript"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>
+{</span>
+
+    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
+    {</span>
+        <span class="keyword">super</span>();
+
+    }
+
+}</code></pre>
+<h3 id="in-function-bodies">In Function Bodies</h3>
+<p>Using line breaks to group code sections that logically belong together can help readability like in this example:</p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">resetHelpers</span><span class="params">()</span><span class="type">:Void</span>
+{</span>
+    resetFrameSize();
+    resetSizeFromFrame();
+    _flashRect2.x = <span class="number">0</span>;
+    _flashRect2.y = <span class="number">0</span>;
+
+    <span class="keyword">if</span> (graphic != <span class="literal">null</span>)
+    {
+        _flashRect2.width = graphic.width;
+        _flashRect2.height = graphic.height;
+    }
+
+    centerOrigin();
+
+#<span class="keyword">if</span> FLX_RENDER_BLIT
+    dirty = <span class="literal">true</span>;
+    getFlxFrameBitmapData();
+#end
+}</code></pre>
 <h2 id="functions">Functions</h2>
-<h3 id="function-names">Function names</h3>
+<h3 id="function-names">Function Names</h3>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootEnemy</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
 <p>...is easier to read than</p>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootAtASpecificEnemyWithABulletTypeOf</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
 <p>...but still gets the idea of what this function does across. The second example has a lot of &quot;noise&quot;-words that don&#39;t provide any additional value. The following function name would still be acceptable, more accurate than example 1 even:</p>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootBulletAtEnemy</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
-<p>However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary. </p>
-<p>An example for a bad / too simple name would be <code>shoot()</code> instead of <code>shootEnemy()</code> in this example.</p>
+<p>However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary.</p>
+<p>An example for a bad / too simple name would be <code>shoot()</code> instead of <code>shootEnemy()</code>.</p>
 <h3 id="spacing">Spacing</h3>
 <p>The equals sign (<code>=</code>) and commas (<code>,</code>) in function headers / calls should always be separated by a single space. Spaces should <em>not</em> be used after opening and before closing brackets.</p>
 <table>
@@ -282,9 +351,8 @@ If you encounter code in the codebase that does not fall under these guidelines,
 </tr>
 </tbody>
 </table>
-<h3 id="parameter-names">Parameter names</h3>
-<p>Use lowerCamelCases for function parameters 
-and use <code>this</code> to explicitly reference to class members (only when neccessary):</p>
+<h3 id="parameter-names">Parameter Names</h3>
+<p>Use lowerCamelCases for function parameters and use <code>this</code> to explicitly reference to class members (only when neccessary):</p>
 <pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">translate</span><span class="params">(words:String, bableFish:BableFish)</span><span class="type">:Void</span>
 {</span>
     this.words = words;
@@ -294,9 +362,8 @@ and use <code>this</code> to explicitly reference to class members (only when ne
 {</span>
     words = Words;
 }</code></pre>
-<p>In the core of HaxeFlixel, there are a lot of method parameters written in capitalized letters (not preferred in Haxe),
-this is mostly legacy from the AS3 Flixel&#39;s code style and hard to change them all. However, newly written functions should follow the lowerCamelCases style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.</p>
-<h2 id="colon-spacing">Colon spacing</h2>
+<p>In the core of HaxeFlixel, there are a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel&#39;s code style and hard to change them all. However, newly written functions should follow the lowerCamelCase style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.</p>
+<h2 id="colon-spacing">Colon Spacing</h2>
 <p>No extra spaces should be used before and after colons:</p>
 <table>
 <thead>
@@ -307,26 +374,61 @@ this is mostly legacy from the AS3 Flixel&#39;s code style and hard to change th
 </thead>
 <tbody>
 <tr>
-<td>var i:Int;</td>
-<td>var i : Int;</td>
+<td><code>var i:Int;</code></td>
+<td><code>var i : Int;</code></td>
 </tr>
 <tr>
-<td>function toString():String</td>
-<td>function toString() : String</td>
+<td><code>function toString():String</code></td>
+<td><code>function toString() : String</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="curly-brackets">Curly Brackets</h2>
-<p>Use line breaks in methods, operators etc where possible:</p>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">createAwesome</span><span class="params">(boring:Stuff, creative:Things)</span><span class="type">:Void</span>
-{</span>
-
-}</code></pre>
-<p>Instead of:</p>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">createAwesome</span><span class="params">(boring:Stuff, creative:Things)</span><span class="type">:Void</span> {</span>
-
-}</code></pre>
-<h2 id="leveraging-type-inference">Leveraging type inference</h2>
+<h2 id="operator-spacing">Operator Spacing</h2>
+<h3 id="binary-operators">Binary Operators</h3>
+<p>Binary operators should always be surrounded by spaces:</p>
+<table>
+<thead>
+<tr>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>5 + 2</code></td>
+<td><code>5+2</code></td>
+</tr>
+<tr>
+<td><code>width / 2</code></td>
+<td><code>width/2</code></td>
+</tr>
+<tr>
+<td><code>i += 2</code></td>
+<td><code>i+=2</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="unary-operators">Unary Operators</h3>
+<p>For unary operators however, it&#39;s preferable not to use any spaces:</p>
+<table>
+<thead>
+<tr>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i++</code></td>
+<td><code>i ++</code></td>
+</tr>
+<tr>
+<td><code>visible = !visible</code></td>
+<td><code>visible = ! visible</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="leveraging-type-inference">Leveraging Type Inference</h2>
 <p>The Haxe compiler does not require you to declare the type of a variable (<a href="http://haxe.org/ref/type_infer">read more</a>).</p>
 <pre class="highlight"><code class="actionscript"><span class="comment">//This is unnecessary</span>
 <span class="keyword">var</span> name:String = <span class="string">"Merlin"</span>;
@@ -347,7 +449,7 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <li><code>inline</code></li>
 </ol>
 <p>So <code>static public function</code> is changed to <code>public static function</code>. This also applies to variables eg <code>public static var</code>.</p>
-<h2 id="field-order-class-outline">Field order / Class outline</h2>
+<h2 id="field-order-class-outline">Field Order / Class Outline</h2>
 <p>The following rules apply, sorted by priority:</p>
 <ol>
 <li><code>static</code> fields before instance fields</li>
@@ -356,14 +458,14 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <li>getters and setters are the very end of a class (as they should always be private)</li>
 </ol>
 <h2 id="comments">Comments</h2>
-<p>Comments should only be used when you can&#39;t find a way to express the same thing in code. They tend to add noise to the code base and rarely get updated when the code changes, which results in misinformation and inaccurate comments. </p>
+<p>Comments should only be used when you can&#39;t find a way to express the same thing in code. They tend to add noise to the code base and rarely get updated when the code changes, which results in misinformation and inaccurate comments.</p>
 <p>Take the following comment section for example, it does not provide <em>any</em> additional value beyond what the code and the class / parameter names already tell you (one of the reasons why choosing good names is so important!). It should thus be removed completely.</p>
 <pre class="highlight"><code class="actionscript"><span class="comment">/**
  * Sets the position.
- * 
+ *
  * @param    x    The x coordinate.
  * @param    y     The y coordinate.
- */</span> 
+ */</span>
 <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setPosition</span><span class="params">(x:Int, y:Int)</span><span class="type">:Void</span></span></code></pre>
 <h2 id="class-names">Class names</h2>
 <p>All class names should be prefixed by <code>Flx</code>, e.g.:</p>
@@ -373,7 +475,7 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <li><code>FlxSprite</code></li>
 <li>etc..</li>
 </ul>
-<p>Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing. </p>
+<p>Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing.</p>
 <p>This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don&#39;t when writing a game.</p>
 <h2 id="indentation-and-formatting-tabs-and-spaces">Indentation and Formatting / Tabs and spaces</h2>
 <p>Tabs should be used for indentation <em>everywhere</em>.</p>
@@ -381,18 +483,43 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <p>The most common example where formatting is needed are the comment sections for functions:</p>
 <pre class="highlight"><code class="actionscript"><span class="comment">/**
  * Sets the position.
- * 
+ *
  * @param   x   The x coordinate.
  * @param   y   The y coordinate.
- */</span> 
+ */</span>
 <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setPosition</span><span class="params">(x:Int, y:Int)</span><span class="type">:Void</span></span></code></pre>
 <h2 id="position-of-metadata">Position of metadata</h2>
 <p>Metadata should always be placed in a new line for increased readability:</p>
-<pre class="highlight"><code class="actionscript">@:isVar 
+<pre class="highlight"><code class="actionscript">@:isVar
 @:allow(flixel.tweens.FlxTween)
 <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
 <p>as opposed to:</p>
 <pre class="highlight"><code class="actionscript">@:isVar @:allow(flixel.tweens.FlxTween) <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
+<p>However, if there are two many of these sections it be worth considering to split the function into several smaller ones.</p>
+<p>There shouldn&#39;t be more than one empty line to separate sections.</p>
+<h2 id="using-switch-case-as-an-expression">Using switch-case as an Expression</h2>
+<p>Unlike in most other languages with object-oriented syntax, everything in Haxe is an expression. This extends to <code>switch-case</code>, meaning that it evaluates to a value. This value can be assinged to a variable, passed to a function or simply returned by a function:</p>
+<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getColor</span><span class="params">(color:Color)</span><span class="type">:Int</span>
+{</span>
+  <span class="keyword">return</span> <span class="keyword">switch</span> (color)
+  {
+    <span class="keyword">case</span> Color.RED: <span class="number">0xff0000</span>;
+    <span class="keyword">case</span> Color.BLUE: <span class="number">0x0000ff</span>;
+    <span class="keyword">case</span> Color.GREEN: <span class="number">0x00ff00</span>;
+  }
+}</code></pre>
+<p>This is preferable to how this code would look like in a lot of other languages, for example C#:</p>
+<pre class="highlight"><code class="coffeescript">int getColor(Color color) {
+  <span class="keyword">switch</span> (color) {
+    <span class="reserved">case</span> Color.<span class="attribute">RED</span>:
+      <span class="keyword">return</span> <span class="number">0xff0000</span>;
+    <span class="reserved">case</span> Color.<span class="attribute">BLUE</span>:
+      <span class="keyword">return</span> <span class="number">0x0000ff</span>;
+    <span class="reserved">case</span> Color.<span class="attribute">GREEN</span>:
+      <span class="keyword">return</span> <span class="number">0x00ff00</span>;
+  }
+  <span class="keyword">return</span> <span class="number">0x000000</span>;
+}</code></pre>
 
 
 			<br>

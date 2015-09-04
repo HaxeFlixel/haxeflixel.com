@@ -39,7 +39,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -216,35 +216,24 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/13-flixel-tools.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>To make HaxeFlixel development easier a set of command line tools has been developed with <a href="http://haxe.org">Haxe</a> and <a href="http://nekovm.org">Neko</a>. With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an open-source tool and additions/improvements from the community are welcome at the <a href="https://github.com/HaxeFlixel/flixel-tools">Flixel Tools GitHub repository</a>.</p>
-<h3 id="installation-">Installation:</h3>
-<p>The latest stable release of the tools is published just like flixel on Haxelib, so installing is easy:</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">haxelib</span> <span class="comment">install</span> <span class="comment">flixel</span><span class="literal">-</span><span class="comment">tools</span></code></pre>
-<h4 id="git">GIT</h4>
-<p>You need to make sure you have git installed, <a href="http://git-scm.com/download/">git</a>.</p>
-<h3 id="setup-the-tools">Setup the Tools</h3>
+			<p>To make HaxeFlixel development easier, a set of command line tools has been developed with <a href="http://haxe.org">Haxe</a> and <a href="http://nekovm.org">Neko</a>. With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an open-source tool and additions/improvements from the community are welcome at the <a href="https://github.com/HaxeFlixel/flixel-tools">flixel-tools GitHub repository</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>The tools are available on haxelib:</p>
+<pre class="highlight"><code class="bash">haxelib install flixel-tools</code></pre>
+<h2 id="setup">Setup</h2>
 <p>To set the tools up initially / to be able to use the <code>flixel</code> alias in your console:</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">haxelib</span> <span class="comment">run</span> <span class="comment">flixel</span><span class="literal">-</span><span class="comment">tools</span> <span class="comment">setup</span></code></pre>
-<h3 id="commands">Commands</h3>
+<pre class="highlight"><code class="bash">haxelib run flixel-tools setup</code></pre>
+<h2 id="commands">Commands</h2>
+<h3 id="-create-c-"><code>create</code> (<code>c</code>)</h3>
 <p>Create a new demo (in the current directory):</p>
-<pre class="highlight"><code class="xml">flixel create <span class="tag">&lt;<span class="title">name_or_number</span>&gt;</span></code></pre>
-<p>If no name or number is given it will list all demos and prompt you for a choice, by number or name.</p>
-<p>To create a new default game template use the following, with -n option being the name you want:</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">flixel</span> <span class="comment">template</span> <span class="literal">-</span><span class="comment">n</span> &lt;<span class="comment">name</span>&gt;</code></pre>
-<p>You can compile all demos for specified platform using <strong>testdemos</strong> command (flash if not specified):</p>
-<p>Valid platforms (don&#39;t forget the <strong>-</strong>): flash, neko, windows, mac, linux, ios, android, html5 (experimental)</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">flixel</span> <span class="comment">testdemos</span> <span class="literal">-</span>&lt;<span class="comment">platform</span>&gt;</code></pre>
-<ul>
-<li>Currently the templates created are only compatible with the latest <a href="https://github.com/HaxeFlixel/flixel">dev branch of flixel</a>. For flixel 2.x use the command: <code>haxelib run flixel new -name &lt;name&gt;</code></li>
-</ul>
-<h3 id="install-the-tools-from-git-">Install the tools from git:</h3>
-<ul>
-<li>Please make sure you are also running the latest version of haxelib you can make sure with the command:</li>
-</ul>
-<pre class="highlight"><code class="haskell"><span class="title">haxelib</span> selfupdate</code></pre>
-<h4 id="run-the-following-set-of-commands-to-install-the-tools-">Run the following set of commands to install the tools:</h4>
-<p>To clone this repo to your haxelib directory:</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">haxelib</span> <span class="comment">git</span> <span class="comment">flixel</span><span class="literal">-</span><span class="comment">tools</span> <span class="comment">https://github</span><span class="string">.</span><span class="comment">com/HaxeFlixel/flixel</span><span class="literal">-</span><span class="comment">tools</span><span class="string">.</span><span class="comment">git</span></code></pre>
+<pre class="highlight"><code class="bash">flixel create &lt;name_or_number&gt;</code></pre>
+<p>If no name or number is given, it will list all demos and prompt you for a choice, by number or name.</p>
+<h3 id="-template-tpl-"><code>template</code> (<code>tpl</code>)</h3>
+<p>To create a new project from the default template:</p>
+<pre class="highlight"><code class="bash">flixel tpl -n &lt;name&gt;</code></pre>
+<p>Alternatively, a <code>barebones</code> template is available. It contains no comments and only has a single state:</p>
+<pre class="highlight"><code class="bash">flixel tpl barebones -n &lt;name&gt;</code></pre>
+<p>Any folder in the <code>flixel-templates</code> haxelib is treated as a template and can be created with the <code>flixel tpl &lt;foldername&gt;</code> syntax. This makes it easy to create custom templates.</p>
 
 
 			<br>

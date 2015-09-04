@@ -39,7 +39,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel"></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
@@ -74,7 +74,7 @@
 						</li>
 
 						<li>
-							<a href="http://api.haxeflixel.com" target="_blank">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li >
@@ -214,6 +214,10 @@
 				<a href="/documentation/troubleshooting"> Troubleshooting </a>
 			</li>
 		
+			<li class= about="/documentation/debugger">
+				<a href="/documentation/debugger"> Debugger </a>
+			</li>
+		
 	
 
 
@@ -295,7 +299,7 @@ whiteSquare.origin.<span class="keyword">set</span>(<span class="number">0</span
 <p>This method is destructive to the sprite and should be used when you want to make sure that the sprite will be cleared from memory. It is commonly used inside a FlxState&#39;s overriden destroy method.</p>
 <h3 id="animation">Animation</h3>
 <p>Flixel supports spritesheet animation.</p>
-<p><img src="/images/sprite-animation-example.png" alt=""></p>
+<p><img src="../images/02_handbook/sprite-animation-example.png" alt=""></p>
 <pre class="highlight"><code class="actionscript">player.loadGraphic(<span class="string">"assets/player.png"</span>, <span class="literal">true</span>, <span class="number">32</span>, <span class="number">36</span>);
 player.animation.add(<span class="string">"walk"</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>], <span class="number">5</span>, <span class="literal">true</span>);
 player.animation.play(<span class="string">"walk"</span>);</code></pre>
