@@ -246,7 +246,7 @@
      <span class="keyword">public</span> <span class="keyword">var</span> speed:Float = <span class="number">140</span>;
      <span class="keyword">public</span> <span class="keyword">var</span> etype(<span class="keyword">default</span>, <span class="literal">null</span>):Int;
 
-     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, EType:Int)</span> 
+     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, EType:Int)</span>
      {</span>
          <span class="keyword">super</span>(X, Y);
          etype = EType;
@@ -263,7 +263,7 @@
          offset.y = <span class="number">2</span>;
      }
 
-     <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">draw</span><span class="params">()</span><span class="type">:Void</span> 
+     <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">draw</span><span class="params">()</span><span class="type">:Void</span>
      {</span>
          <span class="keyword">if</span> ((velocity.x != <span class="number">0</span> || velocity.y != <span class="number">0</span> ) &amp;&amp; touching == FlxObject.NONE)
          {
@@ -282,7 +282,7 @@
                      facing = FlxObject.DOWN;
              }
 
-             <span class="keyword">switch</span>(facing)
+             <span class="keyword">switch</span> (facing)
              {
                  <span class="keyword">case</span> FlxObject.LEFT, FlxObject.RIGHT:
                      animation.play(<span class="string">"lr"</span>);
@@ -384,7 +384,7 @@
      }
  }
 
- <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span> 
+ <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
  {</span>
      _brain.update();
      super.update();

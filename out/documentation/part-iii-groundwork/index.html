@@ -301,7 +301,7 @@
 
  <span class="title">class</span> <span class="title">Player</span> <span class="title">extends</span> <span class="title">FlxSprite</span>
  {</span>
-     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)</span> 
+     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)</span>
      {</span>
          <span class="keyword">super</span>(X, Y, SimpleGraphic);
      }
@@ -317,11 +317,11 @@
 <pre class="highlight"><code class="actionscript"> <span class="keyword">super</span>(X, Y, SimpleGraphic);</code></pre>
 <p> becomes</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">super</span>(X, Y);</code></pre>
-<p> With classes, we use the &#39;super&#39; command to refer to the parent class. So, within out &#39;new&#39; constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.</p>
+<p> With classes, we use the &#39;super&#39; command to refer to the parent class. So, within our &#39;new&#39; constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.</p>
 </li>
-<li><p>Next, we&#39;ll want to create a placeholder image to show us where our Sprite is, so under <code>super(X, Y);</code>, add:</p>
-</li>
-<li><pre class="highlight"><code class="actionscript"> makeGraphic(<span class="number">16</span>, <span class="number">16</span>, FlxColor.BLUE);</code></pre>
+<li><p>Next, we&#39;ll want to create a placeholder image to show us where our Sprite is, so under <code>super(X, Y);</code>, add:
+7.</p>
+<pre class="highlight"><code class="actionscript"> makeGraphic(<span class="number">16</span>, <span class="number">16</span>, FlxColor.BLUE);</code></pre>
 <p> (Make sure that an import is created for FlxColor, and if it isn&#39;t, add it.)
  All we&#39;re doing here is saying that we want to make this sprite&#39;s graphic be a 16x16 pixel blue square.</p>
 </li>
@@ -373,7 +373,7 @@
       _left = _right = <span class="literal">false</span>;</code></pre>
 </li>
 <li><p>Next, we&#39;ll make sure the player is actually moving:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> ( _up || _down || _left || _right)</code></pre>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (_up || _down || _left || _right)</code></pre>
 </li>
 <li><p>Next, we need to determine which direction to move the player, and by how much. There&#39;s a common mistake that I see from people making games which allow for diagonal movement, and that is that if they do something like this:</p>
 <pre class="highlight"><code class="actionscript"> velocity.x = speed;
@@ -412,7 +412,7 @@
 <p> <img src="../images/04_tutorials/overrideCompletion.png" alt=""></p>
 <p> Select <code>update</code> and press enter.</p>
 <p> Now you just need to add the function call, after which it should look like this:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span> 
+<pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
  {</span>
      movement();
      super.update();

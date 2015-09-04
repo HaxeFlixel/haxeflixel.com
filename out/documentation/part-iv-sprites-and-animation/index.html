@@ -278,7 +278,7 @@
  FlxAngle.rotatePoint(speed, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, mA, velocity); <span class="comment">// determine our velocity based on angle and speed</span>
  <span class="keyword">if</span> ((velocity.x != <span class="number">0</span> || velocity.y != <span class="number">0</span>) &amp;&amp; touching == FlxObject.NONE) <span class="comment">// if the player is moving (velocity is not 0 for either axis), we need to change the animation to match their facing</span>
  {
-     <span class="keyword">switch</span>(facing)
+     <span class="keyword">switch</span> (facing)
      {
          <span class="keyword">case</span> FlxObject.LEFT, FlxObject.RIGHT:
              animation.play(<span class="string">"lr"</span>);
