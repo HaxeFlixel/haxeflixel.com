@@ -216,41 +216,35 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/14-install-development-flixel.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>Developers may want to contribute and or stay updated with the bleeding edge code of Haxeflixel. Like any development code we caution the use of it as it may not have the same amount of testing as the stable version.</p>
-<p>All new development is done on the <a href="https://github.com/HaxeFlixel/flixel/tree/dev">dev branch</a> of the <a href="https://github.com/HaxeFlixel/flixel.git">main GitHub repository</a>.</p>
+			<p>Developers may want to contribute and / or stay updated with the bleeding edge code of HaxeFlixel. Like any development code we caution the use of it as it may not have the same amount of testing as the stable version.</p>
+<p>All new development is done on the dev branches of <a href="https://github.com/HaxeFlixel">HaxeFlixel&#39;s GitHub repositories</a>.</p>
 <p><strong>Prerequisites</strong></p>
 <p>You must have completed the following Getting Started tutorials:</p>
-<ol>
-<li><a href="http://haxeflixel.com/documentation/install-haxe">Installing Haxe</a></li>
-</ol>
-<p>If you are wanting to use the latest Haxe toolkit you can see instructions to <a href="http://haxe.org/download/manual_install#building-from-source">build Haxe from source here</a>.</p>
-<ol>
-<li><a href="http://haxeflixel.com/documentation/install-openfl/">Installing OpenFl</a></li>
-</ol>
-<p>If you are wanting to use the latest OpenFL code, depending on your target there are instructions for building on <a href="https://github.com/openfl/openfl#development-build">OpenFl&#39;s main repositories</a>.</p>
-<p>HaxeLib lets you have multiple versions of a library like Flixel installed at a time.</p>
-<p>If you want to remove the one you have currently installed type:</p>
-<pre class="highlight"><code class="bash">haxelib remove flixel</code></pre>
-<p>You can see the versions of Flixel and other HaxeLib packages like OpenFL with the following command:</p>
+<ul>
+<li><p><a href="http://haxeflixel.com/documentation/install-haxe">Installing Haxe</a></p>
+</li>
+<li><p><a href="http://haxeflixel.com/documentation/install-openfl/">Installing OpenFL</a></p>
+</li>
+</ul>
+<p>If you are wanting to use the latest OpenFL code, depending on your target there are instructions for building on <a href="https://github.com/openfl/openfl#development-build">OpenFL&#39;s main repositories</a>. You do not have to use the latest OpenFL to use the dev branch of HaxeFlixel.</p>
+<p>Haxelib lets you have multiple versions of a library like Flixel installed at a time. You can see the versions of Flixel and other Haxelib packages like OpenFL with the following command (with the active version in square brackets):</p>
 <pre class="highlight"><code class="bash">haxelib list</code></pre>
-<p><strong>Update haxelib</strong></p>
-<p>In some cases, your haxelib is not up-to-date. This can cause problems when trying to download the latest flixel snapshot from git. In order to update haxelib, please type in the following command into your console:</p>
-<pre class="highlight"><code class="bash">haxelib selfupdate</code></pre>
-<p><img src="http://s18.postimg.org/r86v2iw3d/haxelib_selfupdate_1.png" alt="console screen of haxelib selfupdate"></p>
-<p>You should be prompted to run the update.hxml. Just type in the command as it&#39;s on the screen:</p>
-<pre class="highlight"><code class="bash">haxe update.hxml</code></pre>
-<p><strong>Install flixel from git</strong></p>
-<p>Now you are ready to obtain the newest version. Please input the following command into your console:</p>
-<pre class="highlight"><code class="bash">haxelib git flixel https://github.com/HaxeFlixel/flixel dev</code></pre>
-<p>You may also want to install the additional <a href="https://github.com/HaxeFlixel/flixel-addons">flixel addons</a> repository so that you can compile demos that require it:</p>
-<pre class="highlight"><code class="bash">haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons.git</code></pre>
-<p><strong>Testing your new flixel with the breakout demo</strong></p>
-<p>Everything is setup and just giddy to run those juicy 3.0 demos :) Let&#39;s not make &#39;em wait! Grab the flixel-demo repository and navigate to &#39;Demos/flixel-demos/Arcade Classics/Breakout&#39;. Start the game by writing:</p>
-<pre class="highlight"><code class="bash">lime test neko</code></pre>
-<p>or</p>
-<pre class="highlight"><code class="bash">lime test flash</code></pre>
+<ul>
+<li>Install Git</li>
+</ul>
+<p>Windows-only note: ensure that during the installation process, you select the non-default option that allows you to use Git from the Windows command prompt (you&#39;ll also need to re-open your command prompt window after installation for Git to become available there).</p>
+<p><strong>Install Flixel from GitHub</strong></p>
+<p>To obtain the newest version, please input the following command into your console:</p>
+<pre class="highlight"><code class="bash">haxelib git flixel https://github.com/HaxeFlixel/flixel</code></pre>
+<p>The same applies for any additional Flixel libraries:</p>
+<pre class="highlight"><code class="bash">haxelib git flixel-demos https://github.com/HaxeFlixel/flixel-demos
+haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
+haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui</code></pre>
+<p>Should you want to use <code>haxelib set &lt;library&gt; &lt;version&gt;</code> to switch back to released versions, be sure to run <code>haxelib dev &lt;library&gt;</code> beforehand. <code>haxelib git</code> enables the &quot;development directory&quot; for a library, which causes a silent failure of <code>haxelib set</code>.</p>
+<p><strong>Testing the installation with the Mode demo</strong></p>
+<p>Navigate to <code>flixel-demos/Platformers/Mode</code>. Compile and run the game with <code>lime test &lt;target&gt;</code>.</p>
 <p><strong>Need more help?</strong></p>
-<p>Check out our <a href="http://forum.haxeflixel.com">Forum</a> and <a href="irc://chat.freenode.net/#haxeflixel">#haxeflixel on freenode IRC</a>.</p>
+<p>Check out our <a href="http://forum.haxeflixel.com">forum</a> and <a href="irc://chat.freenode.net/#haxeflixel">#haxeflixel on freenode IRC</a>.</p>
 
 
 			<br>

@@ -245,7 +245,7 @@
 <pre class="highlight"><code class="actionscript"> animation.add(<span class="string">"lr"</span>, [<span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>], <span class="number">6</span>, <span class="literal">false</span>);
  animation.add(<span class="string">"u"</span>, [<span class="number">6</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">8</span>], <span class="number">6</span>, <span class="literal">false</span>);
  animation.add(<span class="string">"d"</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>], <span class="number">6</span>, <span class="literal">false</span>);</code></pre>
-<p> We&#39;re finished with the constructor changes, the final step is to change our updateMovement function to tell the player sprite which way to face. So, modify our section which deals with setting the player&#39;s angle to look something like this:</p>
+<p> We&#39;re finished with the constructor changes, the final step is to change our movement function to tell the player sprite which way to face. So, modify our section which deals with setting the player&#39;s angle to look something like this:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> mA:Float = <span class="number">0</span>; <span class="comment">// our temporary angle</span>
  <span class="keyword">if</span> (_up)  <span class="comment">// the player is pressing UP</span>
  {
