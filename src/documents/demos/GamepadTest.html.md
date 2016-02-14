@@ -2,8 +2,8 @@
 title: "GamepadTest"
 layout: demo
 pageOrder: 1
-SWFHeight: 376
-SWFWidth: 526
+SWFHeight: 440
+SWFWidth: 650
 source: "Input/GamepadTest"
 ```
 

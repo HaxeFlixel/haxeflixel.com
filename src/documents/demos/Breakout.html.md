@@ -4,7 +4,7 @@ layout: demo
 pageOrder: 1
 SWFHeight: 480
 SWFWidth: 640
-source: "Arcade%20Classics/Breakout"
+source: "Arcade/Breakout"
 ```
 
 A very simple, but solid Breakout clone originally created by [Photonstorm](http://www.photonstorm.com/)&nbsp;(Richard Davey)&nbsp;in 20 minutes.

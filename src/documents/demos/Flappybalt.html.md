@@ -4,7 +4,7 @@ layout: demo
 pageOrder: 1
 SWFHeight: 720
 SWFWidth: 480
-source: "Other/Flappybalt"
+source: "Arcade/Flappybalt"
 tags: ['homepage_demo']
 ```
 

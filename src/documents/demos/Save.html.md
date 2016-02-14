@@ -1,5 +1,5 @@
 ```
-title: "FlxSave"
+title: "Save"
 layout: demo
 pageOrder: 1
 SWFHeight: 300

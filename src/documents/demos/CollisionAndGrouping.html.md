@@ -1,5 +1,5 @@
 ```
-title: "Collision and Grouping"
+title: "CollisionAndGrouping"
 layout: demo
 pageOrder: 1
 SWFHeight: 300

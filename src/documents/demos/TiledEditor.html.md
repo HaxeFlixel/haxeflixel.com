@@ -1,5 +1,5 @@
 ```
-title: "Tiled Editor"
+title: "TiledEditor"
 layout: demo
 pageOrder: 1
 SWFHeight: 480
