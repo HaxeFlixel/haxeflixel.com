@@ -26,10 +26,10 @@ HaxeFlixel's financials are managed by [gamedevsam](https://github.com/gamedevsa
 Between 06/2015 and 02/2016 HaxeFlixel Patreon Funds were allocated as follows:
 
 * $10 to [Thorbjørn Lindeijer's Patreon](https://www.patreon.com/bjorn) for his work on Tiled map editor.
-* $79.18 to Justo Delgado for work improving OpenFL shader API.
-* $39.99 to Chris Decoster (impaler) for website hosting expenses.
-* $100 to [Jeff Ward](http://jcward.com/) for his work developing a Haxe plugin for Visual Studio Code.
-* $198.13 to Samuel Batista for US income taxes.
+* $79.18 to [Justo Delgado](https://twitter.com/jdbaudi) for work improving OpenFL shader API.
+* $39.99 to [Chris Decoster](https://twitter.com/impaler12) for website hosting expenses.
+* $100 to [Jeff Ward](https://twitter.com/Jeff__Ward) for his work developing a Haxe plugin for Visual Studio Code.
+* $198.13 to [Samuel Batista](https://twitter.com/gamedevsam) for US income taxes.
 
 As of 02/01/2016 HaxeFlixel has $492.23 available for developer funding.
 
