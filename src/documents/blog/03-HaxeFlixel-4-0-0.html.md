@@ -19,7 +19,7 @@ The highlights of this release are:
 
 For a more in-depth breakdown of the changes, have a look at our [changelog](https://github.com/HaxeFlixel/flixel/blob/master/CHANGELOG.md). If you are mostly interested in the breaking changes to upgrade a project using HaxeFlixel 3.3.x, please refer to the [upgrade guide](http://haxeflixel.com/documentation/upgrade-guide-4-0-0/).
 
-We would like to thank all contributors who helped with this release in any way, as well as [our Patreon supporters](https://www.patreon.com/user?u=94916&ty=p). Check out [the financial summary post](https://www.patreon.com/posts/4421829) if you're wondering what we do with your Patreon donations.
+We would like to thank all contributors who helped with this release in any way, as well as [our Patreon supporters](https://www.patreon.com/user?u=94916&ty=p). Check out the [Financial Summary 06/15 - 02/16](https://www.patreon.com/posts/4421829) blog post on Patreon if you're wondering what we do with your donations.
 
 Going forward, there are two things we want to foucs on:
 	
