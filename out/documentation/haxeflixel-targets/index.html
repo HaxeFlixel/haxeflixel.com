@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -246,7 +242,7 @@
 			<h1 class="title">HaxeFlixel Targets</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/10-haxeflixel-targets.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/09-haxeflixel-targets.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>HaxeFlixel currently supports the following targets through OpenFL:</p>
 <h4 id="-desktop-documentation-desktop-targets-"><a href="/documentation/desktop-targets">Desktop</a></h4>
@@ -257,7 +253,7 @@
 </ul>
 <h4 id="-mobile-documentation-mobile-targets-"><a href="/documentation/mobile-targets">Mobile</a></h4>
 <ul>
-<li><a href="/documentation/ios">IOS</a></li>
+<li><a href="/documentation/ios">iOS</a></li>
 <li><a href="/documentation/android">Android</a></li>
 <li>Blackberry</li>
 <li>WebOS</li>
@@ -265,31 +261,19 @@
 <h4 id="web">Web</h4>
 <ul>
 <li>Flash</li>
+<li>HTML5</li>
 </ul>
-<p>Using these targets requires the appropriate SDK&#39;s and system setup assisted through the OpenFL setup commands.</p>
-<pre class="highlight"><code class="haskell"><span class="title">openfl</span> setup windows
-<span class="title">openfl</span> setup mac
-<span class="title">openfl</span> setup android
-<span class="title">openfl</span> setup blackberry</code></pre>
+<p>Using these targets requires the appropriate SDK&#39;s and system setup assisted through the Lime setup commands.</p>
+<pre class="highlight"><code class="haskell"><span class="title">lime</span> setup windows
+<span class="title">lime</span> setup mac
+<span class="title">lime</span> setup android
+<span class="title">lime</span> setup blackberry</code></pre>
 <h3 id="html5">HTML5</h3>
-<p>While HTML5 support is still somewhat experimental, thanks to great work that has been placed towards advancing the target much further, it is now possible to achieve more than reasonable results with both available backends: <a href="https://github.com/YellowAfterlife/openfl-bitfive">openfl-bitfive</a>, that serves as default, and <a href="https://github.com/openfl/openfl-html5">openfl-html5</a> which you can use by adding this line to your project.xml (<strong>before Flixel&#39;s libraries!</strong>):</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxelib</span> <span class="attribute">name</span>=<span class="value">"openfl-html5"</span>/&gt;</span></code></pre>
-<p><strong><em>Here are some simple guidelines to get you started:</em></strong></p>
-<h4 id="general-haxeflixel-s-html5-guidelines">General HaxeFlixel&#39;s HTML5 Guidelines</h4>
+<h4 id="general-html5-guidelines">General HTML5 Guidelines</h4>
 <ul>
 <li><strong>Text</strong>: For now, you might prefer using <a href="http://haxeflixel.com/demos/FlxBitmapTextField/">bitmap fonts</a> to avoid text issues. With regular fonts, you may favor larger text size (&gt;12) in order to avoid blurriness, and try some <a href="https://github.com/HaxeFlixel/flixel/issues/1024">manual adjustments</a> if you have a scaling problem (or when you are trying to embed fonts, which is not supported).</li>
-<li><strong>Audio</strong>: You should use regular .ogg files (see the backends sections for more details).</li>
+<li><strong>Audio</strong>: You should use regular .ogg files . Though .mp3 and .wav files are supported, SoundJS may not recognise them and might stop your project from running until you delete/replace them.</li>
 <li><strong>Particles</strong>: You should keep the particle count low and not expect much in terms of performance.</li>
-</ul>
-<h4 id="openfl-bitfive-guidelines">openfl-bitfive Guidelines</h4>
-<ul>
-<li><strong>Audio</strong>: For now, you can only use .wav files on Firefox (.ogg is not supported there). Music does not loop on Chrome when running your game via nekotools server.</li>
-<li><strong>Scale</strong>: openfl-bitfive fills the entire browser window with your game, mirroring the behaviour of a .swf file when opened directly in the browser. To avoid this, embed your game in an iframe.</li>
-</ul>
-<h4 id="openfl-html5-guidelines">openfl-html5 Guidelines</h4>
-<ul>
-<li><strong>Graphics</strong>: Graphics on this backend might have a certain blur compared to openfl-bitfive rendering.</li>
-<li><strong>Audio</strong>: Though .mp3 and .wav files are supported, SoundJS may not recognise them and might stop your project from running until you delete/replace them.</li>
 </ul>
 
 

@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -248,7 +244,7 @@
 			
 				<a href="http://api.haxeflixel.com/flixel/FlxState.html" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/06-flxstate.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/05-flxstate.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>This is the basis for your game&#39;s levels and menus, each described in a &quot;state&quot; structure. The state is a way of organising your game objects for the state that the game is currently in. For example, when you create level 0 of your game it&#39;s much more organized to only have the code for that level, not every level. Also it&#39;s good to use switching states to clear your memory, to avoid memory leaks. A typical Flixel game will have a separate FlxState class for every level and menu.</p>
 <p><img src="../images/02_handbook/flixel-state-0.png" width="100%" /></p>
@@ -261,10 +257,8 @@
 <p>This is the place where you add your sprites, tilemaps etc to your state to be rendered. It works similar to the NME display list api addChild().</p>
 <h4 id="remove-object-flxbasic-">remove(object:FlxBasic)</h4>
 <p>This is the place where you remove sprites etc you have added to your state. Everything you remove still exists so you can add it back later. If you&#39;re not going to use the removed object again you might want to consider removing it from memory by setting it as null for example.</p>
-<h4 id="update-">update()</h4>
+<h4 id="update-elapsed-float-">update(elapsed:Float)</h4>
 <p>This is the place where you can run code on every frame of your game. It&#39;s where you setup your input controls, trigger movement and almost all of your gameplay logic.</p>
-<h4 id="destroy-">destroy()</h4>
-<p>This is a common method throughout Flixel that ensures that you remove objects from the memory. If you don&#39;t properly destroy your objects in your states the objects may not be cleaned up by the garbage collection and consume memory over time.</p>
 <pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
 
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
@@ -276,16 +270,10 @@
         <span class="comment">//create your state objects here</span>
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
     {</span>
         <span class="comment">//call super to update the core state class</span>
-        super.update();
-    }
-
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        <span class="comment">//call super to destroy the core state class objects</span>
-        super.destroy();
+        super.update(elapsed);
     }
 }</code></pre>
 <p>Here is an example of a simple game state;</p>
@@ -296,6 +284,7 @@
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxG</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
+<span class="title">import</span> <span class="title">flixel</span>.<span class="title">graphics</span>.<span class="title">FlxGraphic</span>;
 
 <span class="title">class</span> <span class="title">FlxExampleState</span> <span class="title">extends</span> <span class="title">FlxState</span>
 {</span>
@@ -313,11 +302,11 @@
 
         <span class="comment">//create a tilemap level</span>
         level = <span class="keyword">new</span> FlxTilemap();
-        level.loadMap(<span class="string">'assets/level.csv'</span>, FlxTilemap.imgAuto, <span class="number">0</span>, <span class="number">0</span>, FlxTilemap.AUTO);
+        level.loadMap(<span class="string">'assets/level.csv'</span>, FlxGraphic.fromClass(GraphicAuto), <span class="number">0</span>, <span class="number">0</span>, AUTO);
         add(level);
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
     {</span>
         <span class="comment">//control the player with keyboard</span>
         wizard.acceleration.x = <span class="number">0</span>;
@@ -332,21 +321,9 @@
         }
         <span class="keyword">if</span> (FlxG.keys.SPACE &amp;&amp; player.isTouching(FlxObject.FLOOR))
         {
-                wizard.velocity.y = -wizard.maxVelocity.y / <span class="number">2</span>;
+            wizard.velocity.y = -wizard.maxVelocity.y / <span class="number">2</span>;
         }
-        super.update();
-    }
-
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        <span class="comment">//destroy for garbage collection when you switch state</span>
-        wizard.destroy();
-        wizard = <span class="literal">null</span>;
-
-        level.destroy();
-        level = <span class="literal">null</span>;
-
-        super.destroy();
+        super.update(elapsed);
     }
 }</code></pre>
 

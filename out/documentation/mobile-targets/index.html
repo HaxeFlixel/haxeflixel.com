@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -246,10 +242,10 @@
 			<h1 class="title">Mobile Targets</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/12-mobile-targets.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/11-mobile-targets.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>With the penetration of mobile devices in the world ignoring mobile targets for your games and applications is ignoring a huge audience.</p>
-<p>Mobile devices even though amazing have particular bottlenecks not present on desktop targets. The bottleneck most significant to HaxeFlixel games is the low powered cpu. HaxeFlixel&#39;s answer to this is to make use of gpu acceleration provided by OpenFL.</p>
+<p>Mobile devices even though amazing have particular bottlenecks not present on desktop targets. The bottleneck most significant to HaxeFlixel games is the low powered CPU. HaxeFlixel&#39;s answer to this is to make use of GPU acceleration provided by OpenFL.</p>
 <h4 id="cpu">CPU</h4>
 <p>The processing power of mobile cpus are often the biggest bottleneck when compared to a desktop target. Mobile cpus are constrained by low power architectures and are simply not as powerful. Manipulating pixels like bitmap filters do with Flash software rendering is simply too slow for mobile devices. HaxeFlixel has answered this for Flixel games to use the GPU for rendering your sprites instead of using software rendering like its done with Flash.</p>
 <h4 id="memory">Memory</h4>
@@ -257,7 +253,7 @@
 <h4 id="texture-size-limits">Texture Size Limits</h4>
 <p>Due to the nature of mobile hardware there are often maximum sizes for textures that are much lower than desktop hardware. There is no definitive guide to size limits as it depends on the hardware of each device individually.</p>
 <p>Here you can see an overview of size limits obtained from webgl browsers <a href="http://webglstats.com/#h_texsize"><a href="http://webglstats.com/#h_texsize">http://webglstats.com/#h_texsize</a></a></p>
-<p>You can also look up a device on <a href="http://glxbench.com">glxbench.com</a>, under the GL config tab look for GL_MAX_TEXTURE_SIZE.</p>
+<p>You can also look up a device on <a href="http://glxbench.com">glxbench.com</a>, under the GL config tab look for <code>GL_MAX_TEXTURE_SIZE</code>.</p>
 <p>Here is an overview of the variety in devices, feel free to add to the list;</p>
 <table border="1" cellpadding="1" cellspacing="1" class="table table-hover table-bordered">
     <tbody>

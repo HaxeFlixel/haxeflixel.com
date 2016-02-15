@@ -162,8 +162,12 @@
 				<a href="/documentation/haxeflixel-3-x"> HaxeFlixel 3.x </a>
 			</li>
 		
-			<li class= about="/documentation/upgrade-guide">
-				<a href="/documentation/upgrade-guide"> Upgrade Guide </a>
+			<li class= about="/documentation/upgrade-guide-3-x">
+				<a href="/documentation/upgrade-guide-3-x"> Upgrade Guide 3.x </a>
+			</li>
+		
+			<li class= about="/documentation/upgrade-guide-4-0-0">
+				<a href="/documentation/upgrade-guide-4-0-0"> Upgrade Guide 4.0.0 </a>
 			</li>
 		
 			<li class= about="/documentation/flixel-addons">
@@ -467,7 +471,7 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
  * @param    y     The y coordinate.
  */</span>
 <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setPosition</span><span class="params">(x:Int, y:Int)</span><span class="type">:Void</span></span></code></pre>
-<h2 id="class-names">Class names</h2>
+<h2 id="class-names">Class Names</h2>
 <p>All class names should be prefixed by <code>Flx</code>, e.g.:</p>
 <ul>
 <li><code>FlxBasic</code></li>
@@ -477,6 +481,17 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 </ul>
 <p>Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing.</p>
 <p>This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don&#39;t when writing a game.</p>
+<h2 id="enum-value-names">Enum Value Names</h2>
+<p>The names of enum values are capitalized. The same convention applies to abstract enums.</p>
+<pre class="highlight"><code class="actionscript">enum FlxCameraFollowStyle
+{
+    LOCKON;
+    PLATFORMER;
+    TOPDOWN;
+    TOPDOWN_TIGHT;
+    SCREEN_BY_SCREEN;
+    NO_DEAD_ZONE;
+}</code></pre>
 <h2 id="indentation-and-formatting-tabs-and-spaces">Indentation and Formatting / Tabs and spaces</h2>
 <p>Tabs should be used for indentation <em>everywhere</em>.</p>
 <p>However, it is considered preferable to use spaces for formatting since it will look consistent, no matter how your editor is configured. For example, code that looks nice with tab indentation and FlashDevelop&#39;s default settings will be a mess on GitHub.</p>

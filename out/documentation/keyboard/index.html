@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -248,14 +244,14 @@
 			
 				<a href="http://api.haxeflixel.com/flixel/input/keyboard/FlxKeyboard.html" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/17-keyboard.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/16-keyboard.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>Keyboard input for HaxeFlixel is provided through the <code>FlxKeyboard</code> class and is available through <code>FlxG.keys</code>.</p>
 <h2 id="key-lists">Key Lists</h2>
 <p>An object of type <code>FlxKeyList</code> contains a <code>Bool</code> for each key on the keyboard. The values are kept as an array internally, but you can easily refer to them by using special instance variables named after the key. For a full list of all available names look at the <code>FlxKeyList</code> documentation <a href="http://api.haxeflixel.com/flixel/input/keyboard/FlxKeyList.html">here</a>.</p>
 <p><code>FlxKeyboard</code> uses the three key lists <code>pressed</code>, <code>justPressed</code> and <code>justReleased</code> to keep track of the keys. <code>pressed</code> contains <code>true</code> for all keys that are currently pressed. <code>justPressed</code> only contains <code>true</code> for all keys that have been pressed since the last frame.</p>
 <p>Here&#39;s an example of how to put it all together:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
 {</span>
     <span class="keyword">if</span> (FlxG.keys.pressed.UP)
     {
@@ -275,23 +271,23 @@
         <span class="comment">// This code is only execute once, on the frame immediately after the key has been released</span>
     }
 
-    super.update();
+    super.update(elapsed);
 }</code></pre>
 <h2 id="checking-multiple-keys">Checking multiple keys</h2>
 <p>You can check multiple keys at once using the <code>anyPressed()</code>, <code>anyJustPressed()</code> and <code>anyJustReleased()</code> methods of <code>FlxKeyboard</code>. This allows to bind multiple keys to one action easily, for example controlling the player with either WASD or the arrow keys. These methods take an <code>Array</code> of key names (as <code>String</code>s) and return true if any of the given keys has the desired property.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
 {</span>
-    <span class="keyword">if</span> (FlxG.keys.anyPressed([<span class="string">"LEFT"</span>, <span class="string">"A"</span>]))
+    <span class="keyword">if</span> (FlxG.keys.anyPressed([LEFT, A]))
     {
         <span class="comment">// Move left</span>
     }
 
-    <span class="keyword">if</span> (FlxG.keys.anyPressed([<span class="string">"RIGHT"</span>, <span class="string">"D"</span>]))
+    <span class="keyword">if</span> (FlxG.keys.anyPressed([RIGHT, D]))
     {
         <span class="comment">// Move right</span>
     }
 
-    super.update();
+    super.update(elapsed);
 }</code></pre>
 <h2 id="conditionals">Conditionals</h2>
 <p>For general information on conditionals, please refer to <a href="http://haxeflixel.com/documentation/compiler-conditionals/">this page</a>.</p>

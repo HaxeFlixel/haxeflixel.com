@@ -150,10 +150,6 @@
 				<a href="/documentation/openfl-project-xml-format"> XML Project Format </a>
 			</li>
 		
-			<li class= about="/documentation/as3-and-haxe-comparison">
-				<a href="/documentation/as3-and-haxe-comparison"> AS3 and Haxe Comparison </a>
-			</li>
-		
 			<li class= about="/documentation/game-development-tools">
 				<a href="/documentation/game-development-tools"> Game Development Tools </a>
 			</li>
@@ -209,9 +205,9 @@
         <span class="keyword">super</span>();
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
     {</span>
-        super.update();
+        super.update(elapsed);
     }
 
     <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
@@ -232,9 +228,9 @@
         super.create();
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
     {</span>
-        super.update();
+        super.update(elapsed);
     }
 
     <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
@@ -258,8 +254,8 @@ makeGraphic(<span class="number">100</span>, <span class="number">100</span>, <s
 <span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxColor;</span></code></pre>
 <pre class="highlight"><code class="actionscript">myText = <span class="keyword">new</span> FlxText(<span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>); <span class="comment">// x, y, width</span>
 myText.text = <span class="string">"Hello World"</span>;
-myText.setFormat(<span class="string">"assets/font.ttf"</span>, <span class="number">20</span>, FlxColor.WHITE, <span class="string">"center"</span>);
-myText.setBorderStyle(FlxText.BORDER_OUTLINE, FlxColor.RED, <span class="number">1</span>);</code></pre>
+myText.setFormat(<span class="string">"assets/font.ttf"</span>, <span class="number">20</span>, FlxColor.WHITE, CENTER);
+myText.setBorderStyle(OUTLINE, FlxColor.RED, <span class="number">1</span>);</code></pre>
 <h2 id="flxbutton">FlxButton</h2>
 <pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.ui.FlxButton;</span></code></pre>
 <pre class="highlight"><code class="actionscript">myButton = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Label"</span>, myCallback);
@@ -280,22 +276,16 @@ myButton.loadGraphic(<span class="string">"assets/custom.png"</span>);</code></p
 <span class="tag">&lt;/<span class="title">assets</span>&gt;</span></code></pre>
 <p>Play on your code:</p>
 <pre class="highlight"><code class="actionscript">FlxG.sound.play(<span class="string">"sound_1"</span>);
-
 <span class="comment">// Loop music</span>
 FlxG.sound.playMusic(<span class="string">"music_1"</span>);</code></pre>
 <h2 id="keyboard-input">Keyboard Input</h2>
 <pre class="highlight"><code class="actionscript"><span class="comment">// 'A' key</span>
-<span class="keyword">if</span> (FlxG.keys.justPressed.A) 
-{
-}
+<span class="keyword">if</span> (FlxG.keys.justPressed.A) {}
+<span class="keyword">if</span> (FlxG.keys.pressed.A) {}
+<span class="keyword">if</span> (FlxG.keys.justReleased.A) {}
 
-<span class="keyword">if</span> (FlxG.keys.pressed.A)
-{
-}
-
-<span class="keyword">if</span> (FlxG.keys.justReleased.A) 
-{
-}</code></pre>
+<span class="comment">// Checking multiple keys:</span>
+<span class="keyword">if</span> (FlxG.keys.anyPressed([RIGHT, D])) {}</code></pre>
 <h4 id="keys">Keys</h4>
 <p><code>ANY</code></p>
 <p><code>A</code>...<code>Z</code></p>
@@ -324,17 +314,9 @@ FlxG.sound.playMusic(<span class="string">"music_1"</span>);</code></pre>
 <code>SEMICOLON</code></p>
 <p><code>NUMPADZERO</code> <code>NUMPADONE</code> <code>NUMPADTWO</code>...<code>NUMPADNINE</code></p>
 <h2 id="-mouse-http-haxeflixel-com-documentation-mouse-input"><a href="http://haxeflixel.com/documentation/mouse">Mouse</a> Input</h2>
-<pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (FlxG.mouse.pressed) 
-{
-}
-
-<span class="keyword">if</span> (FlxG.mouse.justPressed) 
-{
-}
-
-<span class="keyword">if</span> (FlxG.mouse.justReleased) 
-{
-}</code></pre>
+<pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (FlxG.mouse.pressed) {}
+<span class="keyword">if</span> (FlxG.mouse.justPressed) {}
+<span class="keyword">if</span> (FlxG.mouse.justReleased) {}</code></pre>
 <h4 id="positional-data">Positional Data</h4>
 <pre class="highlight"><code class="actionscript"><span class="comment">// Relative to world space</span>
 FlxG.mouse.x;
@@ -349,17 +331,9 @@ FlxG.mouse.screenY;</code></pre>
 <h2 id="touch-input">Touch Input</h2>
 <pre class="highlight"><code class="actionscript"><span class="keyword">for</span> (touch <span class="keyword">in</span> FlxG.touches.list)
 {
-    <span class="keyword">if</span> (touch.justPressed)
-    {
-    }
-
-    <span class="keyword">if</span> (touch.pressed)
-    {
-    }
-
-    <span class="keyword">if</span> (touch.justReleased)
-    {
-    }
+    <span class="keyword">if</span> (touch.justPressed) {}
+    <span class="keyword">if</span> (touch.pressed) {}
+    <span class="keyword">if</span> (touch.justReleased) {}
 }</code></pre>
 <h4 id="positional-data">Positional Data</h4>
 <pre class="highlight"><code class="actionscript"><span class="comment">// Relative to world space</span>
@@ -429,16 +403,15 @@ stringSignal = FlxDestroyUtil.destroy(stringSignal);</code></pre>
 <li><code>cancel()</code> stops the timer and removes it from the timer manager.</li>
 </ul>
 <h2 id="flxrandom">FlxRandom</h2>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxRandom;</span></code></pre>
 <pre class="highlight"><code class="actionscript"><span class="comment">// (Int) between 0 and 10</span>
-FlxRandom.intRanged(<span class="number">0</span>, <span class="number">10</span>);
+FlxG.random.int(<span class="number">0</span>, <span class="number">10</span>);
 
 <span class="comment">// (Float) between 0.0 and 10.0</span>
-FlxRandom.floatRanged(<span class="number">0.0</span>, <span class="number">10.0</span>);
+FlxG.random.float(<span class="number">0.0</span>, <span class="number">10.0</span>);
 
 <span class="comment">// (Bool) Chance by percent</span>
-FlxRandom.chanceRoll(<span class="number">50</span>); <span class="comment">// 50% chance to return 'true'</span>
-FlxRandom.chanceRoll(<span class="number">10</span>); <span class="comment">// 10% chance to return 'true'</span></code></pre>
+FlxG.random.bool(<span class="number">50</span>); <span class="comment">// 50% chance to return 'true'</span>
+FlxG.random.bool(<span class="number">10</span>); <span class="comment">// 10% chance to return 'true'</span></code></pre>
 <h2 id="-flxtween-http-haxeflixel-com-documentation-flxtween-"><a href="http://haxeflixel.com/documentation/flxtween/">FlxTween</a></h2>
 <p><a href="http://haxeflixel.com/demos/FlxTween/">Check the demo</a> to visualize all <code>FlxTween</code> types.</p>
 <ul>
@@ -447,7 +420,7 @@ FlxRandom.chanceRoll(<span class="number">10</span>); <span class="comment">// 1
 <pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.tweens.FlxTween;</span>
 <span class="preprocessor"><span class="keyword">import</span> flixel.tweens.FlxEase;</span></code></pre>
 <pre class="highlight"><code class="actionscript"><span class="comment">// Moves sprite to position (100, 200) in 3 seconds</span>
-FlxTween.tween(sprite, { x:<span class="number">100</span>, y:<span class="number">200</span> }, <span class="number">3.0</span>, { ease: FlxEase.quadInOut, complete: myCallback });</code></pre>
+FlxTween.tween(sprite, { x: <span class="number">100</span>, y: <span class="number">200</span> }, <span class="number">3.0</span>, { ease: FlxEase.quadInOut, complete: myCallback });</code></pre>
 <pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">myCallback</span><span class="params">(Tween:FlxTween)</span><span class="type">:Void</span>
 {</span>
 }</code></pre>

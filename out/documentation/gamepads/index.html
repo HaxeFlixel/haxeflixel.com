@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -248,56 +244,53 @@
 			
 				<a href="http://api.haxeflixel.com/flixel/input/gamepad/index.html" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/19-gamepads.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/18-gamepads.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>Gamepad Input for HaxeFlixel is provided through the FlxGamepad class and is available through <code>FlxG.gamepads</code> and the <code>InputFrontEnd</code>. Gamepads are made available through the openfl <code>JoystickEvent</code> api.</p>
-<p>Since gamepads have a variety of manufacturers their keycodes provided to HaxeFlixel API differ from model to model. HaxeFlixel has collected some GamepadIDs from popular gamepads such as <code>xbox</code> and <code>playstation</code>.</p>
-<p>You can see an example of using buttons IDs for multiple gamepad types in the HaxeFlixel demo <a href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/Input/GamepadTest">GamepadTest</a>.</p>
-<p>HaxeFlixel has collected the following GamePad ID mappings:</p>
+			<p>Gamepad input for HaxeFlixel is provided through the <code>FlxGamepad</code> class and is available through <code>FlxG.gamepads</code> and the <code>InputFrontEnd</code>.</p>
+<p>Since gamepads have a variety of manufacturers their keycodes provided to HaxeFlixel API differ from model to model. HaxeFlixel provides mappings that map buttons and sticks to common IDs for convenient use. Mappings are available for:</p>
 <ul>
-<li><a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/XboxButtonID.hx">Xbox</a></li>
-<li><a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/PS3ButtonID.hx">PS3</a></li>
-<li><a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/PS4ButtonID.hx">PS4</a></li>
-<li><a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/OUYAButtonID.hx">OUYA</a></li>
-<li><a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/LogitechButtonID.hx">Logitech</a></li>
+<li>XInput (Xbox 360, Xbox One, etc)</li>
+<li>PS4</li>
+<li>OUYA</li>
+<li>Logitech</li>
+<li>WiiRemote</li>
+<li>Mayflash WiiRemote</li>
+<li>MFi</li>
+<li>PS Vita</li>
 </ul>
 <p>Here&#39;s some example logic for basic detection of Xbox 360 controller input:</p>
 <pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.FlxG;</span>
 <span class="preprocessor"><span class="keyword">import</span> flixel.FlxState;</span>
 <span class="preprocessor"><span class="keyword">import</span> flixel.input.gamepad.FlxGamepad;</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.input.gamepad.XboxButtonID;</span>
 
 <span class="class"><span class="keyword">class</span> <span class="title">PlayState</span> <span class="keyword">extends</span> <span class="title">FlxState</span>
 {</span>
-    <span class="keyword">private</span> <span class="keyword">var</span> _gamePad:FlxGamepad;
-
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span> 
+    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span> 
     {</span>
-        super.update();
+        super.update(elapsed);
 
         <span class="comment">// Important: can be null if there's no active gamepad yet!</span>
-        _gamePad = FlxG.gamepads.lastActive;
-
-        <span class="keyword">if</span> (_gamePad != <span class="literal">null</span>)
+        gamepad = FlxG.gamepads.lastActive;
+        <span class="keyword">if</span> (gamepad != <span class="literal">null</span>)
         {
-            gamepadControls();
+            updateGamepadInput(gamepad);
         }
     }
 
-    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">gamepadControls</span><span class="params">()</span><span class="type">:Void</span>
+    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">updateGamepadInput</span><span class="params">(gamepad:FlxGamepad)</span><span class="type">:Void</span>
     {</span>
-        <span class="keyword">if</span> (_gamePad.pressed(XboxButtonID.A))
+        <span class="keyword">if</span> (gamepad.pressed.A)
         {
             trace(<span class="string">"The A button of the Xbox 360 controller is pressed."</span>);
         }
 
-        <span class="keyword">if</span> (_gamePad.getAxis(XboxButtonID.LEFT_ANALOGUE_X) != <span class="number">0</span>)
+        <span class="keyword">if</span> (gamepad.analog.justMoved.LEFT_STICK_X)
         {
-            trace(<span class="string">"The x axis of the left analogue stick of the Xbox 360 controller has been moved."</span>);
+            trace(<span class="string">"The x axis of the left analog stick of the Xbox 360 controller has been moved."</span>);
         }
     }
 }</code></pre>
-<p>If you want to support a controller that HaxeFlixel doesn&#39;t provide the IDs for, the following methods of FlxGamePad should be helpful for working out what those IDs are:</p>
+<p>If you want to support a controller that HaxeFlixel doesn&#39;t provide the IDs for, the following methods of <code>FlxGamePad</code> methods should be helpful for working out what those IDs are:</p>
 <ul>
 <li><code>firstPressedButtonID()</code></li>
 <li><code>firstJustPressedButtonID()</code></li>
@@ -305,7 +298,7 @@
 </ul>
 <h3 id="conditional-to-remove-gamepads">Conditional to remove gamepads</h3>
 <pre class="highlight"><code class="actionscript">FLX_NO_GAMEPAD</code></pre>
-<p>HaxeFlixel includes a <a href="http://haxeflixel.com/documentation/haxeflixel-conditionals/">conditional</a> to omit using Gamepads for optimization purposes if you are developing for a platform such as mobile or your game just isn&#39;t designed for them.</p>
+<p>HaxeFlixel includes a <a href="http://haxeflixel.com/documentation/haxeflixel-conditionals/">conditional</a> to omit using gamepads for optimization purposes if you are developing for a platform such as mobile, or your game just isn&#39;t designed for them.</p>
 
 
 			<br>
