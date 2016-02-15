@@ -1,5 +1,5 @@
 ```
-title: "HaxeFlixel Patreon"
+title: "HaxeFlixel 4.0.0"
 layout: blog-post
 postDate: 02-16-2016
 ```
