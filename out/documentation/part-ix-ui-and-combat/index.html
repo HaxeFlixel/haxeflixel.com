@@ -256,7 +256,7 @@
          _txtMoney.setBorderStyle(SHADOW, FlxColor.GRAY, <span class="number">1</span>, <span class="number">1</span>);
          _sprHealth = <span class="keyword">new</span> FlxSprite(<span class="number">4</span>, _txtHealth.y + (_txtHealth.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.health__png);
          _sprMoney = <span class="keyword">new</span> FlxSprite(FlxG.width - <span class="number">12</span>, _txtMoney.y + (_txtMoney.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.coin__png);
-         _txtMoney.alignment = <span class="string">"right"</span>;
+         _txtMoney.alignment = RIGHT;
          _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="number">4</span>;
          add(_sprBack);
          add(_sprHealth);
