@@ -1,5 +1,5 @@
 ```
-title: "Split Screen"
+title: "SplitScreen"
 layout: demo
 pageOrder: 1
 SWFHeight: 300
