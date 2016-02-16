@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class=active about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -248,7 +244,7 @@
 			
 				<a href="http://api.haxeflixel.com/flixel/group/FlxTypedGroup.html" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/04-flxgroup.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/03-flxgroup.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.group.FlxGroup;</span></code></pre>
 <p>FlxGroups are an invaluable method of grouping your game objects in Flixel. In fact, there is no way around them, as <code>FlxState</code> itself extends <code>FlxGroup</code>. 
@@ -275,8 +271,6 @@ The use cases for groups are vast: pooling to reuse objects, collision detection
 <p>This will let you get the first FlxBasic object that has exists == false, this is typically used in object pooling when object may have used the kill() method. Note if you destory() objects they will be made null in the FlxGroup and you wont be able to reuse them.</p>
 <h4 id="kill-">kill();</h4>
 <p>This will recursively kill() all objects so that they will be ready for use with getFirstAvailable.</p>
-<h4 id="callall-functionname-string-args-array-lt-dynamic-gt-null-recurse-bool-true-">callAll(FunctionName:String, Args:Array&lt;Dynamic&gt; = null, Recurse:Bool = true);</h4>
-<p>Call the specified function on all members of the group.</p>
 <h4 id="sort-function-int-t-t-int-order-int-flxsort-ascending-">sort(Function:Int-&gt;T-&gt;T-&gt;Int, Order:Int = FlxSort.ASCENDING);</h4>
 <p>Call this function to sort the group according to a particular value and order. You will need to specificy a sorting function to do so. If you want to sort by something other than y, you will have to write a custom sorting function.</p>
 <p>Otherwise, you can just use the pre-made <code>FlxSort.byY()</code> like so for Zelda-style-sorting:</p>
@@ -290,7 +284,7 @@ The use cases for groups are vast: pooling to reuse objects, collision detection
 				
 
 				<li class="previous">
-					<a href="/documentation/flxg">< FlxG</a>
+					<a href="/documentation/flixel-frontends">< Flixel Frontends</a>
 				</li>
 				
 

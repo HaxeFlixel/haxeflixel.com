@@ -227,7 +227,7 @@
 			<p>One of the big advantages of using HaxeFlixel is the ability to build your games for multiple platforms. You can build a working Flash, Windows, Android, and iOS game - all from the same code! So far, we&#39;ve been working with Flash, and, for the most part, you don&#39;t have to do too much to get your game working on other platforms - if you test it under Windows right now, it should mostly work just fine (although, without music, which we&#39;ll discuss later). However, you might run into some issues if you try to build it for a mobile device - at the very least, you won&#39;t be able to play it without a keyboard. I will show you some things we can tweak to make it work better on other platforms. We&#39;ll focus on Windows and Android, since I have access to those platforms.</p>
 <p>HaxeFlixel comes equipped with a powerful feature called conditionals. By adding some <a href="http://haxeflixel.com/documentation/haxeflixel-conditionals">conditionals</a> to your code, you can make it so that only certain pieces of code will be compiled depending on the conditionals you use. For example, if you are building for Android, which would probably not have a mouse, you could setup a conditional to skip over all mouse-related code. Alternately, you might also add some code to deal with Touches, which would only work on Android, so you would make sure to wrap that logic in conditionals so that it doesn&#39;t try to build on Windows or Flash.</p>
 <p>It&#39;s not all that complicated. We&#39;ll start with something simple: adding the ability to toggle Fullscreen mode on Windows.</p>
-<p>Let&#39;s add a button to the OptionsState:</p>
+<p>Let&#39;s add a button to the <code>OptionsState</code>:</p>
 <ol>
 <li><p>When we initialize and interact with our button, we only want to do it on &#39;desktop&#39; platforms. So, at the top of the class, add:</p>
 <pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
@@ -237,7 +237,7 @@
 <li><p>In the create function, somewhere after we add our <code>_barVolume</code> object, add:</p>
 <pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
  _btnFullScreen = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, _barVolume.y + _barVolume.height + <span class="number">8</span>, FlxG.fullscreen ? <span class="string">"FULLSCREEN"</span> : <span class="string">"WINDOWED"</span>, clickFullscreen);
- _btnFullScreen.screenCenter(<span class="literal">true</span>, <span class="literal">false</span>);
+ _btnFullScreen.screenCenter(X);
  add(_btnFullScreen);
  #end</code></pre>
 </li>
@@ -257,8 +257,9 @@
  _btnFullScreen = FlxDestroyUtil.destroy(_btnFullScreen);
  #end</code></pre>
 </li>
-<li><p>Next, let&#39;s change around our Main.hx so that when the game starts it will launch into whatever state the game was last in - fullscreen or not. We need to move things around a little, since we need to find out if we&#39;re going into fullscreen or not BEFORE we call new FlxGame, but we need to set the volume AFTER, so the section in setupGame should be changed to look like this:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> _save:FlxSave = <span class="keyword">new</span> FlxSave();
+<li><p>Next, let&#39;s change around our <code>Main.hx</code> so that when the game starts it will launch into whatever state the game was last in - fullscreen or not. We need to move things around a little, since we need to find out if we&#39;re going into fullscreen or not BEFORE we call new <code>FlxGame</code>, but we need to set the volume AFTER, so <code>new()</code> should look like this:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> startFullscreen:Bool = <span class="literal">false</span>;
+ <span class="keyword">var</span> _save:FlxSave = <span class="keyword">new</span> FlxSave();
  _save.bind(<span class="string">"flixel-tutorial"</span>);
  #<span class="keyword">if</span> desktop
  <span class="keyword">if</span> (_save.data.fullscreen != <span class="literal">null</span>)
@@ -267,7 +268,8 @@
  }
  #end
 
- addChild(<span class="keyword">new</span> FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
+ <span class="keyword">super</span>();
+ addChild(<span class="keyword">new</span> FlxGame(<span class="number">320</span>, <span class="number">240</span>, MenuState, <span class="number">1</span>, <span class="number">60</span>, <span class="number">60</span>, <span class="literal">false</span>, startFullscreen));
 
  <span class="keyword">if</span> (_save.data.volume != <span class="literal">null</span>)
  {
@@ -359,18 +361,19 @@ We do that by adding a new button to the MenuState:</p>
 </li>
 <li><p>The only place where we actually check for button presses is in our Player.hx class, in the updateMovement function. We currently have a section of code that is setting different flags to true based on keyboard input - but since the keyboard might be disabled on some platforms, we need to change that to look like this:</p>
 <pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> !FLX_NO_KEYBOARD
- _up = FlxG.keys.anyPressed([<span class="string">"UP"</span>, <span class="string">"W"</span>]);
- _down = FlxG.keys.anyPressed([<span class="string">"DOWN"</span>, <span class="string">"S"</span>]);
- _left = FlxG.keys.anyPressed([<span class="string">"LEFT"</span>, <span class="string">"A"</span>]);
- _right = FlxG.keys.anyPressed([<span class="string">"RIGHT"</span>, <span class="string">"D"</span>]);
+ _up = FlxG.keys.anyPressed([UP, W]);
+ _down = FlxG.keys.anyPressed([DOWN, S]);
+ _left = FlxG.keys.anyPressed([LEFT, A]);
+ _right = FlxG.keys.anyPressed([RIGHT, D]);
  #end</code></pre>
 </li>
 <li><p>Right after that logic, we&#39;ll add our logic that checks each of the buttons of our Virtual Pad to see which ones are pressed:</p>
 <pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> mobile
- _up = _up || PlayState.virtualPad.buttonUp.status == FlxButton.PRESSED;
- _down = _down || PlayState.virtualPad.buttonDown.status == FlxButton.PRESSED;
- _left  = _left || PlayState.virtualPad.buttonLeft.status == FlxButton.PRESSED;
- _right = _right || PlayState.virtualPad.buttonRight.status == FlxButton.PRESSED;
+ <span class="keyword">var</span> virtualPad = PlayState.virtualPad;
+ _up = _up || virtualPad.buttonUp.pressed;
+ _down = _down || virtualPad.buttonDown.pressed;
+ _left  = _left || virtualPad.buttonLeft.pressed;
+ _right = _right || virtualPad.buttonRight.pressed;
  #end</code></pre>
 <p> Because of the way we&#39;ve structured our movement logic, we don&#39;t need to make any other changes! Getting _up set to true via keyboard or our virtual pad will do the same thing.</p>
 </li>

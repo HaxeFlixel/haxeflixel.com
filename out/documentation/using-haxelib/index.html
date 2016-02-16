@@ -150,10 +150,6 @@
 				<a href="/documentation/openfl-project-xml-format"> XML Project Format </a>
 			</li>
 		
-			<li class= about="/documentation/as3-and-haxe-comparison">
-				<a href="/documentation/as3-and-haxe-comparison"> AS3 and Haxe Comparison </a>
-			</li>
-		
 			<li class= about="/documentation/game-development-tools">
 				<a href="/documentation/game-development-tools"> Game Development Tools </a>
 			</li>
@@ -194,22 +190,23 @@
 			<h1 class="title">Using Haxelib</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/07-using-haxelib.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/06-using-haxelib.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>Haxelib is a package manager and utility that comes with your Haxe install. Here are the most used commands, the full usage docs are <a href="http://haxe.org/doc/haxelib/using_haxelib">available here</a>.</p>
-<h3 id="install-a-library">Install a Library</h3>
+<h3 id="installing-a-library">Installing a Library</h3>
 <p>Install a Haxelib library from <a href="http://lib.haxe.org/">lib.haxe.org</a>:</p>
-<pre class="highlight"><code class="cmake">haxelib <span class="keyword">install</span> &lt;<span class="keyword">project</span>&gt;</code></pre>
-<p>Install a Haxelib library from git:</p>
-<pre class="highlight"><code class="xml">haxelib git <span class="tag">&lt;<span class="title">url</span>&gt;</span> <span class="tag">&lt;<span class="title">branch</span>&gt;</span></code></pre>
-<p>Update your Haxelib libraries, including the git ones:</p>
+<pre class="highlight"><code class="xml">haxelib install <span class="tag">&lt;<span class="title">library</span>&gt;</span></code></pre>
+<p>Install a Haxelib library from Git:</p>
+<pre class="highlight"><code class="xml">haxelib git <span class="tag">&lt;<span class="title">library</span>&gt;</span> <span class="tag">&lt;<span class="title">url</span>&gt;</span> <span class="tag">&lt;<span class="title">branch</span>&gt;</span></code></pre>
+<p><em>Note: <code>haxelib git</code> enables the development directory for that library, which silently prevents <code>haxelib set</code> from working. Use <code>haxelib dev &lt;library&gt;</code> to disable it.</em></p>
+<p>Update your Haxelib libraries, including the ones from Git:</p>
 <pre class="highlight"><code class="haskell"><span class="title">haxelib</span> upgrade</code></pre>
-<p>Set a Haxelib at a specific version:</p>
-<pre class="highlight"><code class="cpp">haxelib <span class="stl_container"><span class="built_in">set</span> &lt;haxelib-name&gt;</span> &lt;version&gt;</code></pre>
-<p>Remove a Haxe library:</p>
-<pre class="highlight"><code class="cmake">haxelib <span class="keyword">remove</span> &lt;<span class="keyword">project</span>&gt;</code></pre>
-<h3 id="update-haxelib-itself-">Update Haxelib itself:</h3>
-<p>To make sure you are using the latest version of Haxelib you can run the selfupdate command. This will update Haxelib itself by automatically downloading the latest version.</p>
+<p>Change to different version of a library:</p>
+<pre class="highlight"><code class="cpp">haxelib <span class="stl_container"><span class="built_in">set</span> &lt;library&gt;</span> &lt;version&gt;</code></pre>
+<p>Remove a library:</p>
+<pre class="highlight"><code class="xml">haxelib remove <span class="tag">&lt;<span class="title">library</span>&gt;</span></code></pre>
+<h3 id="updating-haxelib-itself">Updating Haxelib itself</h3>
+<p>To make sure you are using the latest version of Haxelib you can run the <code>selfupdate</code> command.</p>
 <pre class="highlight"><code class="haskell"><span class="title">haxelib</span> selfupdate</code></pre>
 
 

@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -246,11 +242,11 @@
 			<h1 class="title">Tips and Tricks</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/16-tips-and-tricks.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/15-tips-and-tricks.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>This is a collection of various tips and tricks for developing with HaxeFlixel.</p>
 <h2 id="overriding-swf-script-timeout">Overriding SWF Script Timeout</h2>
-<p>By default, Flash will create a dialog box and cancel any running scripts after 15 seconds spent in a single loop. Generally, this is good as it helps to prevent a Flash file from being stuck in an infinite loop, but there are times where you may wish to override this preset. Haxe offers a <a href="http://haxe.org/manual/tips_and_tricks">compilation flag</a> that can do just this, and OpenFL can pass this to the compiler by adding the following line to your <a href="documentation/openfl-project-xml-format/">Project.XML</a> file:</p>
+<p>By default, Flash will create a dialog box and cancel any running scripts after 15 seconds spent in a single loop. Generally, this is good as it helps to prevent a Flash file from being stuck in an infinite loop, but there are times where you may wish to override this preset. Haxe offers a <a href="http://haxe.org/manual/tips_and_tricks">compilation flag</a> that can do just this, and OpenFL can pass this to the compiler by adding the following line to your Project.xml file:</p>
 <pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxeflag</span> <span class="attribute">name</span>=<span class="value">"-D"</span> <span class="attribute">value</span>=<span class="value">"swf-script-timeout=60"</span> /&gt;</span></code></pre>
 <p>Where &#39;60&#39; can be any value from 15 to 60, and is the number of seconds that elapse before the dialog appears. 60 is the hard-coded limit and is the maximum value that can be used for this flag. If you use a value higher than 60, the limit will be set to 60. Please note that regardless of the limit you set, the dialog warning will still read <code>A script has executed for longer than the default timeout period of 15 seconds.</code></p>
 

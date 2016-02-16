@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -246,14 +242,13 @@
 			<h1 class="title">Android</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/13-android.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/12-android.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p><img src="/images/targets/android-logo.svg" width="160px" style="float:left; padding:10px" /></p>
 <p>The Android target makes use of a chain of frameworks to compile your native Android game from Haxe code. OpenFL uses the <a href="http://lib.haxe.org/p/hxcpp">Hxcpp</a> and the <a href="http://developer.android.com/tools/sdk/ndk/index.html">Android NDK</a> specifically so no virtual machine is involved.</p>
-<p>The Haxe compiler uses it&#39;s <code>cpp</code> target to compile your <code>Haxe</code> code for the <a href="http://libsdl.org">LibSDL</a> OpenGL library so that the Android NDK can then use this &quot;native-code&quot; for your Android game. You can read more about the Android NDK from Google <a href="http://developer.android.com/tools/sdk/ndk/index.html">here</a>, however this process is completely automated by <a href="http://openfl.org">OpenFL</a>. Android is is part of the cpp group of targets and when developers mention <code>cpp</code> the topic will may be relevant to HaxeFlixel Android.</p>
-<p>With <a href="http://openfl.org">OpenFL</a> using native-code and OpenGL with <a href="http://libsdl.org">LibSDL</a>, the rendering methods are different to where Flixel started with Flash. Android uses GPU accelerated Texture Batching for the best possible performance in mobile devices.</p>
+<p>The Haxe compiler uses its <code>cpp</code> target to compile your <code>Haxe</code> code for the <a href="http://libsdl.org">LibSDL</a> OpenGL library so that the Android NDK can then use this &quot;native-code&quot; for your Android game. You can read more about the Android NDK from Google <a href="http://developer.android.com/tools/sdk/ndk/index.html">here</a>, however this process is completely automated by <a href="http://openfl.org">OpenFL</a>. Android is part of the cpp group of targets and when developers mention <code>cpp</code> the topic may be relevant to HaxeFlixel Android.</p>
+<p>With <a href="http://openfl.org">OpenFL</a> using native-code and OpenGL with <a href="http://libsdl.org">LibSDL</a>, the rendering methods are different to where Flixel started with Flash. Android uses GPU accelerated Texture Batching for the best possible performance on mobile devices.</p>
 <h3 id="conditionals">Conditionals</h3>
-<hr>
 <pre class="highlight"><code class="vala"><span class="preprocessor">#if cpp</span>
 <span class="comment">//your android code</span>
 <span class="preprocessor">#end</span>
@@ -266,7 +261,6 @@
 <span class="comment">//your android code</span>
 <span class="preprocessor">#end</span></code></pre>
 <h3 id="project-xml-settings">Project XML settings</h3>
-<hr>
 <p>Mobile platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.</p>
 <pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">window</span> <span class="attribute">width</span>=<span class="value">"0"</span> <span class="attribute">height</span>=<span class="value">"0"</span> <span class="attribute">background</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">fps</span>=<span class="value">"60"</span> /&gt;</span></code></pre>
 <p>OpenFL also exposes the following specific settings for the Android target:</p>
@@ -280,17 +274,13 @@
 <span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"72.png"</span> <span class="attribute">size</span>=<span class="value">"72"</span> <span class="attribute">if</span>=<span class="value">"android"</span> /&gt;</span>
 <span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"96.png"</span> <span class="attribute">size</span>=<span class="value">"96"</span> <span class="attribute">if</span>=<span class="value">"android"</span> /&gt;</span></code></pre>
 <h3 id="compile-commands">Compile Commands</h3>
-<hr>
 <p>Sublime Text, Flash Develop and Intellij Idea support Android compilation through their GUI.</p>
 <h4 id="command-line">Command line</h4>
-<hr>
 <p>The basic command to compile and test Android:</p>
 <pre class="highlight"><code class="haskell"><span class="title">lime</span> test android</code></pre>
-<p>Run this command from the root folder of your project, the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.</p>
-<hr>
-<p>If you want to use the Android simulator, add “-simulator when running/testing. Be sure your virtual device is API &gt;=15 and has GPU enabled.</p>
+<p>Run this command from the root folder of your project; the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.</p>
+<p>If you want to use the Android simulator, add <code>-simulator</code> when running/testing. Be sure your virtual device is API &gt;=15 and has GPU enabled.</p>
 <pre class="highlight"><code class="brainfuck"><span class="comment">lime</span> <span class="comment">test</span> <span class="comment">android</span> <span class="literal">-</span><span class="comment">simulator</span></code></pre>
-<hr>
 
 
 			<br>

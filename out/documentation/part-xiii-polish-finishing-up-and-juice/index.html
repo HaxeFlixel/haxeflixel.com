@@ -229,7 +229,8 @@
 We can add it to each of our states&#39; create function like so (right before <code>super.create()</code>):</p>
 <pre class="highlight"><code class="actionscript">FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">true</span>);</code></pre>
 <p>Then, if you want to fade out (when switching states), you can do something like this:</p>
-<pre class="highlight"><code class="actionscript">FlxG.camera.fade(FlxColor.BLACK,<span class="number">.33</span>, <span class="literal">false</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+<pre class="highlight"><code class="actionscript">FlxG.camera.fade(FlxColor.BLACK,<span class="number">.33</span>, <span class="literal">false</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span>
+{</span>
     FlxG.switchState(<span class="keyword">new</span> PlayState());
 });</code></pre>
 <p>Try adding this logic to all of your states and then see how much of an improvement it gives the flow of your game.</p>
@@ -237,44 +238,46 @@ We can add it to each of our states&#39; create function like so (right before <
 <pre class="highlight"><code class="actionscript">FlxG.camera.shake(<span class="number">0.01</span>, <span class="number">0.2</span>);</code></pre>
 <p>So, each time the player gets hurt in combat, the screen will flash white, and will shake a little bit for .2 seconds. Try it out!</p>
 <p>I know we&#39;ve used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We&#39;re simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking .1 seconds to complete. So, in the makeChoice function of CombatHUD, right before we play the hurt sound for the enemy, add:</p>
-<pre class="highlight"><code class="actionscript">FlxTween.tween(_sprEnemy, { x:_sprEnemy.x + <span class="number">4</span> }, <span class="number">.1</span>, { complete: <span class="function"><span class="keyword">function</span><span class="params">(_)</span> {</span>
+<pre class="highlight"><code class="actionscript">FlxTween.tween(_sprEnemy, { x:_sprEnemy.x + <span class="number">4</span> }, <span class="number">.1</span>, { complete: <span class="function"><span class="keyword">function</span><span class="params">(_)</span>
+{</span>
     FlxTween.tween(_sprEnemy, { x:_sprEnemy.x - <span class="number">4</span> }, <span class="number">.1</span>);
 }} );</code></pre>
 <p>Check out how that looks. Tweens are a very simple and powerful tool to make your game feel more active when used properly.</p>
-<p>Next, let&#39;s add a background effect to our CombatHUD to help bring our the combat screen out from the map a little bit. We&#39;re going to copy what&#39;s on the camera&#39;s buffer, desaturate it, and then apply a FlxWaveSprite to give it a wavy effect. HaxeFlixel has several addons, like FlxWaveSprite or FlxGlitchSprite that can be used for a number of effects.</p>
+<p>Next, let&#39;s add a background effect to our <code>CombatHUD</code> to help bring our the combat screen out from the map a little bit. We&#39;re going to copy what&#39;s on the camera&#39;s buffer, desaturate it, and then apply a <code>FlxWaveEffect</code> to give it a wavy effect. HaxeFlixel has several effects like this that can be used for a number of effects (<code>FlxGlitchEffect</code>, <code>FlxRainbowEffect</code>...).</p>
 <ol>
-<li><p>Open up the CombatHUD class and add these two objects:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _sprScreen:FlxSprite;
- <span class="keyword">private</span> <span class="keyword">var</span> _sprWave:FlxWaveSprite;</code></pre>
+<li><p>Open up the <code>CombatHUD</code> class and add this variable:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _sprScreen:FlxSprite;</code></pre>
 </li>
-<li><p>In the constructor, we&#39;ll initialize these two objects (add this before we create our _sprBack):</p>
+<li><p>In the constructor, we&#39;ll initialize these two variables (add this before we create our <code>_sprBack</code>):</p>
 <pre class="highlight"><code class="actionscript"> _sprScreen = <span class="keyword">new</span> FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
- _sprWave = <span class="keyword">new</span> FlxWaveSprite(_sprScreen, WaveMode.ALL, <span class="number">4</span>, -<span class="number">1</span>, <span class="number">4</span>);
- add(_sprWave);</code></pre>
-<p> First, we make our <code>_sprScreen</code>, make it the size of the window, and just leave it empty for now. Then we make a FlxWaveSprite, tell it to target our <code>_sprScreen</code>, and set its properties.</p>
+ <span class="keyword">var</span> waveEffect = <span class="keyword">new</span> FlxWaveEffect(FlxWaveMode.ALL, <span class="number">4</span>, -<span class="number">1</span>, <span class="number">4</span>);
+ <span class="keyword">var</span> waveSprite = <span class="keyword">new</span> FlxEffectSprite(_sprScreen, [waveEffect]);
+ add(waveSprite);</code></pre>
+<p> First, we make our <code>_sprScreen</code>, make it the size of the window, and just leave it empty for now. Then we create a <code>FlxEffectSprite</code>, tell it to target our <code>_sprScreen</code>, and set its properties. It only uses a single effect, our <code>waveEffect</code> instance (it&#39;s possible to chain multiple effects using <code>FlxEffectSprite</code>).</p>
 </li>
-<li><p>Next, in <code>initCombat</code> we want to make our <code>_sprScreen</code> take a copy of whatever is on the camera&#39;s buffer and apply it to itself, and then desaturate the image. Our FlxWaveSprite will always copy whatever is on our <code>_sprScreen</code> every update automatically.</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> flash
- _sprScreen.pixels.copyPixels(FlxG.camera.buffer, FlxG.camera.buffer.rect, <span class="keyword">new</span> Point());
- #<span class="keyword">else</span>
- _sprScreen.pixels.draw(FlxG.camera.canvas, <span class="keyword">new</span> Matrix(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>));
- #end
+<li><p>Next, in <code>initCombat</code> we want to make our <code>_sprScreen</code> take a copy of whatever is on the camera&#39;s buffer and apply it to itself, and then desaturate the image. Our effect sprite will always copy whatever is on our <code>_sprScreen</code> every update automatically.</p>
+<pre class="highlight"><code class="actionscript"> _sprScreen.drawFrame();
+ <span class="keyword">var</span> screenPixels = _sprScreen.framePixels;
+
+ <span class="keyword">if</span> (FlxG.renderBlit)
+     screenPixels.copyPixels(FlxG.camera.buffer, FlxG.camera.buffer.rect, <span class="keyword">new</span> Point());
+ <span class="keyword">else</span>
+     screenPixels.draw(FlxG.camera.canvas, <span class="keyword">new</span> Matrix(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>));
+
  <span class="keyword">var</span> rc:Float = <span class="number">1</span> / <span class="number">3</span>;
  <span class="keyword">var</span> gc:Float = <span class="number">1</span> / <span class="number">2</span>;
  <span class="keyword">var</span> bc:Float = <span class="number">1</span> / <span class="number">6</span>;
- _sprScreen.pixels.applyFilter(_sprScreen.pixels, _sprScreen.pixels.rect, <span class="keyword">new</span> Point(), <span class="keyword">new</span> ColorMatrixFilter([rc, gc, bc, <span class="number">0</span>, <span class="number">0</span>, rc, gc, bc, <span class="number">0</span>, <span class="number">0</span>, rc, gc, bc, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]));
- _sprScreen.resetFrameBitmapDatas();
- _sprScreen.dirty = <span class="literal">true</span>;</code></pre>
+ screenPixels.applyFilter(screenPixels, screenPixels.rect, <span class="keyword">new</span> Point(), <span class="keyword">new</span> ColorMatrixFilter([rc, gc, bc, <span class="number">0</span>, <span class="number">0</span>, rc, gc, bc, <span class="number">0</span>, <span class="number">0</span>, rc, gc, bc, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>]));</code></pre>
 </li>
 </ol>
-<p>That&#39;s all there is to it! Our <code>_sprWaveSprite</code> will fade in and out with the CombatHUD already. Try our the effect to see how it looks!</p>
+<p>That&#39;s all there is to it! Our effect sprite will fade in and out with the <code>CombatHUD</code> already. Try our the effect to see how it looks!</p>
 <p><img src="../images/04_tutorials/0022.png" alt=""></p>
 <p>You might have noticed, while testing the game, that the mouse cursor can get in the way - especially since it&#39;s not needed outside of the menu states. We can remedy this pretty easily.
 In the <code>PlayState.create()</code>, add:</p>
 <pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> !FLX_NO_MOUSE
 FlxG.mouse.visible = <span class="literal">false</span>;
 #end</code></pre>
-<p>And be sure to do the reverse (<code>= true</code>) in <code>GameOverState.create()</code> No more pesky mouse cursor when we don&#39;t need it!</p>
+<p>And be sure to do the reverse (<code>= true</code>) in <code>GameOverState#create()</code> No more pesky mouse cursor when we don&#39;t need it!</p>
 <p>There are plenty of other tweaks and tricks you can add to your games. I&#39;ve shown you just a couple. Try playing around with the different addons special effects classes in HaxeFlixel and see what else you can come up with. Take a look at <a href="http://haxeflixel.com/demos/">the demos</a> for more examples.</p>
 
 

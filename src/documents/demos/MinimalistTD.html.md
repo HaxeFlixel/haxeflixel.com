@@ -4,7 +4,7 @@ layout: demo
 pageOrder: 1
 SWFHeight: 480
 SWFWidth: 640
-source: "Other/MinimalistTD"
+source: "Arcade/MinimalistTD"
 tags: ['homepage_demo']
 ```
 

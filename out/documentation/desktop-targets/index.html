@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -246,13 +242,12 @@
 			<h1 class="title">Desktop Targets</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/11-desktop-targets.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/10-desktop-targets.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>The desktop targets of HaxeFlixel run on all mainstream operating systems, OSX, Windows and Linux. They are all compiled to C++ through the Hxcpp library and are rendered through interfacing with the <a href="http://libsdl.org">Simple DirectMedia Layer.</a> The code for this part of the library is developed through <a href="https://github.com/haxenme/NME">NME </a>which provides dll libs that openfl interfaces with.</p>
+			<p>The desktop targets of HaxeFlixel run on all mainstream operating systems (OSX, Windows and Linux). They are all compiled to C++ through the Hxcpp library and are rendered through interfacing with the <a href="http://libsdl.org">Simple DirectMedia Layer.</a> The code for this part of the library is developed through <a href="https://github.com/haxenme/NME">NME </a>which provides dll libs that openfl interfaces with.</p>
 <p>The biggest advantage of desktop targets compared to web and mobile is the power of desktop CPU and GPU processors. More complex scenes, physics and number of objects rendered can give a larger creative freedom in the games you create.</p>
-<p>Rendering in HaxeFlixel is done through the drawTiles api. OpenGL textures are used with the GPU to render Flixel sprites. This native C++ code and use of the GPU outperforms runtimes such as the Flash Player and Adobe Air in most circumstances substantially.</p>
+<p>Rendering in HaxeFlixel is done through the drawTiles API. OpenGL textures are used with the GPU to render Flixel sprites. This native C++ code and use of the GPU outperforms runtimes such as the Flash Player and Adobe AIR in most circumstances substantially.</p>
 <h3 id="conditionals">Conditionals</h3>
-<hr>
 <pre class="highlight"><code class="vala"><span class="preprocessor">#if cpp</span>
 <span class="comment">//your desktop code</span>
 <span class="preprocessor">#end</span>
@@ -260,8 +255,7 @@
 <span class="preprocessor">#if desktop</span>
 <span class="comment">//your desktop code</span>
 <span class="preprocessor">#end</span></code></pre>
-<h3 id="project-xml-settings">Project XML settings</h3>
-<hr>
+<h3 id="project-xml-settings">Project XML Settings</h3>
 <p>Desktop platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.</p>
 <pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">window</span> <span class="attribute">width</span>=<span class="value">"0"</span> <span class="attribute">height</span>=<span class="value">"0"</span> <span class="attribute">background</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">fps</span>=<span class="value">"60"</span> /&gt;</span></code></pre>
 <p>OpenFL also exposes the following specific settings for the desktop target:</p>
@@ -269,18 +263,13 @@
 <span class="tag">&lt;<span class="title">window</span> <span class="attribute">vsync</span>=<span class="value">"true"</span> <span class="attribute">antialiasing</span>=<span class="value">"4"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span> /&gt;</span>
 <span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"portrait"</span> /&gt;</span> || <span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"landscape"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span>/&gt;</span></code></pre>
 <h3 id="compile-commands">Compile Commands</h3>
-<hr>
-<p>Sublime Text, Flash Develop and Intellij Idea support CPP desktop compilation through their GUI.</p>
-<h4 id="command-line">Command line</h4>
-<hr>
+<p>Sublime Text, Flash Develop and IntelliJ IDEA support CPP desktop compilation through their GUI.</p>
+<h4 id="command-line">Command Line</h4>
 <p>The basic command to compile and test a native desktop target:</p>
 <pre class="highlight"><code class="haskell"><span class="title">lime</span> test windows
-
 <span class="title">lime</span> test mac
-
 <span class="title">lime</span> test linux -<span class="number">64</span></code></pre>
 <p>Run this command from the root folder of your project, the default project.xml will be used automatically. Using the test command will automatically launch the application created.</p>
-<hr>
 
 
 			<br>

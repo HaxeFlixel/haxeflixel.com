@@ -202,40 +202,22 @@
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">text</span>.<span class="title">FlxText</span>;
 <span class="title">import</span> <span class="title">flixel</span>.<span class="title">ui</span>.<span class="title">FlxButton</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">util</span>.<span class="title">FlxMath</span>;
+<span class="title">import</span> <span class="title">flixel</span>.<span class="title">math</span>.<span class="title">FlxMath</span>;
 
-/**
- * <span class="title">A</span> <span class="title">FlxState</span> <span class="title">which</span> <span class="title">can</span> <span class="title">be</span> <span class="title">used</span> <span class="title">for</span> <span class="title">the</span> <span class="title">game</span>'<span class="title">s</span> <span class="title">menu</span>.
- */
 <span class="title">class</span> <span class="title">MenuState</span> <span class="title">extends</span> <span class="title">FlxState</span>
 {</span>
-    <span class="comment">/**
-     * Function that is called up when to state is created to set it up. 
-     */</span>
     <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
     {</span>
         super.create();
     }
 
-    <span class="comment">/**
-     * Function that is called when this state is destroyed - you might want to 
-     * consider setting all objects this state uses to null to help garbage collection.
-     */</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
+    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
     {</span>
-        super.destroy();
+        super.update(elapsed);
     }
-
-    <span class="comment">/**
-     * Function that is called once every frame.
-     */</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        super.update();
-    }    
 }</code></pre>
-<p>All you need to do is add the following in the <code>create()</code> method just before <code>super.create()</code>:</p>
-<pre class="highlight"><code class="actionscript">add(<span class="keyword">new</span> FlxText(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="string">"Hello World!"</span>));</code></pre>
+<p>All you need to do is add the following in the <code>create()</code> function:</p>
+<pre class="highlight"><code class="actionscript">add(<span class="keyword">new</span> FlxText(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">"Hello World!"</span>));</code></pre>
 <p>Save the file and return to your command line window. Now we can compile the project.</p>
 <p>Without running the <a href="/documentation/install-openfl">lime setup</a> commands you can compile to Flash and Neko out of the box.</p>
 <p>Test your project from the following commands:</p>

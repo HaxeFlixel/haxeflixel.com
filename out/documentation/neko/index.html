@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -246,11 +242,11 @@
 			<h1 class="title">Neko</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/15-neko.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/14-neko.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p><img src="/images/targets/neko-logo.jpg" width="160px" style="float:left; padding:10px" /></p>
 <p><a href="http://nekovm.org/">Neko</a> is an high-level dynamically typed programming language and virtual machine. Neko as a target of HaxeFlixel and OpenFL supports an api close to the CPP builds of HaxeFlixel.</p>
-<p>The NekoVM itself is part of the <a href="http://haxe.org/doc/start/neko">Haxe Toolkit</a> and is used throughout Haxelib, Lime, OpenFL and the Flixel-Tools to easily create cross-platform tools. Neko gives the power of the Haxe Std library to cross platform development tools.</p>
+<p>The NekoVM itself is part of the <a href="http://haxe.org/doc/start/neko">Haxe Toolkit</a> and is used throughout Haxelib, Lime, OpenFL and flixel-tools to easily create cross-platform tools. Neko gives the power of the Haxe standard library to cross platform development tools.</p>
 <p>Neko itself is also used server-side in <a href="https://github.com/ufront">websites</a> and general backend systems like the Haxelib. It contains a fully featured threading and socket api as well as integration with the <a href="http://haxe.org/doc/build/mod_neko">Apache server</a>.</p>
 <p><a href="http://www.joshuagranick.com/blog/">Joshua Granick</a>:</p>
 <blockquote>
@@ -259,16 +255,15 @@
 <p>Its advantages:</p>
 <ul>
 <li>Extremely fast compilation time that can run on Linux, Mac or Windows.</li>
-<li>Since it uses almost the same api as the cpp builds it is a quicker way to test.
-When you test with Flash it will use a much more different part of the Haxe api.</li>
+<li>Since it uses almost the same API as the cpp builds it is a quicker way to test.
+When you test with Flash it will use a much different part of the Haxe API.</li>
 </ul>
-<p>Is disadvantages:</p>
+<p>Its disadvantages:</p>
 <ul>
 <li>Being a virtual machine it is does not perform as well as a native build using the SDL builds of Lime. 
 Performance can be close to the Flash Player depending on the context.</li>
 </ul>
 <h3 id="conditionals">Conditionals</h3>
-<hr>
 <pre class="highlight"><code class="vala"><span class="preprocessor">#if neko</span>
 <span class="comment">//your neko code</span>
 <span class="preprocessor">#end</span>
@@ -277,7 +272,6 @@ Performance can be close to the Flash Player depending on the context.</li>
 <span class="comment">//your neko code</span>
 <span class="preprocessor">#end</span></code></pre>
 <h4 id="command-line">Command line</h4>
-<hr>
 <p>The basic command to compile and test the neko target:</p>
 <pre class="highlight"><code class="haskell"><span class="title">lime</span> test neko</code></pre>
 

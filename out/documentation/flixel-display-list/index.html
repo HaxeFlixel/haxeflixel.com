@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -249,10 +245,10 @@
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/01-flixel-display-list.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>The Flixel Display list is a specially designed structure for your game&#39;s sprites to be rendered.</p>
-<h4 id="flxsprites-flash-sprites">FlxSprites != Flash Sprites</h4>
-<p>The flash API has a <a href="http://help.adobe.com/en_US/as3/dev/WS5b3ccc516d4fbf351e63e3d118a9b90204-7e58.html">display list</a> that is populated by adding <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/DisplayObject.html">display objects</a> in a parent child relationship. Sprites are an extended form of display objects that have extended features. They can be added, removed and can have their parent and children&#39;s depth changed with an easy to use API.</p>
-<p>It is a common misconception for Flash Developers to assume that FlxSprites in Flixel work like the Flash Sprites. FlxSprites also do not share the event system Flash Sprites have, so <code>addEventListener()</code> is also not available or necessary in most situations.</p>
-<p>For performance reasons, Flixel has its own independent display list and it renders all of its FlxSprites onto a single flash <code>DisplayObject</code> with each <code>FlxCamera</code>. For this reason, you cannot add a flash.display.sprite to a <code>FlxState</code> and you cannot add a <code>FlxSprite</code> to the main Flash stage.</p>
+<h4 id="-flxsprite-flash-display-sprite-"><code>FlxSprite</code> != <code>flash.display.Sprite</code></h4>
+<p>The Flash API has a <a href="http://help.adobe.com/en_US/as3/dev/WS5b3ccc516d4fbf351e63e3d118a9b90204-7e58.html">display list</a> that is populated by adding <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/DisplayObject.html">display objects</a> in a parent child relationship. <code>Sprite</code>s are an extended form of display objects that have extended features. They can be added, removed and can have their parent and children&#39;s depth changed with an easy to use API.</p>
+<p>It is a common misconception for Flash developers to assume that <code>FlxSprite</code>s in Flixel work like the Flash <code>Sprite</code>s. <code>FlxSprite</code>s also do not share the event system Flash <code>Sprite</code>s have, so <code>addEventListener()</code> is also not available or necessary in most situations.</p>
+<p>For performance reasons, Flixel has its own independent display list and it renders all of its <code>FlxSprite</code>s onto a single Flash <code>DisplayObject</code> with each <code>FlxCamera</code>. For this reason, you cannot add a <code>flash.display.sprite</code> to a <code>FlxState</code> and you cannot add a <code>FlxSprite</code> to the main Flash stage.</p>
 <p>You can see the display objects used in a typical Flixel game in this diagram. Note you can still place display objects above or below Flixel&#39;s camera. It it recommended to use <code>FlxG.addChildBelowMouse()</code> and <code>FlxG.removeChild()</code> for that.</p>
 <p><img src="../images/02_handbook/flixel-display-list.png" style="max-width:400px" /></p>
 

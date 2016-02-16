@@ -142,10 +142,6 @@
 				<a href="/documentation/flixel-frontends"> Flixel Frontends </a>
 			</li>
 		
-			<li class= about="/documentation/flxg">
-				<a href="/documentation/flxg"> FlxG </a>
-			</li>
-		
 			<li class= about="/documentation/flxgroup">
 				<a href="/documentation/flxgroup"> FlxGroup </a>
 			</li>
@@ -248,7 +244,7 @@
 			
 				<a href="http://api.haxeflixel.com/flixel/util/FlxSave.html" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/07-flxsave.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/06-flxsave.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxSave;</span></code></pre>
 <p>HaxeFlixel gives you the <code>FlxSave</code> class to manage saving and loading your game&#39;s data. You might use it to save and load a high score table, or the position and status of the player and enemies, or custom settings the player has selected. Like most of HaxeFlixel, <code>FlxSave</code> is cross-platform in functionality.</p>
@@ -258,11 +254,11 @@
 <p>So how can you save some of your game data? Once you have your variable, you will need to initialize, then bind it:</p>
 <pre class="highlight"><code class="actionscript">_gameSave = <span class="keyword">new</span> FlxSave(); <span class="comment">// initialize</span>
 _gameSave.bind(<span class="string">"SaveDemo"</span>); <span class="comment">// bind to the named save slot</span></code></pre>
-<p>Note the string &quot;SaveDemo&quot;. This is how HaxeFlixel tracks what save slot you are binding to in local storage. If you want to have multiple saves, you will probably want to define a series of strings to identify each slot, eg. &quot;SaveSlot1&quot;, &quot;SaveSlot2&quot;, etc. and bind to the appropriate one. For more information on using multiple save slots, take a look at <a href="http://www.funstormgames.com/blog/2012/01/flixel-advanced-saving-tips-tricks/">Wolfgang&#39;s article</a> on the subject for AS3 Flixel, but keep in mind that <a href="http://haxeflixel.com/documentation/as3-and-haxe-comparison/">the AS3 syntax is a little different from Haxe</a>.</p>
+<p>Note the string &quot;SaveDemo&quot;. This is how HaxeFlixel tracks what save slot you are binding to in local storage. If you want to have multiple saves, you will probably want to define a series of strings to identify each slot, eg. &quot;SaveSlot1&quot;, &quot;SaveSlot2&quot;, etc. and bind to the appropriate one. For more information on using multiple save slots, take a look at <a href="http://www.funstormgames.com/blog/2012/01/flixel-advanced-saving-tips-tricks/">Wolfgang&#39;s article</a> on the subject for AS3 Flixel, but keep in mind that <a href="http://www.openfl.org/archive/developer/documentation/actionscript-developers/">the AS3 syntax is a little different from Haxe</a>.</p>
 <p>Note: If you plan to use <code>FlxG.save</code> you can skip the initializing and binding steps, as HaxeFlixel has done it for you.</p>
 <p>Once bound, the save is essentially &quot;live&quot;. To write to it you use the .data property of variable, treating it as an <a href="http://haxe.org/ref/dynamic">object</a>:</p>
-<pre class="highlight"><code class="actionscript">_gameSave.data.boxPositions = <span class="keyword">new</span> Array();
-_gameSave.data.boxPositions.push(<span class="keyword">new</span> FlxPoint(box.x, box.y));
+<pre class="highlight"><code class="actionscript">_gameSave.data.boxPositions = <span class="keyword">new</span> Array&lt;FlxPoint&gt;();
+_gameSave.data.boxPositions.push(box.getPosition());
 
 _gameSave.data.enemy = myEnemy;
 
@@ -275,14 +271,14 @@ _gameSave.flush();</code></pre>
 <p>In certain cases you may need to <a href="http://haxe.org/manual/serialization">serialize and unserialize</a> your data (fancy words for &quot;take my data and turn it into a specially formatted string, or back into data&quot;) to avoid errors, but you may want to try it without serialization unless you experience problems.</p>
 <h4 id="loading">Loading</h4>
 <p>In order to retrieve your saved data, you simply make sure you have a correctly bound <code>FlxSave</code> variable and read each value from the <code>.data</code> property.</p>
-<pre class="highlight"><code class="actionscript">box.x = _gameSave.data.boxPositions[tempCount].x;
-box.y = _gameSave.data.boxPositions[tempCount].y;</code></pre>
+<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> position = _gameSave.data.boxPositions[tempCount];
+box.setPosition(position.x, position.y);</code></pre>
 <p>This means that, depending on your save needs, when loading a save slot you may need to loop through a long list of data to assign each of the values back to it&#39;s correct home.</p>
 <h4 id="existing-save-data">Existing save data</h4>
 <p>When you save data to a given <code>FlxSave</code> save slot there is, of course, the possibility that data already exists in that slot (hopefully your saved data from an earlier save). One way to test for this is to check if one of your variables is null. If save data does already exist and you plan to save an entire fresh set of new data, then to avoid carrying over values from an earlier save you may wish to either go through and initialize or reset each of the potentially saved variables to some default value (or null) before saving your new set, or you may wish to erase the save data entirely (probably not a good idea if you&#39;re using <code>FlxG.save</code>).</p>
 <p><code>FlxSave</code> provides an <code>.erase()</code> method to help with this process, but keep in mind that calling it on a bound <code>FlxSave</code> variable will: immediately erase all the data in .data, save the slot in the erased state (any earlier data is now completely gone), and also destroy the binding to the save slot. This last point is important to note, as after the binding has been broken <code>FlxSave</code> may still let you assign to .data and even call other methods without errors to indicate that the data is not actually being stored at all. So if you do use the <code>.erase()</code> method, don&#39;t forget to call <code>.bind()</code> again before you save or load any further data.</p>
 <h4 id="other-methods">Other methods</h4>
-<p>In the Save demo the application creates and binds a <code>FlxSave</code> variable when the demo state initializes (see <code>PlayState.create()</code> ), and then leaves this variable accessible for loading and saving from that point on. This allows you to continually update the save object when necessary, but it&#39;s equally valid to create, initialize, and bind a FlxSave variable only when loading and saving. In that case you should familiarize yourself with <code>.close()</code> and <code>.destroy()</code>for safe and efficient handling of your <code>FlxSave</code>.</p>
+<p>In the Save demo the application creates and binds a <code>FlxSave</code> variable when the demo state initializes (see <code>PlayState#create()</code>), and then leaves this variable accessible for loading and saving from that point on. This allows you to continually update the save object when necessary, but it&#39;s equally valid to create, initialize, and bind a FlxSave variable only when loading and saving. In that case you should familiarize yourself with <code>.close()</code> and <code>.destroy()</code>for safe and efficient handling of your <code>FlxSave</code>.</p>
 <p>To review these additional methods and check out any other <code>FlxSave</code> functionality in more detail, take a look at the <a href="http://api.haxeflixel.com/flixel/util/FlxSave.html">API documentation</a> or look at the class definition itself (currently under the util package in the flixel library).</p>
 
 

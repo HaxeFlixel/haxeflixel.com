@@ -240,7 +240,7 @@
 <p> <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy-1.png" alt=""></p>
 <p> Note: make sure that your enemy sprites are functionally the same - they should have the same number of frames for each &#39;facing&#39; animation.</p>
 </li>
-<li><p>Let&#39;s add a new Enemy class. This class is going to look a lot like our Player class, with a few changes:</p>
+<li><p>Let&#39;s add a new <code>Enemy</code> class. This class is going to look a lot like our <code>Player</code> class, with a few changes:</p>
 <pre class="highlight"><code class="actionscript"> <span class="class"><span class="keyword">class</span> <span class="title">Enemy</span> <span class="keyword">extends</span> <span class="title">FlxSprite</span>
  {</span>
      <span class="keyword">public</span> <span class="keyword">var</span> speed:Float = <span class="number">140</span>;
@@ -250,7 +250,7 @@
      {</span>
          <span class="keyword">super</span>(X, Y);
          etype = EType;
-         loadGraphic(<span class="string">"assets/images/enemy-"</span> + Std.string(etype) + <span class="string">".png"</span>, <span class="literal">true</span>, <span class="number">16</span>, <span class="number">16</span>);
+         loadGraphic(<span class="string">"assets/images/enemy-"</span> + etype + <span class="string">".png"</span>, <span class="literal">true</span>, <span class="number">16</span>, <span class="number">16</span>);
          setFacingFlip(FlxObject.LEFT, <span class="literal">false</span>, <span class="literal">false</span>);
          setFacingFlip(FlxObject.RIGHT, <span class="literal">true</span>, <span class="literal">false</span>);
          animation.add(<span class="string">"d"</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>], <span class="number">6</span>, <span class="literal">false</span>);
@@ -297,9 +297,9 @@
          super.draw();
      }
  }</code></pre>
-<p> The main difference is that we have a new etype variable, which we will use to figure out which enemy sprite to load, and which one we&#39;re dealing with, etc.</p>
+<p> The main difference is that we have a new <code>etype</code> variable, which we will use to figure out which enemy sprite to load, and which one we&#39;re dealing with, etc.</p>
 </li>
-<li><p>Next, we&#39;ll make a FlxGroup in our PlayState to hold our Enemies, and load them into the map, very much the same way we did our coins.</p>
+<li><p>Next, we&#39;ll make a <code>FlxGroup</code> in our <code>PlayState</code> to hold our Enemies, and load them into the map, very much the same way we did our coins.</p>
 <p> At the top of our class, add:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _grpEnemies:FlxTypedGroup&lt;Enemy&gt;;</code></pre>
 <p> In the create function,  right after we add our coin group:</p>
@@ -316,7 +316,7 @@
 <p>Now let&#39;s give them some brains.</p>
 <p>In order to let our enemies &#39;think&#39;, we&#39;re going to utilize a very simple <a href="http://en.wikipedia.org/wiki/Finite_state_machine">Finite-state Machine (FSM)</a>. Basically, the FSM works by saying that a given machine (or entity) can only be in one state at a time. For our enemies, we&#39;re going to give them 2 possible states: Idle and Chase. When they can&#39;t &#39;see&#39; the player, they will be Idle - wandering around aimlessly. Once the player is in view, however, they will switch to the Chase state and run towards the player.</p>
 <ol>
-<li><p>Shouldn&#39;t be that hard! First, we&#39;ll make our FSM class:</p>
+<li><p>Shouldn&#39;t be that hard! First, we&#39;ll make our <code>FSM</code> class:</p>
 <pre class="highlight"><code class="actionscript"> <span class="class"><span class="keyword">class</span> <span class="title">FSM</span>
  {</span>
      <span class="keyword">public</span> <span class="keyword">var</span> activeState:Void-&gt;Void;
@@ -333,7 +333,7 @@
      }
  }</code></pre>
 </li>
-<li><p>Next, we&#39;ll change our Enemy class a little.</p>
+<li><p>Next, we&#39;ll change our <code>Enemy</code> class a little.</p>
 <p> We need to define these variables at the top of the class:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _brain:FSM;
  <span class="keyword">private</span> <span class="keyword">var</span> _idleTmr:Float;
@@ -355,21 +355,24 @@
      }
      <span class="keyword">else</span> <span class="keyword">if</span> (_idleTmr &lt;= <span class="number">0</span>)
      {
-         <span class="keyword">if</span> (FlxRandom.chanceRoll(<span class="number">1</span>))
+         <span class="keyword">if</span> (FlxG.random.bool(<span class="number">1</span>))
          {
              _moveDir = -<span class="number">1</span>;
              velocity.x = velocity.y = <span class="number">0</span>;
          }
          <span class="keyword">else</span>
          {
-             _moveDir = FlxRandom.intRanged(<span class="number">0</span>, <span class="number">8</span>) * <span class="number">45</span>;
-             FlxAngle.rotatePoint(speed * <span class="number">.5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, _moveDir, velocity);
+             _moveDir = FlxG.random.int(<span class="number">0</span>, <span class="number">8</span>) * <span class="number">45</span>;
+
+             velocity.<span class="keyword">set</span>(speed * <span class="number">0.5</span>, <span class="number">0</span>);
+             velocity.rotate(FlxPoint.weak(), _moveDir);
+
          }
-         _idleTmr = FlxRandom.intRanged(<span class="number">1</span>, <span class="number">4</span>);
+         _idleTmr = FlxG.random.int(<span class="number">1</span>, <span class="number">4</span>);            
      }
      <span class="keyword">else</span>
          _idleTmr -= FlxG.elapsed;
-     }
+
  }
 
  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">chase</span><span class="params">()</span><span class="type">:Void</span>
@@ -384,18 +387,18 @@
      }
  }
 
- <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+ <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
  {</span>
      _brain.update();
-     super.update();
+     super.update(elapsed);
  }</code></pre>
-<p> The way this is going to work is that each enemy will start in the Idle state. In the PlayState we will have each enemy check to see if it can see the player or not. If it can, it will switch to the Chase state, until it can&#39;t see the player anymore. While in the Idle state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the Chase state, they will move directly towards the player.</p>
+<p> The way this is going to work is that each enemy will start in the Idle state. In the <code>PlayState</code> we will have each enemy check to see if it can see the player or not. If it can, it will switch to the Chase state, until it can&#39;t see the player anymore. While in the Idle state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the Chase state, they will move directly towards the player.</p>
 </li>
-<li><p>Let&#39;s jump over to the PlayState to add our player&#39;s vision logic. In update, under the overlap and collision checks, add:</p>
+<li><p>Let&#39;s jump over to the <code>PlayState</code> to add our player&#39;s vision logic. In <code>update</code>, under the overlap and collision checks, add:</p>
 <pre class="highlight"><code class="actionscript"> FlxG.collide(_grpEnemies, _mWalls);
  _grpEnemies.forEachAlive(checkEnemyVision);</code></pre>
 </li>
-<li><p>Next, add the checkEnemyVision function:</p>
+<li><p>Next, add the <code>checkEnemyVision()</code> function:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">checkEnemyVision</span><span class="params">(e:Enemy)</span><span class="type">:Void</span>
  {</span>
      <span class="keyword">if</span> (_mWalls.ray(e.getMidpoint(), _player.getMidpoint()))

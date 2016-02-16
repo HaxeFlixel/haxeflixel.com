@@ -259,15 +259,10 @@
 <p> This function calls <code>FlxG.switchState</code>, which switches the state from whatever the current state is (MenuState) to a new instance of PlayState.</p>
 </li>
 <li><p>Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we&#39;re missing a few things.
- First, we want the button to be in a nicer place. Sure, we could set the x,y coordinates when we create it, but there&#39;s a simpler way to do it.
- Go up to the import section of the class, and, in a new line, type:</p>
-<pre class="highlight"><code class="actionscript"> using flixel.util.FlxSpriteUtil;</code></pre>
-<p> This is going to allow us to use some of FlxSpriteUtil&#39;s (one of many useful utility classes in HaxeFlixel) functions on our own objects in this class. This is thanks to a Haxe feature called <a href="http://haxe.org/manual/lf-static-extension.html">Static Extension</a>, and can be used for some powerful results.</p>
-</li>
-<li><p>Back in the create function, add a new line somewhere after we create our FlxButton, and before <code>super.create();</code> (I like to add it before the button is added, but that&#39;s just my preference).
+ First, we want the button to be in a nicer place. Sure, we could set the x,y coordinates when we create it, but there&#39;s a simpler way to do it. Back in the create function, add a new line somewhere after we create our FlxButton, and before <code>super.create();</code> (I like to add it before the button is added, but that&#39;s just my preference).
  Type:</p>
 <pre class="highlight"><code class="actionscript"> _btnPlay.screenCenter();</code></pre>
-<p> screenCenter is a function in FlxSpriteUtil which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.</p>
+<p> <code>screenCenter()</code> is a function which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.</p>
 </li>
 <li><p>Finally, we need to make sure we clean things up a little. Go back up the imports and add:</p>
 <pre class="highlight"><code class="actionscript"> <span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxDestroyUtil;</span></code></pre>
@@ -298,10 +293,11 @@
 <pre class="highlight"><code class="actionscript"> <span class="package"><span class="keyword">package</span>;
 
  <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
+ <span class="title">import</span> <span class="title">flixel</span>.<span class="title">system</span>.<span class="title">FlxAssets</span>.<span class="title">FlxGraphicAsset</span>;
 
  <span class="title">class</span> <span class="title">Player</span> <span class="title">extends</span> <span class="title">FlxSprite</span>
  {</span>
-     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)</span>
+     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)</span>
      {</span>
          <span class="keyword">super</span>(X, Y, SimpleGraphic);
      }
@@ -310,7 +306,7 @@
 </li>
 <li><p>First, lets take out the SimpleGraphic parameter in the constructor. For our Player sprite, we don&#39;t need to pass it the graphic.
  So</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)</span></span></code></pre>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)</span></span></code></pre>
 <p> Becomes</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(X:Float=0, Y:Float=0)</span></span></code></pre>
 <p> and</p>
@@ -348,7 +344,7 @@
 <p> Drag, in HaxeFlixel, is sort of a way to slow down an object when it&#39;s not being moved. This will prevent our Player sprite from just running forever in the same direction when the user stops pressing any movement keys.
  This is sort of arbitrary based on what &#39;feels&#39; right - we can come back and tweak the numbers later on.</p>
 </li>
-<li><p>While there are plenty of ways to handle player movement, it can be simpler to add it to the Player class. We&#39;ll want to add a new function that will watch for player input and respond to it, so, make a new function:</p>
+<li><p>While there are plenty of ways to handle player movement, it can be simpler to add it to the <code>Player</code> class. We&#39;ll want to add a new function that will watch for player input and respond to it, so, make a new function:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">movement</span><span class="params">()</span><span class="type">:Void</span>
  {</span>
  }</code></pre>
@@ -360,13 +356,13 @@
  <span class="keyword">var</span> _right:Bool = <span class="literal">false</span>;</code></pre>
 </li>
 <li><p>Next, we want to actually find out which of these directions the player wants to move in. We&#39;ll do that by checking if certain keys are being pressed:</p>
-<pre class="highlight"><code class="actionscript"> _up = FlxG.keys.anyPressed([<span class="string">"UP"</span>, <span class="string">"W"</span>]);
- _down = FlxG.keys.anyPressed([<span class="string">"DOWN"</span>, <span class="string">"S"</span>]);
- _left = FlxG.keys.anyPressed([<span class="string">"LEFT"</span>, <span class="string">"A"</span>]);
- _right = FlxG.keys.anyPressed([<span class="string">"RIGHT"</span>, <span class="string">"D"</span>]);</code></pre>
-<p> The anyPressed function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of Keys (their names) and it will return &#39;true&#39; if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.</p>
+<pre class="highlight"><code class="actionscript"> _up = FlxG.keys.anyPressed([UP, W]);
+ _down = FlxG.keys.anyPressed([DOWN, S]);
+ _left = FlxG.keys.anyPressed([LEFT, A]);
+ _right = FlxG.keys.anyPressed([RIGHT, D]);</code></pre>
+<p> The <code>anyPressed()</code> function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of keys (their names) and it will return <code>true</code> if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.</p>
 </li>
-<li><p>Next, we want to cancel out opposing directions - if the player is pressing Up and Down at the same time, we&#39;re not going to move anywhere:</p>
+<li><p>Next, we want to cancel out opposing directions - if the player is pressing up and down at the same time, we&#39;re not going to move anywhere:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (_up &amp;&amp; _down)
       _up = _down = <span class="literal">false</span>;
  <span class="keyword">if</span> (_left &amp;&amp; _right)
@@ -403,19 +399,20 @@
      mA = <span class="number">0</span>;</code></pre>
 <p> All this will do is create a temporary variable to hold our angle, and then, based on which direction(s) the player is pressing, set that angle to the direction we plan on moving the player.</p>
 </li>
-<li><p>Now, we know which angle the player should be moving in, we need to figure out how much velocity it needs to move that way. We&#39;re going to do this by creating a point, which will be how much velocity the player would have if our angle was 0, then rotate it based on our actual angle, and finally make our player&#39;s velocity equal to the resulting, rotated point:</p>
-<pre class="highlight"><code class="actionscript"> FlxAngle.rotatePoint(speed, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, mA, velocity);</code></pre>
-<p> Next, close the bracket from your &#39;if&#39; statement from earlier.
+<li><p>Now, we know which angle the player should be moving in, we need to figure out how much velocity it needs to move that way. We&#39;re going to do this by setting <code>velocity.x</code> to <code>speed</code> and <code>velocity.y</code> to <code>0</code>. Then we rotate that point around <code>(0, 0)</code> by <code>mA</code> degrees.</p>
+<pre class="highlight"><code class="actionscript"> velocity.<span class="keyword">set</span>(speed, <span class="number">0</span>);
+ velocity.rotate(FlxPoint.weak(<span class="number">0</span>, <span class="number">0</span>), mA);</code></pre>
+<p> Next, close the bracket from your <code>if</code> statement from earlier.
  ...and that&#39;s the end of our <code>movement()</code> function!</p>
 </li>
 <li><p>The only thing left to do is to <code>override</code> the <code>update()</code> function in <code>Player.hx</code> as well and call <code>movement()</code> from it. FlashDevelop can generate the necessary boilerplate code for you, just type <code>override</code> and a space, after which a completion popup should appear:</p>
 <p> <img src="../images/04_tutorials/overrideCompletion.png" alt=""></p>
 <p> Select <code>update</code> and press enter.</p>
 <p> Now you just need to add the function call, after which it should look like this:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
  {</span>
      movement();
-     super.update();
+     super.update(elapsed);
  }</code></pre>
 <p> The <code>update()</code> function, as you should remember, is called each &#39;frame&#39; of the game. So, each time our <code>PlayState</code> gets its <code>update()</code> called, it calls <code>update()</code> on all of its <code>members</code>, including the player&#39;s <code>update()</code>. This in turn will run our <code>movement()</code> logic and adjust the player&#39;s <code>velocity</code> accordingly. After that, it call its <code>super.update()</code>, which will take the <code>velocity</code> that we&#39;ve just changed into account and figures out where the player sprite should move to.</p>
 </li>

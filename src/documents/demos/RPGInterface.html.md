@@ -1,5 +1,5 @@
 ```
-title: "RPG Interface"
+title: "RPGInterface"
 layout: demo
 pageOrder: 1
 SWFHeight: 600
