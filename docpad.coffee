@@ -176,27 +176,27 @@ docpadConfig = {
           editUrl
         }).addUrl(urls)
 
-    community: (database) ->
+    tutorial: (database) ->
       query =
         write: true
-        relativeOutDirPath: $endsWith: '01_community'
+        relativeOutDirPath: $endsWith: '04_tutorial'
         body: $ne: ""
       sorting = [categoryDirectory:1, filename:1]
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
         layout = 'doc'
-        categoryName = 'community'
-        categoryTitle = 'Community'
+        categoryName = 'tutorial'
+        categoryTitle = 'Tutorial'
         urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/'
+        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorial/"
         editUrl = githubEditUrl + a.basename + '.html.md'
         document.setMetaDefaults({
           layout
           url: urls[0]
-          editUrl
           categoryName
           categoryTitle
+          editUrl
         }).addUrl(urls)
 
     handbook: (database) ->
@@ -245,27 +245,27 @@ docpadConfig = {
           editUrl
         }).addUrl(urls)
 
-    tutorial: (database) ->
+    community: (database) ->
       query =
         write: true
-        relativeOutDirPath: $endsWith: '04_tutorial'
+        relativeOutDirPath: $endsWith: '01_community'
         body: $ne: ""
       sorting = [categoryDirectory:1, filename:1]
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
         layout = 'doc'
-        categoryName = 'tutorial'
-        categoryTitle = 'Tutorial'
+        categoryName = 'community'
+        categoryTitle = 'Community'
         urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorial/"
+        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/'
         editUrl = githubEditUrl + a.basename + '.html.md'
         document.setMetaDefaults({
           layout
           url: urls[0]
+          editUrl
           categoryName
           categoryTitle
-          editUrl
         }).addUrl(urls)
 
     rootDocuments: (database) ->
