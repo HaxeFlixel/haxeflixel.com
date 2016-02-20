@@ -145,6 +145,7 @@ docpadConfig = {
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
+        index = 0
         layout = 'doc'
         urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
         categoryName = 'getting_started'
@@ -157,6 +158,7 @@ docpadConfig = {
           categoryName
           categoryTitle
           editUrl
+          index
         }).addUrl(urls)
 
     tutorial: (database) ->
@@ -168,6 +170,7 @@ docpadConfig = {
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
+        index = 1
         layout = 'doc'
         categoryName = 'tutorial'
         categoryTitle = 'Tutorial'
@@ -180,6 +183,7 @@ docpadConfig = {
           categoryName
           categoryTitle
           editUrl
+          index
         }).addUrl(urls)
 
     handbook: (database) ->
@@ -191,6 +195,7 @@ docpadConfig = {
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
+        index = 2
         layout = 'doc'
         categoryName = 'handbook'
         categoryTitle = "Handbook"
@@ -203,6 +208,7 @@ docpadConfig = {
           categoryName
           categoryTitle
           editUrl
+          index
         }).addUrl(urls)
 
     resources: (database) ->
@@ -214,6 +220,7 @@ docpadConfig = {
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
+        index = 3
         layout = 'doc'
         categoryName = 'resources'
         categoryTitle = 'Resources'
@@ -226,6 +233,7 @@ docpadConfig = {
           categoryName
           categoryTitle
           editUrl
+          index
         }).addUrl(urls)
 
     community: (database) ->
@@ -237,6 +245,7 @@ docpadConfig = {
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
+        index = 4
         layout = 'doc'
         categoryName = 'community'
         categoryTitle = 'Community'
@@ -249,6 +258,7 @@ docpadConfig = {
           editUrl
           categoryName
           categoryTitle
+          index
         }).addUrl(urls)
 
     rootDocuments: (database) ->
@@ -257,7 +267,7 @@ docpadConfig = {
         relativeOutDirPath: $startsWith: 'documentation'
         body: $ne: ""
         rootDoc: true
-      sorting = [categoryDirectory:1, relativeDirPath:1]
+      sorting = [index:1]
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
