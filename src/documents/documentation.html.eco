@@ -5,7 +5,7 @@ layout: "documentation-layout"
 
 <%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {icon: 'play', title: 'Getting Started'}) %>
 
-<%- @partial('doc-category.html.eco', {docs:@getCollection('tutorials')}, {icon: 'check', title:'Tutorials'}) %>
+<%- @partial('doc-category.html.eco', {docs:@getCollection('tutorial')}, {icon: 'check', title:'Tutorial'}) %>
         
 <%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {icon: 'book', title: 'HaxeFlixel Handbook'}) %>
 
