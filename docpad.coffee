@@ -111,7 +111,7 @@ docpadConfig = {
       docsCollection = @getCollection(collection)
       return docsCollection.models[docsCollection.length-1]
 
-    getDocCollection:(database, index, dir, categoryName, categoryTitle) ->
+    getDocCollection:(database, dir, categoryName, categoryTitle) ->
       query =
         write: true
         relativeOutDirPath: $endsWith: dir
@@ -130,7 +130,6 @@ docpadConfig = {
           categoryName
           categoryTitle
           editUrl
-          index
         }).addUrl(urls)
 
   # =================================
@@ -159,19 +158,19 @@ docpadConfig = {
       database.findAllLive({tags:$has:'homepage_demo'}, [date:-1])
 
     getting_started: (database) ->
-      docpadConfig.templateData.getDocCollection(database, 0, '00_getting_started', 'getting_started', 'Getting Started')
+      docpadConfig.templateData.getDocCollection(database, '00_getting_started', 'getting_started', 'Getting Started')
 
     tutorial: (database) ->
-      docpadConfig.templateData.getDocCollection(database, 1, '04_tutorial', 'tutorial', 'Tutorial')
+      docpadConfig.templateData.getDocCollection(database, '01_tutorial', 'tutorial', 'Tutorial')
 
     handbook: (database) ->
-      docpadConfig.templateData.getDocCollection(database, 2, '02_handbook', 'handbook', 'Handbook')
+      docpadConfig.templateData.getDocCollection(database, '02_handbook', 'handbook', 'Handbook')
 
     resources: (database) ->
-      docpadConfig.templateData.getDocCollection(database, 3, '03_resources', 'resources', 'Resources')
+      docpadConfig.templateData.getDocCollection(database, '03_resources', 'resources', 'Resources')
 
     community: (database) ->
-      docpadConfig.templateData.getDocCollection(database, 4, '01_community', 'community', 'Community')
+      docpadConfig.templateData.getDocCollection(database, '04_community', 'community', 'Community')
 
     rootDocuments: (database) ->
       query =
@@ -179,7 +178,7 @@ docpadConfig = {
         relativeOutDirPath: $startsWith: 'documentation'
         body: $ne: ""
         rootDoc: true
-      sorting = [index:1]
+      sorting = [relativeOutDirPath:1]
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
