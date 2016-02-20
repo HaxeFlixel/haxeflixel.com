@@ -21,9 +21,13 @@
 							<a href="/demos">Demos</a>
 						</li>
 
+						<li <%= @ashowcase %>>
+							<a href="/showcase">Demos</a>
+						</li>
+
                         <li class="dropdown" <%= @ashowcase %>>
 
-                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
