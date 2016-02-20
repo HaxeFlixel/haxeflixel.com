@@ -226,7 +226,7 @@
 			<h1 class="title">3 - Groundwork</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorial/04-3-groundwork.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/04-3-groundwork.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>Now it&#39;s time to think about what we actually want our game to be, and how we&#39;re going to pull it off. Luckily, I&#39;ve done all the hard work for you.</p>
 <p>The game I&#39;m going to help you build will be a very simple top-down &#39;dungeon crawl&#39; game, where the player controls a single character, moves around a map and fights enemies, and collects gold.</p>
@@ -286,12 +286,12 @@
 <p>We&#39;re going to be extending the FlxSprite class to create our Player class.</p>
 <ol>
 <li><p>In the Project list on the right side of your screen, right-click on your &quot;source&quot; folder, and choose &quot;Add&quot;, and then &quot;New Class.&quot;</p>
-<p> <img src="../images/04_tutorial/0004.png" alt=""></p>
+<p> <img src="../images/01_tutorial/0004.png" alt=""></p>
 </li>
 <li><p>In the New Haxe Class Dialog that pops up, enter &quot;Player&quot; for &quot;Name&quot;, and next to &quot;Base Class&quot;, click &quot;Browse.&quot; and search for &quot;flixel.FlxSprite&quot; and choose it.</p>
 </li>
 <li><p>Once your screen looks like this, hit &quot;OK&quot;:</p>
-<p> <img src="../images/04_tutorial/0005.png" alt=""></p>
+<p> <img src="../images/01_tutorial/0005.png" alt=""></p>
 </li>
 <li><p>You should now see a very basic class which extends FlxSprite:</p>
 <pre class="highlight"><code class="actionscript"> <span class="package"><span class="keyword">package</span>;
@@ -334,7 +334,7 @@
 <p> This simply assigns a new instance of our Player sprite to our <code>_player</code> variable, telling it to be placed at 20, 20 on the screen, and adds it to our PlayState.</p>
 </li>
 <li><p>If you run your project right now, you should see our blue player on the screen!</p>
-<p> <img src="../images/04_tutorial/0006.png" alt=""></p>
+<p> <img src="../images/01_tutorial/0006.png" alt=""></p>
 <p> Now let&#39;s get it to move around!</p>
 </li>
 </ol>
@@ -410,7 +410,7 @@
  ...and that&#39;s the end of our <code>movement()</code> function!</p>
 </li>
 <li><p>The only thing left to do is to <code>override</code> the <code>update()</code> function in <code>Player.hx</code> as well and call <code>movement()</code> from it. FlashDevelop can generate the necessary boilerplate code for you, just type <code>override</code> and a space, after which a completion popup should appear:</p>
-<p> <img src="../images/04_tutorial/overrideCompletion.png" alt=""></p>
+<p> <img src="../images/01_tutorial/overrideCompletion.png" alt=""></p>
 <p> Select <code>update</code> and press enter.</p>
 <p> Now you just need to add the function call, after which it should look like this:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>

@@ -226,7 +226,7 @@
 			<h1 class="title">10 - UI and Combat</h1>
 
 			
-			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorial/11-10-ui-and-combat.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/11-10-ui-and-combat.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<p>Now we want to show the player what&#39;s going on. So we need to have some kind of HUD on the screen to tell them what their current/max health is, and how many coins they have. For the health icon you can use this image <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/health.png" alt="">, or make your own. Make sure you save this in &quot;assets/images&quot;.</p>
 <ol>
@@ -298,7 +298,7 @@
 </li>
 </ol>
 <p>Go ahead and test out your game, and the HUD should update each time you pick up a coin!</p>
-<p><img src="../images/04_tutorial/0019.png" alt=""></p>
+<p><img src="../images/01_tutorial/0019.png" alt=""></p>
 <p>If we had a way to &#39;hurt&#39; the player, we could also update the health on the HUD… but in order to do that, we need to figure out how we&#39;re going to do combat!</p>
 <p>Let&#39;s begin by establishing what we want our combat system to achieve. First, we&#39;re not going to be making the next Final Fantasy game here, this is just a basic demonstration to show how a few different elements can work. So, I think all we want to do is have a simple interface that appears when the player touches an enemy that shows the Player&#39;s health, and the Enemy&#39;s health (in a health bar, for obfuscation), and gives the player 2 options: FIGHT or FLEE.</p>
 <p>If they choose to fight, we&#39;ll roll some random chance checks to see if the player hits the enemy, and if the enemy hits the player - a hit will do 1 damage. Once the enemy dies, we&#39;ll continue on. If they choose to flee, we&#39;ll do a check to see if they do flee or not - if they do, the interface closes and the enemy will be stunned for a few seconds so the player can move away. If they fail to flee, the enemy will get a free hit against the player. We&#39;ll also show the damage and Misses on the interface.</p>
@@ -386,7 +386,7 @@
 </li>
 </ol>
 <p>And that should do it! Test out your game and make sure that it works!</p>
-<p><img src="../images/04_tutorial/0020.png" alt=""></p>
+<p><img src="../images/01_tutorial/0020.png" alt=""></p>
 <p>Next, we&#39;ll cover winning and losing and setting up all our different <code>FlxState</code>s.</p>
 
 
