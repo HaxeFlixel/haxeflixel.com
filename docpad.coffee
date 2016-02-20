@@ -63,13 +63,13 @@ docpadConfig = {
       else
         @site.title
 
-    getDocumentMenuTitle:(title) ->
+    getDocumentMenuTitle: (title) ->
       if title.length > 28
         return "#{title.substring(0,20)} ..."
       else
         return title
 
-    getShowcaseActive:(status) ->
+    getShowcaseActive: (status) ->
       if status
         return 'showcases-target-actives'
       else
@@ -89,29 +89,29 @@ docpadConfig = {
       url = "/images/demos/"
       path = "#{url}#{test} "
 
-    getPagerNext:(collection) ->
+    getPagerNext: (collection) ->
       docsCollection = @getCollection(collection)
       for item,index in docsCollection.models
         if item.id is @document.id
           break
       return docsCollection.models[index+1]
 
-    getPagerPrevious:(collection) ->
+    getPagerPrevious: (collection) ->
       docsCollection = @getCollection(collection)
       for item,index in docsCollection.models
         if item.id is @document.id
           break
       return docsCollection.models[index-1]
 
-    getFirst:(collection) ->
+    getFirst: (collection) ->
       docsCollection = @getCollection(collection)
       return docsCollection.models[0]
 
-    getLast:(collection) ->
+    getLast: (collection) ->
       docsCollection = @getCollection(collection)
       return docsCollection.models[docsCollection.length-1]
 
-    getDocCollection:(database, dir, categoryName, categoryTitle) ->
+    getDocCollection: (database, dir, categoryName, categoryTitle) ->
       query =
         write: true
         relativeOutDirPath: $endsWith: dir
@@ -140,9 +140,7 @@ docpadConfig = {
       sorting = [filename:-1]
       database.findAllLive({layout:$has:'blog-post'}, sorting).on 'add', (document) ->
         a = document.attributes
-        contentPreview = a.content.substring(0,150)
-        contentPreview = contentPreview + " ..."
-        contentPreview = marked(contentPreview)
+        contentPreview = marked(a.content.substring(0,150) + " ...")
         a.postDate = "posted : " + a.postDate
         document.setMetaDefaults({
           contentPreview
