@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>2 - Creating a new project | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li >
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class='active'>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a><h4>
+	</li>
+
+	
+		
+			<li class= about="/documentation/tutorial">
+				<a href="/documentation/tutorial"> Tutorial </a>
+			</li>
+		
+			<li class= about="/documentation/the-power-of-haxeflixel">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class= about="/documentation/setup">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class=active about="/documentation/creating-a-new-project">
+				<a href="/documentation/creating-a-new-project"> 2 - Creating a new project </a>
+			</li>
+		
+			<li class= about="/documentation/groundwork">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class= about="/documentation/sprites-and-animation">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class= about="/documentation/creating-a-tilemap">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class= about="/documentation/loading-the-tilemap">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class= about="/documentation/zoom-and-cameras">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class= about="/documentation/pickups">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class= about="/documentation/enemies-and-basic-ai">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class= about="/documentation/ui-and-combat">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class= about="/documentation/victory-and-defeat-menu">
+				<a href="/documentation/victory-and-defeat-menu"> 11 - Victory and Defeat Menu </a>
+			</li>
+		
+			<li class= about="/documentation/sound-and-music">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class= about="/documentation/multiple-platforms">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class= about="/documentation/polish">
+				<a href="/documentation/polish"> 14 - Polish </a>
+			</li>
+		
+			<li class= about="/documentation/conclusion">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">2 - Creating a new project</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorial/03-2-creating-a-new-project.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Now we want to make sure that everything is installed properly - and we want to set up the framework for our game. So we&#39;re going to make a new project, open it with FlashDevelop and test that it builds and runs.</p>
+<ol>
+<li><p>From the Command Prompt, enter:</p>
+<pre class="highlight"><code class="bash"> flixel tpl -n <span class="string">"FlixelTut"</span></code></pre>
+<p> This will create a new Flixel project using the blank template in the directory FlixelTut (also naming the project FlixelTut).</p>
+</li>
+<li><p>Outside of the Command Prompt, launch FlashDevelop. Select File&gt;Open and browse to where your FlixelTut directory was created. It should look something like this:</p>
+<p> <img src="../images/04_tutorial/0001.png" alt=""></p>
+</li>
+<li><p>Open the FlixelTut.hxproj file.</p>
+</li>
+<li><p>Over on the right side of the screen, you should see your Project. This will contain all the files that the Template generated for us.</p>
+<p> <img src="../images/04_tutorial/0002.png" alt=""></p>
+</li>
+<li><p>Next, let&#39;s make sure that our project builds and runs properly. By default, a fresh, new Flixel Template Project will launch the game in the MenuState. So go ahead and double-click to open that file from the project list.
+ This file is a very basic (and empty) example of a FlxState Class. You can think of FlxStates a little bit like &#39;scenes&#39;. When your game is running, one - and only one - state will be the active state. Anything &quot;added&quot; to that state will be visible and accessible by the player, and, for the most part, will be segregated from other States in your game.
+ They are great for having different sections of your game that are sort of in a bubble from one another, such as the     MenuState and the PlayState (where the game is actually played).
+ You&#39;ll see that, at least for now, the MenuState only has 3 functions in it: create, destroy, and update.
+ When a State is loaded, its create function is called. This is where you want to initialize all of the things in your state. On the flip side, destroy is called when the state is being unloaded (like when you&#39;re switching to a different state). This is where you want to put all your &#39;clean up&#39; logic.
+ Finally update is where all the real magic happens - update is called every &quot;frame&quot; in your game (usually 60 times per second). When a FlxState&#39;s update is called, it will call update on all of the objects that have been added to it. This is basically how everything in your game actually happens. We will get to play with this more later on.
+ For now, we JUST want to see that the whole thing works, so, we&#39;re going to add a simple FlxText object to this state.</p>
+</li>
+<li><p>In the create function, right before the line that says <code>super.create();</code>, add a new line and type the following:</p>
+<pre class="highlight"><code class="actionscript"> add(<span class="keyword">new</span> FlxText(<span class="number">10</span>, <span class="number">10</span>, <span class="number">100</span>, <span class="string">"Hello, World!"</span>));</code></pre>
+<p> Then save your changes.</p>
+</li>
+<li><p>The Moment of Truth! Go up to the toolbar in FlashDevelop and choose &#39;Debug&#39; and &#39;Flash&#39;:</p>
+<p> <img src="../images/04_tutorial/0002b.png" alt=""></p>
+<p> Then, press the blue arrow next to &#39;Debug&#39; (or hit F5) and you should see:</p>
+<p> <img src="../images/04_tutorial/0003.png" alt=""></p>
+<p> It worked! You&#39;ve built and run your first HaxeFlixel code!</p>
+<p> At this point, you could try running it for neko, windows, and android to make sure they all work as well if you like. If you run into problems with any of those, double-check your code, check out the OpenFL installation information, and if that doesn&#39;t help, let us know on the forums.</p>
+<p> This is only a small step towards bigger and better things! In the next part, we&#39;ll actually define the game we&#39;re going to be building, and start putting it together!</p>
+</li>
+</ol>
+
+
+			<br>
+			<hr>
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/setup">< 1 - Setup</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/groundwork">3 - Groundwork ></a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
+</html>
