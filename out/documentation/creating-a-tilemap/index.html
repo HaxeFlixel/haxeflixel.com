@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>5 - Creating a Tilemap | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li >
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class='active'>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorials">Tutorials</a><h4>
+	</li>
+
+	
+		
+			<li class= about="/documentation/tutorials">
+				<a href="/documentation/tutorials"> Tutorials </a>
+			</li>
+		
+			<li class= about="/documentation/the-power-of-haxeflixel">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class= about="/documentation/setup">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class= about="/documentation/testing">
+				<a href="/documentation/testing"> 2 - Testing with a N ... </a>
+			</li>
+		
+			<li class= about="/documentation/groundwork">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class= about="/documentation/sprites-and-animation">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class=active about="/documentation/creating-a-tilemap">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class= about="/documentation/loading-the-tilemap">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class= about="/documentation/zoom-and-cameras">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class= about="/documentation/pickups">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class= about="/documentation/enemies-and-basic-ai">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class= about="/documentation/ui-and-combat">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class= about="/documentation/winning-and-losing-and-menus">
+				<a href="/documentation/winning-and-losing-and-menus"> 11 - Winning and Los ... </a>
+			</li>
+		
+			<li class= about="/documentation/sound-and-music">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class= about="/documentation/multiple-platforms">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class= about="/documentation/polish-finishing-up-and-juice">
+				<a href="/documentation/polish-finishing-up-and-juice"> 14 - Polish, finishi ... </a>
+			</li>
+		
+			<li class= about="/documentation/conclusion">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">5 - Creating a Tilemap</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/06-5-creating-a-tilemap.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Now it&#39;s time to make some maps for the player to move around in! To do this, we&#39;re going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel. For this part of the tutorial, we&#39;re just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.</p>
+<p>You can make your own, with 16x16 pixel tiles, or use this one:</p>
+<p><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/tiles.png" alt=""></p>
+<p>(Note: the first tile should be empty!)</p>
+<ol>
+<li><p>Go to <a href="http://www.ogmoeditor.com/"><a href="http://www.ogmoeditor.com">http://www.ogmoeditor.com</a></a> to download and install it, then launch the editor.</p>
+</li>
+<li><p>Go to Project &gt; New Project and name your project whatever you want. I would save it under assets/data.</p>
+</li>
+<li><p>Next, you need to define your project&#39;s settings. Go through each tab, one-by-one, and set it up to look like the following:</p>
+<p> <img src="../images/04_tutorials/0007.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0008.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0008b.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0009.png" alt=""></p>
+<p> <img src="../images/04_tutorials/0010.png" alt=""></p>
+</li>
+<li><p>Hit Apply to save your changes. You should now see a screen that looks like this:</p>
+<p> <img src="../images/04_tutorials/0011.png" alt=""></p>
+</li>
+<li><p>Make sure you&#39;re on the &#39;walls&#39; layer, and, using tools on the right, draw out a simple map. Make sure it&#39;s completely encircled by walls (so the player can&#39;t wander off the map), and make the insides filled with floor tiles. You should end up with something like this:</p>
+<p> <img src="../images/04_tutorials/0012.png" alt=""></p>
+</li>
+<li><p>Now, switch over to the &#39;entities&#39; layer, and place your player entity somewhere in one of your rooms:</p>
+<p> <img src="../images/04_tutorials/0013.png" alt=""></p>
+</li>
+<li><p>Go up to Level &gt; Save Level, and save this as &quot;room-001.oel&quot; in &quot;assets/data&quot;.</p>
+</li>
+<li><p>We&#39;re done with Ogmo for now, so save all your changes and exit.</p>
+</li>
+</ol>
+<p>In the next part, we will learn how to load the newly created tilemap into our game.</p>
+
+
+			<br>
+			<hr>
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/sprites-and-animation">< 4 - Sprites and Animation</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/loading-the-tilemap">6 - Loading the Tilemap ></a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
+</html>

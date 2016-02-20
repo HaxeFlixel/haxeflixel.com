@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<title>6 - Loading the Tilemap | HaxeFlixel 2D Game Framework</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!"/>
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel"/>
+	<meta name="author" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link  rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li >
+							<a href="/demos">Demos</a>
+						</li>
+
+                        <li class="dropdown" >
+
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+						<li >
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class='active'>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li >
+							<a href="/forum">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="http://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search">
+        <input type="hidden" name="q" value="site:http://haxeflixel.com">
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a><h4>
+	</li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorials">Tutorials</a><h4>
+	</li>
+
+	
+		
+			<li class= about="/documentation/tutorials">
+				<a href="/documentation/tutorials"> Tutorials </a>
+			</li>
+		
+			<li class= about="/documentation/the-power-of-haxeflixel">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class= about="/documentation/setup">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class= about="/documentation/testing">
+				<a href="/documentation/testing"> 2 - Testing with a N ... </a>
+			</li>
+		
+			<li class= about="/documentation/groundwork">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class= about="/documentation/sprites-and-animation">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class= about="/documentation/creating-a-tilemap">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class=active about="/documentation/loading-the-tilemap">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class= about="/documentation/zoom-and-cameras">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class= about="/documentation/pickups">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class= about="/documentation/enemies-and-basic-ai">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class= about="/documentation/ui-and-combat">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class= about="/documentation/winning-and-losing-and-menus">
+				<a href="/documentation/winning-and-losing-and-menus"> 11 - Winning and Los ... </a>
+			</li>
+		
+			<li class= about="/documentation/sound-and-music">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class= about="/documentation/multiple-platforms">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class= about="/documentation/polish-finishing-up-and-juice">
+				<a href="/documentation/polish-finishing-up-and-juice"> 14 - Polish, finishi ... </a>
+			</li>
+		
+			<li class= about="/documentation/conclusion">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">6 - Loading the Tilemap</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorials/07-6-loading-the-tilemap.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>One of the great things about using Ogmo with HaxeFlixel is that there is already a class built to load and use the maps, however, it&#39;s not in the &#39;standard&#39; HaxeFlixel library - we have to install the flixel-addons library to get access to it.</p>
+<ol>
+<li><p>Open up a new command prompt window, and enter:</p>
+<pre class="highlight"><code class="bash"> haxelib install flixel-addons</code></pre>
+<p> This should run and install the new library. Close the command prompt window when it&#39;s finished.</p>
+</li>
+<li><p>Jump back into FlashDevelop and open up your <code>Project.xml</code> file. We need to tell our project to include flixel-addons in the libraries.</p>
+</li>
+<li><p>Look for a line that says:</p>
+<pre class="highlight"><code class="xml"> <span class="comment">&lt;!--haxelib name="flixel-addons" /--&gt;</span></code></pre>
+<p> and change it to:</p>
+<pre class="highlight"><code class="xml"> <span class="tag">&lt;<span class="title">haxelib</span> <span class="attribute">name</span>=<span class="value">"flixel-adddons"</span> /&gt;</span></code></pre>
+<p> Save this change. You&#39;re now playing with flixel-addons!</p>
+</li>
+<li><p>Go back to your PlayState, and,  underneath where you define your _player object, add:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _map:FlxOgmoLoader;
+ <span class="keyword">private</span> <span class="keyword">var</span> _mWalls:FlxTilemap;</code></pre>
+<p> We&#39;re basically just creating an object to hold our Ogmo Map, and then another one to hold the <code>FlxTilemap</code> that we will generate from the Ogmo map.</p>
+</li>
+<li><p>In the create function, before we setup the player object, add:</p>
+<pre class="highlight"><code class="actionscript"> _map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001__oel);
+ _mWalls.follow();
+ _mWalls = _map.loadTilemap(AssetPaths.tiles__png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
+ _mWalls.setTileProperties(<span class="number">1</span>, FlxObject.NONE);
+ _mWalls.setTileProperties(<span class="number">2</span>, FlxObject.ANY);
+ add(_mWalls);</code></pre>
+<p> This just loads our room file into our <code>FlxOgmoLoader</code> object, generates our <code>FlxTilemap</code> from the &#39;walls&#39; layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.</p>
+</li>
+<li><p>Now, we need to make our player object get placed in the right location on the map. So, change where we initialize our player from:</p>
+<pre class="highlight"><code class="actionscript"> _player = <span class="keyword">new</span> Player(<span class="number">20</span>, <span class="number">20</span>);</code></pre>
+<p> to:</p>
+<pre class="highlight"><code class="actionscript"> _player = <span class="keyword">new</span> Player();
+ _map.loadEntities(placeEntities, <span class="string">"entities"</span>);</code></pre>
+<p> We&#39;re simply telling our <code>_map</code> object to loop through all of the entities in our &#39;entities&#39; layer, and call the placeEntities function for each one (which we&#39;re about to make now).</p>
+</li>
+<li><p>Let&#39;s make the <code>placeEntities()</code> function now. When we call loadEntities on our map, it will pass the name of the entity, as well as its Xml data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:</p>
+<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">placeEntities</span><span class="params">(entityName:String, entityData:Xml)</span><span class="type">:Void</span>
+ {</span>
+     <span class="keyword">var</span> x:Int = Std.parseInt(entityData.<span class="keyword">get</span>(<span class="string">"x"</span>));
+     <span class="keyword">var</span> y:Int = Std.parseInt(entityData.<span class="keyword">get</span>(<span class="string">"y"</span>));
+     <span class="keyword">if</span> (entityName == <span class="string">"player"</span>)
+     {
+         _player.x = x;
+         _player.y = y;
+     }
+ }</code></pre>
+<p> So, if this function gets passed an entity with the name &quot;player&quot;, it will set our player object&#39;s x and y values to the Entities x and y values (converting them from Strings to Ints).</p>
+</li>
+<li><p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after <code>super.update(elapsed);</code> add:</p>
+<pre class="highlight"><code class="actionscript"> FlxG.collide(_player, _mWalls);</code></pre>
+<p> All this does is check collision between our player and our walls Tilemap each update, and will deal with overlaps accordingly.</p>
+</li>
+<li><p>Finally, we want to make a small tweak to the player sprite. It&#39;s a good idea to make sure that your player has a decent chance of making it through doorways. Since, by default, our player sprite is the same size as our tiles (16x16 pixels), it makes it so the player has to thread the needle to make it through 1-tile wide doorways. To remedy this, we&#39;re going to change the player sprite&#39;s size and offsets. This won&#39;t change what is actually displayed for the player&#39;s graphic, only the hitbox.</p>
+<p> So, in the Player class, in the constructor, under where we set the drag, add:</p>
+<pre class="highlight"><code class="actionscript"> setSize(<span class="number">8</span>, <span class="number">14</span>);
+ offset.<span class="keyword">set</span>(<span class="number">4</span>, <span class="number">2</span>);</code></pre>
+</li>
+<li><p>Go ahead and run your project, and you should be able to run around the map.</p>
+<p><img src="../images/04_tutorials/0013b.png" alt=""></p>
+</li>
+</ol>
+<p>In the next part, we&#39;ll talk about some small tweaks to the camera.</p>
+
+
+			<br>
+			<hr>
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/creating-a-tilemap">< 5 - Creating a Tilemap</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/zoom-and-cameras">7 - Zoom and Cameras ></a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+						allowtransparency="true"
+						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+</body>
+
+</html>
