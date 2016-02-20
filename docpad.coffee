@@ -111,6 +111,28 @@ docpadConfig = {
       docsCollection = @getCollection(collection)
       return docsCollection.models[docsCollection.length-1]
 
+    getDocCollection:(database, index, dir, categoryName, categoryTitle) ->
+      query =
+        write: true
+        relativeOutDirPath: $endsWith: dir
+        body: $ne: ""
+      sorting = [categoryDirectory:1, filename:1]
+
+      database.findAllLive(query, sorting).on 'add', (document) ->
+        a = document.attributes
+        layout = 'doc'
+        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
+        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/' + dir + '/'
+        editUrl = githubEditUrl + a.basename + '.html.md'
+        document.setMetaDefaults({
+          layout
+          url: urls[0]
+          categoryName
+          categoryTitle
+          editUrl
+          index
+        }).addUrl(urls)
+
   # =================================
 
   collections:
@@ -137,129 +159,19 @@ docpadConfig = {
       database.findAllLive({tags:$has:'homepage_demo'}, [date:-1])
 
     getting_started: (database) ->
-      query =
-        write: true
-        relativeOutDirPath: $endsWith: '00_getting_started'
-        body: $ne: ""
-      sorting = [categoryDirectory:1, filename:1]
-
-      database.findAllLive(query, sorting).on 'add', (document) ->
-        a = document.attributes
-        index = 0
-        layout = 'doc'
-        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        categoryName = 'getting_started'
-        categoryTitle = 'Getting Started'
-        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/00_getting_started/'
-        editUrl = githubEditUrl + a.basename + '.html.md'
-        document.setMetaDefaults({
-          layout
-          url: urls[0]
-          categoryName
-          categoryTitle
-          editUrl
-          index
-        }).addUrl(urls)
+      docpadConfig.templateData.getDocCollection(database, 0, '00_getting_started', 'getting_started', 'Getting Started')
 
     tutorial: (database) ->
-      query =
-        write: true
-        relativeOutDirPath: $endsWith: '04_tutorial'
-        body: $ne: ""
-      sorting = [categoryDirectory:1, filename:1]
-
-      database.findAllLive(query, sorting).on 'add', (document) ->
-        a = document.attributes
-        index = 1
-        layout = 'doc'
-        categoryName = 'tutorial'
-        categoryTitle = 'Tutorial'
-        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_tutorial/"
-        editUrl = githubEditUrl + a.basename + '.html.md'
-        document.setMetaDefaults({
-          layout
-          url: urls[0]
-          categoryName
-          categoryTitle
-          editUrl
-          index
-        }).addUrl(urls)
+      docpadConfig.templateData.getDocCollection(database, 1, '04_tutorial', 'tutorial', 'Tutorial')
 
     handbook: (database) ->
-      query =
-        write: true
-        relativeOutDirPath: $endsWith: '02_handbook'
-        body: $ne: ""
-      sorting = [categoryDirectory:1, filename:1]
-
-      database.findAllLive(query, sorting).on 'add', (document) ->
-        a = document.attributes
-        index = 2
-        layout = 'doc'
-        categoryName = 'handbook'
-        categoryTitle = "Handbook"
-        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/'
-        editUrl = githubEditUrl + a.basename + '.html.md'
-        document.setMetaDefaults({
-          layout
-          url: urls[0]
-          categoryName
-          categoryTitle
-          editUrl
-          index
-        }).addUrl(urls)
+      docpadConfig.templateData.getDocCollection(database, 2, '02_handbook', 'handbook', 'Handbook')
 
     resources: (database) ->
-      query =
-        write: true
-        relativeOutDirPath: $endsWith: '03_resources'
-        body: $ne: ""
-      sorting = [categoryDirectory:1, filename:1]
-
-      database.findAllLive(query, sorting).on 'add', (document) ->
-        a = document.attributes
-        index = 3
-        layout = 'doc'
-        categoryName = 'resources'
-        categoryTitle = 'Resources'
-        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/"
-        editUrl = githubEditUrl + a.basename + '.html.md'
-        document.setMetaDefaults({
-          layout
-          url: urls[0]
-          categoryName
-          categoryTitle
-          editUrl
-          index
-        }).addUrl(urls)
+      docpadConfig.templateData.getDocCollection(database, 3, '03_resources', 'resources', 'Resources')
 
     community: (database) ->
-      query =
-        write: true
-        relativeOutDirPath: $endsWith: '01_community'
-        body: $ne: ""
-      sorting = [categoryDirectory:1, filename:1]
-
-      database.findAllLive(query, sorting).on 'add', (document) ->
-        a = document.attributes
-        index = 4
-        layout = 'doc'
-        categoryName = 'community'
-        categoryTitle = 'Community'
-        urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        githubEditUrl = 'https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/'
-        editUrl = githubEditUrl + a.basename + '.html.md'
-        document.setMetaDefaults({
-          layout
-          url: urls[0]
-          editUrl
-          categoryName
-          categoryTitle
-          index
-        }).addUrl(urls)
+      docpadConfig.templateData.getDocCollection(database, 4, '01_community', 'community', 'Community')
 
     rootDocuments: (database) ->
       query =
