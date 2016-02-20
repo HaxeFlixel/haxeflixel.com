@@ -150,10 +150,10 @@ docpadConfig = {
       database.findAllLive({layout:$has:'demo'}, [title:1])
 
     showcase: (database) ->
-      database.findAllLive({layout:$has:'showcase'}, [title:-1])
+      database.findAllLive({layout:$has:'showcase'}, [title:1])
 
     homepage_demos: (database) ->
-      database.findAllLive({tags:$has:'homepage_demo'}, [title:-1])
+      database.findAllLive({tags:$has:'homepage_demo'}, [title:1])
 
     getting_started: (database) ->
       docpadConfig.templateData.getDocCollection(database, '00_getting_started', 'getting_started', 'Getting Started')
