@@ -11,49 +11,33 @@ marked.setOptions(markedOptions);
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
 
-  # =================================
   # Ignore the api docs from the flixel-docs repo
-
   ignorePaths: [
     __dirname + '/src/documents/documentation/api'
   ]
 
-  # =================================
   # Template Data
   # These are variables that will be accessible via our templates
   # To access one of these within our templates, refer to the FAQ: https://github.com/bevry/docpad/wiki/FAQ
-
   templateData:
-
-    # Specify some site properties
     site:
-      # The production url of our website
       url: "http://haxeflixel.com"
-
-      # The default title of our website
-      title: "HaxeFlixel 2D Game Framework"
-
+      title: "HaxeFlixel 2D Game Engine"
       name: "HaxeFlixel"
-
       # The website description (for SEO)
       description: """
-        HaxeFlixel is a 2D Game framework that lets you create cross-platform games easier with free, open source technology!
+        HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!
         """
-
       # The website keywords (for SEO) separated by commas
       keywords: """
         gamedev, game development, cross-platform, haxe, flixel
         """
-
-      # Styles
       styles: [
         "/styles/bootstrap.css",
         "/styles/style.css",
         "/styles/site.css",
         "/styles/monokai-sublime.css"
       ]
-
-      # Scripts
       scripts: [
         "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
         "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
@@ -61,7 +45,6 @@ docpadConfig = {
         "/vendor/twitter-bootstrap-3/js/transition.js",
         "/vendor/twitter-bootstrap-3/js/collapse.js"
       ]
-
       services:
         googleAnalytics: 'UA-35511281-1'
         disqus: 'haxeflixel'
@@ -76,7 +59,7 @@ docpadConfig = {
       # if we have a document title, then we should use that and suffix the site's title onto it
       if @document.title
         "#{@document.title} | #{@site.title}"
-      # if our document does not have it's own title, then we should just use the site's title
+      # if our document does not have its own title, then we should just use the site's title
       else
         @site.title
 
