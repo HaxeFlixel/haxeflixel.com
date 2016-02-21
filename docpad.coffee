@@ -110,7 +110,7 @@ docpadConfig = {
         write: true
         relativeOutDirPath: $endsWith: dir
         body: $ne: ""
-      sorting = [categoryDirectory:1, filename:1]
+      sorting = [filename:1]
 
       database.findAllLive(query, sorting).on 'add', (document) ->
         a = document.attributes
