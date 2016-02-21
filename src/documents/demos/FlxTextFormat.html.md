@@ -2,7 +2,7 @@
 title: "FlxTextFormat"
 layout: demo
 SWFWidth: 640
-SWFHeight: 240
+SWFHeight: 250
 source: "User%20Interface/FlxTextFormat"
 ```
 
