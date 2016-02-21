@@ -1,8 +1,8 @@
 ```
 title: "FlxPongApi"
 layout: demo
-SWFWidth: 900
-SWFHeight: 300
+width: 900
+height: 300
 source: "Arcade/FlxPongApi"
 ```
 

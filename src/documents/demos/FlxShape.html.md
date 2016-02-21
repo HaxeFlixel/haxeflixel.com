@@ -1,8 +1,8 @@
 ```
 title: "FlxShape"
 layout: demo
-SWFWidth: 800
-SWFHeight: 500
+width: 800
+height: 500
 source: "Flixel%20Features/FlxShape"
 ```
 

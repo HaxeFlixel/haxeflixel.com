@@ -80,7 +80,7 @@
 
 <script type="text/javascript">
 	var attributes = {wmode: "direct"};
-	swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.SWFWidth %>", "<%= @document.SWFHeight %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
+	swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
 </script>
 
 </body>

@@ -2,8 +2,8 @@
 ```
 title: "BlendModes"
 layout: demo
-SWFWidth: 1024
-SWFHeight: 768
+width: 1024
+height: 768
 source: "Effects/BlendModes"
 ```
 

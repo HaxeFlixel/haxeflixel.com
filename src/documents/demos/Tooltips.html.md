@@ -1,8 +1,8 @@
 ```
 title: "Tooltips"
 layout: demo
-SWFWidth: 800
-SWFHeight: 600
+width: 800
+height: 600
 source: "User%20Interface/Tooltips"
 ```
 

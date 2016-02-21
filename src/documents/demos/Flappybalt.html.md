@@ -1,8 +1,8 @@
 ```
 title: "Flappybalt"
 layout: demo
-SWFWidth: 480
-SWFHeight: 720
+width: 480
+height: 720
 source: "Arcade/Flappybalt"
 tags: ['homepage_demo']
 ```

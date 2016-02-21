@@ -1,8 +1,8 @@
 ```
 title: "GridMovement"
 layout: demo
-SWFWidth: 672
-SWFHeight: 480
+width: 672
+height: 480
 source: "Input/GridMovement"
 ```
 

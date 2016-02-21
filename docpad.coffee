@@ -148,8 +148,8 @@ docpadConfig = {
     demos: (database) ->
       database.findAllLive({layout:$has:'demo'}, [title:1]).on 'add', (document) ->
         document.setMetaDefaults({
-          SWFWidth: 640
-          SWFHeight: 480
+          width: 640
+          height: 480
         })
 
     showcase: (database) ->

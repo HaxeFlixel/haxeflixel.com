@@ -1,8 +1,8 @@
 ```
 title: "GamepadTest"
 layout: demo
-SWFWidth: 650
-SWFHeight: 440
+width: 650
+height: 440
 source: "Input/GamepadTest"
 ```
 

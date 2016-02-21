@@ -1,8 +1,8 @@
 ```
 title: "Flixius"
 layout: demo
-SWFWidth: 1280
-SWFHeight: 720
+width: 1280
+height: 720
 source: "Arcade/Flixius"
 ```
 
