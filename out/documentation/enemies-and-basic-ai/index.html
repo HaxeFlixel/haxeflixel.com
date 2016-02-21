@@ -221,17 +221,17 @@
 <ol>
 <li><p>This should be second nature by now - add a new entity type in your Ogmo project:</p>
 <p> <img src="../images/01_tutorial/0017.png" alt=""></p>
-<p> Make sure you add the &#39;etype&#39; value.</p>
+<p> Make sure you add the <code>etype</code> value.</p>
 </li>
 </ol>
 <ol>
-<li><p>Then scatter some enemies around the map. Make all but one of them have an etype value of &#39;0&#39;, and the other one be &#39;1&#39;.</p>
+<li><p>Then scatter some enemies around the map. Make all but one of them have an <code>etype</code> value of <code>0</code>, and the other one be <code>1</code>.</p>
 <p> <img src="../images/01_tutorial/0018.png" alt=""></p>
 </li>
-<li><p>So we want to have 2 different enemies in our game. We&#39;ll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them &#39;enemy-0.png&#39; and &#39;enemy-1.png&#39; and put them in the &#39;assets/images&#39; folder. You can use these, if you want (thanks, again, Vicky!):</p>
+<li><p>So we want to have 2 different enemies in our game. We&#39;ll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them <code>enemy-0.png</code> and <code>enemy-1.png</code> and put them in the <code>assets/images</code> folder. You can use these, if you want (thanks, again, Vicky!):</p>
 <p> <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy-0.png" alt=""></p>
 <p> <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy-1.png" alt=""></p>
-<p> Note: make sure that your enemy sprites are functionally the same - they should have the same number of frames for each &#39;facing&#39; animation.</p>
+<p> Note: make sure that your enemy sprites are functionally the same - they should have the same number of frames for each <code>facing</code> animation.</p>
 </li>
 <li><p>Let&#39;s add a new <code>Enemy</code> class. This class is going to look a lot like our <code>Player</code> class, with a few changes:</p>
 <pre class="highlight"><code class="actionscript"> <span class="class"><span class="keyword">class</span> <span class="title">Enemy</span> <span class="keyword">extends</span> <span class="title">FlxSprite</span>
@@ -292,7 +292,7 @@
  }</code></pre>
 <p> The main difference is that we have a new <code>etype</code> variable, which we will use to figure out which enemy sprite to load, and which one we&#39;re dealing with, etc.</p>
 </li>
-<li><p>Next, we&#39;ll make a <code>FlxGroup</code> in our <code>PlayState</code> to hold our Enemies, and load them into the map, very much the same way we did our coins.</p>
+<li><p>Next, we&#39;ll make a <code>FlxGroup</code> in our <code>PlayState</code> to hold our enemies, and load them into the map, very much the same way we did our coins.</p>
 <p> At the top of our class, add:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _grpEnemies:FlxTypedGroup&lt;Enemy&gt;;</code></pre>
 <p> In the create function,  right after we add our coin group:</p>
@@ -307,7 +307,7 @@
 </ol>
 <p>Go ahead and test out your game to make sure the enemies are added properly.</p>
 <p>Now let&#39;s give them some brains.</p>
-<p>In order to let our enemies &#39;think&#39;, we&#39;re going to utilize a very simple <a href="http://en.wikipedia.org/wiki/Finite_state_machine">Finite-state Machine (FSM)</a>. Basically, the FSM works by saying that a given machine (or entity) can only be in one state at a time. For our enemies, we&#39;re going to give them 2 possible states: Idle and Chase. When they can&#39;t &#39;see&#39; the player, they will be Idle - wandering around aimlessly. Once the player is in view, however, they will switch to the Chase state and run towards the player.</p>
+<p>In order to let our enemies &#39;think&#39;, we&#39;re going to utilize a very simple <a href="http://en.wikipedia.org/wiki/Finite_state_machine">Finite-state Machine (FSM)</a>. Basically, the FSM works by saying that a given machine (or entity) can only be in one state at a time. For our enemies, we&#39;re going to give them 2 possible states: <code>Idle</code> and <code>Chase</code>. When they can&#39;t &#39;see&#39; the player, they will be <code>Idle</code> - wandering around aimlessly. Once the player is in view, however, they will switch to the <code>Chase</code> state and run towards the player.</p>
 <ol>
 <li><p>Shouldn&#39;t be that hard! First, we&#39;ll make our <code>FSM</code> class:</p>
 <pre class="highlight"><code class="actionscript"> <span class="class"><span class="keyword">class</span> <span class="title">FSM</span>
@@ -385,9 +385,9 @@
      _brain.update();
      super.update(elapsed);
  }</code></pre>
-<p> The way this is going to work is that each enemy will start in the Idle state. In the <code>PlayState</code> we will have each enemy check to see if it can see the player or not. If it can, it will switch to the Chase state, until it can&#39;t see the player anymore. While in the Idle state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the Chase state, they will move directly towards the player.</p>
+<p> The way this is going to work is that each enemy will start in the <code>Idle</code> state. In the <code>PlayState</code> we will have each enemy check to see if it can see the player or not. If it can, it will switch to the <code>Chase</code> state, until it can&#39;t see the player anymore. While in the <code>Idle</code> state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the <code>Chase</code> state, they will move directly towards the player.</p>
 </li>
-<li><p>Let&#39;s jump over to the <code>PlayState</code> to add our player&#39;s vision logic. In <code>update</code>, under the overlap and collision checks, add:</p>
+<li><p>Let&#39;s jump over to the <code>PlayState</code> to add our player&#39;s vision logic. In <code>update()</code>, under the overlap and collision checks, add:</p>
 <pre class="highlight"><code class="actionscript"> FlxG.collide(_grpEnemies, _mWalls);
  _grpEnemies.forEachAlive(checkEnemyVision);</code></pre>
 </li>
@@ -406,7 +406,7 @@
 </ol>
 <p>That&#39;s all there is to it! Try out your game and make sure it works!</p>
 <p><img src="../images/01_tutorial/0018b.png" alt=""></p>
-<p>Next, we&#39;ll add some UI to the game, and add our RPG-style Combat so you can fight the enemies!</p>
+<p>Next, we&#39;ll add some UI to the game, and add our RPG-style combat so you can fight the enemies!</p>
 
 
 			<br>

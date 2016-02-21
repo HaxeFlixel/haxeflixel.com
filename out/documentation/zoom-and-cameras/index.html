@@ -219,15 +219,15 @@
 
 			<p>When you run your game now, you&#39;ll notice that everything is really, really small. We&#39;re going to make it more visible by applying some zoom to our game so that we can get a better look at the action. This is a pretty quick change:</p>
 <ol>
-<li><p>Open the <code>Main.hx</code> file. This class initializes your game, and there are a few things here that you could play with, if you want. We just need to change a couple of the parameters.</p>
+<li><p>Open the <code>Main.hx</code> file. This class initializes your game, and there are a few things here that you could play with, if you want. We just need to change a couple of the arguments.</p>
 </li>
-<li><p>Change the widht and height parameters of <code>new FlxGame</code> to <code>320</code> and <code>240</code> (half of their original values).</p>
+<li><p>Change the width and height arguments of <code>new FlxGame()</code> to <code>320</code> and <code>240</code> (half of their original values).</p>
 </li>
 <li><p>If you ran the game right now, everything would be zoomed in, but the player would run off the screen pretty quick - we need to tell the camera to follow the player around. So, open the <code>PlayState</code> again.</p>
 </li>
 <li><p>In the create function, after you add the player and before <code>super.create()</code>, add:</p>
 <pre class="highlight"><code class="actionscript"> FlxG.camera.follow(_player, TOPDOWN, <span class="number">1</span>);</code></pre>
-<p> This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother).</p>
+<p> This simply tells the camera to follow the player using the <code>TOPDOWN</code> style, with a <code>lerp</code> of 1 (which helps the camera move a little more smoother).</p>
 </li>
 </ol>
 <p>That&#39;s it! Test out the game and see how it looks!</p>

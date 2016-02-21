@@ -198,11 +198,6 @@
     {</span>
         super.update(elapsed);
     }
-
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        super.destroy();
-    }
 }</code></pre>
 <h2 id="-flxstate-http-haxeflixel-com-documentation-flxstate-base-"><a href="http://haxeflixel.com/documentation/flxstate">FlxState</a> (Base)</h2>
 <pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
@@ -220,11 +215,6 @@
     <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
     {</span>
         super.update(elapsed);
-    }
-
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">destroy</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        super.destroy();
     }
 }</code></pre>
 <h2 id="switch-flxstate-http-haxeflixel-com-documentation-flxstate-">Switch <a href="http://haxeflixel.com/documentation/flxstate">FlxState</a></h2>
@@ -376,9 +366,6 @@ stringSignal.dispatch(<span class="string">"World"</span>);</code></pre>
 collisionNotify.add(collisionCallback);
 
 <span class="function"><span class="keyword">function</span> <span class="title">collisionCallback</span><span class="params">(source:FlxObject, target:FlxObject, shouldKillSource:Bool, shouldKillTarget:Bool)</span><span class="type">:Void</span> <span class="params">(<span class="rest_arg">...)</span></span></span></code></pre>
-<p><strong>Don&#39;t forget to clean up the signal when your object is destroyed:</strong></p>
-<pre class="highlight"><code class="actionscript">signal = FlxDestroyUtil.destroy(signal);
-stringSignal = FlxDestroyUtil.destroy(stringSignal);</code></pre>
 <h2 id="flxtimer">FlxTimer</h2>
 <pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxTimer;</span></code></pre>
 <pre class="highlight"><code class="actionscript"><span class="comment">// time (seconds), callback, loops</span>

@@ -217,9 +217,9 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/15-14-polish.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>In this section, I&#39;m going to show you a few simple tricks to add some polish and juice to your game. You may have seen me drop a few of these into the code earlier on, but we&#39;ll go through a few places now to talk about them.</p>
-<p>First up, there&#39;s a simple effect we can do with our Camera to have it fade in or out. This works nice for transitions between states or screens.
-We can add it to each of our states&#39; create function like so (right before <code>super.create()</code>):</p>
+			<p>In this section, you&#39;re going to learn a few simple tricks to add some polish and juice to your game. Some of those have already been added here and there, but we&#39;ll go through a few places now to talk about them.</p>
+<p>First up, there&#39;s a simple effect we can do with our camera to have it fade in or out. This works nice for transitions between states or screens.
+We can add it to each of our states&#39; <code>create()</code> function like so (right before <code>super.create()</code>):</p>
 <pre class="highlight"><code class="actionscript">FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">true</span>);</code></pre>
 <p>Then, if you want to fade out (when switching states), you can do something like this:</p>
 <pre class="highlight"><code class="actionscript">FlxG.camera.fade(FlxColor.BLACK,<span class="number">.33</span>, <span class="literal">false</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span>
@@ -227,14 +227,14 @@ We can add it to each of our states&#39; create function like so (right before <
     FlxG.switchState(<span class="keyword">new</span> PlayState());
 });</code></pre>
 <p>Try adding this logic to all of your states and then see how much of an improvement it gives the flow of your game.</p>
-<p>Next, let&#39;s give the player a little feedback whenever they get hurt in combat. We&#39;re going to make the screen shake briefly. So, go into the enemyAttack function in CombatHUD and, right after we call <code>FlxG.camera.flash</code> (another neat little effect you can use in other projects), add:</p>
+<p>Next, let&#39;s give the player a little feedback whenever they get hurt in combat. We&#39;re going to make the screen shake briefly. So, go into the <code>enemyAttack()</code> function in <code>CombatHUD</code> and, right after we call <code>FlxG.camera.flash</code> (another neat little effect you can use in other projects), add:</p>
 <pre class="highlight"><code class="actionscript">FlxG.camera.shake(<span class="number">0.01</span>, <span class="number">0.2</span>);</code></pre>
-<p>So, each time the player gets hurt in combat, the screen will flash white, and will shake a little bit for .2 seconds. Try it out!</p>
-<p>I know we&#39;ve used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We&#39;re simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking .1 seconds to complete. So, in the makeChoice function of CombatHUD, right before we play the hurt sound for the enemy, add:</p>
-<pre class="highlight"><code class="actionscript">FlxTween.tween(_sprEnemy, { x:_sprEnemy.x + <span class="number">4</span> }, <span class="number">.1</span>, { complete: <span class="function"><span class="keyword">function</span><span class="params">(_)</span>
+<p>So, each time the player gets hurt in combat, the screen will flash white, and will shake a little bit for <code>0.2</code> seconds. Try it out!</p>
+<p>I know we&#39;ve used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We&#39;re simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking <code>.1</code> seconds to complete. So, in the <code>makeChoice()</code> function of <code>CombatHUD</code>, right before we play the hurt sound for the enemy, add:</p>
+<pre class="highlight"><code class="actionscript">FlxTween.tween(_sprEnemy, { x: _sprEnemy.x + <span class="number">4</span> }, <span class="number">.1</span>, { complete: <span class="function"><span class="keyword">function</span><span class="params">(_)</span>
 {</span>
-    FlxTween.tween(_sprEnemy, { x:_sprEnemy.x - <span class="number">4</span> }, <span class="number">.1</span>);
-}} );</code></pre>
+    FlxTween.tween(_sprEnemy, { x: _sprEnemy.x - <span class="number">4</span> }, <span class="number">.1</span>);
+}});</code></pre>
 <p>Check out how that looks. Tweens are a very simple and powerful tool to make your game feel more active when used properly.</p>
 <p>Next, let&#39;s add a background effect to our <code>CombatHUD</code> to help bring our the combat screen out from the map a little bit. We&#39;re going to copy what&#39;s on the camera&#39;s buffer, desaturate it, and then apply a <code>FlxWaveEffect</code> to give it a wavy effect. HaxeFlixel has several effects like this that can be used for a number of effects (<code>FlxGlitchEffect</code>, <code>FlxRainbowEffect</code>...).</p>
 <ol>
@@ -266,12 +266,12 @@ We can add it to each of our states&#39; create function like so (right before <
 <p>That&#39;s all there is to it! Our effect sprite will fade in and out with the <code>CombatHUD</code> already. Try our the effect to see how it looks!</p>
 <p><img src="../images/01_tutorial/0022.png" alt=""></p>
 <p>You might have noticed, while testing the game, that the mouse cursor can get in the way - especially since it&#39;s not needed outside of the menu states. We can remedy this pretty easily.
-In the <code>PlayState.create()</code>, add:</p>
+In the <code>PlayState</code>&#39;s <code>create()</code>, add:</p>
 <pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> !FLX_NO_MOUSE
 FlxG.mouse.visible = <span class="literal">false</span>;
 #end</code></pre>
-<p>And be sure to do the reverse (<code>= true</code>) in <code>GameOverState#create()</code> No more pesky mouse cursor when we don&#39;t need it!</p>
-<p>There are plenty of other tweaks and tricks you can add to your games. I&#39;ve shown you just a couple. Try playing around with the different addons special effects classes in HaxeFlixel and see what else you can come up with. Take a look at <a href="http://haxeflixel.com/demos/">the demos</a> for more examples.</p>
+<p>And be sure to do the reverse (<code>= true</code>) in <code>GameOverState</code>&#39;s <code>create()</code> No more pesky mouse cursor when we don&#39;t need it!</p>
+<p>There are plenty of other tweaks and tricks you can add to your games. Try playing around with the different addons special effects classes in HaxeFlixel and see what else you can come up with. Take a look at <a href="http://haxeflixel.com/demos/">the demos</a> for more examples.</p>
 
 
 			<br>

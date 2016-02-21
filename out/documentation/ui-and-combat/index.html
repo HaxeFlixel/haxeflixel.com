@@ -217,7 +217,7 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/11-10-ui-and-combat.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<p>Now we want to show the player what&#39;s going on. So we need to have some kind of HUD on the screen to tell them what their current/max health is, and how many coins they have. For the health icon you can use this image <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/health.png" alt="">, or make your own. Make sure you save this in &quot;assets/images&quot;.</p>
+			<p>Now we want to show the player what&#39;s going on. So we need to have some kind of HUD on the screen to tell them what their current/max health is, and how many coins they have. For the health icon you can use this image <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/health.png" alt="">, or make your own. Make sure you save this in <code>assets/images</code>.</p>
 <ol>
 <li><p>We&#39;ll start by making a new <code>HUD</code> class which will hold all our HUD elements:</p>
 <pre class="highlight"><code class="actionscript"> <span class="package"><span class="keyword">package</span>;
@@ -269,19 +269,19 @@
          _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="number">4</span>;
      }
  }</code></pre>
-<p> This class extends <code>FlxTypedGroup&lt;FlxSprite&gt;</code> so that it can hold all of our <code>FlxSprite</code> objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 <code>FlxText</code> objects: 1 for Health, and 1 for Money, and 2 <code>FlxSprite</code>s, for the icons to go next to the <code>FlxText</code>s. At the end of our constructor, we have a <code>forEach</code> call - we use this to iterate through each of the items in this group, and it just sets their <code>scrollFactor.x</code> and <code>scrollFactor.y</code> to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.</p>
+<p> This class extends <code>FlxTypedGroup&lt;FlxSprite&gt;</code> so that it can hold all of our <code>FlxSprite</code> objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 <code>FlxText</code> objects: 1 for health, and 1 for money, and two <code>FlxSprite</code> objects, for the icons to go next to the <code>FlxText</code> objects. At the end of our constructor, we have a <code>forEach()</code> call - we use this to iterate through each of the items in this group, and it just sets their <code>scrollFactor.x</code> and <code>scrollFactor.y</code> to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.</p>
 <p> Finally, we have a function that we can call from anywhere to tell the <code>HUD</code> what it should display.</p>
 </li>
-<li><p>Now let&#39;s get it to work and have it update whenever we pick up a coin. In your <code>PlayState</code>, add to the top of the class:</p>
+<li><p>Now let&#39;s get it to work and have it update whenever we pick up a coin. In your <code>PlayState</code>, add this to the top of the class:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _hud:HUD;
  <span class="keyword">private</span> <span class="keyword">var</span> _money:Int = <span class="number">0</span>;
  <span class="keyword">private</span> <span class="keyword">var</span> _health:Int = <span class="number">3</span>;</code></pre>
 </li>
-<li><p>In the create function, before <code>super.create()</code>, add:</p>
+<li><p>In <code>create()</code>, before <code>super.create()</code>, add:</p>
 <pre class="highlight"><code class="actionscript"> _hud = <span class="keyword">new</span> HUD();
  add(_hud);</code></pre>
 </li>
-<li><p>Finally, in the <code>playerTouchCoin()</code> function we added earlier, somewhere inside the if statement, add:</p>
+<li><p>Finally, in the <code>playerTouchCoin()</code> function we added earlier, somewhere inside the <code>if</code>-statement, add:</p>
 <pre class="highlight"><code class="actionscript"> _money++;
  _hud.updateHUD(_health, _money);</code></pre>
 </li>
@@ -289,13 +289,13 @@
 <p>Go ahead and test out your game, and the HUD should update each time you pick up a coin!</p>
 <p><img src="../images/01_tutorial/0019.png" alt=""></p>
 <p>If we had a way to &#39;hurt&#39; the player, we could also update the health on the HUD… but in order to do that, we need to figure out how we&#39;re going to do combat!</p>
-<p>Let&#39;s begin by establishing what we want our combat system to achieve. First, we&#39;re not going to be making the next Final Fantasy game here, this is just a basic demonstration to show how a few different elements can work. So, I think all we want to do is have a simple interface that appears when the player touches an enemy that shows the Player&#39;s health, and the Enemy&#39;s health (in a health bar, for obfuscation), and gives the player 2 options: FIGHT or FLEE.</p>
-<p>If they choose to fight, we&#39;ll roll some random chance checks to see if the player hits the enemy, and if the enemy hits the player - a hit will do 1 damage. Once the enemy dies, we&#39;ll continue on. If they choose to flee, we&#39;ll do a check to see if they do flee or not - if they do, the interface closes and the enemy will be stunned for a few seconds so the player can move away. If they fail to flee, the enemy will get a free hit against the player. We&#39;ll also show the damage and Misses on the interface.</p>
+<p>Let&#39;s begin by establishing what we want our combat system to achieve. First, we&#39;re not going to be making the next Final Fantasy game here, this is just a basic demonstration to show how a few different elements can work. So, I think all we want to do is have a simple interface that appears when the player touches an enemy that shows the player&#39;s health, and the enemy&#39;s health (in a health bar, for obfuscation), and gives the player 2 options: <code>FIGHT</code> or <code>FLEE</code>.</p>
+<p>If they choose to fight, we&#39;ll roll some random chance checks to see if the player hits the enemy, and if the enemy hits the player - a hit will do 1 damage. Once the enemy dies, we&#39;ll continue on. If they choose to flee, we&#39;ll do a check to see if they do flee or not - if they do, the interface closes and the enemy will be stunned for a few seconds so the player can move away. If they fail to flee, the enemy will get a free hit against the player. We&#39;ll also show the damage and misses on the interface.</p>
 <p>This all seems simple enough, but it&#39;s actually going to require several components working together to make it work. It&#39;s the most complicated piece of our game so far.</p>
 <ol>
 <li><p>The first component will be our <code>CombatHUD</code> class. This is a pretty big class - it&#39;s going to do most of the heavy lifting with our combat logic. You can see the complete class here:</p>
 <p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/CombatHUD.hx">CombatHUD.hx</a></p>
-<p> Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our <code>Enemy.hx</code> class, as well:</p>
+<p> Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our <code>Enemy</code> class as well:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">changeEnemy</span><span class="params">(EType:Int)</span><span class="type">:Void</span>
  {</span>
      <span class="keyword">if</span> (etype != EType)
@@ -305,15 +305,15 @@
      }
  }</code></pre>
 </li>
-<li><p>Next, we need to get our <code>CombatHUD</code> into our <code>PlayState</code>. Add this to the top of the PlayState Class:</p>
+<li><p>Next, we need to get our <code>CombatHUD</code> into our <code>PlayState</code>. Add this to the top of the <code>PlayState</code> class:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _inCombat:Bool = <span class="literal">false</span>;
  <span class="keyword">private</span> <span class="keyword">var</span> _combatHud:CombatHUD;</code></pre>
 </li>
-<li><p>Move down to the create function, and, after we add the HUD, and before we call <code>super.create</code>, add:</p>
+<li><p>Move down to <code>create()</code>, and, after we add the HUD, and before we call <code>super.create()</code>, add:</p>
 <pre class="highlight"><code class="actionscript"> _combatHud = <span class="keyword">new</span> CombatHUD();
  add(_combatHud);</code></pre>
 </li>
-<li><p>Go down to our <code>update()</code> function, and change it so that we&#39;re ONLY checking for collision and overlaps and things when we&#39;re not in combat. Everything after the <code>super.update</code> should look like this:</p>
+<li><p>Go down to our <code>update()</code>, and change it so that we&#39;re ONLY checking for collisions and overlaps when we&#39;re not in combat. Everything after the <code>super.update()</code> should look like this:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (!_inCombat)
  {
      FlxG.collide(_player, _mWalls);
@@ -342,7 +342,7 @@
      }
  }</code></pre>
 <p> So, we&#39;re adding a check to see if the player touches an enemy. If they do, we&#39;ll call a callback to see if we should start combat or not.</p>
-<p> If we&#39;re in combat, we&#39;re simply going to keep checking to see if the combatHUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is <code>VICTORY</code> (one of our 4 enum values), we will kill the enemy, but if the player Fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.</p>
+<p> If we&#39;re in combat, we&#39;re simply going to keep checking to see if the combat HUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is <code>VICTORY</code> (one of our four enum values), we will kill the enemy, but if the player fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.</p>
 </li>
 <li><p>Next, lets add the functions to handle the player touching an enemy:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">playerTouchEnemy</span><span class="params">(P:Player, E:Enemy)</span><span class="type">:Void</span>
@@ -360,23 +360,23 @@
      _grpEnemies.active = <span class="literal">false</span>;
      _combatHud.initCombat(_health, E);
  }</code></pre>
-<p> All we&#39;re doing here is checking to see if the player is alive and exists and the enemy is alive and exists and not flickering (flickering enemies are those we&#39;ve just fled from), and if so, we start combat.</p>
-<p> The <code>startCombat</code> function simply sets our <code>inCombat</code> flag (so we know not to do collisions), and sets the player and all the enemies to inactive, so they no longer update.</p>
-<p> Finally, we call the initCombat function in our <code>CombatHUD</code>, which initializes it and makes it start working.</p>
+<p> All we&#39;re doing here is verify that both the player and the enemy are alive and exist, as well as that the enemy is not flickering (flickering enemies are those we&#39;ve just fled from). If so, we start combat.</p>
+<p> The <code>startCombat()</code> function simply sets our <code>inCombat</code> flag (so we know not to do collisions), and sets the player and all the enemies to inactive, so they no longer update.</p>
+<p> Finally, we call <code>initCombat()</code> in our <code>CombatHUD</code>, which initializes it and makes it start working.</p>
 </li>
 <li><p>Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.</p>
-<p> In the Enemy class, under update, add:</p>
+<p> In the <code>Enemy</code> class, under <code>update()</code>, add:</p>
 <pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (isFlickering())
      <span class="keyword">return</span>;</code></pre>
 <p> At the very top, before doing anything else in that function.</p>
 <p> You will also need to add</p>
 <pre class="highlight"><code class="actionscript"> using flixel.util.FlxSpriteUtil;</code></pre>
-<p> to the top of the <code>Enemy.hx</code> class.</p>
+<p> to the top of the <code>Enemy</code> class.</p>
 </li>
 </ol>
 <p>And that should do it! Test out your game and make sure that it works!</p>
 <p><img src="../images/01_tutorial/0020.png" alt=""></p>
-<p>Next, we&#39;ll cover winning and losing and setting up all our different <code>FlxState</code>s.</p>
+<p>Next, we&#39;ll cover winning and losing and setting up all our different states.</p>
 
 
 			<br>
