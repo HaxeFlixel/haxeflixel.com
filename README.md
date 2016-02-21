@@ -62,9 +62,8 @@ following this example:
         ```
         title: "Demo-Name"
         layout: demo
-        pageOrder: 1
-        SWFHeight: 480
-        SWFWidth: 640
+        width: 800
+        height: 500
         source: "flixel-demos-subdirectory/Demo-Name"
         ```
         Here goes the actual description of the demo in  GitHub-Flavored-Markdown:
@@ -77,7 +76,9 @@ following this example:
         
     ```
 `source` points to the subdirectory of [flixel-demos](https://github.com/HaxeFlixel/flixel-demos) 
-that contains the demo. 
+that contains the demo.
+
+`width` and `height` default to 640 and 480 and should be omitted in that case.
 
 2. Add a screenshot of the demo named `Demo-Name.png` to 
 [`/src/files/demos/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/images).
