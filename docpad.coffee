@@ -63,12 +63,6 @@ docpadConfig = {
       else
         @site.title
 
-    getDocumentMenuTitle: (title) ->
-      if title.length > 28
-        return "#{title.substring(0,20)} ..."
-      else
-        return title
-
     getShowcaseActive: (status) ->
       if status
         return 'showcases-target-actives'

@@ -12,7 +12,7 @@
 	<div class="col-md-3 doc-list-item">
 		<div class="list-group">
 			<a href="<%= doc.url %>" class="list-group-item">
-				<%= @getDocumentMenuTitle(doc.title) %>
+				<%= doc.title %>
 			</a>
 		</div>
 	</div>
