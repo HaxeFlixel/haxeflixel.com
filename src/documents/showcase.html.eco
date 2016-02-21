@@ -50,7 +50,7 @@ layout: showcases
 
 				<span class="<%= @getShowcaseActive(showcase.ios) %>">
 					<% if showcase.ios: %><a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="40px" src="/images/targets/ios-logo.svg">
+						<img width="40px" src="/images/targets/ios-logo.png">
 					<% if showcase.ios: %></a><% end %>
 				</span>
 
@@ -128,7 +128,7 @@ layout: showcases
 
 				<span class="<%= @getShowcaseActive(showcase.ios) %>">
 					<% if showcase.ios: %><a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank"><% end %>
-                    <img width="40px" src="/images/targets/ios-logo.svg">
+                    <img width="40px" src="/images/targets/ios-logo.png">
                     <% if showcase.ios: %></a><% end %>
 				</span>
 

@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100"
-   height="100"
+   width="80"
+   height="80"
    version="1.1"
    id="svg2"
-   inkscape:version="0.48.2 r9819"
-   sodipodi:docname="Florin_on_red_square.svg"
-   viewbox="0 0 100 100" >
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="flash-logo.svg"
+   viewbox="0 0 80 80">
   <metadata
      id="metadata14">
     <rdf:RDF>
@@ -43,27 +43,27 @@
      id="namedview10"
      showgrid="false"
      inkscape:zoom="4.6976726"
-     inkscape:cx="102.74038"
-     inkscape:cy="62.658917"
-     inkscape:window-x="222"
-     inkscape:window-y="0"
+     inkscape:cx="89.682563"
+     inkscape:cy="34.585342"
+     inkscape:window-x="2040"
+     inkscape:window-y="40"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <rect
-     width="77.306953"
-     height="77.306953"
+     width="80"
+     height="80"
      id="rect4"
      style="fill:#d50000;fill-opacity:1;stroke:none"
-     x="12.217827"
-     y="12.178191" />
+     x="0"
+     y="-1.7763568e-015" />
   <path
-     d="m 31.544564,70.158408 q 14.495055,0 19.326739,-19.32674 4.831685,-19.326739 19.326739,-19.326739"
+     d="M 19.999999,60.000001 Q 35,60.000001 39.999999,40 45,19.999999 60,19.999999"
      id="path6"
      inkscape:connector-curvature="0"
-     style="fill:none;stroke:#ffffff;stroke-width:9.66336918" />
+     style="fill:none;stroke:#ffffff;stroke-width:10" />
   <path
-     d="M 50.871303,50.831668 H 65.366357"
+     d="m 39.999999,40 15,0"
      id="path8"
      inkscape:connector-curvature="0"
-     style="fill:none;stroke:#ffffff;stroke-width:9.66336918" />
+     style="fill:none;stroke:#ffffff;stroke-width:10" />
 </svg>
