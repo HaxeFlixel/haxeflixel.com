@@ -79,10 +79,6 @@ docpadConfig = {
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
-    getThumbCustom: (test) ->
-      url = "/images/demos/"
-      path = "#{url}#{test} "
-
     getPagerNext: (collection) ->
       docsCollection = @getCollection(collection)
       for item,index in docsCollection.models
