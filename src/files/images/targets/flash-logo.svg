@@ -43,27 +43,14 @@
      id="namedview10"
      showgrid="false"
      inkscape:zoom="4.6976726"
-     inkscape:cx="89.682563"
+     inkscape:cx="43.170169"
      inkscape:cy="34.585342"
      inkscape:window-x="2040"
      inkscape:window-y="40"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
-  <rect
-     width="80"
-     height="80"
-     id="rect4"
-     style="fill:#d50000;fill-opacity:1;stroke:none"
-     x="0"
-     y="-1.7763568e-015" />
   <path
-     d="M 19.999999,60.000001 Q 35,60.000001 39.999999,40 45,19.999999 60,19.999999"
-     id="path6"
-     inkscape:connector-curvature="0"
-     style="fill:none;stroke:#ffffff;stroke-width:10" />
-  <path
-     d="m 39.999999,40 15,0"
-     id="path8"
-     inkscape:connector-curvature="0"
-     style="fill:none;stroke:#ffffff;stroke-width:10" />
+     style="fill:#000000;fill-opacity:1;stroke:none"
+     d="M 0 0 L 0 80 L 80 80 L 80 0 L 0 0 z M 60 15 L 60 25 C 56.111111 25 53.484606 26.085706 51.035156 28.535156 C 49.535258 30.035054 48.127997 32.173615 46.910156 35 L 55 35 L 55 45 L 43.755859 45 C 41.971554 50.509031 39.486846 55.083466 36.035156 58.535156 C 31.817939 62.752373 26.111111 65 20 65 L 20 55 C 23.888889 55 26.515394 53.914294 28.964844 51.464844 C 31.414294 49.015394 33.624439 44.883104 35.148438 38.787109 C 36.957771 31.54977 39.747627 25.682061 43.964844 21.464844 C 48.182061 17.247627 53.888889 15 60 15 z "
+     id="rect4" />
 </svg>
