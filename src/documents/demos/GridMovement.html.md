@@ -1,9 +1,8 @@
 ```
 title: "GridMovement"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
 SWFWidth: 672
+SWFHeight: 480
 source: "Input/GridMovement"
 ```
 

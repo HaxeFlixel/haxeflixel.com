@@ -1,9 +1,8 @@
 ```
 title: "Replay"
 layout: demo
-pageOrder: 1
-SWFHeight: 300
 SWFWidth: 400
+SWFHeight: 300
 source: "Flixel%20Features/Replay"
 ```
 

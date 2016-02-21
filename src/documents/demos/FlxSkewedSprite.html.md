@@ -1,9 +1,8 @@
 ```
 title: "FlxSkewedSprite"
 layout: demo
-pageOrder: 1
-SWFHeight: 200
 SWFWidth: 300
+SWFHeight: 200
 source: "Effects/FlxSkewedSprite"
 ```
 

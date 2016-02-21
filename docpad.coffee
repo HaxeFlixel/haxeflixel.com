@@ -85,7 +85,7 @@ docpadConfig = {
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
-    getThumbCustom:(test) ->
+    getThumbCustom: (test) ->
       url = "/images/demos/"
       path = "#{url}#{test} "
 
@@ -137,8 +137,7 @@ docpadConfig = {
   collections:
 
     blog: (database) ->
-      sorting = [filename:-1]
-      database.findAllLive({layout:$has:'blog-post'}, sorting).on 'add', (document) ->
+      database.findAllLive({layout:$has:'blog-post'}, [filename:-1]).on 'add', (document) ->
         a = document.attributes
         contentPreview = marked(a.content.substring(0,150) + " ...")
         a.postDate = "posted : " + a.postDate
@@ -147,7 +146,11 @@ docpadConfig = {
         })
 
     demos: (database) ->
-      database.findAllLive({layout:$has:'demo'}, [title:1])
+      database.findAllLive({layout:$has:'demo'}, [title:1]).on 'add', (document) ->
+        document.setMetaDefaults({
+          SWFWidth: 640
+          SWFHeight: 480
+        })
 
     showcase: (database) ->
       database.findAllLive({layout:$has:'showcase'}, [title:1])

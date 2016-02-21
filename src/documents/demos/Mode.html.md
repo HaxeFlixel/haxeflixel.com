@@ -2,9 +2,6 @@
 title: "Mode"
 layout: demo
 tags: ['homepage_demo']
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Platformers/Mode"
 ```
 

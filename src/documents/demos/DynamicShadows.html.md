@@ -1,8 +1,7 @@
 ```
 title: "DynamicShadows"
 layout: demo
-pageOrder: 1
-SWFHeight: 320
 SWFWidth: 640
+SWFHeight: 320
 source: "Effects/DynamicShadows"
 ```

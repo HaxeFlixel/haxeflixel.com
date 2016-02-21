@@ -1,9 +1,8 @@
 ```
 title: "FlxTextFormat"
 layout: demo
-pageOrder: 1
-SWFHeight: 240
 SWFWidth: 640
+SWFHeight: 240
 source: "User%20Interface/FlxTextFormat"
 ```
 

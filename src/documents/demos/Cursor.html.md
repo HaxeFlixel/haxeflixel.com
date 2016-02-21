@@ -1,9 +1,6 @@
 ```
 title: "Cursor"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "User%20Interface/Cursor"
 ```
 

@@ -1,9 +1,6 @@
 ```
 title: "FlxAsyncLoop"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Other/FlxAsyncLoop"
 ```
 Demonstration for the `FlxAsyncLoop` class, created by [SeiferTim](http://tims-world.com/) (Tim I Hely).

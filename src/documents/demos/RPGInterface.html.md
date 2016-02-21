@@ -1,9 +1,8 @@
 ```
 title: "RPGInterface"
 layout: demo
-pageOrder: 1
-SWFHeight: 600
 SWFWidth: 800
+SWFHeight: 600
 source: "User%20Interface/RPG%20Interface"
 ```
 

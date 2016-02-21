@@ -1,9 +1,8 @@
 ```
 title: "FlxPieDial"
 layout: demo
-pageOrder: 1
-SWFHeight: 500
 SWFWidth: 800
+SWFHeight: 500
 source: "Flixel%20Features/FlxPieDial"
 ```
 

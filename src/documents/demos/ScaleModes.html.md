@@ -1,9 +1,8 @@
 ```
 title: "ScaleModes"
 layout: demo
-pageOrder: 1
-SWFHeight: 400
 SWFWidth: 640
+SWFHeight: 400
 source: "Flixel%20Features/ScaleModes"
 ```
 

@@ -1,9 +1,6 @@
 ```
 title: "FlxTrailArea"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Effects/FlxTrailArea"
 tags: ['homepage_demo']
 ```
