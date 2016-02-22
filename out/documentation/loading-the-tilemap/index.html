@@ -238,8 +238,8 @@
 </li>
 <li><p>In <code>create()</code>, before we setup the player object, add:</p>
 <pre class="highlight"><code class="actionscript"> _map = <span class="keyword">new</span> FlxOgmoLoader(AssetPaths.room_001__oel);
- _mWalls.follow();
  _mWalls = _map.loadTilemap(AssetPaths.tiles__png, <span class="number">16</span>, <span class="number">16</span>, <span class="string">"walls"</span>);
+ _mWalls.follow();
  _mWalls.setTileProperties(<span class="number">1</span>, FlxObject.NONE);
  _mWalls.setTileProperties(<span class="number">2</span>, FlxObject.ANY);
  add(_mWalls);</code></pre>
