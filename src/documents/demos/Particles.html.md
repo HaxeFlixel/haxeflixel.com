@@ -1,8 +1,6 @@
 ```
 title: "Particles"
 layout: demo
-width: 400
-height: 300
 source: "Flixel%20Features/Particles"
 ```
 
