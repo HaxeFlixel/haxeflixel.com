@@ -274,7 +274,7 @@
 <pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">kill</span><span class="params">()</span><span class="type">:Void</span>
 {</span>
     alive = <span class="literal">false</span>;
-    FlxTween.tween(<span class="keyword">this</span>, { alpha: <span class="number">0</span>, y: y - <span class="number">16</span> }, <span class="number">.33</span>, { ease: FlxEase.circOut, complete: finishKill });
+    FlxTween.tween(<span class="keyword">this</span>, { alpha: <span class="number">0</span>, y: y - <span class="number">16</span> }, <span class="number">.33</span>, { ease: FlxEase.circOut, onComplete: finishKill });
 }
 
 <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">finishKill</span><span class="params">(_)</span><span class="type">:Void</span>

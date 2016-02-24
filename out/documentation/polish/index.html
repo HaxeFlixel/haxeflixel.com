@@ -231,7 +231,7 @@ We can add it to each of our states&#39; <code>create()</code> function like so 
 <pre class="highlight"><code class="actionscript">FlxG.camera.shake(<span class="number">0.01</span>, <span class="number">0.2</span>);</code></pre>
 <p>So, each time the player gets hurt in combat, the screen will flash white, and will shake a little bit for <code>0.2</code> seconds. Try it out!</p>
 <p>I know we&#39;ve used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We&#39;re simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking <code>.1</code> seconds to complete. So, in the <code>makeChoice()</code> function of <code>CombatHUD</code>, right before we play the hurt sound for the enemy, add:</p>
-<pre class="highlight"><code class="actionscript">FlxTween.tween(_sprEnemy, { x: _sprEnemy.x + <span class="number">4</span> }, <span class="number">.1</span>, { complete: <span class="function"><span class="keyword">function</span><span class="params">(_)</span>
+<pre class="highlight"><code class="actionscript">FlxTween.tween(_sprEnemy, { x: _sprEnemy.x + <span class="number">4</span> }, <span class="number">.1</span>, { onComplete: <span class="function"><span class="keyword">function</span><span class="params">(_)</span>
 {</span>
     FlxTween.tween(_sprEnemy, { x: _sprEnemy.x - <span class="number">4</span> }, <span class="number">.1</span>);
 }});</code></pre>
