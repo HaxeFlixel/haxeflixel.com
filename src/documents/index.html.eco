@@ -45,6 +45,16 @@ title: 'Home'
                 }
             } (document, "script", "twitter-wjs");</script>
 
+            <hr>
+
+            <span class="patreon-home">
+                <a href="https://www.patreon.com/haxeflixel">
+                    <span>Support us on patreon</span>
+                    <br>
+                    <img class="openfl-footer-logo" src="/images/patreon.png" alt="OpenFL" title="Patreon">
+                </a>
+            </span>
+
         </div>
 
     </div>
