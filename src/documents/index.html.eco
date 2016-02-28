@@ -51,8 +51,8 @@ title: 'Home'
                 <a href="https://www.patreon.com/haxeflixel">
                     <span>Support us on patreon</span>
                     <br>
-                    <img class="openfl-footer-logo" src="/images/patreon.png"
-                     alt="Haxeflixel Patreon" title="Patreon">
+                    <img src="/images/patreon.png" alt="Support us on Patreon"
+                    title="Patreon">
                 </a>
             </span>
 
