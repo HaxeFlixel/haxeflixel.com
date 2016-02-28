@@ -2,3 +2,4 @@ node_modules/
 *.db
 docpad.js
 .idea
+src/documents/documentation
