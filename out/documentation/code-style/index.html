@@ -214,60 +214,66 @@
 <h3 id="before-opening-curly-brackets">Before Opening Curly Brackets</h3>
 <p>There should always be a single line break before an opening curly bracket.</p>
 <p><strong>Good:</strong></p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span>
-{</span>
-    <span class="keyword">while</span> (<span class="literal">true</span>)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">example</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)
     {
-        trace(<span class="string">"looping"</span>);
-        trace(<span class="string">"still looping"</span>);
+        trace(<span class="hljs-string">"looping"</span>);
+        trace(<span class="hljs-string">"still looping"</span>);
     }
-}</code></pre>
+}
+</code></pre>
 <p><strong>Bad:</strong></p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span> {</span>
-    <span class="keyword">while</span> (<span class="literal">true</span>) {
-        trace(<span class="string">"looping"</span>);
-        trace(<span class="string">"still looping"</span>);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">example</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+        trace(<span class="hljs-string">"looping"</span>);
+        trace(<span class="hljs-string">"still looping"</span>);
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="omitting-blocks">Omitting Blocks</h3>
 <p>When the body of an <code>if</code>, <code>else</code>, <code>for</code> or <code>while</code> only consists of a single line, omitting the curly brackets is acceptable and often preferable since it drastically reduces the line count.</p>
 <p><strong>Good:</strong></p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">while</span> (<span class="literal">true</span>)
-    trace(<span class="string">"looping"</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)
+    trace(<span class="hljs-string">"looping"</span>);
+</code></pre>
 <p>In those cases however, the body should still be in a separate line.</p>
 <p><strong>Bad:</strong></p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">while</span> (<span class="literal">true</span>) trace(<span class="string">"looping"</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) trace(<span class="hljs-string">"looping"</span>);
+</code></pre>
 <h3 id="additional-line-breaks">Additional Line Breaks</h3>
 <p>There shouldn&#39;t be any additional line breaks right after a <code>{</code> or before a <code>}</code>.</p>
 <p><strong>Good:</strong></p>
-<pre class="highlight"><code class="actionscript"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>
-{</span>
-    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
-    {</span>
-        <span class="keyword">super</span>();
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">super</span>();
     }
-}</code></pre>
+}
+</code></pre>
 <p><strong>Bad:</strong></p>
-<pre class="highlight"><code class="actionscript"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>
-{</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span>
+</span>{
 
-    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
-    {</span>
-        <span class="keyword">super</span>();
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">super</span>();
 
     }
 
-}</code></pre>
+}
+</code></pre>
 <h3 id="in-function-bodies">In Function Bodies</h3>
 <p>Using line breaks to group code sections that logically belong together can help readability like in this example:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">resetHelpers</span><span class="params">()</span><span class="type">:Void</span>
-{</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resetHelpers</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+</span>{
     resetFrameSize();
     resetSizeFromFrame();
-    _flashRect2.x = <span class="number">0</span>;
-    _flashRect2.y = <span class="number">0</span>;
+    _flashRect2.x = <span class="hljs-number">0</span>;
+    _flashRect2.y = <span class="hljs-number">0</span>;
 
-    <span class="keyword">if</span> (graphic != <span class="literal">null</span>)
+    <span class="hljs-keyword">if</span> (graphic != <span class="hljs-literal">null</span>)
     {
         _flashRect2.width = graphic.width;
         _flashRect2.height = graphic.height;
@@ -275,18 +281,22 @@
 
     centerOrigin();
 
-#<span class="keyword">if</span> FLX_RENDER_BLIT
-    dirty = <span class="literal">true</span>;
+#<span class="hljs-keyword">if</span> FLX_RENDER_BLIT
+    dirty = <span class="hljs-literal">true</span>;
     getFlxFrameBitmapData();
 #end
-}</code></pre>
+}
+</code></pre>
 <h2 id="functions">Functions</h2>
 <h3 id="function-names">Function Names</h3>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootEnemy</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shootEnemy</span><span class="hljs-params">(target:Enemy, bullet:BulletType)</span><span class="hljs-type">:Void</span>
+</span></code></pre>
 <p>...is easier to read than</p>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootAtASpecificEnemyWithABulletTypeOf</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shootAtASpecificEnemyWithABulletTypeOf</span><span class="hljs-params">(target:Enemy, bullet:BulletType)</span><span class="hljs-type">:Void</span>
+</span></code></pre>
 <p>...but still gets the idea of what this function does across. The second example has a lot of &quot;noise&quot;-words that don&#39;t provide any additional value. The following function name would still be acceptable, more accurate than example 1 even:</p>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">shootBulletAtEnemy</span><span class="params">(target:Enemy, bullet:BulletType)</span><span class="type">:Void</span></span></code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shootBulletAtEnemy</span><span class="hljs-params">(target:Enemy, bullet:BulletType)</span><span class="hljs-type">:Void</span>
+</span></code></pre>
 <p>However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary.</p>
 <p>An example for a bad / too simple name would be <code>shoot()</code> instead of <code>shootEnemy()</code>.</p>
 <h3 id="spacing">Spacing</h3>
@@ -346,15 +356,17 @@
 </table>
 <h3 id="parameter-names">Parameter Names</h3>
 <p>Use lowerCamelCases for function parameters and use <code>this</code> to explicitly reference to class members (only when neccessary):</p>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">translate</span><span class="params">(words:String, bableFish:BableFish)</span><span class="type">:Void</span>
-{</span>
-    this.words = words;
-}</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">translate</span><span class="hljs-params">(words:String, bableFish:BableFish)</span><span class="hljs-type">:Void</span>
+</span>{
+    <span class="hljs-keyword">this</span>.words = words;
+}
+</code></pre>
 <p>Instead of:</p>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">translate</span><span class="params">(Words:String, BableFish:BableFish)</span><span class="type">:Void</span>
-{</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">translate</span><span class="hljs-params">(Words:String, BableFish:BableFish)</span><span class="hljs-type">:Void</span>
+</span>{
     words = Words;
-}</code></pre>
+}
+</code></pre>
 <p>In the core of HaxeFlixel, there are a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel&#39;s code style and hard to change them all. However, newly written functions should follow the lowerCamelCase style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.</p>
 <h2 id="colon-spacing">Colon Spacing</h2>
 <p>No extra spaces should be used before and after colons:</p>
@@ -423,15 +435,17 @@
 </table>
 <h2 id="leveraging-type-inference">Leveraging Type Inference</h2>
 <p>The Haxe compiler does not require you to declare the type of a variable (<a href="http://haxe.org/ref/type_infer">read more</a>).</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">//This is unnecessary</span>
-<span class="keyword">var</span> name:String = <span class="string">"Merlin"</span>;
-<span class="keyword">var</span> number:Int = <span class="number">32</span>;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">//This is unnecessary</span>
+<span class="hljs-keyword">var</span> name:String = <span class="hljs-string">"Merlin"</span>;
+<span class="hljs-keyword">var</span> number:Int = <span class="hljs-number">32</span>;
 
-<span class="comment">//This is preferred</span>
-<span class="keyword">var</span> name = <span class="string">"Merlin"</span>;
-<span class="keyword">var</span> number = <span class="number">32</span>;</code></pre>
+<span class="hljs-comment">//This is preferred</span>
+<span class="hljs-keyword">var</span> name = <span class="hljs-string">"Merlin"</span>;
+<span class="hljs-keyword">var</span> number = <span class="hljs-number">32</span>;
+</code></pre>
 <p>In some contexts however, doing so improves the readability of the code, for example because it&#39;s not immediately obvious what return type a function has:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> mystery:Answer = createAnAnswer();</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> mystery:Answer = createAnAnswer();
+</code></pre>
 <h2 id="keyword-order">Keyword Order</h2>
 <p>The original AS3 Flixel codebase ordered keywords like <code>static public function</code>.
 HaxeFlixel has changed this convention to be more like every other (Haxe) library, the order of importance is as follows:</p>
@@ -453,13 +467,14 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <h2 id="comments">Comments</h2>
 <p>Comments should only be used when you can&#39;t find a way to express the same thing in code. They tend to add noise to the code base and rarely get updated when the code changes, which results in misinformation and inaccurate comments.</p>
 <p>Take the following comment section for example, it does not provide <em>any</em> additional value beyond what the code and the class / parameter names already tell you (one of the reasons why choosing good names is so important!). It should thus be removed completely.</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">/**
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">/**
  * Sets the position.
  *
  * @param    x    The x coordinate.
  * @param    y     The y coordinate.
  */</span>
-<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setPosition</span><span class="params">(x:Int, y:Int)</span><span class="type">:Void</span></span></code></pre>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setPosition</span><span class="hljs-params">(x:Int, y:Int)</span><span class="hljs-type">:Void</span>
+</span></code></pre>
 <h2 id="class-names">Class Names</h2>
 <p>All class names should be prefixed by <code>Flx</code>, e.g.:</p>
 <ul>
@@ -472,7 +487,7 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 <p>This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don&#39;t when writing a game.</p>
 <h2 id="enum-value-names">Enum Value Names</h2>
 <p>The names of enum values are capitalized. The same convention applies to abstract enums.</p>
-<pre class="highlight"><code class="actionscript">enum FlxCameraFollowStyle
+<pre class="highlight"><code class="hljs actionscript">enum FlxCameraFollowStyle
 {
     LOCKON;
     PLATFORMER;
@@ -480,50 +495,56 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
     TOPDOWN_TIGHT;
     SCREEN_BY_SCREEN;
     NO_DEAD_ZONE;
-}</code></pre>
+}
+</code></pre>
 <h2 id="indentation-and-formatting-tabs-and-spaces">Indentation and Formatting / Tabs and spaces</h2>
 <p>Tabs should be used for indentation <em>everywhere</em>.</p>
 <p>However, it is considered preferable to use spaces for formatting since it will look consistent, no matter how your editor is configured. For example, code that looks nice with tab indentation and FlashDevelop&#39;s default settings will be a mess on GitHub.</p>
 <p>The most common example where formatting is needed are the comment sections for functions:</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">/**
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">/**
  * Sets the position.
  *
  * @param   x   The x coordinate.
  * @param   y   The y coordinate.
  */</span>
-<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setPosition</span><span class="params">(x:Int, y:Int)</span><span class="type">:Void</span></span></code></pre>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setPosition</span><span class="hljs-params">(x:Int, y:Int)</span><span class="hljs-type">:Void</span>
+</span></code></pre>
 <h2 id="position-of-metadata">Position of metadata</h2>
 <p>Metadata should always be placed in a new line for increased readability:</p>
-<pre class="highlight"><code class="actionscript">@:isVar
+<pre class="highlight"><code class="hljs actionscript">@:isVar
 @:allow(flixel.tweens.FlxTween)
-<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> pool(<span class="hljs-keyword">get</span>, <span class="hljs-literal">null</span>):FlxPool&lt;MultiVarTween&gt;;
+</code></pre>
 <p>as opposed to:</p>
-<pre class="highlight"><code class="actionscript">@:isVar @:allow(flixel.tweens.FlxTween) <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">var</span> pool(<span class="keyword">get</span>, <span class="literal">null</span>):FlxPool&lt;MultiVarTween&gt;;</code></pre>
+<pre class="highlight"><code class="hljs actionscript">@:isVar @:allow(flixel.tweens.FlxTween) <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> pool(<span class="hljs-keyword">get</span>, <span class="hljs-literal">null</span>):FlxPool&lt;MultiVarTween&gt;;
+</code></pre>
 <p>However, if there are two many of these sections it be worth considering to split the function into several smaller ones.</p>
 <p>There shouldn&#39;t be more than one empty line to separate sections.</p>
 <h2 id="using-switch-case-as-an-expression">Using switch-case as an Expression</h2>
 <p>Unlike in most other languages with object-oriented syntax, everything in Haxe is an expression. This extends to <code>switch-case</code>, meaning that it evaluates to a value. This value can be assinged to a variable, passed to a function or simply returned by a function:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getColor</span><span class="params">(color:Color)</span><span class="type">:Int</span>
-{</span>
-  <span class="keyword">return</span> <span class="keyword">switch</span> (color)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span><span class="hljs-params">(color:Color)</span><span class="hljs-type">:Int</span>
+</span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">switch</span> (color)
   {
-    <span class="keyword">case</span> Color.RED: <span class="number">0xff0000</span>;
-    <span class="keyword">case</span> Color.BLUE: <span class="number">0x0000ff</span>;
-    <span class="keyword">case</span> Color.GREEN: <span class="number">0x00ff00</span>;
+    <span class="hljs-keyword">case</span> Color.RED: <span class="hljs-number">0xff0000</span>;
+    <span class="hljs-keyword">case</span> Color.BLUE: <span class="hljs-number">0x0000ff</span>;
+    <span class="hljs-keyword">case</span> Color.GREEN: <span class="hljs-number">0x00ff00</span>;
   }
-}</code></pre>
+}
+</code></pre>
 <p>This is preferable to how this code would look like in a lot of other languages, for example C#:</p>
-<pre class="highlight"><code class="coffeescript">int getColor(Color color) {
-  <span class="keyword">switch</span> (color) {
-    <span class="reserved">case</span> Color.<span class="attribute">RED</span>:
-      <span class="keyword">return</span> <span class="number">0xff0000</span>;
-    <span class="reserved">case</span> Color.<span class="attribute">BLUE</span>:
-      <span class="keyword">return</span> <span class="number">0x0000ff</span>;
-    <span class="reserved">case</span> Color.<span class="attribute">GREEN</span>:
-      <span class="keyword">return</span> <span class="number">0x00ff00</span>;
+<pre class="highlight"><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getColor</span><span class="hljs-params">(Color color)</span> </span>{
+  <span class="hljs-keyword">switch</span> (color) {
+    <span class="hljs-keyword">case</span> Color.RED:
+      <span class="hljs-keyword">return</span> <span class="hljs-number">0xff0000</span>;
+    <span class="hljs-keyword">case</span> Color.BLUE:
+      <span class="hljs-keyword">return</span> <span class="hljs-number">0x0000ff</span>;
+    <span class="hljs-keyword">case</span> Color.GREEN:
+      <span class="hljs-keyword">return</span> <span class="hljs-number">0x00ff00</span>;
   }
-  <span class="keyword">return</span> <span class="number">0x000000</span>;
-}</code></pre>
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0x000000</span>;
+}
+</code></pre>
 
 
 			<br>
@@ -562,6 +583,10 @@ HaxeFlixel has changed this convention to be more like every other (Haxe) librar
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

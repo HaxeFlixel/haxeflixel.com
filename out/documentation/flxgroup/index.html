@@ -235,22 +235,25 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/03-flxgroup.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.group.FlxGroup;</span></code></pre>
+			<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.group.FlxGroup;</span>
+</code></pre>
 <p>FlxGroups are an invaluable method of grouping your game objects in Flixel. In fact, there is no way around them, as <code>FlxState</code> itself extends <code>FlxGroup</code>. 
 The use cases for groups are vast: pooling to reuse objects, collision detection and setting up easy ways to access particular collections of objects. A great feature of FlxGroups are their ability to be nested when using collision detection. Doing collisions is also way more efficient than doing it for individual objects.</p>
 <p>The API for FlxGroups is similar to other places in Flixel. Here is a basic example using a group to pool bullet objects, represented by a <code>Bullet</code> class, holding a maxium of 100 bullets:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> poolSize = <span class="number">100</span>;
-<span class="keyword">var</span> bullets = <span class="keyword">new</span> FlxTypedGroup&lt;Bullet&gt;(poolSize);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> poolSize = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">var</span> bullets = <span class="hljs-keyword">new</span> FlxTypedGroup&lt;Bullet&gt;(poolSize);
 
-<span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0.</span>..poolSize)
+<span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span>..poolSize)
 {
-    <span class="keyword">var</span> bullet = <span class="keyword">new</span> Bullet();
+    <span class="hljs-keyword">var</span> bullet = <span class="hljs-keyword">new</span> Bullet();
     bullet.kill();
     bullets.add(bullet);
-}</code></pre>
+}
+</code></pre>
 <p>Note how we did not use a regular <code>FlxGroup</code>, but a <code>FlxTypedGroup&lt;Bullet&gt;</code>. This means that this particular group can only store objects that are instances of the <code>Bullet</code> class or instances of <code>Bullet</code> subclasses. <code>FlxGroup</code> itself is nothing but a shortcut for <code>FlxTypedGroup&lt;FlxBasic&gt;</code>.</p>
 <p>Now, say we want to retrieve bullet instance to use in a shoot method:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> bullet = bullets.recycle(Bullet);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> bullet = bullets.recycle(Bullet);
+</code></pre>
 <p>If we had used a regular group here, we would have had to <code>cast</code> the return value of <code>recycle()</code> to a <code>Bullet</code>. By using a <code>FlxTypedGroup&lt;Bullet&gt;</code>, we have the benefit of type-safety.</p>
 <h4 id="add-object-t-t-">add(Object:T):T;</h4>
 <p>You can add any type of Object that extends the base FlxGroup type, if you use <code>FlxGroup</code> this is <code>FlxBasic</code>.</p>
@@ -263,7 +266,8 @@ The use cases for groups are vast: pooling to reuse objects, collision detection
 <h4 id="sort-function-int-t-t-int-order-int-flxsort-ascending-">sort(Function:Int-&gt;T-&gt;T-&gt;Int, Order:Int = FlxSort.ASCENDING);</h4>
 <p>Call this function to sort the group according to a particular value and order. You will need to specificy a sorting function to do so. If you want to sort by something other than y, you will have to write a custom sorting function.</p>
 <p>Otherwise, you can just use the pre-made <code>FlxSort.byY()</code> like so for Zelda-style-sorting:</p>
-<pre class="highlight"><code class="actionscript">group.sort(FlxSort.byY);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">group.sort(FlxSort.byY);
+</code></pre>
 
 
 			<br>
@@ -302,6 +306,10 @@ The use cases for groups are vast: pooling to reuse objects, collision detection
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

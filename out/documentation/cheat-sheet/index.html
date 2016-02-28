@@ -182,89 +182,101 @@
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/01-cheat-sheet.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
 			<h2 id="-flxsprite-http-haxeflixel-com-documentation-flxsprite-base-"><a href="http://haxeflixel.com/documentation/flxsprite">FlxSprite</a> (Base)</h2>
-<pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-package"><span class="hljs-keyword">package</span>;
 
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxG</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxSprite</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxG</span>;
 
-<span class="title">class</span> <span class="title">MySprite</span> <span class="title">extends</span> <span class="title">FlxSprite</span>
+<span class="hljs-title">class</span> <span class="hljs-title">MySprite</span> <span class="hljs-title">extends</span> <span class="hljs-title">FlxSprite</span>
 {</span>
-    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
-    {</span>
-        <span class="keyword">super</span>();
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">super</span>();
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-    {</span>
-        super.update(elapsed);
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.update(elapsed);
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="-flxstate-http-haxeflixel-com-documentation-flxstate-base-"><a href="http://haxeflixel.com/documentation/flxstate">FlxState</a> (Base)</h2>
-<pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-package"><span class="hljs-keyword">package</span>;
 
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxG</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxState</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxG</span>;
 
-<span class="title">class</span> <span class="title">MyState</span> <span class="title">extends</span> <span class="title">FlxState</span>
+<span class="hljs-title">class</span> <span class="hljs-title">MyState</span> <span class="hljs-title">extends</span> <span class="hljs-title">FlxState</span>
 {</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        super.create();
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.create();
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-    {</span>
-        super.update(elapsed);
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.update(elapsed);
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="switch-flxstate-http-haxeflixel-com-documentation-flxstate-">Switch <a href="http://haxeflixel.com/documentation/flxstate">FlxState</a></h2>
-<pre class="highlight"><code class="actionscript">FlxG.switchState(<span class="keyword">new</span> MyState());</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.switchState(<span class="hljs-keyword">new</span> MyState());
+</code></pre>
 <h2 id="load-flxsprite-http-haxeflixel-com-documentation-flxsprite-">Load <a href="http://haxeflixel.com/documentation/flxsprite">FlxSprite</a></h2>
-<pre class="highlight"><code class="actionscript">loadGraphic(<span class="string">"assets/my_sprite.png"</span>);
+<pre class="highlight"><code class="hljs actionscript">loadGraphic(<span class="hljs-string">"assets/my_sprite.png"</span>);
 
-<span class="comment">// OR dynamically create a rect</span>
-makeGraphic(<span class="number">100</span>, <span class="number">100</span>, <span class="number">0xFFFFFFFF</span>); <span class="comment">// width, height, color (AARRGGBB hexadecimal)</span></code></pre>
+<span class="hljs-comment">// OR dynamically create a rect</span>
+makeGraphic(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0xFFFFFFFF</span>); <span class="hljs-comment">// width, height, color (AARRGGBB hexadecimal)</span>
+</code></pre>
 <h2 id="flxtext">FlxText</h2>
 <ul>
 <li><strong>setFormat</strong>(Font, Size, Color, Alignment)</li>
 <li><strong>setBorderStyle</strong>(Style, Color, Size)</li>
 </ul>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.text.FlxText;</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxColor;</span></code></pre>
-<pre class="highlight"><code class="actionscript">myText = <span class="keyword">new</span> FlxText(<span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>); <span class="comment">// x, y, width</span>
-myText.text = <span class="string">"Hello World"</span>;
-myText.setFormat(<span class="string">"assets/font.ttf"</span>, <span class="number">20</span>, FlxColor.WHITE, CENTER);
-myText.setBorderStyle(OUTLINE, FlxColor.RED, <span class="number">1</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.text.FlxText;</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.util.FlxColor;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript">myText = <span class="hljs-keyword">new</span> FlxText(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">500</span>); <span class="hljs-comment">// x, y, width</span>
+myText.text = <span class="hljs-string">"Hello World"</span>;
+myText.setFormat(<span class="hljs-string">"assets/font.ttf"</span>, <span class="hljs-number">20</span>, FlxColor.WHITE, CENTER);
+myText.setBorderStyle(OUTLINE, FlxColor.RED, <span class="hljs-number">1</span>);
+</code></pre>
 <h2 id="flxbutton">FlxButton</h2>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.ui.FlxButton;</span></code></pre>
-<pre class="highlight"><code class="actionscript">myButton = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Label"</span>, myCallback);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.ui.FlxButton;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript">myButton = <span class="hljs-keyword">new</span> FlxButton(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Label"</span>, myCallback);
 
-<span class="comment">// Custom graphics</span>
-myButton.loadGraphic(<span class="string">"assets/custom.png"</span>);</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">myCallback</span><span class="params">()</span><span class="type">:Void</span>
-{</span>
-}</code></pre>
+<span class="hljs-comment">// Custom graphics</span>
+myButton.loadGraphic(<span class="hljs-string">"assets/custom.png"</span>);
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCallback</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+</span>{
+}
+</code></pre>
 <ul>
 <li><strong>myButton.label</strong> is a <code>FlxText</code>, use <code>setFormat()</code> and <code>setBorderStyle()</code> to customise.</li>
 </ul>
 <h2 id="sounds-and-music">Sounds and Music</h2>
 <p>Declare each file on <code>Project.xml</code>, with an unique <code>id</code>.</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">music</span> <span class="attribute">path</span>=<span class="value">"music_1.ogg"</span> <span class="attribute">id</span>=<span class="value">"music_1"</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">sound</span> <span class="attribute">path</span>=<span class="value">"sound_1.ogg"</span> <span class="attribute">id</span>=<span class="value">"sound_1"</span> /&gt;</span>
-<span class="tag">&lt;/<span class="title">assets</span>&gt;</span></code></pre>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">music</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"music_1.ogg"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"music_1"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">sound</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"sound_1.ogg"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"sound_1"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">assets</span>&gt;</span>
+</code></pre>
 <p>Play on your code:</p>
-<pre class="highlight"><code class="actionscript">FlxG.sound.play(<span class="string">"sound_1"</span>);
-<span class="comment">// Loop music</span>
-FlxG.sound.playMusic(<span class="string">"music_1"</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.sound.play(<span class="hljs-string">"sound_1"</span>);
+<span class="hljs-comment">// Loop music</span>
+FlxG.sound.playMusic(<span class="hljs-string">"music_1"</span>);
+</code></pre>
 <h2 id="keyboard-input">Keyboard Input</h2>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 'A' key</span>
-<span class="keyword">if</span> (FlxG.keys.justPressed.A) {}
-<span class="keyword">if</span> (FlxG.keys.pressed.A) {}
-<span class="keyword">if</span> (FlxG.keys.justReleased.A) {}
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 'A' key</span>
+<span class="hljs-keyword">if</span> (FlxG.keys.justPressed.A) {}
+<span class="hljs-keyword">if</span> (FlxG.keys.pressed.A) {}
+<span class="hljs-keyword">if</span> (FlxG.keys.justReleased.A) {}
 
-<span class="comment">// Checking multiple keys:</span>
-<span class="keyword">if</span> (FlxG.keys.anyPressed([RIGHT, D])) {}</code></pre>
+<span class="hljs-comment">// Checking multiple keys:</span>
+<span class="hljs-keyword">if</span> (FlxG.keys.anyPressed([RIGHT, D])) {}
+</code></pre>
 <h4 id="keys">Keys</h4>
 <p><code>ANY</code></p>
 <p><code>A</code>...<code>Z</code></p>
@@ -293,35 +305,40 @@ FlxG.sound.playMusic(<span class="string">"music_1"</span>);</code></pre>
 <code>SEMICOLON</code></p>
 <p><code>NUMPADZERO</code> <code>NUMPADONE</code> <code>NUMPADTWO</code>...<code>NUMPADNINE</code></p>
 <h2 id="-mouse-http-haxeflixel-com-documentation-mouse-input"><a href="http://haxeflixel.com/documentation/mouse">Mouse</a> Input</h2>
-<pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (FlxG.mouse.pressed) {}
-<span class="keyword">if</span> (FlxG.mouse.justPressed) {}
-<span class="keyword">if</span> (FlxG.mouse.justReleased) {}</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">if</span> (FlxG.mouse.pressed) {}
+<span class="hljs-keyword">if</span> (FlxG.mouse.justPressed) {}
+<span class="hljs-keyword">if</span> (FlxG.mouse.justReleased) {}
+</code></pre>
 <h4 id="positional-data">Positional Data</h4>
-<pre class="highlight"><code class="actionscript"><span class="comment">// Relative to world space</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// Relative to world space</span>
 FlxG.mouse.x;
 FlxG.mouse.y;
 
-<span class="comment">// Relative to screen</span>
+<span class="hljs-comment">// Relative to screen</span>
 FlxG.mouse.screenX;
-FlxG.mouse.screenY;</code></pre>
+FlxG.mouse.screenY;
+</code></pre>
 <h4 id="wheel-mouse-scroll-">Wheel (mouse scroll)</h4>
 <p>Current &quot;delta&quot; value of mouse wheel. If the wheel was just scrolled up, it will have a positive value. If it was just scrolled down, it will have a negative value. If it wasn&#39;t just scroll this frame, it will be 0.</p>
-<pre class="highlight"><code class="actionscript">FlxG.mouse.wheel;</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.mouse.wheel;
+</code></pre>
 <h2 id="touch-input">Touch Input</h2>
-<pre class="highlight"><code class="actionscript"><span class="keyword">for</span> (touch <span class="keyword">in</span> FlxG.touches.list)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">for</span> (touch <span class="hljs-keyword">in</span> FlxG.touches.list)
 {
-    <span class="keyword">if</span> (touch.justPressed) {}
-    <span class="keyword">if</span> (touch.pressed) {}
-    <span class="keyword">if</span> (touch.justReleased) {}
-}</code></pre>
+    <span class="hljs-keyword">if</span> (touch.justPressed) {}
+    <span class="hljs-keyword">if</span> (touch.pressed) {}
+    <span class="hljs-keyword">if</span> (touch.justReleased) {}
+}
+</code></pre>
 <h4 id="positional-data">Positional Data</h4>
-<pre class="highlight"><code class="actionscript"><span class="comment">// Relative to world space</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// Relative to world space</span>
 touch.x;
 touch.y;
 
-<span class="comment">// Relative to screen</span>
+<span class="hljs-comment">// Relative to screen</span>
 touch.screenX;
-touch.screenY;</code></pre>
+touch.screenY;
+</code></pre>
 <ul>
 <li><p><code>touchPointID</code>: The unique ID of this touch.</p>
 </li>
@@ -330,86 +347,104 @@ touch.screenY;</code></pre>
 </ul>
 <h2 id="swipes-input-">Swipes (Input)</h2>
 <p>&quot;Swipes&quot; from both mouse and touch input that have just been released:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">for</span> (swipe <span class="keyword">in</span> FlxG.swipes)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">for</span> (swipe <span class="hljs-keyword">in</span> FlxG.swipes)
 {
-    <span class="comment">// swipe.startPosition (FlxPoint)</span>
-    <span class="comment">// swipe.endPosition (FlxPoint)</span>
+    <span class="hljs-comment">// swipe.startPosition (FlxPoint)</span>
+    <span class="hljs-comment">// swipe.endPosition (FlxPoint)</span>
 
-    <span class="comment">// swipe.id (Int)</span>
+    <span class="hljs-comment">// swipe.id (Int)</span>
 
-    <span class="comment">// swipe.distance (Float)</span>
-    <span class="comment">// swipe.angle (Float)</span>
-    <span class="comment">// swipe.duration (Float)</span>
-}</code></pre>
-<h2 id="flxsignal">FlxSignal</h2>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxSignal;</span></code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// for signals that don't need data, use FlxSignal</span>
-<span class="keyword">var</span> signal = <span class="keyword">new</span> FlxSignal();
-<span class="comment">// for signals that need data, use FlxTypedSignal with the correct function type</span>
-<span class="keyword">var</span> stringSignal = <span class="keyword">new</span> FlxTypedSignal&lt;String-&gt;Void&gt;();</code></pre>
-<p>Note: <code>FlxSignal</code> is nothing but a convenient shortcut for <code>FlxTypedSignal&lt;Void-&gt;Void&gt;</code></p>
-<pre class="highlight"><code class="actionscript">signal.add(voidCallback); <span class="comment">// type must be Void-&gt;Void</span>
-stringSignal.add(stringCallback); <span class="comment">// type must be String-&gt;Void</span></code></pre>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">voidCallback</span><span class="params">()</span>
-{</span>
-    trace(<span class="string">"Hello"</span>);
+    <span class="hljs-comment">// swipe.distance (Float)</span>
+    <span class="hljs-comment">// swipe.angle (Float)</span>
+    <span class="hljs-comment">// swipe.duration (Float)</span>
 }
-<span class="function"><span class="keyword">function</span> <span class="title">stringCallback</span><span class="params">(text:String)</span>
-{</span>
+</code></pre>
+<h2 id="flxsignal">FlxSignal</h2>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.util.FlxSignal;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// for signals that don't need data, use FlxSignal</span>
+<span class="hljs-keyword">var</span> signal = <span class="hljs-keyword">new</span> FlxSignal();
+<span class="hljs-comment">// for signals that need data, use FlxTypedSignal with the correct function type</span>
+<span class="hljs-keyword">var</span> stringSignal = <span class="hljs-keyword">new</span> FlxTypedSignal&lt;String-&gt;Void&gt;();
+</code></pre>
+<p>Note: <code>FlxSignal</code> is nothing but a convenient shortcut for <code>FlxTypedSignal&lt;Void-&gt;Void&gt;</code></p>
+<pre class="highlight"><code class="hljs actionscript">signal.add(voidCallback); <span class="hljs-comment">// type must be Void-&gt;Void</span>
+stringSignal.add(stringCallback); <span class="hljs-comment">// type must be String-&gt;Void</span>
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">voidCallback</span><span class="hljs-params">()</span>
+</span>{
+    trace(<span class="hljs-string">"Hello"</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stringCallback</span><span class="hljs-params">(text:String)</span>
+</span>{
     trace(text);
-}</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// this will print "Hello World"</span>
+}
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// this will print "Hello World"</span>
 signal.dispatch();
-stringSignal.dispatch(<span class="string">"World"</span>);</code></pre>
+stringSignal.dispatch(<span class="hljs-string">"World"</span>);
+</code></pre>
 <p>You can have up to 4 parameters in your signal:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> collisionNotify = <span class="keyword">new</span> FlxTypedSignal&lt;FlxObject-&gt;FlxObject-&gt;Bool-&gt;Bool-&gt;Void&gt;();
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> collisionNotify = <span class="hljs-keyword">new</span> FlxTypedSignal&lt;FlxObject-&gt;FlxObject-&gt;Bool-&gt;Bool-&gt;Void&gt;();
 collisionNotify.add(collisionCallback);
 
-<span class="function"><span class="keyword">function</span> <span class="title">collisionCallback</span><span class="params">(source:FlxObject, target:FlxObject, shouldKillSource:Bool, shouldKillTarget:Bool)</span><span class="type">:Void</span> <span class="params">(<span class="rest_arg">...)</span></span></span></code></pre>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collisionCallback</span><span class="hljs-params">(source:FlxObject, target:FlxObject, shouldKillSource:Bool, shouldKillTarget:Bool)</span><span class="hljs-type">:Void</span> <span class="hljs-params">(<span class="hljs-rest_arg">...)
+</span></span></span></code></pre>
 <h2 id="flxtimer">FlxTimer</h2>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxTimer;</span></code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// time (seconds), callback, loops</span>
-<span class="keyword">new</span> FlxTimer(<span class="number">10.0</span>, myCallback, <span class="number">3</span>);</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">myCallback</span><span class="params">(Timer:FlxTimer)</span><span class="type">:Void</span>
-{</span>
-}</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.util.FlxTimer;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// time (seconds), callback, loops</span>
+<span class="hljs-keyword">new</span> FlxTimer(<span class="hljs-number">10.0</span>, myCallback, <span class="hljs-number">3</span>);
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCallback</span><span class="hljs-params">(Timer:FlxTimer)</span><span class="hljs-type">:Void</span>
+</span>{
+}
+</code></pre>
 <ul>
 <li>Setting <code>loops</code> to <code>0</code> results in an endless loop.</li>
 <li><code>reset(?NewTime)</code> restarts the timer, optionally with a new duration.</li>
 <li><code>cancel()</code> stops the timer and removes it from the timer manager.</li>
 </ul>
 <h2 id="flxrandom">FlxRandom</h2>
-<pre class="highlight"><code class="actionscript"><span class="comment">// (Int) between 0 and 10</span>
-FlxG.random.int(<span class="number">0</span>, <span class="number">10</span>);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// (Int) between 0 and 10</span>
+FlxG.random.int(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>);
 
-<span class="comment">// (Float) between 0.0 and 10.0</span>
-FlxG.random.float(<span class="number">0.0</span>, <span class="number">10.0</span>);
+<span class="hljs-comment">// (Float) between 0.0 and 10.0</span>
+FlxG.random.float(<span class="hljs-number">0.0</span>, <span class="hljs-number">10.0</span>);
 
-<span class="comment">// (Bool) Chance by percent</span>
-FlxG.random.bool(<span class="number">50</span>); <span class="comment">// 50% chance to return 'true'</span>
-FlxG.random.bool(<span class="number">10</span>); <span class="comment">// 10% chance to return 'true'</span></code></pre>
+<span class="hljs-comment">// (Bool) Chance by percent</span>
+FlxG.random.bool(<span class="hljs-number">50</span>); <span class="hljs-comment">// 50% chance to return 'true'</span>
+FlxG.random.bool(<span class="hljs-number">10</span>); <span class="hljs-comment">// 10% chance to return 'true'</span>
+</code></pre>
 <h2 id="-flxtween-http-haxeflixel-com-documentation-flxtween-"><a href="http://haxeflixel.com/documentation/flxtween/">FlxTween</a></h2>
 <p><a href="http://haxeflixel.com/demos/FlxTween/">Check the demo</a> to visualize all <code>FlxTween</code> types.</p>
 <ul>
 <li><strong>tween</strong>(Object, Values, Duration, ?Options)</li>
 </ul>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.tweens.FlxTween;</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.tweens.FlxEase;</span></code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// Moves sprite to position (100, 200) in 3 seconds</span>
-FlxTween.tween(sprite, { x: <span class="number">100</span>, y: <span class="number">200</span> }, <span class="number">3.0</span>, { ease: FlxEase.quadInOut, complete: myCallback });</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">myCallback</span><span class="params">(Tween:FlxTween)</span><span class="type">:Void</span>
-{</span>
-}</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.tweens.FlxTween;</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.tweens.FlxEase;</span>
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// Moves sprite to position (100, 200) in 3 seconds</span>
+FlxTween.tween(sprite, { x: <span class="hljs-number">100</span>, y: <span class="hljs-number">200</span> }, <span class="hljs-number">3.0</span>, { ease: FlxEase.quadInOut, complete: myCallback });
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCallback</span><span class="hljs-params">(Tween:FlxTween)</span><span class="hljs-type">:Void</span>
+</span>{
+}
+</code></pre>
 <h2 id="flxtween-options">FlxTween Options</h2>
 <h4 id="ease">ease</h4>
-<pre class="highlight"><code class="actionscript">{ ease: FlxEase.quadInOut }</code></pre>
+<pre class="highlight"><code class="hljs actionscript">{ ease: FlxEase.quadInOut }
+</code></pre>
 <h4 id="complete">complete</h4>
-<pre class="highlight"><code class="actionscript">{ complete: callbackFunction }</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">callbackFunction</span><span class="params">(Tween:FlxTween)</span><span class="type">:Void</span>
-{</span>
-}</code></pre>
+<pre class="highlight"><code class="hljs actionscript">{ complete: callbackFunction }
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callbackFunction</span><span class="hljs-params">(Tween:FlxTween)</span><span class="hljs-type">:Void</span>
+</span>{
+}
+</code></pre>
 <h4 id="type">type</h4>
-<pre class="highlight"><code class="actionscript">{ type: FlxTween.PINGPONG }</code></pre>
+<pre class="highlight"><code class="hljs actionscript">{ type: FlxTween.PINGPONG }
+</code></pre>
 <ul>
 <li><strong>FlxTween.BACKWARD:</strong> plays tween in reverse direction</li>
 <li><strong>FlxTween.LOOPING:</strong> restarts immediately when it finishes.</li>
@@ -418,9 +453,11 @@ FlxTween.tween(sprite, { x: <span class="number">100</span>, y: <span class="num
 <li><strong>FlxTween.PINGPONG:</strong> plays tween hither and thither</li>
 </ul>
 <h4 id="loopdelay">loopDelay</h4>
-<pre class="highlight"><code class="actionscript">{ loopDelay: <span class="number">1.0</span> } <span class="comment">// 1 second</span></code></pre>
+<pre class="highlight"><code class="hljs actionscript">{ loopDelay: <span class="hljs-number">1.0</span> } <span class="hljs-comment">// 1 second</span>
+</code></pre>
 <h4 id="startdelay">startDelay</h4>
-<pre class="highlight"><code class="actionscript">{ startDelay: <span class="number">2.0</span> } <span class="comment">// 2 seconds</span></code></pre>
+<pre class="highlight"><code class="hljs actionscript">{ startDelay: <span class="hljs-number">2.0</span> } <span class="hljs-comment">// 2 seconds</span>
+</code></pre>
 <h2 id="flxease-list">FlxEase List</h2>
 <p><a href="http://haxeflixel.com/demos/FlxTween/">Check the demo</a> to visualize all <code>FlxEase</code> types.</p>
 <ul>
@@ -456,75 +493,86 @@ FlxTween.tween(sprite, { x: <span class="number">100</span>, y: <span class="num
 <h2 id="containers-flxgroup-http-haxeflixel-com-documentation-flxgroup-">Containers (<a href="http://haxeflixel.com/documentation/flxgroup">FlxGroup</a>)</h2>
 <p><code>FlxGroup</code> is a shortcut for <code>FlxTypedGroup&lt;FlxBasic&gt;</code>. Use <code>FlxTypedGroup&lt;MyOwnClass&gt;</code> if you need to access your own variables and functions when iterating over the container.</p>
 <h3 id="iteration">Iteration</h3>
-<pre class="highlight"><code class="actionscript"><span class="keyword">for</span> (member <span class="keyword">in</span> myGroup)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">for</span> (member <span class="hljs-keyword">in</span> myGroup)
 {
-    member.x += <span class="number">10</span>;
-    member.mySpecificFunction(); <span class="comment">// myGroup = FlxTypedGroup&lt;MyOwnClass&gt;</span>
-}</code></pre>
+    member.x += <span class="hljs-number">10</span>;
+    member.mySpecificFunction(); <span class="hljs-comment">// myGroup = FlxTypedGroup&lt;MyOwnClass&gt;</span>
+}
+</code></pre>
 <h2 id="collision">Collision</h2>
-<pre class="highlight"><code class="actionscript">FlxG.overlap(ObjectOrGroup1, ObjectOrGroup2, myCallback);</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">myCallback</span><span class="params">(Object1:FlxObject, Object2:FlxObject)</span><span class="type">:Void</span>
-{</span>
-}</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.overlap(ObjectOrGroup1, ObjectOrGroup2, myCallback);
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCallback</span><span class="hljs-params">(Object1:FlxObject, Object2:FlxObject)</span><span class="hljs-type">:Void</span>
+</span>{
+}
+</code></pre>
 <p>Or use <code>FlxG.collide()</code> which calls <code>FlxG.overlap()</code> and presets the <code>ProcessCallback</code> parameter to <code>FlxObject.separate()</code>.</p>
 <h2 id="pixel-perfect-collision">Pixel Perfect Collision</h2>
 <p><strong>FlxG.pixelPerfectOverlap</strong>(Sprite, Sprite2)</p>
 <h2 id="drawing-shapes">Drawing Shapes</h2>
 <p><strong>Dynamically draw:</strong> circle, ellipse, line, polygon, triangle, rect, round rect and rect complex.</p>
-<pre class="highlight"><code class="actionscript">using flixel.util.FlxSpriteUtil;</code></pre>
+<pre class="highlight"><code class="hljs actionscript">using flixel.util.FlxSpriteUtil;
+</code></pre>
 <p>Haxe docs about the <code>using</code> keyword: <a href="http://haxe.org/manual/using">haxe.org/manual/using</a>.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> canvas = <span class="keyword">new</span> FlxSprite();
-canvas.makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT, <span class="literal">true</span>);
-add(canvas);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> canvas = <span class="hljs-keyword">new</span> FlxSprite();
+canvas.makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT, <span class="hljs-literal">true</span>);
+add(canvas);
+</code></pre>
 <p>The last argument of <code>makeGraphic()</code> is <code>Unique</code>, whether the graphic should be an unique instance in the graphics cache, if you create multiple graphics like this, set it to <code>true</code> to avoid conflicts.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> lineStyle = { color: FlxColor.RED, thickness: <span class="number">1</span> };
-<span class="keyword">var</span> fillStyle = { color: FlxColor.RED, alpha: <span class="number">0.5</span> };</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// Circle</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> lineStyle = { color: FlxColor.RED, thickness: <span class="hljs-number">1</span> };
+<span class="hljs-keyword">var</span> fillStyle = { color: FlxColor.RED, alpha: <span class="hljs-number">0.5</span> };
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// Circle</span>
 canvas.drawCircle(X, Y, Radius, Color, lineStyle, fillStyle);
 
-<span class="comment">// Ellipse</span>
+<span class="hljs-comment">// Ellipse</span>
 canvas.drawEllipse(X, Y, Width, Height, Color, lineStyle, fillStyle);
 
-<span class="comment">// Line</span>
+<span class="hljs-comment">// Line</span>
 canvas.drawLine(StartX, StartY, EndX, EndY, lineStyle);
 
-<span class="comment">// Polygon</span>
-<span class="keyword">var</span> vertices = <span class="keyword">new</span> Array&lt;FlxPoint&gt;();
-vertices[<span class="number">0</span>] = <span class="keyword">new</span> FlxPoint(<span class="number">0</span>, <span class="number">0</span>);
-vertices[<span class="number">1</span>] = <span class="keyword">new</span> FlxPoint(<span class="number">100</span>, <span class="number">0</span>);
-vertices[<span class="number">2</span>] = <span class="keyword">new</span> FlxPoint(<span class="number">100</span>, <span class="number">300</span>);
-vertices[<span class="number">3</span>] = <span class="keyword">new</span> FlxPoint(<span class="number">0</span>, <span class="number">100</span>);
+<span class="hljs-comment">// Polygon</span>
+<span class="hljs-keyword">var</span> vertices = <span class="hljs-keyword">new</span> Array&lt;FlxPoint&gt;();
+vertices[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> FlxPoint(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+vertices[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> FlxPoint(<span class="hljs-number">100</span>, <span class="hljs-number">0</span>);
+vertices[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> FlxPoint(<span class="hljs-number">100</span>, <span class="hljs-number">300</span>);
+vertices[<span class="hljs-number">3</span>] = <span class="hljs-keyword">new</span> FlxPoint(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
 canvas.drawPolygon(vertices, Color, lineStyle, fillStyle);
 
-<span class="comment">// Triangle</span>
+<span class="hljs-comment">// Triangle</span>
 canvas.drawTriangle(X, Y, Height, Color, lineStyle, fillStyle);
 
-<span class="comment">// Rect</span>
+<span class="hljs-comment">// Rect</span>
 canvas.drawRect(X, Y, Width, Height, Color, lineStyle, fillStyle);
 
-<span class="comment">// Round Rect</span>
+<span class="hljs-comment">// Round Rect</span>
 canvas.drawRoundRect(X, Y, Width, Height, EllipseWidth, EllipseHeight, Color, lineStyle, fillStyle);
 
-<span class="comment">// Rect Complex</span>
-canvas.drawRoundRectComplex(X, Y, Width, Height, TopLeftRadius, TopRightRadius, BottomLeftRadius, BottomRightRadius, Color, lineStyle, fillStyle);</code></pre>
+<span class="hljs-comment">// Rect Complex</span>
+canvas.drawRoundRectComplex(X, Y, Width, Height, TopLeftRadius, TopRightRadius, BottomLeftRadius, BottomRightRadius, Color, lineStyle, fillStyle);
+</code></pre>
 <p>Use <code>canvas.fill(FlxColor.TRANSPARENT);</code> to clear the canvas.</p>
 <h2 id="hud">HUD</h2>
-<pre class="highlight"><code class="actionscript"><span class="comment">// prevents the sprite to scroll with the camera</span>
-scrollFactor.<span class="keyword">set</span>(<span class="number">0</span>, <span class="number">0</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// prevents the sprite to scroll with the camera</span>
+scrollFactor.<span class="hljs-keyword">set</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+</code></pre>
 <h2 id="debugger">Debugger</h2>
 <p>Press <code>~ key</code> to open it during runtime, or open by code with <code>FlxG.debugger.visible = true</code>.</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// Log</span>
-FlxG.log.add(<span class="string">"My var: "</span> + myVar);
-<span class="comment">// or</span>
-FlxG.log.redirectTraces = <span class="literal">true</span>;
-trace(<span class="string">"My var: "</span>, myVar);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// Log</span>
+FlxG.log.add(<span class="hljs-string">"My var: "</span> + myVar);
+<span class="hljs-comment">// or</span>
+FlxG.log.redirectTraces = <span class="hljs-literal">true</span>;
+trace(<span class="hljs-string">"My var: "</span>, myVar);
 
-<span class="comment">// Watch</span>
-FlxG.watch.add(object, <span class="string">"property"</span>);</code></pre>
+<span class="hljs-comment">// Watch</span>
+FlxG.watch.add(object, <span class="hljs-string">"property"</span>);
+</code></pre>
 <h2 id="hiding-cursor">Hiding Cursor</h2>
-<pre class="highlight"><code class="actionscript">FlxG.mouse.visible = <span class="literal">false</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.mouse.visible = <span class="hljs-literal">false</span>;
+</code></pre>
 <h2 id="adding-gravity">Adding Gravity</h2>
-<pre class="highlight"><code class="actionscript">acceleration.y = <span class="number">600</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript">acceleration.y = <span class="hljs-number">600</span>;
+</code></pre>
 
 
 			<br>
@@ -563,6 +611,10 @@ FlxG.watch.add(object, <span class="string">"property"</span>);</code></pre>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

@@ -235,24 +235,27 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/06-flxsave.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxSave;</span></code></pre>
+			<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.util.FlxSave;</span>
+</code></pre>
 <p>HaxeFlixel gives you the <code>FlxSave</code> class to manage saving and loading your game&#39;s data. You might use it to save and load a high score table, or the position and status of the player and enemies, or custom settings the player has selected. Like most of HaxeFlixel, <code>FlxSave</code> is cross-platform in functionality.</p>
 <p>To use <code>FlxSave</code> you need a variable typed to that class. You can create your own variable (perhaps in your registry class, in your gameplay <code>FlxState</code>, or as a local variable in your save/load functions). You may also use the one that HaxeFlixel itself uses (<code>FlxG.save</code>).</p>
 <p>The example code used below is largely taken from the <a href="http://haxeflixel.com/demos/FlxSave/">HaxeFlixel save demo</a>. If you have already installed HaxeFlixel, then to install the demo project just open a command line utility, navigate to the folder you would like to install into, and enter the command flixel create Save, or download the source via GitHub using the link on the demo web page.</p>
 <h4 id="saving">Saving</h4>
 <p>So how can you save some of your game data? Once you have your variable, you will need to initialize, then bind it:</p>
-<pre class="highlight"><code class="actionscript">_gameSave = <span class="keyword">new</span> FlxSave(); <span class="comment">// initialize</span>
-_gameSave.bind(<span class="string">"SaveDemo"</span>); <span class="comment">// bind to the named save slot</span></code></pre>
+<pre class="highlight"><code class="hljs actionscript">_gameSave = <span class="hljs-keyword">new</span> FlxSave(); <span class="hljs-comment">// initialize</span>
+_gameSave.bind(<span class="hljs-string">"SaveDemo"</span>); <span class="hljs-comment">// bind to the named save slot</span>
+</code></pre>
 <p>Note the string &quot;SaveDemo&quot;. This is how HaxeFlixel tracks what save slot you are binding to in local storage. If you want to have multiple saves, you will probably want to define a series of strings to identify each slot, eg. &quot;SaveSlot1&quot;, &quot;SaveSlot2&quot;, etc. and bind to the appropriate one. For more information on using multiple save slots, take a look at <a href="http://www.funstormgames.com/blog/2012/01/flixel-advanced-saving-tips-tricks/">Wolfgang&#39;s article</a> on the subject for AS3 Flixel, but keep in mind that <a href="http://www.openfl.org/archive/developer/documentation/actionscript-developers/">the AS3 syntax is a little different from Haxe</a>.</p>
 <p>Note: If you plan to use <code>FlxG.save</code> you can skip the initializing and binding steps, as HaxeFlixel has done it for you.</p>
 <p>Once bound, the save is essentially &quot;live&quot;. To write to it you use the .data property of variable, treating it as an <a href="http://haxe.org/ref/dynamic">object</a>:</p>
-<pre class="highlight"><code class="actionscript">_gameSave.data.boxPositions = <span class="keyword">new</span> Array&lt;FlxPoint&gt;();
+<pre class="highlight"><code class="hljs actionscript">_gameSave.data.boxPositions = <span class="hljs-keyword">new</span> Array&lt;FlxPoint&gt;();
 _gameSave.data.boxPositions.push(box.getPosition());
 
 _gameSave.data.enemy = myEnemy;
 
-<span class="comment">// save data</span>
-_gameSave.flush();</code></pre>
+<span class="hljs-comment">// save data</span>
+_gameSave.flush();
+</code></pre>
 <h5 id="flush-">flush()</h5>
 <p>Writes the local shared object to disk immediately.
 <strong>Required on non-Flash targets.</strong></p>
@@ -260,8 +263,9 @@ _gameSave.flush();</code></pre>
 <p>In certain cases you may need to <a href="http://haxe.org/manual/serialization">serialize and unserialize</a> your data (fancy words for &quot;take my data and turn it into a specially formatted string, or back into data&quot;) to avoid errors, but you may want to try it without serialization unless you experience problems.</p>
 <h4 id="loading">Loading</h4>
 <p>In order to retrieve your saved data, you simply make sure you have a correctly bound <code>FlxSave</code> variable and read each value from the <code>.data</code> property.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> position = _gameSave.data.boxPositions[tempCount];
-box.setPosition(position.x, position.y);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> position = _gameSave.data.boxPositions[tempCount];
+box.setPosition(position.x, position.y);
+</code></pre>
 <p>This means that, depending on your save needs, when loading a save slot you may need to loop through a long list of data to assign each of the values back to it&#39;s correct home.</p>
 <h4 id="existing-save-data">Existing save data</h4>
 <p>When you save data to a given <code>FlxSave</code> save slot there is, of course, the possibility that data already exists in that slot (hopefully your saved data from an earlier save). One way to test for this is to check if one of your variables is null. If save data does already exist and you plan to save an entire fresh set of new data, then to avoid carrying over values from an earlier save you may wish to either go through and initialize or reset each of the potentially saved variables to some default value (or null) before saving your new set, or you may wish to erase the save data entirely (probably not a good idea if you&#39;re using <code>FlxG.save</code>).</p>
@@ -307,6 +311,10 @@ box.setPosition(position.x, position.y);</code></pre>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

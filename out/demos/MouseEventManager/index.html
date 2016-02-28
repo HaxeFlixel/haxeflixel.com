@@ -110,14 +110,15 @@
 
 			<p><strong>MouseEventManager</strong> allows FlxSprites to listen to mouse events like MouseDown, MouseUp, MouseOver and MouseOut.</p>
 <p>To activate it, simply add sprites to the manager and implement the event callbacks:</p>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.plugin.MouseEventManager;</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.plugin.MouseEventManager;</span>
 
-MouseEventManager.add(<span class="keyword">new</span> FlxSprite(), onMouseDown, onMouseUp, onMouseOver, onMouseOut); 
+MouseEventManager.add(<span class="hljs-keyword">new</span> FlxSprite(), onMouseDown, onMouseUp, onMouseOver, onMouseOut); 
 
-<span class="function"><span class="keyword">function</span> <span class="title">onMouseDown</span><span class="params">(sprite:FlxSprite)</span> {</span>}
-<span class="function"><span class="keyword">function</span> <span class="title">onMouseUp</span><span class="params">(sprite:FlxSprite)</span> {</span>}
-<span class="function"><span class="keyword">function</span> <span class="title">onMouseOver</span><span class="params">(sprite:FlxSprite)</span> {</span>}
-<span class="function"><span class="keyword">function</span> <span class="title">onMouseOut</span><span class="params">(sprite:FlxSprite)</span> {</span>}</code></pre>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onMouseDown</span><span class="hljs-params">(sprite:FlxSprite)</span> </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onMouseUp</span><span class="hljs-params">(sprite:FlxSprite)</span> </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onMouseOver</span><span class="hljs-params">(sprite:FlxSprite)</span> </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onMouseOut</span><span class="hljs-params">(sprite:FlxSprite)</span> </span>{}
+</code></pre>
 <p>Enjoy!</p>
 
 
@@ -163,6 +164,10 @@ MouseEventManager.add(<span class="keyword">new</span> FlxSprite(), onMouseDown,
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

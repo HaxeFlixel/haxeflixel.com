@@ -307,8 +307,9 @@
 <h3 id="changed-integer-constants-to-enums-">Changed integer constants to enums:</h3>
 <p>ActionScript 3 does not have enums, which is why a lot of these &quot;value sets&quot; were implemented using integer constants. For improved type-safety and to better fit the Haxe coding style, they have been converted to enums:</p>
 <p>As long as it&#39;s not ambigious, Haxe allows using just the enum value name without the enum&#39;s name. In the first case, the enum also does not need to be imported. For example, this means that both of these syntaxes are valid:</p>
-<pre class="highlight"><code class="actionscript">FlxG.camera.follow(LOCKON);
-FlxG.camera.follow(FlxCameraFollowStyle.LOCKON);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.camera.follow(LOCKON);
+FlxG.camera.follow(FlxCameraFollowStyle.LOCKON);
+</code></pre>
 <p>Which of these two styles is used is mostly a matter of personal preference.</p>
 <h4 id="-flxcamera-follow-styles-"><code>FlxCamera</code> follow styles:</h4>
 <table>
@@ -599,41 +600,49 @@ FlxG.camera.follow(FlxCameraFollowStyle.LOCKON);</code></pre>
 <p><code>loadMap()</code> has been split up into <code>loadMapFromArray()</code> and <code>loadMapFromCSV()</code>.</p>
 <h3 id="-flxgroup-"><code>FlxGroup</code>:</h3>
 <p><code>callAll()</code> and <code>setAll()</code> have been removed - use <code>forEach()</code> instead:</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 3.3.x</span>
-group.setAll(<span class="string">"scrollFactor"</span>, FlxPoint.<span class="keyword">get</span>(<span class="number">0</span>, <span class="number">0</span>));
-group.callAll(<span class="string">"kill"</span>);</code></pre>
-<pre class="highlight"><code class="undefined">// 4.0.0
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 3.3.x</span>
+group.setAll(<span class="hljs-string">"scrollFactor"</span>, FlxPoint.<span class="hljs-keyword">get</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>));
+group.callAll(<span class="hljs-string">"kill"</span>);
+</code></pre>
+<pre class="highlight"><code class="hljs undefined">// 4.0.0
 group.forEach(function(basic:FlxBasic))
 {
     basic.scrollFactor.set(0, 0);
     basic.kill();
-}</code></pre>
+}
+</code></pre>
 <h3 id="-flixel-input-gamepad-"><code>flixel.input.gamepad</code>:</h3>
 <p>The hardware IDs of the different controller types are now mapped to a common <code>FlxGamepadInputID</code>. This avoids the need of having to handle multiple controller types - this now happens automatically under the hood.</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 3.3.x</span>
-<span class="keyword">if</span> (gamepad.pressed(XboxButtonID.A) ||
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">if</span> (gamepad.pressed(XboxButtonID.A) ||
     gamepad.pressed(OUYAButtonID.O) ||
-    gamepad.pressed(LogitechButtonID.TWO)) {}</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 4.0.0</span>
-<span class="keyword">if</span> (gamepad.anyPressed([FlxGamepadInputID.A])) {}
-<span class="comment">// or</span>
-<span class="keyword">if</span> (gamepad.pressed.A) {}</code></pre>
+    gamepad.pressed(LogitechButtonID.TWO)) {}
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 4.0.0</span>
+<span class="hljs-keyword">if</span> (gamepad.anyPressed([FlxGamepadInputID.A])) {}
+<span class="hljs-comment">// or</span>
+<span class="hljs-keyword">if</span> (gamepad.pressed.A) {}
+</code></pre>
 <p>It is still possible to use the IDs from the <code>flixel.input.gamepad.id</code> classes via the functions with the <code>Raw</code> suffix.</p>
 <p>Because of the poor driver support, the PS3 ID class / support for PS3 controllers have been removed.</p>
 <h3 id="-flxpath-"><code>FlxPath</code>:</h3>
 <p><code>FlxPath#start()</code> no longer takes a <code>FlxObject</code> argument, instead, <code>FlxObject</code> now has a path property. This means <code>FlxObject</code> takes care of updating the path, taking care of the issue that paths are not paused along with the objects they work on in substates.</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 3.3.x</span>
-<span class="keyword">var</span> path = <span class="keyword">new</span> FlxPath().start(object, points);</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 4.0.0</span>
-object.path = <span class="keyword">new</span> FlxPath().start(points);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">var</span> path = <span class="hljs-keyword">new</span> FlxPath().start(object, points);
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 4.0.0</span>
+object.path = <span class="hljs-keyword">new</span> FlxPath().start(points);
+</code></pre>
 <h3 id="-flxcolor-flxcolorutil-refactor-"><code>FlxColor</code> / <code>FlxColorUtil</code> refactor:</h3>
 <p><code>FlxColor</code> is now an <a href="http://haxe.org/manual/types-abstract.html"><code>abstract</code></a>, which means it can be used like an object, while the underlying type is still a regular <code>Int</code>. The static <code>FlxColorUtil</code> functions can now be used as member methods or properties:</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 3.3.x</span>
-<span class="keyword">var</span> color:Int = <span class="number">0x008080</span>;
-trace(FlxColorUtil.getGreen(color));</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 4.0.0</span>
-<span class="keyword">var</span> color:FlxColor = <span class="number">0x008080</span>;
-trace(color.green);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">var</span> color:Int = <span class="hljs-number">0x008080</span>;
+trace(FlxColorUtil.getGreen(color));
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 4.0.0</span>
+<span class="hljs-keyword">var</span> color:FlxColor = <span class="hljs-number">0x008080</span>;
+trace(color.green);
+</code></pre>
 <p>The amount of colors presets (<code>FlxColor.RED</code> etc..) has been reduced.</p>
 <h3 id="-flxemitter-refactor-"><code>FlxEmitter</code> refactor:</h3>
 <p><code>FlxEmitterExt</code> has been merged into <code>FlxEmitter</code>. For circular emitters, <code>FlxEmitterMode.CIRCLE</code> can be used.</p>
@@ -735,15 +744,17 @@ trace(color.green);</code></pre>
 <li>rotation is now clockwise</li>
 <li>moved to <code>FlxPoint</code> (<code>rotate()</code>)</li>
 </ul>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 3.3.x</span>
-<span class="keyword">var</span> angle = <span class="number">45</span>;
-<span class="keyword">var</span> point = FlxPoint.<span class="keyword">get</span>(<span class="number">10</span>, <span class="number">5</span>);
-FlxAngle.rotatePoint(x, y, pivotX, pivotY, angle, point);</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// 4.0.0</span>
-<span class="keyword">var</span> angle = <span class="number">45</span>;
-<span class="keyword">var</span> point = FlxPoint.<span class="keyword">get</span>(<span class="number">10</span> + x, <span class="number">5</span> + y);
-<span class="keyword">var</span> pivot = FlxPoint.weak(pivotX, pivotY);
-point.rotate(pivot, angle);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">var</span> angle = <span class="hljs-number">45</span>;
+<span class="hljs-keyword">var</span> point = FlxPoint.<span class="hljs-keyword">get</span>(<span class="hljs-number">10</span>, <span class="hljs-number">5</span>);
+FlxAngle.rotatePoint(x, y, pivotX, pivotY, angle, point);
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 4.0.0</span>
+<span class="hljs-keyword">var</span> angle = <span class="hljs-number">45</span>;
+<span class="hljs-keyword">var</span> point = FlxPoint.<span class="hljs-keyword">get</span>(<span class="hljs-number">10</span> + x, <span class="hljs-number">5</span> + y);
+<span class="hljs-keyword">var</span> pivot = FlxPoint.weak(pivotX, pivotY);
+point.rotate(pivot, angle);
+</code></pre>
 <h3 id="-flxmath-changes-"><code>FlxMath</code> changes:</h3>
 <table>
 <thead>
@@ -808,28 +819,30 @@ point.rotate(pivot, angle);</code></pre>
 <p>Not all flixel-addons changes are covered here. Please check the <a href="https://github.com/HaxeFlixel/flixel-addons/blob/master/CHANGELOG.md">changelog</a> for the rest.</p>
 <h3 id="-flxnapestate-refactor-"><code>FlxNapeState</code> refactor:</h3>
 <p><code>FlxNapeState</code> is now <code>FlxNapeSpace</code> and no longer extends <code>FlxState</code>. This makes it possible to use the <code>flixel.addons.nape</code> package along with other <code>FlxState</code> subclasses (for example <code>FlxUIState</code>).</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// flixel-addons 1.x.x</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.addons.nape.FlxNapeState;</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// flixel-addons 1.x.x</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.addons.nape.FlxNapeState;</span>
 
-<span class="class"><span class="keyword">class</span> <span class="title">PlayState</span> <span class="keyword">extends</span> <span class="title">FlxNapeState</span>
-{</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        super.create();
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FlxNapeState</span>
+</span>{
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.create();
     }
-}</code></pre>
-<pre class="highlight"><code class="actionscript"><span class="comment">// flixel-addons 2.0.0</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.FlxState;</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.addons.nape.FlxNapeSpace;</span>
+}
+</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// flixel-addons 2.0.0</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.FlxState;</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.addons.nape.FlxNapeSpace;</span>
 
-<span class="class"><span class="keyword">class</span> <span class="title">PlayState</span> <span class="keyword">extends</span> <span class="title">FlxState</span>
-{</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        super.create();
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FlxState</span>
+</span>{
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.create();
         FlxNapeSpace.init();
     }
-}</code></pre>
+}
+</code></pre>
 
 
 			<br>
@@ -868,6 +881,10 @@ point.rotate(pivot, angle);</code></pre>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

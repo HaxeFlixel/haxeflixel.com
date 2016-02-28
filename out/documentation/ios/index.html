@@ -242,48 +242,48 @@ iOS is is part of the cpp group of targets so when developers mention <code>cpp<
 iOS uses GPU accelerated Texture Batching for the best possible performance in mobile devices.</p>
 <h3 id="conditionals">Conditionals</h3>
 <hr>
-<pre class="highlight"><code class="vala"><span class="preprocessor">#if cpp</span>
-<span class="comment">//your iOS code</span>
-<span class="preprocessor">#end</span>
+<pre class="highlight"><code class="hljs haxe"><span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> cpp</span>
+<span class="hljs-comment">//your iOS code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
 
-<span class="preprocessor">#if ios</span>
-<span class="comment">//your iOS code</span>
-<span class="preprocessor">#end</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> ios</span>
+<span class="hljs-comment">//your iOS code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
 
-<span class="preprocessor">#if mobile</span>
-<span class="comment">//your iOS code</span>
-<span class="preprocessor">#end</span></code></pre>
-<h3 id="project-xml-settings">Project XML settings</h3>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> mobile</span>
+<span class="hljs-comment">//your iOS code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
+</code></pre><h3 id="project-xml-settings">Project XML settings</h3>
 <p>Mobile platforms can use a window <code>width</code> and <code>height</code> of 0, which is a special value that uses the full resolution of the current display.</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">window</span> <span class="attribute">width</span>=<span class="value">"0"</span> <span class="attribute">height</span>=<span class="value">"0"</span> <span class="attribute">background</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">fps</span>=<span class="value">"60"</span> /&gt;</span></code></pre>
-<p>OpenFL also exposes the following specific settings for the iOS target:</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">window</span> <span class="attribute">hardware</span>=<span class="value">"true"</span> <span class="attribute">allow-shaders</span>=<span class="value">"true"</span> <span class="attribute">require-shaders</span>=<span class="value">"true"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">window</span> <span class="attribute">vsync</span>=<span class="value">"true"</span> <span class="attribute">antialiasing</span>=<span class="value">"4"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"portrait"</span> /&gt;</span> || <span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"landscape"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span>/&gt;</span></code></pre>
-<p>Custom PNG icons and launch images: (Check <a href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/IconMatrix.html">iOS Icon and Image Sizes Guidelines</a> for more info)</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">name</span>=<span class="value">"PRERENDERED_ICON"</span> <span class="attribute">value</span>=<span class="value">"true"</span> /&gt;</span>
+<pre class="highlight"><code class="hljs nix">&lt;window <span class="hljs-variable">width=</span><span class="hljs-string">"0"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"0"</span> <span class="hljs-variable">background=</span><span class="hljs-string">"#FFFFFF"</span> <span class="hljs-variable">fps=</span><span class="hljs-string">"60"</span> /&gt;
+</code></pre><p>OpenFL also exposes the following specific settings for the iOS target:</p>
+<pre class="highlight"><code class="hljs nix">&lt;window <span class="hljs-variable">hardware=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">allow-shaders=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">require-shaders=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"cpp"</span>/&gt;
+&lt;window <span class="hljs-variable">vsync=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">antialiasing=</span><span class="hljs-string">"4"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"cpp"</span> /&gt;
+&lt;window <span class="hljs-variable">orientation=</span><span class="hljs-string">"portrait"</span> /&gt; || &lt;window <span class="hljs-variable">orientation=</span><span class="hljs-string">"landscape"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"cpp"</span>/&gt;
+</code></pre><p>Custom PNG icons and launch images: (Check <a href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/IconMatrix.html">iOS Icon and Image Sizes Guidelines</a> for more info)</p>
+<pre class="highlight"><code class="hljs nix">&lt;set <span class="hljs-variable">name=</span><span class="hljs-string">"PRERENDERED_ICON"</span> <span class="hljs-variable">value=</span><span class="hljs-string">"true"</span> /&gt;
 
-<span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"Icon.png"</span> <span class="attribute">size</span>=<span class="value">"57"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"Icon@2x.png"</span> <span class="attribute">size</span>=<span class="value">"114"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"Icon-72.png"</span> <span class="attribute">size</span>=<span class="value">"72"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"Icon-72@2x.png"</span> <span class="attribute">size</span>=<span class="value">"144"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
+&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"Icon.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"57"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"Icon@2x.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"114"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"Icon-72.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"72"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"Icon-72@2x.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"144"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
 
-<span class="tag">&lt;<span class="title">launchImage</span> <span class="attribute">path</span>=<span class="value">"Default.png"</span> <span class="attribute">width</span>=<span class="value">"320"</span> <span class="attribute">height</span>=<span class="value">"480"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">launchImage</span> <span class="attribute">path</span>=<span class="value">"Default@2x.png"</span> <span class="attribute">width</span>=<span class="value">"640"</span> <span class="attribute">height</span>=<span class="value">"960"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">launchImage</span> <span class="attribute">path</span>=<span class="value">"Default-Portrait~ipad.png"</span> <span class="attribute">width</span>=<span class="value">"768"</span> <span class="attribute">height</span>=<span class="value">"1024"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">launchImage</span> <span class="attribute">path</span>=<span class="value">"Default-Portrait@2x~ipad.png"</span> <span class="attribute">width</span>=<span class="value">"1536"</span> <span class="attribute">height</span>=<span class="value">"2048"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">launchImage</span> <span class="attribute">path</span>=<span class="value">"Default-Landscape~ipad.png"</span> <span class="attribute">width</span>=<span class="value">"1024"</span> <span class="attribute">height</span>=<span class="value">"768"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">launchImage</span> <span class="attribute">path</span>=<span class="value">"Default-Landscape@2x~ipad.png"</span> <span class="attribute">width</span>=<span class="value">"2048"</span> <span class="attribute">height</span>=<span class="value">"1536"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">launchImage</span> <span class="attribute">path</span>=<span class="value">"Default-568h@2x.png"</span> <span class="attribute">width</span>=<span class="value">"640"</span> <span class="attribute">height</span>=<span class="value">"1136"</span> <span class="attribute">if</span>=<span class="value">"ios"</span> /&gt;</span></code></pre>
-<h3 id="compile-commands">Compile Commands</h3>
+&lt;launchImage <span class="hljs-variable">path=</span><span class="hljs-string">"Default.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"320"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"480"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;launchImage <span class="hljs-variable">path=</span><span class="hljs-string">"Default@2x.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"640"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"960"</span> /&gt;
+&lt;launchImage <span class="hljs-variable">path=</span><span class="hljs-string">"Default-Portrait~ipad.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"768"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"1024"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;launchImage <span class="hljs-variable">path=</span><span class="hljs-string">"Default-Portrait@2x~ipad.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"1536"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"2048"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;launchImage <span class="hljs-variable">path=</span><span class="hljs-string">"Default-Landscape~ipad.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"1024"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"768"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;launchImage <span class="hljs-variable">path=</span><span class="hljs-string">"Default-Landscape@2x~ipad.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"2048"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"1536"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+&lt;launchImage <span class="hljs-variable">path=</span><span class="hljs-string">"Default-568h@2x.png"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"640"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"1136"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"ios"</span> /&gt;
+</code></pre><h3 id="compile-commands">Compile Commands</h3>
 <p>Sublime Text, FlashDevelop and IntelliJ IDEA support iOS compilation through their GUI.</p>
 <h4 id="command-line">Command line</h4>
 <p>The basic command to compile and test iOS:</p>
-<pre class="highlight"><code class="haskell"><span class="title">lime</span> test ios</code></pre>
-<p>Run this command from the root folder of your project, the default <code>Project.xml</code> will be used automatically.</p>
+<pre class="highlight"><code class="hljs nginx"><span class="hljs-title">lime</span> test ios
+</code></pre><p>Run this command from the root folder of your project, the default <code>Project.xml</code> will be used automatically.</p>
 <p>If you want to use the iOS simulator, add <code>-simulator</code> when running/testing.</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">lime</span> <span class="comment">test</span> <span class="comment">ios</span> <span class="literal">-</span><span class="comment">simulator</span></code></pre>
-
+<pre class="highlight"><code class="hljs nginx"><span class="hljs-title">lime</span> test ios -simulator
+</code></pre>
 
 			<br>
 			<hr>
@@ -321,6 +321,10 @@ iOS uses GPU accelerated Texture Batching for the best possible performance in m
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

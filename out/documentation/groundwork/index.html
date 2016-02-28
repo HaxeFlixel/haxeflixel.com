@@ -232,29 +232,34 @@
 <ol>
 <li><p>Go ahead and delete the line we added for our &quot;Hello World&quot; test.</p>
 <p> Next, go up to the top of the class - right under where it says:</p>
-<pre class="highlight"><code class="actionscript"> <span class="class"><span class="keyword">class</span> <span class="title">MenuState</span> <span class="keyword">extends</span> <span class="title">FlxState</span></span></code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MenuState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FlxState</span>
+</span></code></pre>
 <p> We&#39;re going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new <code>FlxButton</code> variable to use as our &#39;play&#39; button. So, type:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _btnPlay:FlxButton;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _btnPlay:FlxButton;
+</code></pre>
 <p> Note: if you&#39;re using FlashDevelop, it should automatically create an import for <code>FlxButton</code> (<code>import flixel.ui.FlxButton;</code>) at the top of the class. This should be mostly automatic whenever you use class, but if it doesn&#39;t add it for some reason, you can enter it manually, or, highlight <code>FlxButton</code> in the editor and hit <code>Ctrl+Shift+1</code> to add it.</p>
 </li>
 <li><p>Now, go down to <code>create()</code>, and, right before <code>super.create();</code>, type:</p>
-<pre class="highlight"><code class="actionscript"> _btnPlay = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Play"</span>, clickPlay);
- add(_btnPlay);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _btnPlay = <span class="hljs-keyword">new</span> FlxButton(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Play"</span>, clickPlay);
+ add(_btnPlay);
+</code></pre>
 <p> This creates a <code>FlxButton</code> object and assigns it to the <code>_btnPlay</code> variable. We&#39;re telling it to make the button at position <code>(0, 0)</code> (the top left corner of the screen), to make it say &quot;Play&quot; on it, and to call the function <code>clickPlay()</code> when a user clicks the button (we yet have to implement <code>clickPlay()</code>).
  Then we add the object to our state so that it can be shown and interacted with.
  Don&#39;t worry about the position of the button right now, we&#39;re going to move it in a second.</p>
 </li>
 <li><p>Now we need to define our <code>clickPlay()</code> function. Somewhere in the class, outside of any existing functions, type:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">clickPlay</span><span class="params">()</span><span class="type">:Void</span>
- {</span>
-     FlxG.switchState(<span class="keyword">new</span> PlayState());
- }</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickPlay</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+ </span>{
+     FlxG.switchState(<span class="hljs-keyword">new</span> PlayState());
+ }
+</code></pre>
 <p> This function calls <code>FlxG.switchState()</code>, which switches the state from whatever the current state is (<code>MenuState</code>) to a new instance of <code>PlayState</code>.</p>
 </li>
 <li><p>Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we&#39;re missing a few things.
  First, we want the button to be in a nicer place. Sure, we could set the x and y coordinates when we create it, but there&#39;s a simpler way to do it. Back in <code>create()</code>, add a new line somewhere after we create our <code>FlxButton</code>, and before <code>super.create();</code> (I like to add it before the button is added, but that&#39;s just my preference).
  Type:</p>
-<pre class="highlight"><code class="actionscript"> _btnPlay.screenCenter();</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _btnPlay.screenCenter();
+</code></pre>
 <p> <code>screenCenter()</code> is a function which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.</p>
 </li>
 <li><p>If you test your game out now, it should go straight to a black screen with our &#39;Play&#39; button in the middle, and clicking the button will take you to another black screen. If that&#39;s what you get, it works! So far, so good!</p>
@@ -273,43 +278,51 @@
 <p> <img src="../images/01_tutorial/0005.png" alt=""></p>
 </li>
 <li><p>You should now see a very basic class which extends <code>FlxSprite</code>:</p>
-<pre class="highlight"><code class="actionscript"> <span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-package"><span class="hljs-keyword">package</span>;
 
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">system</span>.<span class="title">FlxAssets</span>.<span class="title">FlxGraphicAsset</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxSprite</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">system</span>.<span class="hljs-title">FlxAssets</span>.<span class="hljs-title">FlxGraphicAsset</span>;
 
- <span class="title">class</span> <span class="title">Player</span> <span class="title">extends</span> <span class="title">FlxSprite</span>
+ <span class="hljs-title">class</span> <span class="hljs-title">Player</span> <span class="hljs-title">extends</span> <span class="hljs-title">FlxSprite</span>
  {</span>
-     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)</span>
-     {</span>
-         <span class="keyword">super</span>(X, Y, SimpleGraphic);
+     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)</span>
+     </span>{
+         <span class="hljs-keyword">super</span>(X, Y, SimpleGraphic);
      }
- }</code></pre>
+ }
+</code></pre>
 <p> We&#39;ll need to fix this up a bit to make it usable.</p>
 </li>
 <li><p>First, lets take out the <code>SimpleGraphic</code> argument in the constructor. For our <code>Player</code> sprite, we don&#39;t need to pass it the graphic.
  So</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)</span></span></code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)</span>
+</span></code></pre>
 <p> Becomes</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">(?X:Float=0, ?Y:Float=0)</span></span></code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">(?X:Float=0, ?Y:Float=0)</span>
+</span></code></pre>
 <p> and</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">super</span>(X, Y, SimpleGraphic);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">super</span>(X, Y, SimpleGraphic);
+</code></pre>
 <p> becomes</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">super</span>(X, Y);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">super</span>(X, Y);
+</code></pre>
 <p> With classes, we use the &#39;super&#39; keyword to refer to the parent class. So, within our <code>new()</code> / the constructor, by calling <code>super(X, Y)</code> we are basically saying to go up the chain to our parent class, in this case <code>FlxSprite</code>, and call its constructor, passing it the <code>X</code> and <code>Y</code> arguments that were passed to us.</p>
 </li>
 <li><p>Next, we&#39;ll want to create a placeholder image to show us where our sprite is, so under <code>super(X, Y);</code>, add:
 7.</p>
-<pre class="highlight"><code class="actionscript"> makeGraphic(<span class="number">16</span>, <span class="number">16</span>, FlxColor.BLUE);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> makeGraphic(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>, FlxColor.BLUE);
+</code></pre>
 <p> (Make sure that an import is created for <code>FlxColor</code>, and if it isn&#39;t, add it)
  All we&#39;re doing here is saying that we want to make this sprite&#39;s graphic be a 16x16 pixel blue square.</p>
 </li>
 <li><p>For right now, we just want to get the <code>Player</code> class initialized, make sure that it works, and try adding it to our <code>PlayState</code>. It&#39;s not going to move or do anything yet, that will come in a minute. So save the changes to our <code>Player</code> class, and go back to the <code>PlayState</code>.
  We need to define our <code>Player</code> variable, so underneath the class line, add:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _player:Player;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _player:Player;
+</code></pre>
 <p> And in <code>create()</code>, before <code>super.create();</code> add:</p>
-<pre class="highlight"><code class="actionscript"> _player = <span class="keyword">new</span> Player(<span class="number">20</span>, <span class="number">20</span>);
- add(_player);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _player = <span class="hljs-keyword">new</span> Player(<span class="hljs-number">20</span>, <span class="hljs-number">20</span>);
+ add(_player);
+</code></pre>
 <p> This simply assigns a new instance of our <code>Player</code> sprite to our <code>_player</code> variable, telling it to be placed at <code>(20, 20)</code> on the screen, and adds it to our <code>PlayState</code>.</p>
 </li>
 <li><p>If you run your project right now, you should see our blue player on the screen!</p>
@@ -321,70 +334,80 @@
 <p>First, define our player&#39;s movement speed and deceleration amounts:</p>
 <ol>
 <li><p>In your player class, above the constructor, add:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="keyword">var</span> speed:Float = <span class="number">200</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> speed:Float = <span class="hljs-number">200</span>;
+</code></pre>
 <p> Then, in the constructor, after you call <code>makeGraphic()</code>, we need to add some <code>drag</code>:</p>
-<pre class="highlight"><code class="actionscript"> drag.x = drag.y = <span class="number">1600</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> drag.x = drag.y = <span class="hljs-number">1600</span>;
+</code></pre>
 <p> <code>drag</code>, in HaxeFlixel, is sort of a way to slow down an object when it&#39;s not being moved. This will prevent our player sprite from just running forever in the same direction when the user stops pressing any movement keys.
  This is somewhat arbitrary based on what &#39;feels&#39; right - we can come back and tweak the numbers later on.</p>
 </li>
 <li><p>While there are plenty of ways to handle player movement, it can be simpler to add it to the <code>Player</code> class. We&#39;ll want to add a new function that will watch for player input and respond to it, so, make a new function:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">movement</span><span class="params">()</span><span class="type">:Void</span>
- {</span>
- }</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">movement</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+ </span>{
+ }
+</code></pre>
 </li>
 <li><p>First, inside that new function, we want to define some helper variables so we can easily tell which keys were pressed later on in the function:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> _up:Bool = <span class="literal">false</span>;
- <span class="keyword">var</span> _down:Bool = <span class="literal">false</span>;
- <span class="keyword">var</span> _left:Bool = <span class="literal">false</span>;
- <span class="keyword">var</span> _right:Bool = <span class="literal">false</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">var</span> _up:Bool = <span class="hljs-literal">false</span>;
+ <span class="hljs-keyword">var</span> _down:Bool = <span class="hljs-literal">false</span>;
+ <span class="hljs-keyword">var</span> _left:Bool = <span class="hljs-literal">false</span>;
+ <span class="hljs-keyword">var</span> _right:Bool = <span class="hljs-literal">false</span>;
+</code></pre>
 </li>
 <li><p>Next, we want to actually find out which of these directions the player wants to move in. We&#39;ll do that by checking whether certain keys are currently being pressed:</p>
-<pre class="highlight"><code class="actionscript"> _up = FlxG.keys.anyPressed([UP, W]);
+<pre class="highlight"><code class="hljs actionscript"> _up = FlxG.keys.anyPressed([UP, W]);
  _down = FlxG.keys.anyPressed([DOWN, S]);
  _left = FlxG.keys.anyPressed([LEFT, A]);
- _right = FlxG.keys.anyPressed([RIGHT, D]);</code></pre>
+ _right = FlxG.keys.anyPressed([RIGHT, D]);
+</code></pre>
 <p> The <code>anyPressed()</code> function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of keys (their names) and it will return <code>true</code> if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.</p>
 </li>
 <li><p>Next, we want to cancel out opposing directions - if the player is pressing up and down at the same time, we&#39;re not going to move anywhere:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (_up &amp;&amp; _down)
-      _up = _down = <span class="literal">false</span>;
- <span class="keyword">if</span> (_left &amp;&amp; _right)
-      _left = _right = <span class="literal">false</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">if</span> (_up &amp;&amp; _down)
+      _up = _down = <span class="hljs-literal">false</span>;
+ <span class="hljs-keyword">if</span> (_left &amp;&amp; _right)
+      _left = _right = <span class="hljs-literal">false</span>;
+</code></pre>
 </li>
 <li><p>Next, we&#39;ll make sure the player is actually moving:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (_up || _down || _left || _right)</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">if</span> (_up || _down || _left || _right)
+</code></pre>
 </li>
 <li><p>After that, we need to determine which direction to move the player in, and by how much. A common mistake in games that allow diagonal movement is something like this:</p>
-<pre class="highlight"><code class="actionscript"> velocity.x = speed;
- velocity.y = speed;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> velocity.x = speed;
+ velocity.y = speed;
+</code></pre>
 <p> While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">the way triangles work</a>. So, for our player to move, we&#39;re not just going to set its <code>velocity</code> to <code>speed</code> - that would be too easy! Instead, we&#39;re going to calculate exactly what its velocity should be with angles!</p>
 <p> The first part of this is to figure out what angle we want to have the player move based on the keys that are being pressed. With our player sprite&#39;s asset, angle 0 is to the right, and -90 (or 270) is up.</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> mA:Float = <span class="number">0</span>;
- <span class="keyword">if</span> (_up)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">var</span> mA:Float = <span class="hljs-number">0</span>;
+ <span class="hljs-keyword">if</span> (_up)
  {
-     mA = -<span class="number">90</span>;
-     <span class="keyword">if</span> (_left)
-         mA -= <span class="number">45</span>;
-     <span class="keyword">else</span> <span class="keyword">if</span> (_right)
-         mA += <span class="number">45</span>;
+     mA = -<span class="hljs-number">90</span>;
+     <span class="hljs-keyword">if</span> (_left)
+         mA -= <span class="hljs-number">45</span>;
+     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (_right)
+         mA += <span class="hljs-number">45</span>;
  }
- <span class="keyword">else</span> <span class="keyword">if</span> (_down)
+ <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (_down)
  {
-     mA = <span class="number">90</span>;
-     <span class="keyword">if</span> (_left)
-         mA += <span class="number">45</span>;
-     <span class="keyword">else</span> <span class="keyword">if</span> (_right)
-         mA -= <span class="number">45</span>;
+     mA = <span class="hljs-number">90</span>;
+     <span class="hljs-keyword">if</span> (_left)
+         mA += <span class="hljs-number">45</span>;
+     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (_right)
+         mA -= <span class="hljs-number">45</span>;
  }
- <span class="keyword">else</span> <span class="keyword">if</span> (_left)
-     mA = <span class="number">180</span>;
- <span class="keyword">else</span> <span class="keyword">if</span> (_right)
-     mA = <span class="number">0</span>;</code></pre>
+ <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (_left)
+     mA = <span class="hljs-number">180</span>;
+ <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (_right)
+     mA = <span class="hljs-number">0</span>;
+</code></pre>
 <p> All this will do is create a temporary variable to hold our angle, and then, based on which direction(s) the player is pressing, set that angle to the direction we plan on moving the player.</p>
 </li>
 <li><p>Now that we know which angle the player should be moving in, we need to figure out with how much <code>velocity</code> it needs to move that way. We&#39;re going to do this by setting <code>velocity.x</code> to <code>speed</code> and <code>velocity.y</code> to <code>0</code>. Then we rotate that point around <code>(0, 0)</code> by <code>mA</code> degrees.</p>
-<pre class="highlight"><code class="actionscript"> velocity.<span class="keyword">set</span>(speed, <span class="number">0</span>);
- velocity.rotate(FlxPoint.weak(<span class="number">0</span>, <span class="number">0</span>), mA);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> velocity.<span class="hljs-keyword">set</span>(speed, <span class="hljs-number">0</span>);
+ velocity.rotate(FlxPoint.weak(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), mA);
+</code></pre>
 <p> Next, close the bracket from your <code>if</code> statement from earlier.
  ...and that&#39;s the end of our <code>movement()</code> function!</p>
 </li>
@@ -392,11 +415,12 @@
 <p> <img src="../images/01_tutorial/overrideCompletion.png" alt=""></p>
 <p> Select <code>update</code> and press enter.</p>
 <p> Now you just need to add the function call, after which it should look like this:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
- {</span>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+ </span>{
      movement();
-     super.update(elapsed);
- }</code></pre>
+     <span class="hljs-keyword">super</span>.update(elapsed);
+ }
+</code></pre>
 <p> The <code>update()</code> function, as you should remember, is called each &#39;frame&#39; of the game. So, each time our <code>PlayState</code> gets its <code>update()</code> called, it calls <code>update()</code> on all of its <code>members</code>, including the player&#39;s <code>update()</code>. This in turn will run our <code>movement()</code> logic and adjust the player&#39;s <code>velocity</code> accordingly. After that, it call its <code>super.update()</code>, which will take the <code>velocity</code> that we&#39;ve just changed into account and figures out where the player sprite should move to.</p>
 </li>
 </ol>
@@ -440,6 +464,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

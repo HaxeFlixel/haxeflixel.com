@@ -235,49 +235,57 @@
 			
 			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/04-flxsprite.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
-			<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.FlxSprite;</span></code></pre>
+			<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.FlxSprite;</span>
+</code></pre>
 <p>FlxSprites are the core building blocks of all Flixel games. They offer a friendly API to add animation, movement and features for the needs of most games.</p>
 <p>It is pretty common place to extend <code>FlxSprite</code> for your own game&#39;s needs; for example a <code>SpaceShip</code> class may extend <code>FlxSprite</code> but could have additional variables for the game like <code>shieldStrength</code> or <code>shieldPower</code>. When you extend <code>FlxSprite</code> it is important to remember to use <code>super.update()</code> if you override the <code>update</code> method, as you would do for any other <code>FlxBasic</code>.</p>
 <h4 id="loadgraphic-">loadGraphic()</h4>
 <p>This method is the easiest way to use a single image for your FlxSprite. Using the OpenFL asset system defined in the project xml file you simply have to define a path to your image and the compiler will do the rest.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> player = <span class="keyword">new</span> FlxSprite();
-player.loadGraphic(<span class="string">"assets/player.png"</span>);
-add(player);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> player = <span class="hljs-keyword">new</span> FlxSprite();
+player.loadGraphic(<span class="hljs-string">"assets/player.png"</span>);
+add(player);
+</code></pre>
 <h4 id="makegraphic-">makeGraphic()</h4>
 <p>This method is a handy way to make a simple color fill to quickly test a feature or have the basic shape.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> whiteSquare = <span class="keyword">new</span> FlxSprite();
-whiteSquare.makeGraphic(<span class="number">200</span>, <span class="number">200</span>, FlxColor.WHITE);
-add(whiteSquare);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> whiteSquare = <span class="hljs-keyword">new</span> FlxSprite();
+whiteSquare.makeGraphic(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>, FlxColor.WHITE);
+add(whiteSquare);
+</code></pre>
 <h3 id="properties">Properties</h3>
-<h4 id="position-x-y">Position: x, y</h4>
-<pre class="highlight"><code class="actionscript">whiteSquare.x = <span class="number">100</span>;
-whiteSquare.y = <span class="number">300</span>;</code></pre>
-<h4 id="size-width-height">Size: width, height</h4>
+<p>####Position: x, y</p>
+<pre class="highlight"><code class="hljs actionscript">whiteSquare.x = <span class="hljs-number">100</span>;
+whiteSquare.y = <span class="hljs-number">300</span>;
+</code></pre>
+<p>####Size: width, height</p>
 <p>Automatically set in <code>loadGraphic()</code> or <code>makeGraphic()</code>, changing this will only affect the hitbox of this sprite, use <code>scale</code> to change the graphic&#39;s size.</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// get</span>
-<span class="keyword">var</span> getWidth = whiteSquare.width;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// get</span>
+<span class="hljs-keyword">var</span> getWidth = whiteSquare.width;
 
-<span class="comment">// set</span>
-whiteSquare.width = <span class="number">100</span>;
-whiteSquare.height = <span class="number">100</span>;</code></pre>
-<h4 id="scale">Scale</h4>
-<p><strong>(FlxPoint)</strong>
+<span class="hljs-comment">// set</span>
+whiteSquare.width = <span class="hljs-number">100</span>;
+whiteSquare.height = <span class="hljs-number">100</span>;
+</code></pre>
+<p>####Scale
+<strong>(FlxPoint)</strong>
 Change the size of your sprite&#39;s graphic. <em>NOTE: The hitbox is not automatically adjusted, use <code>updateHitbox()</code> for that (or <code>setGraphicSize()</code>).</em></p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// twice as big</span>
-whiteSquare.scale.<span class="keyword">set</span>(<span class="number">2</span>, <span class="number">2</span>);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// twice as big</span>
+whiteSquare.scale.<span class="hljs-keyword">set</span>(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
 
-<span class="comment">// 50%</span>
-whiteSquare.scale.<span class="keyword">set</span>(<span class="number">0.5</span>, <span class="number">0.5</span>);</code></pre>
-<h4 id="offset">Offset</h4>
-<p><strong>(FlxPoint)</strong>
+<span class="hljs-comment">// 50%</span>
+whiteSquare.scale.<span class="hljs-keyword">set</span>(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>);
+</code></pre>
+<p>####Offset
+<strong>(FlxPoint)</strong>
 Controls the position of the sprite&#39;s hitbox. Likely needs to be adjusted after changing a sprite&#39;s width, height or scale.</p>
-<pre class="highlight"><code class="actionscript">whiteSquare.offset.<span class="keyword">set</span>(<span class="number">50</span>, <span class="number">50</span>);</code></pre>
-<h4 id="origin">Origin</h4>
-<p><strong>(FlxPoint)</strong>
+<pre class="highlight"><code class="hljs actionscript">whiteSquare.offset.<span class="hljs-keyword">set</span>(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>);
+</code></pre>
+<p>####Origin
+<strong>(FlxPoint)</strong>
 Rotation axis. <strong>Default: center.</strong></p>
 <p><em>WARNING: If you change this, the visuals and the collisions will likely be pretty out-of-sync if you do any rotation.</em></p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// rotate from top-left corner instead of center</span>
-whiteSquare.origin.<span class="keyword">set</span>(<span class="number">0</span>, <span class="number">0</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// rotate from top-left corner instead of center</span>
+whiteSquare.origin.<span class="hljs-keyword">set</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+</code></pre>
 <h4 id="-kill-">​kill()</h4>
 <p>This method is useful for when you want to hide a sprite from the stage but keep it available to reuse later. For example you may want to respawn an enemy the player has killed.</p>
 <h4 id="destroy-">destroy()</h4>
@@ -285,9 +293,10 @@ whiteSquare.origin.<span class="keyword">set</span>(<span class="number">0</span
 <h3 id="animation">Animation</h3>
 <p>Flixel supports spritesheet animation.</p>
 <p><img src="../images/02_handbook/sprite-animation-example.png" alt=""></p>
-<pre class="highlight"><code class="actionscript">player.loadGraphic(<span class="string">"assets/player.png"</span>, <span class="literal">true</span>, <span class="number">32</span>, <span class="number">36</span>);
-player.animation.add(<span class="string">"walk"</span>, [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>], <span class="number">5</span>, <span class="literal">true</span>);
-player.animation.play(<span class="string">"walk"</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">player.loadGraphic(<span class="hljs-string">"assets/player.png"</span>, <span class="hljs-literal">true</span>, <span class="hljs-number">32</span>, <span class="hljs-number">36</span>);
+player.animation.add(<span class="hljs-string">"walk"</span>, [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>], <span class="hljs-number">5</span>, <span class="hljs-literal">true</span>);
+player.animation.play(<span class="hljs-string">"walk"</span>);
+</code></pre>
 
 
 			<br>
@@ -326,6 +335,10 @@ player.animation.play(<span class="string">"walk"</span>);</code></pre>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

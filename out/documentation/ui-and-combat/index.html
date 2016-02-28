@@ -220,70 +220,74 @@
 			<p>Now we want to show the player what&#39;s going on. So we need to have some kind of HUD on the screen to tell them what their current/max health is, and how many coins they have. For the health icon you can use this image <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/health.png" alt="">, or make your own. Make sure you save this in <code>assets/images</code>.</p>
 <ol>
 <li><p>We&#39;ll start by making a new <code>HUD</code> class which will hold all our HUD elements:</p>
-<pre class="highlight"><code class="actionscript"> <span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-package"><span class="hljs-keyword">package</span>;
 
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxBasic</span>;
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxG</span>;
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">group</span>.<span class="title">FlxTypedGroup</span>;
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">text</span>.<span class="title">FlxText</span>;
- <span class="title">import</span> <span class="title">flixel</span>.<span class="title">util</span>.<span class="title">FlxColor</span>;
- <span class="title">using</span> <span class="title">flixel</span>.<span class="title">util</span>.<span class="title">FlxSpriteUtil</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxBasic</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxG</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxSprite</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">group</span>.<span class="hljs-title">FlxTypedGroup</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">text</span>.<span class="hljs-title">FlxText</span>;
+ <span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">util</span>.<span class="hljs-title">FlxColor</span>;
+ <span class="hljs-title">using</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">util</span>.<span class="hljs-title">FlxSpriteUtil</span>;
 
- <span class="title">class</span> <span class="title">HUD</span> <span class="title">extends</span> <span class="title">FlxTypedGroup</span>&lt;<span class="title">FlxSprite</span>&gt;
+ <span class="hljs-title">class</span> <span class="hljs-title">HUD</span> <span class="hljs-title">extends</span> <span class="hljs-title">FlxTypedGroup</span>&lt;<span class="hljs-title">FlxSprite</span>&gt;
  {</span>
-     <span class="keyword">private</span> <span class="keyword">var</span> _sprBack:FlxSprite;
-     <span class="keyword">private</span> <span class="keyword">var</span> _txtHealth:FlxText;
-     <span class="keyword">private</span> <span class="keyword">var</span> _txtMoney:FlxText;
-     <span class="keyword">private</span> <span class="keyword">var</span> _sprHealth:FlxSprite;
-     <span class="keyword">private</span> <span class="keyword">var</span> _sprMoney:FlxSprite;
+     <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sprBack:FlxSprite;
+     <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _txtHealth:FlxText;
+     <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _txtMoney:FlxText;
+     <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sprHealth:FlxSprite;
+     <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sprMoney:FlxSprite;
 
-     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
-     {</span>
-         <span class="keyword">super</span>();
-         _sprBack = <span class="keyword">new</span> FlxSprite().makeGraphic(FlxG.width, <span class="number">20</span>, FlxColor.BLACK);
-         _sprBack.drawRect(<span class="number">0</span>, <span class="number">19</span>, FlxG.width, <span class="number">1</span>, FlxColor.WHITE);
-         _txtHealth = <span class="keyword">new</span> FlxText(<span class="number">16</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="string">"3 / 3"</span>, <span class="number">8</span>);
-         _txtHealth.setBorderStyle(SHADOW, FlxColor.GRAY, <span class="number">1</span>, <span class="number">1</span>);
-         _txtMoney = <span class="keyword">new</span> FlxText(<span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="string">"0"</span>, <span class="number">8</span>);
-         _txtMoney.setBorderStyle(SHADOW, FlxColor.GRAY, <span class="number">1</span>, <span class="number">1</span>);
-         _sprHealth = <span class="keyword">new</span> FlxSprite(<span class="number">4</span>, _txtHealth.y + (_txtHealth.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.health__png);
-         _sprMoney = <span class="keyword">new</span> FlxSprite(FlxG.width - <span class="number">12</span>, _txtMoney.y + (_txtMoney.height/<span class="number">2</span>)  - <span class="number">4</span>, AssetPaths.coin__png);
+     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">()</span>
+     </span>{
+         <span class="hljs-keyword">super</span>();
+         _sprBack = <span class="hljs-keyword">new</span> FlxSprite().makeGraphic(FlxG.width, <span class="hljs-number">20</span>, FlxColor.BLACK);
+         _sprBack.drawRect(<span class="hljs-number">0</span>, <span class="hljs-number">19</span>, FlxG.width, <span class="hljs-number">1</span>, FlxColor.WHITE);
+         _txtHealth = <span class="hljs-keyword">new</span> FlxText(<span class="hljs-number">16</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"3 / 3"</span>, <span class="hljs-number">8</span>);
+         _txtHealth.setBorderStyle(SHADOW, FlxColor.GRAY, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+         _txtMoney = <span class="hljs-keyword">new</span> FlxText(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"0"</span>, <span class="hljs-number">8</span>);
+         _txtMoney.setBorderStyle(SHADOW, FlxColor.GRAY, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+         _sprHealth = <span class="hljs-keyword">new</span> FlxSprite(<span class="hljs-number">4</span>, _txtHealth.y + (_txtHealth.height/<span class="hljs-number">2</span>)  - <span class="hljs-number">4</span>, AssetPaths.health__png);
+         _sprMoney = <span class="hljs-keyword">new</span> FlxSprite(FlxG.width - <span class="hljs-number">12</span>, _txtMoney.y + (_txtMoney.height/<span class="hljs-number">2</span>)  - <span class="hljs-number">4</span>, AssetPaths.coin__png);
          _txtMoney.alignment = RIGHT;
-         _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="number">4</span>;
+         _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="hljs-number">4</span>;
          add(_sprBack);
          add(_sprHealth);
          add(_sprMoney);
          add(_txtHealth);
          add(_txtMoney);
-         forEach(<span class="function"><span class="keyword">function</span><span class="params">(spr:FlxSprite)</span>
-         {</span>
-             spr.scrollFactor.<span class="keyword">set</span>(<span class="number">0</span>, <span class="number">0</span>);
+         forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(spr:FlxSprite)</span>
+         </span>{
+             spr.scrollFactor.<span class="hljs-keyword">set</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
          });
      }
 
-     <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">updateHUD</span><span class="params">(Health:Int = 0, Money:Int = 0)</span><span class="type">:Void</span>
-     {</span>
-         _txtHealth.text = Std.string(Health) + <span class="string">" / 3"</span>;
+     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateHUD</span><span class="hljs-params">(Health:Int = 0, Money:Int = 0)</span><span class="hljs-type">:Void</span>
+     </span>{
+         _txtHealth.text = Std.string(Health) + <span class="hljs-string">" / 3"</span>;
          _txtMoney.text = Std.string(Money);
-         _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="number">4</span>;
+         _txtMoney.x = _sprMoney.x - _txtMoney.width - <span class="hljs-number">4</span>;
      }
- }</code></pre>
+ }
+</code></pre>
 <p> This class extends <code>FlxTypedGroup&lt;FlxSprite&gt;</code> so that it can hold all of our <code>FlxSprite</code> objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 <code>FlxText</code> objects: 1 for health, and 1 for money, and two <code>FlxSprite</code> objects, for the icons to go next to the <code>FlxText</code> objects. At the end of our constructor, we have a <code>forEach()</code> call - we use this to iterate through each of the items in this group, and it just sets their <code>scrollFactor.x</code> and <code>scrollFactor.y</code> to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.</p>
 <p> Finally, we have a function that we can call from anywhere to tell the <code>HUD</code> what it should display.</p>
 </li>
 <li><p>Now let&#39;s get it to work and have it update whenever we pick up a coin. In your <code>PlayState</code>, add this to the top of the class:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _hud:HUD;
- <span class="keyword">private</span> <span class="keyword">var</span> _money:Int = <span class="number">0</span>;
- <span class="keyword">private</span> <span class="keyword">var</span> _health:Int = <span class="number">3</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _hud:HUD;
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _money:Int = <span class="hljs-number">0</span>;
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _health:Int = <span class="hljs-number">3</span>;
+</code></pre>
 </li>
 <li><p>In <code>create()</code>, before <code>super.create()</code>, add:</p>
-<pre class="highlight"><code class="actionscript"> _hud = <span class="keyword">new</span> HUD();
- add(_hud);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _hud = <span class="hljs-keyword">new</span> HUD();
+ add(_hud);
+</code></pre>
 </li>
 <li><p>Finally, in the <code>playerTouchCoin()</code> function we added earlier, somewhere inside the <code>if</code>-statement, add:</p>
-<pre class="highlight"><code class="actionscript"> _money++;
- _hud.updateHUD(_health, _money);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _money++;
+ _hud.updateHUD(_health, _money);
+</code></pre>
 </li>
 </ol>
 <p>Go ahead and test out your game, and the HUD should update each time you pick up a coin!</p>
@@ -296,25 +300,28 @@
 <li><p>The first component will be our <code>CombatHUD</code> class. This is a pretty big class - it&#39;s going to do most of the heavy lifting with our combat logic. You can see the complete class here:</p>
 <p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/CombatHUD.hx">CombatHUD.hx</a></p>
 <p> Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our <code>Enemy</code> class as well:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">changeEnemy</span><span class="params">(EType:Int)</span><span class="type">:Void</span>
- {</span>
-     <span class="keyword">if</span> (etype != EType)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeEnemy</span><span class="hljs-params">(EType:Int)</span><span class="hljs-type">:Void</span>
+ </span>{
+     <span class="hljs-keyword">if</span> (etype != EType)
      {
          etype = EType;
-         loadGraphic(<span class="string">"assets/images/enemy-"</span> + etype + <span class="string">".png"</span>, <span class="literal">true</span>, <span class="number">16</span>, <span class="number">16</span>);
+         loadGraphic(<span class="hljs-string">"assets/images/enemy-"</span> + etype + <span class="hljs-string">".png"</span>, <span class="hljs-literal">true</span>, <span class="hljs-number">16</span>, <span class="hljs-number">16</span>);
      }
- }</code></pre>
+ }
+</code></pre>
 </li>
 <li><p>Next, we need to get our <code>CombatHUD</code> into our <code>PlayState</code>. Add this to the top of the <code>PlayState</code> class:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _inCombat:Bool = <span class="literal">false</span>;
- <span class="keyword">private</span> <span class="keyword">var</span> _combatHud:CombatHUD;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _inCombat:Bool = <span class="hljs-literal">false</span>;
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _combatHud:CombatHUD;
+</code></pre>
 </li>
 <li><p>Move down to <code>create()</code>, and, after we add the HUD, and before we call <code>super.create()</code>, add:</p>
-<pre class="highlight"><code class="actionscript"> _combatHud = <span class="keyword">new</span> CombatHUD();
- add(_combatHud);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _combatHud = <span class="hljs-keyword">new</span> CombatHUD();
+ add(_combatHud);
+</code></pre>
 </li>
 <li><p>Go down to our <code>update()</code>, and change it so that we&#39;re ONLY checking for collisions and overlaps when we&#39;re not in combat. Everything after the <code>super.update()</code> should look like this:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (!_inCombat)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">if</span> (!_inCombat)
  {
      FlxG.collide(_player, _mWalls);
      FlxG.overlap(_player, _grpCoins, playerTouchCoin);
@@ -322,55 +329,59 @@
      _grpEnemies.forEachAlive(checkEnemyVision);
      FlxG.overlap(_player, _grpEnemies, playerTouchEnemy);
  }
- <span class="keyword">else</span>
+ <span class="hljs-keyword">else</span>
  {
-     <span class="keyword">if</span> (!_combatHud.visible)
+     <span class="hljs-keyword">if</span> (!_combatHud.visible)
      {
          _health = _combatHud.playerHealth;
          _hud.updateHUD(_health, _money);
-         <span class="keyword">if</span> (_combatHud.outcome == VICTORY)
+         <span class="hljs-keyword">if</span> (_combatHud.outcome == VICTORY)
          {
              _combatHud.e.kill();
          }
-         <span class="keyword">else</span>
+         <span class="hljs-keyword">else</span>
          {
              _combatHud.e.flicker();
          }
-         _inCombat = <span class="literal">false</span>;
-         _player.active = <span class="literal">true</span>;
-         _grpEnemies.active = <span class="literal">true</span>;
+         _inCombat = <span class="hljs-literal">false</span>;
+         _player.active = <span class="hljs-literal">true</span>;
+         _grpEnemies.active = <span class="hljs-literal">true</span>;
      }
- }</code></pre>
+ }
+</code></pre>
 <p> So, we&#39;re adding a check to see if the player touches an enemy. If they do, we&#39;ll call a callback to see if we should start combat or not.</p>
 <p> If we&#39;re in combat, we&#39;re simply going to keep checking to see if the combat HUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is <code>VICTORY</code> (one of our four enum values), we will kill the enemy, but if the player fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.</p>
 </li>
 <li><p>Next, lets add the functions to handle the player touching an enemy:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">playerTouchEnemy</span><span class="params">(P:Player, E:Enemy)</span><span class="type">:Void</span>
- {</span>
-     <span class="keyword">if</span> (P.alive &amp;&amp; P.exists &amp;&amp; E.alive &amp;&amp; E.exists &amp;&amp; !E.isFlickering())
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">playerTouchEnemy</span><span class="hljs-params">(P:Player, E:Enemy)</span><span class="hljs-type">:Void</span>
+ </span>{
+     <span class="hljs-keyword">if</span> (P.alive &amp;&amp; P.exists &amp;&amp; E.alive &amp;&amp; E.exists &amp;&amp; !E.isFlickering())
      {
          startCombat(E);
      }
  }
 
- <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">startCombat</span><span class="params">(E:Enemy)</span><span class="type">:Void</span>
- {</span>
-     _inCombat = <span class="literal">true</span>;
-     _player.active = <span class="literal">false</span>;
-     _grpEnemies.active = <span class="literal">false</span>;
+ <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startCombat</span><span class="hljs-params">(E:Enemy)</span><span class="hljs-type">:Void</span>
+ </span>{
+     _inCombat = <span class="hljs-literal">true</span>;
+     _player.active = <span class="hljs-literal">false</span>;
+     _grpEnemies.active = <span class="hljs-literal">false</span>;
      _combatHud.initCombat(_health, E);
- }</code></pre>
+ }
+</code></pre>
 <p> All we&#39;re doing here is verify that both the player and the enemy are alive and exist, as well as that the enemy is not flickering (flickering enemies are those we&#39;ve just fled from). If so, we start combat.</p>
 <p> The <code>startCombat()</code> function simply sets our <code>inCombat</code> flag (so we know not to do collisions), and sets the player and all the enemies to inactive, so they no longer update.</p>
 <p> Finally, we call <code>initCombat()</code> in our <code>CombatHUD</code>, which initializes it and makes it start working.</p>
 </li>
 <li><p>Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.</p>
 <p> In the <code>Enemy</code> class, under <code>update()</code>, add:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (isFlickering())
-     <span class="keyword">return</span>;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">if</span> (isFlickering())
+     <span class="hljs-keyword">return</span>;
+</code></pre>
 <p> At the very top, before doing anything else in that function.</p>
 <p> You will also need to add</p>
-<pre class="highlight"><code class="actionscript"> using flixel.util.FlxSpriteUtil;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> using flixel.util.FlxSpriteUtil;
+</code></pre>
 <p> to the top of the <code>Enemy</code> class.</p>
 </li>
 </ol>
@@ -415,6 +426,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

@@ -237,28 +237,30 @@
 <p>The biggest advantage of desktop targets compared to web and mobile is the power of desktop CPU and GPU processors. More complex scenes, physics and number of objects rendered can give a larger creative freedom in the games you create.</p>
 <p>Rendering in HaxeFlixel is done through the drawTiles API. OpenGL textures are used with the GPU to render Flixel sprites. This native C++ code and use of the GPU outperforms runtimes such as the Flash Player and Adobe AIR in most circumstances substantially.</p>
 <h3 id="conditionals">Conditionals</h3>
-<pre class="highlight"><code class="vala"><span class="preprocessor">#if cpp</span>
-<span class="comment">//your desktop code</span>
-<span class="preprocessor">#end</span>
+<pre class="highlight"><code class="hljs haxe"><span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> cpp</span>
+<span class="hljs-comment">//your desktop code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
 
-<span class="preprocessor">#if desktop</span>
-<span class="comment">//your desktop code</span>
-<span class="preprocessor">#end</span></code></pre>
-<h3 id="project-xml-settings">Project XML Settings</h3>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> desktop</span>
+<span class="hljs-comment">//your desktop code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
+</code></pre><h3 id="project-xml-settings">Project XML Settings</h3>
 <p>Desktop platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">window</span> <span class="attribute">width</span>=<span class="value">"0"</span> <span class="attribute">height</span>=<span class="value">"0"</span> <span class="attribute">background</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">fps</span>=<span class="value">"60"</span> /&gt;</span></code></pre>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">window</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">background</span>=<span class="hljs-value">"#FFFFFF"</span> <span class="hljs-attribute">fps</span>=<span class="hljs-value">"60"</span> /&gt;</span>
+</code></pre>
 <p>OpenFL also exposes the following specific settings for the desktop target:</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">window</span> <span class="attribute">hardware</span>=<span class="value">"true"</span> <span class="attribute">allow-shaders</span>=<span class="value">"true"</span> <span class="attribute">require-shaders</span>=<span class="value">"true"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">window</span> <span class="attribute">vsync</span>=<span class="value">"true"</span> <span class="attribute">antialiasing</span>=<span class="value">"4"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"portrait"</span> /&gt;</span> || <span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"landscape"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span>/&gt;</span></code></pre>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">window</span> <span class="hljs-attribute">hardware</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">allow-shaders</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">require-shaders</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"cpp"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">window</span> <span class="hljs-attribute">vsync</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">antialiasing</span>=<span class="hljs-value">"4"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"cpp"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">window</span> <span class="hljs-attribute">orientation</span>=<span class="hljs-value">"portrait"</span> /&gt;</span> || <span class="hljs-tag">&lt;<span class="hljs-title">window</span> <span class="hljs-attribute">orientation</span>=<span class="hljs-value">"landscape"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"cpp"</span>/&gt;</span>
+</code></pre>
 <h3 id="compile-commands">Compile Commands</h3>
 <p>Sublime Text, Flash Develop and IntelliJ IDEA support CPP desktop compilation through their GUI.</p>
 <h4 id="command-line">Command Line</h4>
 <p>The basic command to compile and test a native desktop target:</p>
-<pre class="highlight"><code class="haskell"><span class="title">lime</span> test windows
-<span class="title">lime</span> test mac
-<span class="title">lime</span> test linux -<span class="number">64</span></code></pre>
-<p>Run this command from the root folder of your project, the default project.xml will be used automatically. Using the test command will automatically launch the application created.</p>
+<pre class="highlight"><code class="hljs x86asm">lime <span class="hljs-keyword">test</span> windows
+lime <span class="hljs-keyword">test</span> mac
+lime <span class="hljs-keyword">test</span> linux -<span class="hljs-number">64</span>
+</code></pre><p>Run this command from the root folder of your project, the default project.xml will be used automatically. Using the test command will automatically launch the application created.</p>
 
 
 			<br>
@@ -297,6 +299,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

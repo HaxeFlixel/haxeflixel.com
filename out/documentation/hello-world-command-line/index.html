@@ -179,39 +179,43 @@
 <p>You first need to install and setup flixel-tools - please refer to <a href="/documentation/flixel-tools/">this guide</a> for doing so.</p>
 <h2 id="create-a-new-haxeflixel-project-template">Create a new HaxeFlixel Project Template</h2>
 <p>HaxeFlixel requires a basic structure of files for any project that you can automatically create with the <code>template</code> command (<code>tpl</code> for short).</p>
-<pre class="highlight"><code class="bash">flixel tpl -n <span class="string">"HelloWorld"</span></code></pre>
+<pre class="highlight"><code class="hljs bash">flixel tpl -n <span class="hljs-string">"HelloWorld"</span>
+</code></pre>
 <p>You will now see a new folder named &quot;HelloWorld&quot; with all the files for your project being created automatically.</p>
 <h2 id="add-the-hello-world-flxtext">Add the &quot;Hello World&quot; FlxText</h2>
 <p>Adding the text is as simple as opening the <code>MenuState.hx</code> file in the newly created source folder.</p>
 <p>The file will look like this:</p>
-<pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-package"><span class="hljs-keyword">package</span>;
 
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxG</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">text</span>.<span class="title">FlxText</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">ui</span>.<span class="title">FlxButton</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">math</span>.<span class="title">FlxMath</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxG</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxSprite</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxState</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">text</span>.<span class="hljs-title">FlxText</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">ui</span>.<span class="hljs-title">FlxButton</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">math</span>.<span class="hljs-title">FlxMath</span>;
 
-<span class="title">class</span> <span class="title">MenuState</span> <span class="title">extends</span> <span class="title">FlxState</span>
+<span class="hljs-title">class</span> <span class="hljs-title">MenuState</span> <span class="hljs-title">extends</span> <span class="hljs-title">FlxState</span>
 {</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        super.create();
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.create();
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-    {</span>
-        super.update(elapsed);
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">super</span>.update(elapsed);
     }
-}</code></pre>
+}
+</code></pre>
 <p>All you need to do is add the following in the <code>create()</code> function:</p>
-<pre class="highlight"><code class="actionscript">add(<span class="keyword">new</span> FlxText(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">"Hello World!"</span>));</code></pre>
+<pre class="highlight"><code class="hljs actionscript">add(<span class="hljs-keyword">new</span> FlxText(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Hello World!"</span>));
+</code></pre>
 <p>Save the file and return to your command line window. Now we can compile the project.</p>
 <p>Without running the <a href="/documentation/install-openfl">lime setup</a> commands you can compile to Flash and Neko out of the box.</p>
 <p>Test your project from the following commands:</p>
-<pre class="highlight"><code class="bash">lime test flash
-lime test neko</code></pre>
+<pre class="highlight"><code class="hljs bash">lime test flash
+lime test neko
+</code></pre>
 <p>If you struggled through any part of this tutorial, ask a question on our <a href="/forum">forum</a> :)</p>
 <p><img src="../images/00_getting_started/hello-world.jpg" style="width:100%;" /></p>
 
@@ -252,6 +256,10 @@ lime test neko</code></pre>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

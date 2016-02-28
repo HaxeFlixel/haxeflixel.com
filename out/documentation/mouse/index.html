@@ -239,64 +239,69 @@
 <p>On non-mobile targets, the mouse starts out by being visible by default. You can set the visibility via <code>FlxG.mouse.visible</code>.</p>
 <h2 id="left-mouse-button">Left mouse button</h2>
 <p>The most common use of <code>FlxG.mouse</code> is checking the state of the left mouse button.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-{</span>
-    <span class="keyword">if</span> (FlxG.mouse.pressed)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+</span>{
+    <span class="hljs-keyword">if</span> (FlxG.mouse.pressed)
     {
-        <span class="comment">// The left mouse button is currently pressed</span>
+        <span class="hljs-comment">// The left mouse button is currently pressed</span>
     }
 
-    <span class="keyword">if</span> (FlxG.mouse.justPressed)
+    <span class="hljs-keyword">if</span> (FlxG.mouse.justPressed)
     {
-        <span class="comment">// The left mouse button has just been pressed</span>
+        <span class="hljs-comment">// The left mouse button has just been pressed</span>
     }
 
-    <span class="keyword">if</span> (FlxG.mouse.justReleased)
+    <span class="hljs-keyword">if</span> (FlxG.mouse.justReleased)
     {
-        <span class="comment">// The left mouse button has just been released</span>
+        <span class="hljs-comment">// The left mouse button has just been released</span>
     }
 
-    super.update(elapsed);
-}</code></pre>
+    <span class="hljs-keyword">super</span>.update(elapsed);
+}
+</code></pre>
 <p>Exactly the same logic can be used for the middle and right mouse buttons. The properties are postfixed by <code>Middle</code> / <code>Right</code>, e.g. <code>FlxG.mouse.pressedRight</code>.</p>
 <h2 id="cursor">Cursor</h2>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.util.FlxColor;</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.util.FlxColor;</span>
 using flixel.util.FlxSpriteUtil;
 
-<span class="comment">// Create a white circle to use as a cursor graphic</span>
-<span class="keyword">var</span> sprite = <span class="keyword">new</span> FlxSprite();
-sprite.makeGraphic(<span class="number">15</span>, <span class="number">15</span>, FlxColor.TRANSPARENT);
+<span class="hljs-comment">// Create a white circle to use as a cursor graphic</span>
+<span class="hljs-keyword">var</span> sprite = <span class="hljs-keyword">new</span> FlxSprite();
+sprite.makeGraphic(<span class="hljs-number">15</span>, <span class="hljs-number">15</span>, FlxColor.TRANSPARENT);
 sprite.drawCircle();
 
-<span class="comment">// Load the sprite's graphic to the cursor</span>
+<span class="hljs-comment">// Load the sprite's graphic to the cursor</span>
 FlxG.mouse.load(sprite.pixels);
 
-<span class="comment">// Use the default mouse cursor again</span>
+<span class="hljs-comment">// Use the default mouse cursor again</span>
 FlxG.mouse.unload();
 
-<span class="comment">// To use the system cursor:</span>
-FlxG.mouse.useSystemCursor = <span class="literal">true</span>;</code></pre>
+<span class="hljs-comment">// To use the system cursor:</span>
+FlxG.mouse.useSystemCursor = <span class="hljs-literal">true</span>;
+</code></pre>
 <h2 id="positional-data">Positional data</h2>
 <p>There are two kinds of position data available:</p>
 <ul>
 <li><h4 id="world-position-absolute-">World position (absolute)</h4>
-<pre class="highlight"><code class="actionscript">  FlxG.mouse.x
+<pre class="highlight"><code class="hljs actionscript">  FlxG.mouse.x
   FlxG.mouse.y
-  FlxG.mouse.getWorldPosition(); <span class="comment">// returns x / y as a FlxPoint</span></code></pre>
+  FlxG.mouse.getWorldPosition(); <span class="hljs-comment">// returns x / y as a FlxPoint</span>
+</code></pre>
 </li>
 <li><h4 id="screen-position-relative-">Screen position (relative)</h4>
-<pre class="highlight"><code class="actionscript">  FlxG.mouse.screenX
+<pre class="highlight"><code class="hljs actionscript">  FlxG.mouse.screenX
   FlxG.mouse.screenY
-  FlxG.mouse.getScreenPosition(); <span class="comment">// returns screenX / screenY as a FlxPoint</span></code></pre>
+  FlxG.mouse.getScreenPosition(); <span class="hljs-comment">// returns screenX / screenY as a FlxPoint</span>
+</code></pre>
 </li>
 </ul>
 <h2 id="mouse-wheel">Mouse wheel</h2>
 <p>The current &quot;delta&quot; value of mouse wheel is provided in a simple <code>Int</code> property. If the wheel has just been scrolled up, it will have a positive value and vice versa. If it wasn&#39;t scrolled during the current frame, it&#39;s 0.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (FlxG.mouse.wheel != <span class="number">0</span>)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">if</span> (FlxG.mouse.wheel != <span class="hljs-number">0</span>)
 {
-    <span class="comment">// Mouse wheel logic goes here, for example zooming in / out:</span>
-    FlxG.camera.zoom += (FlxG.mouse.wheel / <span class="number">10</span>);
-}</code></pre>
+    <span class="hljs-comment">// Mouse wheel logic goes here, for example zooming in / out:</span>
+    FlxG.camera.zoom += (FlxG.mouse.wheel / <span class="hljs-number">10</span>);
+}
+</code></pre>
 <h2 id="flash-native-cursor-api">Flash native cursor API</h2>
 <p>AS3-Flixel used a simple <code>Sprite</code> to display a bitmap graphic that is synchronized with the mouse position every frame. This approach is not optimal, as it causes what is commonly referred to as &quot;mouse lag&quot; - the cursor sprite lags behind the actual mouse position. Depending on the game&#39;s framerate and the player&#39;s mouse speed, this can be very noticable and thus have a negative impact on the overall experience.</p>
 <p>HaxeFlixel leverages the <a href="http://www.adobe.com/devnet/flashplayer/articles/native-mouse-cursors.html">flash native cursor API</a> for better mouse cursor performance. However, there are certain restrictions to native cursors:</p>
@@ -308,8 +313,9 @@ FlxG.mouse.useSystemCursor = <span class="literal">true</span>;</code></pre>
 <p>Because of this, using the native cursor API is completely optional, see the section on the <code>FLX_NO_NATIVE_CURSOR</code> conditional.</p>
 <h3 id="custom-native-cursors">Custom native cursors</h3>
 <p>You can use <code>FlxG.mouse.load()</code> for native cursors as usual, but if you want more fine-grained control, you can use the following functions:</p>
-<pre class="highlight"><code class="actionscript">FlxG.mouse.setSimpleNativeCursorData(<span class="string">"custom"</span>, BitmapData);
-FlxG.mouse.registerNativeCursor(<span class="string">"custom"</span>, MouseCursorData);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.mouse.setSimpleNativeCursorData(<span class="hljs-string">"custom"</span>, BitmapData);
+FlxG.mouse.registerNativeCursor(<span class="hljs-string">"custom"</span>, MouseCursorData);
+</code></pre>
 <p>You can find more information on the <code>MouseCursorData</code> object <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/ui/MouseCursorData.html">here</a>.</p>
 <p>Use <code>FlxG.mouse.setNativeCursor()</code> to switch to an already registered native cursor.</p>
 <h2 id="conditionals">Conditionals</h2>
@@ -367,6 +373,10 @@ FlxG.mouse.registerNativeCursor(<span class="string">"custom"</span>, MouseCurso
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

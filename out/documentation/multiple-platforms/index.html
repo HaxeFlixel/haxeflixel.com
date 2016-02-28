@@ -223,165 +223,184 @@
 <p>Let&#39;s add a button to the <code>OptionsState</code>:</p>
 <ol>
 <li><p>When we initialize and interact with our button, we only want to do it on <code>desktop</code> platforms. So, at the top of the class, add:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
- <span class="keyword">private</span> <span class="keyword">var</span> _btnFullScreen:FlxButton;
- #end</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> desktop
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _btnFullScreen:FlxButton;
+ #end
+</code></pre>
 </li>
 <li><p>In <code>create()</code>, somewhere after we add our <code>_barVolume</code> object, add:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
- _btnFullScreen = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, _barVolume.y + _barVolume.height + <span class="number">8</span>, FlxG.fullscreen ? <span class="string">"FULLSCREEN"</span> : <span class="string">"WINDOWED"</span>, clickFullscreen);
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> desktop
+ _btnFullScreen = <span class="hljs-keyword">new</span> FlxButton(<span class="hljs-number">0</span>, _barVolume.y + _barVolume.height + <span class="hljs-number">8</span>, FlxG.fullscreen ? <span class="hljs-string">"FULLSCREEN"</span> : <span class="hljs-string">"WINDOWED"</span>, clickFullscreen);
  _btnFullScreen.screenCenter(X);
  add(_btnFullScreen);
- #end</code></pre>
+ #end
+</code></pre>
 </li>
 <li><p>Then we need to add our callback function for that button:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
- <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">clickFullscreen</span><span class="params">()</span><span class="type">:Void</span>
- {</span>
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> desktop
+ <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickFullscreen</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+ </span>{
      FlxG.fullscreen = !FlxG.fullscreen;
-     _btnFullScreen.text = FlxG.fullscreen ? <span class="string">"FULLSCREEN"</span> : <span class="string">"WINDOWED"</span>;
+     _btnFullScreen.text = FlxG.fullscreen ? <span class="hljs-string">"FULLSCREEN"</span> : <span class="hljs-string">"WINDOWED"</span>;
      _save.data.fullscreen = FlxG.fullscreen;
  }
- #end</code></pre>
+ #end
+</code></pre>
 <p> Yes, we wrap the entire function in our conditional - if we&#39;re not building for <code>desktop</code>, this function will not exist. You&#39;ll also notice that we are saving the value of <code>FlxG.fullscreen</code> - this will be used to &#39;remember&#39; the game&#39;s screen state when they next launch the game.</p>
 </li>
 <li><p>Next, let&#39;s change around our <code>Main.hx</code> so that when the game starts it will launch into whatever state the game was last in - fullscreen or not. We need to move things around a little, since we need to find out if we&#39;re going into fullscreen or not BEFORE we call <code>new FlxGame()</code>, but we need to set the volume AFTER, so <code>new()</code> should look like this:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> startFullscreen:Bool = <span class="literal">false</span>;
- <span class="keyword">var</span> _save:FlxSave = <span class="keyword">new</span> FlxSave();
- _save.bind(<span class="string">"flixel-tutorial"</span>);
- #<span class="keyword">if</span> desktop
- <span class="keyword">if</span> (_save.data.fullscreen != <span class="literal">null</span>)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">var</span> startFullscreen:Bool = <span class="hljs-literal">false</span>;
+ <span class="hljs-keyword">var</span> _save:FlxSave = <span class="hljs-keyword">new</span> FlxSave();
+ _save.bind(<span class="hljs-string">"flixel-tutorial"</span>);
+ #<span class="hljs-keyword">if</span> desktop
+ <span class="hljs-keyword">if</span> (_save.data.fullscreen != <span class="hljs-literal">null</span>)
  {
      startFullscreen = _save.data.fullscreen;
  }
  #end
 
- <span class="keyword">super</span>();
- addChild(<span class="keyword">new</span> FlxGame(<span class="number">320</span>, <span class="number">240</span>, MenuState, <span class="number">1</span>, <span class="number">60</span>, <span class="number">60</span>, <span class="literal">false</span>, startFullscreen));
+ <span class="hljs-keyword">super</span>();
+ addChild(<span class="hljs-keyword">new</span> FlxGame(<span class="hljs-number">320</span>, <span class="hljs-number">240</span>, MenuState, <span class="hljs-number">1</span>, <span class="hljs-number">60</span>, <span class="hljs-number">60</span>, <span class="hljs-literal">false</span>, startFullscreen));
 
- <span class="keyword">if</span> (_save.data.volume != <span class="literal">null</span>)
+ <span class="hljs-keyword">if</span> (_save.data.volume != <span class="hljs-literal">null</span>)
  {
      FlxG.sound.volume = _save.data.volume;
  }
- _save.close();</code></pre>
+ _save.close();
+</code></pre>
 </li>
 <li><p>Next, we need to give players a way to exit the game if they&#39;re in fullscreen mode - since they won&#39;t easily have access to the close-button anymore.
 We do that by adding a new button to the <code>MenuState</code>:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
- <span class="keyword">private</span> <span class="keyword">var</span> _btnExit:FlxButton;
- #end</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> desktop
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _btnExit:FlxButton;
+ #end
+</code></pre>
 <p> And in <code>create()</code>:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
- _btnExit = <span class="keyword">new</span> FlxButton(FlxG.width - <span class="number">28</span>, <span class="number">8</span>, <span class="string">"X"</span>, clickExit);
- _btnExit.loadGraphic(AssetPaths.button__png, <span class="literal">true</span>, <span class="number">20</span>, <span class="number">20</span>);
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> desktop
+ _btnExit = <span class="hljs-keyword">new</span> FlxButton(FlxG.width - <span class="hljs-number">28</span>, <span class="hljs-number">8</span>, <span class="hljs-string">"X"</span>, clickExit);
+ _btnExit.loadGraphic(AssetPaths.button__png, <span class="hljs-literal">true</span>, <span class="hljs-number">20</span>, <span class="hljs-number">20</span>);
  add(_btnExit);
- #end</code></pre>
+ #end
+</code></pre>
 <p> Then our callback function just looks like:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> desktop
- <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">clickExit</span><span class="params">()</span><span class="type">:Void</span>
- {</span>
-     System.exit(<span class="number">0</span>);
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> desktop
+ <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickExit</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+ </span>{
+     System.exit(<span class="hljs-number">0</span>);
  }
- #end</code></pre>
+ #end
+</code></pre>
 </li>
 </ol>
 <p>There you go! Now try it out on both Flash and Windows targets and notice the differences - you can&#39;t go fullscreen in Flash, and you can in Windows. You also get the button to exit the game on the MenuState while on Windows.</p>
 <p>To make our game work with Android, we have to make a few more changes. First, we need to make sure that our <code>Project.xml</code> is setup correctly so that our settings are right for Android.</p>
 <ol>
 <li><p>In your app tag, at the very top of the file, add this attribute:</p>
-<pre class="highlight"><code class="xml"> package="com.haxeflixel.tutorial"</code></pre>
+<pre class="highlight"><code class="hljs xml"> package="com.haxeflixel.tutorial"
+</code></pre>
 <p> This will give your app a package name to be used on the Android device - it&#39;s best to be as unique as possible.</p>
 </li>
 <li><p>Next, we need to change our assets around a little bit. Right now, we have <code>&lt;assets path=&quot;assets&quot; /&gt;</code> which just says &quot;load all the assets!&quot;. We want to filter them out a little bit and only load the ones that we actually NEED. While we&#39;re here, we need to make a new version of our music. We need both an <code>.mp3</code> and an <code>.ogg</code> version of our music - Flash is only compatible with <code>.mp3</code> files, however, it is the only platform that can use them on (you can read more the reasons why <a href="http://www.openfl.org/blog/2013/09/18/to-mp3-or-not-to-mp3/">here</a>) - besides, <code>.ogg</code> is generally a better format to use. You can find free tools on the internet, such as <a href="http://audacity.sourceforge.net/">Audacity</a> to convert your audio file formats if you&#39;re not sure how to do that.</p>
 <p> Once you have both versions of your music stored in <code>assets/music</code>, replace your <code>assets</code> tag with:</p>
-<pre class="highlight"><code class="xml"> <span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/data"</span> <span class="attribute">include</span>=<span class="value">"*.oel"</span> /&gt;</span>
- <span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/images"</span> <span class="attribute">include</span>=<span class="value">"*.png"</span> /&gt;</span>
- <span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/sounds"</span> <span class="attribute">include</span>=<span class="value">"*.wav"</span> /&gt;</span>
- <span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/music"</span> <span class="attribute">include</span>=<span class="value">"*.mp3"</span> <span class="attribute">if</span>=<span class="value">"flash"</span> /&gt;</span>
- <span class="tag">&lt;<span class="title">assets</span> <span class="attribute">path</span>=<span class="value">"assets/music"</span> <span class="attribute">include</span>=<span class="value">"*.ogg"</span> <span class="attribute">unless</span>=<span class="value">"flash"</span> /&gt;</span></code></pre>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets/data"</span> <span class="hljs-attribute">include</span>=<span class="hljs-value">"*.oel"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets/images"</span> <span class="hljs-attribute">include</span>=<span class="hljs-value">"*.png"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets/sounds"</span> <span class="hljs-attribute">include</span>=<span class="hljs-value">"*.wav"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets/music"</span> <span class="hljs-attribute">include</span>=<span class="hljs-value">"*.mp3"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"flash"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets/music"</span> <span class="hljs-attribute">include</span>=<span class="hljs-value">"*.ogg"</span> <span class="hljs-attribute">unless</span>=<span class="hljs-value">"flash"</span> /&gt;</span>
+</code></pre>
 <p> This will simply load the assets from each of our specified folders, grabbing only the files that match the wildcards we&#39;ve specified. For the music, we load <code>.mp3</code> files if we&#39;re building for Flash, and <code>.ogg</code> if we&#39;re building for anything else.</p>
 </li>
 <li><p>Next, we have some definitions that are mostly commented out. Generally, mobile targets won&#39;t have access to a keyboard or mouse, and desktop targets won&#39;t have access to touch functionality (although the touch input API does work on Flash). To make sure our game can handle these platforms properly, we will set some flags based on what target we&#39;re building for.</p>
 <p> Look for a section that looks like this and uncomment it (or just add this to your <code>Project.xml</code>):</p>
-<pre class="highlight"><code class="xml"> <span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_MOUSE"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
- <span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_KEYBOARD"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
- <span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_TOUCH"</span> <span class="attribute">if</span>=<span class="value">"desktop"</span> /&gt;</span></code></pre>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">haxedef</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"FLX_NO_MOUSE"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"mobile"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">haxedef</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"FLX_NO_KEYBOARD"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"mobile"</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">haxedef</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"FLX_NO_TOUCH"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"desktop"</span> /&gt;</span>
+</code></pre>
 </li>
 <li><p>Now that we have different versions of our music, we need to make sure we play the right version. In <code>Main.hx</code>, replace the line where we start playing our music with:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> flash
- FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, <span class="number">1</span>, <span class="literal">true</span>);
- #<span class="keyword">else</span>
- FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__ogg, <span class="number">1</span>, <span class="literal">true</span>);
- #end</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> flash
+ FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, <span class="hljs-number">1</span>, <span class="hljs-literal">true</span>);
+ #<span class="hljs-keyword">else</span>
+ FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__ogg, <span class="hljs-number">1</span>, <span class="hljs-literal">true</span>);
+ #end
+</code></pre>
 </li>
 <li><p>You might be wondering how we&#39;re going to allow the user to move around in our game on a device without the keyboard or mouse. Well, HaxeFlixel comes with a <code>FlxVirtualPad</code> class which we can use to accept touch input from the user and translate it into movement. Head over to <code>PlayState.hx</code>:</p>
 <p> Define:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> mobile
- <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">var</span> virtualPad:FlxVirtualPad;
- #end</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> mobile
+ <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> virtualPad:FlxVirtualPad;
+ #end
+</code></pre>
 <p> Create and add (in create):</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> mobile
- virtualPad = <span class="keyword">new</span> FlxVirtualPad(FULL, NONE);
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> mobile
+ virtualPad = <span class="hljs-keyword">new</span> FlxVirtualPad(FULL, NONE);
  add(virtualPad);
- #end</code></pre>
+ #end
+</code></pre>
 </li>
 <li><p>Since the player can&#39;t move while they&#39;re in combat, we&#39;re going to remove the distraction of our virtual pad while combat is happening. In the startCombat function, add:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> mobile
- virtualPad.visible = <span class="literal">false</span>;
- #end</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> mobile
+ virtualPad.visible = <span class="hljs-literal">false</span>;
+ #end
+</code></pre>
 <p> And, to make it reappear, in update, somewhere around where we set <code>_inCombat</code> to false, add:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> mobile
- virtualPad.visible = <span class="literal">true</span>;
- #end</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> mobile
+ virtualPad.visible = <span class="hljs-literal">true</span>;
+ #end
+</code></pre>
 </li>
 <li><p>The only place where we actually check for button presses is in our <code>Player</code> class, in the <code>movement()</code> function. We currently have a section of code that is setting different flags to true based on keyboard input - but since the keyboard might be disabled on some platforms, we need to change that to look like this:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> !FLX_NO_KEYBOARD
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> !FLX_NO_KEYBOARD
  _up = FlxG.keys.anyPressed([UP, W]);
  _down = FlxG.keys.anyPressed([DOWN, S]);
  _left = FlxG.keys.anyPressed([LEFT, A]);
  _right = FlxG.keys.anyPressed([RIGHT, D]);
- #end</code></pre>
+ #end
+</code></pre>
 </li>
 <li><p>Right after that logic, we&#39;ll add our logic that checks each of the buttons of our virtual pad to see which ones are pressed:</p>
-<pre class="highlight"><code class="actionscript"> #<span class="keyword">if</span> mobile
- <span class="keyword">var</span> virtualPad = PlayState.virtualPad;
+<pre class="highlight"><code class="hljs actionscript"> #<span class="hljs-keyword">if</span> mobile
+ <span class="hljs-keyword">var</span> virtualPad = PlayState.virtualPad;
  _up = _up || virtualPad.buttonUp.pressed;
  _down = _down || virtualPad.buttonDown.pressed;
  _left  = _left || virtualPad.buttonLeft.pressed;
  _right = _right || virtualPad.buttonRight.pressed;
- #end</code></pre>
+ #end
+</code></pre>
 <p> Because of the way we&#39;ve structured our movement logic, we don&#39;t need to make any other changes! Getting <code>_up</code> set to true via keyboard or our virtual pad will do the same thing.</p>
 </li>
 <li><p>Things are a little different for our combat screen. We could setup the virtual pad to work with our combat menu, but that would feel a little clunky, given that the user has the power to tap on whatever they want on the screen. Instead, we&#39;re going to utilize touches to figure out what the player wants to do.</p>
 <p>This means, in our update function, we need to wrap everything that&#39;s currently inside our <code>if (!_wait)</code> statement with:</p>
-<pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> !FLX_NO_KEYBOARD</code></pre>
+<pre class="highlight"><code class="hljs actionscript">#<span class="hljs-keyword">if</span> !FLX_NO_KEYBOARD
+</code></pre>
 </li>
 <li><p>At the end of our <code>if (!_wait)</code> statement, before the last <code>}</code> we need to add our touch check:</p>
-<pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> !FLX_NO_TOUCH
-<span class="keyword">var</span> didSelect:Bool = <span class="literal">false</span>;
-<span class="keyword">for</span> (touch <span class="keyword">in</span> FlxG.touches.justReleased())
+<pre class="highlight"><code class="hljs actionscript">#<span class="hljs-keyword">if</span> !FLX_NO_TOUCH
+<span class="hljs-keyword">var</span> didSelect:Bool = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">for</span> (touch <span class="hljs-keyword">in</span> FlxG.touches.justReleased())
 {
-    <span class="keyword">if</span> (!didSelect)
+    <span class="hljs-keyword">if</span> (!didSelect)
     {
-        <span class="keyword">if</span> (touch.overlaps(_choices[<span class="number">0</span>]))
+        <span class="hljs-keyword">if</span> (touch.overlaps(_choices[<span class="hljs-number">0</span>]))
         {
-            didSelect = <span class="literal">true</span>;
+            didSelect = <span class="hljs-literal">true</span>;
             _sndSelect.play();
-            _selected = <span class="number">0</span>;
+            _selected = <span class="hljs-number">0</span>;
             movePointer();
             makeChoice();
         }
-        <span class="keyword">else</span> <span class="keyword">if</span> (touch.overlaps(_choices[<span class="number">1</span>]))
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (touch.overlaps(_choices[<span class="hljs-number">1</span>]))
         {
-            didSelect = <span class="literal">true</span>;
+            didSelect = <span class="hljs-literal">true</span>;
             _sndSelect.play();
-            _selected = <span class="number">1</span>;
+            _selected = <span class="hljs-number">1</span>;
             movePointer();
             makeChoice();
         }
     }
 }
-#end</code></pre>
+#end
+</code></pre>
 <p>What this does is gets a list of all the touches that were just released this update and checks them one at a time to see if any were on top of one of our choices texts. If one of them is, we play our select sound, and act on the selection - ignoring any other touches that might have happened this update.</p>
 </li>
 </ol>
@@ -425,6 +444,10 @@ We do that by adding a new button to the <code>MenuState</code>:</p>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

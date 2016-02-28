@@ -240,44 +240,46 @@
 <p>An object of type <code>FlxKeyList</code> contains a <code>Bool</code> for each key on the keyboard. The values are kept as an array internally, but you can easily refer to them by using special instance variables named after the key. For a full list of all available names look at the <code>FlxKeyList</code> documentation <a href="http://api.haxeflixel.com/flixel/input/keyboard/FlxKeyList.html">here</a>.</p>
 <p><code>FlxKeyboard</code> uses the three key lists <code>pressed</code>, <code>justPressed</code> and <code>justReleased</code> to keep track of the keys. <code>pressed</code> contains <code>true</code> for all keys that are currently pressed. <code>justPressed</code> only contains <code>true</code> for all keys that have been pressed since the last frame.</p>
 <p>Here&#39;s an example of how to put it all together:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-{</span>
-    <span class="keyword">if</span> (FlxG.keys.pressed.UP)
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+</span>{
+    <span class="hljs-keyword">if</span> (FlxG.keys.pressed.UP)
     {
-        <span class="comment">// The up arrow key is currently pressed</span>
-        <span class="comment">// This code is executed every frame, while the key is pressed</span>
+        <span class="hljs-comment">// The up arrow key is currently pressed</span>
+        <span class="hljs-comment">// This code is executed every frame, while the key is pressed</span>
     }
 
-    <span class="keyword">if</span> (FlxG.keys.justPressed.LEFT)
+    <span class="hljs-keyword">if</span> (FlxG.keys.justPressed.LEFT)
     {
-        <span class="comment">// The left arrow key has just been pressed</span>
-        <span class="comment">// This code is only execute once, on the frame immediately after the key has been pressed</span>
+        <span class="hljs-comment">// The left arrow key has just been pressed</span>
+        <span class="hljs-comment">// This code is only execute once, on the frame immediately after the key has been pressed</span>
     }
 
-    <span class="keyword">if</span> (FlxG.keys.justReleased.LEFT)
+    <span class="hljs-keyword">if</span> (FlxG.keys.justReleased.LEFT)
     {
-        <span class="comment">// The left arrow key has just been released</span>
-        <span class="comment">// This code is only execute once, on the frame immediately after the key has been released</span>
+        <span class="hljs-comment">// The left arrow key has just been released</span>
+        <span class="hljs-comment">// This code is only execute once, on the frame immediately after the key has been released</span>
     }
 
-    super.update(elapsed);
-}</code></pre>
+    <span class="hljs-keyword">super</span>.update(elapsed);
+}
+</code></pre>
 <h2 id="checking-multiple-keys">Checking multiple keys</h2>
 <p>You can check multiple keys at once using the <code>anyPressed()</code>, <code>anyJustPressed()</code> and <code>anyJustReleased()</code> methods of <code>FlxKeyboard</code>. This allows to bind multiple keys to one action easily, for example controlling the player with either WASD or the arrow keys. These methods take an <code>Array</code> of key names (as <code>String</code>s) and return true if any of the given keys has the desired property.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-{</span>
-    <span class="keyword">if</span> (FlxG.keys.anyPressed([LEFT, A]))
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+</span>{
+    <span class="hljs-keyword">if</span> (FlxG.keys.anyPressed([LEFT, A]))
     {
-        <span class="comment">// Move left</span>
+        <span class="hljs-comment">// Move left</span>
     }
 
-    <span class="keyword">if</span> (FlxG.keys.anyPressed([RIGHT, D]))
+    <span class="hljs-keyword">if</span> (FlxG.keys.anyPressed([RIGHT, D]))
     {
-        <span class="comment">// Move right</span>
+        <span class="hljs-comment">// Move right</span>
     }
 
-    super.update(elapsed);
-}</code></pre>
+    <span class="hljs-keyword">super</span>.update(elapsed);
+}
+</code></pre>
 <h2 id="conditionals">Conditionals</h2>
 <p>For general information on conditionals, please refer to <a href="http://haxeflixel.com/documentation/compiler-conditionals/">this page</a>.</p>
 <ul>
@@ -323,6 +325,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

@@ -258,27 +258,32 @@
 <h3 id="log-styles">Log styles</h3>
 <p>It&#39;s possible to customize things like text color, size, style or add a prefix by using log styles. <code>FlxG.log.warn()</code>, <code>error()</code> and <code>notice()</code> use pre-defined log styles.</p>
 <p>Here&#39;s an example of how you could differentiate each trace by the player from others by adding a <code>[Player]</code> prefix and printing it in green:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">var</span> playerAction = <span class="keyword">new</span> LogStyle(<span class="string">"[Player]"</span>, <span class="string">"00FF40"</span>);
-FlxG.log.advanced(<span class="string">" Shoot"</span>, playerAction);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">var</span> playerAction = <span class="hljs-keyword">new</span> LogStyle(<span class="hljs-string">"[Player]"</span>, <span class="hljs-string">"00FF40"</span>);
+FlxG.log.advanced(<span class="hljs-string">" Shoot"</span>, playerAction);
+</code></pre>
 <h2 id="the-watch-window">The Watch Window</h2>
 <p>It&#39;s very common to use <code>trace()</code>-calls to output the value of certain variables for debugging. However, this approach doesn&#39;t scale very well - at 60 fps, tracing the values of multiple variables results in a flood of messages. Breakpoints-debugging is great to inspect a game&#39;s internal state, but doesn&#39;t help when interrupting the execution is not an option, for example when debugging input logic.</p>
 <p>This is where the watch window comes into play. It displays the values of variables using reflection. For example, to keep track of the player&#39;s position:</p>
-<pre class="highlight"><code class="actionscript">FlxG.watch.add(_player, <span class="string">"x"</span>);
-FlxG.watch.add(_player, <span class="string">"y"</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.watch.add(_player, <span class="hljs-string">"x"</span>);
+FlxG.watch.add(_player, <span class="hljs-string">"y"</span>);
+</code></pre>
 <p>The display string does not have to be the same as the variable&#39;s name, &quot;numEnemies&quot; is much more descriptive than &quot;length&quot; in this example:</p>
-<pre class="highlight"><code class="actionscript">FlxG.watch.add(_enemies, <span class="string">"length"</span>, <span class="string">"numEnemies"</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.watch.add(_enemies, <span class="hljs-string">"length"</span>, <span class="hljs-string">"numEnemies"</span>);
+</code></pre>
 <p><img src="../images/02_handbook/debugger/watch-window.png" alt=""></p>
 <p>For static variables, you pass the class instead of an object:</p>
-<pre class="highlight"><code class="actionscript">FlxG.watch.add(FlxG, <span class="string">"height"</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.watch.add(FlxG, <span class="hljs-string">"height"</span>);
+</code></pre>
 <p>It&#39;s also possible to edit the displayed values by clicking on them, entering a new value in the text field and pressing enter to confirm. This even works with <code>FlxPoint</code> objects.</p>
 <p>To remove a watch entry again, simply call <code>FlxG.watch.remove(object, variableName)</code>.</p>
 <h3 id="quick-watches">Quick watches</h3>
 <p>Quick watches are a lightweight alternative to a regular watch entry. They don&#39;t require a variable, they simply store a value for a <code>String</code> name. The following example stores the result of <code>FlxG.keys.anyPressed([&quot;UP&quot;, &quot;W&quot;])</code> under the name <code>&quot;Up key pressed&quot;</code> - this is updated every frame since it happens in <code>update()</code>.</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">()</span><span class="type">:Void</span>
-{</span>
-    super.update();
-    FlxG.watch.addQuick(<span class="string">"Up key pressed"</span>, FlxG.keys.anyPressed([<span class="string">"UP"</span>, <span class="string">"W"</span>]));
-}</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+</span>{
+    <span class="hljs-keyword">super</span>.update();
+    FlxG.watch.addQuick(<span class="hljs-string">"Up key pressed"</span>, FlxG.keys.anyPressed([<span class="hljs-string">"UP"</span>, <span class="hljs-string">"W"</span>]));
+}
+</code></pre>
 <p>To remove a quick watch entry, call <code>FlxG.watch.removeQuick(name)</code>.
 Quick watch values can not be modified.</p>
 <h3 id="mouse-watch">Mouse watch</h3>
@@ -308,22 +313,25 @@ Quick watch values can not be modified.</p>
 <p>The console stores executed commands (use the up and down keys to cycle through them). This history is persistent across executions of your game (but not across different target platforms).</p>
 <h3 id="addings-custom-commands">Addings custom commands</h3>
 <p>Functions can also be registered to the console directly as commands via <code>FlxG.console.registerFunction()</code>. Here&#39;s an example with a function called <code>&quot;spawnEnemy&quot;</code>, spawning a new enemy at the current mouse position in the Mode demo.</p>
-<pre class="highlight"><code class="actionscript"><span class="comment">// in PlayState#create()</span>
-FlxG.console.addCommand(<span class="string">"spawnEnemy"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-    <span class="keyword">var</span> mousePos = FlxG.mouse.getWorldPosition();
-    <span class="keyword">var</span> enemy = _enemies.recycle(Enemy);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// in PlayState#create()</span>
+FlxG.console.addCommand(<span class="hljs-string">"spawnEnemy"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> mousePos = FlxG.mouse.getWorldPosition();
+    <span class="hljs-keyword">var</span> enemy = _enemies.recycle(Enemy);
     enemy.init(Std.int(mousePos.x), Std.int(mousePos.y), _enemyBullets, _bigGibs, _player);
-});</code></pre>
+});
+</code></pre>
 <h2 id="tracker-windows">Tracker Windows</h2>
 <p>Tracker windows are a convenient way to inspect the most important properties of a class / object. Each tracker window is basically a watch window instance. It&#39;s the only window type that can be closed.</p>
 <p>A <em>tracker profile</em> defines the properties that should be watched for a specific class. Let&#39;s take a look at the pre-defined tracker profile for <code>FlxSprite</code>:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">new</span> TrackerProfile(FlxSprite, [<span class="string">"frameWidth"</span>, <span class="string">"frameHeight"</span>, <span class="string">"alpha"</span>, <span class="string">"origin"</span>, <span class="string">"offset"</span>, <span class="string">"scale"</span>], [FlxObject])</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">new</span> TrackerProfile(FlxSprite, [<span class="hljs-string">"frameWidth"</span>, <span class="hljs-string">"frameHeight"</span>, <span class="hljs-string">"alpha"</span>, <span class="hljs-string">"origin"</span>, <span class="hljs-string">"offset"</span>, <span class="hljs-string">"scale"</span>], [FlxObject])
+</code></pre>
 <p>The first argument determines the class the profile belongs to, the second is an <code>Array&lt;String&gt;</code> containing the property names. The third argument is a list of extensions - in this case just <code>FlxObject</code>. This means that the properties defined in the tracker profile of <code>FlxObject</code> will be added to tracker windows for <code>FlxSprite</code> as well. This works recursively - <code>FlxObject</code> &quot;extends&quot; the <code>FlxBasic</code> tracker profile, so any properties of that profile will be added as well. This is why <code>FlxG.debugger.track(_player)</code> in Mode&#39;s <code>PlayState#create()</code> creates a window with a longer list of properties than you&#39;d initially expect from the <code>FlxSprite</code> profile:</p>
 <p><img src="../images/02_handbook/debugger/track-player.png" alt=""></p>
 <p>Alternatively, you can use the console to create tracker windows at runtime:</p>
 <p><code>track(FlxG.state._player)</code></p>
 <p>The real power of tracker windows comes with the ability to define custom profiles, for example for the <code>Player</code> class in Mode:</p>
-<pre class="highlight"><code class="actionscript">FlxG.debugger.addTrackerProfile(<span class="keyword">new</span> TrackerProfile(Player, [<span class="string">"isReadyToJump"</span>, <span class="string">"_shootCounter"</span>, <span class="string">"_jumpPower"</span>], [FlxBasic]));</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FlxG.debugger.addTrackerProfile(<span class="hljs-keyword">new</span> TrackerProfile(Player, [<span class="hljs-string">"isReadyToJump"</span>, <span class="hljs-string">"_shootCounter"</span>, <span class="hljs-string">"_jumpPower"</span>], [FlxBasic]));
+</code></pre>
 <p>(Note: calling <code>addTrackerProfile()</code> causes a crash on the latest haxelib release due to a bug. As a workaround, you can call <code>FlxG.debugger.track(null);</code> beforehand).</p>
 <p><img src="../images/02_handbook/debugger/track-player-custom.png" alt=""></p>
 <h2 id="the-vcr">The VCR</h2>
@@ -378,6 +386,10 @@ FlxG.console.addCommand(<span class="string">"spawnEnemy"</span>, <span class="f
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

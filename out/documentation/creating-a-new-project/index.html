@@ -220,7 +220,8 @@
 			<p>Now we want to make sure that everything is installed properly - and we want to set up the framework for our game. So we&#39;re going to make a new project, open it with FlashDevelop and test that it builds and runs.</p>
 <ol>
 <li><p>In the command prompt, enter:</p>
-<pre class="highlight"><code class="bash"> flixel tpl -n <span class="string">"FlixelTut"</span></code></pre>
+<pre class="highlight"><code class="hljs bash"> flixel tpl -n <span class="hljs-string">"FlixelTut"</span>
+</code></pre>
 <p> This will create a new Flixel project using the blank template in the directory <code>FlixelTut</code> (as well as naming the project <code>FlixelTut</code>).</p>
 </li>
 <li><p>Outside of the Command Prompt, launch FlashDevelop. Select <code>File &gt; Open</code> and browse to where your <code>FlixelTut</code> directory was created. It should look something like this:</p>
@@ -240,7 +241,8 @@
  For now, we JUST want to see that the whole thing works, so, we&#39;re going to add a simple <code>FlxText</code> object to this state.</p>
 </li>
 <li><p>In <code>create()</code>, right before the line that says <code>super.create();</code>, add a new line and type the following:</p>
-<pre class="highlight"><code class="actionscript"> add(<span class="keyword">new</span> FlxText(<span class="number">10</span>, <span class="number">10</span>, <span class="number">100</span>, <span class="string">"Hello, World!"</span>));</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> add(<span class="hljs-keyword">new</span> FlxText(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-string">"Hello, World!"</span>));
+</code></pre>
 <p> Then save your changes.</p>
 </li>
 <li><p>The Moment of Truth! Go up to the toolbar in FlashDevelop and choose &#39;Debug&#39; and &#39;Flash&#39;:</p>
@@ -290,6 +292,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

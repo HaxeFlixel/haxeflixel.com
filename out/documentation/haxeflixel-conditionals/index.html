@@ -235,26 +235,27 @@
 
 			<h3 id="what-is-conditional-compilation-">What is &quot;conditional compilation&quot;?</h3>
 <p><a href="http://haxe.org/manual/lf-condition-compilation.html">Conditional compilation flags</a> are a powerful feature Haxe offers to optimize your code by only compiling certain parts of it. For example, the following pseudo-code optimizes inputs based on the target platform:</p>
-<pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> (web || desktop)
+<pre class="highlight"><code class="hljs actionscript">#<span class="hljs-keyword">if</span> (web || desktop)
 keyboardControls();
 mouseControls();
 #end
 
-#<span class="keyword">if</span> desktop
+#<span class="hljs-keyword">if</span> desktop
 gamepadControls();
 #end
 
-#<span class="keyword">if</span> mobile
+#<span class="hljs-keyword">if</span> mobile
 touchControls();
-#end</code></pre>
+#end
+</code></pre>
 <p>Basically, this means that for web or desktop targets, we want to have mouse and keyboard controls. In case of a mobile target, we want touch input. Like you can see, these so-called defines can also be nested: We only  want gamepad controls to be available on non-web targets (line 4). So, all in all, these defines can be used largely like traditional if-statements, except their syntax varies slightly.</p>
 <p>For more information on what defines are available, by default check out the <a href="http://www.openfl.org/archive/developer/documentation/conditional-compilation/">OpenFL documentation</a> on this topic.</p>
 <h3 id="haxeflixel-specific-defines">HaxeFlixel specific defines</h3>
 <p>If you had a look at the OpenFL documentation, you might have found out that you can also set your own defines. When working with OpenFL, it&#39;s convenient to do so in the Project XML file.
 HaxeFlixel makes use of this feature and allows you to optimize your game using the following defines (a list of them can also be found in the <a href="https://github.com/HaxeFlixel/flixel-templates/blob/master/default/Project.xml.tpl">template</a>):</p>
-<pre class="highlight"><code class="xml">// Example xml node to enable to Flixel record system.
-<span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_RECORD"</span> /&gt;</span></code></pre>
-<h4 id="flx_record">FLX_RECORD</h4>
+<pre class="highlight"><code class="hljs livecodeserver">// Example xml node <span class="hljs-built_in">to</span> enable <span class="hljs-built_in">to</span> Flixel record <span class="hljs-keyword">system</span>.
+&lt;haxedef name=<span class="hljs-string">"FLX_RECORD"</span> /&gt;
+</code></pre><h4 id="flx_record">FLX_RECORD</h4>
 <p>Flixel features a powerful recording / playback feature which captures mouse and keyboard input. Since it&#39;s used rarely, we decided that it makes sense to turn it off by default. Setting this define however will enable it again.</p>
 <h4 id="flx_mouse_advanced">FLX_MOUSE_ADVANCED</h4>
 <p>This define is required for middle and right mouse button input. On the flash target, a minimum flash player version of 11.2 is required. Listening to right click input will also disable the right-click menu of the flash player. There is currently no HTML5 support for this feature.</p>
@@ -312,6 +313,10 @@ HaxeFlixel makes use of this feature and allows you to optimize your game using 
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

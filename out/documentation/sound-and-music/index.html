@@ -245,90 +245,113 @@
 <p>Now let&#39;s change our code to use these sounds:</p>
 <ol>
 <li><p>First, open up <code>Main.hx</code>. Since we want our music to start as soon as the game starts, and loop continuously no matter what happens, we&#39;re going to make it start playing outside of our states when we setup our game. In the setupGame function, after our volume-setting code, add:</p>
-<pre class="highlight"><code class="actionscript"> FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, <span class="number">1</span>, <span class="literal">true</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, <span class="hljs-number">1</span>, <span class="hljs-literal">true</span>);
+</code></pre>
 <p> Be sure to change the file that you want to play, if your music file is named something different.</p>
 </li>
 </ol>
 <p>If you try your game out right now, it should play music!</p>
 <ol>
 <li><p>Next, we want to make our buttons all make a sound when they get clicked. This is simple, we just tell the button&#39;s <code>onUp</code> to load our sound. In the <code>MenuState</code>&#39;s <code>create()</code>, after you initialize the play-button, add this:</p>
-<pre class="highlight"><code class="actionscript"> _btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
+</code></pre>
 </li>
 <li><p>Now, you can do the same for the options button (changing <code>_btnPlay</code> to <code>_btnOptions</code>), and then for each of the other buttons in our game: four of them in <code>OptionsState</code>, and one in <code>GameOverState</code>.</p>
 </li>
 <li><p>Next, let&#39;s give our player some footsteps. We don&#39;t want to create and destroy a new sound object every time we want to play the same sound, so we will create a <code>FlxSound</code> object to be used over and over. At the top of the <code>Player</code> class, add:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _sndStep:FlxSound;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndStep:FlxSound;
+</code></pre>
 </li>
 <li><p>Then, we need to load the footstep sound somewhere in the constructor:</p>
-<pre class="highlight"><code class="actionscript"> _sndStep = FlxG.sound.load(AssetPaths.step__wav);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _sndStep = FlxG.sound.load(AssetPaths.step__wav);
+</code></pre>
 </li>
 <li><p>Now go to our <code>movement()</code> function, and, after we check if the player is moving (<code>if ((velocity.x != 0 || velocity.y != 0) &amp;&amp; touching == FlxObject.NONE)</code>), add:</p>
-<pre class="highlight"><code class="actionscript"> _sndStep.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _sndStep.play();
+</code></pre>
 <p> A neat little property of <code>FlxSound</code> objects is that if you ever tell one to play, if it&#39;s already playing (and you haven&#39;t set the <code>forceRestart</code> flag), it won&#39;t play again. This means we can easily call play on our sound every frame, and it will sound as if the sound is just being looped - for as long as the player is moving, but will finish if the player has stopped moving, and not start up again while they are stationary.</p>
 </li>
 <li><p>Now, let&#39;s give enemies their own footsteps, too. The difference is, instead of just always playing the step sound at full volume, we&#39;re going to change the volume based on the proximity of the enemy to the player. This will be easier than it sounds. First, add our sound variable to the top of Enemy.hx:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _sndStep:FlxSound;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndStep:FlxSound;
+</code></pre>
 </li>
 <li><p>And then, similarly to how we setup the <code>Player</code> class, add this to our constructor:</p>
-<pre class="highlight"><code class="actionscript"> _sndStep = FlxG.sound.load(AssetPaths.step__wav,<span class="number">.4</span>);
- _sndStep.proximity(x,y,FlxG.camera.target, FlxG.width *<span class="number">.6</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _sndStep = FlxG.sound.load(AssetPaths.step__wav,<span class="hljs-number">.4</span>);
+ _sndStep.proximity(x,y,FlxG.camera.target, FlxG.width *<span class="hljs-number">.6</span>);
+</code></pre>
 <p> You&#39;ll notice that we are setting the volume to <code>.4</code> (40%) this is because there will be plenty of enemies on the map, and there footsteps can get kind of annoying and loud (besides, they&#39;re probably walking around the dungeon barefoot, right?).</p>
 <p> We then setup our proximity for our sounds, setting it&#39;s position  to the <code>x</code> and <code>y</code> position of this enemy, and telling it to target the <code>FlxG.camera.target</code> object (which happens to be our player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen&#39;s width - so we should be able to hear enemies that are just off the screen, and all the enemies&#39; footsteps will sound louder/softer based on their distance from the camera target.</p>
 </li>
 <li><p>Next, in the enemy&#39;s <code>update()</code>, after <code>super.update()</code>, we&#39;re going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> ((velocity.x != <span class="number">0</span> || velocity.y != <span class="number">0</span>) &amp;&amp; touching == FlxObject.NONE)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">if</span> ((velocity.x != <span class="hljs-number">0</span> || velocity.y != <span class="hljs-number">0</span>) &amp;&amp; touching == FlxObject.NONE)
  {
      _sndStep.setPosition(x + _halfWidth, y + height);
      _sndStep.play();
- }</code></pre>
+ }
+</code></pre>
 </li>
 <li><p>Next, let&#39;s head over to <code>PlayState</code>. We really only need one sound to be in the <code>PlayState</code> itself, and that&#39;s the one for picking up a coin. While you could put this into the <code>Coin</code> class, because there could be a lot of coins loaded at once, and because we really can&#39;t pick up more than one coin at a time (so the sounds don&#39;t need to overlap), putting a single coin sound effect in our <code>PlayState</code> saves us a bit of overhead.</p>
 <p> So, just like our other sounds, initialize the variable:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _sndCoin:FlxSound;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndCoin:FlxSound;
+</code></pre>
 <p> Load the sound in <code>create()</code>:</p>
-<pre class="highlight"><code class="actionscript"> _sndCoin = FlxG.sound.load(AssetPaths.coin__wav);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _sndCoin = FlxG.sound.load(AssetPaths.coin__wav);
+</code></pre>
 <p> And in <code>playerTouchCoin()</code>, inside the <code>ìf</code>-statement, add:</p>
-<pre class="highlight"><code class="actionscript"> _sndCoin.play(<span class="literal">true</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> _sndCoin.play(<span class="hljs-literal">true</span>);
+</code></pre>
 <p> This time we will use <code>forceRestart</code> so that if the player happens to pickup several coins close to each other the sound will keep up with them.</p>
 </li>
 <li><p>All of the rest of our sounds, because they deal with combat, will be in our <code>CombatHUD</code> class.</p>
 <p>To initialize them:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> _sndFled:FlxSound;
-<span class="keyword">private</span> <span class="keyword">var</span> _sndHurt:FlxSound;
-<span class="keyword">private</span> <span class="keyword">var</span> _sndLose:FlxSound;
-<span class="keyword">private</span> <span class="keyword">var</span> _sndMiss:FlxSound;
-<span class="keyword">private</span> <span class="keyword">var</span> _sndSelect:FlxSound;
-<span class="keyword">private</span> <span class="keyword">var</span> _sndWin:FlxSound;
-<span class="keyword">private</span> <span class="keyword">var</span> _sndCombat:FlxSound;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndFled:FlxSound;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndHurt:FlxSound;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndLose:FlxSound;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndMiss:FlxSound;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndSelect:FlxSound;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndWin:FlxSound;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _sndCombat:FlxSound;
+</code></pre>
 <p>To load them:</p>
-<pre class="highlight"><code class="actionscript">_sndFled = FlxG.sound.load(AssetPaths.fled__wav);
+<pre class="highlight"><code class="hljs actionscript">_sndFled = FlxG.sound.load(AssetPaths.fled__wav);
 _sndHurt = FlxG.sound.load(AssetPaths.hurt__wav);
 _sndLose = FlxG.sound.load(AssetPaths.lose__wav);
 _sndMiss = FlxG.sound.load(AssetPaths.miss__wav);
 _sndSelect = FlxG.sound.load(AssetPaths.select__wav);
 _sndWin = FlxG.sound.load(AssetPaths.win__wav);
-_sndCombat = FlxG.sound.load(AssetPaths.combat__wav);</code></pre>
+_sndCombat = FlxG.sound.load(AssetPaths.combat__wav);
+</code></pre>
 <p>You can probably figure out where they all go, but I&#39;ll go through them anyway.</p>
 <p>In initCombat, add:</p>
-<pre class="highlight"><code class="actionscript">_sndCombat.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndCombat.play();
+</code></pre>
 <p>In finishFadeIn, add:</p>
-<pre class="highlight"><code class="actionscript">_sndSelect.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndSelect.play();
+</code></pre>
 <p>In <code>update()</code>, inside each of our three if statements related to button presses (<code>if (_fire), else if (_up), else if (_down)</code>) add:</p>
-<pre class="highlight"><code class="actionscript">sndSelect.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">sndSelect.play();
+</code></pre>
 <p>In makeChoice, in our logic for a &#39;hit&#39; (after <code>_damages[1].text = &quot;1&quot;;</code>), add:</p>
-<pre class="highlight"><code class="actionscript">_sndHurt.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndHurt.play();
+</code></pre>
 <p>and in our miss logic, add:</p>
-<pre class="highlight"><code class="actionscript">_sndMiss.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndMiss.play();
+</code></pre>
 <p>Further down, if the player escapes (after <code>outcome = ESCAPE</code>), add:</p>
-<pre class="highlight"><code class="actionscript">_sndFled.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndFled.play();
+</code></pre>
 <p>In <code>enemyAttack()</code>, if the enemy hits, add:</p>
-<pre class="highlight"><code class="actionscript">_sndHurt.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndHurt.play();
+</code></pre>
 <p>and if they miss add:</p>
-<pre class="highlight"><code class="actionscript">_sndMiss.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndMiss.play();
+</code></pre>
 <p>Finally, in <code>doneDamageOut()</code>, after <code>outcome = DEFEAT</code>, add:</p>
-<pre class="highlight"><code class="actionscript">_sndLose.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndLose.play();
+</code></pre>
 <p>and after <code>outcome = VICTORY</code>, add:</p>
-<pre class="highlight"><code class="actionscript">_sndWin.play();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">_sndWin.play();
+</code></pre>
 </li>
 </ol>
 <p>And that&#39;s it for sound! Play your game now, and you should hear all of the effects we&#39;ve added (make sure your volume is up high enough, too!) It&#39;s starting to look like a real game! Next time, we&#39;ll get it working on multiple platforms!</p>
@@ -370,6 +393,10 @@ _sndCombat = FlxG.sound.load(AssetPaths.combat__wav);</code></pre>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

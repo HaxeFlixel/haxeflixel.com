@@ -248,37 +248,38 @@
 <li>PS Vita</li>
 </ul>
 <p>Here&#39;s some example logic for basic detection of Xbox 360 controller input:</p>
-<pre class="highlight"><code class="actionscript"><span class="preprocessor"><span class="keyword">import</span> flixel.FlxG;</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.FlxState;</span>
-<span class="preprocessor"><span class="keyword">import</span> flixel.input.gamepad.FlxGamepad;</span>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.FlxG;</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.FlxState;</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.input.gamepad.FlxGamepad;</span>
 
-<span class="class"><span class="keyword">class</span> <span class="title">PlayState</span> <span class="keyword">extends</span> <span class="title">FlxState</span>
-{</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span> 
-    {</span>
-        super.update(elapsed);
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FlxState</span>
+</span>{
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span> 
+    </span>{
+        <span class="hljs-keyword">super</span>.update(elapsed);
 
-        <span class="comment">// Important: can be null if there's no active gamepad yet!</span>
+        <span class="hljs-comment">// Important: can be null if there's no active gamepad yet!</span>
         gamepad = FlxG.gamepads.lastActive;
-        <span class="keyword">if</span> (gamepad != <span class="literal">null</span>)
+        <span class="hljs-keyword">if</span> (gamepad != <span class="hljs-literal">null</span>)
         {
             updateGamepadInput(gamepad);
         }
     }
 
-    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">updateGamepadInput</span><span class="params">(gamepad:FlxGamepad)</span><span class="type">:Void</span>
-    {</span>
-        <span class="keyword">if</span> (gamepad.pressed.A)
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateGamepadInput</span><span class="hljs-params">(gamepad:FlxGamepad)</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (gamepad.pressed.A)
         {
-            trace(<span class="string">"The A button of the Xbox 360 controller is pressed."</span>);
+            trace(<span class="hljs-string">"The A button of the Xbox 360 controller is pressed."</span>);
         }
 
-        <span class="keyword">if</span> (gamepad.analog.justMoved.LEFT_STICK_X)
+        <span class="hljs-keyword">if</span> (gamepad.analog.justMoved.LEFT_STICK_X)
         {
-            trace(<span class="string">"The x axis of the left analog stick of the Xbox 360 controller has been moved."</span>);
+            trace(<span class="hljs-string">"The x axis of the left analog stick of the Xbox 360 controller has been moved."</span>);
         }
     }
-}</code></pre>
+}
+</code></pre>
 <p>If you want to support a controller that HaxeFlixel doesn&#39;t provide the IDs for, the following methods of <code>FlxGamePad</code> methods should be helpful for working out what those IDs are:</p>
 <ul>
 <li><code>firstPressedButtonID()</code></li>
@@ -286,7 +287,8 @@
 <li><code>firstJustReleasedButtonID()</code></li>
 </ul>
 <h3 id="conditional-to-remove-gamepads">Conditional to remove gamepads</h3>
-<pre class="highlight"><code class="actionscript">FLX_NO_GAMEPAD</code></pre>
+<pre class="highlight"><code class="hljs actionscript">FLX_NO_GAMEPAD
+</code></pre>
 <p>HaxeFlixel includes a <a href="http://haxeflixel.com/documentation/haxeflixel-conditionals/">conditional</a> to omit using gamepads for optimization purposes if you are developing for a platform such as mobile, or your game just isn&#39;t designed for them.</p>
 
 
@@ -326,6 +328,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

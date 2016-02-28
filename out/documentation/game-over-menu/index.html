@@ -222,56 +222,60 @@
 <li><p>The first thing we want to do is stop our <code>CombatHUD</code> from stopping once the player has been defeated. So in <code>doneResultsIn()</code>, remove the <code>if (outcome != DEFEAT)</code> statement.</p>
 </li>
 <li><p>Now, in <code>PlayState</code>, we need to add some flags to see if we&#39;re ending the game, and if the player has &#39;won&#39; or not. So, add:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _ending:Bool;
- <span class="keyword">private</span> <span class="keyword">var</span> _won:Bool;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _ending:Bool;
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _won:Bool;
+</code></pre>
 <p> To the top of the class.</p>
 </li>
 <li><p>Next, in <code>update()</code>, right under <code>super.update(elapsed)</code> add:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (_ending)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">if</span> (_ending)
  {
-     <span class="keyword">return</span>;
- }</code></pre>
+     <span class="hljs-keyword">return</span>;
+ }
+</code></pre>
 <p> We don&#39;t want to allow anything else to go on if we&#39;re ending the game and getting ready to switch states.</p>
 </li>
 <li><p>Next, still in <code>update()</code>, we&#39;re going to change our logic to this:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">if</span> (!_combatHud.visible)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">if</span> (!_combatHud.visible)
  {
      _health = _combatHud.playerHealth;
      _hud.updateHUD(_health, _money);
-     <span class="keyword">if</span> (_combatHud.outcome == DEFEAT)
+     <span class="hljs-keyword">if</span> (_combatHud.outcome == DEFEAT)
      {
-         _ending = <span class="literal">true</span>;
-         FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">false</span>, doneFadeOut);
+         _ending = <span class="hljs-literal">true</span>;
+         FlxG.camera.fade(FlxColor.BLACK, <span class="hljs-number">.33</span>, <span class="hljs-literal">false</span>, doneFadeOut);
      }
-     <span class="keyword">else</span>
+     <span class="hljs-keyword">else</span>
      {
-         <span class="keyword">if</span> (_combatHud.outcome == VICTORY)
+         <span class="hljs-keyword">if</span> (_combatHud.outcome == VICTORY)
          {
              _combatHud.e.kill();
-             <span class="keyword">if</span> (_combatHud.e.etype == <span class="number">1</span>)
+             <span class="hljs-keyword">if</span> (_combatHud.e.etype == <span class="hljs-number">1</span>)
              {
-                 _won = <span class="literal">true</span>;
-                 _ending = <span class="literal">true</span>;
-                 FlxG.camera.fade(FlxColor.BLACK, <span class="number">.33</span>, <span class="literal">false</span>, doneFadeOut);
+                 _won = <span class="hljs-literal">true</span>;
+                 _ending = <span class="hljs-literal">true</span>;
+                 FlxG.camera.fade(FlxColor.BLACK, <span class="hljs-number">.33</span>, <span class="hljs-literal">false</span>, doneFadeOut);
              }
          }
-         <span class="keyword">else</span> 
+         <span class="hljs-keyword">else</span> 
          {
              _combatHud.e.flicker();
          }
-         _inCombat = <span class="literal">false</span>;
-         _player.active = <span class="literal">true</span>;
-         _grpEnemies.active = <span class="literal">true</span>;
+         _inCombat = <span class="hljs-literal">false</span>;
+         _player.active = <span class="hljs-literal">true</span>;
+         _grpEnemies.active = <span class="hljs-literal">true</span>;
      }
- }</code></pre>
+ }
+</code></pre>
 <p> This will now check to see if the outcome was <code>DEFEAT</code>, and if it was, it will set our ending flag to true, and then tell the camera to start fading out - calling <code>doneFadeOut()</code> when it&#39;s done.</p>
 <p> Similarly, if the outcome was <code>VICTORY</code>, and the enemy that was just defeated was type 1 (the boss), we set our <code>won</code> flag to <code>true</code>, and also start fading out.</p>
 </li>
 <li><p>When the camera is done fading to black, we call this function, which will switch the state to our <code>GameOverState</code> (which you&#39;ll make in a second), passing it if the player won or not, and how much money they have.</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">doneFadeOut</span><span class="params">()</span><span class="type">:Void</span> 
- {</span>
-     FlxG.switchState(<span class="keyword">new</span> GameOverState(_won, _money));
- }</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doneFadeOut</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span> 
+ </span>{
+     FlxG.switchState(<span class="hljs-keyword">new</span> GameOverState(_won, _money));
+ }
+</code></pre>
 <p>We need to add the <code>GameOverState</code>. This is going to be a pretty simple <code>FlxState</code> where we show a message - either &quot;Game Over&quot; or &quot;You Win!&quot;, depending on our won flag, and the final score for this player. We will also use flixel&#39;s save/load functionality to compare the previous highscores, and, if the new score is higher, replace the saved highscore, and show the highscore on the screen.</p>
 <p> Finally, we have a button to take the player back to the main menu.</p>
 <p> Here is the code for that State:</p>
@@ -282,42 +286,46 @@
 <p><a href="../images/01_tutorial/0021.png"></a></p>
 <ol>
 <li><p>Let&#39;s add a title and an options-button to the <code>MenuState</code>:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="keyword">var</span> _txtTitle:FlxText;
- <span class="keyword">private</span> <span class="keyword">var</span> _btnOptions:FlxButton;</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _txtTitle:FlxText;
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _btnOptions:FlxButton;
+</code></pre>
 </li>
 <li><p>Then, in <code>create()</code>, we&#39;ll add them to the state (and move the play-button as well):</p>
-<pre class="highlight"><code class="actionscript"> _txtTitle = <span class="keyword">new</span> FlxText(<span class="number">20</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">"HaxeFlixel\nTutorial\nGame"</span>, <span class="number">22</span>);
+<pre class="highlight"><code class="hljs actionscript"> _txtTitle = <span class="hljs-keyword">new</span> FlxText(<span class="hljs-number">20</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"HaxeFlixel\nTutorial\nGame"</span>, <span class="hljs-number">22</span>);
  _txtTitle.alignment = CENTER;
  _txtTitle.screenCenter(X);
  add(_txtTitle);
 
- _btnPlay = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Play"</span>, clickPlay);
- _btnPlay.x = (FlxG.width / <span class="number">2</span>) - _btnPlay.width - <span class="number">10</span>;
- _btnPlay.y = FlxG.height - _btnPlay.height - <span class="number">10</span>;
+ _btnPlay = <span class="hljs-keyword">new</span> FlxButton(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Play"</span>, clickPlay);
+ _btnPlay.x = (FlxG.width / <span class="hljs-number">2</span>) - _btnPlay.width - <span class="hljs-number">10</span>;
+ _btnPlay.y = FlxG.height - _btnPlay.height - <span class="hljs-number">10</span>;
  add(_btnPlay);
 
- _btnOptions = <span class="keyword">new</span> FlxButton(<span class="number">0</span>, <span class="number">0</span>, <span class="string">"Options"</span>, clickOptions);
- _btnOptions.x = (FlxG.width / <span class="number">2</span>) + <span class="number">10</span>;
- _btnOptions.y = FlxG.height - _btnOptions.height - <span class="number">10</span>;
- add(_btnOptions);</code></pre>
+ _btnOptions = <span class="hljs-keyword">new</span> FlxButton(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"Options"</span>, clickOptions);
+ _btnOptions.x = (FlxG.width / <span class="hljs-number">2</span>) + <span class="hljs-number">10</span>;
+ _btnOptions.y = FlxG.height - _btnOptions.height - <span class="hljs-number">10</span>;
+ add(_btnOptions);
+</code></pre>
 </li>
 <li><p>Add the function that gets called when the options-button is clicked:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">clickOptions</span><span class="params">()</span><span class="type">:Void</span>
- {</span>
-     FlxG.switchState(<span class="keyword">new</span> OptionsState());
- }</code></pre>
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickOptions</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+ </span>{
+     FlxG.switchState(<span class="hljs-keyword">new</span> OptionsState());
+ }
+</code></pre>
 </li>
 <li><p>The <code>OptionsState</code> that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (highscores, etc), as well as a simple <code>FlxBar</code> to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will &#39;remember&#39; what volume it was last set to (I know there&#39;s no sound…. yet ;))</p>
 <p> The code for this State looks like this:</p>
 <p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx">OptionsState.hx</a></p>
 <p> Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, go to <code>Main.hx</code>, and add this after the <code>addChild()</code> call:</p>
-<pre class="highlight"><code class="actionscript"> <span class="keyword">var</span> _save:FlxSave = <span class="keyword">new</span> FlxSave();
- _save.bind(<span class="string">"flixel-tutorial"</span>);
- <span class="keyword">if</span> (_save.data.volume != <span class="literal">null</span>)
+<pre class="highlight"><code class="hljs actionscript"> <span class="hljs-keyword">var</span> _save:FlxSave = <span class="hljs-keyword">new</span> FlxSave();
+ _save.bind(<span class="hljs-string">"flixel-tutorial"</span>);
+ <span class="hljs-keyword">if</span> (_save.data.volume != <span class="hljs-literal">null</span>)
  {
      FlxG.sound.volume = _save.data.volume;
  }
- _save.close();</code></pre>
+ _save.close();
+</code></pre>
 <p> Pretty simple: it makes a new <code>FlxSave</code> object, binds it to our <code>&quot;flixel-tutorial&quot;</code> and then checks if there is a volume value stored in it, and if there is, sets our game&#39;s volume to match, and then closes the save.</p>
 </li>
 </ol>
@@ -362,6 +370,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

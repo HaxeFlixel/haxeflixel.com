@@ -248,73 +248,75 @@
 <p>This is the place where you remove sprites etc you have added to your state. Everything you remove still exists so you can add it back later. If you&#39;re not going to use the removed object again you might want to consider removing it from memory by setting it as null for example.</p>
 <h4 id="update-elapsed-float-">update(elapsed:Float)</h4>
 <p>This is the place where you can run code on every frame of your game. It&#39;s where you setup your input controls, trigger movement and almost all of your gameplay logic.</p>
-<pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-package"><span class="hljs-keyword">package</span>;
 
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxState</span>;
 
-<span class="title">class</span> <span class="title">FlxExampleState</span> <span class="title">extends</span> <span class="title">FlxState</span>
+<span class="hljs-title">class</span> <span class="hljs-title">FlxExampleState</span> <span class="hljs-title">extends</span> <span class="hljs-title">FlxState</span>
 {</span>
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        <span class="comment">//create your state objects here</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-comment">//create your state objects here</span>
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-    {</span>
-        <span class="comment">//call super to update the core state class</span>
-        super.update(elapsed);
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-comment">//call super to update the core state class</span>
+        <span class="hljs-keyword">super</span>.update(elapsed);
     }
-}</code></pre>
+}
+</code></pre>
 <p>Here is an example of a simple game state;</p>
-<pre class="highlight"><code class="actionscript"><span class="package"><span class="keyword">package</span>;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-package"><span class="hljs-keyword">package</span>;
 
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">tile</span>.<span class="title">FlxTilemap</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxObject</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxG</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxSprite</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">FlxState</span>;
-<span class="title">import</span> <span class="title">flixel</span>.<span class="title">graphics</span>.<span class="title">FlxGraphic</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">tile</span>.<span class="hljs-title">FlxTilemap</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxObject</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxG</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxSprite</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">FlxState</span>;
+<span class="hljs-title">import</span> <span class="hljs-title">flixel</span>.<span class="hljs-title">graphics</span>.<span class="hljs-title">FlxGraphic</span>;
 
-<span class="title">class</span> <span class="title">FlxExampleState</span> <span class="title">extends</span> <span class="title">FlxState</span>
+<span class="hljs-title">class</span> <span class="hljs-title">FlxExampleState</span> <span class="hljs-title">extends</span> <span class="hljs-title">FlxState</span>
 {</span>
-    <span class="keyword">private</span> <span class="keyword">var</span> wizard:FlxSprite;
-    <span class="keyword">private</span> <span class="keyword">var</span> level:FlxTilemap;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> wizard:FlxSprite;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> level:FlxTilemap;
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">create</span><span class="params">()</span><span class="type">:Void</span>
-    {</span>
-        <span class="comment">//create a main player</span>
-        wizard = <span class="keyword">new</span> FlxSprite(<span class="number">200</span>, <span class="number">200</span>,<span class="string">'assets/player.png'</span>);
-        wizard.maxVelocity.<span class="keyword">set</span>(<span class="number">80</span>, <span class="number">200</span>);
-        wizard.acceleration.y = <span class="number">200</span>; <span class="comment">// gravity</span>
-        wizard.drag.x = wizard.maxVelocity.x * <span class="number">4</span>;
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-comment">//create a main player</span>
+        wizard = <span class="hljs-keyword">new</span> FlxSprite(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>,<span class="hljs-string">'assets/player.png'</span>);
+        wizard.maxVelocity.<span class="hljs-keyword">set</span>(<span class="hljs-number">80</span>, <span class="hljs-number">200</span>);
+        wizard.acceleration.y = <span class="hljs-number">200</span>; <span class="hljs-comment">// gravity</span>
+        wizard.drag.x = wizard.maxVelocity.x * <span class="hljs-number">4</span>;
         add(wizard);
 
-        <span class="comment">//create a tilemap level</span>
-        level = <span class="keyword">new</span> FlxTilemap();
-        level.loadMap(<span class="string">'assets/level.csv'</span>, FlxGraphic.fromClass(GraphicAuto), <span class="number">0</span>, <span class="number">0</span>, AUTO);
+        <span class="hljs-comment">//create a tilemap level</span>
+        level = <span class="hljs-keyword">new</span> FlxTilemap();
+        level.loadMap(<span class="hljs-string">'assets/level.csv'</span>, FlxGraphic.fromClass(GraphicAuto), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, AUTO);
         add(level);
     }
 
-    <span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span><span class="type">:Void</span>
-    {</span>
-        <span class="comment">//control the player with keyboard</span>
-        wizard.acceleration.x = <span class="number">0</span>;
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span><span class="hljs-type">:Void</span>
+    </span>{
+        <span class="hljs-comment">//control the player with keyboard</span>
+        wizard.acceleration.x = <span class="hljs-number">0</span>;
 
-        <span class="keyword">if</span> (FlxG.keys.LEFT)
+        <span class="hljs-keyword">if</span> (FlxG.keys.LEFT)
         {
-            wizard.acceleration.x = -wizard.maxVelocity.x * <span class="number">4</span>;
+            wizard.acceleration.x = -wizard.maxVelocity.x * <span class="hljs-number">4</span>;
         }
-        <span class="keyword">if</span> (FlxG.keys.RIGHT)
+        <span class="hljs-keyword">if</span> (FlxG.keys.RIGHT)
         {
-            wizard.acceleration.x = wizard.maxVelocity.x * <span class="number">4</span>;
+            wizard.acceleration.x = wizard.maxVelocity.x * <span class="hljs-number">4</span>;
         }
-        <span class="keyword">if</span> (FlxG.keys.SPACE &amp;&amp; player.isTouching(FlxObject.FLOOR))
+        <span class="hljs-keyword">if</span> (FlxG.keys.SPACE &amp;&amp; player.isTouching(FlxObject.FLOOR))
         {
-            wizard.velocity.y = -wizard.maxVelocity.y / <span class="number">2</span>;
+            wizard.velocity.y = -wizard.maxVelocity.y / <span class="hljs-number">2</span>;
         }
-        super.update(elapsed);
+        <span class="hljs-keyword">super</span>.update(elapsed);
     }
-}</code></pre>
+}
+</code></pre>
 
 
 			<br>
@@ -353,6 +355,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

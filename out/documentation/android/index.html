@@ -238,39 +238,39 @@
 <p>The Haxe compiler uses its <code>cpp</code> target to compile your <code>Haxe</code> code for the <a href="http://libsdl.org">LibSDL</a> OpenGL library so that the Android NDK can then use this &quot;native-code&quot; for your Android game. You can read more about the Android NDK from Google <a href="http://developer.android.com/tools/sdk/ndk/index.html">here</a>, however this process is completely automated by <a href="http://openfl.org">OpenFL</a>. Android is part of the cpp group of targets and when developers mention <code>cpp</code> the topic may be relevant to HaxeFlixel Android.</p>
 <p>With <a href="http://openfl.org">OpenFL</a> using native-code and OpenGL with <a href="http://libsdl.org">LibSDL</a>, the rendering methods are different to where Flixel started with Flash. Android uses GPU accelerated Texture Batching for the best possible performance on mobile devices.</p>
 <h3 id="conditionals">Conditionals</h3>
-<pre class="highlight"><code class="vala"><span class="preprocessor">#if cpp</span>
-<span class="comment">//your android code</span>
-<span class="preprocessor">#end</span>
+<pre class="highlight"><code class="hljs haxe"><span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> cpp</span>
+<span class="hljs-comment">//your android code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
 
-<span class="preprocessor">#if android</span>
-<span class="comment">//your android code</span>
-<span class="preprocessor">#end</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> android</span>
+<span class="hljs-comment">//your android code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
 
-<span class="preprocessor">#if mobile</span>
-<span class="comment">//your android code</span>
-<span class="preprocessor">#end</span></code></pre>
-<h3 id="project-xml-settings">Project XML settings</h3>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> mobile</span>
+<span class="hljs-comment">//your android code</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
+</code></pre><h3 id="project-xml-settings">Project XML settings</h3>
 <p>Mobile platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">window</span> <span class="attribute">width</span>=<span class="value">"0"</span> <span class="attribute">height</span>=<span class="value">"0"</span> <span class="attribute">background</span>=<span class="value">"#FFFFFF"</span> <span class="attribute">fps</span>=<span class="value">"60"</span> /&gt;</span></code></pre>
-<p>OpenFL also exposes the following specific settings for the Android target:</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">android</span> <span class="attribute">target-sdk-version</span>=<span class="value">"17"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">window</span> <span class="attribute">hardware</span>=<span class="value">"true"</span> <span class="attribute">allow-shaders</span>=<span class="value">"true"</span> <span class="attribute">require-shaders</span>=<span class="value">"true"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">window</span> <span class="attribute">vsync</span>=<span class="value">"true"</span> <span class="attribute">antialiasing</span>=<span class="value">"4"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"portrait"</span> /&gt;</span> || <span class="tag">&lt;<span class="title">window</span> <span class="attribute">orientation</span>=<span class="value">"landscape"</span> <span class="attribute">if</span>=<span class="value">"cpp"</span>/&gt;</span></code></pre>
-<p>Custom PNG icons: (Check <a href="http://developer.android.com/design/style/iconography.html">Iconography / Android Developers</a> for more info)</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"36.png"</span> <span class="attribute">size</span>=<span class="value">"36"</span> <span class="attribute">if</span>=<span class="value">"android"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"48.png"</span> <span class="attribute">size</span>=<span class="value">"48"</span> <span class="attribute">if</span>=<span class="value">"android"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"72.png"</span> <span class="attribute">size</span>=<span class="value">"72"</span> <span class="attribute">if</span>=<span class="value">"android"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">icon</span> <span class="attribute">path</span>=<span class="value">"96.png"</span> <span class="attribute">size</span>=<span class="value">"96"</span> <span class="attribute">if</span>=<span class="value">"android"</span> /&gt;</span></code></pre>
-<h3 id="compile-commands">Compile Commands</h3>
+<pre class="highlight"><code class="hljs nix">&lt;window <span class="hljs-variable">width=</span><span class="hljs-string">"0"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"0"</span> <span class="hljs-variable">background=</span><span class="hljs-string">"#FFFFFF"</span> <span class="hljs-variable">fps=</span><span class="hljs-string">"60"</span> /&gt;
+</code></pre><p>OpenFL also exposes the following specific settings for the Android target:</p>
+<pre class="highlight"><code class="hljs nix">&lt;android <span class="hljs-variable">target-sdk-version=</span><span class="hljs-string">"17"</span> /&gt;
+&lt;window <span class="hljs-variable">hardware=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">allow-shaders=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">require-shaders=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"cpp"</span>/&gt;
+&lt;window <span class="hljs-variable">vsync=</span><span class="hljs-string">"true"</span> <span class="hljs-variable">antialiasing=</span><span class="hljs-string">"4"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"cpp"</span> /&gt;
+&lt;window <span class="hljs-variable">orientation=</span><span class="hljs-string">"portrait"</span> /&gt; || &lt;window <span class="hljs-variable">orientation=</span><span class="hljs-string">"landscape"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"cpp"</span>/&gt;
+</code></pre><p>Custom PNG icons: (Check <a href="http://developer.android.com/design/style/iconography.html">Iconography / Android Developers</a> for more info)</p>
+<pre class="highlight"><code class="hljs nix">&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"36.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"36"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"android"</span> /&gt;
+&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"48.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"48"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"android"</span> /&gt;
+&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"72.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"72"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"android"</span> /&gt;
+&lt;icon <span class="hljs-variable">path=</span><span class="hljs-string">"96.png"</span> <span class="hljs-variable">size=</span><span class="hljs-string">"96"</span> <span class="hljs-variable">if=</span><span class="hljs-string">"android"</span> /&gt;
+</code></pre><h3 id="compile-commands">Compile Commands</h3>
 <p>Sublime Text, Flash Develop and Intellij Idea support Android compilation through their GUI.</p>
 <h4 id="command-line">Command line</h4>
 <p>The basic command to compile and test Android:</p>
-<pre class="highlight"><code class="haskell"><span class="title">lime</span> test android</code></pre>
-<p>Run this command from the root folder of your project; the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.</p>
+<pre class="highlight"><code class="hljs nginx"><span class="hljs-title">lime</span> test android
+</code></pre><p>Run this command from the root folder of your project; the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.</p>
 <p>If you want to use the Android simulator, add <code>-simulator</code> when running/testing. Be sure your virtual device is API &gt;=15 and has GPU enabled.</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">lime</span> <span class="comment">test</span> <span class="comment">android</span> <span class="literal">-</span><span class="comment">simulator</span></code></pre>
-
+<pre class="highlight"><code class="hljs nginx"><span class="hljs-title">lime</span> test android -simulator
+</code></pre>
 
 			<br>
 			<hr>
@@ -308,6 +308,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

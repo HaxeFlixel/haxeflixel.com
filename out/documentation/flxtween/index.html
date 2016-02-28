@@ -237,31 +237,33 @@
 
 			<p>A <code>FlxTween</code> allows you to create smooth interpolations and animations easily. Tweening is short for <a href="http://en.wikipedia.org/wiki/Inbetweening">inbetweening</a>: you only have to specify start and end values and the <code>FlxTween</code> class will generate all values between those two. If you want to see a <code>FlxTween</code> in action, this <a href="http://haxeflixel.com/demos/FlxTween/">tween demo</a> is available.</p>
 <p>For example, if you want to move a <code>FlxSprite</code> across the screen, this code snippet would do it:</p>
-<pre class="highlight"><code class="actionscript">sprite.x = <span class="number">200</span>;
-sprite.y = <span class="number">200</span>;
+<pre class="highlight"><code class="hljs actionscript">sprite.x = <span class="hljs-number">200</span>;
+sprite.y = <span class="hljs-number">200</span>;
 
-FlxTween.tween(sprite, { x: <span class="number">600</span>, y: <span class="number">800</span> }, <span class="number">2</span>);</code></pre>
+FlxTween.tween(sprite, { x: <span class="hljs-number">600</span>, y: <span class="hljs-number">800</span> }, <span class="hljs-number">2</span>);
+</code></pre>
 <p>The first two lines specify the start position of the sprite, because the <code>tween()</code> method assumes the current position is the starting position.</p>
 <p>The first parameter is the object you want to act upon; the second parameter is the map which contains the properties you want to interpolate, and their desired target values. Here, we want to translate the sprite in x to position 600 and in y to position 800. The third parameter specifies the duration of the tween in seconds, which in this case is 2 seconds.</p>
 <h2 id="cancelling-a-tween">Cancelling a Tween</h2>
 <p>If you start a tween using the code above, it will run until the desired values are reached, then stop. As the <code>tween()</code> method returns an object of type <code>FlxTween</code>, keeping this object in a variable allows you to access the current tween running if you wish to control it.</p>
 <p>For example, this code stops the translation of the sprite if the player presses the spacebar of his keyboard:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">private</span> <span class="keyword">var</span> tween:FlxTween;
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> tween:FlxTween;
 
-<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
-{</span>
-    <span class="keyword">super</span>();
-    <span class="comment">// set up sprite</span>
-    tween = FlxTween.tween(sprite, { x:<span class="number">600</span>, y:<span class="number">800</span> }, <span class="number">2</span>);
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-comment">// set up sprite</span>
+    tween = FlxTween.tween(sprite, { x:<span class="hljs-number">600</span>, y:<span class="hljs-number">800</span> }, <span class="hljs-number">2</span>);
 }
 
-<span class="keyword">override</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">update</span><span class="params">(elapsed:Float)</span>
-{</span>
-    super.update(elapsed);
+<span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(elapsed:Float)</span>
+</span>{
+    <span class="hljs-keyword">super</span>.update(elapsed);
 
-    <span class="keyword">if</span> (FlxG.keys.justPressed.SPACE)
+    <span class="hljs-keyword">if</span> (FlxG.keys.justPressed.SPACE)
         tween.cancel();
-}</code></pre>
+}
+</code></pre>
 <h2 id="tweening-options">Tweening Options</h2>
 <p>The <code>tween()</code> method takes an optional fourth parameter which is a map of options.</p>
 <p>Possible values are:</p>
@@ -301,19 +303,20 @@ FlxTween.tween(sprite, { x: <span class="number">600</span>, y: <span class="num
 </li>
 </ul>
 <p>For example:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">new</span><span class="params">()</span>
-{</span>
-    <span class="keyword">super</span>();
-    <span class="comment">// set up sprite</span>
-    sprite.x = <span class="number">200</span>;
-    sprite.y = <span class="number">200</span>;
-    FlxTween.tween(sprite, { x: <span class="number">600</span>, y: <span class="number">800</span> }, <span class="number">2</span>, { type: FlxTween.PINGPONG, ease: FlxEase.quadInOut, onComplete: changeColor, startDelay: <span class="number">1</span>, loopDelay: <span class="number">2</span> });
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-comment">// set up sprite</span>
+    sprite.x = <span class="hljs-number">200</span>;
+    sprite.y = <span class="hljs-number">200</span>;
+    FlxTween.tween(sprite, { x: <span class="hljs-number">600</span>, y: <span class="hljs-number">800</span> }, <span class="hljs-number">2</span>, { type: FlxTween.PINGPONG, ease: FlxEase.quadInOut, onComplete: changeColor, startDelay: <span class="hljs-number">1</span>, loopDelay: <span class="hljs-number">2</span> });
 }
 
-<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">changeColor</span><span class="params">(tween:FlxTween)</span><span class="type">:Void</span>
-{</span>
-    <span class="comment">// change the color of the sprite here</span>
-}</code></pre>
+<span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeColor</span><span class="hljs-params">(tween:FlxTween)</span><span class="hljs-type">:Void</span>
+</span>{
+    <span class="hljs-comment">// change the color of the sprite here</span>
+}
+</code></pre>
 <p>This code moves the sprite constantly between the two points (200|200) and (600|800), smoothly accelerating and decelerating. Each time the sprite arrives at one of those two points, its color changes. The animation starts after 1 second and then the sprite pauses at each point for 2 seconds.</p>
 <h2 id="special-tweens">Special Tweens</h2>
 <p>There are many more tweening methods in <code>FlxTween</code>, which are used for special cases:</p>
@@ -366,6 +369,10 @@ FlxTween.tween(sprite, { x: <span class="number">600</span>, y: <span class="num
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

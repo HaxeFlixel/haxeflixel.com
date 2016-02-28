@@ -295,8 +295,9 @@
 <h3 id="flxsprite-flipping">FlxSprite flipping</h3>
 <p>Flipping sprite graphics now works differently - the <code>flipped</code> variable has been removed, as well as the <code>Reverse</code> parameter of <code>loadGraphic()</code> and <code>loadGraphicFromTexture()</code>. You can now directly manipulate the new <code>flipX</code> and <code>flipY</code> variables (flipping vertically is now possible).</p>
 <p>If you want to continue to use <code>facing</code> to flip the graphic (e.g. in a platformer), you can use the following logic:</p>
-<pre class="highlight"><code class="actionscript">sprite.setFacingFlip(FlxObject.RIGHT, <span class="literal">false</span>, <span class="literal">false</span>);
-sprite.setFacingFlip(FlxObject.LEFT, <span class="literal">true</span>, <span class="literal">false</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">sprite.setFacingFlip(FlxObject.RIGHT, <span class="hljs-literal">false</span>, <span class="hljs-literal">false</span>);
+sprite.setFacingFlip(FlxObject.LEFT, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);
+</code></pre>
 <h3 id="flxtimer-and-flxpath">FlxTimer and FlxPath</h3>
 <p><code>FlxPath</code> and <code>FlxTimer</code> were being pooled internally, which could lead to buggy behaviour in certain use cases. Due to that, pooling has been removed from these classes.</p>
 <table>
@@ -382,13 +383,13 @@ sprite.setFacingFlip(FlxObject.LEFT, <span class="literal">true</span>, <span cl
 <p><code>FlxTypedButton</code> has been completely refactored, which includes the following breaking API changes:</p>
 <ul>
 <li><p>A new <code>FlxButtonEvent</code> class was added for the onDown, onUp, onOver and onOut events. Instead of the <code>setCallback()</code>-functions, you now set callbacks like this:</p>
-<pre class="highlight"><code class="avrasm">  button<span class="preprocessor">.onDown</span><span class="preprocessor">.callback</span> = someFunction<span class="comment">;</span></code></pre>
-<p>  This class also contains a <code>sound</code> property:</p>
-<pre class="highlight"><code class="avrasm">  button<span class="preprocessor">.onDown</span><span class="preprocessor">.sound</span> = FlxG<span class="preprocessor">.sound</span><span class="preprocessor">.load</span>(<span class="string">"pathToASound"</span>)<span class="comment">;</span></code></pre>
-<p>  You might say: <em>&quot;What happened to custom callback arguments? The <code>callback</code> has the type <code>Void-&gt;Void</code>!&quot;</em>
+<pre class="highlight"><code class="hljs fix"><span class="hljs-attribute">  button.onDown.callback </span>=<span class="hljs-string"> someFunction;
+</span></code></pre><p>  This class also contains a <code>sound</code> property:</p>
+<pre class="highlight"><code class="hljs mel">  <span class="hljs-keyword">button</span>.onDown.<span class="hljs-keyword">sound</span> = FlxG.<span class="hljs-keyword">sound</span>.load(<span class="hljs-string">"pathToASound"</span>);
+</code></pre><p>  You might say: <em>&quot;What happened to custom callback arguments? The <code>callback</code> has the type <code>Void-&gt;Void</code>!&quot;</em>
   While that&#39;s true, you can still <em>use</em> callback arguments by leveraging <a href="http://haxe.org/manual/haxe3/migration#callback">function binding</a>:</p>
-<pre class="highlight"><code class="avrasm">  button<span class="preprocessor">.onDown</span><span class="preprocessor">.callback</span> = someFunction<span class="preprocessor">.bind</span>(<span class="number">1</span>)<span class="comment">;</span></code></pre>
-<p>  In that example, <code>someFunction</code> is of type <code>Int-&gt;Void</code> and will always be called with 1.</p>
+<pre class="highlight"><code class="hljs fix"><span class="hljs-attribute">  button.onDown.callback </span>=<span class="hljs-string"> someFunction.bind(1);
+</span></code></pre><p>  In that example, <code>someFunction</code> is of type <code>Int-&gt;Void</code> and will always be called with 1.</p>
 </li>
 <li><p><code>labelOffset:FlxPoint</code> is now an array (<code>labelOffsets:Array&lt;FlxPoint&gt;</code>) which uses the button status constants as indices for more control over the button position.</p>
 </li>
@@ -410,9 +411,11 @@ sprite.setFacingFlip(FlxObject.LEFT, <span class="literal">true</span>, <span cl
 <li><code>FlxG.keys.anyJustReleased()</code></li>
 </ul>
 <p>Please note that those functions take an <code>Array&lt;String&gt;</code> instead of a variable amount of <code>String</code>s. So the following...</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (FlxG.keyboard.pressed(<span class="string">"LEFT"</span>, <span class="string">"RIGHT"</span>)) {}</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">if</span> (FlxG.keyboard.pressed(<span class="hljs-string">"LEFT"</span>, <span class="hljs-string">"RIGHT"</span>)) {}
+</code></pre>
 <p>...becomes:</p>
-<pre class="highlight"><code class="actionscript"><span class="keyword">if</span> (FlxG.keys.anyPressed([<span class="string">"LEFT"</span>, <span class="string">"RIGHT"</span>])) {}</code></pre>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-keyword">if</span> (FlxG.keys.anyPressed([<span class="hljs-string">"LEFT"</span>, <span class="hljs-string">"RIGHT"</span>])) {}
+</code></pre>
 <h3 id="flxmouse-refactor">FlxMouse refactor</h3>
 <p>The following breaking changes were made during the refactor of <code>FlxMouse</code>:</p>
 <table>
@@ -506,19 +509,22 @@ sprite.setFacingFlip(FlxObject.LEFT, <span class="literal">true</span>, <span cl
 <p>Be sure to check out the <a href="http://haxeflixel.com/demos/ScaleModes/">ScaleModes demo</a>.</p>
 <h3 id="flxtypedgroup-sort-">FlxTypedGroup.sort()</h3>
 <p>The way <code>FlxTypedGroup.sort()</code> has been changed for a significant performance improvement. If you want to sort by y, you now have to use the following syntax:</p>
-<pre class="highlight"><code class="actionscript">group.sort(FlxSort.byY, FlxSort.ASCENDING);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">group.sort(FlxSort.byY, FlxSort.ASCENDING);
+</code></pre>
 <p>Instead of:</p>
-<pre class="highlight"><code class="actionscript">group.sort(<span class="string">"y"</span>, FlxSort.ASCENDING);
-<span class="comment">// or</span>
-group.sort();</code></pre>
+<pre class="highlight"><code class="hljs actionscript">group.sort(<span class="hljs-string">"y"</span>, FlxSort.ASCENDING);
+<span class="hljs-comment">// or</span>
+group.sort();
+</code></pre>
 <p>If you want to sort by anything other than <code>y</code>, you&#39;ll have to write a custom sorting function, as can be seen in this example:</p>
-<pre class="highlight"><code class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">sortByAlpha</span><span class="params">(Order:Int, Sprite1:FlxSprite, Sprite2:FlxSprite)</span><span class="type">:Int</span>
-{</span>
-    <span class="keyword">return</span> FlxSort.byValues(Order, Sprite1.alpha, Sprite2.alpha);
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sortByAlpha</span><span class="hljs-params">(Order:Int, Sprite1:FlxSprite, Sprite2:FlxSprite)</span><span class="hljs-type">:Int</span>
+</span>{
+    <span class="hljs-keyword">return</span> FlxSort.byValues(Order, Sprite1.alpha, Sprite2.alpha);
 }
 
-<span class="comment">// usage on a FlxTypedGroup&lt;FlxSprite&gt;:</span>
-group.sort(sortByAlpha);</code></pre>
+<span class="hljs-comment">// usage on a FlxTypedGroup&lt;FlxSprite&gt;:</span>
+group.sort(sortByAlpha);
+</code></pre>
 <h3 id="other-breaking-changes">Other breaking changes</h3>
 <table>
 <thead>
@@ -576,9 +582,11 @@ group.sort(sortByAlpha);</code></pre>
 </table>
 <p>The classes from <code>flixel.system.input</code> have been moved to <code>flixel.input</code>.</p>
 <p><code>FlxPoint</code>s in <code>FlxObject</code> and <code>FlxSprite</code> are now read-only / <code>(default, null)</code>, which means you need to use .set() on them if you were previously creating new points. The following...</p>
-<pre class="highlight"><code class="actionscript">sprite.velocity = <span class="keyword">new</span> FlxPoint(<span class="number">100</span>, <span class="number">50</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">sprite.velocity = <span class="hljs-keyword">new</span> FlxPoint(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>);
+</code></pre>
 <p>...becomes:</p>
-<pre class="highlight"><code class="actionscript">sprite.velocity.<span class="keyword">set</span>(<span class="number">100</span>, <span class="number">50</span>);</code></pre>
+<pre class="highlight"><code class="hljs actionscript">sprite.velocity.<span class="hljs-keyword">set</span>(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>);
+</code></pre>
 <h2 id="3-0-0">3.0.0</h2>
 <p>HaxeFlixel 3.0 is an evolution of the original Flixel API and while most of the API is very similar and quickly learnt, it requires some renames and modifications to update your code.</p>
 <h3 id="major-changes-from-version-2-10">Major changes from version 2.10</h3>
@@ -586,17 +594,17 @@ group.sort(sortByAlpha);</code></pre>
 <ul>
 <li>Moved <strong>animation logic from <a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/FlxSprite.hx">FlxSprite</a></strong>, into new <a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/animation/FlxAnimationController.hx">FlxAnimationController</a> class. All animation logic is now accessed through <strong>mySprite.animation</strong>, eg: </li>
 </ul>
-<pre class="highlight"><code class="r">mySprite.animation.add(<span class="keyword">...</span>);
+<pre class="highlight"><code class="hljs r">mySprite.animation.add(<span class="hljs-keyword">...</span>);
 
-mySprite.animation.play(<span class="keyword">...</span>);
+mySprite.animation.play(<span class="hljs-keyword">...</span>);
 
-mySprite.animation.frameName = <span class="string">"String"</span>;
+mySprite.animation.frameName = <span class="hljs-string">"String"</span>;
 
 mySprite.animation.frameIndex = Int;
 
 //inspect the advanced api features such as
-addByNames, addByStringIndicies, addByIndicies, addByPrefix, findSpriteFrame, randomFrame <span class="keyword">...</span></code></pre>
-<ul>
+addByNames, addByStringIndicies, addByIndicies, addByPrefix, findSpriteFrame, randomFrame <span class="hljs-keyword">...</span>
+</code></pre><ul>
 <li><p>Added new <a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/system/input/keyboard/FlxKeyShortcuts.hx">FlxKeyShortcuts</a> class, which replaces FlxG.keys. <strong>FlxG.keys.pressed is no longer a function</strong>, it&#39;s now an object, ex: <code>if( FlxG.keys.pressed.ANY ) {...}</code></p>
 </li>
 <li><p>Added new <a href="https://github.com/HaxeFlixel/flixel/blob/dev/flixel/group/FlxSpriteGroup.hx">FlxSpriteGroup</a> class, which <strong>allows an FlxGroup to behave like an FlxSprite</strong>. This is a powerful new construct that will simplify building UI controls.</p>
@@ -637,23 +645,23 @@ So the code in HaxeFlixel 3.x to add a <code>FlxCamera</code> is now <code>FlxG.
 <h3 id="new-flixel-command-line-tools">New Flixel Command Line Tools</h3>
 <p>Our command line tools have been moved to an optional repository, so the old <code>haxelib run flixel new</code> command will not work.
 Install the tools from haxelib just like flixel and run setup and follow the prompts:</p>
-<pre class="highlight"><code class="brainfuck"><span class="comment">haxelib</span> <span class="comment">install</span> <span class="comment">flixel</span><span class="literal">-</span><span class="comment">tools</span>
+<pre class="highlight"><code class="hljs applescript">haxelib install flixel-tools
 
-<span class="comment">haxelib</span> <span class="comment">run</span> <span class="comment">flixel</span><span class="literal">-</span><span class="comment">tools</span> <span class="comment">setup</span></code></pre>
-<p>Now you can use the commands with just <code>flixel</code>, try the help command for more info.</p>
-<pre class="highlight"><code class="vhdl">flixel help
+haxelib <span class="hljs-command">run</span> flixel-tools setup
+</code></pre><p>Now you can use the commands with just <code>flixel</code>, try the help command for more info.</p>
+<pre class="highlight"><code class="hljs nimrod">flixel help
 
-//see the <span class="keyword">new</span> template tool options <span class="keyword">with</span>:
-flixel help template
+//see the new <span class="hljs-keyword">template</span> tool options <span class="hljs-keyword">with</span>:
+flixel help <span class="hljs-keyword">template</span>
 
-//Shorthand version <span class="keyword">to</span> create a template <span class="keyword">with</span> a custom name
-flixel tpl -n <span class="string">"CustomProject"</span></code></pre>
-<h4 id="automatic-find-and-replace">Automatic find and replace</h4>
+//<span class="hljs-type">Shorthand</span> version to create a <span class="hljs-keyword">template</span> <span class="hljs-keyword">with</span> a custom name
+flixel tpl -n <span class="hljs-string">"CustomProject"</span>
+</code></pre><h4 id="automatic-find-and-replace">Automatic find and replace</h4>
 <p>A collection of most of the API name changes were collected for the <a href="/documentation/community/flixel-tools">flixel-tools command line tool</a>.
 You can see what it <a href="https://github.com/HaxeFlixel/flixel-tools/blob/dev/src/legacy/FindAndReplace.hx">replaces here</a>.</p>
 <p>To run the find and replace the command is simple:</p>
-<pre class="highlight"><code class="haskell"><span class="title">flixel</span> convert</code></pre>
-<h3 id="flxg-changes">FlxG Changes</h3>
+<pre class="highlight"><code class="hljs dos">flixel <span class="hljs-built_in">convert</span>
+</code></pre><h3 id="flxg-changes">FlxG Changes</h3>
 <p>The main changes that developers will notice are as follows:</p>
 <table>
 <thead>
@@ -1051,6 +1059,10 @@ You can see what it <a href="https://github.com/HaxeFlixel/flixel-tools/blob/dev
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

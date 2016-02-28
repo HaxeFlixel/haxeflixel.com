@@ -184,28 +184,29 @@
 			<p>The Haxe compiler provides a robust solution for cross-platform development where you can use operators to define what targets receive your code. This functionality is invaluable for HaxeFlixel since we are targeting native mobile / desktop and web targets, all with different capabilities.</p>
 <p><a href="http://haxe.org/ref/conditionals">Official Conditional Compilation documentation</a></p>
 <p>A basic example may include logic like this:</p>
-<pre class="highlight"><code class="actionscript">#<span class="keyword">if</span> desktop
+<pre class="highlight"><code class="hljs actionscript">#<span class="hljs-keyword">if</span> desktop
 
-<span class="comment">//desktop only code</span>
+<span class="hljs-comment">//desktop only code</span>
 
 #elseif mobile
 
-<span class="comment">//mobile only code</span>
+<span class="hljs-comment">//mobile only code</span>
 
-#end</code></pre>
+#end
+</code></pre>
 <p>Conditionals relevant to your HaxeFlixel games may include:</p>
-<pre class="highlight"><code class="haskell"><span class="title">mobile</span>, desktop, native, web
-<span class="title">ios</span>, android, blackberry, webos, windows, mac, linux, html5
-<span class="title">flash</span>, cpp, neko, js</code></pre>
-<p>To define your own it is as easy as adding to your <code>Project.xml</code>:</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">name</span>=<span class="value">"magic"</span> /&gt;</span></code></pre>
-<p>Now this will work:</p>
-<pre class="highlight"><code class="vala"><span class="preprocessor">#if magic</span>
-<span class="comment">//Create a dragon</span>
-<span class="preprocessor">#end</span></code></pre>
-<p>Since Haxe lets you use some logic with the conditionals you can enable something just for mobile, as in:</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">name</span>=<span class="value">"magic"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span>/&gt;</span></code></pre>
-
+<pre class="highlight"><code class="hljs actionscript">mobile, desktop, <span class="hljs-keyword">native</span>, web
+ios, android, blackberry, webos, windows, mac, linux, html5
+flash, cpp, neko, js
+</code></pre><p>To define your own it is as easy as adding to your <code>Project.xml</code>:</p>
+<pre class="highlight"><code class="hljs applescript">&lt;<span class="hljs-keyword">set</span> <span class="hljs-property">name</span>=<span class="hljs-string">"magic"</span> /&gt;
+</code></pre><p>Now this will work:</p>
+<pre class="highlight"><code class="hljs haxe"><span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> magic</span>
+<span class="hljs-comment">//Create a dragon</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
+</code></pre><p>Since Haxe lets you use some logic with the conditionals you can enable something just for mobile, as in:</p>
+<pre class="highlight"><code class="hljs applescript">&lt;<span class="hljs-keyword">set</span> <span class="hljs-property">name</span>=<span class="hljs-string">"magic"</span> <span class="hljs-keyword">if</span>=<span class="hljs-string">"mobile"</span>/&gt;
+</code></pre>
 
 			<br>
 			<hr>
@@ -243,6 +244,10 @@
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{

@@ -250,10 +250,11 @@ The library offers some conditional compilation flags for this:</p>
 <li>FLX_NO_GAMEPAD</li>
 </ul>
 <p>These can be passed as parameters preceded by <code>-D</code> if compiling via command line (for example <code>-D FLX_NO_MOUSE</code>), or passed by adding them to your <a href="documentation/openfl-project-xml-format/">Project.XML</a> file if you have one. For example, someone who is publishing to multiple platforms could have:</p>
-<pre class="highlight"><code class="xml"><span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_MOUSE"</span> <span class="attribute">if</span>=<span class="value">"mobile"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_KEYBOARD"</span> /&gt;</span>
-<span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_TOUCH"</span> <span class="attribute">if</span>=<span class="value">"desktop"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">haxedef</span> <span class="attribute">name</span>=<span class="value">"FLX_NO_GAMEPAD"</span> <span class="attribute">if</span>=<span class="value">"web"</span>/&gt;</span></code></pre>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">haxedef</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"FLX_NO_MOUSE"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"mobile"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">haxedef</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"FLX_NO_KEYBOARD"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">haxedef</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"FLX_NO_TOUCH"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"desktop"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">haxedef</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"FLX_NO_GAMEPAD"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"web"</span>/&gt;</span>
+</code></pre>
 <p>If you created your <a href="documentation/openfl-project-xml-format/">Project.XML</a> from a template, these options are most likely already in the file but commented out.</p>
 <h2 id="undesired-stretching-when-window-size-varies">Undesired stretching when window size varies</h2>
 <p>Assigning a new instance of any of the classes that inherit from <a href="http://api.haxeflixel.com/flixel/system/scaleModes/BaseScaleMode.html">BaseScaleMode</a> to <code>FlxG.scalemode</code> will set this to the desired scaling. However these settings may override the zoom value set when instancing a <code>FlxGame</code>.</p>
@@ -295,6 +296,10 @@ The library offers some conditional compilation flags for this:</p>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				   data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon">
+				</a>
 
 				<script>!function (d, s, id)
 				{
