@@ -1,7 +1,7 @@
 ```
 title: "FlxCamera"
 layout: demo
-source: "Flixel%20Features/FlxCamera"
+source: "Features/FlxCamera"
 ```
 
 This demo showcases different flixel camera features like zoom, lerp, lead and follow styles.

@@ -1,7 +1,7 @@
 ```
 title: "HeatmapPathfinding"
 layout: demo
-source: "Flixel%20Features/HeatmapPathfinding"
+source: "Features/HeatmapPathfinding"
 ```
 
 A demo showcasing an efficient method to have a lot of objects path to one target, using a heatmap. [Inspired by this Gamasutra article](http://gamasutra.com/blogs/TylerGlaiel/20121007/178966/Some_experiments_in_pathfinding__AI.php).

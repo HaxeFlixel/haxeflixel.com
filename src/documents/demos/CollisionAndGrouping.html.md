@@ -3,7 +3,7 @@ title: "CollisionAndGrouping"
 layout: demo
 width: 400
 height: 300
-source: "Flixel%20Features/CollisionAndGrouping"
+source: "Features/CollisionAndGrouping"
 ```
 
 A port of the [Collision and Grouping demo](https://github.com/TestSubject06/CollisionsDemo) by [Zachary Tarvit](https://twitter.com/TestSubject06) featured on [flixel.org/features](http://flixel.org/features.html).

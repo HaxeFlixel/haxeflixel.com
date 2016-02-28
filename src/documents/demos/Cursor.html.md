@@ -1,7 +1,7 @@
 ```
 title: "Cursor"
 layout: demo
-source: "User%20Interface/Cursor"
+source: "UserInterface/Cursor"
 ```
 
 A demo showcasing keyboard navigation with a [flixel-ui](http://github.com/HaxeFlixel/flixel-ui) instance. You can navigate

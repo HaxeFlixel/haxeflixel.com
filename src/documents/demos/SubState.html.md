@@ -1,7 +1,7 @@
 ```
 title: "SubState"
 layout: demo
-source: "Flixel%20Features/SubState"
+source: "Features/SubState"
 ```
 
 An example of `flixel.FlxSubState`.

@@ -1,4 +1,3 @@
-
 ```
 title: "BlendModes"
 layout: demo

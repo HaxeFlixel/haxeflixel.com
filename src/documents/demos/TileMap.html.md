@@ -3,7 +3,7 @@ title: "Tilemap"
 layout: demo
 width: 400
 height: 300
-source: "Flixel%20Features/Tilemap"
+source: "Features/Tilemap"
 ```
 
 A port and improvement of the [Tilemap demo](https://github.com/LordTim/FlxTilemap-Demo) by [Tim Plummer](https://twitter.com/lordtim) featured on [flixel.org/features](http://flixel.org/features.html).

@@ -1,5 +1,5 @@
 ```
 title: "FlxBitmapText"
 layout: demo
-source: "User Interface/FlxBitmapText"
+source: "UserInterface/FlxBitmapText"
 ```

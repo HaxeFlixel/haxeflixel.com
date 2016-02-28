@@ -1,7 +1,7 @@
 ```
 title: "FlxNape"
 layout: demo
-source: "Flixel%20Features/FlxNape"
+source: "Features/FlxNape"
 tags: ['homepage_demo']
 ```
 

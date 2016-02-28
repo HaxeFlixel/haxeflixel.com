@@ -3,7 +3,7 @@ title: "RPGInterface"
 layout: demo
 width: 800
 height: 600
-source: "User%20Interface/RPG%20Interface"
+source: "UserInterface/RPGInterface"
 ```
 
 This is a simple demonstration of the flixel-ui engine in a fictional RPG.

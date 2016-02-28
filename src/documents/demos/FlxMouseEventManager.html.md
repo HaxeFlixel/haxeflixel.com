@@ -1,7 +1,7 @@
 ```
-title: "MouseEventManager"
+title: "FlxMouseEventManager"
 layout: demo
-source: "Input/MouseEventManager"
+source: "Input/FlxMouseEventManager"
 ```
 
 **MouseEventManager** allows FlxSprites to listen to mouse events like MouseDown, MouseUp, MouseOver and MouseOut.
