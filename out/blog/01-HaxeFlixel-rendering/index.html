@@ -105,8 +105,8 @@
 <p>Tilesheet class allows you to draw multiple regions of image in one drawcall reasonably fast. These regions can be transformed (rotated, scaled, skewed) and tinted, plus they can have several blend modes (the most usefull is addition mode, which can be used for effects like fire and smoke).</p>
 <p>Let’s assume that you have some image you want to draw - “assets/tiles.png”.</p>
 <p>We are starting from instantiation of Tilesheet object:</p>
-<pre class="highlight"><code class="avrasm">tilesheet = new Tilesheet(Assets<span class="preprocessor">.getBitmap</span>(“assets/tiles<span class="preprocessor">.png</span>”))<span class="comment">;</span></code></pre>
-<p>Then we should define region of image (or tile) we want to draw. This is achieved with addTileRect() method, which takes 2 arguments:</p>
+<pre class="highlight"><code class="hljs actionscript">tilesheet = <span class="hljs-keyword">new</span> Tilesheet(Assets.getBitmap(“assets/tiles.png”));
+</code></pre><p>Then we should define region of image (or tile) we want to draw. This is achieved with addTileRect() method, which takes 2 arguments:</p>
 <ul>
 <li><p>the first one is a Rectangle object - it is actual region of image to draw</p>
 </li>
@@ -114,54 +114,54 @@
 </li>
 </ul>
 <p>Center point argument is optional, and if you omit it then tile will be rotated around it’s middle point.</p>
-<pre class="highlight"><code class="avrasm">// adding tiles to the tilesheet
-tileID1 = tilesheet<span class="preprocessor">.addTileRect</span>(newRectangle(<span class="number">0</span>, <span class="number">0</span>, <span class="number">32</span>, <span class="number">32</span>), new Point(<span class="number">16</span>, <span class="number">16</span>))<span class="comment">;</span>
-tileID2 = tilesheet<span class="preprocessor">.addTileRect</span>(newRectangle(<span class="number">32</span>, <span class="number">0</span>, <span class="number">32</span>, <span class="number">32</span>), new Point(<span class="number">16</span>, <span class="number">16</span>))<span class="comment">;</span></code></pre>
-<p>Then we should have some Graphics object to draw our tiles on.</p>
-<pre class="highlight"><code class="avrasm">sprite = new Sprite()<span class="comment">;</span>
-Lib<span class="preprocessor">.current</span><span class="preprocessor">.stage</span><span class="preprocessor">.addChild</span>(sprite)<span class="comment">;</span>
-graphicsToUse = sprite<span class="preprocessor">.graphics</span><span class="comment">;</span></code></pre>
-<p>To draw the tiles on screen we need three things:</p>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// adding tiles to the tilesheet</span>
+tileID1 = tilesheet.addTileRect(newRectangle(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">32</span>, <span class="hljs-number">32</span>), <span class="hljs-keyword">new</span> Point(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>));
+tileID2 = tilesheet.addTileRect(newRectangle(<span class="hljs-number">32</span>, <span class="hljs-number">0</span>, <span class="hljs-number">32</span>, <span class="hljs-number">32</span>), <span class="hljs-keyword">new</span> Point(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>));
+</code></pre><p>Then we should have some Graphics object to draw our tiles on.</p>
+<pre class="highlight"><code class="hljs makefile"><span class="hljs-constant">sprite</span> = new Sprite();
+Lib.current.stage.addChild(sprite);
+<span class="hljs-constant">graphicsToUse</span> = sprite.graphics;
+</code></pre><p>To draw the tiles on screen we need three things:</p>
 <p>1) Graphics to draw then on</p>
 <p>2) Draw flag which tells to the program what tile transformations we want to use on our tiles in this drawcall.</p>
 <p>The simplest case is no transformation (we just draw rectangular region of image on specified position):</p>
-<pre class="highlight"><code class="haskell"><span class="title">drawFlag</span> = <span class="number">0</span>;</code></pre>
-<p>You can add tinting:</p>
-<pre class="highlight"><code class="avrasm">drawFlag |= Tilesheet<span class="preprocessor">.TILE</span>_RGB<span class="comment">;</span></code></pre>
-<p>We can add TILE_ALPHA flag to be able to change tile’s alpha:</p>
-<pre class="highlight"><code class="avrasm">drawFlag |= Tilesheet<span class="preprocessor">.TILE</span>_ALPHA<span class="comment">;</span></code></pre>
-<p>There are also <code>TILE_ROTATION</code> and <code>TILE_SCALE</code> (for uniform tile scaling) constants for “simple” transformations of a tile. But if you want to achieve some more complex transformation (like non-uniform scaling or skewing) then you have <code>TILE_TRANS_2x2</code> constant.</p>
+<pre class="highlight"><code class="hljs fix"><span class="hljs-attribute">drawFlag </span>=<span class="hljs-string"> 0;
+</span></code></pre><p>You can add tinting:</p>
+<pre class="highlight"><code class="hljs 1c">drawFlag <span class="hljs-string">|= Tilesheet.TILE_RGB;</span>
+</code></pre><p>We can add TILE_ALPHA flag to be able to change tile’s alpha:</p>
+<pre class="highlight"><code class="hljs 1c">drawFlag <span class="hljs-string">|= Tilesheet.TILE_ALPHA;</span>
+</code></pre><p>There are also <code>TILE_ROTATION</code> and <code>TILE_SCALE</code> (for uniform tile scaling) constants for “simple” transformations of a tile. But if you want to achieve some more complex transformation (like non-uniform scaling or skewing) then you have <code>TILE_TRANS_2x2</code> constant.</p>
 <p>And finally there are <code>TILE_BLEND_ADD</code> constant for addition blending and <code>TILE_SMOOTH</code> for smoothing scaled up graphics.</p>
 <p>3) We also need actual information about tile’s type, position and transformation. The second argument of drawTiles() method - data array - is responsible for it.</p>
 <p>The amount of data for each tile depends on drawFlags value:</p>
 <ul>
 <li>if drawFlags is 0, then you should specify only tile’s position and id:</li>
 </ul>
-<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x1, y1, tileID1, x2, y2, tileID2];</span></code></pre>
-<ul>
+<pre class="highlight"><code class="hljs haskell"><span class="hljs-typedef"><span class="hljs-keyword">data</span> = [x1, y1, tileID1, x2, y2, tileID2];</span>
+</code></pre><ul>
 <li>if you’re using uniform scale and rotation then data array will look like this:</li>
 </ul>
-<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x1, y1, tileID1, scale1, angle1, x2, y1, tileID2, scale2, angle2];</span></code></pre>
-<ul>
+<pre class="highlight"><code class="hljs gcode">data = [x<span class="hljs-number">1</span>, y<span class="hljs-number">1</span>, tileID<span class="hljs-number">1</span>, scale<span class="hljs-number">1</span>, a<span class="hljs-label">ngle1</span>, x<span class="hljs-number">2</span>, y<span class="hljs-number">1</span>, tileID<span class="hljs-number">2</span>, scale<span class="hljs-number">2</span>, a<span class="hljs-label">ngle2</span>];
+</code></pre><ul>
 <li>if you’re adding tinting and alpha:</li>
 </ul>
-<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x1, y1, tileID1, scale1, angle1, red1, green1, blue1, alpha1,  x2, y1, tileID2, scale2, angle2, red2, green2, blue2, alpha2];</span></code></pre>
-<p>where red, green, blue and alpha are values between 0 and 1 (result color of each pixel will be product of these coefficients and original pixel colors).</p>
+<pre class="highlight"><code class="hljs gcode">data = [x<span class="hljs-number">1</span>, y<span class="hljs-number">1</span>, tileID<span class="hljs-number">1</span>, scale<span class="hljs-number">1</span>, a<span class="hljs-label">ngle1</span>, red<span class="hljs-number">1</span>, gree<span class="hljs-label">n1</span>, blue<span class="hljs-number">1</span>, alpha<span class="hljs-number">1</span>,  x<span class="hljs-number">2</span>, y<span class="hljs-number">1</span>, tileID<span class="hljs-number">2</span>, scale<span class="hljs-number">2</span>, a<span class="hljs-label">ngle2</span>, red<span class="hljs-number">2</span>, gree<span class="hljs-label">n2</span>, blue<span class="hljs-number">2</span>, alpha<span class="hljs-number">2</span>];
+</code></pre><p>where red, green, blue and alpha are values between 0 and 1 (result color of each pixel will be product of these coefficients and original pixel colors).</p>
 <ul>
 <li>and the most complex case is when you’re using <code>TILE_TRANS_2x2</code>:</li>
 </ul>
-<pre class="highlight"><code class="haskell"><span class="typedef"><span class="keyword">data</span> = [x, y, tileID1, a, b, c, d, red, green, blue, alpha];</span></code></pre>
-<p>where (a, b, c, d) are the transfromation matrix coefficients. You can get their values in two ways:</p>
+<pre class="highlight"><code class="hljs processing">data = [x, y, tileID1, a, b, c, d, <span class="hljs-built_in">red</span>, <span class="hljs-built_in">green</span>, <span class="hljs-built_in">blue</span>, <span class="hljs-built_in">alpha</span>];
+</code></pre><p>where (a, b, c, d) are the transfromation matrix coefficients. You can get their values in two ways:</p>
 <p>a) by using Matrix class. For example, if you want to have non-uniform scale and rotation for your tile, then you can get it this way:</p>
-<pre class="highlight"><code class="avrasm">matrix<span class="preprocessor">.identity</span>()<span class="comment">;</span>
-matrix<span class="preprocessor">.scale</span>(scaleX, scaleY)<span class="comment">;</span>
-matrix<span class="preprocessor">.rotate</span>(angle)<span class="comment">;</span>
-data = [<span class="built_in">x</span>, <span class="built_in">y</span>, tileID1, matrix<span class="preprocessor">.a</span>, matrix<span class="preprocessor">.b</span>, matrix<span class="preprocessor">.c</span>, matrix<span class="preprocessor">.d</span>, red, green, blue, alpha]<span class="comment">;</span></code></pre>
-<p>b) or manually if you want to make some optimizations. That’s why drawing methods in flixels are so bloated - i just wanted to except some redundant calculations from it.</p>
+<pre class="highlight"><code class="hljs mel"><span class="hljs-keyword">matrix</span>.identity();
+<span class="hljs-keyword">matrix</span>.<span class="hljs-keyword">scale</span>(scaleX, scaleY);
+<span class="hljs-keyword">matrix</span>.<span class="hljs-keyword">rotate</span>(<span class="hljs-keyword">angle</span>);
+data = [x, y, tileID1, <span class="hljs-keyword">matrix</span>.a, <span class="hljs-keyword">matrix</span>.b, <span class="hljs-keyword">matrix</span>.c, <span class="hljs-keyword">matrix</span>.d, red, green, blue, alpha];
+</code></pre><p>b) or manually if you want to make some optimizations. That’s why drawing methods in flixels are so bloated - i just wanted to except some redundant calculations from it.</p>
 <p>So finally you can draw your tiles on the screen:</p>
-<pre class="highlight"><code class="haskell"><span class="title">tilesheet</span>.drawTiles(graphicsToUse, <span class="keyword">data</span>, false, drawFlags);</code></pre>
-<hr>
-<p>If you want to see some working example, then i recommend you to look at Tiles sample project in nme library: <a href="https://github.com/haxenme/nme/tree/master/samples/20-Tiles"><a href="https://github.com/haxenme/nme/tree/master/samples/20-Tiles">https://github.com/haxenme/nme/tree/master/samples/20-Tiles</a></a></p>
+<pre class="highlight"><code class="hljs haskell"><span class="hljs-title">tilesheet</span>.drawTiles(graphicsToUse, <span class="hljs-typedef"><span class="hljs-keyword">data</span>, false, drawFlags);</span>
+</code></pre><hr>
+<p>If you want to see some working example, then i recommend you to look at Tiles sample project in nme library: <a href="https://github.com/haxenme/nme/tree/master/samples/20-Tiles">https://github.com/haxenme/nme/tree/master/samples/20-Tiles</a></p>
 <hr>
 <p>Now when we know everything we need about Tilesheet class, it’s time to talk about flixel renderer a bit.</p>
 <p>As you remember we need Graphics object to render our tiles. FlxCamera objects contain flashSprite:Sprite variable inside which we have canvas:Sprite which graphics we use for rendering on the camera. We need canvas spite to be nested inside flashSprite for easy camera rotations. So if you don’t plan to implement such feature then you might use just one sprite without nesting.</p>
