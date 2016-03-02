@@ -4,19 +4,18 @@ layout: demo
 source: "Input/FlxMouseEventManager"
 ```
 
-**MouseEventManager** allows FlxSprites to listen to mouse events like MouseDown, MouseUp, MouseOver and MouseOut.
+`FlxMouseEventManager` allows `FlxSprite`s to listen to mouse events like `MouseDown`, `MouseUp`, `MouseOver` and `MouseOut`.
 
 To activate it, simply add sprites to the manager and implement the event callbacks:
 
 ```haxe
-import flixel.plugin.MouseEventManager;
+import flixel.input.mouse.FlxMouseEventManager;
 
-MouseEventManager.add(new FlxSprite(), onMouseDown, onMouseUp, onMouseOver, onMouseOut); 
+var sprite = new FlxSprite();
+FlxMouseEventManager.add(sprite, onMouseDown, onMouseUp, onMouseOver, onMouseOut); 
 
 function onMouseDown(sprite:FlxSprite) {}
 function onMouseUp(sprite:FlxSprite) {}
 function onMouseOver(sprite:FlxSprite) {}
 function onMouseOut(sprite:FlxSprite) {}
 ```
-
-Enjoy!
