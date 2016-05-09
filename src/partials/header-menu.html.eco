@@ -38,7 +38,7 @@
 						</li>
 
 						<li <%= @aforum %>>
-							<a href="/forum">Forum</a>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
 						</li>
 
 					</ul>
