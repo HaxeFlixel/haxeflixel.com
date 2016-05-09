@@ -4,21 +4,4 @@
 <head>
 	<meta http-equiv="refresh" content="0; url=http://forum.haxeflixel.com/" />
 </head>
-
-<body>
-
-<%-@partial('header-menu.html.eco', {aforum:"class='active'"})%>
-
-<div class="container container-main">
-	<h1 class="title"><%= @document.title %></h1>
-
-	<%- @content %>
-</div>
-
-<%- @partial('footer.html') %>
-
-<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
-
-</body>
-
 </html>
