@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css"]).toHTML()} ) %>
+<head>
+	<meta http-equiv="refresh" content="0; url=http://forum.haxeflixel.com/" />
+</head>
 
 <body>
 
