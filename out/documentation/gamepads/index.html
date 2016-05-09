@@ -247,7 +247,8 @@
 <li>MFi</li>
 <li>PS Vita</li>
 </ul>
-<p>Here&#39;s some example logic for basic detection of Xbox 360 controller input:</p>
+<p>For most gamepads HaxeFlixel will automatically detect the model and abstract the API inputs under a common &quot;universal&quot; gamepad model based on the Xbox 360 layout. The underlying device-specific &quot;raw&quot; inputs are still available for you to poll direclty, if you choose.</p>
+<p>Here&#39;s some example logic for basic detection using the &quot;universal&quot; gamepad API:</p>
 <pre class="highlight"><code class="hljs actionscript"><span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.FlxG;</span>
 <span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.FlxState;</span>
 <span class="hljs-preprocessor"><span class="hljs-keyword">import</span> flixel.input.gamepad.FlxGamepad;</span>
@@ -270,21 +271,32 @@
     </span>{
         <span class="hljs-keyword">if</span> (gamepad.pressed.A)
         {
-            trace(<span class="hljs-string">"The A button of the Xbox 360 controller is pressed."</span>);
+            trace(<span class="hljs-string">"The bottom face button of the controller is pressed."</span>);
         }
 
         <span class="hljs-keyword">if</span> (gamepad.analog.justMoved.LEFT_STICK_X)
         {
-            trace(<span class="hljs-string">"The x axis of the left analog stick of the Xbox 360 controller has been moved."</span>);
+            trace(<span class="hljs-string">"The x axis of the left analog stick of the controller has been moved."</span>);
         }
     }
 }
 </code></pre>
+<p>In this case, <code>gamepad.pressed.A</code> checks whether the bottom face button is pressed. On a PS4 controller this would be the &quot;X&quot; button, on an XBox 360 or XBox One controller this would be the &quot;A&quot; button.</p>
+<p>Also, the <code>gamepad.pressed.A</code> syntax is shorthand for <code>gamepad.pressed.check(FlxGamepadInputID.A)</code>. You want to use the latter syntax if you need to check a variable (which would be the case if the user can customize their inputs).</p>
+<p>If you wanted to check a device-specific input, you would use the <code>checkRaw</code> function, like this: <code>gamepad.pressed.checkRaw(PS4ID.X)</code></p>
+<p>Device-specific inputs can be found in the <code>flixel.input.gamepad.id</code> package.</p>
 <p>If you want to support a controller that HaxeFlixel doesn&#39;t provide the IDs for, the following methods of <code>FlxGamePad</code> methods should be helpful for working out what those IDs are:</p>
+<p>Return the <code>FlxGamepadInputID</code> value under the &quot;universal&quot; gamepad model:</p>
 <ul>
 <li><code>firstPressedButtonID()</code></li>
 <li><code>firstJustPressedButtonID()</code></li>
 <li><code>firstJustReleasedButtonID()</code></li>
+</ul>
+<p>Return the device-specific input ID value:</p>
+<ul>
+<li><code>firstPressedButtonRawID()</code></li>
+<li><code>firstJustPressedButtonRawID()</code></li>
+<li><code>firstJustReleasedButtonRawID()</code></li>
 </ul>
 <h3 id="conditional-to-remove-gamepads">Conditional to remove gamepads</h3>
 <pre class="highlight"><code class="hljs actionscript">FLX_NO_GAMEPAD
