@@ -95,7 +95,7 @@ layout: showcases
 
             <a class="showcase-game-thumbnail" href="<%= showcase.website %>" property="dc:title" target="_blank">
 
-                <img width="300" height="160" src="<%= @getThumbnail("/showcase/images/#{showcase.title}.png", "zoomcrop", { w:300, h:160 }) %>"
+                <img width="345" height="184" src="<%= @getThumbnail("/showcase/images/#{showcase.title}.png", "zoomcrop", { w:345, h:184 }) %>"
                 alt="<%= showcase.title %>" title="<%= showcase.website %>">
 
             </a>
