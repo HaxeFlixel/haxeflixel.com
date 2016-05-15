@@ -8,5 +8,6 @@ flash: http://www.kongregate.com/games/randomnine/cardinal-quest-2
 linux: http://store.steampowered.com/app/378030/
 mac: http://store.steampowered.com/app/378030/
 windows: http://store.steampowered.com/app/378030/
+steam: http://store.steampowered.com/app/368610
 website: http://cardinalquest2.com/
 ```

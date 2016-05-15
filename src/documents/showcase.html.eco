@@ -60,16 +60,16 @@ layout: showcases
 					<% if showcase.blackberry: %></a><% end %>
 				</span>
 
-				<span class="<%= @getShowcaseActive(showcase.ouya) %>">
-					<% if showcase.ouya: %><a href="<%= showcase.ouya %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="38px" height="38px" src="/images/targets/ouya-logo.svg">
-					<% if showcase.ouya: %></a><% end %>
-				</span>
-
 				<span class="<%= @getShowcaseActive(showcase.flash) %>">
 					<% if showcase.flash: %><a href="<%= showcase.flash %>" class="showcaseTarget" target="_blank"><% end %>
 						<img width="32px" height="40px" src="/images/targets/flash-logo.svg">
 					<% if showcase.flash: %></a><% end %>
+				</span>
+
+				<span class="<%= @getShowcaseActive(showcase.steam) %>">
+					<% if showcase.steam: %><a href="<%= showcase.steam %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
+					<% if showcase.steam: %></a><% end %>
 				</span>
 
 			</div>
@@ -138,18 +138,17 @@ layout: showcases
 					<% if showcase.blackberry: %></a><% end %>
 				</span>
 
-				<span class="<%= @getShowcaseActive(showcase.ouya) %>">
-					<% if showcase.ouya: %><a href="<%= showcase.ouya %>" class="showcaseTarget" target="_blank"><% end %>
-					<img width="38px" height="38px" src="/images/targets/ouya-logo.svg">
-					<% if showcase.ouya: %></a><% end %>
-				</span>
-
 				<span class="<%= @getShowcaseActive(showcase.flash) %>">
 					<% if showcase.flash: %><a href="<%= showcase.flash %>" class="showcaseTarget" target="_blank"><% end %>
 					<img width="32px" height="40px" src="/images/targets/flash-logo.svg">
 					<% if showcase.flash: %></a><% end %>
 				</span>
 
+				<span class="<%= @getShowcaseActive(showcase.steam) %>">
+					<% if showcase.steam: %><a href="<%= showcase.steam %>" class="showcaseTarget" target="_blank"><% end %>
+					<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
+					<% if showcase.steam: %></a><% end %>
+				</span>
 			</div>
 
 		</div>
