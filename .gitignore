@@ -3,3 +3,4 @@ node_modules/
 docpad.js
 .idea
 src/documents/documentation
+npm-debug.log*

@@ -67,7 +67,7 @@
 						</li>
 
 						<li >
-							<a href="/forum">Forum</a>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
 						</li>
 
 					</ul>
@@ -256,17 +256,25 @@ myButton.loadGraphic(<span class="hljs-string">"assets/custom.png"</span>);
 <ul>
 <li><strong>myButton.label</strong> is a <code>FlxText</code>, use <code>setFormat()</code> and <code>setBorderStyle()</code> to customise.</li>
 </ul>
-<h2 id="sounds-and-music">Sounds and Music</h2>
-<p>Declare each file on <code>Project.xml</code>, with an unique <code>id</code>.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">music</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"music_1.ogg"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"music_1"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">sound</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"sound_1.ogg"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"sound_1"</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">assets</span>&gt;</span>
+<h2 id="sound-effects-and-music">Sound Effects and Music</h2>
+<p>With the stock <code>Project.xml</code>, simply place them in your project&#39;s <code>assets/music</code> and <code>assets/sounds</code> subfolders and they&#39;re ready to use.</p>
+<p>Sound effects are usually in WAV format (44.1 kHz source).</p>
+<p>Music must be in MP3 format (44.1 kHz source) for Flash, and OGG for everything else.  To support both Flash and non-Flash platforms without bundling both formats in your output, you can replace the stock <code>&lt;assets&gt;</code> tag in your <code>Project.xml</code> with this:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets"</span> <span class="hljs-attribute">exclude</span>=<span class="hljs-value">"*.ogg"</span> <span class="hljs-attribute">if</span>=<span class="hljs-value">"flash"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">assets</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"assets"</span> <span class="hljs-attribute">exclude</span>=<span class="hljs-value">"*.mp3"</span> <span class="hljs-attribute">unless</span>=<span class="hljs-value">"flash"</span>/&gt;</span>
 </code></pre>
-<p>Play on your code:</p>
-<pre class="highlight"><code class="hljs actionscript">FlxG.sound.play(<span class="hljs-string">"sound_1"</span>);
-<span class="hljs-comment">// Loop music</span>
-FlxG.sound.playMusic(<span class="hljs-string">"music_1"</span>);
+<p>Play in your code:</p>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// Play sound effect using AssetPaths</span>
+FlxG.sound.play(AssetPaths.mySound__wav);
+<span class="hljs-comment">// Play sound effect without AssetPaths</span>
+FlxG.sound.play(<span class="hljs-string">"assets/sounds/mySound.wav"</span>);
+
+<span class="hljs-comment">// Loop music, Flash only</span>
+FlxG.sound.playMusic(AssetPaths.myMusic__mp3);
+<span class="hljs-comment">// Loop music, non-Flash only</span>
+FlxG.sound.playMusic(AssetPaths.myMusic__ogg);
+<span class="hljs-comment">// Loop music, Flash or non (getSound() adds .mp3 on Flash and .ogg otherwise)</span>
+FlxG.sound.playMusic(FlxAssets.getSound(<span class="hljs-string">"assets/music/myMusic"</span>));
 </code></pre>
 <h2 id="keyboard-input">Keyboard Input</h2>
 <pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// 'A' key</span>
@@ -507,6 +515,17 @@ FlxTween.tween(sprite, { x: <span class="hljs-number">100</span>, y: <span class
 }
 </code></pre>
 <p>Or use <code>FlxG.collide()</code> which calls <code>FlxG.overlap()</code> and presets the <code>ProcessCallback</code> parameter to <code>FlxObject.separate()</code>.</p>
+<h2 id="quick-check-whether-there-was-a-collision">Quick check whether there was a collision</h2>
+<pre class="highlight"><code class="hljs actionscript"><span class="hljs-comment">// sets the touching flags</span>
+FlxG.collide(player, level);
+<span class="hljs-keyword">if</span> (player.isTouching(FlxObject.DOWN))
+{
+<span class="hljs-comment">// player stands on the ground and can jump </span>
+}
+
+<span class="hljs-comment">// will reset touching flags when called</span>
+<span class="hljs-keyword">super</span>.update(elapsed);
+</code></pre>
 <h2 id="pixel-perfect-collision">Pixel Perfect Collision</h2>
 <p><strong>FlxG.pixelPerfectOverlap</strong>(Sprite, Sprite2)</p>
 <h2 id="drawing-shapes">Drawing Shapes</h2>
@@ -566,6 +585,13 @@ trace(<span class="hljs-string">"My var: "</span>, myVar);
 
 <span class="hljs-comment">// Watch</span>
 FlxG.watch.add(object, <span class="hljs-string">"property"</span>);
+
+<span class="hljs-comment">// Add world space mouse position to watch list</span>
+FlxG.watch.addMouse();
+
+<span class="hljs-comment">// Create a tracker window for player (of class Player) showing "x", "y" and custom fields "jumping" and "ladder"</span>
+FlxG.debugger.addTrackerProfile(<span class="hljs-keyword">new</span> TrackerProfile(Player, [<span class="hljs-string">"x"</span>, <span class="hljs-string">"y"</span>, <span class="hljs-string">"jumping"</span>, <span class="hljs-string">"ladder"</span>], []));
+FlxG.debugger.track(player, <span class="hljs-string">"Hero"</span>);
 </code></pre>
 <h2 id="hiding-cursor">Hiding Cursor</h2>
 <pre class="highlight"><code class="hljs actionscript">FlxG.mouse.visible = <span class="hljs-literal">false</span>;
