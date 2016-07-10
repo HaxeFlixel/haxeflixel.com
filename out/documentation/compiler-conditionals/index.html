@@ -186,11 +186,11 @@
 <p>A basic example may include logic like this:</p>
 <pre class="highlight"><code class="hljs actionscript">#<span class="hljs-keyword">if</span> desktop
 
-<span class="hljs-comment">//desktop only code</span>
+<span class="hljs-comment">// desktop only code</span>
 
 #elseif mobile
 
-<span class="hljs-comment">//mobile only code</span>
+<span class="hljs-comment">// mobile only code</span>
 
 #end
 </code></pre>
@@ -198,6 +198,12 @@
 <pre class="highlight"><code class="hljs actionscript">mobile, desktop, <span class="hljs-keyword">native</span>, web
 ios, android, blackberry, webos, windows, mac, linux, html5
 flash, cpp, neko, js
+</code></pre><p>Multiple targets can be used together:</p>
+<pre class="highlight"><code class="hljs haxe"><span class="hljs-preprocessor">#<span class="hljs-keyword">if</span> (mac || linux || android)</span>
+
+<span class="hljs-comment">// code specific for these platforms</span>
+
+<span class="hljs-preprocessor">#<span class="hljs-keyword">end</span></span>
 </code></pre><p>To define your own it is as easy as adding to your <code>Project.xml</code>:</p>
 <pre class="highlight"><code class="hljs applescript">&lt;<span class="hljs-keyword">set</span> <span class="hljs-property">name</span>=<span class="hljs-string">"magic"</span> /&gt;
 </code></pre><p>Now this will work:</p>
