@@ -7,6 +7,8 @@ markedOptions =
   highlight: null
 marked.setOptions(markedOptions);
 
+demoBaseUrl = 'http://demos.haxeflixel.com/'
+
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
@@ -78,6 +80,13 @@ docpadConfig = {
     getPreparedKeywords: ->
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
+
+    getDemoTarget: (document) ->
+      if document.targets? and 'html5' in document.targets and 'flash' in document.targets
+        return {html5: demoBaseUrl + document.title, flash: true}
+      else if document.targets? and 'html5' in document.targets
+        return {html5: demoBaseUrl + document.title}
+      else return {flash: true}
 
     getPagerNext: (collection) ->
       docsCollection = @getCollection(collection)
