@@ -12,20 +12,62 @@
 	<br>
 	<br>
 
-	<div id="demoSWF">
-		<p><a href="http://www.adobe.com/go/getflashplayer"><img
-				src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
-				alt="Get Adobe Flash player"/></a></p>
-	</div>
+<div class="demo-container">
+
+<% if @getDemoTarget(@document).html5?: %>
+    <iframe class="html5-demo" src="<%= @getDemoTarget(@document).html5 %>"
+        width="<%= @document.width %>"
+        height="<%= @document.height %>"
+    ></iframe>
+<% end %>
+
+<% if @getDemoTarget(@document).flash?: %>
+    <div class="flash-demo">
+        <div id="demoSWF">
+        </div>
+    </div>
+<% end %>
+
+    <div class="flash-warning">
+
+        <p>Sorry this demo requires the Flash player.</p>
+
+        <p>Most of our other demos are html5 compatible.</p>
+
+        <a class="install-flash-player-prompt"
+            href="http://www.adobe.com/go/getflashplayer">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        </a>
+
+    </div>
+</div>
 
 	<div class="container-main-content">
 		<div class="demo-content">
 
-			<br>
-				
-			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/<%= @document.source %>/source" class="btn btn-sm btn-source" target="_blank"><span class="glyphicon glyphicon-book"></span> Source </a>
+            <br>
+
+<% if @getDemoTarget(@document).html5? and @getDemoTarget(@document).flash?: %>
+
+            <div
+                class="btn btn-sm btn-source demo-button flash-button" target="_blank"
+            >
+                Flash
+            </div>
+
+            <div
+                class="btn btn-sm btn-source demo-button html5-button" target="_blank"
+            >
+                Html5
+            </div>
+<% end %>
 
 			<h1 class="title"><%= @document.title %></h1>
+
+			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/<%= @document.source %>/source" target="_blank" style="float: right;">
+			    <span class="glyphicon glyphicon-book"></span>
+			    source code
+			</a>
 
 			<%- @content %>
 
@@ -76,12 +118,92 @@
 
 <%- @getBlock('scripts').add(@site.scripts).toHTML() %>
 
+<% if @getDemoTarget(@document).flash?: %>
 <script type="text/javascript" src="/vendor/swfobject/swfobject/swfobject.js"></script>
+<% end %>
+
+<% if @getDemoTarget(@document).flash? and @getDemoTarget(@document).html5?: %>
 
 <script type="text/javascript">
-	var attributes = {wmode: "direct"};
-	swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
+     if (swfobject.hasFlashPlayerVersion('11.2')) {
+         document.addEventListener('DOMContentLoaded', onReady);
+     } else {
+        var nodes = document.querySelectorAll('.demo-button');
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].style.display = 'none';
+        }
+     }
+
+    function onReady() {
+        var flashAdded = false
+        var ACTIVE_CLASS = 'active'
+        var demoContainer = document.querySelector('.demo-container')
+        var flashDemo = document.querySelector('.flash-demo')
+        var html5Demo = document.querySelector('.html5-demo')
+        var flashButton = document.querySelector('.flash-button')
+        var html5Button = document.querySelector('.html5-button')
+
+        flashButton.onmousedown = showFlash
+        html5Button.onmousedown = showHtml5
+
+        addClass(html5Button, ACTIVE_CLASS)
+
+        function showFlash() {
+            addClass(flashButton, ACTIVE_CLASS)
+            removeClass(html5Button, ACTIVE_CLASS)
+
+            if(!flashAdded) {
+                swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+                flashAdded = true;
+            }
+
+            swapElements(demoContainer, flashDemo, html5Demo)
+        }
+
+        function showHtml5() {
+            addClass(html5Button, ACTIVE_CLASS)
+            removeClass(flashButton, ACTIVE_CLASS)
+            swapElements(demoContainer, html5Demo, flashDemo)
+        }
+
+        function addClass(el, className) {
+            if (el.classList)
+              el.classList.add(className);
+            else
+              el.className += ' ' + className;
+        }
+
+        function removeClass(el, className) {
+            if (el.classList)
+              el.classList.remove(className);
+            else
+              el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+
+        function swapElements(container, elA, elB) {
+            container.insertBefore(elA, container.firstChild)
+            if(elB.parentElement === container)
+                container.removeChild(elB)
+        }
+    }
 </script>
+
+<% else if @getDemoTarget(@document).flash?: %>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', onReady);
+
+    function onReady() {
+        if (!swfobject.hasFlashPlayerVersion('11.2')) {
+            var warning = document.querySelector('.flash-warning')
+            warning.style.display = 'block'
+        }
+
+        swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+    }
+</script>
+
+<% end %>
 
 </body>
 </html>
