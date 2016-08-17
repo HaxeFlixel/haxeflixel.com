@@ -29,10 +29,23 @@
   z-index: 99;
 }
 
-.demo-button.active {
-  color : #fff;
-  background : #00b922;
-  box-shadow: none;
+.demo-button {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.demo-button .logo {
+  fill: #afafaf;
+}
+
+.flash-button.active .logo,
+.flash-button:hover .logo {
+  fill: red;
+}
+
+.html5-button.active .logo,
+.html5-button:hover .logo {
+  fill: orange;
 }
 
 .flash-warning {

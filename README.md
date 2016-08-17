@@ -5,6 +5,8 @@
 | [tools](https://github.com/HaxeFlixel/flixel-tools) | [templates](https://github.com/HaxeFlixel/flixel-templates) 
 | [docs](https://github.com/HaxeFlixel/flixel-docs) | [haxeflixel.com](https://github.com/HaxeFlixel/haxeflixel.com)
 
+[![Build Status](https://travis-ci.org/HaxeFlixel/haxeflixel.com.svg?branch=travis)](https://travis-ci.org/HaxeFlixel/haxeflixel.com)
+
 ##About
 
 This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with a Node.js static site generator called 
