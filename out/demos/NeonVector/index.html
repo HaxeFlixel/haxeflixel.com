@@ -93,20 +93,44 @@
 	<br>
 	<br>
 
-	<div id="demoSWF">
-		<p><a href="http://www.adobe.com/go/getflashplayer"><img
-				src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
-				alt="Get Adobe Flash player"/></a></p>
-	</div>
+<div class="demo-container">
+
+
+
+
+    <div class="flash-demo">
+        <div id="demoSWF">
+        </div>
+    </div>
+
+
+    <div class="flash-warning">
+
+        <p>Sorry this demo requires the Flash player.</p>
+
+        <p>Most of our other demos are html5 compatible.</p>
+
+        <a class="install-flash-player-prompt"
+            href="http://www.adobe.com/go/getflashplayer">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        </a>
+
+    </div>
+</div>
 
 	<div class="container-main-content">
 		<div class="demo-content">
 
-			<br>
-				
-			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/Performance/NeonVector/source" class="btn btn-sm btn-source" target="_blank"><span class="glyphicon glyphicon-book"></span> Source </a>
+            <br>
+
+
 
 			<h1 class="title">NeonVector</h1>
+
+			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/Performance/NeonVector/source" target="_blank" style="float: right;">
+			    <span class="glyphicon glyphicon-book"></span>
+			    source code
+			</a>
 
 			<p>This game is based on the <a href="http://gamedevelopment.tutsplus.com/series/cross-platform-vector-shooter-xna--gamedev-10559">Neon Vector Shooter XNA tutorial on Gamedevtuts+</a>. It was then <a href="https://github.com/SestrenExsis/ShapeBlasterTutorial">ported to flixel</a> by SestrenExsis and later ported to HaxeFlixel my <a href="https://github.com/Masadow">Masadow</a>.</p>
 
@@ -192,12 +216,26 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-35511281-1');
 ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
 
+
 <script type="text/javascript" src="/vendor/swfobject/swfobject/swfobject.js"></script>
 
+
+
+
 <script type="text/javascript">
-	var attributes = {wmode: "direct"};
-	swfobject.embedSWF ("/demos/swf/NeonVector.swf", "demoSWF", "800", "600", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
+    document.addEventListener('DOMContentLoaded', onReady);
+
+    function onReady() {
+        if (!swfobject.hasFlashPlayerVersion('11.2')) {
+            var warning = document.querySelector('.flash-warning')
+            warning.style.display = 'block'
+        }
+
+        swfobject.embedSWF ("/demos/swf/NeonVector.swf", "demoSWF", "800", "600", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+    }
 </script>
+
+
 
 </body>
 </html>
