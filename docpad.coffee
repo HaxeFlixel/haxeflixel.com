@@ -185,7 +185,7 @@ docpadConfig = {
         layout = 'doc'
         categoryName = 'resources'
         urls = ['/documentation/' + a.basename.replace(/^[\-0-9]+/,'')]
-        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/"
+        githubEditUrl = "https://github.com/HaxeFlixel/flixel-docs/blob/dev/documentation/"
         editUrl = githubEditUrl + a.basename
         document.setMetaDefaults({
           layout
