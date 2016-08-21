@@ -112,7 +112,7 @@ following this example:
 to [`/src/files/showcase/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/showcase/images). 
 They are resized and cropped to 500x260, so it's best to use the same ratio.
 
-Showcases that are not officially released yet are only accepted in special cases.
+Showcases that are not officially released yet are only accepted in special cases. The same is true for games from game jams.
 
 ----
 
