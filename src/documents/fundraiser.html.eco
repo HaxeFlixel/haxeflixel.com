@@ -1,0 +1,84 @@
+---
+title: "Fundraiser"
+layout: "fundraiser-layout"
+---
+
+<div class="container">
+    <div class="row">
+
+    <iframe class="indiegogo-frame" src="https://www.indiegogo.com/project/haxeflixel-games-software/embedded" width="222px" height="445px" frameborder="0" scrolling="no">
+    </iframe>
+
+    <div class="success-header">
+        <div class="success-text">
+            <h2>Campaign success</h2>
+            <p>
+                HaxeFlixel's indiegogo fundraiser campaign of 2016 is a huge <a href="https://www.indiegogo.com/projects/haxeflixel-games-software#/">success</a>!
+            </p>
+        </div>
+
+        <img src="images/flixel-logos/haxeflixel-medal.gif" />
+    </div>
+
+    <p>
+    HaxeFlixel has been developed and is now furtherly funded, by a community of people who have a geniune passion for the project. We thank everyone for the contributions of the past 5 years, whether it has been fundraising, spreading the word, submitting code, teaching others and inspiring us all to make cross platform games easier and free!
+    </p>
+
+    <br class="clear">
+
+    </div>
+</div>
+
+
+    <h3>Thankyou to all our sponsors:</h3>
+
+    <h3>Platinum</h3>
+    <ul>
+        <li>Blue Bottle Games</li>
+    </ul>
+
+    <h3>Gold</h3>
+    <ul>
+        <li>Solar Powered Games</li>
+        <li>Gian Prescilla</li>
+    </ul>
+
+    <h3>Silver</h3>
+    <ul>
+        <li>Anonymous</li>
+        <li>Ludoko Studios</li>
+        <li>David Capello</li>
+    </ul>
+
+    <h3>Super Funders</h3>
+    <ul>
+        <li>Terry Langeveld</li>
+        <li>Rotten Mage</li>
+        <li>Justin Ma</li>
+        <li>Franco Ponticelli</li>
+        <li>Tiago Ling Alexandre</li>
+        <li>Peter Tripp</li>
+        <li>George Kurelic</li>
+        <li>Kevin Purcell</li>
+    </ul>
+    
+    <h2>Fundraiser lead</h2>
+
+    <p>None of this would have even started without Lars Doucet of Level up Labs, leading the entire campaign!
+    </p>
+
+    <h3>Community backers</h3>
+
+    <ul class="backer-list">
+    <% for backer in @getBackers().backers: %>
+        <li class="backer">
+            <h4><%= backer.name %></h4>
+            <img src="<%= backer.imgSrc %>" width="40" height="40" />
+        </li>
+    <% end %>
+    </ul>
+
+    <div class="thanks-container">
+        <h3>The HaxeFlixel community thanks you for your support</h3>
+    </div>
+

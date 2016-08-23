@@ -1,5 +1,6 @@
 # For the blog preview page parse the markdown with github flavour.
 marked            = require 'marked'
+backers           = require './backers.json'
 markedOptions =
   pedantic: false
   gfm: true
@@ -51,6 +52,10 @@ docpadConfig = {
 
     # -----------------------------
     # Helper Functions
+
+    # Used in the fundraiser page for the indiegogo backer list
+    getBackers: ->
+      backers
 
     # Get the prepared site/document title
     # Often we would like to specify particular formatting to our page's title
