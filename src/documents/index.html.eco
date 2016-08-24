@@ -20,12 +20,13 @@ title: 'Home'
 			<a class="home-button" href="https://github.com/HaxeFlixel">GitHub</a>
         </p>
 
-        <br>
+        <hr class="backer-hr">
 
-        <hr>
-
-        <div>
-            <h3>Backed by a powerful community</h3>
+        <div class="backer-container">
+            
+            <h3>
+                <a href="/fundraiser">Sponsored</a> by a powerful community
+            </h3>
 
             <a href="/fundraiser">
                 <img width="180" height="58" src="images/IGG_FundedWithBadges_Gogenta_RGB_Rectangle.png" />

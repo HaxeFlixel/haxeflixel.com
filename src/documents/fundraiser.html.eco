@@ -4,33 +4,56 @@ layout: "fundraiser-layout"
 ---
 
 <div class="container">
-    <div class="row">
 
-    <iframe class="indiegogo-frame" src="https://www.indiegogo.com/project/haxeflixel-games-software/embedded" width="222px" height="445px" frameborder="0" scrolling="no">
-    </iframe>
+    <div class="fundraiser-header">
 
-    <div class="success-header">
-        <div class="success-text">
-            <h2>Campaign success</h2>
-            <p>
-                HaxeFlixel's indiegogo fundraiser campaign of 2016 is a huge <a href="https://www.indiegogo.com/projects/haxeflixel-games-software#/">success</a>!
-            </p>
+        <div class="fundraiser-header-container">
+            <div class="success-header">
+                <div class="success-text">
+                    <img width="128" height="130"
+                         src="images/flixel-logos/haxeflixel-medal.gif" 
+                    />
+                    <span>
+                        <h2>Campaign success</h2>
+                        <p>
+                        The Indiegogo campaign of 2016 is a huge
+                        <a href="https://www.indiegogo.com/projects/haxeflixel-games-software#/">success</a>!
+                        </p>
+                    </span>
+                </div>
+
+                <hr>
+                <br>
+
+                <p>
+                HaxeFlixel is developed by and is now furtherly funded by,
+                a community of people who have a geniune passion for the project.
+                </p>
+
+                <p>
+                We thank everyone for their contributions over the past 5 years,
+                whether it has been spreading the word, fundraising, admin, testing,
+                reviewing & submitting code or teaching and supporting others.
+                All this keeps inspiring the community to continue HaxeFlixel to help
+                make cross platform games easier and free!
+                </p>
+
+                <p>
+                None of this fundraiser would have even started without the dedicated effort from
+                Lars Doucet of Level up Labs, leading this entire campaign!
+                </p>
+
+            </div>
         </div>
 
-        <img src="images/flixel-logos/haxeflixel-medal.gif" />
+        <iframe class="indiegogo-frame"
+            src="https://www.indiegogo.com/project/haxeflixel-games-software/embedded"
+            width="222px" height="445px"
+            frameborder="0" scrolling="no"
+        ></iframe>
     </div>
 
-    <p>
-    HaxeFlixel has been developed and is now furtherly funded, by a community of people who have a geniune passion for the project. We thank everyone for the contributions of the past 5 years, whether it has been fundraising, spreading the word, submitting code, teaching others and inspiring us all to make cross platform games easier and free!
-    </p>
-
-    <br class="clear">
-
-    </div>
-</div>
-
-
-    <h3>Thankyou to all our sponsors:</h3>
+    <h2>Our sponsors:</h2>
 
     <h3>Platinum</h3>
     <ul>
@@ -61,24 +84,21 @@ layout: "fundraiser-layout"
         <li>George Kurelic</li>
         <li>Kevin Purcell</li>
     </ul>
-    
-    <h2>Fundraiser lead</h2>
 
-    <p>None of this would have even started without Lars Doucet of Level up Labs, leading the entire campaign!
-    </p>
-
-    <h3>Community backers</h3>
+    <h3>Thankyou to the community backers:</h3>
 
     <ul class="backer-list">
-    <% for backer in @getBackers().backers: %>
+<% for backer in @getBackers().backers: %>
         <li class="backer">
             <h4><%= backer.name %></h4>
             <img src="<%= backer.imgSrc %>" width="40" height="40" />
         </li>
-    <% end %>
+<% end %>
     </ul>
 
     <div class="thanks-container">
         <h3>The HaxeFlixel community thanks you for your support</h3>
     </div>
 
+
+</div>
