@@ -23,13 +23,9 @@ title: 'Home'
         <hr class="backer-hr">
 
         <div class="backer-container">
-            
-            <h3>
-                <a href="/fundraiser">Sponsored</a> by a powerful community
-            </h3>
-
+        
             <a href="/fundraiser">
-                <img width="180" height="58" src="images/IGG_FundedWithBadges_Gogenta_RGB_Rectangle.png" />
+                <img width="180" height="58" src="images/IGG_FundedWithBadges_WhiteOutlined_RGB_Rectangle.png" />
             </a>
 
             <span class="patreon-home">
@@ -69,6 +65,12 @@ title: 'Home'
             } (document, "script", "twitter-wjs");</script>
 
         </div>
+
+       
+            <a class="home-button sponsors-button" href="/sponsors">
+               Our Sponsors
+            </a>
+        </h3>
 
     </div>
 

@@ -10,9 +10,7 @@ layout: "fundraiser-layout"
         <div class="fundraiser-header-container">
             <div class="success-header">
                 <div class="success-text">
-                    <img width="128" height="130"
-                         src="images/flixel-logos/haxeflixel-medal.gif" 
-                    />
+                    <img width="128" height="130" src="/images/flixel-logos/haxeflixel-medal.gif" />
                     <span>
                         <h2>Campaign success</h2>
                         <p>
@@ -43,6 +41,14 @@ layout: "fundraiser-layout"
                 Lars Doucet of Level up Labs, leading this entire campaign!
                 </p>
 
+                <p>
+                This campaign is has also made it possible for HaxeFlixel for official sponsors to fund the project.
+                </p>
+
+                <h3>
+                    We now have a HaxeFlixel <a href="/sponsors">Sponsors page!</a>
+                </h3>
+
             </div>
         </div>
 
@@ -53,39 +59,7 @@ layout: "fundraiser-layout"
         ></iframe>
     </div>
 
-    <h2>Our sponsors:</h2>
-
-    <h3>Platinum</h3>
-    <ul>
-        <li>Blue Bottle Games</li>
-    </ul>
-
-    <h3>Gold</h3>
-    <ul>
-        <li>Solar Powered Games</li>
-        <li>Gian Prescilla</li>
-    </ul>
-
-    <h3>Silver</h3>
-    <ul>
-        <li>Anonymous</li>
-        <li>Ludoko Studios</li>
-        <li>David Capello</li>
-    </ul>
-
-    <h3>Super Funders</h3>
-    <ul>
-        <li>Terry Langeveld</li>
-        <li>Rotten Mage</li>
-        <li>Justin Ma</li>
-        <li>Franco Ponticelli</li>
-        <li>Tiago Ling Alexandre</li>
-        <li>Peter Tripp</li>
-        <li>George Kurelic</li>
-        <li>Kevin Purcell</li>
-    </ul>
-
-    <h3>Thankyou to the community backers:</h3>
+    <h3 class="thankyou-backers">Thankyou to all our Indiegogo backers:</h3>
 
     <ul class="backer-list">
 <% for backer in @getBackers().backers: %>
@@ -95,10 +69,5 @@ layout: "fundraiser-layout"
         </li>
 <% end %>
     </ul>
-
-    <div class="thanks-container">
-        <h3>The HaxeFlixel community thanks you for your support</h3>
-    </div>
-
 
 </div>

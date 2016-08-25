@@ -1,0 +1,38 @@
+---
+title: "Sponsors"
+layout: "sponsors-layout"
+---
+
+<div class="container">
+
+    <h3>Platinum</h3>
+    <ul>
+        <li>Blue Bottle Games</li>
+    </ul>
+
+    <h3>Gold</h3>
+    <ul>
+        <li>Solar Powered Games</li>
+        <li>Gian Prescilla</li>
+    </ul>
+
+    <h3>Silver</h3>
+    <ul>
+        <li>Anonymous</li>
+        <li>Ludoko Studios</li>
+        <li>David Capello</li>
+    </ul>
+
+    <h3>Super Funders</h3>
+    <ul>
+        <li>Terry Langeveld</li>
+        <li>Rotten Mage</li>
+        <li>Justin Ma</li>
+        <li>Franco Ponticelli</li>
+        <li>Tiago Ling Alexandre</li>
+        <li>Peter Tripp</li>
+        <li>George Kurelic</li>
+        <li>Kevin Purcell</li>
+    </ul>
+
+</div>
