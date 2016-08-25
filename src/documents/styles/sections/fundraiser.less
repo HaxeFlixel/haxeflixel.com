@@ -28,17 +28,26 @@
 }
 
 .backer {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 240px;
   height: 120px;
   margin: 10px;
   padding: 10px;
   text-align: center;
   border: 1px solid #c4c4c4;
   border-radius: 4px;
+}
+
+.backer-amount {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 10px;
 }
 
 .backer h4 {

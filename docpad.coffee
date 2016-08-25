@@ -132,13 +132,14 @@ docpadConfig = {
   collections:
 
     blog: (database) ->
-      database.findAllLive({layout:$has:'blog-post'}, [filename:-1]).on 'add', (document) ->
+      database.findAllLive({layout:$has:['blog-post', 'fundraiser-layout']}, [filename:-1]).on 'add', (document) ->
         a = document.attributes
-        contentPreview = marked(a.content.substring(0,150) + " ...")
+        if a.layout != "fundraiser-layout"
+          contentPreview = marked(a.content.substring(0,150) + " ...")
+          document.setMetaDefaults({
+            contentPreview
+          })
         a.postDate = "posted : " + a.postDate
-        document.setMetaDefaults({
-          contentPreview
-        })
 
     demos: (database) ->
       database.findAllLive({layout:$has:'demo'}, [title:1]).on 'add', (document) ->

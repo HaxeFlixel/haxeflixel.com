@@ -5,7 +5,7 @@
 
 <body>
 
-<%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %>
+<%- @partial('header-menu.html.eco', {adocs:"class='active'"}) %>
 
 <div class="container container-main">
 
