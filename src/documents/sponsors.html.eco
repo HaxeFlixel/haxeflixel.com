@@ -3,36 +3,59 @@ title: "Sponsors"
 layout: "sponsors-layout"
 ---
 
-<div class="container">
+<div class="sponsors container">
 
-    <h3>Platinum</h3>
-    <ul>
-        <li>Blue Bottle Games</li>
-    </ul>
+    <p>
+        HaxeFlixel specially thanks our sponsors from the <a href="/fundraiser">indiegogo fundraiser campaign</a>.
+    </p>
 
-    <h3>Gold</h3>
-    <ul>
-        <li>Solar Powered Games</li>
-        <li>Gian Prescilla</li>
-    </ul>
+    <div class="platinum">
+        <h3>Platinum</h3>
 
-    <h3>Silver</h3>
-    <ul>
-        <li>Anonymous</li>
-        <li>Ludoko Studios</li>
-        <li>David Capello</li>
-    </ul>
+        <a href="http://bluebottlegames.com">
+            <img src="/images/BBGLogo.svg"
+                width="250px"
+                height="170px"
+            />
+        </a>
 
-    <h3>Super Funders</h3>
-    <ul>
-        <li>Terry Langeveld</li>
-        <li>Rotten Mage</li>
-        <li>Justin Ma</li>
-        <li>Franco Ponticelli</li>
-        <li>Tiago Ling Alexandre</li>
-        <li>Peter Tripp</li>
-        <li>George Kurelic</li>
-        <li>Kevin Purcell</li>
-    </ul>
+    </div>
+
+    <hr>
+
+    <div class="gold">
+        <h3>Gold</h3>
+        <ul>
+            <li>Solar Powered Games</li>
+            <li>Gian Prescilla</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="silver">
+        <h3>Silver</h3>
+        <ul>
+            <li>Anonymous</li>
+            <li>Ludoko Studios</li>
+            <li>David Capello</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="super-funders">
+        <h3>Super Funders</h3>
+        <ul>
+            <li>Terry Langeveld</li>
+            <li>Rotten Mage</li>
+            <li>Justin Ma</li>
+            <li>Franco Ponticelli</li>
+            <li>Tiago Ling Alexandre</li>
+            <li>Peter Tripp</li>
+            <li>George Kurelic</li>
+            <li>Kevin Purcell</li>
+        </ul>
+    </div>
 
 </div>

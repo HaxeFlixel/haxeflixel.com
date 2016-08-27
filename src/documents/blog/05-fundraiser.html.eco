@@ -63,13 +63,15 @@ postDate: 08-27-2016
     <h3 class="thankyou-backers">Thankyou to all our Indiegogo backers:</h3>
 
     <ul class="backer-list">
-<% for backer in @getBackers().backers: %>
+
+<% for backer in @getBackers(): %>
         <li class="backer">
             <h4><%= backer.name %></h4>
             <img src="<%= backer.imgSrc %>" width="40" height="40" />
             <span class="backer-amount"><%= backer.amount %></span>
         </li>
 <% end %>
+
     </ul>
 
 </div>

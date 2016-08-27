@@ -1,6 +1,6 @@
 # For the blog preview page parse the markdown with github flavour.
 marked            = require 'marked'
-backers           = require './backers.json'
+backers           = require './src/files/backers.json'
 markedOptions =
   pedantic: false
   gfm: true

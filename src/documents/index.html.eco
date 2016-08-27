@@ -66,10 +66,27 @@ title: 'Home'
 
         </div>
 
-       
+            <hr>
+
+            <div class="platinum-container">
+                <img src="images/platinum-sponsor.svg"
+                        width="250px"
+                        height="170px"
+                />
+                <a href="http://bluebottlegames.com">
+                    <img src="images/BBGLogoBW.svg"
+                        width="250px"
+                        height="170px"
+                    />
+                </a>
+            </div>
+
+            <hr>
+
             <a class="home-button sponsors-button" href="/sponsors">
-               Our Sponsors
+                All our Sponsors
             </a>
+
         </h3>
 
     </div>
