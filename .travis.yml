@@ -1,0 +1,16 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "4.4.7"
+
+services:
+  - docker
+
+before_install:
+  - node bin/docker.js buildImage
+
+script:
+  - ls -lah
+  - node bin/docker.js buildSite
+  - ls -lah
