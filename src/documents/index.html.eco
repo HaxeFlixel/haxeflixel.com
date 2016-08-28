@@ -40,14 +40,15 @@ title: 'Home'
 
             <iframe width="160px" scrolling="0" height="30px" frameborder="0"
                     allowtransparency="true"
-                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"
+            ></iframe>
 
             <iframe width="160px" scrolling="0" height="30px" frameborder="0"
                     allowtransparency="true"
-                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"></iframe>
+                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"
+            ></iframe>
 
-
-			<br/>
+			<br />
 
             <a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en"
                data-size="large">Follow @haxeflixel</a>
@@ -65,29 +66,6 @@ title: 'Home'
             } (document, "script", "twitter-wjs");</script>
 
         </div>
-
-            <hr>
-
-            <div class="platinum-container">
-                <img src="images/platinum-sponsor.svg"
-                        width="250px"
-                        height="170px"
-                />
-                <a href="http://bluebottlegames.com">
-                    <img src="images/BBGLogoBW.svg"
-                        width="250px"
-                        height="170px"
-                    />
-                </a>
-            </div>
-
-            <hr>
-
-            <a class="home-button sponsors-button" href="/sponsors">
-                All our Sponsors
-            </a>
-
-        </h3>
 
     </div>
 
