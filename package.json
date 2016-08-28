@@ -23,8 +23,7 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "docpad --version",
-    "watch": "docpad run",
-    "build-production": "docpad generate --env static"
+    "start": "docpad run",
+    "build": "docpad generate --env static"
   }
 }
