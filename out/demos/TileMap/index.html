@@ -93,20 +93,44 @@
 	<br>
 	<br>
 
-	<div id="demoSWF">
-		<p><a href="http://www.adobe.com/go/getflashplayer"><img
-				src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
-				alt="Get Adobe Flash player"/></a></p>
-	</div>
+<div class="demo-container">
+
+
+
+
+    <div class="flash-demo">
+        <div id="demoSWF">
+        </div>
+    </div>
+
+
+    <div class="flash-warning">
+
+        <p>Sorry this demo requires the Flash player.</p>
+
+        <p>Most of our other demos are html5 compatible.</p>
+
+        <a class="install-flash-player-prompt"
+            href="http://www.adobe.com/go/getflashplayer">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        </a>
+
+    </div>
+</div>
 
 	<div class="container-main-content">
 		<div class="demo-content">
 
-			<br>
-				
-			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/Features/Tilemap/source" class="btn btn-sm btn-source" target="_blank"><span class="glyphicon glyphicon-book"></span> Source </a>
+            <br>
+
+
 
 			<h1 class="title">Tilemap</h1>
+
+			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/Features/Tilemap/source" target="_blank" style="float: right;">
+			    <span class="glyphicon glyphicon-book"></span>
+			    source code
+			</a>
 
 			<p>A port and improvement of the <a href="https://github.com/LordTim/FlxTilemap-Demo">Tilemap demo</a> by <a href="https://twitter.com/lordtim">Tim Plummer</a> featured on <a href="http://flixel.org/features.html">flixel.org/features</a>.</p>
 <p>Flixel&#39;s FlxTilemap class was inspired by old video games, in which the environment was constructed using a grid of square &quot;tiles&quot;. Each grid cell gets a number, or index, which refers to a particular square graphic. That tile graphic is then placed at the appropriate grid number. Tilemaps have many advantages: it is easy to figure out what tiles should be drawn on screen, what tiles an object overlaps, and what special properties each tile might have. Flixel also includes some built-in algorithms for automatically placing wall tiles and floor tiles based on a simple binary (1s and 0s) array of tile data. It is a simple system with a lot of flexibility, which makes it perfect for rapid prototyping.</p>
@@ -193,12 +217,26 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-35511281-1');
 ga('send', 'pageview');</script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer"  src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer"  src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
 
+
 <script type="text/javascript" src="/vendor/swfobject/swfobject/swfobject.js"></script>
 
+
+
+
 <script type="text/javascript">
-	var attributes = {wmode: "direct"};
-	swfobject.embedSWF ("/demos/swf/Tilemap.swf", "demoSWF", "400", "300", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, attributes);
+    document.addEventListener('DOMContentLoaded', onReady);
+
+    function onReady() {
+        if (!swfobject.hasFlashPlayerVersion('11.2')) {
+            var warning = document.querySelector('.flash-warning')
+            warning.style.display = 'block'
+        }
+
+        swfobject.embedSWF ("/demos/swf/Tilemap.swf", "demoSWF", "400", "300", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+    }
 </script>
+
+
 
 </body>
 </html>

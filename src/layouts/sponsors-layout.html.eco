@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css"]).toHTML()} ) %>
+
+<body>
+
+<%- @partial('header-menu.html.eco', {adocs:"class='active'"}) %>
+
+<div class="container container-main">
+
+  <div class="col-md-12">
+
+    <h1 class="title"><%= @document.title %></h1>
+
+    <%- @content %>
+
+  </div>
+
+</div>
+
+<%- @partial('footer.html') %>
+
+<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 # For the blog preview page parse the markdown with github flavour.
 marked            = require 'marked'
+backers           = require './src/files/backers.json'
 markedOptions =
   pedantic: false
   gfm: true
@@ -53,6 +54,10 @@ docpadConfig = {
 
     # -----------------------------
     # Helper Functions
+
+    # Used in the fundraiser page for the indiegogo backer list
+    getBackers: ->
+      backers
 
     # Get the prepared site/document title
     # Often we would like to specify particular formatting to our page's title
@@ -136,13 +141,14 @@ docpadConfig = {
   collections:
 
     blog: (database) ->
-      database.findAllLive({layout:$has:'blog-post'}, [filename:-1]).on 'add', (document) ->
+      database.findAllLive({layout:$has:['blog-post', 'fundraiser-layout']}, [filename:-1]).on 'add', (document) ->
         a = document.attributes
-        contentPreview = marked(a.content.substring(0,150) + " ...")
+        if a.layout != "fundraiser-layout"
+          contentPreview = marked(a.content.substring(0,150) + " ...")
+          document.setMetaDefaults({
+            contentPreview
+          })
         a.postDate = "posted : " + a.postDate
-        document.setMetaDefaults({
-          contentPreview
-        })
 
     demos: (database) ->
       database.findAllLive({layout:$has:'demo'}, [title:1]).on 'add', (document) ->
