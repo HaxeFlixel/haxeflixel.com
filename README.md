@@ -5,6 +5,8 @@
 | [tools](https://github.com/HaxeFlixel/flixel-tools) | [templates](https://github.com/HaxeFlixel/flixel-templates) 
 | [docs](https://github.com/HaxeFlixel/flixel-docs) | [haxeflixel.com](https://github.com/HaxeFlixel/haxeflixel.com)
 
+[![Build Status](https://img.shields.io/travis/HaxeFlixel/haxeflixel.com.svg?style=flat-square)](https://travis-ci.org/HaxeFlixel/haxeflixel.com)
+
 ##About
 
 This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with a Node.js static site generator called 
@@ -110,7 +112,7 @@ following this example:
 to [`/src/files/showcase/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/showcase/images). 
 They are resized and cropped to 500x260, so it's best to use the same ratio.
 
-Showcases that are not officially released yet are only accepted in special cases.
+Showcases that are not officially released yet are only accepted in special cases. The same is true for games from game jams.
 
 ----
 

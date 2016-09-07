@@ -1,5 +1,6 @@
 @import "../mixins/style";
 @import "../../../files/vendor/LESSHat/lesshat.less";
+@import 'https://fonts.googleapis.com/css?family=VT323';
 
 /* Homepage styles
 -------------------------------------------------- */
@@ -34,6 +35,21 @@
   text-align: center;
 }
 
+.sponsors-button {
+  font-size: 24px;
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.platinum-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'VT323', monospace;
+  font-size: 56px;
+}
+
 .home-header {
   margin-top: 5em;
 }
@@ -44,7 +60,7 @@
 }
 
 .home-social {
-  margin-top: 4em;
+  margin-top: 2em;
 }
 
 .home-section-features {
@@ -120,10 +136,14 @@
 
 .patreon-home {
   img {
-    max-width: 140px;
-	vertical-align: top;
-	margin-left: 30px;
+    max-width: 240px;
+    vertical-align: top;
+    margin-left: 30px;
   }
+}
+
+.backer-hr {
+  margin-top: 60px;
 }
 
 @media (max-width: @screen-md-min) {
@@ -146,3 +166,41 @@
     font-size: 4em;
   }
 }
+
+.sponsors {
+
+  text-align: center;
+
+  .platinum {
+    font-size: 50px;
+    li {
+      width: 400px;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  ul li {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 120px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+  }
+
+}
+

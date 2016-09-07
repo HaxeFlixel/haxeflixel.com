@@ -308,8 +308,7 @@
 </code></pre>
 <p> With classes, we use the &#39;super&#39; keyword to refer to the parent class. So, within our <code>new()</code> / the constructor, by calling <code>super(X, Y)</code> we are basically saying to go up the chain to our parent class, in this case <code>FlxSprite</code>, and call its constructor, passing it the <code>X</code> and <code>Y</code> arguments that were passed to us.</p>
 </li>
-<li><p>Next, we&#39;ll want to create a placeholder image to show us where our sprite is, so under <code>super(X, Y);</code>, add:
-7.</p>
+<li><p>Next, we&#39;ll want to create a placeholder image to show us where our sprite is, so under <code>super(X, Y);</code>, add:</p>
 <pre class="highlight"><code class="hljs actionscript"> makeGraphic(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>, FlxColor.BLUE);
 </code></pre>
 <p> (Make sure that an import is created for <code>FlxColor</code>, and if it isn&#39;t, add it)
