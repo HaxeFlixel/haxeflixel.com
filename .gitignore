@@ -4,3 +4,4 @@ docpad.js
 .idea
 src/documents/documentation
 npm-debug.log*
+out

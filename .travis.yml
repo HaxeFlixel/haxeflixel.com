@@ -1,16 +1,31 @@
 sudo: required
-
 language: node_js
 node_js:
-  - "4.4.7"
+  - 4.4.7
 
 services:
   - docker
 
+addons:
+  ssh_known_hosts: "<deploy-host>"
+
 before_install:
+  - openssl aes-256-cbc -K $encrypted_83630750896a_key -iv $encrypted_83630750896a_iv -in rrsync_haxeflixel.enc -out rrsync_haxeflixel -d
   - node bin/docker.js buildImage
 
 script:
   - ls -lah
   - node bin/docker.js buildSite
   - ls -lah
+
+before_deploy:
+  - eval "$(ssh-agent -s)"
+  - chmod 600 $TRAVIS_BUILD_DIR/rrsync_haxeflixel
+  - ssh-add $TRAVIS_BUILD_DIR/rrsync_haxeflixel
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -e "ssh -i $TRAVIS_BUILD_DIR/rrsync_haxeflixel -p <deploy-port>" -avr --delete-after --quiet $TRAVIS_BUILD_DIR/out <ssh-user>@<deploy-host>:$TRAVIS_BRANCH
+  on:
+    branch: sponsors
