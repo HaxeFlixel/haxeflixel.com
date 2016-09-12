@@ -26,6 +26,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -e "ssh -i rrsync_haxeflixel -p <deploy-port>" -avr --delete-after --quiet $TRAVIS_BUILD_DIR/out <ssh-user>@<deploy-host>:$TRAVIS_BRANCH
+  script: rsync -e "ssh -i rrsync_haxeflixel -p $deploy-port" -avr --delete-after --quiet $TRAVIS_BUILD_DIR/out $ssh-user@$deploy-host:$TRAVIS_BRANCH
   on:
     branch: sponsors
