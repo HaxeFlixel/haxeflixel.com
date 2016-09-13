@@ -22,4 +22,9 @@ deploy:
     -p $DEPLOY_PORT" -avr $TRAVIS_BUILD_DIR/out $DEPLOY_USER@$DEPLOY_HOST:$TRAVIS_BRANCH
   on:
     branch: dev
+  provider: script
+  skip_cleanup: true
+  script: rsync -e "ssh -oStrictHostKeyChecking=no -i $TRAVIS_BUILD_DIR/rrsync_haxeflixel
+    -p $DEPLOY_PORT" -avr $TRAVIS_BUILD_DIR/out $DEPLOY_USER@$DEPLOY_HOST:$TRAVIS_BRANCH
+  on:
     branch: master
