@@ -6,9 +6,6 @@ node_js:
 services:
   - docker
 
-addons:
-  ssh_known_hosts: "$DEPLOY_KNOWN_HOST"
-
 before_install:
   - openssl aes-256-cbc -K $encrypted_83630750896a_key -iv $encrypted_83630750896a_iv -in rrsync_haxeflixel.enc -out rrsync_haxeflixel -d
   - node bin/docker.js buildImage
@@ -26,6 +23,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -e "ssh -i rrsync_haxeflixel -p $DEPLOY_PORT" -avr $TRAVIS_BUILD_DIR/out $DEPLOY_USER@$DEPLOY_HOST:$TRAVIS_BRANCH
+  script: rsync -e "ssh -oStrictHostKeyChecking=no -i rrsync_haxeflixel -p $DEPLOY_PORT" -avr $TRAVIS_BUILD_DIR/out $DEPLOY_USER@$DEPLOY_HOST:$TRAVIS_BRANCH
   on:
     branch: sponsors
