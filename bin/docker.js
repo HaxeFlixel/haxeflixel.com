@@ -30,7 +30,7 @@ function runBuildImage() {
 function buildSite() {
     execSync('rm -rf ./out')
     runBuildImage()
-    execSync(`docker exec -ti ${BUILD_CONTAINER_NAME} bash -c "npm run build-production"`, {stdio: [0, 1, 2]})
+    execSync(`docker exec -ti ${BUILD_CONTAINER_NAME} bash -c "npm run build"`, {stdio: [0, 1, 2]})
     execSync(`docker cp ${BUILD_CONTAINER_NAME}:/usr/src/app/out ./out`)
     // copy the images from the docs repo manually :(
     execSync(`docker cp ${BUILD_CONTAINER_NAME}:/usr/src/app/out/documentation/documentation/images ./out/documentation`)

@@ -7,6 +7,4 @@ RUN npm install
 
 ADD . .
 
-RUN npm run build-production
-
 EXPOSE 9778
