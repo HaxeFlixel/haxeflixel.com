@@ -18,6 +18,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: bin/deploy.sh
+  script: node bin/deploy.js
   on:
     all_branches: true
