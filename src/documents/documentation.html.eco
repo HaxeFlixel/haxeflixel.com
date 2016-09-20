@@ -5,10 +5,31 @@ layout: "documentation-layout"
 
 <%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {icon: 'play', title: 'Getting Started'}) %>
 
+<hr>
+
 <%- @partial('doc-category.html.eco', {docs:@getCollection('tutorial')}, {icon: 'check', title:'Tutorial'}) %>
-        
+
+<hr>
+
 <%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {icon: 'book', title: 'HaxeFlixel Handbook'}) %>
+
+<hr>
 
 <%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {icon: 'folder-open', title:'Resources'}) %>
 
+<hr>
+
 <%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {icon: 'globe', title: 'Community'}) %>
+
+
+<hr>
+
+<a href="http://discover-haxeflixel.com/">
+  <h2>
+    <span class="glyphicon glyphicon-book"></span>
+    Discover Haxeflixel book
+  </h2>
+  <img height="254"
+       src="/images/discover-haxeflixel.png"
+  />
+</a>
