@@ -23,7 +23,7 @@ title: 'Home'
         <hr class="backer-hr">
 
         <div class="backer-container">
-        
+
             <a href="/blog/05-fundraiser">
                 <img width="180" height="58" src="images/IGG_FundedWithBadges_WhiteOutlined_RGB_Rectangle.png" />
             </a>
@@ -140,6 +140,10 @@ title: 'Home'
         <p class="lead-line-large">Our platinum and gold sponsors:</p>
 
         <div class="sponsor-logos-container">
+            <a class="platinum" href="http://www.defendersquest.com">
+                <img src="/images/sponsors/platinum/level-up-labs/lul_logo_circle.png" />
+            </a>
+
             <a class="platinum" href="http://bluebottlegames.com">
                 <img src="/images/sponsors/platinum/blue-bottle-games/bbgLogoColor256x256.png" />
             </a>
