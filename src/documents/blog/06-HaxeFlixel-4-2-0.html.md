@@ -16,6 +16,8 @@ You can find the full changelog [here](https://github.com/HaxeFlixel/flixel/blob
 
 Thanks to everybody who contributed to this release in any way!
 
+By the way, in case you hadn't noticed: we recently released new versions of flixel-tools and flixel-templates as well, [**adding support for Visual Studio Code!**](http://haxeflixel.com/documentation/visual-studio-code/)
+
 #### What happened to OpenFL 4 support?
 
 Don't worry, it's still coming! There are two reasons why it's not a part of 4.2.0:
