@@ -1,0 +1,41 @@
+date,transaction,debit,credit
+Patreon,,,
+"Sept. 1, 2016",Income - Patreon Donations,179.00,0.00
+"Sept. 1, 2016",Expense - Processing Fees,0.00,8.11
+"Sept. 1, 2016",Expense -  Patreon Fees,0.00,8.95
+Total Patreon,,179.00,17.06
+Net Movement,,,161.94
+,,,
+Treasurer,,,
+"Sept. 4, 2016",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,17.58,0.00
+"Sept. 28, 2016",Expense - PayPal Transfer Fee,0.00,0.25
+"Sept. 28, 2016",Expense - Bounty claimed by PeyTy (https://github.com/HaxeFlixel/flixel/issues/1753),0.00,50.00
+Total Treasurer,,17.58,50.25
+Net Movement,,,(32.67)
+,,,
+Patreon Donations,,,
+"Sept. 1, 2016",Income - Patreon Donations,0.00,179.00
+Total Patreon Donations,,0.00,179.00
+Net Movement,,,179.00
+,,,
+Book Sales,,,
+"Sept. 4, 2016",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,0.00,17.58
+Total Book Sales,,0.00,17.58
+Net Movement,,,17.58
+,,,
+Payment Fees,,,
+"Sept. 28, 2016",Expense - PayPal Transfer Fee,0.25,0.00
+"Sept. 1, 2016",Expense - Processing Fees,8.11,0.00
+Total Payment Fees,,8.36,0.00
+Net Movement,,,8.36
+,,,
+Patreon Fees,,,
+"Sept. 1, 2016",Expense -  Patreon Fees,8.95,0.00
+Total Patreon Fees,,8.95,0.00
+Net Movement,,,8.95
+,,,
+Development Services,,,
+"Sept. 28, 2016",Expense - Bounty claimed by PeyTy (https://github.com/HaxeFlixel/flixel/issues/1753),50.00,0.00
+Total Development Services,,50.00,0.00
+Net Movement,,,50.00
+,,,
