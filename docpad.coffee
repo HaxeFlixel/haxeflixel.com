@@ -36,10 +36,7 @@ docpadConfig = {
         gamedev, game development, cross-platform, haxe, flixel
         """
       styles: [
-        "/styles/bootstrap.css",
-        "/styles/style.css",
-        "/styles/site.css",
-        "/styles/monokai-sublime.css"
+        "/styles/style.css"
       ]
       scripts: [
         "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
