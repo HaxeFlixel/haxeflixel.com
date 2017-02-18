@@ -5,3 +5,4 @@ docpad.js
 src/documents/documentation
 npm-debug.log*
 out
+debug.log
