@@ -22,7 +22,7 @@
 <%-@partial('footer.html')%>
 
 <%- @getBlock('scripts').add(@site.scripts).toHTML() %>
-
+ 
 </body>
 
 </html>
