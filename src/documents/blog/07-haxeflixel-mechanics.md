@@ -23,7 +23,7 @@ Well, what if I told you that it *already exists*!?
 
 A couple of years back now (wow, time flies!), I had the idea of putting together a website that would showcase a ton of little samples of HaxeFlixel code, along with a demonstration of that code in action. It took some time, but I was able to get a pretty good start on this thing, and I called it [*HaxeFlixel Mechanics*](https://github.com/HaxeFlixel/haxeflixel-mechanics).
 
-![](/images/blog/hfscreen.gif)
+![](/images/blog/hfscreen.png)
 
 The plan was to get a bunch of samples in the project, and then invite collaborators to add more to help grow and flesh it out... and then Real Life&trade; got in the way and the project got pushed aside...
 
