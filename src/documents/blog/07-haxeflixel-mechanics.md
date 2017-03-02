@@ -8,12 +8,23 @@ Does this sound familiar? "I wish I could remember how to do this one, small thi
 
 Well, what if I told you that it *already exists*!?
 
-A couple of years back now (wow, time flies!), I had the idea of putting together a website that would showcase a ton of little samples of HaxeFlixel code, along with a demonstration of that code in action. It took some time, but I was able to get a pretty good start on this thing, and I called it *HaxeFlixel Mechanics*. The plan was to get a bunch of samples in the project, and then invite collaborators to add more to help grow and flesh it out... and then Real Life&trade; got in the way and the project got pushed aside...
+<object width="725" height="85" data="http://hfmechanics.nfshost.com/title-logo/export/flash/bin/title-logo.swf" style="display: block !important;">
+    <param name="wmode" value="transparent">
+  <h1><img src=""http://hfmechanics.nfshost.com/assets/hfm-logo-0ee7b515c68a43675607436467a0566a.svg" width="64" style="vertical-align:text-top;" alt="HaxeFlixel Logo"> HaxeFlixel Mechanics</h1>
+</object>
 
-This year, let's work together to get HFMechanics back up and running again. Let's add more demoes and snippets, and try to fill it with lots more good stuff.
+A couple of years back now (wow, time flies!), I had the idea of putting together a website that would showcase a ton of little samples of HaxeFlixel code, along with a demonstration of that code in action. It took some time, but I was able to get a pretty good start on this thing, and I called it [*HaxeFlixel Mechanics*](https://github.com/HaxeFlixel/haxeflixel-mechanics).
 
-If you'd like to lend a hand, join us over in (the repository)[https://github.com/HaxeFlixel/haxeflixel-mechanics]. Add an issue for suggestions or requests, or add a PR for snippets you've created so we can add them to the site!
+![](http://haxeflixel.com/images/blog/hfscreen.gif)
 
-If you want to check out the site in action, you can visit (http://hfmechanics.nfshost.com/)[http://hfmechanics.nfshost.com/] for a live version!
+The plan was to get a bunch of samples in the project, and then invite collaborators to add more to help grow and flesh it out... and then Real Life&trade; got in the way and the project got pushed aside...
 
-Thanks!
+This year, let's work together to get HFMechanics back up and running again. Let's add more demos and snippets, and try to fill it with lots more good stuff.
+
+If you'd like to lend a hand, join us over in [the repository](https://github.com/HaxeFlixel/haxeflixel-mechanics). Add an issue for suggestions or requests, or submit pull requests for snippets you've created so we can add them to the site! You can find more detailed information about contributing, [here](https://github.com/HaxeFlixel/haxeflixel-mechanics/wiki/Contributing)!
+
+If you want to check out the site in action, you can visit [http://hfmechanics.nfshost.com/](http://hfmechanics.nfshost.com/) for a live version!
+
+Thanks! ...and be sure to tell your friends!
+-[Tim I Hely](http://tims-world.com/)
+Tim is a versatile developer from St Louis, Mo who has been using and contributing to HaxeFlixel since *at least* 2013.
