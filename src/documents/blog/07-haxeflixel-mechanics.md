@@ -4,7 +4,7 @@ layout: blog-post
 postDate: 03-02-2017
 ```
 
-Does this sound familiar? "I wish I could remember how to do this one, small thing in HaxeFlixel, and that I didn't have to dig through a massive tutorial just to jog my memory." Or, how about: "What's the 'right' way to handle this, again?" Yeah, we've all been there! Wouldn't it be nice if there was some kind of interactive repository of just about every conceiveable useful snippet of code that you could use to answer these, and other questions?
+Hey everybody, Tim here to share something with you: Does this sound familiar? "I wish I could remember how to do this one, small thing in HaxeFlixel, and that I didn't have to dig through a massive tutorial just to jog my memory." Or, how about: "What's the 'right' way to handle this, again?" Yeah, we've all been there! Wouldn't it be nice if there was some kind of interactive repository of just about every conceiveable useful snippet of code that you could use to answer these, and other questions?
 
 Well, what if I told you that it *already exists*!?
 
@@ -26,5 +26,6 @@ If you'd like to lend a hand, join us over in [the repository](https://github.co
 If you want to check out the site in action, you can visit [http://hfmechanics.nfshost.com/](http://hfmechanics.nfshost.com/) for a live version!
 
 Thanks! ...and be sure to tell your friends!
+
 -[Tim I Hely](http://tims-world.com/)
-Tim is a versatile developer from St Louis, Mo who has been using and contributing to HaxeFlixel since *at least* 2013.
+Tim is a versatile developer from St Louis, Missouri, who has been using and contributing to HaxeFlixel since *at least* 2013.
