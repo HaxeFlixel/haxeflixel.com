@@ -29,7 +29,7 @@ The plan was to get a bunch of samples in the project, and then invite collabora
 
 This year, let's work together to get HFMechanics back up and running again. Let's add more demos and snippets, and try to fill it with lots more good stuff.
 
-If you'd like to lend a hand, join us over in [the repository](https://github.com/HaxeFlixel/haxeflixel-mechanics). Add an issue for suggestions or requests, or submit pull requests for snippets you've created so we can add them to the site! You can find more detailed information about contributing, [here](https://github.com/HaxeFlixel/haxeflixel-mechanics/wiki/Contributing)!
+If you'd like to lend a hand, join us over in [the repository](https://github.com/HaxeFlixel/haxeflixel-mechanics). Add an issue for suggestions or requests, or submit pull requests for snippets you've created so we can add them to the site! You can find more detailed information about contributing [here](https://github.com/HaxeFlixel/haxeflixel-mechanics/wiki/Contributing)!
 
 If you want to check out the site in action, you can visit [http://hfmechanics.nfshost.com/](http://hfmechanics.nfshost.com/) for a live version!
 
