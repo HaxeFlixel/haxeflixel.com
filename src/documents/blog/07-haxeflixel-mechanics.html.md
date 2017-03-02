@@ -1,7 +1,7 @@
 ```
 title: "HaxeFlixel Mechanics"
 layout: blog-post
-postDate: 03-02-2017
+postDate: 2-3-2017
 ```
 
 Hey everybody, Tim here to share something with you: Does this sound familiar?
@@ -13,9 +13,6 @@ Or, how about:
 > "What's the 'right' way to handle this, again?"
 
 Yeah, we've all been there! Wouldn't it be nice if there was some kind of interactive repository of just about every conceivable useful snippet of code that you could use to answer these, and other questions?
-
-dangersly
-
 
 Well, what if I told you that it *already exists*!?
 
