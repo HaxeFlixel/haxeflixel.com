@@ -28,4 +28,5 @@ If you want to check out the site in action, you can visit [http://hfmechanics.n
 Thanks! ...and be sure to tell your friends!
 
 -[Tim I Hely](http://tims-world.com/)
+
 Tim is a versatile developer from St Louis, Missouri, who has been using and contributing to HaxeFlixel since *at least* 2013.
