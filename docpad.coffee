@@ -135,7 +135,7 @@ docpadConfig = {
       database.findAllLive({layout:$has:['blog-post', 'fundraiser-layout']}, [filename:-1]).on 'add', (document) ->
         a = document.attributes
         if a.layout != "fundraiser-layout"
-          contentPreview = removeMd(a.content.substring(0,150) + " ...")
+          contentPreview = removeMd(a.content).substring(0,150) + " ..."
           document.setMetaDefaults({
             contentPreview
           })
