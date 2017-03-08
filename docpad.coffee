@@ -1,12 +1,6 @@
 # For the blog preview page parse the markdown with github flavour.
-marked            = require 'marked'
+removeMd          = require 'remove-markdown'
 backers           = require './src/files/backers.json'
-markedOptions =
-  pedantic: false
-  gfm: true
-  sanitize: false
-  highlight: null
-marked.setOptions(markedOptions);
 
 demoBaseUrl = 'http://demos.haxeflixel.com/'
 
@@ -141,7 +135,7 @@ docpadConfig = {
       database.findAllLive({layout:$has:['blog-post', 'fundraiser-layout']}, [filename:-1]).on 'add', (document) ->
         a = document.attributes
         if a.layout != "fundraiser-layout"
-          contentPreview = marked(a.content.substring(0,150) + " ...")
+          contentPreview = removeMd(a.content.substring(0,150) + " ...")
           document.setMetaDefaults({
             contentPreview
           })

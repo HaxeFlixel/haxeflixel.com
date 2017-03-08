@@ -19,7 +19,7 @@
     "docpad-plugin-repocloner": "2.2.2",
     "docpad-plugin-services": "^2.6.0",
     "docpad-plugin-thumbnails": "2.1.2",
-    "marked": "0.3.5"
+    "remove-markdown": "0.1.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
