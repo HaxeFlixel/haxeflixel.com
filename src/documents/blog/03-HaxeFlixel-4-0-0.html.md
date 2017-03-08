@@ -1,7 +1,7 @@
 ```
 title: "HaxeFlixel 4.0.0"
 layout: blog-post
-postDate: 02-16-2016
+postDate: "February 16, 2016"
 ```
 
 We are proud to announce the release of HaxeFlixel 4.0.0! This is without a doubt the biggest release yet, with nearly 2000 new commits on the core repository alone since the last release.
@@ -21,7 +21,7 @@ For a more in-depth breakdown of the changes, have a look at our [changelog](htt
 
 We would like to thank all contributors who helped with this release in any way, as well as [our Patreon supporters](https://www.patreon.com/user?u=94916&ty=p). Check out the [Financial Summary 06/15 - 02/16](https://www.patreon.com/posts/4421829) blog post on Patreon if you're wondering what we do with your donations.
 
-Going forward, there are two things we want to foucs on:
+Going forward, there are two things we want to focus on:
 	
 * **A stable API** - Breaking changes should be the exception and only happen in major releases. This also means following [semantic versioning](http://semver.org/) more closely.
 * **More frequent releases** - 4.0.0 took longer than it should have. We aim to have smaller releases in the future, but release more frequently.

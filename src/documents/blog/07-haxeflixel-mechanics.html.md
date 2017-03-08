@@ -1,7 +1,7 @@
 ```
 title: "HaxeFlixel Mechanics"
 layout: blog-post
-postDate: 03-02-2017
+postDate: "March 2, 2017"
 ```
 
 Hey everybody, Tim here to share something with you: Does this sound familiar?
