@@ -139,7 +139,6 @@ docpadConfig = {
           document.setMetaDefaults({
             contentPreview
           })
-        a.postDate = "posted : " + a.postDate
 
     demos: (database) ->
       database.findAllLive({layout:$has:'demo'}, [title:1]).on 'add', (document) ->
