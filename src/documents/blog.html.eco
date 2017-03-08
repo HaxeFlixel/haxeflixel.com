@@ -7,17 +7,18 @@ layout: blog-layout
 <div class="row">
 
 
-	<% for blog in @getCollection('blog').toJSON(): %>
+    <% for blog in @getCollection('blog').toJSON(): %>
 
-		<a href="<%= blog.url %>" property="dc:title">
-		    <h3><%= blog.title %></h3>
+        <a href="<%= blog.url %>" property="dc:title">
+            <h3><%= blog.title %></h3>
         </a>
+        <div class="post-date post-date-preview"><%= @blog.postDate %></div>
 
         <p><%- blog.contentPreview %> <a href="<%= blog.url %>"> read more</a></p>
 
         <hr>
 
-   	<% end %>
+    <% end %>
 
 </div>
 </div>
