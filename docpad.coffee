@@ -207,10 +207,6 @@ docpadConfig = {
     markedOptions:
       gfm: true
 
-    highlightjs:
-      aliases:
-        haxe: 'actionscript'
-
     thumbnails:
       imageMagick: true
 
