@@ -7,7 +7,7 @@
 
 [![Build Status](https://img.shields.io/travis/HaxeFlixel/haxeflixel.com.svg?style=flat-square)](https://travis-ci.org/HaxeFlixel/haxeflixel.com)
 
-##About
+## About
 
 This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with a Node.js static site generator called 
 [DocPad](http://docpad.org/).
@@ -41,7 +41,7 @@ You can compile this website yourself with a local install of DocPad, pull reque
 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save 
 the files you modify.
 
-##Contributing
+## Contributing
 
 If you want to contribute and improve our website please work on a 
 [fork](https://github.com/HaxeFlixel/haxeflixel.com/fork) or feature branch. Only working and tested changes will 
@@ -49,12 +49,12 @@ be merged into master. Use the [issue system](https://github.com/HaxeFlixel/haxe
 support and approval on your changes.
 
 
-###How to add Documentation
+### How to add Documentation
 
 Documentation is pulled automatically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository, 
 please review the readme there for more info on updating the haxeflixel.com/documentation pages.
 
-###How to add a demo
+### How to add a demo
 
 1. Create a `.html.md` file in 
 [`/src/documents/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/demos) 
@@ -89,7 +89,7 @@ that contains the demo.
 [`/src/files/demos/swf`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/swf). 
 Should be compiled with `FLX_NO_DEBUG` (to show the flixel splash screen) and in release mode if possible!
 
-###How to add a Showcase game
+### How to add a Showcase game
 
 1. Create a `.md` file in 
 [`/src/documents/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/showcase) 
@@ -116,7 +116,7 @@ Showcases that are not officially released yet are only accepted in special case
 
 ----
 
-##Compile the live site
+## Compile the live site
 
 haxeflixel.com is being hosted from a [static build of docpad](http://docpad.org/docs/deploy). To update the site
 run the `compile.sh` or `compile.bat` which uses `docpad generate --env static`.
