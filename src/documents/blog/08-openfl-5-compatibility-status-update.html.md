@@ -8,7 +8,7 @@ Hey, Beeblerox here!
 
 As you may know, HaxeFlixel is currently stuck with outdated versions of OpenFL and Lime due to some rendering incompatibilities, and updating it has turned out to be more work than expected. I want to give you a quick status update regarding my work towards making Flixel compatible with the latest versions of OpenFL again.
 
-**Note:** I've switched to working on a new branch and closed the [previous pull request](https://github.com/HaxeFlixel/flixel/pull/2032). You can follow progress in the new pull request [here](https://github.com/HaxeFlixel/flixel/pull/2068).
+**Note:** I've switched to working on a new branch and closed the [previous pull request](https://github.com/HaxeFlixel/flixel/pull/2032). You can follow my progress in the new pull request [here](https://github.com/HaxeFlixel/flixel/pull/2068).
 
 ### FlxMaterial
 
@@ -51,11 +51,11 @@ material.data.uFill.value = [0.5];
 
 Setting a material's shader you will break the batch, but if several sprites share the same material, then they will be batched together again.
 
-The material class also has a `batchable:Bool` property which is `true` by default. This means that the renderer will try to batch objects with this material. But in case you have many sprites with different materials you want them _not_ to batch (to minimize the amount of data which will be reuploaded to the GPU), you could set it to `false` to force this behavior (`sprite.material.batchable = false;`).
+The material class also has a `batchable:Bool` property which is `true` by default. This means that the renderer will try to batch objects with this material. But in case you have many sprites with different materials and you want them _not_ to be batched (to minimize the amount of data which will be reuploaded to the GPU), you could set it to `false` to force this behavior (`sprite.material.batchable = false;`).
 
 ### Multipass
 
-For more complex effects which require multi-pass rendering, I've added `FlxRenderTarget` which extends the `FlxSprite` class. Basically this is the same sprite, but you can render other sprites to its texture through underlying OpenGL calls (not with BitmapData's `draw()` method). I took the idea from [Phaser's RenderPass object](https://github.com/photonstorm/phaser/blob/master/v3/src/gameobjects/renderpass/RenderPass.js), which has very simple API. Here is a usage example for it:
+For more complex effects which require multi-pass rendering, I've added `FlxRenderTarget` which extends the `FlxSprite` class. Basically it's the same as a `FlxSprite`, but you can render other sprites to its texture through underlying OpenGL calls (not with BitmapData's `draw()` method). I took the idea from [Phaser's RenderPass object](https://github.com/photonstorm/phaser/blob/master/v3/src/gameobjects/renderpass/RenderPass.js), which has a very simple API. Here is a usage example for it:
 
 ```haxe
 // create render target with the size of 256 by 512 pixels
@@ -71,7 +71,7 @@ renderTexture.shader = myCustomShader;
 
 ### Camera buffers
 
-Since the first iteration of the new renderer I've changed a lot of things. The biggest of them is the way objects are rendered to the camera and to the screen. Now, each camera has it's own render texture to which all object are rendered, and then this texture is rendered to the screen.
+Since the first iteration of the new renderer I've changed a lot of things. The biggest of them is the way objects are rendered to the camera and to the screen. Now, each camera has its own render texture to which all object are rendered, and then this texture is rendered to the screen.
 
 ![](/images/blog/openfl5/cameraBuffers.jpg)
 
@@ -85,9 +85,9 @@ I was disappointed by the performance of `drawDebug` rendering on native targets
 
 ### drawTriangles()
 
-Last weekend I was busy with rewriting the `FlxStrip` and `FlxTrianglesData` classes which are responsible for rendering complex meshes having hundreds of vertices.
+Last weekend I was busy with rewriting the `FlxStrip` and `FlxTrianglesData` classes. They are responsible for rendering complex meshes having hundreds of vertices.
 As you may know, `FlxStrip` is a subclass of `FlxSprite`. It's only purpose was to call the `drawTriangles()` method with `vertices`, `uvs`, `indices` and `colors` arguments specified by the user. Now, it's become much more flexible and easier to use for prototyping. 
-Each `FlxStrip` object has a `data:FlxTrianglesData` property which stores information about added vertices, but in addition to getters and setters for `vertices`, `indices`, etc., now has utility methods for adding a single vertex and a single triangle:
+Each `FlxStrip` object has a `data:FlxTrianglesData` property which stores information about added vertices. In addition to getters and setters for `vertices`, `indices`, etc., it now has utility methods for adding a single vertex and a single triangle:
 
 ```haxe
 var data:FlxTrianglesData = mySprite.data;
