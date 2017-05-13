@@ -1,5 +1,5 @@
 ```
-title: "OpenFL <strike>4</strike> 5 compatibility status update"
+title: "OpenFL 5 compatibility status update"
 layout: blog-post
 postDate: "May 13, 2017"
 ```
@@ -37,7 +37,7 @@ lightMaterial.addNormalMap(normalMap);
 
 And here is the result:
 
-![](/images/blog/openfl4/lighting.jpg)
+![](/images/blog/openfl5/lighting.jpg)
 
 Now a few more details about sprite materials.
 
@@ -73,7 +73,7 @@ renderTexture.shader = myCustomShader;
 
 Since the first iteration of the new renderer I've changed a lot of things. The biggest of them is the way objects are rendered to the camera and to the screen. Now, each camera has it's own render texture to which all object are rendered, and then this texture is rendered to the screen.
 
-![](/images/blog/openfl4/cameraBuffers.jpg)
+![](/images/blog/openfl5/cameraBuffers.jpg)
 
 This way of rendering helps minimize the number of array iterations, and also made it much easier for other features to be implemented (such as the `FlxRenderTarget` class).
 
@@ -81,7 +81,7 @@ This way of rendering helps minimize the number of array iterations, and also ma
 
 I was disappointed by the performance of `drawDebug` rendering on native targets, so I've redone it and now it uses OpenGL instead of OpenFL's `Graphics` API.
 
-![](/images/blog/openfl4/drawDebug.jpg)
+![](/images/blog/openfl5/drawDebug.jpg)
 
 ### drawTriangles()
 
@@ -109,7 +109,7 @@ data.setVertex(0, newX, newY, 0.0, 0.0, newColor);
 This new API allows to minimize the iterations through inner data arrays which will be uploaded to GPU, which should result in a noticeable performance improvement.
 I also borrowed HaxePunk's code for GPU-accelerated rendering of graphics primitives ([`Draw` class](https://github.com/MattTuttle/HaxePunk/blob/draw-hardware/haxepunk/utils/Draw.hx)) and adapted it to Flixel, so there is new `FlxDraw` class for rendering lines, rectangle, circles, polygons and curves.
 
-![](/images/blog/openfl4/drawTriangles.png)
+![](/images/blog/openfl5/drawTriangles.png)
 
 ### Next steps
 
