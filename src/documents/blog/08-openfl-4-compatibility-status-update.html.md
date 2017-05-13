@@ -109,7 +109,7 @@ data.setVertex(0, newX, newY, 0.0, 0.0, newColor);
 This new API allows to minimize the iterations through inner data arrays which will be uploaded to GPU, which should result in a noticeable performance improvement.
 I also borrowed HaxePunk's code for GPU-accelerated rendering of graphics primitives ([`Draw` class](https://github.com/MattTuttle/HaxePunk/blob/draw-hardware/haxepunk/utils/Draw.hx)) and adapted it to Flixel, so there is new `FlxDraw` class for rendering lines, rectangle, circles, polygons and curves.
 
-![](/images/blog/openfl4/drawTriangles.jpg)
+![](/images/blog/openfl4/drawTriangles.png)
 
 ### Next steps
 
