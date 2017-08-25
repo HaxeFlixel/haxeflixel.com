@@ -22,9 +22,9 @@ I moved on to Haxe when I learned I could get HTML5 and CPP builds for (almost) 
 
 Flixel is great for me because I no longer have to even think about updating and rendering. Input is taken care of; spritesheets are handled. Life is good.
 
-I'm also helping with a UI library called [HaxeUI](https://github.com/haxeui/haxeui-core) that I'll be talking about in the future. Stay tuned for that one.
+I'm also helping with a UI library called [HaxeUI](https://github.com/haxeui/haxeui-core) that I'll be talking about in the future, specifically the Flixel backend (haxeui-flixel) that ties into the core library. Stay tuned for that one.
 
-![](/images/blog/haxeui.png)
+![](/images/blog/msg_intro/haxeui.png)
 
 ## Short-term goals
 
@@ -38,7 +38,7 @@ At least on NG, I am seeing a lot of Flash anxiety from devs, especially from pe
 
 From the successful [IndieGoGo campaign](https://www.indiegogo.com/projects/haxeflixel-games-software), it's clear that there is interest in seeing Flixel improve. Aside from that, however, contributions to the library as well as community management have been performed out of the infinite goodness of people's hearts.
 
-![](/images/blog/indiegogo.png)
+![](/images/blog/msg_intro/indiegogo.png)
 
 Ultimately, we'd like to drum up support for our * **[Patreon](https://www.patreon.com/haxeflixel)** *, to give more people more reason to contribute. At the moment, the plan is to allocate funds to the superstars, like Jens ([@Gama11_](https://twitter.com/Gama11_)) and Alexander ([@teormech](https://twitter.com/teormech)), who put in the hours on GitHub or in the general community, as well as positions to increase community size and support, like mine.
 
