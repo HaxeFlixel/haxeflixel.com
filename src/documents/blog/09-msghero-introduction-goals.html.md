@@ -1,3 +1,9 @@
+```
+title: "Introducing Nick (MSGHero)"
+layout: blog-post
+postDate: "August 26, 2017"
+```
+
 Hi everyone!
 
 I'm Nick ([@MSGhero16](https://twitter.com/MSGhero16)), and I'll be working for the HaxeFlixel community now. My goal is to drum up engagement with our favorite library by writing regular blog posts and creating new demos.
