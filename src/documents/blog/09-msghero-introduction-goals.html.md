@@ -8,21 +8,21 @@ If you're new around these parts, here's a brief intro to what this is all about
 
 ![](/images/flixel-logos/HaxeFlixel.png)
 
-HaxeFlixel is a free cross-platform, open-source library that makes your game-making easier. It's the modern version of the original Flixel library for Flash, which was hugely popular back in the day for how easy it was to get started with.
+HaxeFlixel is a free cross-platform, open-source library that makes your game-making easier. It's a modernized version of [the original Flixel library for Flash](http://flixel.org/), which was hugely popular back in the day for how easy it was to get started with.
 
-(I'll be referring to HaxeFlixel as Flixel or HF.)
+(I'll be referring to HaxeFlixel as Flixel or HF)
 
 To get started making your first game or your 30th prototype, check out the [Getting Started page](http://haxeflixel.com/documentation/getting-started/).
 
 ## Me
 
-I started coding with Flash about seven years ago, inspired by Newgrounds games like Super Chibi Knight and Castle Crashing the Beard. I made a few games that did pretty well overall, keeping the coding as a hobby for my spare time.
+I started coding with Flash about seven years ago, inspired by Newgrounds games like [Super Chibi Knight](http://www.newgrounds.com/portal/view/661076) and [Castle Crashing the Beard](http://www.newgrounds.com/portal/view/429765). I made [a few games](http://msghero.newgrounds.com/games/) that did pretty well overall, keeping the coding as a hobby for my spare time.
 
 I moved on to Haxe when I learned I could get HTML5 and CPP builds for (almost) free. The transition from AS3 to OpenFL was as smooth as silk, and I quickly found and exclusively started using Flixel. I am currently working on a new game, [Enki Adventures](http://enkiangames.tumblr.com/), in addition to numerous little demos and projects that may one day see the light of day.
 
 Flixel is great for me because I no longer have to even think about updating and rendering. Input is taken care of; spritesheets are handled. Life is good.
 
-I'm also helping with a UI library called [HaxeUI](https://github.com/haxeui/haxeui-core) that I'll be talking about in the future, specifically the Flixel backend (haxeui-flixel) that ties into the core library. Stay tuned for that one.
+I'm also helping with a UI library called [HaxeUI](https://github.com/haxeui/haxeui-core) that I'll be talking about in the future, specifically the Flixel backend ([haxeui-flixel](https://github.com/haxeui/haxeui-flixel)) that ties into the core library. Stay tuned for that one.
 
 ![](/images/blog/msg_intro/haxeui.png)
 
