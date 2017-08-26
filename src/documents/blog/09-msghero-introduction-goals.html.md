@@ -40,6 +40,6 @@ From the successful [IndieGoGo campaign](https://www.indiegogo.com/projects/haxe
 
 ![](/images/blog/msg_intro/indiegogo.png)
 
-Ultimately, we'd like to drum up support for our * **[Patreon](https://www.patreon.com/haxeflixel)** *, to give more people more reason to contribute. At the moment, the plan is to allocate funds to the superstars, like Jens ([@Gama11_](https://twitter.com/Gama11_)) and Alexander ([@teormech](https://twitter.com/teormech)), who put in the hours on GitHub or in the general community, as well as positions to increase community size and support, like mine.
+Ultimately, we'd like to drum up support for our * **[Patreon](https://www.patreon.com/haxeflixel)** *, to give more people more reason to contribute. At the moment, the plan is to allocate funds to people who put in the hours on GitHub or in the general community, as well as positions to increase community size and support, like mine.
 
 More people making more games with better versions of Flixel. That's what it's all about.
