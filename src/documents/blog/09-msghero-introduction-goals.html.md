@@ -12,8 +12,6 @@ If you're new around these parts, here's a brief intro to what this is all about
 
 ## (Haxe)Flixel
 
-![](/images/flixel-logos/HaxeFlixel.png)
-
 HaxeFlixel is a free cross-platform, open-source library that makes your game-making easier. It's a modernized version of [the original Flixel library for Flash](http://flixel.org/), which was hugely popular back in the day for how easy it was to get started with.
 
 (I'll be referring to HaxeFlixel as Flixel or HF)
