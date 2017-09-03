@@ -1,7 +1,7 @@
 ```
 layout: showcase
 title: "GULAG PARADISE"
-mac: http://armeljgibson.com/gulagparadise/
-windows: http://armeljgibson.com/gulagparadise/
-website: http://armeljgibson.com/gulagparadise/
+mac: http://armelgibson.com/gulagparadise/
+windows: http://armelgibson.com/gulagparadise/
+website: http://armelgibson.com/gulagparadise/
 ```
