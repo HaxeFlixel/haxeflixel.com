@@ -1,12 +1,16 @@
+```
+title: "Introducing Nick (MSGHero)"
+layout: blog-post
+postDate: "August 26, 2017"
+```
+
 Hi everyone!
 
 I'm Nick ([@MSGhero16](https://twitter.com/MSGhero16)), and I'll be working for the HaxeFlixel community now. My goal is to drum up engagement with our favorite library by writing regular blog posts and creating new demos.
 
 If you're new around these parts, here's a brief intro to what this is all about.
 
-## (Haxe)Flixel
-
-![](/images/flixel-logos/HaxeFlixel.png)
+### (Haxe)Flixel
 
 HaxeFlixel is a free cross-platform, open-source library that makes your game-making easier. It's a modernized version of [the original Flixel library for Flash](http://flixel.org/), which was hugely popular back in the day for how easy it was to get started with.
 
@@ -14,7 +18,7 @@ HaxeFlixel is a free cross-platform, open-source library that makes your game-ma
 
 To get started making your first game or your 30th prototype, check out the [Getting Started page](http://haxeflixel.com/documentation/getting-started/).
 
-## Me
+### Me
 
 I started coding with Flash about seven years ago, inspired by Newgrounds games like [Super Chibi Knight](http://www.newgrounds.com/portal/view/661076) and [Castle Crashing the Beard](http://www.newgrounds.com/portal/view/429765). I made [a few games](http://msghero.newgrounds.com/games/) that did pretty well overall, keeping the coding as a hobby for my spare time.
 
@@ -26,7 +30,7 @@ I'm also helping with a UI library called [HaxeUI](https://github.com/haxeui/hax
 
 ![](/images/blog/msg_intro/haxeui.png)
 
-## Short-term goals
+### Short-term goals
 
 People love this library; it's tied with its dependency as the most popular haxelib on GitHub. It's used in many Ludum Dare games, and lots of devs swear by it. It's rather easy to pick up, with [all the demos](http://haxeflixel.com/demos/) highlighting each feature.
 
@@ -34,7 +38,7 @@ So as my first demo for the community, I'm thinking about making a game. Somethi
 
 At least on NG, I am seeing a lot of Flash anxiety from devs, especially from people who are just getting started with making games. Spreading the gospel of Flixel is something I am increasingly doing there, and the demo seems like a great next step. I believe that current and future devs can only benefit from giving Flixel a try.
 
-## Long-term goals
+### Long-term goals
 
 From the successful [IndieGoGo campaign](https://www.indiegogo.com/projects/haxeflixel-games-software), it's clear that there is interest in seeing Flixel improve. Aside from that, however, contributions to the library as well as community management have been performed out of the infinite goodness of people's hearts.
 

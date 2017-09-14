@@ -1,7 +1,7 @@
 ```
 layout: showcase
 title: "Dinosaur-Ghost Rampage"
-windows: http://dinoghost.tims-world.com/
-flash: http://dinoghost.tims-world.com/
-website: http://dinoghost.tims-world.com/
+windows: https://seifertim.itch.io/dinosaur-ghost-rampage
+flash: https://seifertim.itch.io/dinosaur-ghost-rampage
+website: http://www.tims-world.com/projects/dinosaur-ghost-rampage/
 ```
