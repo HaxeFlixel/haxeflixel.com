@@ -1,33 +1,43 @@
-The Flixel Community
+```
+title: "The Flixel Community"
+layout: blog-post
+postDate: "September 17, 2017"
+```
 
-So you've downloaded Flixel, skipped around in the tutorials, and are wondering what's next. You could start making that game you've been thinking about. Or, better yet, make that game while also talking to other people who are using Flixel! They're not scary, I promise.
+So you've [downloaded Flixel](http://haxeflixel.com/documentation/getting-started/), skipped around in the [tutorial](http://haxeflixel.com/documentation/tutorial/), and are wondering what's next. You could start making that game you've been thinking about. Or, better yet, make that game while also talking to other people who are using Flixel! They're not scary, I promise.
 
-Join the community
+### Join the community
 
 There are a number of places where you'll find fellow Flixel-ers. It's really up to you where you want to hang. Here are some of the popular destinations:
 
-Forums:
+### [Forums](http://forum.haxeflixel.com/)
 
-If you're new and having a bit of trouble getting into things, the forums are a great place to start. Not only will any of your questions be answered, but you also have a nice place to start posting about what you're working on. Get some eyeballs on your cool new content.
+If you're new and having a bit of trouble getting into things, [the forums](http://forum.haxeflixel.com/) are a great place to start. Not only will any of your [questions](http://forum.haxeflixel.com/category/4/help) be answered, but you also have a nice place to [start posting](http://forum.haxeflixel.com/category/3/dev-logs) about what you're working on. Get some eyeballs on your cool new content and see what others are up to.
+
+![](/images/blog/10_community/forums.png)
 
 The forum also just looks really nice. Like, come on. That looks so good.
 
-Slack and Discord:
+### Slack and Discord
 
 Slack and Discord are both chat apps. Slack is often used in companies as a team messenger. Discord is built for gamers, with voice chat capabilities. As far as Flixel goes, the Discord channel has more activity, but "activity" can sometimes include 200 off-topic posts about philosophy. The Slack channel is more focused but quieter. Check 'em both out and see for yourself! It's 100 percent possible to be a part of both, even if Kantian philosophy isn't your thing.
 
+[Click here](https://discord.gg/gv2a42z) to join the Discord. Slack requires an invitation, so feel free to message me on Twitter ([@MSGhero16](https://twitter.com/MSGhero16)) for one.
+
 Both Slack and Discord have desktop apps, web interfaces, and mobile apps. Flixel community on any device.
 
-Twitter:
+### Twitter
 
-#HaxeFlixel. That's all you need to be a part of this one. Add it to your tweets to let everyone know that you're using an awesome library. The main Flixel account will see this and might retweet your posts, extending your reach. Search that hashtag to find what everyone else is up to, maybe find some inspiration or new devs to follow. Tweets even show up in the Slack and Discord channels!
+[#HaxeFlixel](https://twitter.com/search?f=tweets&vertical=default&q=%23haxeflixel&src=typd). That's all you need to be a part of this one. Add it to your tweets to let everyone know that you're using an awesome library. The [main Flixel account](https://twitter.com/HaxeFlixel) will see this and might retweet your posts, extending your reach. Search that hashtag to find what everyone else is up to, maybe find some inspiration or new devs to follow. Tweets even show up in the Slack and Discord channels!
 
 Twitter has the most open audience of the community hangouts: not everyone on Twitter has heard of Flixel. So help spread the word!
 
-Github:
+### [GitHub](https://github.com/HaxeFlixel/flixel)
 
-Github is less of a hangout than the others. It's where the code of Flixel is. The purpose of Github is for the community to find issues in the code and help fix them. Now, "issues in the code" and "issues in _your_ code" are two different things. If you're struggling or having problems, the forums, Slack, or Discord are definitely better options if you're new to this kind of thing.
+[GitHub](https://github.com/HaxeFlixel/flixel/pull/2107) is less of a hangout than the others. It's where the code of Flixel is. The purpose of GitHub is for the community to find issues in the code and help fix them. Now, "issues in the code" and "issues in _your_ code" are two different things. If you're struggling or having problems, the forums, Slack, or Discord are definitely better options if you're new to this kind of thing.
 
-An example of Github being used properly is this code fix. The code of Flixel was actually incomplete, not being able to handle this use-case. So a member of the community brought it up and then fixed it. If you're interested in contributing in this way, there are numerous resources for how to use Github and version-control software that you can check out.
+![](/images/blog/10_community/github.png)
+
+An example of GitHub being used properly is [this code fix](https://github.com/HaxeFlixel/flixel/pull/2107). The code of Flixel was actually incomplete, not being able to handle a specific use-case. So a member of the community brought it up and then fixed it. If you're interested in contributing in this way, there are numerous resources you can look up for how to use GitHub and version-control software. Or ask someone in the Slack/Discord!
 
 So there you have it. A good number of ways to talk to everyone else using Flixel. Get to chatting!
