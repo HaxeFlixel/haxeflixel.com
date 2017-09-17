@@ -40,4 +40,6 @@ Twitter has the most open audience of the community hangouts: not everyone on Tw
 
 An example of GitHub being used properly is [this code fix](https://github.com/HaxeFlixel/flixel/pull/2107). The code of Flixel was actually incomplete, not being able to handle a specific use-case. So a member of the community brought it up and then fixed it. If you're interested in contributing in this way, there are numerous resources you can look up for how to use GitHub and version-control software. Or ask someone in the Slack/Discord!
 
+For an itemized version of this post, check out our [community docs page](http://haxeflixel.com/documentation/community/). It also mentions a few more, less popular interaction channels such as our IRC and our Subreddit.
+
 So there you have it. A good number of ways to talk to everyone else using Flixel. Get to chatting!
