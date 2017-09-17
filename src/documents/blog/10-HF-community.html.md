@@ -14,7 +14,7 @@ There are a number of places where you'll find fellow Flixel-ers. It's really up
 
 If you're new and having a bit of trouble getting into things, [the forums](http://forum.haxeflixel.com/) are a great place to start. Not only will any of your [questions](http://forum.haxeflixel.com/category/4/help) be answered, but you also have a nice place to [start posting](http://forum.haxeflixel.com/category/3/dev-logs) about what you're working on. Get some eyeballs on your cool new content and see what others are up to.
 
-![](/images/blog/10_community/forums.png)
+<img src="/images/blog/10_community/forums.png" width="100%" />
 
 The forum also just looks really nice. Like, come on. That looks so good.
 
@@ -36,7 +36,7 @@ Twitter has the most open audience of the community hangouts: not everyone on Tw
 
 [GitHub](https://github.com/HaxeFlixel/flixel/pull/2107) is less of a hangout than the others. It's where the code of Flixel is. The purpose of GitHub is for the community to find issues in the code and help fix them. Now, "issues in the code" and "issues in _your_ code" are two different things. If you're struggling or having problems, the forums, Slack, or Discord are definitely better options if you're new to this kind of thing.
 
-![](/images/blog/10_community/github.png)
+<img src="/images/blog/10_community/github.png" width="100%" />
 
 An example of GitHub being used properly is [this code fix](https://github.com/HaxeFlixel/flixel/pull/2107). The code of Flixel was actually incomplete, not being able to handle a specific use-case. So a member of the community brought it up and then fixed it. If you're interested in contributing in this way, there are numerous resources you can look up for how to use GitHub and version-control software. Or ask someone in the Slack/Discord!
 
