@@ -2,6 +2,7 @@
 title: "FlxMouseEventManager"
 layout: demo
 source: "Input/FlxMouseEventManager"
+targets: ['flash', 'html5']
 ```
 
 `FlxMouseEventManager` allows `FlxSprite`s to listen to mouse events like `MouseDown`, `MouseUp`, `MouseOver` and `MouseOut`.

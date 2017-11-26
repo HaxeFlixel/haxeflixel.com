@@ -4,6 +4,7 @@ layout: demo
 width: 900
 height: 300
 source: "Arcade/FlxPongApi"
+targets: ['flash', 'html5']
 ```
 
 FlxPongApi demonstrates usage of the FlxGameJolt class in the flixel-addons package, which allows for simple communication with the GameJolt API. The gameplay itself is a sort of roguelike Pong game with various obstacles and enemy types that are encountered as the player progresses. The game is very simple visually, with no art assets and only four colors, with those colors selected programmatically and change very time you play.

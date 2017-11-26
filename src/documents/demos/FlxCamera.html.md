@@ -2,6 +2,7 @@
 title: "FlxCamera"
 layout: demo
 source: "Features/FlxCamera"
+targets: ['flash', 'html5']
 ```
 
 This demo showcases different flixel camera features like zoom, lerp, lead and follow styles.

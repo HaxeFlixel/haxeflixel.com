@@ -30,9 +30,9 @@
 
     <div class="flash-warning">
 
-        <p>Sorry this demo requires the Flash player.</p>
+        <p>Sorry, this demo requires the Flash Player.</p>
 
-        <p>Most of our other demos are html5 compatible.</p>
+        <p>Most of our other demos are HTML5-compatible.</p>
 
         <a class="install-flash-player-prompt"
             href="http://www.adobe.com/go/getflashplayer">

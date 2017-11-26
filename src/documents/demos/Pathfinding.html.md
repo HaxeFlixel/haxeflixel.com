@@ -4,6 +4,7 @@ layout: demo
 width: 400
 height: 300
 source: "Features/Pathfinding"
+targets: ['flash', 'html5']
 ```
 
 A port and improvement of the [Pathfinding Demo](https://code.google.com/p/mightiesthero-flash-game-dev-tips/source/browse/FlxPathFinding/src/PlayState.as) by&nbsp;[Bengsiswanto Hendrawan](http://mightiesthero.blogspot.de/)&nbsp;&nbsp;featured on&nbsp;[flixel.org/features](http://flixel.org/features.html).
