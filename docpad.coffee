@@ -2,7 +2,7 @@
 removeMd          = require 'remove-markdown'
 backers           = require './src/files/backers.json'
 
-demoBaseUrl = 'http://demos.haxeflixel.com/'
+demoBaseUrl = 'https://demos.haxeflixel.com/'
 
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
@@ -18,7 +18,7 @@ docpadConfig = {
   # To access one of these within our templates, refer to the FAQ: https://github.com/bevry/docpad/wiki/FAQ
   templateData:
     site:
-      url: "http://haxeflixel.com"
+      url: "https://haxeflixel.com"
       title: "HaxeFlixel 2D Game Engine"
       name: "HaxeFlixel"
       # The website description (for SEO)
