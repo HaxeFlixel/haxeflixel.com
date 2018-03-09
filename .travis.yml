@@ -6,7 +6,7 @@ services:
 - docker
 before_install:
 - openssl aes-256-cbc -K $encrypted_83630750896a_key -iv $encrypted_83630750896a_iv
-  -in rrsync_haxeflixel.enc -out rrsync_haxeflixel -d
+  -in ./bin/deploy.enc -out ./bin/deploy -d
 - node bin/docker.js buildImage
 script:
 - ls -lah
@@ -14,7 +14,7 @@ script:
 - ls -lah
 before_deploy:
 - eval "$(ssh-agent -s)"
-- chmod 600 $TRAVIS_BUILD_DIR/rrsync_haxeflixel
+- chmod 600 $TRAVIS_BUILD_DIR/bin/deploy
 deploy:
   provider: script
   skip_cleanup: true
