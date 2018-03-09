@@ -12,7 +12,7 @@
 
 	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="githubBtn-tr-info"
 			allowtransparency="true"
-			src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-docs&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+			src="https://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-docs&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 			
 	<p>The HaxeFlixel documentation is provided from the <a href="https://github.com/HaxeFlixel/flixel-docs">flixel-docs repository</a> and is open for contributions on GitHub that will be pushed here.</p>
 

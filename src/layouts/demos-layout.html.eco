@@ -13,7 +13,7 @@
 
 	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="githubBtn-tr-info"
 			allowtransparency="true"
-			src="http://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-demos&amp;type=watch&amp;count=true&amp;size=large"></iframe>
+			src="https://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=flixel-demos&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 
 	<%- @content %>
 	
