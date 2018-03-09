@@ -40,12 +40,12 @@ title: 'Home'
 
             <iframe width="160px" scrolling="0" height="30px" frameborder="0"
                     allowtransparency="true"
-                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"
+                    src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"
             ></iframe>
 
             <iframe width="160px" scrolling="0" height="30px" frameborder="0"
                     allowtransparency="true"
-                    src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"
+                    src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"
             ></iframe>
 
 			<br />
