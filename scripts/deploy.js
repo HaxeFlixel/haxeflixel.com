@@ -12,7 +12,7 @@ var GIT_BRANCH = process.env['GIT_BRANCH']
 const isTravis = 'TRAVIS' in process.env && 'CI' in process.env
 if (isTravis) {
     const TRAVIS_BUILD_DIR = process.env['TRAVIS_BUILD_DIR']
-    DEPLOY_KEY = `${TRAVIS_BUILD_DIR}/bin/deploy`
+    DEPLOY_KEY = `${TRAVIS_BUILD_DIR}/scripts/deploy`
     SOURCE_DIR = `${TRAVIS_BUILD_DIR}/out`
     GIT_BRANCH = process.env['TRAVIS_BRANCH']
 }
