@@ -5,4 +5,5 @@ width: 512
 height: 288
 source: "Arcade/FlxLightPuzzle"
 targets: ['flash']
+html5InRepo: true
 ```
