@@ -1,22 +1,22 @@
 ```
 title: "FlxLightPuzzle Demo"
 layout: blog-post
-postDate: "March 5, 2017"
+postDate: "March 28, 2018"
 ```
 
-We have a new demo made by yours truly: a puzzle game of reflecting light and combining colors. Featuring...
+We have a new demo made by yours truly [Nick](https://twitter.com/MSGhero16): a puzzle game of reflecting light and combining colors. Featuring...
 
 ### FlxLightPuzzle Demo
 
 <img src="/images/blog/11_light/flp_logo_594x382.png" width="100%" />
 
-In addition to being a [fully playable game](https://www.newgrounds.com/portal/view/705467), the FlxLightPuzzle Demo heavily features the [FlxVector class](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/math/FlxVector.hx). Vector math is a nightmare, and I was actually surprised to see how much of it FlxVector handles for you.
+In addition to being a [fully playable game](https://www.newgrounds.com/portal/view/705467), the FlxLightPuzzle Demo heavily features the [FlxVector class](https://api.haxeflixel.com/flixel/math/FlxVector.html). Vector math is a nightmare, and I was actually surprised to see how much of it FlxVector handles for you.
 
-The source code is [here](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Arcade/FlxLightPuzzle), which you're free to look at and edit to make your own version of the game. Maybe you add more levels, real graphics, or more obstacles that the player has to solve around. I'll leave that to you.
+The source code is [here](https://github.com/HaxeFlixel/flixel-demos/tree/master/Arcade/FlxLightPuzzle), which you're free to look at and edit to make your own version of the game. Maybe you add more levels, real graphics, or more obstacles that the player has to solve around. I'll leave that to you.
 
 ### Development and design decisions
 
-I think color-based mechanics and reflection-based mechanics are super cool, and that's about all the backstory there is. The graphics are simple shapes ([FlxSpriteUtil](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxSpriteUtil.hx)) to avoid any fuss about art, and the [music](https://www.newgrounds.com/audio/listen/755011) is a random find that I happened to enjoy (used with permission, of course).
+I think color-based mechanics and reflection-based mechanics are super cool, and that's about all the backstory there is. The graphics are simple shapes ([FlxSpriteUtil](https://api.haxeflixel.com/flixel/util/FlxSpriteUtil.html)) to avoid any fuss about art, and the [music](https://www.newgrounds.com/audio/listen/755011) is a random find that I happened to enjoy (used with permission, of course).
 
 <img src="/images/blog/11_light/flp_menu.png" width="100%" />
 
