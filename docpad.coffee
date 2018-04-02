@@ -3,6 +3,7 @@ removeMd          = require 'remove-markdown'
 backers           = require './src/files/backers.json'
 
 demoBaseUrl = 'https://demos.haxeflixel.com/'
+demoInRepoBaseUrl = 'https://haxeflixel.com/demos/html5/'
 
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
@@ -78,10 +79,14 @@ docpadConfig = {
       @site.keywords.concat(@document.keywords or []).join(', ')
 
     getDemoTarget: (document) ->
+      baseUrl = demoBaseUrl
+      if document.html5InRepo
+        baseUrl = demoInRepoBaseUrl
+
       if document.targets? and 'html5' in document.targets and 'flash' in document.targets
-        return {html5: demoBaseUrl + document.title, flash: true}
+        return {html5: baseUrl + document.title, flash: true}
       else if document.targets? and 'html5' in document.targets
-        return {html5: demoBaseUrl + document.title}
+        return {html5: baseUrl + document.title}
       else return {flash: true}
 
     getPagerNext: (collection) ->
