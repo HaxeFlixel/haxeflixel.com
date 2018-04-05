@@ -15,7 +15,6 @@ title: 'Home'
         <p class="lead-line">Create cross-platform games easier and free.<br> All with one codebase.</p>
 
         <p>
-            <a class="home-button" href="/download">Download</a>
             <a class="home-button" href="/documentation/getting-started">Getting Started</a>
             <a class="home-button" href="https://github.com/HaxeFlixel">GitHub</a>
         </p>
