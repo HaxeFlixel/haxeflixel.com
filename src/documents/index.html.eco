@@ -17,7 +17,7 @@ title: 'Home'
         <p>
             <a class="home-button" href="/download">Download</a>
             <a class="home-button" href="/documentation/getting-started">Getting Started</a>
-			<a class="home-button" href="https://github.com/HaxeFlixel">GitHub</a>
+            <a class="home-button" href="https://github.com/HaxeFlixel">GitHub</a>
         </p>
 
         <hr class="backer-hr">
@@ -48,7 +48,7 @@ title: 'Home'
                     src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"
             ></iframe>
 
-			<br />
+            <br />
 
             <a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en"
                data-size="large">Follow @haxeflixel</a>
@@ -81,8 +81,6 @@ title: 'Home'
             <img width="80px" height="85px" src="images/targets/apple-logo.svg" alt="Mac">
             <img width="80px" height="85px" src="images/targets/android-logo.svg" alt="Android">
             <img width="100px" src="images/targets/ios-logo.png" alt="iOS">
-            <img width="90px" height="80px" src="images/targets/blackberry-logo.svg" alt="BlackBerry">
-            <img width="80px" height="80px" src="images/targets/ouya-logo.svg" alt="OUYA">
             <img width="80px" height="80px" src="images/targets/flash-logo.svg" alt="Flash">
             <img width="85px" height="85px" src="images/targets/html5-logo.svg" alt="HTML5">
         </div>
