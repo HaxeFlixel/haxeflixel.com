@@ -54,12 +54,6 @@ layout: showcases
 					<% if showcase.ios: %></a><% end %>
 				</span>
 
-				<span class="<%= @getShowcaseActive(showcase.blackberry) %>">
-					<% if showcase.blackberry: %><a href="<%= showcase.blackberry %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="40px" height="40px" src="/images/targets/blackberry-logo.svg">
-					<% if showcase.blackberry: %></a><% end %>
-				</span>
-
 				<span class="<%= @getShowcaseActive(showcase.flash) %>">
 					<% if showcase.flash: %><a href="<%= showcase.flash %>" class="showcaseTarget" target="_blank"><% end %>
 						<img width="32px" height="40px" src="/images/targets/flash-logo.svg">
@@ -130,12 +124,6 @@ layout: showcases
 					<% if showcase.ios: %><a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank"><% end %>
 					<img width="40px" src="/images/targets/ios-logo.png">
 					<% if showcase.ios: %></a><% end %>
-				</span>
-
-				<span class="<%= @getShowcaseActive(showcase.blackberry) %>">
-					<% if showcase.blackberry: %><a href="<%= showcase.blackberry %>" class="showcaseTarget" target="_blank"><% end %>
-					<img width="40px" height="40px" src="/images/targets/blackberry-logo.svg">
-					<% if showcase.blackberry: %></a><% end %>
 				</span>
 
 				<span class="<%= @getShowcaseActive(showcase.flash) %>">
