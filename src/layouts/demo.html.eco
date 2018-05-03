@@ -98,7 +98,7 @@
 				<% if @getPagerPrevious('demos'): %>
 				<li class="previous">
 					<a href="<%= @getPagerPrevious('demos').attributes.url %>" title="Previous"> <
-						<img src="<%= @getThumbnail("/demos/images/#{@getPagerPrevious('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
+						<img src="<%= @getThumbnail("/images/demos/#{@getPagerPrevious('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
 					</a>
 				</li>
 				<% end %>
@@ -106,7 +106,7 @@
 				<% unless @getPagerPrevious('demos')?: %>
 				<li class="previous">
 					<a href="<%= @getLast('demos').attributes.url %>" title="Previous"> <
-						<img src="<%= @getThumbnail("/demos/images/#{@getLast('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
+						<img src="<%= @getThumbnail("/images/demos/#{@getLast('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous">
 					</a>
 				</li>
 				<% end %>
@@ -114,7 +114,7 @@
 				<% if @getPagerNext('demos'): %>
 				<li class="next">
 					<a href="<%= @getPagerNext('demos').attributes.url %>" title="Next">
-						<img src="<%= @getThumbnail("/demos/images/#{@getPagerNext('demos').attributes.title}.png", "zoomcrop", {w: 70, h:70 }) %>" alt="Next">
+						<img src="<%= @getThumbnail("/images/demos/#{@getPagerNext('demos').attributes.title}.png", "zoomcrop", {w: 70, h:70 }) %>" alt="Next">
 						>
 					</a>
 				</li>
@@ -123,7 +123,7 @@
 				<% unless @getPagerNext('demos')?: %>
 				<li class="next">
 					<a href="<%= @getFirst('demos').attributes.url %>" title="Next">
-						<img src="<%= @getThumbnail("/demos/images/#{@getFirst('demos').attributes.title}.png", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
+						<img src="<%= @getThumbnail("/images/demos/#{@getFirst('demos').attributes.title}.png", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
 						>
 					</a>
 				</li>
