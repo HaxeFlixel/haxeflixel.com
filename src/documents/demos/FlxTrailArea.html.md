@@ -2,7 +2,6 @@
 title: "FlxTrailArea"
 layout: demo
 source: "Effects/FlxTrailArea"
-tags: ['homepage_demo']
 targets: ['flash', 'html5']
 ```
 
