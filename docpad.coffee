@@ -210,9 +210,15 @@ docpadConfig = {
 
     repocloner:
       repos: [
-        name: 'HaxeFlixelDocumentation'
-        path: 'src/documents/documentation'
-        url: 'https://github.com/HaxeFlixel/flixel-docs.git'
+        {
+          name: 'HaxeFlixelDocumentation'
+          path: 'src/documents/documentation'
+          url: 'https://github.com/HaxeFlixel/flixel-docs.git'
+        }, {
+          name: 'HaxeFlixelDemos'
+          path: 'src/files/demos'
+          url: 'https://github.com/HaxeFlixel/haxeflixel.com-demos.git'
+        }
       ]
 }
 
