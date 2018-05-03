@@ -2,6 +2,7 @@
 title: "FlxTween"
 layout: demo
 source: "Effects/FlxTween"
+targets: ['flash', 'html5']
 ```
 
 HaxeFlixel has advanced tweening built in for interpolation over time.
