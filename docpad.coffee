@@ -3,7 +3,7 @@ removeMd          = require 'remove-markdown'
 backers           = require './src/files/backers.json'
 
 demoBaseUrl = 'https://demos.haxeflixel.com/'
-demoInRepoBaseUrl = 'https://haxeflixel.com/demos/html5/'
+demoInRepoBaseUrl = '/demos/html5/'
 
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
