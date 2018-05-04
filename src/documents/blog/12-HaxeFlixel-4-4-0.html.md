@@ -18,7 +18,6 @@ OpenFL ~~5~~ ~~6~~ ~~7~~ 8 support has been long-awaited. OpenFL 3.6.1 is still 
 - We can now take advantage of all the fixes and improvements that happened between OpenFL 3.6.1 and OpenFL 8 - this has already meant that tens of old issues could be closed across the issue trackers of Flixel repositories.
 - OpenFL 3.6.1 will eventually stop working with latest Haxe - there's already some minor compiler errors with the latest Haxe development branch. A similar issue exists in the Android world, with Ant being switched out for Gradle as the build tool. Latest HXCPP was also causing some trouble.
 - Latest OpenFL enables HaxeFlixel to use the HashLink target in the future, [once support for it is implemented in Lime](https://github.com/openfl/lime/milestone/18). If you haven't heard about [HashLink](https://hashlink.haxe.org/), it's a new Haxe target and VM that's Neko's spiritual successor, but *much* faster. It has amazing features such as [source-level debugging](https://marketplace.visualstudio.com/items?itemName=HaxeFoundation.haxe-hl) and native C compilation.
-- Similarly, latest OpenFL means latest SDL - [and latest SDL might mean Switch support](https://twitter.com/icculus/status/981730137736712192?lang=en)!
 
 Since these reasons have surely managed to excite you as much as us, what else do you need to know about OpenFL 8? Here's a few things:
 
