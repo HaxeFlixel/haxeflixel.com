@@ -57,7 +57,7 @@ import dragonBones.animation.WorldClock;
 ```
 
 ### Create Factory
-Then, under your `FlxState` class you have to create a `FlixelFactory` which generates flixel objects for DragonBones like so:
+Then, inside the `create` function under your `FlxState` class you have to create a `FlixelFactory` which generates flixel objects for DragonBones like so:
 
 ```haxe
 var _factory:FlixelFactory = new FlixelFactory();
@@ -121,7 +121,7 @@ override public function update(elapsed:Float):Void
 ```
 
 ### Render
-Finally, we add the `FlxGroup` to the `FlxState` so it can be rendered!
+Finally, we add the `FlxGroup` to the `FlxState` inside the function `create` so it can be rendered!
 
 ```haxe
 add(armatureGroup);
