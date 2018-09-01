@@ -24,7 +24,7 @@ haxelib install dragonbones
 Although it’s better to install directly from github in order to always keep up with the latest updates:
 
 ```
-haxelib git dragonbones https://github.com/openfl/dragonbones`
+haxelib git dragonbones https://github.com/openfl/dragonbones
 ```
 
 ### Create Project
