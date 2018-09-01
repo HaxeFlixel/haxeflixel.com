@@ -8,7 +8,7 @@ Hi there, I’m Troy, creator and maintainer of the [HaxeFlixel backend for Drag
 
 First of all, what is DragonBones? DragonBones is a free *open source alternative to the popular 2D bone animation tool [Spine](http://esotericsoftware.com/) (which Flixel already has support for). Its a tool which allows you to animate static 2D images programmatically (similar to Flash tweening) without having to painstakingly animate each individual frame in a spritesheet. Why would one use it over Spine? Well Spine can potentially be [quite expensive](https://esotericsoftware.com/spine-purchase) for new indie devs, and DragonBones is free. Not only that, DragonBones is a fully featured, intuitive bone animation editor and has [Mesh Deformation support](https://www.youtube.com/watch?v=XPH_ZBzCtfY) just like Spine. Quite a deal for free!
 
-![screenshot](/images/blog/13_dragonbones/dragonbones_stock.jpg)
+<img src="/images/blog/13_dragonbones/dragonbones_stock.jpg" width="100%" />
 
 *One caveat is that DragonBones is not truly open source (if you care about that sort of thing), only the runtime is. If you want a truly open source editor which can export to the DragonBones format while also being fully featured, check out the great alternative [COA Tools](https://github.com/ndee85/coa_tools) for Blender. Its DragonBones export should also work with the Flixel backend I’ve created.
 
@@ -21,7 +21,7 @@ First install the library from haxelib using:
 haxelib install dragonbones
 ```
 
-Although it’s better to install directly from github in order to always keep up with the latest updates:
+Although it’s better to install directly from GitHub in order to always keep up with the latest updates:
 
 ```
 haxelib git dragonbones https://github.com/openfl/dragonbones
@@ -36,7 +36,7 @@ Then create a new Flixel project template with [Flixel Tools](http://haxeflixel.
 
 Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to `File > Export` and export the animation using `Data Version: 5.0` and `Image Type: Texture Atlas`. Then save it to the `assets` folder in your Flixel project.
 
-![screenshot](/images/blog/13_dragonbones/dragonbones_export.png)
+<img src="/images/blog/13_dragonbones/dragonbones_export.png" width="100%" />
 
 ### Packages 
 First, import the packages we'll be using.
@@ -60,20 +60,20 @@ import dragonBones.animation.WorldClock;
 Then, inside the `create` function under your `FlxState` class you have to create a `FlixelFactory` which generates flixel objects for DragonBones like so:
 
 ```haxe
-var _factory:FlixelFactory = new FlixelFactory();
+var _factory = new FlixelFactory();
 ```
 
 ### Parse Data
 Then you have to use the factory to parse the animation files that you’ve exported in order to read their data.
 
 ```haxe
-var dragonBonesData : DragonBonesData = _factory.parseDragonBonesData(
-  Json.parse(Assets.getText("assets/dragonboy_flixel_ske.json"))
+var dragonBonesData:DragonBonesData = _factory.parseDragonBonesData(
+	Json.parse(Assets.getText("assets/dragonboy_flixel_ske.json"))
 );
 
 _factory.parseTextureAtlasData(
-  Json.parse(Assets.getText("assets/dragonboy_flixel_tex.json")),
-  Assets.getBitmapData("assets/dragonboy_flixel_tex.png")
+	Json.parse(Assets.getText("assets/dragonboy_flixel_tex.json")),
+	Assets.getBitmapData("assets/dragonboy_flixel_tex.png")
 );
 ```
 
@@ -92,11 +92,11 @@ Then you iterate through all of the sprites in the `FlxGroup` to set their initi
 
 ```haxe
 armatureGroup.forEach(function(display:FlixelArmatureDisplay) {
-  display.antialiasing = true;
-  display.x = 100;
-  display.y = 100;
-  display.scaleX = 0.50;
-  display.scaleY = 0.50;
+	display.antialiasing = true;
+	display.x = 100;
+	display.y = 100;
+	display.scaleX = 0.50;
+	display.scaleY = 0.50;
 });
 ```
 
@@ -105,7 +105,7 @@ Now you do the same thing to start the initial animation. Again we grab the firs
 
 ```haxe
 armatureGroup.forEach(function(display:FlixelArmatureDisplay) {
-  display.animation.play(display.animation.animationNames[0]);
+	display.animation.play(display.animation.animationNames[0]);
 });
 ```
 
@@ -115,8 +115,8 @@ Then, inside the update loop of the `FlxState` class, add `FlixelFactory._clock.
 ```haxe
 override public function update(elapsed:Float):Void
 {
-  FlixelFactory._clock.advanceTime(-1);
-  super.update(elapsed);
+	FlixelFactory._clock.advanceTime(-1);
+	super.update(elapsed);
 }
 ```
 
@@ -130,4 +130,4 @@ add(armatureGroup);
 ### Preview
 That’s it! Once you compile with `lime test html5`, it should look like this:
 
-![screenshot](/images/blog/13_dragonbones/dragonbones_preview.gif)
+<img src="/images/blog/13_dragonbones/dragonbones_preview.gif" width="100%" />
