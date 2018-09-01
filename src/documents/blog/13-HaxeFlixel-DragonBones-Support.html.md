@@ -28,13 +28,13 @@ haxelib git dragonbones https://github.com/openfl/dragonbones`
 ```
 
 ### Create Project
-Then create a new Flixel project template with [Flixel Tools](http://haxeflixel.com/documentation/flixel-tools/), and add DragonBones to your Project.xml. You can also download [the sample project](https://github.com/openfl/dragonbones/tree/master/samples/HelloDragonBones) instead to follow along.
+Then create a new Flixel project template with [Flixel Tools](http://haxeflixel.com/documentation/flixel-tools/), and add DragonBones to your `Project.xml`. You can also download [the sample project](https://github.com/openfl/dragonbones/tree/master/samples/HelloDragonBones) instead to follow along.
 
 ```xml
 <haxelib name="dragonbones" />
 ```
 
-Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to File > Export and export the animation using `Data Version: 5.0` and `Image Type: Texture Atlas`.
+Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to `File > Export` and export the animation using `Data Version: 5.0` and `Image Type: Texture Atlas`.
 
 ![screenshot](/images/blog/13_dragonbones/dragonbones_export.png)
 
@@ -61,11 +61,13 @@ _factory.parseTextureAtlasData(
 
 ### Build Armature
 
-Then you have to create `FlxGroup` which will contain all the DragonBones Flixel Sprites. You can do so by declaring a variable and then assigning the new `FlxGroup` to it which you will generate with the factory. One thing to note is you also have to pass in a collision box similar to the Flixel spine plugin. This is because with many different sprites, if you want to check the collisions of the entire “character” then you have to have one large collision box. You also pass in the name of the armature (the animations skeleton). Generally you’ll only have one armature, so just pass in the first index of the armatureNames array from the data you got earlier. Otherwise, check your animation in DragonBones to find the name.
+Then you have to create a `FlxGroup` which will contain all the DragonBones Flixel Sprites. You can do so by declaring a variable and then assigning the new `FlxGroup` to it which you will generate using the factory. 
 
 ```haxe
-_factory.buildArmatureDisplay(new FlixelArmatureCollider(250, 250, 27, 25, 13, 8), dragonBonesData.armatureNames[0]);
+var armatureGroup = _factory.buildArmatureDisplay(new FlixelArmatureCollider(250, 250, 27, 25, 13, 8), dragonBonesData.armatureNames[0]);
 ```
+
+One thing to note is you also have to pass in a collision box similar to the Flixel Spine plugin. This is because with many different sprites, if you want to check the collisions of the entire “character” then you have to have one large collision box. You also pass in the name of the armature (the animations skeleton). Generally you’ll only have one armature, so just pass in the first index of the `armatureNames` array from the data you got earlier. Otherwise, check your animation in DragonBones to find the name and pass it in as a string.
 
 ### Set Properties
 Then you iterate through all of the sprites in the `FlxGroup` to set their initial properties (such as scale, placement in the world, ect.) as you please.
