@@ -28,7 +28,7 @@ haxelib git dragonbones https://github.com/openfl/dragonbones`
 ```
 
 ### Create Project
-Then create a new Flixel project template with Flixel Tools, and add DragonBones to your Project.xml. You can also download the sample project instead to follow along.
+Then create a new Flixel project template with [Flixel Tools](http://haxeflixel.com/documentation/flixel-tools/), and add DragonBones to your Project.xml. You can also download [the sample project](https://github.com/openfl/dragonbones/tree/master/samples/HelloDragonBones) instead to follow along.
 
 ```xml
 <haxelib name="dragonbones" />
