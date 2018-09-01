@@ -121,7 +121,7 @@ override public function update(elapsed:Float):Void
 ```
 
 ### Render
-Finally, we add the `FlxGroup` to the `FlxState` inside the function `create` so it can be rendered!
+Finally, we add the `FlxGroup` to the `FlxState` inside the `create` function so it can be rendered!
 
 ```haxe
 add(armatureGroup);
