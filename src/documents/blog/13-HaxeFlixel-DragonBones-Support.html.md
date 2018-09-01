@@ -110,7 +110,7 @@ armatureGroup.forEach(function(display:FlixelArmatureDisplay) {
 ```
 
 ### Update Animation
-Then, inside the update loop of the `FlxState` class, add this to update the animation clock so that the factory knows what point it's at on the timeline.
+Then, inside the update loop of the `FlxState` class, add `FlixelFactory._clock.advanceTime(-1);` to update the animation clock so that the factory knows what point it's at on the timeline.
 
 ```haxe
 override public function update(elapsed:Float):Void
