@@ -34,7 +34,7 @@ Then create a new Flixel project template with [Flixel Tools](http://haxeflixel.
 <haxelib name="dragonbones" />
 ```
 
-Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to `File > Export` and export the animation using `Data Version: 5.0` and `Image Type: Texture Atlas`.
+Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to `File > Export` and export the animation using `Data Version: 5.0` and `Image Type: Texture Atlas`. Then save it to the `assets` folder in your Flixel project.
 
 ![screenshot](/images/blog/13_dragonbones/dragonbones_export.png)
 
