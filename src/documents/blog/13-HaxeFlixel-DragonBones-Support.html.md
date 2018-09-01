@@ -38,8 +38,26 @@ Then create a new animation using DragonBones. For the sake of this tutorial, we
 
 ![screenshot](/images/blog/13_dragonbones/dragonbones_export.png)
 
+### Packages 
+First, import the packages we'll be using.
+
+```haxe
+import haxe.Json;
+import openfl.Assets;
+import flixel.FlxG;
+import flixel.FlxState;
+import flixel.group.FlxGroup;
+import dragonBones.objects.DragonBonesData;
+import dragonBones.flixel.FlixelTextureAtlasData;
+import dragonBones.flixel.FlixelArmatureDisplay;
+import dragonBones.flixel.FlixelArmatureCollider;
+import dragonBones.flixel.FlixelFactory;
+import dragonBones.flixel.FlixelEvent;
+import dragonBones.animation.WorldClock;
+```
+
 ### Create Factory
-After you’ve exported the project, it’s time to get coding! First you have to create a FlixelFactory which generates flixel objects for DragonBones like so:
+Then, under your `FlxState` class you have to create a `FlixelFactory` which generates flixel objects for DragonBones like so:
 
 ```haxe
 var _factory:FlixelFactory = new FlixelFactory();
@@ -91,8 +109,19 @@ armatureGroup.forEach(function(display:FlixelArmatureDisplay) {
 });
 ```
 
+### Update Animation
+Then, inside the update loop of the `FlxState` class, add this to update the animation clock so that the factory knows what point it's at on the timeline.
+
+```haxe
+override public function update(elapsed:Float):Void
+{
+  FlixelFactory._clock.advanceTime(-1);
+  super.update(elapsed);
+}
+```
+
 ### Render
-Finally, we add the `FlxGroup` to the FlxState so it can be rendered!
+Finally, we add the `FlxGroup` to the `FlxState` so it can be rendered!
 
 ```haxe
 add(armatureGroup);
