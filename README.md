@@ -109,7 +109,7 @@ following this example:
     [showcase page](http://haxeflixel.com/showcase) and link to that URL.
 
 2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `BOSSES FOREVER 2.BRO.png` 
-to [`/src/files/showcase/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/showcase/images). 
+to [`/src/files/images/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/images/showcase). 
 They are resized and cropped to 500x260, so it's best to use the same ratio.
 
 Showcases that are not officially released yet are only accepted in special cases. The same is true for games from game jams.
