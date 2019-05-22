@@ -23,18 +23,6 @@ title: 'Home'
 
         <div class="backer-container">
 
-            <a href="/blog/05-fundraiser">
-                <img width="180" height="58" src="images/IGG_FundedWithBadges_WhiteOutlined_RGB_Rectangle.png" />
-            </a>
-
-            <span class="patreon-home">
-                <a href="https://www.patreon.com/haxeflixel">
-                    <img src="/images/patreon.png" alt="Support us on Patreon" title="Patreon">
-                </a>
-            </span>
-
-        </div>
-
         <div class="home-social">
 
             <iframe width="160px" scrolling="0" height="30px" frameborder="0"
@@ -63,6 +51,10 @@ title: 'Home'
                     fjs.parentNode.insertBefore (js, fjs);
                 }
             } (document, "script", "twitter-wjs");</script>
+
+            <br />
+            <a href="https://discordapp.com/invite/0uEuWH3spjck73Lo"><img src="https://img.shields.io/discord/162395145352904705.svg?logo=discord" alt="Discord"></a>
+            <a href="https://www.patreon.com/haxeflixel"><img src="https://img.shields.io/badge/donate-patreon-blue.svg" alt="Patreon"></a>
 
         </div>
 
