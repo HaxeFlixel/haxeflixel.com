@@ -22,7 +22,7 @@ The forum also just looks really nice. Like, come on. That looks so good.
 
 Slack and Discord are both chat apps. Slack is often used in companies as a team messenger. Discord is built for gamers, with voice chat capabilities. As far as Flixel goes, the Discord channel has more activity, but "activity" can sometimes include 200 off-topic posts about philosophy. The Slack channel is more focused but quieter. Check 'em both out and see for yourself! It's 100 percent possible to be a part of both, even if Kantian philosophy isn't your thing.
 
-[Click here](https://discord.gg/gv2a42z) to join the Discord. Slack requires an invitation, so feel free to message me on Twitter ([@MSGhero16](https://twitter.com/MSGhero16)) for one.
+[Click here](https://discordapp.com/invite/rqEBAgF) to join the Discord. Slack requires an invitation, so feel free to message me on Twitter ([@MSGhero16](https://twitter.com/MSGhero16)) for one.
 
 Both Slack and Discord have desktop apps, web interfaces, and mobile apps. Flixel community on any device.
 
