@@ -1,7 +1,6 @@
 ```
 layout: showcase
 title: "Super Slime Arena"
-featured: true
 windows: http://jellyteam.itch.io/super-slime-arena/
 linux: http://jellyteam.itch.io/super-slime-arena/
 mac: http://jellyteam.itch.io/super-slime-arena/
