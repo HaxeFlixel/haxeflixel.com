@@ -212,7 +212,8 @@ docpadConfig = {
         }, {
           name: 'HaxeFlixelDemos'
           path: 'src/files/demos'
-          url: 'https://github.com/HaxeFlixel/haxeflixel.com-demos.git'
+          url: 'https://github.com/HaxeFlixel/haxeflixel.com-demos.git',
+          branch: 'binaries'
         }
       ]
 }
