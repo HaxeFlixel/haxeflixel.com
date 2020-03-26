@@ -1,10 +1,10 @@
 ```
 title: "Tilemap"
 layout: demo
-pageOrder: 1
-SWFHeight: 300
-SWFWidth: 400
-source: "Flixel%20Features/Tilemap"
+width: 400
+height: 300
+source: "Features/Tilemap"
+targets: ['flash', 'html5']
 ```
 
 A port and improvement of the [Tilemap demo](https://github.com/LordTim/FlxTilemap-Demo) by [Tim Plummer](https://twitter.com/lordtim) featured on [flixel.org/features](http://flixel.org/features.html).

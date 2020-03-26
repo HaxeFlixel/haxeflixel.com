@@ -1,9 +1,8 @@
 ```
 title: "NeonVector"
 layout: demo
-pageOrder: 1
-SWFHeight: 600
-SWFWidth: 800
+width: 800
+height: 600
 source: "Performance/NeonVector"
 ```
 

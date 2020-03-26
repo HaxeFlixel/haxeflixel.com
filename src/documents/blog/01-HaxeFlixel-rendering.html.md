@@ -1,7 +1,7 @@
 ```
 title: "Tilesheet rendering"
 layout: blog-post
-postDate: 31-7-2014
+postDate: "July 31, 2014"
 ```
 
 Hi, [gamedevsam](https://github.com/gamedevsam) here, I'm a developer and evangelist of HaxeFlixel.

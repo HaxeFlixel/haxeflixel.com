@@ -1,5 +1,6 @@
 @import "../mixins/style";
 @import "../../../files/vendor/LESSHat/lesshat.less";
+@import 'https://fonts.googleapis.com/css?family=VT323';
 
 /* Homepage styles
 -------------------------------------------------- */
@@ -34,6 +35,21 @@
   text-align: center;
 }
 
+.sponsors-button {
+  font-size: 24px;
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.platinum-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'VT323', monospace;
+  font-size: 56px;
+}
+
 .home-header {
   margin-top: 5em;
 }
@@ -44,7 +60,7 @@
 }
 
 .home-social {
-  margin-top: 4em;
+  margin-top: 2em;
 }
 
 .home-section-features {
@@ -68,7 +84,7 @@
 .platform-logos-home img {
   padding: 10px;
   .opacityAll(.7);
-  .hover-scale-fx(1.2);
+  .hover-scale-fx(1.1);
   .grayscale();
 }
 
@@ -118,6 +134,18 @@
   padding: 20px;
 }
 
+.patreon-home {
+  img {
+    max-width: 240px;
+    vertical-align: top;
+    margin-left: 30px;
+  }
+}
+
+.backer-hr {
+  margin-top: 60px;
+}
+
 @media (max-width: @screen-md-min) {
   .home-button {
     margin-top: 20px;
@@ -136,5 +164,28 @@
 @media (max-width: @screen-sm-min) {
   .home-header h1 {
     font-size: 4em;
+  }
+}
+
+.sponsor-logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lead-line-large {
+  text-align: center;
+}
+
+.home-sponsor-logos {
+  img {
+    margin: 16px;
+    max-height: 174px;
+  }
+}
+
+@media (max-width: @screen-lg-min) {
+  .sponsor-logos-container {
+      flex-direction: column;
   }
 }

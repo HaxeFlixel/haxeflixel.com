@@ -1,10 +1,10 @@
 ```
-title: "RPG Interface"
+title: "RPGInterface"
 layout: demo
-pageOrder: 1
-SWFHeight: 600
-SWFWidth: 800
-source: "User%20Interface/RPG%20Interface"
+width: 800
+height: 600
+source: "UserInterface/RPGInterface"
+targets: ['flash', 'html5']
 ```
 
 This is a simple demonstration of the flixel-ui engine in a fictional RPG.

@@ -1,2 +1,8 @@
 node_modules/
 *.db
+docpad.js
+.idea
+src/documents/documentation
+npm-debug.log*
+out
+debug.log

@@ -1,11 +1,8 @@
 ```
 title: "FlxTrailArea"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Effects/FlxTrailArea"
-tags: ['homepage_demo']
+targets: ['flash', 'html5']
 ```
 
 This demo shows the effects that can be accomplished with [`FlxTrailArea`](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/effects/FlxTrailArea.hx). 

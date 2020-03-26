@@ -1,10 +1,8 @@
 ```
 title: "FlxCamera"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
-source: "Flixel%20Features/FlxCamera"
+source: "Features/FlxCamera"
+targets: ['flash', 'html5']
 ```
 
 This demo showcases different flixel camera features like zoom, lerp, lead and follow styles.

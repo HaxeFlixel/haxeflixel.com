@@ -1,10 +1,8 @@
 ```
 title: "FlxTypeText"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
-source: "User%20Interface/FlxTypeText"
+source: "UserInterface/FlxTypeText"
+targets: ['flash', 'html5']
 ```
 
 This demo showcases the effects that can be accomplished with the use of the [FlxTypeText](https://github.com/HaxeFlixel/flixel-addons/blob/master/flixel/addons/text/FlxTypeText.hx) class.

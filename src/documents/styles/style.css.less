@@ -188,13 +188,44 @@ pre .title:before {
   margin-left: 0;
 }
 
+.sponsor-logos {
+  img {
+    margin: 16px;
+    max-height: 216px;
+  }
+}
+
+.level-up-labs-logo {
+  height: 94px;
+}
+
+.aseprite-logo {
+  max-width: 234px;
+}
+
+code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+  border: 0px;
+}
+
+code:not(.hljs)::before, code:not(.hljs)::after {
+  letter-spacing: -0.2em;
+  content: "\00a0"
+}
+
 /* Home Page
 -------------------------------------------------- */
 @import "./sections/home.less";
 
 /* Code color theme
 -------------------------------------------------- */
-@import "./monokai-sublime.less";
+@import "./highlighting.less";
 
 /* Footer
 -------------------------------------------------- */
@@ -212,11 +243,10 @@ pre .title:before {
 -------------------------------------------------- */
 @import "./sections/showcase.less";
 
+/* Fundraiser
+-------------------------------------------------- */
+@import "./sections/fundraiser.less";
+
 /* Blog
 -------------------------------------------------- */
 @import "./sections/blog.less";
-
-.post-date {
-  text-align:right;
-  color: #b8b8b8;
-}

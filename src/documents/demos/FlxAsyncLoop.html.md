@@ -1,10 +1,8 @@
 ```
 title: "FlxAsyncLoop"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Other/FlxAsyncLoop"
+targets: ['flash', 'html5']
 ```
 Demonstration for the `FlxAsyncLoop` class, created by [SeiferTim](http://tims-world.com/) (Tim I Hely).
 This utility allows you to setup a loop in a way that still allows `update()` and `draw()` to be called so you can show progress bars or whatever, instead of the game freezing and locking up until the loop has completed.

@@ -1,10 +1,10 @@
 ```
 title: "GamepadTest"
 layout: demo
-pageOrder: 1
-SWFHeight: 376
-SWFWidth: 526
+width: 650
+height: 440
 source: "Input/GamepadTest"
+targets: ['flash', 'html5']
 ```
 
 A demo showcasing HaxeFlixel's gamepad support.

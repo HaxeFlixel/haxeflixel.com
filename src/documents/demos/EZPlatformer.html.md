@@ -1,10 +1,8 @@
 ```
 title: "EZPlatformer"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Platformers/EZPlatformer"
+targets: ['flash', 'html5']
 ```
 
 EZPlatformer is a really simple platformer which was originally created by [Adam "Atomic" Saltsman](https://twitter.com/adamatomic) as a tutorial for creating platformers with flixel.

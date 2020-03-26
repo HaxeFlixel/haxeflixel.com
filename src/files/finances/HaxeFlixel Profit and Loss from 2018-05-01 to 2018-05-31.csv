@@ -1,0 +1,22 @@
+Profit and Loss
+HaxeFlixel
+Date Range: 2018-05-01 to 2018-05-31
+""
+ACCOUNT NUMBER,ACCOUNTS,"May 01, 2018 to May 31, 2018"
+,Income,
+,Patreon Donations,$120.00
+,Total Income,$120.00
+""
+,Total Cost of Goods Sold,$0.00
+""
+,Gross Profit,$120.00
+""
+,Operating Expenses,
+,Development Services,$200.00
+,Patreon Fees,$6.00
+,PayPal Fee,$2.26
+,Payment Fees,$4.17
+,Tax Fees,$55.78
+,Total Operating Expenses,$268.21
+""
+,Net Profit,-$148.21

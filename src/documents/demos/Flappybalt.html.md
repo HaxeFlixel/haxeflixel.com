@@ -1,11 +1,11 @@
 ```
 title: "Flappybalt"
 layout: demo
-pageOrder: 1
-SWFHeight: 720
-SWFWidth: 480
-source: "Other/Flappybalt"
+width: 480
+height: 720
+source: "Arcade/Flappybalt"
 tags: ['homepage_demo']
+targets: ['flash', 'html5']
 ```
 
 Controls: Spacebar

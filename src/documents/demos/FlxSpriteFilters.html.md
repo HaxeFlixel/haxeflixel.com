@@ -1,10 +1,8 @@
 ```
 title: "FlxSpriteFilters"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Effects/FlxSpriteFilters"
+targets: ['flash', 'html5']
 ```
 
 This demo shows bitmap filters being applied and updated on FlxSprites using the FlxSpriteFilter class.

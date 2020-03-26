@@ -1,10 +1,10 @@
 ```
 title: "GridMovement"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 672
+width: 672
+height: 480
 source: "Input/GridMovement"
+targets: ['flash', 'html5']
 ```
 
 This showcases a classic retro grid movement.

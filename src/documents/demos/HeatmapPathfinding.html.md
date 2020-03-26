@@ -1,10 +1,8 @@
 ```
 title: "HeatmapPathfinding"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
-source: "Flixel%20Features/HeatmapPathfinding"
+source: "Features/HeatmapPathfinding"
+targets: ['flash', 'html5']
 ```
 
 A demo showcasing an efficient method to have a lot of objects path to one target, using a heatmap. [Inspired by this Gamasutra article](http://gamasutra.com/blogs/TylerGlaiel/20121007/178966/Some_experiments_in_pathfinding__AI.php).

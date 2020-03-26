@@ -1,10 +1,8 @@
 ```
-title: "Tiled Editor"
+title: "TiledEditor"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
 source: "Editors/TiledEditor"
+targets: ['flash', 'html5']
 ```
 
 This sample shows how to load a map from the [Tiled Map Editor](http://www.mapeditor.org/).

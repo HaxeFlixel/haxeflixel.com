@@ -1,10 +1,8 @@
 ```
 title: "ProjectJumper"
 layout: demo
-pageOrder: 1
-SWFHeight: 480
-SWFWidth: 640
-source: "Platformers/Project%20Jumper"
+source: "Platformers/ProjectJumper"
+targets: ['flash', 'html5']
 ```
 
 "Project Jumper" has been created by [Chipacabra ](http://chipacabra.blogspot.de/)as a tutorial on developing a platformer game with flixel and has later been ported to Haxe(Flixel).
