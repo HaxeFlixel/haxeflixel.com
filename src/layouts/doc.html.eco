@@ -20,7 +20,7 @@
 			<h1 class="title"><%= @document.title %></h1>
 
 			<% if @document.apiPath: %>
-				<a href="http://api.haxeflixel.com/flixel/<%= @document.apiPath %>" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
+				<a href="http://haxeflixel.github.io/flixel-docs/flixel/<%= @document.apiPath %>" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
 			<% end %>
 			<a href="<%= @document.editUrl %>" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
 
