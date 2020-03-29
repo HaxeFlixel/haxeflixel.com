@@ -4,7 +4,12 @@ title: 'Home'
 ---
 
 <div class="container">
-    <div class="home-header home-section">
+    <div style="padding-top: 58px; padding-bottom: 8px; position: fixed; background-color: rgb(163, 163, 163); color: white; cursor: pointer; user-select: none;
+    text-align: center; width: 100%; left: 0px; z-index: 99; font-style: italic; font-size: 11pt;" onclick="location.href='https://haxeflixel.com/blog/14-newgrounds-game-jam/'"
+    onmouseout="this.style.color='white'" onmouseover="this.style.color='#a3e7ff'">
+        Newgrounds.com is hosting a HaxeFlixel game jam! | Theme: "Alone, Together" | Deadline: April 27th | Prize Pool: $1,100 <span style="padding-left: 5px; top: 3px;" class="glyphicon glyphicon-link"></span>
+    </div>
+    <div class="home-header home-section" style="margin-top: 6em;">
 
         <a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
             <img src="images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
