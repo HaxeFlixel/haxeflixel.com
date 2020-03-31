@@ -34,7 +34,7 @@
 						</li>
 
 						<li>
-							<a href="http://haxeflixel.github.io/flixel-docs">API</a>
+							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						<li <%= @aforum %>>
