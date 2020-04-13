@@ -10,6 +10,6 @@ targets: ['flash', 'html5']
 
 **Controls:**
 
-* Move - Arrow keys
+* Arrow keys - Move
 * X - Jump
 * C - Shoot
