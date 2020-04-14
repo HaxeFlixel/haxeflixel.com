@@ -1,7 +1,7 @@
 sudo: required
 language: node_js
 node_js:
-- 4.4.7
+- 10
 services:
 - docker
 before_install:
@@ -12,6 +12,11 @@ script:
 - ls -lah
 - node scripts/docker.js buildSite
 - ls -lah
+- git clone --recursive https://github.com/Gama11/Highlighter
+- cd Highlighter
+- npm install
+- node bin/highlighter.js ../out
+- cd ..
 before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 $TRAVIS_BUILD_DIR/scripts/deploy
