@@ -24,7 +24,7 @@ jobs:
         npm install
         node bin/highlighter.js ../out
         cd ..
-    - name: Deploy
+    - name: Deploy Master
       uses: JamesIves/github-pages-deploy-action@3.4.3
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
@@ -32,7 +32,7 @@ jobs:
         FOLDER: out
         SINGLE_COMMIT: true
       if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev'
-    - name: Deploy
+    - name: Deploy Dev
       uses: JamesIves/github-pages-deploy-action@3.4.3
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
