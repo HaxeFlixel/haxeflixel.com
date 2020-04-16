@@ -1,0 +1,43 @@
+name: CI
+
+on: [push, pull_request, repository_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Build Docker Image
+      run: node scripts/docker.js buildImage
+    - name: Build Site
+      run: |
+        ls -lah
+        node scripts/docker.js buildSite
+        ls -lah
+    - name: Highlighting
+      run: |
+        git clone --recursive https://github.com/Gama11/Highlighter
+        cd Highlighter
+        npm install
+        node bin/highlighter.js ../out
+        cd ..
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.4.3
+      with:
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BRANCH: gh-pages
+        FOLDER: out
+        SINGLE_COMMIT: true
+      if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev'
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.4.3
+      with:
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BRANCH: gh-pages
+        FOLDER: out
+        SINGLE_COMMIT: true
+        REPOSITORY_NAME: HaxeFlixel/dev.haxeflixel.com
+      if: github.ref == 'refs/heads/dev'
