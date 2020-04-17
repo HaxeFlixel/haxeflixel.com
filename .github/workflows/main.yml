@@ -29,19 +29,19 @@ jobs:
         node bin/highlighter.js ../out
         cd ..
     - name: Deploy Master
-      uses: JamesIves/github-pages-deploy-action@3.4.3
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BRANCH: gh-pages
-        FOLDER: out
-        SINGLE_COMMIT: true
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: ./out
+        force_orphan: true
+        cname: haxeflixel.com
       if: github.ref == 'refs/heads/master'
     - name: Deploy Dev
-      uses: JamesIves/github-pages-deploy-action@3.4.3
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BRANCH: gh-pages
-        FOLDER: out
-        SINGLE_COMMIT: true
-        REPOSITORY_NAME: HaxeFlixel/dev.haxeflixel.com
+        personal_token: ${{secrets.ACCESS_TOKEN}}
+        publish_dir: ./out
+        force_orphan: true
+        cname: dev.haxeflixel.com
+        external_repository: HaxeFlixel/dev.haxeflixel.com
       if: github.ref == 'refs/heads/dev'
