@@ -194,9 +194,6 @@ docpadConfig = {
   # Plugins
 
   plugins:
-    cleanurls:
-      enabled: true
-
     markedOptions:
       gfm: true
 
