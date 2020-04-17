@@ -174,7 +174,7 @@
             removeClass(html5Button, ACTIVE_CLASS)
 
             if(!flashAdded) {
-                swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+                swfobject.embedSWF ("<%= "https://demos.haxeflixel.com/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
                 flashAdded = true;
             }
 
@@ -220,7 +220,7 @@
             warning.style.display = 'block'
         }
 
-        swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+        swfobject.embedSWF ("<%= "https://demos.haxeflixel.com/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
     }
 </script>
 
