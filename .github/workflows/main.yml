@@ -18,6 +18,7 @@ jobs:
         ls -lah
         node scripts/docker.js buildSite
         ls -lah
+        haxe --run RemoveRedirects
     - name: Highlighting
       run: |
         git clone --recursive https://github.com/Gama11/Highlighter
