@@ -101,7 +101,7 @@ layout: showcases
 </div>
 
 
-	<div class="row">
+	<div class="row showcase-grid">
 
 		<% for showcase in @getCollection('showcase').toJSON(): %>
 
