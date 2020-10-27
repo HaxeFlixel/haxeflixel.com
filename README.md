@@ -25,7 +25,7 @@ You can compile this website yourself with a local install of DocPad, pull reque
     
     ```batch
     npm install
-    docpad run
+    npx docpad run
     ```
     Or if you are a windows user:
     
