@@ -35,8 +35,8 @@
         <p>Most of our other demos are HTML5-compatible.</p>
 
         <a class="install-flash-player-prompt"
-            href="http://www.adobe.com/go/getflashplayer">
-            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+            href="https://www.adobe.com/go/getflashplayer">
+            <img src="https://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
         </a>
 
     </div>
@@ -46,42 +46,6 @@
 		<div class="demo-content">
 
             <br>
-
-<% if @getDemoTarget(@document).html5? and @getDemoTarget(@document).flash?: %>
-
-            <div
-                class="btn-source demo-button flash-button"
-                target="_blank"
-                title="Flash version"
-            >
-                <svg
-                    width="40"
-                    height="40"
-                    viewbox="0 0 80 80"
-                >
-                 <path class="logo"
-                    d="M 0 0 L 0 80 L 80 80 L 80 0 L 0 0 z M 60 15 L 60 25 C 56.111111 25 53.484606 26.085706 51.035156 28.535156 C 49.535258 30.035054 48.127997 32.173615 46.910156 35 L 55 35 L 55 45 L 43.755859 45 C 41.971554 50.509031 39.486846 55.083466 36.035156 58.535156 C 31.817939 62.752373 26.111111 65 20 65 L 20 55 C 23.888889 55 26.515394 53.914294 28.964844 51.464844 C 31.414294 49.015394 33.624439 44.883104 35.148438 38.787109 C 36.957771 31.54977 39.747627 25.682061 43.964844 21.464844 C 48.182061 17.247627 53.888889 15 60 15 z "
-                  />
-                </svg>
-            </div>
-
-            <div
-                class="btn-source demo-button html5-button"
-                target="_blank"
-                title="HTML5 version"
-            >
-                <svg
-                    viewBox="0 0 512 512"
-                    width="40"
-                    height="40"
-                >
-                  <path class="logo"
-                    d="M 30 0 L 71 460 L 255 512 L 440 460 L 481 0 L 30 0 z M 114 94 L 255 94 L 256 94 L 397 94 L 396 109 L 393 138 L 392 150 L 256 150 L 255 150 L 176 150 L 181 208 L 255 208 L 256 208 L 371 208 L 387 208 L 385 223 L 372 372 L 371 382 L 256 413.72461 L 256 414 L 255 414 L 139 382 L 132 293 L 158 293 L 188 293 L 192 338 L 255 355 L 318 338 L 325 265 L 256 265 L 255 265 L 129 265 L 115 109 L 114 94 z "
-                   />
-                </svg>
-            </div>
-
-<% end %>
 
 			<h1 class="title"><%= @document.title %></h1>
 
@@ -174,7 +138,7 @@
             removeClass(html5Button, ACTIVE_CLASS)
 
             if(!flashAdded) {
-                swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+                swfobject.embedSWF ("<%= "https://demos.haxeflixel.com/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
                 flashAdded = true;
             }
 
@@ -220,7 +184,7 @@
             warning.style.display = 'block'
         }
 
-        swfobject.embedSWF ("<%= "/demos/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
+        swfobject.embedSWF ("<%= "https://demos.haxeflixel.com/swf/#{ @document.title }.swf" %>", "demoSWF", "<%= @document.width %>", "<%= @document.height %>", "11.2.0", "/vendor/swfobject/swfobject/expressInstall.swf", null, null, {wmode: "direct"})
     }
 </script>
 

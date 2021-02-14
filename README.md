@@ -5,7 +5,7 @@
 | [tools](https://github.com/HaxeFlixel/flixel-tools) | [templates](https://github.com/HaxeFlixel/flixel-templates) 
 | [docs](https://github.com/HaxeFlixel/flixel-docs) | [haxeflixel.com](https://github.com/HaxeFlixel/haxeflixel.com)
 
-[![Build Status](https://img.shields.io/travis/HaxeFlixel/haxeflixel.com.svg)](https://travis-ci.org/HaxeFlixel/haxeflixel.com)
+[![CI](https://img.shields.io/github/workflow/status/HaxeFlixel/haxeflixel.com/CI.svg?logo=github)](https://github.com/HaxeFlixel/haxeflixel.com/actions?query=workflow%3ACI)
 
 ## About
 

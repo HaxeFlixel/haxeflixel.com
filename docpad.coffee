@@ -2,7 +2,7 @@
 removeMd          = require 'remove-markdown'
 backers           = require './src/files/backers.json'
 
-demoBaseUrl = '/demos/html5/'
+demoBaseUrl = 'https://demos.haxeflixel.com/html5/'
 
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
@@ -209,10 +209,6 @@ docpadConfig = {
           name: 'HaxeFlixelDocumentation'
           path: 'src/documents/documentation'
           url: 'https://github.com/HaxeFlixel/flixel-docs.git'
-        }, {
-          name: 'HaxeFlixelDemos'
-          path: 'src/files/demos'
-          url: 'https://github.com/HaxeFlixel/haxeflixel.com-demos.git'
         }
       ]
 }
