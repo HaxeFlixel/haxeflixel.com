@@ -16,7 +16,7 @@
     "docpad-plugin-marked": "2.3.0",
     "docpad-plugin-partials": "2.8.1",
     "docpad-plugin-repocloner": "2.2.2",
-    "docpad-plugin-services": "^2.6.0",
+    "docpad-plugin-services": "2.6.0",
     "docpad-plugin-thumbnails": "2.1.2",
     "remove-markdown": "0.1.0"
   },
