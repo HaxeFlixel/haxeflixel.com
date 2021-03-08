@@ -1,0 +1,1055 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Upgrade Guide 4.0.0 | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/community&quot;">
+				<a href="/documentation/community"> Community </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/about&quot;">
+				<a href="/documentation/about"> About </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/why-haxe&quot;">
+				<a href="/documentation/why-haxe"> Why a Haxe Version </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/introduction-to-haxe&quot;">
+				<a href="/documentation/introduction-to-haxe"> Introduction to Haxe </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/introduction-to-openfl&quot;">
+				<a href="/documentation/introduction-to-openfl"> Introduction to OpenFL </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/contributing&quot;">
+				<a href="/documentation/contributing"> Contributing </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/code-contributions&quot;">
+				<a href="/documentation/code-contributions"> Code Contributions </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/code-style&quot;">
+				<a href="/documentation/code-style"> Code Style </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/website-docs&quot;">
+				<a href="/documentation/website-docs"> HaxeFlixel Website </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/upgrade-guide-3-x&quot;">
+				<a href="/documentation/upgrade-guide-3-x"> Upgrade Guide 3.x </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flixel-addons&quot;">
+				<a href="/documentation/flixel-addons"> Flixel Addons </a>
+			</li>
+		
+			<li class="active" about="/documentation/upgrade-guide-4-0-0">
+				<a href="/documentation/upgrade-guide-4-0-0"> Upgrade Guide 4.0.0 </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flixel-tools&quot;">
+				<a href="/documentation/flixel-tools"> Flixel Tools </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/install-development-flixel&quot;">
+				<a href="/documentation/install-development-flixel"> Install development Flixel </a>
+			</li>
+		
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Upgrade Guide 4.0.0</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_community/11-upgrade-guide-4-0-0.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<h2 id="4-4-0">4.4.0</h2>
+<p>Breaking changes in 4.4.0 are limited to usage with OpenFL 8. OpenFL 3.6.1 (Legacy or Next) is still fully supported. The breaking changes when upgrading to OpenFL 8.0.0 and Lime 6.3.0 are as follows:</p>
+<ul>
+<li>There is no support for blend modes (<code>FlxSprite.blend</code>). This is because <code>drawQuads()</code> (the rendering API replacing <code>drawTiles()</code> in OpenFL 8), doesn't support them. In some cases, blend modes may be emulated using shaders. An example of this can be seen in our <a href="/demos/BlendModeShaders">BlendModeShaders</a> demo.</li>
+<li>Like already the case in OpenFL 3.6.1 + Next, the <code>flixel.effects.postprocess</code> API is not supported in OpenFL 8. As a replacement, a shader filter can be applied to the <code>FlxGame</code> instance or a <code>FlxCamera</code> as shown in the <a href="/demos/Filters">Filters</a> demo.</li>
+<li>OpenFL 3.6.1 with <code>-Dnext</code> had support for per-sprite, per-camera or game-wide GLSL shaders. All of these are still fully supported, but the syntax has changed a bit.</li>
+</ul>
+<p>Here's a simple example of a shader found in <a href="/demos/FlxBunnymark">FlxBunnyMark</a>:</p>
+<p><strong>With OpenFL 3.6.1 + Next:</strong></p>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> openfl.display.</span><span class="mtk11">Shader</span><span class="mtk1">;</span>
+
+<span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">Invert</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">Shader</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    @</span><span class="mtk13">fragment</span><span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">fragment</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk9">'</span>
+<span class="mtk9">        void main()</span>
+<span class="mtk9">        {</span>
+<span class="mtk9">            vec4 color = texture2D(</span><span class="mtk1">${</span><span class="mtk11">Shader</span><span class="mtk1">.</span><span class="mtk13">uSampler</span><span class="mtk1">}</span><span class="mtk9">, </span><span class="mtk1">${</span><span class="mtk11">Shader</span><span class="mtk1">.</span><span class="mtk13">vTexCoord</span><span class="mtk1">}</span><span class="mtk9">);</span>
+<span class="mtk9">            gl_FragColor = vec4((1.0 - color.r) * color.a, (1.0 - color.g) * color.a, (1.0 - color.b) * color.a, color.a);</span>
+<span class="mtk9">        }'</span><span class="mtk1">;</span>
+
+<span class="mtk1">    </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">()</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">();</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+</pre>
+<p><strong>With OpenFL 8:</strong></p>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> flixel.system.</span><span class="mtk11">FlxAssets</span><span class="mtk1">.</span><span class="mtk11">FlxShader</span><span class="mtk1">;</span>
+
+<span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">Invert</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxShader</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    @</span><span class="mtk13">:glFragmentSource</span><span class="mtk1">(</span><span class="mtk9">'</span>
+<span class="mtk9">        #pragma header</span>
+
+<span class="mtk9">        void main()</span>
+<span class="mtk9">        {</span>
+<span class="mtk9">            vec4 color = flixel_texture2D(bitmap, openfl_TextureCoordv);</span>
+<span class="mtk9">            gl_FragColor = vec4((1.0 - color.r) * color.a, (1.0 - color.g) * color.a, (1.0 - color.b) * color.a,   color.a);</span>
+<span class="mtk9">        }'</span>
+<span class="mtk1">    )</span>
+
+<span class="mtk1">    </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">()</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">();</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+</pre>
+<p>To summarize the differences, shaders should...</p>
+<ul>
+<li>extend <code>flixel.system.FlxAssets.FlxShader</code> instead of <code>openfl.display.Shader</code></li>
+<li>use <code>@:glFragmentSource()</code> metadata for the shader source rather than a <code>@fragment var</code></li>
+<li>have <code>#pragma header</code> before <code>main()</code></li>
+</ul>
+<p>Attributes have changed as follows:</p>
+<table>
+<thead>
+<tr>
+<th>With OpenFL 3.6.1 + Next</th>
+<th>With OpenFL 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>${Shader.uSampler}</code></td>
+<td><code>bitmap</code></td>
+</tr>
+<tr>
+<td><code>${Shader.vTexCoord}</code></td>
+<td><code>openfl_TextureCoordv</code></td>
+</tr>
+<tr>
+<td><code>${Shader.uTextureSize}</code></td>
+<td><code>openfl_TextureSize</code></td>
+</tr>
+</tbody>
+</table>
+<p>You may also have noticed that in the invert shader example, <code>texture2D()</code> has been replaced with <code>flixel_texture2D()</code>. The former still works, but when using <code>flixel_texture2D()</code> in per-sprite shaders, the <code>alpha</code> and color transforms of a <code>FlxSprite</code> are already applied on the returned color, which was previously not supported. The effect of this can be seen when activating shaders as well as toggling "Simple" to "Complex" in FlxBunnyMark:</p>
+<table>
+<thead>
+<tr>
+<th>With OpenFL 3.6.1 + Next</th>
+<th>With OpenFL 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../images/04_community/upgrade-guide/openfl3-shaders.png" alt="" /></td>
+<td><img src="../images/04_community/upgrade-guide/openfl8-shaders.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+<p>Further shader examples can be found in these demos, which are all compatible with both OpenFL 3.6.1 + Next and OpenFL 8:</p>
+<ul>
+<li><a href="/demos/Filters">Filters</a></li>
+<li><a href="/demos/FlxBunnymark">FlxBunnyMark</a></li>
+<li><a href="/demos/BlendModeShaders">BlendModeShaders</a></li>
+<li><a href="/demos/MosaicEffect">MosaicEffect</a></li>
+</ul>
+<h2 id="4-2-0">4.2.0</h2>
+<ul>
+<li><code>FlxTween.manager</code> is now <code>FlxTween.globalManager</code>.</li>
+<li><code>FlxTimer.manager</code> is now <code>FlxTimer.globalManager</code>.</li>
+<li><code>FlxCamera</code>'s scroll bounds now account for <code>zoom</code>. This means that you may need to adjust calls to <code>setScrollBounds()</code>, <code>setScrollBoundsRect()</code> or changes to the <code>minScrollX</code> / <code>Y</code> / <code>maxScrollX</code> / <code>Y</code> properties if they manually accounted for zoom.</li>
+<li>The <code>active</code> variable of objects in <code>flixel.util.helpers</code> now defaults to <code>true</code> instead of <code>false</code>.</li>
+</ul>
+<h2 id="4-0-0">4.0.0</h2>
+<p>This guide is intended for users upgrading projects from version 3.3.x to 4.0.0. For non-breaking changes, please refer to the <a href="https://github.com/HaxeFlixel/flixel/blob/master/CHANGELOG.md">changelog</a>.</p>
+<p>The minimum required Haxe version for this release is 3.2.0.</p>
+<p>A lot of changes can be handled with a simple find-and-replace in the editor of your choice.</p>
+<h3 id="elapsed-argument-added-to-update-"><code>elapsed</code> argument added to <code>update()</code></h3>
+<p>The function signature of <code>update()</code> changed to <code>update(elapsed:Float)</code>. <code>FlxG.elapsed</code> is still available, but it is recommended to use the argument value instead.</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>override public function update():Void</code></td>
+<td><code>override public function update(elapsed:Float):Void</code></td>
+</tr>
+<tr>
+<td><code>super.update();</code></td>
+<td><code>super.update(elapsed);</code></td>
+</tr>
+<tr>
+<td><code>x += 100 * FlxG.elapsed;</code></td>
+<td><code>x += 100 * elapsed;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="introduction-of-flixel-math">Introduction of <code>flixel.math</code></h3>
+<p>A new <code>flixel.math</code> package was added. A number of <code>flixel.util</code> classes have been moved there:</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import flixel.util.FlxMath</code></td>
+<td><code>import flixel.math.FlxMath</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxPoint</code></td>
+<td><code>import flixel.math.FlxPoint</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxVector</code></td>
+<td><code>import flixel.math.FlxVector</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxRect</code></td>
+<td><code>import flixel.math.FlxRect</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxAngle</code></td>
+<td><code>import flixel.math.FlxAngle</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxVelocity</code></td>
+<td><code>import flixel.math.FlxVelocity</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxRandom</code></td>
+<td><code>import flixel.math.FlxRandom</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="move-of-typed-classes-">Move of "typed" classes:</h3>
+<p>Typed classes have been moved into the modules of the non-typed versions:</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import flixel.group.FlxTypedGroup</code></td>
+<td><code>import flixel.group.FlxGroup</code></td>
+</tr>
+<tr>
+<td><code>import flixel.group.FlxTypedSpriteGroup</code></td>
+<td><code>import flixel.group.FlxSpriteGroup</code></td>
+</tr>
+<tr>
+<td><code>import flixel.effects.particles.FlxTypedEmitter</code></td>
+<td><code>import flixel.effects.particles.FlxEmitter</code></td>
+</tr>
+<tr>
+<td><code>import flixel.ui.FlxTypedButton</code></td>
+<td><code>import flixel.ui.FlxButton</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="changed-integer-constants-to-enums-">Changed integer constants to enums:</h3>
+<p>ActionScript 3 does not have enums, which is why a lot of these "value sets" were implemented using integer constants. For improved type-safety and to better fit the Haxe coding style, they have been converted to enums:</p>
+<p>As long as it's not ambiguous, Haxe allows using just the enum value name without the enum's name. In the first case, the enum also does not need to be imported. For example, this means that both of these syntaxes are valid:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">camera</span><span class="mtk1">.</span><span class="mtk12">follow</span><span class="mtk1">(</span><span class="mtk13">LOCKON</span><span class="mtk1">);</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">camera</span><span class="mtk1">.</span><span class="mtk12">follow</span><span class="mtk1">(</span><span class="mtk11">FlxCameraFollowStyle</span><span class="mtk1">.</span><span class="mtk13">LOCKON</span><span class="mtk1">);</span>
+</pre>
+<p>Which of these two styles is used is mostly a matter of personal preference.</p>
+<h4 id="flxcamera-shake-modes-"><code>FlxCamera</code> shake modes:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxCamera.SHAKE_BOTH_AXES</code></td>
+<td><code>flixel.util.FlxAxes.XY</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.SHAKE_HORIZONTAL_ONLY</code></td>
+<td><code>flixel.util.FlxAxes.X</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.SHAKE_VERTICAL_ONLY</code></td>
+<td><code>flixel.util.FlxAxes.Y</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxcamera-follow-styles-"><code>FlxCamera</code> follow styles:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxCamera.STYLE_LOCKON</code></td>
+<td><code>FlxCameraFollowStyle.LOCKON</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_NO_DEAD_ZONE</code></td>
+<td><code>FlxCameraFollowStyle.NO_DEAD_ZONE</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_PLATFORMER</code></td>
+<td><code>FlxCameraFollowStyle.PLATFORMER</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_SCREEN_BY_SCREEN</code></td>
+<td><code>FlxCameraFollowStyle.SCREEN_BY_SCREEN</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_TOPDOWN</code></td>
+<td><code>FlxCameraFollowStyle.TOPDOWN</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_TOPDOWN_TIGHT</code></td>
+<td><code>FlxCameraFollowStyle.TOPDOWN_TIGHT</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxtext-border-styles-"><code>FlxText</code> border styles:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxText.BORDER_NONE</code></td>
+<td><code>FlxTextBorderStyle.NONE</code></td>
+</tr>
+<tr>
+<td><code>FlxText.BORDER_OUTLINE</code></td>
+<td><code>FlxTextBorderStyle.OUTLINE</code></td>
+</tr>
+<tr>
+<td><code>FlxText.BORDER_OUTLINE_FAST</code></td>
+<td><code>FlxTextBorderStyle.OUTLINE_FAST</code></td>
+</tr>
+<tr>
+<td><code>FlxText.BORDER_SHADOW</code></td>
+<td><code>FlxTextBorderStyle.SHADOW</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxtilemap-auto-tiling-options-"><code>FlxTilemap</code> auto-tiling options:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxTilemap.ALT</code></td>
+<td><code>FlxTilemapAutoTiling.ALT</code></td>
+</tr>
+<tr>
+<td><code>FlxTilemap.AUTO</code></td>
+<td><code>FlxTilemapAutoTiling.AUTO</code></td>
+</tr>
+<tr>
+<td><code>FlxTilemap.OFF</code></td>
+<td><code>FlxTilemapAutoTiling.OFF</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxbar-fill-directions-"><code>FlxBar</code> fill directions:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxBar.FILL_BOTTOM_TO_TOP</code></td>
+<td><code>FlxBarFillDirection.BOTTOM_TO_TOP</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_HORIZONTAL_INSIDE_OUT</code></td>
+<td><code>FlxBarFillDirection.HORIZONTAL_INSIDE_OUT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_HORIZONTAL_OUTSIDE_IN</code></td>
+<td><code>FlxBarFillDirection.HORIZONTAL_OUTSIDE_IN</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_LEFT_TO_RIGHT</code></td>
+<td><code>FlxBarFillDirection.LEFT_TO_RIGHT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_RIGHT_TO_LEFT</code></td>
+<td><code>FlxBarFillDirection.RIGHT_TO_LEFT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_TOP_TO_BOTTOM</code></td>
+<td><code>FlxBarFillDirection.TOP_TO_BOTTOM</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_VERTICAL_INSIDE_OUT</code></td>
+<td><code>FlxBarFillDirection.VERTICAL_INSIDE_OUT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_VERTICAL_OUTSIDE_IN</code></td>
+<td><code>FlxBarFillDirection.VERTICAL_OUTSIDE_IN</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxg-html5-browser-types-"><code>FlxG.html5</code> browser types:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HTML5FrontEnd.INTERNET_EXPLORER</code></td>
+<td><code>FlxBrowser.INTERNET_EXPLORER</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.CHROME</code></td>
+<td><code>FlxBrowser.CHROME</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.FIREFOX</code></td>
+<td><code>FlxBrowser.FIREFOX</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.SAFARI</code></td>
+<td><code>FlxBrowser.SAFARI</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.OPERA</code></td>
+<td><code>FlxBrowser.OPERA</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="changed-string-constants-to-abstract-enums-">Changed String constants to abstract enums:</h3>
+<p>Some static String constants have been changed to abstract enums. This is not a breaking changes, since the old String values are still compatible, but for the sake of type safety it is recommended to use the enum values instead:</p>
+<p>As with regular enums, the enum name may be omitted.</p>
+<h4 id="flxtext-alignment-"><code>FlxText</code> alignment:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text.alignment = "left";</code></td>
+<td><code>text.alignment = FlxTextAlign.LEFT;</code></td>
+</tr>
+<tr>
+<td><code>text.alignment = "center";</code></td>
+<td><code>text.alignment = FlxTextAlign.CENTER;</code></td>
+</tr>
+<tr>
+<td><code>text.alignment = "right";</code></td>
+<td><code>text.alignment = FlxTextAlign.RIGHT;</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxg-keys-keys-"><code>FlxG.keys</code> keys:</h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxG.keys.anyPressed(["SPACE", "W"])</code></td>
+<td><code>FlxG.keys.anyPressed([FlxKey.SPACE, FlxKey.W])</code></td>
+</tr>
+<tr>
+<td><code>FlxG.keys.anyPressed(["SPACE", "W"])</code></td>
+<td><code>FlxG.keys.anyPressed([SPACE, W])</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxsprite-"><code>FlxSprite</code>:</h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getScreenXY()</code></td>
+<td><code>getScreenPosition()</code></td>
+</tr>
+<tr>
+<td><code>cachedGraphics</code></td>
+<td><code>graphic</code></td>
+</tr>
+<tr>
+<td><code>resetFrameBitmaps()</code></td>
+<td><em>removed</em> (set <code>dirty</code> to <code>true</code> to regen graphic)</td>
+</tr>
+<tr>
+<td><code>getFlxFrameBitmapData()</code></td>
+<td><code>updateFramePixels()</code></td>
+</tr>
+<tr>
+<td><code>loadGraphicFromTexture()</code></td>
+<td><em>removed</em> (assign a frames collection to <code>frames</code>)</td>
+</tr>
+<tr>
+<td><code>loadRotatedGraphicFromTexture()</code></td>
+<td><em>removed</em> (assign a frames collection to <code>frames</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxcamera-"><code>FlxCamera</code>:</h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bounds</code></td>
+<td><code>minScrollX</code>, <code>minScrollY</code>, <code>maxScrollX</code> and <code>maxScrollY</code></td>
+</tr>
+<tr>
+<td><code>setBounds()</code></td>
+<td><code>setScrollBoundsRect()</code></td>
+</tr>
+<tr>
+<td><code>follow()</code>'s <code>Offset</code> argument</td>
+<td><em>removed</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxtilemap-"><code>FlxTilemap</code>:</h3>
+<p><code>loadMap()</code> has been split up into <code>loadMapFromArray()</code> and <code>loadMapFromCSV()</code>.</p>
+<h3 id="flxgroup-"><code>FlxGroup</code>:</h3>
+<p><code>callAll()</code> and <code>setAll()</code> have been removed - use <code>forEach()</code> instead:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 3.3.x</span>
+<span class="mtk13">group</span><span class="mtk1">.</span><span class="mtk12">setAll</span><span class="mtk1">(</span><span class="mtk9">"scrollFactor"</span><span class="mtk1">, </span><span class="mtk11">FlxPoint</span><span class="mtk1">.</span><span class="mtk12">get</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">));</span>
+<span class="mtk13">group</span><span class="mtk1">.</span><span class="mtk12">callAll</span><span class="mtk1">(</span><span class="mtk9">"kill"</span><span class="mtk1">);</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 4.0.0</span>
+<span class="mtk13">group</span><span class="mtk1">.</span><span class="mtk12">forEach</span><span class="mtk1">(</span><span class="mtk5">function</span><span class="mtk1">(</span><span class="mtk13">basic</span><span class="mtk17">:</span><span class="mtk11">FlxBasic</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk13">basic</span><span class="mtk1">.</span><span class="mtk13">scrollFactor</span><span class="mtk1">.</span><span class="mtk12">set</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">);</span>
+<span class="mtk1">    </span><span class="mtk13">basic</span><span class="mtk1">.</span><span class="mtk12">kill</span><span class="mtk1">();</span>
+<span class="mtk1">});</span>
+</pre>
+<h3 id="flixel-input-gamepad-"><code>flixel.input.gamepad</code>:</h3>
+<p>The hardware IDs of the different controller types are now mapped to a common <code>FlxGamepadInputID</code>. This avoids the need of having to handle multiple controller types - this now happens automatically under the hood.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 3.3.x</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">gamepad</span><span class="mtk1">.</span><span class="mtk12">pressed</span><span class="mtk1">(</span><span class="mtk11">XboxButtonID</span><span class="mtk1">.</span><span class="mtk13">A</span><span class="mtk1">) </span><span class="mtk17">||</span>
+<span class="mtk1">    </span><span class="mtk13">gamepad</span><span class="mtk1">.</span><span class="mtk12">pressed</span><span class="mtk1">(</span><span class="mtk11">OUYAButtonID</span><span class="mtk1">.</span><span class="mtk13">O</span><span class="mtk1">) </span><span class="mtk17">||</span>
+<span class="mtk1">    </span><span class="mtk13">gamepad</span><span class="mtk1">.</span><span class="mtk12">pressed</span><span class="mtk1">(</span><span class="mtk11">LogitechButtonID</span><span class="mtk1">.</span><span class="mtk13">TWO</span><span class="mtk1">)) {} </span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 4.0.0</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">gamepad</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk11">FlxGamepadInputID</span><span class="mtk1">.</span><span class="mtk13">A</span><span class="mtk1">])) {}</span>
+<span class="mtk4">// or</span>
+<span class="mtk16">if</span><span class="mtk1"> (gamepad.pressed.</span><span class="mtk11">A</span><span class="mtk1">) {}</span>
+</pre>
+<p>It is still possible to use the IDs from the <code>flixel.input.gamepad.id</code> classes via the functions with the <code>Raw</code> suffix.</p>
+<p>Because of the poor driver support, the PS3 ID class / support for PS3 controllers have been removed.</p>
+<h3 id="flxtimer-"><code>FlxTimer</code>:</h3>
+<p>Timers cannot be started right at construction anymore, instead you need to call <code>start()</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 3.3.x</span>
+<span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxTimer</span><span class="mtk1">(</span><span class="mtk13">time</span><span class="mtk1">, </span><span class="mtk13">onComplete</span><span class="mtk1">, </span><span class="mtk13">loops</span><span class="mtk1">);</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 4.0.0</span>
+<span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxTimer</span><span class="mtk1">().</span><span class="mtk12">start</span><span class="mtk1">(</span><span class="mtk13">time</span><span class="mtk1">, </span><span class="mtk13">onComplete</span><span class="mtk1">, </span><span class="mtk13">loops</span><span class="mtk1">);</span>
+</pre>
+<h3 id="flxpath-"><code>FlxPath</code>:</h3>
+<p><code>FlxPath#start()</code> no longer takes a <code>FlxObject</code> argument, instead, <code>FlxObject</code> now has a path property. This means <code>FlxObject</code> takes care of updating the path, taking care of the issue that paths are not paused along with the objects they work on in substates.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 3.3.x</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">path</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxPath</span><span class="mtk1">().</span><span class="mtk12">start</span><span class="mtk1">(</span><span class="mtk13">object</span><span class="mtk1">, </span><span class="mtk13">points</span><span class="mtk1">);</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 4.0.0</span>
+<span class="mtk13">object</span><span class="mtk1">.</span><span class="mtk13">path</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxPath</span><span class="mtk1">().</span><span class="mtk12">start</span><span class="mtk1">(</span><span class="mtk13">points</span><span class="mtk1">);</span>
+</pre>
+<h3 id="flxcolor-flxcolorutil-refactor-"><code>FlxColor</code> / <code>FlxColorUtil</code> refactor:</h3>
+<p><code>FlxColor</code> is now an <a href="http://haxe.org/manual/types-abstract.html"><code>abstract</code></a>, which means it can be used like an object, while the underlying type is still a regular <code>Int</code>. The static <code>FlxColorUtil</code> functions can now be used as member methods or properties:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 3.3.x</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">color</span><span class="mtk17">:</span><span class="mtk11">Int</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0x008080</span><span class="mtk1">;</span>
+<span class="mtk5">trace</span><span class="mtk1">(</span><span class="mtk11">FlxColorUtil</span><span class="mtk1">.</span><span class="mtk12">getGreen</span><span class="mtk1">(</span><span class="mtk13">color</span><span class="mtk1">));</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 4.0.0</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">color</span><span class="mtk17">:</span><span class="mtk11">FlxColor</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0x008080</span><span class="mtk1">;</span>
+<span class="mtk5">trace</span><span class="mtk1">(</span><span class="mtk13">color</span><span class="mtk1">.</span><span class="mtk13">green</span><span class="mtk1">);</span>
+</pre>
+<p>The amount of colors presets (<code>FlxColor.RED</code> etc..) has been reduced.</p>
+<h3 id="flxemitter-refactor-"><code>FlxEmitter</code> refactor:</h3>
+<p><code>FlxEmitterExt</code> has been merged into <code>FlxEmitter</code>. For circular emitters, <code>FlxEmitterMode.CIRCLE</code> can be used.</p>
+<p>Most properties are now <code>FlxRangeBounds</code> objects which have a <code>min</code> and a <code>max</code> <code>FlxRange</code> object.</p>
+<p>The separate color component <code>Bounds</code> have been merged into a <code>FlxRangeBounds&lt;FlxColor&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>at()</code></td>
+<td><code>focusOn()</code></td>
+</tr>
+<tr>
+<td><code>on</code></td>
+<td><code>emitting</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxparticle-changes-"><code>FlxParticle</code> changes:</h4>
+<p>Most properties are now <code>FlxRange</code> objects which have a <code>start</code> and an <code>end</code> value (for example <code>velocityRange</code>).</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxLifespan</code></td>
+<td><code>lifespan</code></td>
+</tr>
+<tr>
+<td><code>lifespan</code></td>
+<td><code>age</code> (counts up instead of down)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxrandom-refactor-"><code>FlxRandom</code> refactor:</h3>
+<p><code>FlxRandom</code> can now be instantiated and the static functions are now member methods. A pre-created instance is available via <code>FlxG.random</code>.</p>
+<p>Some methods have also been renamed or removed:</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxRandom.intRanged(min, max)</code></td>
+<td><code>FlxG.random.int(min, max)</code></td>
+</tr>
+<tr>
+<td><code>FlxRandom.floatRanged(min, max)</code></td>
+<td><code>FlxG.random.float(min, max)</code></td>
+</tr>
+<tr>
+<td><code>FlxRandom.chanceRoll(chance)</code></td>
+<td><code>FlxG.random.bool(chance)</code></td>
+</tr>
+<tr>
+<td><code>FlxRandom.weightedGetObject()</code></td>
+<td><em>removed</em> (<code>getObject()</code> now has a range argument)</td>
+</tr>
+<tr>
+<td><code>FlxRandom.colorExt()</code></td>
+<td><em>removed</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxangle-changes-"><code>FlxAngle</code> changes:</h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxAngle.getAngle(point1, point2)</code></td>
+<td><code>point1.angleBetween(point2)</code></td>
+</tr>
+<tr>
+<td><code>FlxAngle.angleLimit()</code></td>
+<td><em>removed</em> (use <code>FlxMath.bound()</code> instead)</td>
+</tr>
+</tbody>
+</table>
+<p>There have been several changes to <code>FlxAngle.rotatePoint()</code>:</p>
+<ul>
+<li>the y-axis is no longer inverted</li>
+<li>rotation is now clockwise</li>
+<li>moved to <code>FlxPoint</code> (<code>rotate()</code>)</li>
+</ul>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 3.3.x</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">angle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">45</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">point</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">.</span><span class="mtk12">get</span><span class="mtk1">(</span><span class="mtk8">10</span><span class="mtk1">, </span><span class="mtk8">5</span><span class="mtk1">);</span>
+<span class="mtk11">FlxAngle</span><span class="mtk1">.</span><span class="mtk12">rotatePoint</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">pivotX</span><span class="mtk1">, </span><span class="mtk13">pivotY</span><span class="mtk1">, </span><span class="mtk13">angle</span><span class="mtk1">, </span><span class="mtk13">point</span><span class="mtk1">);</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 4.0.0</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">angle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">45</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">point</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">.</span><span class="mtk12">get</span><span class="mtk1">(</span><span class="mtk8">10</span><span class="mtk1"> </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk8">5</span><span class="mtk1"> </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk13">y</span><span class="mtk1">);</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">pivot</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">.</span><span class="mtk12">weak</span><span class="mtk1">(</span><span class="mtk13">pivotX</span><span class="mtk1">, </span><span class="mtk13">pivotY</span><span class="mtk1">);</span>
+<span class="mtk13">point</span><span class="mtk1">.</span><span class="mtk12">rotate</span><span class="mtk1">(</span><span class="mtk13">pivot</span><span class="mtk1">, </span><span class="mtk13">angle</span><span class="mtk1">);</span>
+</pre>
+<h3 id="flxmath-changes-"><code>FlxMath</code> changes:</h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>newAmount = FlxMath.wrapValue(value, amount, max + 1)</code></td>
+<td><code>newAmount = FlxMath.wrapValue(value + amount, min, max)</code></td>
+</tr>
+<tr>
+<td><code>FlxMath.getDistance(point1, point2)</code></td>
+<td><code>point1.distanceTo(point2)</code></td>
+</tr>
+<tr>
+<td><code>FlxMath.MIN_VALUE</code></td>
+<td><code>FlxMath.MIN_VALUE_FLOAT</code></td>
+</tr>
+<tr>
+<td><code>FlxMath.MAX_VALUE</code></td>
+<td><code>FlxMath.MAX_VALUE_FLOAT</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-">Other:</h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import flixel.text.FlxTextField</code></td>
+<td><code>import flixel.addons.text.FlxTextField</code></td>
+</tr>
+<tr>
+<td><code>FlxPoint#inFlxRect()</code></td>
+<td><code>FlxPoint#inRect()</code></td>
+</tr>
+<tr>
+<td><code>FlxRect#containsFlxPoint()</code></td>
+<td><code>FlxRect#containsPoint()</code></td>
+</tr>
+<tr>
+<td><code>flixel.plugin.MouseEventManager</code></td>
+<td><code>flixel.input.mouse.FlxMouseEventManager</code></td>
+</tr>
+<tr>
+<td><code>flixel.util.loaders.CachedGraphics</code></td>
+<td><code>flixel.graphics.FlxGraphic</code></td>
+</tr>
+<tr>
+<td><code>FlxArrayUtil.getRandom()</code></td>
+<td><code>FlxG.random.getObject()</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>FlxVelocity</code>'s <code>accelerateTowards*()</code>-functions now only take a single <code>maxSpeed</code> argument (instead of <code>x</code> and <code>y</code>).</p>
+<p>The <code>complete</code> option of <code>FlxTween</code> is now called <code>onComplete</code>.</p>
+<h2 id="flixel-addons">flixel-addons</h2>
+<p>Not all flixel-addons changes are covered here. Please check the <a href="https://github.com/HaxeFlixel/flixel-addons/blob/master/CHANGELOG.md">changelog</a> for the rest.</p>
+<h3 id="flxnapestate-refactor-"><code>FlxNapeState</code> refactor:</h3>
+<p><code>FlxNapeState</code> is now <code>FlxNapeSpace</code> and no longer extends <code>FlxState</code>. This makes it possible to use the <code>flixel.addons.nape</code> package along with other <code>FlxState</code> subclasses (for example <code>FlxUIState</code>).</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// flixel-addons 1.x.x</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.addons.nape.</span><span class="mtk11">FlxNapeState</span><span class="mtk1">;</span>
+
+<span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">PlayState</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxNapeState</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">create</span><span class="mtk1">()</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">create</span><span class="mtk1">();</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// flixel-addons 2.0.0</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxState</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.addons.nape.</span><span class="mtk11">FlxNapeSpace</span><span class="mtk1">;</span>
+
+<span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">PlayState</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxState</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">create</span><span class="mtk1">()</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">create</span><span class="mtk1">();</span>
+<span class="mtk1">        </span><span class="mtk11">FlxNapeSpace</span><span class="mtk1">.</span><span class="mtk12">init</span><span class="mtk1">();</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+</pre>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/flixel-addons">&lt; Flixel Addons</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/flixel-tools">Flixel Tools &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

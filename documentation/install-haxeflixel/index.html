@@ -1,0 +1,288 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Install HaxeFlixel | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/getting-started&quot;">
+				<a href="/documentation/getting-started"> Getting Started </a>
+			</li>
+		
+			<li class="active" about="/documentation/install-haxeflixel">
+				<a href="/documentation/install-haxeflixel"> Install HaxeFlixel </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/hello-world&quot;">
+				<a href="/documentation/hello-world"> Hello World </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/visual-studio-code&quot;">
+				<a href="/documentation/visual-studio-code"> Visual Studio Code </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/HaxeDevelop&quot;">
+				<a href="/documentation/HaxeDevelop"> HaxeDevelop </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/where-to-now&quot;">
+				<a href="/documentation/where-to-now"> Where to now? </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Install HaxeFlixel</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/00_getting_started/01-install-haxeflixel.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>To install the latest stable version of HaxeFlixel, open a command prompt and run the following <a href="http://lib.haxe.org/">Haxelib</a> commands:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">haxelib install lime</span>
+<span class="mtk1">haxelib install openfl</span>
+<span class="mtk1">haxelib install flixel</span>
+</pre>
+<p>After the installation is complete, you can compile games to HTML5, Flash and Neko out of the box.</p>
+<p>To easily install additional libraries (addons, ui, demos, tools, templates...) in a single step, just run:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">haxelib run lime setup flixel</span>
+</pre>
+<h3 id="install-the-lime-command">Install the <code>lime</code> command</h3>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">haxelib run lime setup</span>
+</pre>
+<p>This makes <code>lime</code> available as a command (alias for <code>haxelib run lime</code>).</p>
+<p>To compile to desktop and mobile targets, you have to make sure you have run the respective <code>lime setup</code> 
+commands. Each are specified in the 
+<a href="https://lime.software/docs/advanced-setup/windows/">Lime "Advanced Setup" docs</a>.</p>
+<h3 id="install-the-flixel-command">Install the <code>flixel</code> command</h3>
+<p>Run the following two commands to install <a href="http://haxeflixel.com/documentation/flixel-tools/">flixel-tools</a> (needed for project templates among other things):</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">haxelib install flixel-tools</span>
+<span class="mtk1">haxelib run flixel-tools setup</span>
+</pre>
+<h3 id="updating-haxeflixel">Updating HaxeFlixel</h3>
+<p>If a new version of Flixel has been released, and you want to update to it, you can use the following command to do so:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">haxelib update flixel</span>
+</pre>
+<p>If you wanted to update e.g. <code>flixel-addons</code> instead, just replace <code>flixel</code> with <code>flixel-addons</code>.</p>
+<p>To stay informed about new releases, you can follow <a href="https://twitter.com/HaxeFlixel">@HaxeFlixel</a> on Twitter or check out our <a href="http://haxeflixel.com/blog/">Blog</a> from time to time.</p>
+<h3 id="development-version">Development version</h3>
+<p>If you are interested in using bleeding edge code from the development branch <a href="https://github.com/HaxeFlixel/flixel">on GitHub</a>, see <a href="/documentation/install-development-flixel">instructions here</a>.</p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/getting-started">&lt; Getting Started</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/hello-world">Hello World &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

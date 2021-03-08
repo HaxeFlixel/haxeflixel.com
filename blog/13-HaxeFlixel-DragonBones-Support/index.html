@@ -1,0 +1,281 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>HaxeFlixel DragonBones Support | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li class="active">
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+
+<div class="container container-main">
+
+<div class="col-md-8">
+
+    <h1 class="title">HaxeFlixel DragonBones Support</h1>
+
+    <p class="post-date">September 1, 2018
+
+    </p><p>Hi there, I’m Troy (<a href="https://twitter.com/roustudios">@RouStudios</a>), creator and maintainer of the <a href="https://github.com/openfl/dragonbones">HaxeFlixel backend for DragonBones</a>. I’m here to write a post about DragonBones support for HaxeFlixel and how to use it. </p>
+<p>First of all, what is DragonBones? DragonBones is a free *open source alternative to the popular 2D bone animation tool <a href="http://esotericsoftware.com/">Spine</a> (which Flixel already has support for). Its a tool which allows you to animate static 2D images programmatically (similar to Flash tweening) without having to painstakingly animate each individual frame in a spritesheet. Why would one use it over Spine? Well Spine can potentially be <a href="https://esotericsoftware.com/spine-purchase">quite expensive</a> for new indie devs, and DragonBones is free. Not only that, DragonBones is a fully featured, intuitive bone animation editor and has <a href="https://www.youtube.com/watch?v=XPH_ZBzCtfY">Mesh Deformation support</a> just like Spine. Quite a deal for free!</p>
+<p><img src="/images/blog/13_dragonbones/dragonbones_stock.jpg" width="100%" /></p>
+<p>*One caveat is that DragonBones is not truly open source (if you care about that sort of thing), only the runtime is. If you want a truly open source editor which can export to the DragonBones format while also being fully featured, check out the great alternative <a href="https://github.com/ndee85/coa_tools">COA Tools</a> for Blender. Its DragonBones export should also work with the Flixel backend I’ve created.</p>
+<p>How exactly do you use DragonBones with Flixel? Well, that’s what I’ll be showing you, so let’s get started.</p>
+<h3 id="install">Install</h3>
+<p>First install the library from haxelib using:</p>
+<pre><code>haxelib install dragonbones
+</code></pre><p>Although it’s better to install directly from GitHub in order to always keep up with the latest updates:</p>
+<pre><code>haxelib git dragonbones https://github.com/openfl/dragonbones
+</code></pre><h3 id="create-project">Create Project</h3>
+<p>Then create a new Flixel project template with <a href="http://haxeflixel.com/documentation/flixel-tools/">Flixel Tools</a>, and add DragonBones to your <code>Project.xml</code>. You can also download <a href="https://github.com/openfl/dragonbones/tree/master/samples/HelloDragonBones">the sample project</a> instead to follow along.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk18">&lt;</span><span class="mtk5">haxelib</span><span class="mtk1"> </span><span class="mtk13">name</span><span class="mtk1">=</span><span class="mtk9">"dragonbones"</span><span class="mtk1"> </span><span class="mtk18">/&gt;</span>
+</pre>
+<p>Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to <code>File &gt; Export</code> and export the animation using <code>Data Version: 5.0</code> and <code>Image Type: Texture Atlas</code>. Then save it to the <code>assets</code> folder in your Flixel project.</p>
+<p><img src="/images/blog/13_dragonbones/dragonbones_export.png" width="100%" /></p>
+<h3 id="packages">Packages</h3>
+<p>First, import the packages we'll be using.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> haxe.</span><span class="mtk11">Json</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> openfl.</span><span class="mtk11">Assets</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxG</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxState</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.group.</span><span class="mtk11">FlxGroup</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> dragonBones.objects.</span><span class="mtk11">DragonBonesData</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> dragonBones.flixel.</span><span class="mtk11">FlixelTextureAtlasData</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> dragonBones.flixel.</span><span class="mtk11">FlixelArmatureDisplay</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> dragonBones.flixel.</span><span class="mtk11">FlixelArmatureCollider</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> dragonBones.flixel.</span><span class="mtk11">FlixelFactory</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> dragonBones.flixel.</span><span class="mtk11">FlixelEvent</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> dragonBones.animation.</span><span class="mtk11">WorldClock</span><span class="mtk1">;</span>
+</pre>
+<h3 id="create-factory">Create Factory</h3>
+<p>Then, inside the <code>create</code> function under your <code>FlxState</code> class you have to create a <code>FlixelFactory</code> which generates flixel objects for DragonBones like so:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">_factory</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlixelFactory</span><span class="mtk1">();</span>
+</pre>
+<h3 id="parse-data">Parse Data</h3>
+<p>Then you have to use the factory to parse the animation files that you’ve exported in order to read their data.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">dragonBonesData</span><span class="mtk17">:</span><span class="mtk11">DragonBonesData</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">_factory</span><span class="mtk1">.</span><span class="mtk12">parseDragonBonesData</span><span class="mtk1">(</span>
+<span class="mtk1">    </span><span class="mtk11">Json</span><span class="mtk1">.</span><span class="mtk12">parse</span><span class="mtk1">(</span><span class="mtk11">Assets</span><span class="mtk1">.</span><span class="mtk12">getText</span><span class="mtk1">(</span><span class="mtk9">"assets/dragonboy_flixel_ske.json"</span><span class="mtk1">))</span>
+<span class="mtk1">);</span>
+
+<span class="mtk13">_factory</span><span class="mtk1">.</span><span class="mtk12">parseTextureAtlasData</span><span class="mtk1">(</span>
+<span class="mtk1">    </span><span class="mtk11">Json</span><span class="mtk1">.</span><span class="mtk12">parse</span><span class="mtk1">(</span><span class="mtk11">Assets</span><span class="mtk1">.</span><span class="mtk12">getText</span><span class="mtk1">(</span><span class="mtk9">"assets/dragonboy_flixel_tex.json"</span><span class="mtk1">)),</span>
+<span class="mtk1">    </span><span class="mtk11">Assets</span><span class="mtk1">.</span><span class="mtk12">getBitmapData</span><span class="mtk1">(</span><span class="mtk9">"assets/dragonboy_flixel_tex.png"</span><span class="mtk1">)</span>
+<span class="mtk1">);</span>
+</pre>
+<h3 id="build-armature">Build Armature</h3>
+<p>Then you have to create a <code>FlxGroup</code> which will contain all the DragonBones Flixel Sprites. You can do so by declaring a variable and then assigning the new <code>FlxGroup</code> to it which you will generate using the factory. </p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">armatureGroup</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">_factory</span><span class="mtk1">.</span><span class="mtk12">buildArmatureDisplay</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlixelArmatureCollider</span><span class="mtk1">(</span><span class="mtk8">250</span><span class="mtk1">, </span><span class="mtk8">250</span><span class="mtk1">, </span><span class="mtk8">27</span><span class="mtk1">, </span><span class="mtk8">25</span><span class="mtk1">, </span><span class="mtk8">13</span><span class="mtk1">, </span><span class="mtk8">8</span><span class="mtk1">), </span><span class="mtk13">dragonBonesData</span><span class="mtk1">.</span><span class="mtk13">armatureNames</span><span class="mtk1">[</span><span class="mtk8">0</span><span class="mtk1">]);</span>
+</pre>
+<p>One thing to note is you also have to pass in a collision box similar to the Flixel Spine plugin. This is because with many different sprites, if you want to check the collisions of the entire “character” then you have to have one large collision box. You also pass in the name of the armature (the animations skeleton). Generally you’ll only have one armature, so just pass in the first index of the <code>armatureNames</code> array from the data you got earlier. Otherwise, check your animation in DragonBones to find the name and pass it in as a string.</p>
+<h3 id="set-properties">Set Properties</h3>
+<p>Then you iterate through all of the sprites in the <code>FlxGroup</code> to set their initial properties (such as scale, placement in the world, ect.) as you please.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">armatureGroup</span><span class="mtk1">.</span><span class="mtk12">forEach</span><span class="mtk1">(</span><span class="mtk5">function</span><span class="mtk1">(</span><span class="mtk13">display</span><span class="mtk17">:</span><span class="mtk11">FlixelArmatureDisplay</span><span class="mtk1">) {</span>
+<span class="mtk1">    </span><span class="mtk13">display</span><span class="mtk1">.</span><span class="mtk13">antialiasing</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk1">    </span><span class="mtk13">display</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">100</span><span class="mtk1">;</span>
+<span class="mtk1">    </span><span class="mtk13">display</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">100</span><span class="mtk1">;</span>
+<span class="mtk1">    </span><span class="mtk13">display</span><span class="mtk1">.</span><span class="mtk13">scaleX</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0.50</span><span class="mtk1">;</span>
+<span class="mtk1">    </span><span class="mtk13">display</span><span class="mtk1">.</span><span class="mtk13">scaleY</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0.50</span><span class="mtk1">;</span>
+<span class="mtk1">});</span>
+</pre>
+<h3 id="start-animation">Start Animation</h3>
+<p>Now you do the same thing to start the initial animation. Again we grab the first index from the list of animation names to keep it simple.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">armatureGroup</span><span class="mtk1">.</span><span class="mtk12">forEach</span><span class="mtk1">(</span><span class="mtk5">function</span><span class="mtk1">(</span><span class="mtk13">display</span><span class="mtk17">:</span><span class="mtk11">FlixelArmatureDisplay</span><span class="mtk1">) {</span>
+<span class="mtk1">    </span><span class="mtk13">display</span><span class="mtk1">.</span><span class="mtk13">animation</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">(</span><span class="mtk13">display</span><span class="mtk1">.</span><span class="mtk13">animation</span><span class="mtk1">.</span><span class="mtk13">animationNames</span><span class="mtk1">[</span><span class="mtk8">0</span><span class="mtk1">]);</span>
+<span class="mtk1">});</span>
+</pre>
+<h3 id="update-animation">Update Animation</h3>
+<p>Then, inside the update loop of the <code>FlxState</code> class, add <code>FlixelFactory._clock.advanceTime(-1);</code> to update the animation clock so that the factory knows what point it's at on the timeline.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk11">FlixelFactory</span><span class="mtk1">.</span><span class="mtk13">_clock</span><span class="mtk1">.</span><span class="mtk12">advanceTime</span><span class="mtk1">(</span><span class="mtk17">-</span><span class="mtk8">1</span><span class="mtk1">);</span>
+<span class="mtk1">    </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk1">);</span>
+<span class="mtk1">}</span>
+</pre>
+<h3 id="render">Render</h3>
+<p>Finally, we add the <code>FlxGroup</code> to the <code>FlxState</code> inside the <code>create</code> function so it can be rendered!</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">armatureGroup</span><span class="mtk1">);</span>
+</pre>
+<h3 id="preview">Preview</h3>
+<p>That’s it! Once you compile with <code>lime test html5</code>, it should look like this:</p>
+<p><img src="/images/blog/13_dragonbones/dragonbones_preview.gif" width="100%" /></p>
+
+
+    <br />
+    <hr />
+    <br />
+
+    <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'haxeflixel';
+		window.disqus_developer = '1';
+		window.disqus_url = 'https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support';
+		window.disqus_identifier = 'blog-13-HaxeFlixel-DragonBones-Support';
+		window.disqus_title = 'HaxeFlixel DragonBones Support';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

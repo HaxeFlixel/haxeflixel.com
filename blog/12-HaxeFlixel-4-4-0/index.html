@@ -1,0 +1,214 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>HaxeFlixel 4.4.0 | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li class="active">
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+
+<div class="container container-main">
+
+<div class="col-md-8">
+
+    <h1 class="title">HaxeFlixel 4.4.0</h1>
+
+    <p class="post-date">May 4, 2018
+
+    </p><p>HaxeFlixel 4.4.0 is now available on Haxelib, adding <strong>support for OpenFL 8</strong> and Lime 6.3.0! <a href="/documentation/upgrade-guide-4-0-0/">Breaking changes</a> are mostly limited to blend modes and a slightly different shader syntax. Additionally, 4.4.0 is still fully-backwards-compatible with OpenFL 3.6.1 legacy or next, so even if you don't plan on upgrading to OpenFL 8 just yet, don't let that stop you from taking advantage of the <a href="https://github.com/HaxeFlixel/flixel/blob/4.4.0/CHANGELOG.md">other fixes and improvements in the 4.4.0 release</a>.</p>
+<p>OpenFL <del>5</del> <del>6</del> <del>7</del> 8 support has been long-awaited. OpenFL 3.6.1 is still working fine for many people, so why be excited about this? Well, there's many reasons:</p>
+<ul>
+<li><p>HTML5 support in OpenFL 8 is vastly improved. WebGL is now the default renderer, which also means - GLSL shaders by default:</p>
+<p><br />
+<iframe class="html5-demo" src="/demos/html5/Filters" width="640" height="480"></iframe>
+<br /></p>
+<p>Check out the <a href="/demos">demos page</a>, we've updated all of them with OpenFL 8 builds so you can see the improvements in action.</p>
+</li>
+<li>We can now take advantage of all the fixes and improvements that happened between OpenFL 3.6.1 and OpenFL 8 - this has already meant that tens of old issues could be closed across the issue trackers of Flixel repositories.</li>
+<li>OpenFL 3.6.1 will eventually stop working with latest Haxe - there's already some minor compiler errors with the latest Haxe development branch. A similar issue exists in the Android world, with Ant being switched out for Gradle as the build tool. Latest HXCPP was also causing some trouble.</li>
+<li>Latest OpenFL enables HaxeFlixel to use the HashLink target in the future, <a href="https://github.com/openfl/lime/milestone/18">once support for it is implemented in Lime</a>. If you haven't heard about <a href="https://hashlink.haxe.org/">HashLink</a>, it's a new Haxe target and VM that's Neko's spiritual successor, but <em>much</em> faster. It has amazing features such as <a href="https://marketplace.visualstudio.com/items?itemName=HaxeFoundation.haxe-hl">source-level debugging</a> and native C compilation.</li>
+</ul>
+<p>Since these reasons have surely managed to excite you as much as us, what else do you need to know about OpenFL 8? Here's a few things:</p>
+<ul>
+<li>The Neko target <em>will</em> be considerably slower in OpenFL 8. This is because more of OpenFL is written in Haxe now, whereas there was a large native / C++ component in 3.6.1 / legacy. Until HashLink support becomes a reality, you may want to consider retiring Neko as your "fast-to-compile"- / default test target in favor of HTML5. With WebGL, it is now very close to HXCPP builds when it comes to rendering.</li>
+<li>There are some <a href="https://github.com/HaxeFlixel/flixel/issues/2143">known remaining issues</a> that will be worked out in future OpenFL and Flixel releases. If you find any more, please let us know!</li>
+<li>OpenFL 8 and HaxeFlixel 4.4.0 is best used with Visual Studio Code and the Lime extension. We have a <a href="/documentation/visual-studio-code/">comprehensive guide</a> to help you with setting it up and how you can debug the HTML5 and Flash targets.</li>
+<li>The easiest way to update is to run <code>haxelib upgrade</code>. Alternatively, you can run <code>haxelib update</code> manually on the different libraries.</li>
+</ul>
+<p>Finally, a huge thanks goes to <a href="https://twitter.com/singmajesty">Joshua Granick</a>, the maintainer of OpenFL. He invested <em>a lot</em> of time to make sure that this transition can happen smoothly. The <a href="https://github.com/HaxeFlixel/flixel/pull/2136/files">fairly short diff</a> of the pull request on the Flixel end of things doesn't begin to do all the behind-the-scenes improvements and bugfixes that happened in OpenFL and Lime justice!</p>
+<p>That's all for now. If you have any more questions, <a href="https://haxeflixel.com/documentation/community/">get in touch with the community</a>. Keep on making awesome games!</p>
+<p>  <em>- The HaxeFlixel team</em></p>
+<p>P.S. Don't forget to check out the <a href="https://summit.haxe.org/us/2018/#stream">livestream of the Haxe US summit</a> that is going on right now!</p>
+
+
+    <br />
+    <hr />
+    <br />
+
+    <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'haxeflixel';
+		window.disqus_developer = '1';
+		window.disqus_url = 'https://haxeflixel.com/blog/12-HaxeFlixel-4-4-0';
+		window.disqus_identifier = 'blog-12-HaxeFlixel-4-4-0';
+		window.disqus_title = 'HaxeFlixel 4.4.0';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Actions | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/haxeflixel-handbook&quot;">
+				<a href="/documentation/haxeflixel-handbook"> HaxeFlixel Handbook </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flixel-display-list&quot;">
+				<a href="/documentation/flixel-display-list"> Flixel Display List </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxgroup&quot;">
+				<a href="/documentation/flxgroup"> FlxGroup </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxsprite&quot;">
+				<a href="/documentation/flxsprite"> FlxSprite </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxstate&quot;">
+				<a href="/documentation/flxstate"> FlxState </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxsave&quot;">
+				<a href="/documentation/flxsave"> FlxSave </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxtween&quot;">
+				<a href="/documentation/flxtween"> FlxTween </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/haxeflixel-conditionals&quot;">
+				<a href="/documentation/haxeflixel-conditionals"> HaxeFlixel Conditionals </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/haxeflixel-targets&quot;">
+				<a href="/documentation/haxeflixel-targets"> HaxeFlixel Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/desktop-targets&quot;">
+				<a href="/documentation/desktop-targets"> Desktop Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/mobile-targets&quot;">
+				<a href="/documentation/mobile-targets"> Mobile Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/android&quot;">
+				<a href="/documentation/android"> Android </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ios&quot;">
+				<a href="/documentation/ios"> iOS </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/neko&quot;">
+				<a href="/documentation/neko"> Neko </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/keyboard&quot;">
+				<a href="/documentation/keyboard"> Keyboard </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/mouse&quot;">
+				<a href="/documentation/mouse"> Mouse </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/gamepads&quot;">
+				<a href="/documentation/gamepads"> Gamepads </a>
+			</li>
+		
+			<li class="active" about="/documentation/actions">
+				<a href="/documentation/actions"> Actions </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/troubleshooting&quot;">
+				<a href="/documentation/troubleshooting"> Troubleshooting </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/debugger&quot;">
+				<a href="/documentation/debugger"> Debugger </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/debugger-interaction&quot;">
+				<a href="/documentation/debugger-interaction"> Debugger - Interaction </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Actions</h1>
+
+			
+				<a href="http://api.haxeflixel.com/flixel/input/actions/index.html" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/17-actions.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Players &amp; designers care about <em>actions</em> (Mario <em>jumps</em>, Samus <em>shoots</em>, Captain 
+Falcon <em>turns</em>, <em>brakes</em>, and <em>accelerates</em>), whereas computers care about 
+<em>inputs</em> (The W key is <code>PRESSED</code>, the left mouse button was <code>JUST_RELEASED</code>, 
+gamepad #2's analog stick is <code>MOVED</code> with values <code>x=0.4, y=-0.5</code>).</p>
+<p>The <code>FlxAction</code> API provides several benefits over handling every input case 
+directly:</p>
+<ul>
+<li>Declutter logic by focusing on actions, not inputs</li>
+<li>Remove tight coupling between specific input bindings and actions</li>
+<li>Makes it easy to refactor your input code</li>
+<li>Makes it easy to support player-defined input bindings</li>
+<li>Makes it easy to handle multiple input devices simultaneously</li>
+<li>Allows use of the Steam Input API</li>
+<li>Makes it easier to implement:<ul>
+<li>AI-controlled players/bots</li>
+<li>Replay systems (record actions, not inputs, then play them back)</li>
+</ul>
+</li>
+</ul>
+<h2 id="flxaction"><code>FlxAction</code></h2>
+<p><code>FlxAction</code>s come in two varieties: digital and analog. Digital is for on/off 
+actions like "JUMP" and "SHOOT". Analog is for things that need a range of 
+values, like jumping with more or less force, or moving a player or camera 
+around. (<code>FlxAction</code>s are triggered by attached <code>FlxActionInput</code>s, described in 
+the next section).</p>
+<p>Digital actions let you do things like: <code>if(SHOOT.check()) doShoot();</code> in your 
+update loop rather than have a big ugly block that accounts for every input 
+device you support.</p>
+<p>Analog actions let you do things like <code>moveCharacter(MOVE.x, MOVE.y)</code> or 
+<code>fireLaserBeam(LASER_INTENSITY.x)</code>, nicely hiding whatever devices are actually
+driving the input, and just providing you with the resulting floating point 
+values.</p>
+<p>To create a <code>FlxAction</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">jump</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxActionDigital</span><span class="mtk1">();</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">move</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxActionAnalog</span><span class="mtk1">();</span>
+</pre>
+<p>You can optionally pass in a name and a callback in the constructor. If you 
+provide a callback, it will fire whenever the action is triggered.</p>
+<p>If you are managing <code>FlxAction</code>s yourself (as opposed to using the action 
+manager), you will need to update the actions every frame, either by doing 
+something like this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">updateLoop</span><span class="mtk1">()</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">check</span><span class="mtk1">()) </span><span class="mtk12">doJump</span><span class="mtk1">();</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">move</span><span class="mtk1">.</span><span class="mtk12">check</span><span class="mtk1">()) </span><span class="mtk12">doMove</span><span class="mtk1">(</span><span class="mtk13">move</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">move</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1">);</span>
+<span class="mtk1">}</span>
+</pre>
+<p>...or this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">updateLoop</span><span class="mtk1">()</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">();</span>
+<span class="mtk1">    </span><span class="mtk13">move</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">();</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk13">triggered</span><span class="mtk1">) </span><span class="mtk12">doJump</span><span class="mtk1">();</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">move</span><span class="mtk1">.</span><span class="mtk13">triggered</span><span class="mtk1">) </span><span class="mtk12">doMove</span><span class="mtk1">(</span><span class="mtk13">move</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">move</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1">);</span>
+<span class="mtk1">}</span>
+</pre>
+<p><code>FlxAction.update()</code> will update the <code>triggered</code> property, fire the callback
+if present, and update the <code>x</code> and <code>y</code> values (if an analog action).</p>
+<p><code>FlxAction.check()</code> will update the <code>triggered</code> property, fire the callback if present, update the <code>x</code> and <code>y</code> values (if an analog action), and return the 
+value of <code>triggered</code>.</p>
+<p>Either is sufficient to keep the action updated. You <em>must</em> update each 
+action at least once per global update tick to ensure accurate input, but if you
+accidentally update an action more than once per tick, it's okay -- an internal 
+safety check ensures that nothing bad happens.</p>
+<p>If you don't want to manually update <code>FlxAction</code>s, use the <code>FlxActionManager</code>, 
+which will keep them updated for you.</p>
+<h2 id="flxactioninput"><code>FlxActionInput</code></h2>
+<p>A <code>FlxActionInput</code> represents a specific input event on a specific input device,
+like "when the A button on gamepad #1 is JUST_PRESSED", which you can use to 
+trigger a <code>FlxAction</code>.</p>
+<p>These come in digital and analog forms for every device that Flixel supports. 
+The following are provided by default, but you can create your own by extending <code>FlxActionInputDigital</code> and <code>FlxActionInputAnalog</code>:</p>
+<ul>
+<li><code>FlxActionInputDigitalKeyboard</code></li>
+<li><code>FlxActionInputDigitalMouse</code></li>
+<li><code>FlxActionInputDigitalMouseWheel</code></li>
+<li><code>FlxActionInputDigitalGamepad</code></li>
+<li><code>FlxActionInputDigitalIFlxInput</code></li>
+<li><code>FlxActionInputAnalogMouse</code></li>
+<li><code>FlxActionInputAnalogMouseMotion</code></li>
+<li><code>FlxActionInputAnalogMousePosition</code></li>
+<li><code>FlxActionInputAnalogClickAndDragMouseMotion</code></li>
+<li><code>FlxActionInputAnalogGamepad</code></li>
+</ul>
+<p>You can attach inputs like this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">addKey</span><span class="mtk1">(</span><span class="mtk13">SPACE</span><span class="mtk1">, </span><span class="mtk13">JUST_PRESSED</span><span class="mtk1">);</span>
+<span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">addMouse</span><span class="mtk1">(</span><span class="mtk13">LEFT</span><span class="mtk1">, </span><span class="mtk13">JUST_PRESSED</span><span class="mtk1">);</span>
+<span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">addGamepad</span><span class="mtk1">(</span><span class="mtk13">A</span><span class="mtk1">, </span><span class="mtk13">JUST_PRESSED</span><span class="mtk1">, </span><span class="mtk13">FIRST_ACTIVE</span><span class="mtk1">);</span>
+</pre>
+<p>These helper functions are a shorthand for this equivalent:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxActionInputDigitalKeyboard</span><span class="mtk1">(</span><span class="mtk13">SPACE</span><span class="mtk1">, </span><span class="mtk13">JUST_PRESSED</span><span class="mtk1">));</span>
+<span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxActionInputDigitalMouse</span><span class="mtk1">(</span><span class="mtk13">LEFT</span><span class="mtk1">, </span><span class="mtk13">JUST_PRESSED</span><span class="mtk1">));</span>
+<span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxActionInputDigitalGamepad</span><span class="mtk1">(</span><span class="mtk13">A</span><span class="mtk1">, </span><span class="mtk13">JUST_PRESSED</span><span class="mtk1">, </span><span class="mtk13">FIRST_ACTIVE</span><span class="mtk1">);</span>
+</pre>
+<p>This will cause the "jump" action to trigger on the frame where any of the
+following conditions is met: space bar was just pressed, left mouse button was
+just clicked, or the bottom face button on any gamepad was just pressed.</p>
+<p>Each <code>FlxActionInput</code> class has its own parameters that let you define exactly
+when the action should fire. For instance, here is the constructor for <code>FlxActionInputDigitalKeyboard</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">(</span><span class="mtk13">Key</span><span class="mtk17">:</span><span class="mtk11">FlxKey</span><span class="mtk1">, </span><span class="mtk13">Trigger</span><span class="mtk17">:</span><span class="mtk11">FlxInputState</span><span class="mtk1">)</span>
+</pre>
+<p>This requires you to specify a specific key, as well as an input state (<code>PRESSED</code>,
+<code>JUST_PRESSED</code>, <code>RELEASED</code>, <code>JUST_RELEASED</code>).</p>
+<p>Now here's the constructor for <code>FlxActionInputDigitalGamepad</code>, note that in 
+addition to specifying the button and the trigger state, we also have to specify
+which gamepad we're listening for, since there could be more than one:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">(</span><span class="mtk13">InputID</span><span class="mtk17">:</span><span class="mtk11">FlxGamepadInputID</span><span class="mtk1">, </span><span class="mtk13">Trigger</span><span class="mtk17">:</span><span class="mtk11">FlxInputState</span><span class="mtk1">, </span><span class="mtk13">GamepadID</span><span class="mtk17">:</span><span class="mtk11">Int</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxInputDeviceID</span><span class="mtk1">.</span><span class="mtk13">FIRST_ACTIVE</span><span class="mtk1">)</span>
+</pre>
+<p>Now let's take a quick look at some analog inputs.</p>
+<p>Here's <code>FlxActionInputAnalogGamepad</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">(</span><span class="mtk13">InputID</span><span class="mtk17">:</span><span class="mtk11">FlxGamepadInputID</span><span class="mtk1">, </span><span class="mtk13">Trigger</span><span class="mtk17">:</span><span class="mtk11">FlxAnalogState</span><span class="mtk1">, </span><span class="mtk13">Axis</span><span class="mtk17">:</span><span class="mtk11">FlxAnalogAxis</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">EITHER</span><span class="mtk1">, </span><span class="mtk13">GamepadID</span><span class="mtk17">:</span><span class="mtk11">Int</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxInputDeviceID</span><span class="mtk1">.</span><span class="mtk13">FIRST_ACTIVE</span><span class="mtk1">)</span>
+</pre>
+<p>In addition to having to specify the input (left/right stick or left/right 
+trigger), the trigger state, and the gamepad ID, we also have to specify which
+analog axis we care about (<code>X</code>, <code>Y</code>, <code>EITHER</code>, <code>BOTH</code>). (Note that for 
+single-axis analog inputs, such as analog triggers, only the x value will change
+and the y value will always be zero).</p>
+<p>Another example is <code>FlxActionInputAnalogMousePosition</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">(</span><span class="mtk13">Trigger</span><span class="mtk17">:</span><span class="mtk11">FlxAnalogState</span><span class="mtk1">, </span><span class="mtk13">Axis</span><span class="mtk17">:</span><span class="mtk11">FlxAnalogAxis</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">EITHER</span><span class="mtk1">)</span>
+</pre>
+<p>Since there's only ever one mouse, we don't need to specify the device, and we don't
+need to specify a button since we just want the position. Whenever this action 
+updates the <code>x</code> and <code>y</code> values will match the mouse position.</p>
+<h2 id="flxactionset"><code>FlxActionSet</code></h2>
+<p>A <code>FlxActionSet</code> is little more than a glorified array of <code>FlxAction</code>s. There's
+little reason to use them directly unless you are using the <code>FlxActionManager</code>,
+but they can still be a convenient way to call <code>update()</code> on all your actions
+at once.</p>
+<h2 id="flxactionmanager"><code>FlxActionManager</code></h2>
+<p><code>FlxActionManager</code> lets you manage multiple actions without having to update
+them manually, and also lets you control action sets. Action sets are groups of
+actions that can be selectively activated for specific input devices at specific times, which is great for local multiplayer games, games with complex input, and
+games using the Steam Input API.</p>
+<p><code>FlxActionManager</code> is not initialized in Flixel by default, you have to add it yourself in your initialization code:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">actionManager</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxActionManager</span><span class="mtk1">();</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">inputs</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">actionManager</span><span class="mtk1">);</span>
+</pre>
+<p>Once the action manager has been set up, you can simply add actions to it, and
+it will ensure that all your actions are kept up to date:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">//add actions one by one:</span>
+<span class="mtk13">actionManager</span><span class="mtk1">.</span><span class="mtk12">addAction</span><span class="mtk1">(</span><span class="mtk13">jump</span><span class="mtk1">);</span>
+<span class="mtk13">actionManager</span><span class="mtk1">.</span><span class="mtk12">addAction</span><span class="mtk1">(</span><span class="mtk13">shoot</span><span class="mtk1">);</span>
+
+<span class="mtk4">//add several actions at once:</span>
+<span class="mtk13">actionManager</span><span class="mtk1">.</span><span class="mtk12">addActions</span><span class="mtk1">([</span><span class="mtk13">action1</span><span class="mtk1">, </span><span class="mtk13">action2</span><span class="mtk1">, </span><span class="mtk13">action3</span><span class="mtk1">, </span><span class="mtk13">action4</span><span class="mtk1">, </span><span class="mtk13">action5</span><span class="mtk1">]);</span>
+</pre>
+<p>Then in your update loop you can simply check the <code>triggered</code> property, or just
+wait for callbacks to fire, if you've set any.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">updateLoop</span><span class="mtk1">()</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">jump</span><span class="mtk1">.</span><span class="mtk13">triggered</span><span class="mtk1">) </span><span class="mtk12">doJump</span><span class="mtk1">();</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">shoot</span><span class="mtk1">.</span><span class="mtk13">triggered</span><span class="mtk1">) </span><span class="mtk12">doShoot</span><span class="mtk1">();</span>
+<span class="mtk1">}</span>
+</pre>
+<h3 id="default-action-set">Default action set</h3>
+<p>What's actually happening when you call <code>addAction</code> or <code>addActions</code> is that the
+manager is asking for both actions <em>and</em> the action set you want to add them to:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">addAction</span><span class="mtk1">(</span><span class="mtk13">Action</span><span class="mtk17">:</span><span class="mtk11">FlxAction</span><span class="mtk1">, </span><span class="mtk13">ActionSet</span><span class="mtk17">:</span><span class="mtk11">Int</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Bool</span>
+</pre>
+<p>If you don't provide an action set, it assumes you want to add them to the first
+one (index 0). And if you haven't defined any action sets, it will create one
+for you at index 0, name it "default", and immediately activate it for all
+devices.</p>
+<p>NOTE:
+By default, when you change <code>FlxState</code>s, the default action set, including all referenced actions and inputs, will be cleared out and destroyed. You can change
+this behavior by modifying the <code>FlxActionManager.resetOnStateSwitch</code> policy. </p>
+<p>If you're not juggling multiple action sets, you will probably never need to 
+worry about any of this -- just add new actions at the start of every state.
+We like to explain what's going on under the hood just in case you encounter unexpected behavior.</p>
+<h3 id="working-with-action-sets">Working with action sets</h3>
+<p>Only ONE action set is considered active at a given time for any given device, 
+but multiple devices can be subscribed to the same action set.</p>
+<p>For instance, in an asymetrical co-op game where one person drives a tank
+and the other mans the turret, gamepad #1 could use action set "drive" and
+gamepad #2 could use action set "gunner". The same could go for the mouse,
+the keyboard, etc. And in a single-player game you might want to just change
+the action set of ALL input devices every time you switch to a different
+screen, such as a menu.</p>
+<p><code>FlxActionManager</code> lets you:</p>
+<ul>
+<li>ADD action sets</li>
+<li>REMOVE action sets</li>
+<li>ACTIVATE an action set for a specific device</li>
+<li>UPDATE all your action sets at once</li>
+<li>ENFORCE the "only one action set active per device at a time" rule</li>
+</ul>
+<p>To create and add an action set, do something like:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">//where up, down, left, right, select are digital actions</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">set</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxActionSet</span><span class="mtk1">(</span><span class="mtk9">"menu"</span><span class="mtk1">, [</span><span class="mtk13">up</span><span class="mtk1">, </span><span class="mtk13">down</span><span class="mtk1">, </span><span class="mtk13">left</span><span class="mtk1">, </span><span class="mtk13">right</span><span class="mtk1">, </span><span class="mtk13">select</span><span class="mtk1">]);</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">menuSetIndex</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">actionManager</span><span class="mtk1">.</span><span class="mtk12">addSet</span><span class="mtk1">(</span><span class="mtk13">set</span><span class="mtk1">);</span>
+</pre>
+<p>Note that <code>addSet</code> returns the action set's index. All operations on action sets
+require the action set's index (an <code>Int</code>), not its name (a <code>String</code>). This is 
+for performance reasons. If you forget to store the action set, or otherwise 
+lose track of an action set's index, you can query it at any time by passing the
+set's name to <code>getSetIndex()</code>. Just be sure not to do this repeatedly in 
+frequently called loops.</p>
+<h3 id="steam-input">Steam Input</h3>
+<p>If you are using the <a href="https://www.github.com/larsiusprime/steamwrap">steamwrap</a> library, <code>FlxActionManager</code> gains the ability
+to automatically create action sets from a steamwrap object derived from the
+master vdf game actions file that Steam makes you set up. You must then ACTIVATE
+one of those action sets for any connected steam controllers, which will 
+automatically attach the proper steam action inputs to the actions in the set.
+You can also add as many regular <code>FlxActionInput</code>s as you like to any actions in
+the sets.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">config</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> steamwrap.data.</span><span class="mtk11">ControllerConfig</span><span class="mtk1">.</span><span class="mtk12">fromVDF</span><span class="mtk1">(</span><span class="mtk13">myVDF</span><span class="mtk1">);</span>
+<span class="mtk13">actionManager</span><span class="mtk1">.</span><span class="mtk12">initSteam</span><span class="mtk1">(</span><span class="mtk13">config</span><span class="mtk1">, </span><span class="mtk13">digitalCallback</span><span class="mtk1">, </span><span class="mtk13">analogCallback</span><span class="mtk1">);</span>
+</pre>
+<p>NOTE:
+If you are using the Steam Input API and/or a Steam Controller, you MUST use <code>FlxActionManager</code> in order to properly process Steam's API via <code>FlxAction</code>s.
+The only other alternative is to call the steamwrap functions directly.</p>
+<h3 id="json-parsing">JSON parsing</h3>
+<p><code>FlxActionManager</code> can generate a JSON string representation of your action sets via <code>exportToJson()</code> You can also initialize your action sets by calling
+<code>initFromJson()</code>, feeding in the parsed object representation of the same format.</p>
+<p>The format is:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">typedef</span><span class="mtk1"> </span><span class="mtk11">ActionSetJsonArray</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span>
+<span class="mtk1">{</span>
+<span class="mtk1">    @</span><span class="mtk5">:optional</span><span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">actionSets</span><span class="mtk17">:</span><span class="mtk11">Array</span><span class="mtk1">&lt;</span><span class="mtk11">ActionSetJSON</span><span class="mtk1">&gt;;</span>
+<span class="mtk1">}</span>
+
+<span class="mtk5">typedef</span><span class="mtk1"> </span><span class="mtk11">ActionSetJson</span><span class="mtk1"> </span><span class="mtk17">=</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    @</span><span class="mtk5">:optional</span><span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">name</span><span class="mtk17">:</span><span class="mtk11">String</span><span class="mtk1">;</span>
+<span class="mtk1">    @</span><span class="mtk5">:optional</span><span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">analogActions</span><span class="mtk17">:</span><span class="mtk11">Array</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">&gt;;</span>
+<span class="mtk1">    @</span><span class="mtk5">:optional</span><span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">digitalActions</span><span class="mtk17">:</span><span class="mtk11">Array</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk1">&gt;;</span>
+<span class="mtk1">}</span>
+</pre>
+<p>Which would look something like this in practice:</p>
+<pre><code class="lang-json">{
+    "actionSets" : [
+        {
+            "name" : "SomeSet",
+            "analogActions" : [
+                "some_analog_action_1",
+                "some_analog_action_2"
+            ],
+            "digitalActions" : [
+                "some_digital_action_1",
+                "some_digital_action_2"
+            ]
+        },
+        {
+            "name" : "AnotherSet",
+            "analogActions" : [
+                "another_analog_action_1",
+                "another_analog_action_2"
+            ],
+            "digitalActions" : [
+                "another_digital_action_1",
+                "another_digital_action_2"
+            ]
+        }
+    ]
+}
+</code></pre>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/gamepads">&lt; Gamepads</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/troubleshooting">Troubleshooting &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

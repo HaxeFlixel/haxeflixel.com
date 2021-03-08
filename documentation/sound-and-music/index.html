@@ -1,0 +1,464 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>12 - Sound and Music | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/tutorial&quot;">
+				<a href="/documentation/tutorial"> Tutorial </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/the-power-of-haxeflixel&quot;">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/setup&quot;">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-new-project&quot;">
+				<a href="/documentation/creating-a-new-project"> 2 - Creating a new project </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/groundwork&quot;">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sprites-and-animation&quot;">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-tilemap&quot;">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/loading-the-tilemap&quot;">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/zoom-and-cameras&quot;">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/pickups&quot;">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/enemies-and-basic-ai&quot;">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ui-and-combat&quot;">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/game-over-menu&quot;">
+				<a href="/documentation/game-over-menu"> 11 - Game Over Menu </a>
+			</li>
+		
+			<li class="active" about="/documentation/sound-and-music">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/multiple-platforms&quot;">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/polish&quot;">
+				<a href="/documentation/polish"> 14 - Polish </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/conclusion&quot;">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">12 - Sound and Music</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/13-12-sound-and-music.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Our game is really coming together now, but it's still missing something… there's no <em>sound</em> yet!</p>
+<p>For this game, we're going to keep it simple (as usual). We're going to have a single, continuously looping track that plays while our game is running. We will also have several, simple sound effects that play for different actions. Playing sounds and music in HaxeFlixel is pretty easy, so this will go quickly!</p>
+<p>First, you'll need to make your music and sounds. Patrick Crecelius from <a href="http://fatbard.tumblr.com">Fat Bard</a> has provided <a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/music/HaxeFlixel_Tutorial_Game.ogg">some music</a> for this tutorial - feel free to use it for this tutorial, or make your own.</p>
+<p>We've also created some sound effects using <a href="http://www.bfxr.net/">Bfxr</a>, which you can use if you like, or, make your own!</p>
+<p>If you've been following along since the UI and Combat section, you already downloaded a few of these, but be sure you have them all.</p>
+<ul>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/coin.wav">coin.wav</a> - <strong>new!</strong> to be used when the player picks up a coin</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/combat.wav">combat.wav</a> - to be used when combat starts</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/fled.wav">fled.wav</a> - will play when the player successfully flees from combat</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/hurt.wav">hurt.wav</a> - will play whenever either the player or the enemy hits with an attack</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/lose.wav">lose.wav</a> - will play when the player dies in combat</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/miss.wav">miss.wav</a> - will play whenever either the player or the enemy misses with an attack</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/select.wav">select.wav</a> - used by buttons and when the player makes a selection</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/step.wav">step.wav</a> - <strong>new!</strong> used by the player and the enemies for 'footstep' sounds</p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/win.wav">win.wav</a> - used when the player wins in combat</p>
+</li>
+</ul>
+<p>Once you have your music, place it in <code>assets/music</code>, and your sound files should go in <code>assets/sounds</code>.</p>
+<p>Now let's change our code to use these sounds:</p>
+<ol>
+<li><p>First, open up <code>MenuState.hx</code>. Since we want our music to start as soon as the game starts, and loop continuously no matter what happens, we're going to add this to <code>create()</code>.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk13">music</span><span class="mtk1"> </span><span class="mtk17">==</span><span class="mtk1"> </span><span class="mtk5">null</span><span class="mtk1">) </span><span class="mtk4">// don't restart the music if it's already playing</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">playMusic</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk11">HaxeFlixel_Tutorial_Game__ogg</span><span class="mtk1">, </span><span class="mtk8">1</span><span class="mtk1">, </span><span class="mtk5">true</span><span class="mtk1">);</span>
+<span class="mtk1"> }</span>
+</pre>
+<p> We're also checking if the music is already playing, since we don't want to restart it unnecessarily in that case.</p>
+<p> If you try your game out right now, it should play music!</p>
+</li>
+<li><p>Next, we want to make our buttons all make a sound when they get clicked. This is simple, we just tell the button's <code>onUp</code> to load our sound. In the <code>MenuState</code>'s <code>create()</code>, after you initialize the play-button, add this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1">.</span><span class="mtk13">onUp</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">select__wav</span><span class="mtk1">);</span>
+</pre>
+</li>
+<li><p>Now, you can do the same for the options button (changing <code>playButton</code> to <code>optionsButton</code>).</p>
+<p> For each of the other buttons in our game - four of them in <code>OptionsState</code>, and one in <code>GameOverState</code> - the code already exists, but as a learning exercise, you can go through those files and see what was done.</p>
+</li>
+<li><p>Next, let's give our player some footsteps. We don't want to create and destroy a new sound object every time we want to play the same sound, so we will create a <code>FlxSound</code> object to be used over and over. At the top of the <code>Player</code> class, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">stepSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+</pre>
+</li>
+<li><p>Then, we need to load the footstep sound somewhere in the constructor:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">stepSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">step__wav</span><span class="mtk1">);</span>
+</pre>
+</li>
+<li><p>Now go to our <code>updateMovement()</code> function, and, after we check if the player is moving (<code>if ((velocity.x != 0 || velocity.y != 0) &amp;&amp; touching == FlxObject.NONE)</code>), add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">stepSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p> A neat little property of <code>FlxSound</code> objects is that if you ever tell one to play, if it's already playing (and you haven't set the <code>forceRestart</code> flag), it won't play again. This means we can easily call play on our sound every frame, and it will sound as if the sound is just being looped - for as long as the player is moving, but will finish if the player has stopped moving, and not start up again while they are stationary.</p>
+</li>
+<li><p>Now, let's give enemies their own footsteps, too. The difference is, instead of just always playing the step sound at full volume, we're going to change the volume based on the proximity of the enemy to the player. This will be easier than it sounds. First, add our sound variable to the top of Enemy.hx:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">stepSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+</pre>
+</li>
+<li><p>And then, similarly to how we setup the <code>Player</code> class, add this to our constructor:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">stepSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">step__wav</span><span class="mtk1">, </span><span class="mtk8">0.4</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk13">stepSound</span><span class="mtk1">.</span><span class="mtk12">proximity</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">camera</span><span class="mtk1">.</span><span class="mtk13">target</span><span class="mtk1">, </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">width</span><span class="mtk1"> </span><span class="mtk17">*</span><span class="mtk1"> </span><span class="mtk8">0.6</span><span class="mtk1">);</span>
+</pre>
+<p> You'll notice that we are setting the volume to <code>0.4</code> (40%) this is because there will be plenty of enemies on the map, and there footsteps can get kind of annoying and loud (besides, they're probably walking around the dungeon barefoot, right?).</p>
+</li>
+<li><p>We then setup our proximity for our sounds, setting it's position  to the <code>x</code> and <code>y</code> position of this enemy, and telling it to target the <code>FlxG.camera.target</code> object (which happens to be our player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen's width - so we should be able to hear enemies that are just off the screen, and all the enemies' footsteps will sound louder/softer based on their distance from the camera target.</p>
+</li>
+<li><p>Next, in the enemy's <code>update()</code>, before <code>super.update()</code>, we're going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">if</span><span class="mtk1"> ((</span><span class="mtk13">velocity</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">!=</span><span class="mtk1"> </span><span class="mtk8">0</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">velocity</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">!=</span><span class="mtk1"> </span><span class="mtk8">0</span><span class="mtk1">) </span><span class="mtk17">&amp;&amp;</span><span class="mtk1"> </span><span class="mtk13">touching</span><span class="mtk1"> </span><span class="mtk17">==</span><span class="mtk1"> </span><span class="mtk11">FlxObject</span><span class="mtk1">.</span><span class="mtk13">NONE</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk13">stepSound</span><span class="mtk1">.</span><span class="mtk12">setPosition</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk13">frameWidth</span><span class="mtk1"> </span><span class="mtk17">/</span><span class="mtk1"> </span><span class="mtk8">2</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk13">height</span><span class="mtk1">);</span>
+<span class="mtk1">    </span><span class="mtk13">stepSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+<span class="mtk1">}</span>
+</pre>
+</li>
+<li><p>Next, let's head over to <code>PlayState</code>. We really only need one sound to be in the <code>PlayState</code> itself, and that's the one for picking up a coin. While you could put this into the <code>Coin</code> class, because there could be a lot of coins loaded at once, and because we really can't pick up more than one coin at a time (so the sounds don't need to overlap), putting a single coin sound effect in our <code>PlayState</code> saves us a bit of overhead.</p>
+<p>So, just like our other sounds, initialize the variable:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">coinSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+</pre>
+<p>Load the sound in <code>create()</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">coinSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">coin__wav</span><span class="mtk1">);</span>
+</pre>
+<p>And in <code>playerTouchCoin()</code>, inside the <code>if</code>-statement, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">coinSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">(</span><span class="mtk5">true</span><span class="mtk1">);</span>
+</pre>
+<p>This time we will use <code>forceRestart</code> so that if the player happens to pickup several coins close to each other the sound will keep up with them.</p>
+</li>
+<li><p>All of the rest of our sounds, because they deal with combat, will be in our <code>CombatHUD</code> class.</p>
+<p>Assuming you downloaded the <code>CombatHUD</code> file, the sounds should already be there, but as a learning exercise, it's a good idea to go through and check. This will help you better understand sounds for when you're working on your next game.</p>
+<p>To initialize them:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">fledSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">hurtSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">loseSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">missSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">selectSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">winSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">combatSound</span><span class="mtk17">:</span><span class="mtk11">FlxSound</span><span class="mtk1">;</span>
+</pre>
+<p>To load them:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">fledSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">fled__wav</span><span class="mtk1">);</span>
+<span class="mtk13">hurtSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">hurt__wav</span><span class="mtk1">);</span>
+<span class="mtk13">loseSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">lose__wav</span><span class="mtk1">);</span>
+<span class="mtk13">missSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">miss__wav</span><span class="mtk1">);</span>
+<span class="mtk13">selectSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">select__wav</span><span class="mtk1">);</span>
+<span class="mtk13">winSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">win__wav</span><span class="mtk1">);</span>
+<span class="mtk13">combatSound</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">load</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">combat__wav</span><span class="mtk1">);</span>
+</pre>
+<p>You can probably figure out where they all go, but I'll go through them anyway.</p>
+<p>In <code>initCombat()</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">combatSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>In <code>finishFadeIn()</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">selectSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>In <code>update()</code>, inside each of our three if statements related to button presses (<code>if (_fire), else if (up), else if (down)</code>):</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">selectSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>In <code>makeChoice()</code>, in our logic for a 'hit' (after <code>_damages[1].text = "1";</code>):</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">hurtSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>and in our miss logic:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">missSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>Further down, if the player escapes (after <code>outcome = ESCAPE</code>):</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">fledSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>In <code>enemyAttack()</code>, if the enemy hits:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">hurtSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>and if they miss:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">missSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>Finally, in <code>doneDamageOut()</code>, after <code>outcome = DEFEAT</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">loseSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+<p>and after <code>outcome = VICTORY</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">winSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+</pre>
+</li>
+</ol>
+<p>And that's it for sound! Play your game now, and you should hear all of the effects we've added (make sure your volume is up high enough, too!) It's starting to look like a real game! Next time, we'll get it working on multiple platforms!</p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/game-over-menu">&lt; 11 - Game Over Menu</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/multiple-platforms">13 - Multiple Platforms &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

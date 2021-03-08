@@ -1,0 +1,423 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>11 - Game Over Menu | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/tutorial&quot;">
+				<a href="/documentation/tutorial"> Tutorial </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/the-power-of-haxeflixel&quot;">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/setup&quot;">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-new-project&quot;">
+				<a href="/documentation/creating-a-new-project"> 2 - Creating a new project </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/groundwork&quot;">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sprites-and-animation&quot;">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-tilemap&quot;">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/loading-the-tilemap&quot;">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/zoom-and-cameras&quot;">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/pickups&quot;">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/enemies-and-basic-ai&quot;">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ui-and-combat&quot;">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class="active" about="/documentation/game-over-menu">
+				<a href="/documentation/game-over-menu"> 11 - Game Over Menu </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sound-and-music&quot;">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/multiple-platforms&quot;">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/polish&quot;">
+				<a href="/documentation/polish"> 14 - Polish </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/conclusion&quot;">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">11 - Game Over Menu</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/12-11-game-over-menu.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Our game is really starting to come together! Now we need it to feel more like a 'game' with a win and lose scenario. For our (very simple) game, we'll just make it so that if you ever die in combat, you get a Game Over, and when you beat the boss enemy, you win. Both of these conditions will take you to the same <code>FlxState</code> to show you your score and allow you to play again if you want.</p>
+<ol>
+<li><p>Let's start with <code>PlayState</code>. We need to add some flags to see if we're ending the game, and if the player has 'won' or not. So, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">ending</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">won</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1">;</span>
+</pre>
+<p> To the top of the class.</p>
+</li>
+<li><p>Next, in <code>update()</code>, right under <code>super.update(elapsed)</code> add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">ending</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk16">return</span><span class="mtk1">;</span>
+<span class="mtk1"> }</span>
+</pre>
+<p> We don't want to allow anything else to go on if we're ending the game and getting ready to switch states.</p>
+</li>
+<li><p>Next, still in <code>update()</code>, we're going to change our logic in <code>if (inCombat)</code> to this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk17">!</span><span class="mtk13">combatHud</span><span class="mtk1">.</span><span class="mtk13">visible</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk13">health</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">combatHud</span><span class="mtk1">.</span><span class="mtk13">playerHealth</span><span class="mtk1">;</span>
+<span class="mtk1">     </span><span class="mtk13">hud</span><span class="mtk1">.</span><span class="mtk12">updateHUD</span><span class="mtk1">(</span><span class="mtk13">health</span><span class="mtk1">, </span><span class="mtk13">money</span><span class="mtk1">);</span>
+<span class="mtk1">     </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">combatHud</span><span class="mtk1">.</span><span class="mtk13">outcome</span><span class="mtk1"> </span><span class="mtk17">==</span><span class="mtk1"> </span><span class="mtk13">DEFEAT</span><span class="mtk1">)</span>
+<span class="mtk1">     {</span>
+<span class="mtk1">         </span><span class="mtk13">ending</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk1">         </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">camera</span><span class="mtk1">.</span><span class="mtk12">fade</span><span class="mtk1">(</span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">BLACK</span><span class="mtk1">, </span><span class="mtk8">0.33</span><span class="mtk1">, </span><span class="mtk5">false</span><span class="mtk1">, </span><span class="mtk13">doneFadeOut</span><span class="mtk1">);</span>
+<span class="mtk1">     }</span>
+<span class="mtk1">     </span><span class="mtk16">else</span>
+<span class="mtk1">     {</span>
+<span class="mtk1">         </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">combatHud</span><span class="mtk1">.</span><span class="mtk13">outcome</span><span class="mtk1"> </span><span class="mtk17">==</span><span class="mtk1"> </span><span class="mtk13">VICTORY</span><span class="mtk1">)</span>
+<span class="mtk1">         {</span>
+<span class="mtk1">             </span><span class="mtk13">combatHud</span><span class="mtk1">.</span><span class="mtk13">enemy</span><span class="mtk1">.</span><span class="mtk12">kill</span><span class="mtk1">();</span>
+<span class="mtk1">             </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">combatHud</span><span class="mtk1">.</span><span class="mtk13">enemy</span><span class="mtk1">.</span><span class="mtk13">type</span><span class="mtk1"> </span><span class="mtk17">==</span><span class="mtk1"> </span><span class="mtk13">BOSS</span><span class="mtk1">)</span>
+<span class="mtk1">             {</span>
+<span class="mtk1">                 </span><span class="mtk13">won</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk1">                 </span><span class="mtk13">ending</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk1">                 </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">camera</span><span class="mtk1">.</span><span class="mtk12">fade</span><span class="mtk1">(</span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">BLACK</span><span class="mtk1">, </span><span class="mtk8">0.33</span><span class="mtk1">, </span><span class="mtk5">false</span><span class="mtk1">, </span><span class="mtk13">doneFadeOut</span><span class="mtk1">);</span>
+<span class="mtk1">             }</span>
+<span class="mtk1">         }</span>
+<span class="mtk1">         </span><span class="mtk16">else</span>
+<span class="mtk1">         {</span>
+<span class="mtk1">             </span><span class="mtk13">combatHud</span><span class="mtk1">.</span><span class="mtk13">enemy</span><span class="mtk1">.</span><span class="mtk12">flicker</span><span class="mtk1">();</span>
+<span class="mtk1">         }</span>
+<span class="mtk1">         </span><span class="mtk13">inCombat</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk1">         </span><span class="mtk13">player</span><span class="mtk1">.</span><span class="mtk13">active</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk1">         </span><span class="mtk13">enemies</span><span class="mtk1">.</span><span class="mtk13">active</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk1">     }</span>
+<span class="mtk1"> }</span>
+</pre>
+<p> This will now check to see if the outcome was <code>DEFEAT</code>, and if it was, it will set our ending flag to true, and then tell the camera to start fading out - calling <code>doneFadeOut()</code> when it's done.</p>
+<p> Similarly, if the outcome was <code>VICTORY</code>, and the enemy that was just defeated was type 1 (the boss), we set our <code>won</code> flag to <code>true</code>, and also start fading out.</p>
+</li>
+<li><p>When the camera is done fading to black, we call this function, which will switch the state to our <code>GameOverState</code> (which you'll make in a second), passing it if the player won or not, and how much money they have.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">doneFadeOut</span><span class="mtk1">()</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk12">switchState</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">GameOverState</span><span class="mtk1">(</span><span class="mtk13">won</span><span class="mtk1">, </span><span class="mtk13">money</span><span class="mtk1">));</span>
+<span class="mtk1"> }</span>
+</pre>
+</li>
+<li><p>Finally, we need to add the <code>GameOverState</code>. This is going to be a pretty simple <code>FlxState</code> where we show a message - either "Game Over" or "You Win!", depending on our won flag, and the final score for this player. We will also use flixel's save/load functionality to compare the previous highscores, and, if the new score is higher, replace the saved highscore, and show the highscore on the screen.</p>
+<p> Finally, we have a button to take the player back to the main menu.</p>
+<p> Here is the code for that State:</p>
+<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/GameOverState.hx">GameOverState.hx</a></p>
+</li>
+</ol>
+<p>If you test your game, you should be able to trigger the <code>GameOverState</code> by either dying in combat or defeating the boss, and then clicking on the button in the <code>GameOverState</code> will take you back to our <code>MenuState</code> so you can play again. If all of that works, you're on the right track! But… our <code>MenuState</code> is looking a little bland, now… let's fix that up!</p>
+<p><a href="../images/01_tutorial/0021.png"></a></p>
+<ol>
+<li><p>Let's add a title and an options-button to the <code>MenuState</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">titleText</span><span class="mtk17">:</span><span class="mtk11">FlxText</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">optionsButton</span><span class="mtk17">:</span><span class="mtk11">FlxButton</span><span class="mtk1">;</span>
+</pre>
+</li>
+<li><p>Then, in <code>create()</code>, we'll add them to the state (and move the play-button as well):</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">titleText</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxText</span><span class="mtk1">(</span><span class="mtk8">20</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk9">"HaxeFlixel</span><span class="mtk7">\n</span><span class="mtk9">Tutorial</span><span class="mtk7">\n</span><span class="mtk9">Game"</span><span class="mtk1">, </span><span class="mtk8">22</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk13">titleText</span><span class="mtk1">.</span><span class="mtk13">alignment</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">CENTER</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">titleText</span><span class="mtk1">.</span><span class="mtk12">screenCenter</span><span class="mtk1">(</span><span class="mtk13">X</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">titleText</span><span class="mtk1">);</span>
+
+<span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxButton</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk9">"Play"</span><span class="mtk1">, </span><span class="mtk13">clickPlay</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">width</span><span class="mtk1"> </span><span class="mtk17">/</span><span class="mtk1"> </span><span class="mtk8">2</span><span class="mtk1">) </span><span class="mtk17">-</span><span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1">.</span><span class="mtk13">width</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk1"> </span><span class="mtk8">10</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">height</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1">.</span><span class="mtk13">height</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk1"> </span><span class="mtk8">10</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">playButton</span><span class="mtk1">);</span>
+
+<span class="mtk1"> </span><span class="mtk13">optionsButton</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxButton</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk9">"Options"</span><span class="mtk1">, </span><span class="mtk13">clickOptions</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk13">optionsButton</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">width</span><span class="mtk1"> </span><span class="mtk17">/</span><span class="mtk1"> </span><span class="mtk8">2</span><span class="mtk1">) </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk8">10</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">optionsButton</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">height</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk1"> </span><span class="mtk13">optionsButton</span><span class="mtk1">.</span><span class="mtk13">height</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk1"> </span><span class="mtk8">10</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">optionsButton</span><span class="mtk1">);</span>
+</pre>
+</li>
+<li><p>Add the function that gets called when the options-button is clicked:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">clickOptions</span><span class="mtk1">()</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk12">switchState</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">OptionsState</span><span class="mtk1">());</span>
+<span class="mtk1"> }</span>
+</pre>
+</li>
+<li><p>The <code>OptionsState</code> that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (highscores, etc), as well as a simple <code>FlxBar</code> to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will 'remember' what volume it was last set to (I know there's no sound…. yet ;))</p>
+<p> The code for this State looks like this:</p>
+<p> <a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx">OptionsState.hx</a></p>
+<p> The <code>OptionsState</code> class uses a different spritesheet for the volume adjustment buttons (because they should appear smaller than the default buttons). This asset must have 3 frames, one to represent each button state: <code>NORMAL</code>, <code>HIGHLIGHT</code>, and <code>PRESSED</code>. As long as we set up the frames in that order, the <code>FlxButton</code> class will handle the rest.</p>
+<p> Once again, you can make your own, or use the image below. Place it in the <code>assets/images</code> folder, and you should be all set.</p>
+<p> <img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/button.png" alt="" /></p>
+<p> Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, go to <code>Main.hx</code>, and add this after the <code>addChild()</code> call:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxSave</span><span class="mtk1">();</span>
+<span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk12">bind</span><span class="mtk1">(</span><span class="mtk9">"TurnBasedRPG"</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">volume</span><span class="mtk1"> </span><span class="mtk17">!=</span><span class="mtk1"> </span><span class="mtk5">null</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk13">volume</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">volume</span><span class="mtk1">;</span>
+<span class="mtk1"> }</span>
+<span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk12">close</span><span class="mtk1">();</span>
+</pre>
+<p> Pretty simple: it makes a new <code>FlxSave</code> object, binds it to our <code>"TurnBasedRPG"</code> and then checks if there is a volume value stored in it, and if there is, sets our game's volume to match, and then closes the save.</p>
+</li>
+</ol>
+<p>Test everything out, make sure it's working, and that if you change your volume under options and then exit the game, it retains the value the next time to get into the options screen.</p>
+<p><img src="../images/01_tutorial/browser_options.png" alt="" /></p>
+<p>Looking good! Next time we'll give our volume something to do by adding sound and music!</p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/ui-and-combat">&lt; 10 - UI and Combat</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/sound-and-music">12 - Sound and Music &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

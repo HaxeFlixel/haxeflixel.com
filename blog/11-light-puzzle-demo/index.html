@@ -1,0 +1,206 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>FlxLightPuzzle Demo | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li class="active">
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+
+<div class="container container-main">
+
+<div class="col-md-8">
+
+    <h1 class="title">FlxLightPuzzle Demo</h1>
+
+    <p class="post-date">March 28, 2018
+
+    </p><p>We have a new demo made by yours truly <a href="https://twitter.com/MSGhero16">Nick</a>: a puzzle game of reflecting light and combining colors. Featuring...</p>
+<h3 id="flxlightpuzzle-demo">FlxLightPuzzle Demo</h3>
+<p><img src="/images/blog/11_light/flp_logo_594x382.png" width="100%" /></p>
+<p>In addition to being a <a href="https://www.newgrounds.com/portal/view/705467">fully playable game</a>, the FlxLightPuzzle Demo heavily features the <a href="https://api.haxeflixel.com/flixel/math/FlxVector.html">FlxVector class</a>. Vector math is a nightmare, and I was actually surprised to see how much of it FlxVector handles for you.</p>
+<p>The source code is <a href="https://github.com/HaxeFlixel/flixel-demos/tree/master/Arcade/FlxLightPuzzle">here</a>, which you're free to look at and edit to make your own version of the game. Maybe you add more levels, real graphics, or more obstacles that the player has to solve around. I'll leave that to you.</p>
+<h3 id="development-and-design-decisions">Development and design decisions</h3>
+<p>I think color-based mechanics and reflection-based mechanics are super cool, and that's about all the backstory there is. The graphics are simple shapes (<a href="https://api.haxeflixel.com/flixel/util/FlxSpriteUtil.html">FlxSpriteUtil</a>) to avoid any fuss about art, and the <a href="https://www.newgrounds.com/audio/listen/755011">music</a> is a random find that I happened to enjoy (used with permission, of course).</p>
+<p><img src="/images/blog/11_light/flp_menu.png" width="100%" /></p>
+<p>You'll quickly notice that you can play the game in RBY, RGB, or CMY color spaces. I couldn't really decide whether RBY+orange/green/purple or RGB+yellow/cyan/magenta would be better to play in. On one hand, you have the "normal" primary colors that everyone is used to; on the other, there are the "correct" primary colors for light. So I added both, and CMY for anyone in the printing business playing the game.</p>
+<p><img src="/images/blog/11_light/flp_level4.png" width="100%" /></p>
+<p>On the third level, you learn that you can mix primary colors to hit secondary targets. On the fourth (my favorite), you learn that secondary colors can't hit primary targets. It wasn't always like that! I asked a number of people who said that it lessened the challenge if, say, green light could hit yellow targets. When that mechanic was changed, I thought that made level four impossible to solve. It was pure coincidence that it resulted in clever level design.</p>
+<p>Iterating to improve is a big part of level design. I've played through each level dozens of times now, fiddling with numbers and colors until I got to a pretty good result. The first and last levels haven't changed since day one — and you'll see why when you play through — but the middle eight have been through a lot. I still have fun every time I play, even if I can (almost) play through the whole thing without any do-overs. I call that a success.</p>
+<h3 id="the-code">The code</h3>
+<p>You are free to do whatever you want to the code under the MIT license. There are a number of things to learn from, such as vector math, object pooling, subtle tweening effects, physics and optics, and level data files. I added way more comments than I normally do to describe some of that. If you want to keep it simple, though, editing the levels or adding new ones is your best bet. There are a lot of places the code can go, and I limited the scope of the demo so that you could be creative with a solid foundation.</p>
+<p>So, go be creative! Don't forget to check out the other demos as well. There is plenty to learn from. I'll be back soon with a look at a <a href="https://github.com/haxeui/haxeui-flixel">UI library</a> that recently got Flixel support.</p>
+<p>Stay tuned.</p>
+
+
+    <br />
+    <hr />
+    <br />
+
+    <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'haxeflixel';
+		window.disqus_developer = '1';
+		window.disqus_url = 'https://haxeflixel.com/blog/11-light-puzzle-demo';
+		window.disqus_identifier = 'blog-11-light-puzzle-demo';
+		window.disqus_title = 'FlxLightPuzzle Demo';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

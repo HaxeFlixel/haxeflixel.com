@@ -1,0 +1,517 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>3 - Groundwork | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/tutorial&quot;">
+				<a href="/documentation/tutorial"> Tutorial </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/the-power-of-haxeflixel&quot;">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/setup&quot;">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-new-project&quot;">
+				<a href="/documentation/creating-a-new-project"> 2 - Creating a new project </a>
+			</li>
+		
+			<li class="active" about="/documentation/groundwork">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sprites-and-animation&quot;">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-tilemap&quot;">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/loading-the-tilemap&quot;">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/zoom-and-cameras&quot;">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/pickups&quot;">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/enemies-and-basic-ai&quot;">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ui-and-combat&quot;">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/game-over-menu&quot;">
+				<a href="/documentation/game-over-menu"> 11 - Game Over Menu </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sound-and-music&quot;">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/multiple-platforms&quot;">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/polish&quot;">
+				<a href="/documentation/polish"> 14 - Polish </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/conclusion&quot;">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">3 - Groundwork</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/04-3-groundwork.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Now it's time to think about what we actually want our game to be, and how we're going to pull it off.</p>
+<p>The game we're going to help you build will be a very simple top-down 'dungeon crawler' game, where the player controls a single character, moves around a map, fights enemies and collects gold.</p>
+<p>So, what does that all actually translate to in HaxeFlixel?</p>
+<ul>
+<li>First, we're going to need to setup our 'world' - this just means we'll need to have a <code>FlxState</code> where all the action happens, and figure out what we're going to put in the world.</li>
+<li>For the dungeon itself, it will simply be a <code>FlxTilemap</code> - and we'll draw our maps in another tool.</li>
+<li>We will need a <code>FlxSprite</code> to represent the player on the screen. This will be the sprite that player will be able to control.</li>
+<li>Enemies will be <code>FlxSprite</code> objects as well, and we'll have a 'fancy' way to have different types of enemies.</li>
+<li>We'll also need a HUD/Interface for the player to do stuff with and see what's going on. These will be a combination of <code>FlxGroup</code>, <code>FlxSprite</code>, <code>FlxText</code>, <code>FlxButton</code> objects and some other things.</li>
+</ul>
+<p>We'll tackle each of these things one-by-one.</p>
+<p>First up, let's create a simple menu. Eventually, we'll want a fancy <code>MenuState</code> with a button for options, but for right now, we'll just have a button that says "Play" and switches to our <code>PlayState</code>.</p>
+<ol>
+<li><p>Go ahead and delete the line we added for our "Hello World" test within the <code>PlayState</code>.</p>
+</li>
+<li><p>Now, right-click the <code>source</code> folder in VSCode's Explorer, select <code>New File</code> and enter <code>MenuState.hx</code>.</p>
+<p> Then, you can just copy the content of <code>PlayState.hx</code> over, but replace the class name with <code>MenuState</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">MenuState</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxState</span>
+<span class="mtk1"> {</span>
+</pre>
+<p> Right after the class declaration, we're going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new <code>FlxButton</code> variable to use as our 'play' button. So, type:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk17">:</span><span class="mtk11">FlxButton</span><span class="mtk1">;</span>
+</pre>
+<p> As before with <code>FlxText</code>, the import should be added automatically. If not, you can also add missing imports via the light bulb that should appear after saving the file when you have your cursor over <code>FlxButton</code>.    </p>
+</li>
+<li><p>Now, type the following on the lines before or after <code>super.create();</code> within the <code>create()</code> method:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxButton</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk9">"Play"</span><span class="mtk1">, </span><span class="mtk13">clickPlay</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">playButton</span><span class="mtk1">);</span>
+</pre>
+<p> (<code>import flixel.ui.FlxButton;</code>)</p>
+<p> This creates a <code>FlxButton</code> object and assigns it to the <code>playButton</code> variable. We're telling it to make the button at position <code>(0, 0)</code> (the top left corner of the screen), to make it say "Play" on it, and to call the function <code>clickPlay()</code> when a user clicks the button (we yet have to implement <code>clickPlay()</code>).
+ Then we add the object to our state so that it can be shown and interacted with.
+ Don't worry about the position of the button right now, we're going to move it in a second.</p>
+</li>
+<li><p>Now we need to define our <code>clickPlay()</code> function. Somewhere in the class, outside of any existing functions, type:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">clickPlay</span><span class="mtk1">()</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk12">switchState</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">PlayState</span><span class="mtk1">());</span>
+<span class="mtk1"> }</span>
+</pre>
+<p> (<code>import flixel.FlxG;</code>)</p>
+<p> This function calls <code>FlxG.switchState()</code>, which switches the state from whatever the current state is (<code>MenuState</code>) to a new instance of <code>PlayState</code>.</p>
+</li>
+<li><p>Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we're missing a few things.
+ First, we want the button to be in a nicer place. Sure, we could set the <code>x</code> and <code>y</code> coordinates when we create it, but there's a simpler way to do it.</p>
+<p> Back in <code>create()</code>, add a new line somewhere after we create our <code>FlxButton</code>, and before <code>super.create();</code> type:
+ Type:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">playButton</span><span class="mtk1">.</span><span class="mtk12">screenCenter</span><span class="mtk1">();</span>
+</pre>
+<p> <code>screenCenter()</code> is a function which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.</p>
+</li>
+<li><p>Next, we need to make sure that the game actually starts with our <code>MenuState</code>. Open <code>Main.hx</code> and replace the <code>PlayState</code> reference with <code>MenuState</code>.</p>
+</li>
+<li><p>If you test your game out now, it should go straight to a black screen with our 'Play' button in the middle, and clicking the button will take you to another black screen. If that's what you get, it works! So far, so good!</p>
+</li>
+</ol>
+<p>Next, let's make a simple player sprite that you can move around on the screen.</p>
+<p>First, we need to make a new <code>Player</code> class. You can think of classes as sort of a functional template. You can use them as-is in a project, but you also have the ability to extend them into new versions. You can kind of think of it as using tracing paper - when you extend a class, you put a new sheet of tracing paper on top - you can still see and use all the stuff in the original class (unless you draw over it), and you can add your own stuff.</p>
+<p>We're going to be extending the <code>FlxSprite</code> class to create our <code>Player</code> class.</p>
+<ol>
+<li><p>Create another new file in the <code>source</code> folder, this time called <code>Player.hx</code>.</p>
+</li>
+<li><p>Let's create a very basic class which extends <code>FlxSprite</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">package</span><span class="mtk1">;</span>
+
+<span class="mtk1"> </span><span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxSprite</span><span class="mtk1">;</span>
+
+<span class="mtk1"> </span><span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">Player</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxSprite</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0</span><span class="mtk1">)</span>
+<span class="mtk1">     {</span>
+<span class="mtk1">         </span><span class="mtk5">super</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">);</span>
+<span class="mtk1">     }</span>
+<span class="mtk1"> }</span>
+</pre>
+<p> With classes, we use the <code>super</code> keyword to refer to the parent class. So by calling <code>super(x, y)</code> within our constructor (called <code>new</code>), we are basically saying to go up the chain to our parent class, in this case <code>FlxSprite</code>, and call <em>its</em> constructor, passing it the <code>x</code> and <code>y</code> arguments that were passed to us.</p>
+</li>
+<li><p>Next, we'll want to create a placeholder image to show us where our sprite is, so under <code>super(x, y);</code>, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk12">makeGraphic</span><span class="mtk1">(</span><span class="mtk8">16</span><span class="mtk1">, </span><span class="mtk8">16</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">BLUE</span><span class="mtk1">);</span>
+</pre>
+<p> (Make sure that an import is created for <code>FlxColor</code>, and if it isn't, add it)
+ All we're doing here is saying that we want to make this sprite's graphic be a 16x16 pixel blue square.</p>
+</li>
+<li><p>For right now, we just want to get the <code>Player</code> class initialized, make sure that it works, and try adding it to our <code>PlayState</code>. It's not going to move or do anything yet, that will come in a minute. So save the changes to our <code>Player</code> class, and go back to the <code>PlayState</code>.
+ We need to define our <code>Player</code> variable, so underneath the class line, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">player</span><span class="mtk17">:</span><span class="mtk11">Player</span><span class="mtk1">;</span>
+</pre>
+<p> And in <code>create()</code>, before <code>super.create();</code> add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">player</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">Player</span><span class="mtk1">(</span><span class="mtk8">20</span><span class="mtk1">, </span><span class="mtk8">20</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">player</span><span class="mtk1">);</span>
+</pre>
+<p> This simply assigns a new instance of our <code>Player</code> sprite to our <code>player</code> variable, telling it to be placed at <code>(20, 20)</code> on the screen, and adds it to our <code>PlayState</code>.</p>
+</li>
+<li><p>If you run your project right now, you should see our blue player on the screen!</p>
+<p> <img src="../images/01_tutorial/browser_blue_square.png" alt="" /></p>
+<p> Now let's get it to move around!</p>
+</li>
+</ol>
+<p>So, how do we actually want our player to move around on the screen? Let's support both arrow keys and WASD keys, in 8 directions: up, down, left, right, and diagonally. The player should move at a relatively fixed speed, but have a slight deceleration before stopping to give it just a little bit of 'feeling'.</p>
+<p>First, define our player's movement speed and deceleration amounts:</p>
+<ol>
+<li><p>In your player class, above the constructor, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">static</span><span class="mtk1"> </span><span class="mtk5">inline</span><span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">SPEED</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">200</span><span class="mtk1">;</span>
+</pre>
+<p> Since this is a constant value that won't change, we make it <code>static inline</code> as well as following the <code>UPPER_CASE</code> naming convention.</p>
+<p> Then, in the constructor, after you call <code>makeGraphic()</code>, we need to add some <code>drag</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">drag</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">drag</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">1600</span><span class="mtk1">;</span>
+</pre>
+<p> <code>drag</code>, in HaxeFlixel, is sort of a way to slow down an object when it's not being moved. This will prevent our player sprite from just running forever in the same direction when the user stops pressing any movement keys.
+ This is somewhat arbitrary based on what 'feels' right - we can come back and tweak the numbers later on.</p>
+</li>
+<li><p>While there are plenty of ways to handle player movement, it can be simpler to add it to the <code>Player</code> class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">updateMovement</span><span class="mtk1">()</span>
+<span class="mtk1"> {</span>
+<span class="mtk1"> }</span>
+</pre>
+</li>
+<li><p>First, inside that new function, we want to define some helper variables so we can easily tell which keys were pressed later on in the function:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">up</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">left</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+</pre>
+</li>
+<li><p>Next, we want to actually find out which of these directions the player wants to move in. We'll do that by checking whether certain keys are currently being pressed:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">up</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">UP</span><span class="mtk1">, </span><span class="mtk13">W</span><span class="mtk1">]);</span>
+<span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">DOWN</span><span class="mtk1">, </span><span class="mtk13">S</span><span class="mtk1">]);</span>
+<span class="mtk1"> </span><span class="mtk13">left</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">LEFT</span><span class="mtk1">, </span><span class="mtk13">A</span><span class="mtk1">]);</span>
+<span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">RIGHT</span><span class="mtk1">, </span><span class="mtk13">D</span><span class="mtk1">]);</span>
+</pre>
+<p> (<code>import flixel.FlxG;</code>)</p>
+<p> The <code>anyPressed()</code> function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of keys (their names) and it will return <code>true</code> if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.</p>
+</li>
+<li><p>Next, we want to cancel out opposing directions - if the player is pressing up and down at the same time, we're not going to move anywhere:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">up</span><span class="mtk1"> </span><span class="mtk17">&amp;&amp;</span><span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk1">)</span>
+<span class="mtk1">     </span><span class="mtk13">up</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">left</span><span class="mtk1"> </span><span class="mtk17">&amp;&amp;</span><span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk1">)</span>
+<span class="mtk1">     </span><span class="mtk13">left</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+</pre>
+</li>
+<li><p>Next, we'll want to do something when the player is actually moving:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">up</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">left</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+
+<span class="mtk1"> }</span>
+</pre>
+</li>
+<li><p>After that, we need to determine which direction to move the player in, and by how much. A common mistake in games that allow diagonal movement is something like this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">velocity</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">speed</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">velocity</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">speed</span><span class="mtk1">;</span>
+</pre>
+<p> While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">the way triangles work</a>. So, for our player to move, we're not just going to set its <code>velocity</code> to <code>speed</code> - that would be too easy! Instead, we're going to calculate exactly what its velocity should be with angles!</p>
+<p> The first part of this is to figure out what angle we want to have the player move based on the keys that are being pressed. With our player sprite's asset, angle 0 is to the right, and -90 (or 270) is up.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">newAngle</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">up</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk8">90</span><span class="mtk1">;</span>
+<span class="mtk1">     </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">left</span><span class="mtk1">)</span>
+<span class="mtk1">         </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">-=</span><span class="mtk1"> </span><span class="mtk8">45</span><span class="mtk1">;</span>
+<span class="mtk1">     </span><span class="mtk16">else</span><span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">right</span><span class="mtk1">)</span>
+<span class="mtk1">         </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">+=</span><span class="mtk1"> </span><span class="mtk8">45</span><span class="mtk1">;</span>
+<span class="mtk1"> }</span>
+<span class="mtk1"> </span><span class="mtk16">else</span><span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">down</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">90</span><span class="mtk1">;</span>
+<span class="mtk1">     </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">left</span><span class="mtk1">)</span>
+<span class="mtk1">         </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">+=</span><span class="mtk1"> </span><span class="mtk8">45</span><span class="mtk1">;</span>
+<span class="mtk1">     </span><span class="mtk16">else</span><span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">right</span><span class="mtk1">)</span>
+<span class="mtk1">         </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">-=</span><span class="mtk1"> </span><span class="mtk8">45</span><span class="mtk1">;</span>
+<span class="mtk1"> }</span>
+<span class="mtk1"> </span><span class="mtk16">else</span><span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">left</span><span class="mtk1">)</span>
+<span class="mtk1">     </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">180</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk16">else</span><span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">right</span><span class="mtk1">)</span>
+<span class="mtk1">     </span><span class="mtk13">newAngle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0</span><span class="mtk1">;</span>
+</pre>
+<p> All this will do is create a temporary variable to hold our angle, and then, based on which direction(s) the player is pressing, set that angle to the direction we plan on moving the player.</p>
+</li>
+<li><p>Now that we know which angle the player should be moving in, we need to figure out with how much <code>velocity</code> it needs to move that way. We're going to do this by setting <code>velocity.x</code> to <code>speed</code> and <code>velocity.y</code> to <code>0</code>. Then we rotate that point around <code>(0, 0)</code> by <code>newAngle</code> degrees.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk13">velocity</span><span class="mtk1">.</span><span class="mtk12">set</span><span class="mtk1">(</span><span class="mtk13">SPEED</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk13">velocity</span><span class="mtk1">.</span><span class="mtk12">rotate</span><span class="mtk1">(</span><span class="mtk11">FlxPoint</span><span class="mtk1">.</span><span class="mtk12">weak</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">), </span><span class="mtk13">newAngle</span><span class="mtk1">);</span>
+</pre>
+<p> (<code>import flixel.math.FlxPoint;</code>)</p>
+<p> ...and that's the end of our <code>updateMovement()</code> function!</p>
+</li>
+<li><p>The only thing left to do is to <code>override</code> the <code>update()</code> function in <code>Player.hx</code> as well and call <code>updateMovement()</code> from it. VSCode can generate the necessary boilerplate code for you, just type <code>override</code> and a space, after which a completion popup should appear:</p>
+<p> <img src="../images/01_tutorial/vscode_override_completion.png" alt="" /></p>
+<p> Select <code>update</code> and press enter.</p>
+<p> Now you just need to add the function call, after which it should look like this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk12">updateMovement</span><span class="mtk1">();</span>
+<span class="mtk1">     </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk1">);</span>
+<span class="mtk1"> }</span>
+</pre>
+<p> The <code>update()</code> function, as you should remember, is called each 'frame' of the game. So, each time our <code>PlayState</code> gets its <code>update()</code> called, it calls <code>update()</code> on all of its <code>members</code>, including the player's <code>update()</code>. This in turn will run our <code>updateMovement()</code> logic and adjust the player's <code>velocity</code> accordingly. After that, it call its <code>super.update()</code>, which will take the <code>velocity</code> that we've just changed into account and figures out where the player sprite should move to.</p>
+</li>
+</ol>
+<p>Whew! It sounds a lot more complicated than it really is - if you try out the game right now, you'll see that you can run around the screen by pressing any combination of arrow keys and WASD!</p>
+<p>Next, we'll work on making the player sprite actually look like something!</p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/creating-a-new-project">&lt; 2 - Creating a new project</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/sprites-and-animation">4 - Sprites and Animation &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

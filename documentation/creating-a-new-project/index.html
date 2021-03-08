@@ -1,0 +1,343 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>2 - Creating a new project | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/tutorial&quot;">
+				<a href="/documentation/tutorial"> Tutorial </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/the-power-of-haxeflixel&quot;">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/setup&quot;">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class="active" about="/documentation/creating-a-new-project">
+				<a href="/documentation/creating-a-new-project"> 2 - Creating a new project </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/groundwork&quot;">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sprites-and-animation&quot;">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-tilemap&quot;">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/loading-the-tilemap&quot;">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/zoom-and-cameras&quot;">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/pickups&quot;">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/enemies-and-basic-ai&quot;">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ui-and-combat&quot;">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/game-over-menu&quot;">
+				<a href="/documentation/game-over-menu"> 11 - Game Over Menu </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sound-and-music&quot;">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/multiple-platforms&quot;">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/polish&quot;">
+				<a href="/documentation/polish"> 14 - Polish </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/conclusion&quot;">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">2 - Creating a new project</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/03-2-creating-a-new-project.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Now we want to make sure that everything is installed properly - and we want to set up the framework for our game. So we're going to make a new project, open it with VSCode and test that it builds and runs.</p>
+<ol>
+<li><p>In the command prompt, enter:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> flixel tpl -n </span><span class="mtk9">"TurnBasedRPG"</span><span class="mtk1"> -ide vscode</span>
+</pre>
+<p> This will create a new Flixel project using the blank template in the directory <code>TurnBasedRPG</code> (as well as naming the project <code>TurnBasedRPG</code>).</p>
+</li>
+<li><p>Depending on how you've configured flixel-tools and whether the <code>code</code> command is available, <code>flixel tpl</code> might already have opened a VSCode window with the right folder automatically.</p>
+<p> If not, simply open the <code>TurnBasedRPG</code> folder with <code>File &gt; Open Folder...</code>.</p>
+</li>
+<li><p>Over on the left side of the screen, you should see your project. This will contain all the files that the template generated for us.</p>
+<p> <img src="../images/01_tutorial/vscode_files.png" alt="" /></p>
+</li>
+<li><p>Next, let's make sure that our project builds and runs properly. By default, a fresh, new Flixel template project will launch the game in the <code>PlayState</code>. So go ahead and double-click to open that file from the project list.
+ This file is a very basic (and empty) example of a <code>FlxState</code> subclass. You can think of a <code>FlxState</code> a little bit like a 'scene'. When your game is running, one - and only one - state will be the active state. Anything 'added' to that state will be visible and accessible by the player, and, for the most part, will be segregated from other states in your game.</p>
+<p> They are great for having different sections of your game that are sort of in a bubble from one another, such as a <code>MenuState</code> (which we will add later) and the <code>PlayState</code> (where the game is actually played).</p>
+<p> You'll see that, at least for now, the <code>PlayState</code> only has two functions in it: <code>create()</code> and <code>update()</code>. When a state is loaded, its <code>create()</code> function is called. This is where you want to initialize all of the things in your state.</p>
+<p> <code>update()</code> is where all the real magic happens - it is called every 'frame' in your game (by default 60 times per second). When a <code>FlxState</code>'s <code>update()</code> is called, it will call <code>update()</code> on all of the objects that have been added to it. This is basically how everything in your game actually 'happens'. We will get to play with this more later on.
+ For now, we JUST want to see that the whole thing works, so, we're going to add a simple <code>FlxText</code> object to this state.</p>
+</li>
+<li><p>In <code>create()</code>, right before the line that says <code>super.create();</code>, type out the following two lines:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">text</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxText</span><span class="mtk1">(</span><span class="mtk8">10</span><span class="mtk1">, </span><span class="mtk8">10</span><span class="mtk1">, </span><span class="mtk8">100</span><span class="mtk1">, </span><span class="mtk9">"Hello, World!"</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">text</span><span class="mtk1">);</span>
+</pre>
+<p> While you're typing, code completion should pop up and suggest <code>FlxText</code>.</p>
+<p> <img src="../images/01_tutorial/vscode_flxtext_completion.png" alt="" /></p>
+<p> Here, press <code>Enter</code> or simply type a <code>(</code> - notice how the following lines has automatically been added to your imports at the top of the file:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk16">import</span><span class="mtk1"> flixel.text.</span><span class="mtk11">FlxText</span><span class="mtk1">;</span>
+</pre>
+<p> Then save your changes (or simply enable auto-save via <code>File &gt; Auto Save</code>).</p>
+</li>
+<li><p>The moment of truth! Go down to the status bar in VSCode and verify that the HTML5 target is selected in the lower left:</p>
+<p> <img src="../images/01_tutorial/vscode_target_selection.png" alt="" /></p>
+<p> Then run the "build task" (or press the keyboard shortcut for it)!</p>
+<p> <img src="../images/01_tutorial/vscode_run_build_task.png" alt="" /></p>
+<p> After a short moment, your default browser should pop up with a HaxeFlixel splash screen and then the text we just added:</p>
+<p> <img src="../images/01_tutorial/browser_hello_world.png" alt="" /></p>
+<p> It worked! You've built and ran your first HaxeFlixel project!</p>
+<p> At this point, you could try building it for Neko, Windows and Android to make sure they all work as well. If you run into problems with any of those, double-check your code, check out the OpenFL installation information, and if that doesn't help, <a href="/documentation/community/">get in touch with the community</a>.</p>
+<p> This is only a small step towards bigger and better things! In the next part, we'll actually define the game we're going to be building, and start putting it together!</p>
+</li>
+</ol>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/setup">&lt; 1 - Setup</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/groundwork">3 - Groundwork &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

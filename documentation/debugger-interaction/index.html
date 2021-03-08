@@ -1,0 +1,332 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Debugger - Interaction | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/haxeflixel-handbook&quot;">
+				<a href="/documentation/haxeflixel-handbook"> HaxeFlixel Handbook </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flixel-display-list&quot;">
+				<a href="/documentation/flixel-display-list"> Flixel Display List </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxgroup&quot;">
+				<a href="/documentation/flxgroup"> FlxGroup </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxsprite&quot;">
+				<a href="/documentation/flxsprite"> FlxSprite </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxstate&quot;">
+				<a href="/documentation/flxstate"> FlxState </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxsave&quot;">
+				<a href="/documentation/flxsave"> FlxSave </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxtween&quot;">
+				<a href="/documentation/flxtween"> FlxTween </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/haxeflixel-conditionals&quot;">
+				<a href="/documentation/haxeflixel-conditionals"> HaxeFlixel Conditionals </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/haxeflixel-targets&quot;">
+				<a href="/documentation/haxeflixel-targets"> HaxeFlixel Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/desktop-targets&quot;">
+				<a href="/documentation/desktop-targets"> Desktop Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/mobile-targets&quot;">
+				<a href="/documentation/mobile-targets"> Mobile Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/android&quot;">
+				<a href="/documentation/android"> Android </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ios&quot;">
+				<a href="/documentation/ios"> iOS </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/neko&quot;">
+				<a href="/documentation/neko"> Neko </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/keyboard&quot;">
+				<a href="/documentation/keyboard"> Keyboard </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/mouse&quot;">
+				<a href="/documentation/mouse"> Mouse </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/gamepads&quot;">
+				<a href="/documentation/gamepads"> Gamepads </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/actions&quot;">
+				<a href="/documentation/actions"> Actions </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/troubleshooting&quot;">
+				<a href="/documentation/troubleshooting"> Troubleshooting </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/debugger&quot;">
+				<a href="/documentation/debugger"> Debugger </a>
+			</li>
+		
+			<li class="active" about="/documentation/debugger-interaction">
+				<a href="/documentation/debugger-interaction"> Debugger - Interaction </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Debugger - Interaction</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/20-debugger-interaction.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>The interaction tool (enabled by the <img src="../images/02_handbook/debugger/icons/interactive.png" alt="" /> button in the debugger overlay) allows you to change game elements, e.g. move sprites, while the game is still running.</p>
+<p>It is highly recommended, however, that you pause the game using VCR's pause button <img src="../images/02_handbook/debugger/icons/pause.png" alt="" /> before using the interaction tool. You can always resume the game by clicking VCR's play button <img src="../images/02_handbook/debugger/icons/arrowRight.png" alt="" /> after you are done with the interaction. If the game is not paused during the interaction, objects affected by acceleration, for instance, will continue to move, making your work harder.</p>
+<h2 id="interaction-tools">Interaction tools</h2>
+<p>When the interaction is enabled, a toolbar containing a few related tools is displayed on the left side of the screen. Below is a description of each tool.</p>
+<h3 id="pointer">Pointer</h3>
+<p>The pointer tool <img src="../images/02_handbook/debugger/icons/cursorCross.png" alt="" /> allows you to select game elements. In order to use it, simply click elements on the screen:</p>
+<p><img src="../images/02_handbook/debugger/interaction-pointer-simple-select.gif" alt="" /></p>
+<p>Currently only elements that extend <code>FlxSprite</code> can be selected (which exclude tiles of a tilemap, for instance). Elements that belong to your selection will be highlighted in red. If you click an empty space, the selection will be discarded.</p>
+<p>You can add/remove elements to/from your existing selection by holding <code>CTRL</code> when you click elements. It is also possible to add/remove a group of elements by clicking and dragging the mouse cursor to create a selection area:</p>
+<p><img src="../images/02_handbook/debugger/interaction-pointer-fine-picking.gif" alt="" /></p>
+<p>If you press the <code>DELETE</code> key when elements are selected, the debugger will invoke the <code>kill()</code> method of each element in that selection. You can also press <code>DELETE</code> while holding <code>SHIFT</code> to invoke the <code>kill()</code> method and additionally remove the elements from memory, i.e. elements will be removed from Flixel's display list.</p>
+<h3 id="mover">Mover</h3>
+<p>The mover tool <img src="../images/02_handbook/debugger/icons/mover.png" alt="" /> allows you to move game objects that were selected by the pointer tool. In order to use this functionality, select any element(s) using the pointer tool, then pick the mover tool and click-and-drag <em>anywhere</em> on the screen:</p>
+<p><img src="../images/02_handbook/debugger/interaction-mover.gif" alt="" /></p>
+<p>The selected elements will follow the movement of the mouse cursor until you release the mouse button.</p>
+<p>The mover tool is also activated while the <code>SHIFT</code> key is kept pressed, so you can move selected elements at any time, even when any other tool is active. After performing a selection, hold <code>SHIFT</code> then click-and-drag anywhere on the screen to move the selected element(s):</p>
+<p><img src="../images/02_handbook/debugger/interaction-mover-shortcut.gif" alt="" /></p>
+<p>When you stop pressing <code>SHIFT</code>, the element(s) will stop moving and your previously active tool will become effective again.</p>
+<h3 id="transform">Transform</h3>
+<p>The transform tool <img src="../images/02_handbook/debugger/icons/transform.png" alt="" /> allows you to resize and rotate a selected game object. In order to use this functionality, select a single element using the pointer tool, then pick the transform tool and click-and-drag any of the markers around the object:</p>
+<p><img src="../images/02_handbook/debugger/interaction-transform.gif" alt="" /></p>
+<p>The circular marker at the top-left corner of the selected object can be used to rotate it, while the squared markers can be used to resize it.</p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/debugger">&lt; Debugger</a>
+				</li>
+				
+
+
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

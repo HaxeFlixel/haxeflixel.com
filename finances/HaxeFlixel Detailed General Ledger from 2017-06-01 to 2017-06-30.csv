@@ -1,0 +1,33 @@
+date,transaction,debit,credit
+Patreon,,,
+"June 1, 2017",Income - Patreon Donations,147.00,0.00
+"June 1, 2017",Expense - Processing Fees,0.00,6.64
+"June 1, 2017",Expense -  Patreon Fees,0.00,7.35
+Total Patreon,,147.00,13.99
+Net Movement,,,133.01
+,,,
+Treasurer,,,
+"June 29, 2017",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,26.19,0.00
+Total Treasurer,,26.19,0.00
+Net Movement,,,26.19
+,,,
+Patreon Donations,,,
+"June 1, 2017",Income - Patreon Donations,0.00,147.00
+Total Patreon Donations,,0.00,147.00
+Net Movement,,,147.00
+,,,
+Book Sales,,,
+"June 29, 2017",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,0.00,26.19
+Total Book Sales,,0.00,26.19
+Net Movement,,,26.19
+,,,
+Payment Fees,,,
+"June 1, 2017",Expense - Processing Fees,6.64,0.00
+Total Payment Fees,,6.64,0.00
+Net Movement,,,6.64
+,,,
+Patreon Fees,,,
+"June 1, 2017",Expense -  Patreon Fees,7.35,0.00
+Total Patreon Fees,,7.35,0.00
+Net Movement,,,7.35
+,,,

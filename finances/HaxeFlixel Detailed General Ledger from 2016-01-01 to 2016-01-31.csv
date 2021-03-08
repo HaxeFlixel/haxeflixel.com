@@ -1,0 +1,41 @@
+date,transaction,debit,credit
+Patreon,,,
+"Jan. 1, 2016",Expense - Patreon Fees,0.00,6.50
+"Jan. 1, 2016",Expense - CC Fees,0.00,6.16
+"Jan. 22, 2016",Transfer to Treasurer,0.00,632.56
+"Jan. 1, 2016",Income - Patreon Donations,130.00,0.00
+Total Patreon,,130.00,645.22
+Net Movement,,,(515.22)
+,,,
+Treasurer,,,
+"Jan. 22, 2016",Transfer from Patreon,632.56,0.00
+"Jan. 22, 2016",Expense - US Taxes (25% of 632.56),0.00,158.14
+"Jan. 22, 2016",Expense - Donation to Jeff Ward (http://jcward.com/),0.00,100.00
+Total Treasurer,,632.56,258.14
+Net Movement,,,374.42
+,,,
+Patreon Donations,,,
+"Jan. 1, 2016",Income - Patreon Donations,0.00,130.00
+Total Patreon Donations,,0.00,130.00
+Net Movement,,,130.00
+,,,
+Payment Fees,,,
+"Jan. 1, 2016",Expense - CC Fees,6.16,0.00
+Total Payment Fees,,6.16,0.00
+Net Movement,,,6.16
+,,,
+Patreon Fees,,,
+"Jan. 1, 2016",Expense - Patreon Fees,6.50,0.00
+Total Patreon Fees,,6.50,0.00
+Net Movement,,,6.50
+,,,
+Tax Fees,,,
+"Jan. 22, 2016",Expense - US Taxes (25% of 632.56),158.14,0.00
+Total Tax Fees,,158.14,0.00
+Net Movement,,,158.14
+,,,
+Development Services,,,
+"Jan. 22, 2016",Expense - Donation to Jeff Ward (http://jcward.com/),100.00,0.00
+Total Development Services,,100.00,0.00
+Net Movement,,,100.00
+,,,

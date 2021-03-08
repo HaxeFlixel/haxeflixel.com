@@ -1,0 +1,819 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Cheat Sheet | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/resources&quot;">
+				<a href="/documentation/resources"> Resources </a>
+			</li>
+		
+			<li class="active" about="/documentation/cheat-sheet">
+				<a href="/documentation/cheat-sheet"> Cheat Sheet </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/openfl-project-xml-format&quot;">
+				<a href="/documentation/openfl-project-xml-format"> XML Project Format </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/game-development-tools&quot;">
+				<a href="/documentation/game-development-tools"> Game Development Tools </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/compiler-conditionals&quot;">
+				<a href="/documentation/compiler-conditionals"> Compiler Conditionals </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/using-haxelib&quot;">
+				<a href="/documentation/using-haxelib"> Using Haxelib </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/faq&quot;">
+				<a href="/documentation/faq"> FAQ </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Cheat Sheet</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/03_resources/01-cheat-sheet.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<h2 id="flxsprite-base-"><a href="http://haxeflixel.com/documentation/flxsprite">FlxSprite</a> (Base)</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">package</span><span class="mtk1">;</span>
+
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxSprite</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxG</span><span class="mtk1">;</span>
+
+<span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">MySprite</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxSprite</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1">()</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">();</span>
+<span class="mtk1">    }</span>
+
+<span class="mtk1">    </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk1">);</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+</pre>
+<h2 id="flxstate-base-"><a href="http://haxeflixel.com/documentation/flxstate">FlxState</a> (Base)</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">package</span><span class="mtk1">;</span>
+
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxState</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxG</span><span class="mtk1">;</span>
+
+<span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">MyState</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxState</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">create</span><span class="mtk1">()</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">create</span><span class="mtk1">();</span>
+<span class="mtk1">    }</span>
+
+<span class="mtk1">    </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk1">);</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+</pre>
+<h2 id="switch-flxstate">Switch <a href="http://haxeflixel.com/documentation/flxstate">FlxState</a></h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk12">switchState</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">MyState</span><span class="mtk1">());</span>
+</pre>
+<h2 id="load-flxsprite">Load <a href="http://haxeflixel.com/documentation/flxsprite">FlxSprite</a></h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk12">loadGraphic</span><span class="mtk1">(</span><span class="mtk9">"assets/my_sprite.png"</span><span class="mtk1">);</span>
+
+<span class="mtk4">// OR dynamically create a rect</span>
+<span class="mtk12">makeGraphic</span><span class="mtk1">(</span><span class="mtk8">100</span><span class="mtk1">, </span><span class="mtk8">100</span><span class="mtk1">, </span><span class="mtk8">0xFFFFFFFF</span><span class="mtk1">); </span><span class="mtk4">// width, height, color (AARRGGBB hexadecimal)</span>
+
+<span class="mtk4">// to update bounding box by default (positioned on top left corner of the sprite)</span>
+<span class="mtk12">updateHitbox</span><span class="mtk1">(); </span><span class="mtk4">// or offset.set(10, 5); to shift bounding box 10 pixels horizontally and 5 pixels vertically</span>
+</pre>
+<h2 id="flxtext">FlxText</h2>
+<ul>
+<li><strong>setFormat</strong>(font, size, color, alignment)</li>
+<li><strong>setBorderStyle</strong>(style, color, size)</li>
+</ul>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> flixel.text.</span><span class="mtk11">FlxText</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.util.</span><span class="mtk11">FlxColor</span><span class="mtk1">;</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">myText</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxText</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">500</span><span class="mtk1">); </span><span class="mtk4">// x, y, width</span>
+<span class="mtk13">myText</span><span class="mtk1">.</span><span class="mtk13">text</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk9">"Hello World"</span><span class="mtk1">;</span>
+<span class="mtk13">myText</span><span class="mtk1">.</span><span class="mtk12">setFormat</span><span class="mtk1">(</span><span class="mtk9">"assets/font.ttf"</span><span class="mtk1">, </span><span class="mtk8">20</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">WHITE</span><span class="mtk1">, </span><span class="mtk13">CENTER</span><span class="mtk1">);</span>
+<span class="mtk13">myText</span><span class="mtk1">.</span><span class="mtk12">setBorderStyle</span><span class="mtk1">(</span><span class="mtk13">OUTLINE</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">RED</span><span class="mtk1">, </span><span class="mtk8">1</span><span class="mtk1">);</span>
+</pre>
+<h2 id="flxbutton">FlxButton</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> flixel.ui.</span><span class="mtk11">FlxButton</span><span class="mtk1">;</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">myButton</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxButton</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk9">"Label"</span><span class="mtk1">, </span><span class="mtk13">myCallback</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Custom graphics (sprite sheet with 3 frames for normal / highlight / pressed)</span>
+<span class="mtk13">myButton</span><span class="mtk1">.</span><span class="mtk12">loadGraphic</span><span class="mtk1">(</span><span class="mtk9">"assets/custom.png"</span><span class="mtk1">, </span><span class="mtk5">true</span><span class="mtk1">, </span><span class="mtk13">width</span><span class="mtk1">, </span><span class="mtk13">height</span><span class="mtk1">);</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">myCallback</span><span class="mtk1">()</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">{</span>
+<span class="mtk1">}</span>
+</pre>
+<ul>
+<li><strong>myButton.label</strong> is a <code>FlxText</code>, use <code>setFormat()</code> and <code>setBorderStyle()</code> to customise.</li>
+</ul>
+<h2 id="sound-effects-and-music">Sound Effects and Music</h2>
+<p>With the stock <code>Project.xml</code>, simply place them in your project's <code>assets/music</code> and <code>assets/sounds</code> subfolders and they're ready to use.</p>
+<p>Sound effects are usually in WAV format (44.1 kHz source).</p>
+<p>Music must be in MP3 format (44.1 kHz source) for Flash, and OGG for everything else.  To support both Flash and non-Flash platforms without bundling both formats in your output, you can replace the stock <code>&lt;assets&gt;</code> tag in your <code>Project.xml</code> with this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk18">&lt;</span><span class="mtk5">assets</span><span class="mtk1"> </span><span class="mtk13">path</span><span class="mtk1">=</span><span class="mtk9">"assets"</span><span class="mtk1"> </span><span class="mtk13">exclude</span><span class="mtk1">=</span><span class="mtk9">"*.ogg"</span><span class="mtk1"> </span><span class="mtk13">if</span><span class="mtk1">=</span><span class="mtk9">"flash"</span><span class="mtk18">/&gt;</span>
+<span class="mtk18">&lt;</span><span class="mtk5">assets</span><span class="mtk1"> </span><span class="mtk13">path</span><span class="mtk1">=</span><span class="mtk9">"assets"</span><span class="mtk1"> </span><span class="mtk13">exclude</span><span class="mtk1">=</span><span class="mtk9">"*.mp3"</span><span class="mtk1"> </span><span class="mtk13">unless</span><span class="mtk1">=</span><span class="mtk9">"flash"</span><span class="mtk18">/&gt;</span>
+</pre>
+<p>Play in your code:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// Play sound effect using AssetPaths</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">mySound__wav</span><span class="mtk1">);</span>
+<span class="mtk4">// Play sound effect without AssetPaths</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">(</span><span class="mtk9">"assets/sounds/mySound.wav"</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Loop music, Flash only</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">playMusic</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">myMusic__mp3</span><span class="mtk1">);</span>
+<span class="mtk4">// Loop music, non-Flash only</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">playMusic</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">myMusic__ogg</span><span class="mtk1">);</span>
+<span class="mtk4">// Loop music, Flash or non (getSound() adds .mp3 on Flash and .ogg otherwise)</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk12">playMusic</span><span class="mtk1">(</span><span class="mtk11">FlxAssets</span><span class="mtk1">.</span><span class="mtk12">getSound</span><span class="mtk1">(</span><span class="mtk9">"assets/music/myMusic"</span><span class="mtk1">));</span>
+</pre>
+<h2 id="keyboard-input">Keyboard Input</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// 'A' key</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk13">justPressed</span><span class="mtk1">.</span><span class="mtk13">A</span><span class="mtk1">) {}</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk13">pressed</span><span class="mtk1">.</span><span class="mtk13">A</span><span class="mtk1">) {}</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk13">justReleased</span><span class="mtk1">.</span><span class="mtk13">A</span><span class="mtk1">) {}</span>
+
+<span class="mtk4">// Checking multiple keys:</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">RIGHT</span><span class="mtk1">, </span><span class="mtk13">D</span><span class="mtk1">])) {}</span>
+</pre>
+<h4 id="keys">Keys</h4>
+<p><code>ANY</code></p>
+<p><code>A</code>...<code>Z</code></p>
+<p><code>UP</code> <code>DOWN</code> <code>LEFT</code> <code>RIGHT</code></p>
+<p><code>SPACE</code> <code>ENTER</code> <code>ESCAPE</code></p>
+<p><code>ZERO</code> <code>ONE</code> <code>TWO</code> <code>THREE</code>...<code>NINE</code></p>
+<p><code>F1</code>...<code>F12</code></p>
+<p><code>ALT</code>
+<code>BACKSLASH</code>
+<code>BACKSPACE</code>
+<code>CAPSLOCK</code>
+<code>CONTROL</code>
+<code>DELETE</code>
+<code>HOME</code>
+<code>INSERT</code>
+<code>QUOTE</code>
+<code>PERIOD</code>
+<code>PLUS</code>
+<code>MINUS</code>
+<code>PAGEUP</code>
+<code>PAGEDOWN</code>
+<code>RBRACKET</code>
+<code>GRAVEACCENT</code>
+<code>TAB</code>
+<code>SLASH</code>
+<code>SEMICOLON</code></p>
+<p><code>NUMPADZERO</code> <code>NUMPADONE</code> <code>NUMPADTWO</code>...<code>NUMPADNINE</code></p>
+<h2 id="mouse-input"><a href="http://haxeflixel.com/documentation/mouse">Mouse</a> Input</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">pressed</span><span class="mtk1">) {}</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">justPressed</span><span class="mtk1">) {}</span>
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">justReleased</span><span class="mtk1">) {}</span>
+</pre>
+<h4 id="positional-data">Positional Data</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// Relative to world space</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1">;</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1">;</span>
+
+<span class="mtk4">// Relative to screen</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">screenX</span><span class="mtk1">;</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">screenY</span><span class="mtk1">;</span>
+</pre>
+<h4 id="wheel-mouse-scroll-">Wheel (mouse scroll)</h4>
+<p>Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will have a positive value. If it was just scrolled down, it will have a negative value. If it wasn't just scroll this frame, it will be 0.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">wheel</span><span class="mtk1">;</span>
+</pre>
+<h4 id="up-down-over-out-callbacks-per-object">Up, Down, Over, Out Callbacks per Object</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">clickableSprite</span><span class="mtk17">:</span><span class="mtk11">FlxSprite</span><span class="mtk1">;</span>
+
+<span class="mtk4">// ...</span>
+
+<span class="mtk4">// register plugin in PlayState.create()</span>
+<span class="mtk11">FlxMouseEventManager</span><span class="mtk1">.</span><span class="mtk12">init</span><span class="mtk1">();</span>
+
+<span class="mtk4">// ...</span>
+
+<span class="mtk4">// register callbacks</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">pixelPerfect</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk11">FlxMouseEventManager</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">clickableSprite</span><span class="mtk1">, </span><span class="mtk13">mousePressedCallback</span><span class="mtk1">, </span><span class="mtk13">mouseReleasedCallback</span><span class="mtk1">, </span><span class="mtk5">null</span><span class="mtk1">, </span><span class="mtk5">null</span><span class="mtk1">, </span><span class="mtk5">false</span><span class="mtk1">, </span><span class="mtk5">true</span><span class="mtk1">, </span><span class="mtk13">pixelPerfect</span><span class="mtk1">, [</span><span class="mtk11">FlxMouseButtonID</span><span class="mtk1">.</span><span class="mtk13">LEFT</span><span class="mtk1">, </span><span class="mtk11">FlxMouseButtonID</span><span class="mtk1">.</span><span class="mtk13">RIGHT</span><span class="mtk1">]);</span>
+
+<span class="mtk4">// ...</span>
+
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">mousePressedCallback</span><span class="mtk1">(</span><span class="mtk13">sprite</span><span class="mtk17">:</span><span class="mtk11">FlxSprite</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">justPressed</span><span class="mtk1">)</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk4">// left button was pressed</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">    </span><span class="mtk16">else</span><span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">justPressedRight</span><span class="mtk1">)</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk4">// right button was pressed</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">mouseReleasedCallback</span><span class="mtk1">(</span><span class="mtk13">sprite</span><span class="mtk17">:</span><span class="mtk11">FlxSprite</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">}</span>
+</pre>
+<h2 id="touch-input">Touch Input</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">for</span><span class="mtk1"> (</span><span class="mtk13">touch</span><span class="mtk1"> </span><span class="mtk5">in</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">touches</span><span class="mtk1">.</span><span class="mtk13">list</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk13">justPressed</span><span class="mtk1">) {}</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk13">pressed</span><span class="mtk1">) {}</span>
+<span class="mtk1">    </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk13">justReleased</span><span class="mtk1">) {}</span>
+<span class="mtk1">}</span>
+</pre>
+<h4 id="positional-data">Positional Data</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// Relative to world space</span>
+<span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1">;</span>
+<span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1">;</span>
+
+<span class="mtk4">// Relative to screen</span>
+<span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk13">screenX</span><span class="mtk1">;</span>
+<span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk13">screenY</span><span class="mtk1">;</span>
+</pre>
+<ul>
+<li><p><code>touchPointID</code>: The unique ID of this touch.</p>
+</li>
+<li><p><code>overlaps(objectOrGroup)</code>: Checks for overlap between this touch and another <code>FlxObject</code> or <code>FlxGroup</code>.</p>
+</li>
+</ul>
+<h2 id="swipes-input-">Swipes (Input)</h2>
+<p>"Swipes" from both mouse and touch input that have just been released:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">for</span><span class="mtk1"> (</span><span class="mtk13">swipe</span><span class="mtk1"> </span><span class="mtk5">in</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">swipes</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk4">// swipe.startPosition (FlxPoint)</span>
+<span class="mtk1">    </span><span class="mtk4">// swipe.endPosition (FlxPoint)</span>
+
+<span class="mtk1">    </span><span class="mtk4">// swipe.id (Int)</span>
+
+<span class="mtk1">    </span><span class="mtk4">// swipe.distance (Float)</span>
+<span class="mtk1">    </span><span class="mtk4">// swipe.angle (Float)</span>
+<span class="mtk1">    </span><span class="mtk4">// swipe.duration (Float)</span>
+<span class="mtk1">}</span>
+</pre>
+<h2 id="flxsignal">FlxSignal</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> flixel.util.</span><span class="mtk11">FlxSignal</span><span class="mtk1">;</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// for signals that don't need data, use FlxSignal</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">signal</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxSignal</span><span class="mtk1">();</span>
+<span class="mtk4">// for signals that need data, use FlxTypedSignal with the correct function type</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">stringSignal</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxTypedSignal</span><span class="mtk1">&lt;</span><span class="mtk11">String</span><span class="mtk17">-&gt;</span><span class="mtk11">Void</span><span class="mtk1">&gt;();</span>
+</pre>
+<p>Note: <code>FlxSignal</code> is nothing but a convenient shortcut for <code>FlxTypedSignal&lt;Void-&gt;Void&gt;</code></p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">signal</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">voidCallback</span><span class="mtk1">); </span><span class="mtk4">// type must be Void-&gt;Void</span>
+<span class="mtk13">stringSignal</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">stringCallback</span><span class="mtk1">); </span><span class="mtk4">// type must be String-&gt;Void</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">voidCallback</span><span class="mtk1">()</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">trace</span><span class="mtk1">(</span><span class="mtk9">"Hello"</span><span class="mtk1">);</span>
+<span class="mtk1">}</span>
+
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">stringCallback</span><span class="mtk1">(</span><span class="mtk13">text</span><span class="mtk17">:</span><span class="mtk11">String</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">trace</span><span class="mtk1">(</span><span class="mtk13">text</span><span class="mtk1">);</span>
+<span class="mtk1">}</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// this will print "Hello World"</span>
+<span class="mtk13">signal</span><span class="mtk1">.</span><span class="mtk12">dispatch</span><span class="mtk1">();</span>
+<span class="mtk13">stringSignal</span><span class="mtk1">.</span><span class="mtk12">dispatch</span><span class="mtk1">(</span><span class="mtk9">"World"</span><span class="mtk1">);</span>
+</pre>
+<p>You can have up to 4 parameters in your signal:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">collisionNotify</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxTypedSignal</span><span class="mtk1">&lt;</span><span class="mtk11">FlxObject</span><span class="mtk17">-&gt;</span><span class="mtk11">FlxObject</span><span class="mtk17">-&gt;</span><span class="mtk11">Bool</span><span class="mtk17">-&gt;</span><span class="mtk11">Bool</span><span class="mtk17">-&gt;</span><span class="mtk11">Void</span><span class="mtk1">&gt;();</span>
+<span class="mtk13">collisionNotify</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">collisionCallback</span><span class="mtk1">);</span>
+
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">collisionCallback</span><span class="mtk1">(</span><span class="mtk13">source</span><span class="mtk17">:</span><span class="mtk11">FlxObject</span><span class="mtk1">, </span><span class="mtk13">target</span><span class="mtk17">:</span><span class="mtk11">FlxObject</span><span class="mtk1">, </span><span class="mtk13">shouldKillSource</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1">, </span><span class="mtk13">shouldKillTarget</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span><span class="mtk1"> (...)</span>
+</pre>
+<h2 id="flxtimer">FlxTimer</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> flixel.util.</span><span class="mtk11">FlxTimer</span><span class="mtk1">;</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// time (seconds), callback, loops</span>
+<span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxTimer</span><span class="mtk1">().</span><span class="mtk12">start</span><span class="mtk1">(</span><span class="mtk8">10.0</span><span class="mtk1">, </span><span class="mtk13">myCallback</span><span class="mtk1">, </span><span class="mtk8">3</span><span class="mtk1">);</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">myCallback</span><span class="mtk1">(</span><span class="mtk13">timer</span><span class="mtk17">:</span><span class="mtk11">FlxTimer</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">{</span>
+<span class="mtk1">}</span>
+</pre>
+<ul>
+<li>Setting <code>loops</code> to <code>0</code> results in an endless loop.</li>
+<li><code>reset(?NewTime)</code> restarts the timer, optionally with a new duration.</li>
+<li><code>cancel()</code> stops the timer and removes it from the timer manager.</li>
+</ul>
+<h2 id="flxrandom">FlxRandom</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// (Int) between 0 and 10</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">random</span><span class="mtk1">.</span><span class="mtk12">int</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">10</span><span class="mtk1">);</span>
+
+<span class="mtk4">// (Float) between 0.0 and 10.0</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">random</span><span class="mtk1">.</span><span class="mtk12">float</span><span class="mtk1">(</span><span class="mtk8">0.0</span><span class="mtk1">, </span><span class="mtk8">10.0</span><span class="mtk1">);</span>
+
+<span class="mtk4">// (Bool) Chance by percent</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">random</span><span class="mtk1">.</span><span class="mtk12">bool</span><span class="mtk1">(</span><span class="mtk8">50</span><span class="mtk1">); </span><span class="mtk4">// 50% chance to return 'true'</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">random</span><span class="mtk1">.</span><span class="mtk12">bool</span><span class="mtk1">(</span><span class="mtk8">10</span><span class="mtk1">); </span><span class="mtk4">// 10% chance to return 'true'</span>
+</pre>
+<h2 id="flxtween"><a href="http://haxeflixel.com/documentation/flxtween/">FlxTween</a></h2>
+<p><a href="http://haxeflixel.com/demos/FlxTween/">Check the demo</a> to visualize all <code>FlxTween</code> types.</p>
+<ul>
+<li><strong>tween</strong>(Object, Values, Duration, ?Options)</li>
+</ul>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">import</span><span class="mtk1"> flixel.tweens.</span><span class="mtk11">FlxTween</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.tweens.</span><span class="mtk11">FlxEase</span><span class="mtk1">;</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// Moves sprite to position (100, 200) in 3 seconds</span>
+<span class="mtk11">FlxTween</span><span class="mtk1">.</span><span class="mtk12">tween</span><span class="mtk1">(</span><span class="mtk13">sprite</span><span class="mtk1">, {</span><span class="mtk13">x</span><span class="mtk1">: </span><span class="mtk8">100</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">: </span><span class="mtk8">200</span><span class="mtk1">}, </span><span class="mtk8">3.0</span><span class="mtk1">, {</span><span class="mtk13">ease</span><span class="mtk1">: </span><span class="mtk11">FlxEase</span><span class="mtk1">.</span><span class="mtk13">quadInOut</span><span class="mtk1">, </span><span class="mtk13">complete</span><span class="mtk1">: </span><span class="mtk13">myCallback</span><span class="mtk1">});</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">myCallback</span><span class="mtk1">(</span><span class="mtk13">tween</span><span class="mtk17">:</span><span class="mtk11">FlxTween</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">{</span>
+<span class="mtk1">}</span>
+</pre>
+<h2 id="flxtween-options">FlxTween Options</h2>
+<h4 id="ease">ease</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">{</span><span class="mtk13">ease</span><span class="mtk1">: </span><span class="mtk11">FlxEase</span><span class="mtk1">.</span><span class="mtk13">quadInOut</span><span class="mtk1">}</span>
+</pre>
+<h4 id="complete">complete</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">{</span><span class="mtk13">complete</span><span class="mtk1">: </span><span class="mtk13">callbackFunction</span><span class="mtk1">}</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">callbackFunction</span><span class="mtk1">(</span><span class="mtk13">tween</span><span class="mtk17">:</span><span class="mtk11">FlxTween</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">{</span>
+<span class="mtk1">}</span>
+</pre>
+<h4 id="type">type</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">{</span><span class="mtk13">type</span><span class="mtk1">: </span><span class="mtk11">FlxTweenType</span><span class="mtk1">.</span><span class="mtk13">PINGPONG</span><span class="mtk1">}</span>
+</pre>
+<ul>
+<li><strong>FlxTweenType.BACKWARD:</strong> plays tween in reverse direction</li>
+<li><strong>FlxTweenType.LOOPING:</strong> restarts immediately when it finishes.</li>
+<li><strong>FlxTweenType.ONESHOT:</strong> stops and remove itself from its core container when it finishes.</li>
+<li><strong>FlxTweenType.PERSIST:</strong> stops when it finishes.</li>
+<li><strong>FlxTweenType.PINGPONG:</strong> plays tween hither and thither</li>
+</ul>
+<h4 id="loopdelay">loopDelay</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">{</span><span class="mtk13">loopDelay</span><span class="mtk1">: </span><span class="mtk8">1.0</span><span class="mtk1">} </span><span class="mtk4">// 1 second</span>
+</pre>
+<h4 id="startdelay">startDelay</h4>
+<pre xmlns="" class="highlighted">
+<span class="mtk1">{</span><span class="mtk13">startDelay</span><span class="mtk1">: </span><span class="mtk8">2.0</span><span class="mtk1">} </span><span class="mtk4">// 2 seconds</span>
+</pre>
+<h2 id="flxease-list">FlxEase List</h2>
+<p><a href="http://haxeflixel.com/demos/FlxTween/">Check the demo</a> to visualize all <code>FlxEase</code> types.</p>
+<ul>
+<li><code>backIn</code>, <code>backInOut</code>, <code>backOut</code></li>
+</ul>
+<ul>
+<li><code>bounceIn</code>, <code>bounceInOut</code>, <code>bounceOut</code></li>
+</ul>
+<ul>
+<li><code>circIn</code>, <code>circInOut</code>, <code>circOut</code></li>
+</ul>
+<ul>
+<li><code>cubeIn</code>, <code>cubeInOut</code>, <code>cubeOut</code></li>
+</ul>
+<ul>
+<li><code>elasticIn</code>, <code>elasticInOut</code>, <code>elasticOut</code></li>
+</ul>
+<ul>
+<li><code>expoIn</code>, <code>expoInOut</code>, <code>expoOut</code></li>
+</ul>
+<ul>
+<li><code>quadIn</code>, <code>quadInOut</code>, <code>quadOut</code></li>
+</ul>
+<ul>
+<li><code>quartIn</code>, <code>quartInOut</code>, <code>quartOut</code></li>
+</ul>
+<ul>
+<li><code>quintIn</code>, <code>quintInOut</code>, <code>quintOut</code></li>
+</ul>
+<ul>
+<li><code>sineIn</code>, <code>sineInOut</code>, <code>sineOut</code></li>
+</ul>
+<h2 id="containers-flxgroup-">Containers (<a href="http://haxeflixel.com/documentation/flxgroup">FlxGroup</a>)</h2>
+<p><code>FlxGroup</code> is a shortcut for <code>FlxTypedGroup&lt;FlxBasic&gt;</code>. Use <code>FlxTypedGroup&lt;MyOwnClass&gt;</code> if you need to access your own variables and functions when iterating over the container.</p>
+<h3 id="iteration">Iteration</h3>
+<pre xmlns="" class="highlighted">
+<span class="mtk16">for</span><span class="mtk1"> (</span><span class="mtk13">member</span><span class="mtk1"> </span><span class="mtk5">in</span><span class="mtk1"> </span><span class="mtk13">myGroup</span><span class="mtk1">)</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk13">member</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1"> </span><span class="mtk17">+=</span><span class="mtk1"> </span><span class="mtk8">10</span><span class="mtk1">;</span>
+<span class="mtk1">    </span><span class="mtk13">member</span><span class="mtk1">.</span><span class="mtk12">mySpecificFunction</span><span class="mtk1">(); </span><span class="mtk4">// myGroup = FlxTypedGroup&lt;MyOwnClass&gt;</span>
+<span class="mtk1">}</span>
+</pre>
+<h2 id="collision">Collision</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk12">overlap</span><span class="mtk1">(</span><span class="mtk13">objectOrGroup1</span><span class="mtk1">, </span><span class="mtk13">objectOrGroup2</span><span class="mtk1">, </span><span class="mtk13">myCallback</span><span class="mtk1">);</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">myCallback</span><span class="mtk1">(</span><span class="mtk13">object1</span><span class="mtk17">:</span><span class="mtk11">FlxObject</span><span class="mtk1">, </span><span class="mtk13">object2</span><span class="mtk17">:</span><span class="mtk11">FlxObject</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">{</span>
+<span class="mtk1">}</span>
+</pre>
+<p>Or use <code>FlxG.collide()</code> which calls <code>FlxG.overlap()</code> and presets the <code>processCallback</code> parameter to <code>FlxObject.separate()</code>.</p>
+<h3 id="setting-world-bounds">Setting World Bounds</h3>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// collision won't work outside the bounds, and by default they are only size of one screen</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">worldBounds</span><span class="mtk1">.</span><span class="mtk12">set</span><span class="mtk1">(</span><span class="mtk13">tilemap</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">tilemap</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">tilemap</span><span class="mtk1">.</span><span class="mtk13">width</span><span class="mtk1">, </span><span class="mtk13">tilemap</span><span class="mtk1">.</span><span class="mtk13">height</span><span class="mtk1">);</span>
+</pre>
+<h3 id="quick-check-whether-there-was-a-collision">Quick check whether there was a collision</h3>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// sets the touching flags</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk12">collide</span><span class="mtk1">(</span><span class="mtk13">player</span><span class="mtk1">, </span><span class="mtk13">level</span><span class="mtk1">);</span>
+
+<span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">player</span><span class="mtk1">.</span><span class="mtk12">isTouching</span><span class="mtk1">(</span><span class="mtk11">FlxObject</span><span class="mtk1">.</span><span class="mtk13">DOWN</span><span class="mtk1">))</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk4">// player stands on the ground and can jump </span>
+<span class="mtk1">}</span>
+
+<span class="mtk4">// will reset touching flags when called</span>
+<span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk1">);</span>
+</pre>
+<h3 id="teleport-sprite">Teleport sprite</h3>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// after setting the sprite's new position</span>
+<span class="mtk12">setPosition</span><span class="mtk1">(</span><span class="mtk8">10</span><span class="mtk1">, </span><span class="mtk8">100</span><span class="mtk1">);</span>
+<span class="mtk4">// don't forget to update 'last' variable if you don't want overlap callbacks for objects between old and new positions of the sprite</span>
+<span class="mtk13">last</span><span class="mtk1">.</span><span class="mtk12">set</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">);</span>
+</pre>
+<h3 id="pixel-perfect-collision">Pixel Perfect Collision</h3>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">overlapping</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk12">pixelPerfectOverlap</span><span class="mtk1">(</span><span class="mtk13">sprite1</span><span class="mtk1">, </span><span class="mtk13">sprite2</span><span class="mtk1">);</span>
+</pre>
+<h2 id="drawing-shapes">Drawing Shapes</h2>
+<p><strong>Dynamically draw:</strong> circle, ellipse, line, polygon, triangle, rect, round rect and rect complex.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">using</span><span class="mtk1"> flixel.util.</span><span class="mtk11">FlxSpriteUtil</span><span class="mtk1">;</span>
+</pre>
+<p>Haxe docs about the <code>using</code> keyword: <a href="https://haxe.org/manual/lf-static-extension.html">haxe.org/manual/lf-static-extension.html</a>.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">canvas</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxSprite</span><span class="mtk1">();</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">makeGraphic</span><span class="mtk1">(</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">width</span><span class="mtk1">, </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">height</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">TRANSPARENT</span><span class="mtk1">, </span><span class="mtk5">true</span><span class="mtk1">);</span>
+<span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">canvas</span><span class="mtk1">);</span>
+</pre>
+<p>The last argument of <code>makeGraphic()</code> is <code>Unique</code>, whether the graphic should be an unique instance in the graphics cache, if you create multiple graphics like this, set it to <code>true</code> to avoid conflicts.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">lineStyle</span><span class="mtk17">:</span><span class="mtk11">LineStyle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> {</span><span class="mtk13">color</span><span class="mtk1">: </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">RED</span><span class="mtk1">, </span><span class="mtk13">thickness</span><span class="mtk1">: </span><span class="mtk8">1</span><span class="mtk1">};</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">drawStyle</span><span class="mtk17">:</span><span class="mtk11">DrawStyle</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> {</span><span class="mtk13">smoothing</span><span class="mtk1">: </span><span class="mtk5">true</span><span class="mtk1">};</span>
+</pre>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// Circle</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawCircle</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">radius</span><span class="mtk1">, </span><span class="mtk13">color</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">, </span><span class="mtk13">drawStyle</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Ellipse</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawEllipse</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">width</span><span class="mtk1">, </span><span class="mtk13">height</span><span class="mtk1">, </span><span class="mtk13">color</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">, </span><span class="mtk13">drawStyle</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Line</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawLine</span><span class="mtk1">(</span><span class="mtk13">startX</span><span class="mtk1">, </span><span class="mtk13">startY</span><span class="mtk1">, </span><span class="mtk13">endX</span><span class="mtk1">, </span><span class="mtk13">endY</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Polygon</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">vertices</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">Array</span><span class="mtk1">&lt;</span><span class="mtk11">FlxPoint</span><span class="mtk1">&gt;();</span>
+<span class="mtk13">vertices</span><span class="mtk1">[</span><span class="mtk8">0</span><span class="mtk1">] </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">);</span>
+<span class="mtk13">vertices</span><span class="mtk1">[</span><span class="mtk8">1</span><span class="mtk1">] </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">(</span><span class="mtk8">100</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">);</span>
+<span class="mtk13">vertices</span><span class="mtk1">[</span><span class="mtk8">2</span><span class="mtk1">] </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">(</span><span class="mtk8">100</span><span class="mtk1">, </span><span class="mtk8">300</span><span class="mtk1">);</span>
+<span class="mtk13">vertices</span><span class="mtk1">[</span><span class="mtk8">3</span><span class="mtk1">] </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">100</span><span class="mtk1">);</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawPolygon</span><span class="mtk1">(</span><span class="mtk13">vertices</span><span class="mtk1">, </span><span class="mtk13">color</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">, </span><span class="mtk13">drawStyle</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Triangle</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawTriangle</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">height</span><span class="mtk1">, </span><span class="mtk13">color</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">, </span><span class="mtk13">drawStyle</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Rect</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawRect</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">width</span><span class="mtk1">, </span><span class="mtk13">height</span><span class="mtk1">, </span><span class="mtk13">color</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">, </span><span class="mtk13">drawStyle</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Round Rect</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawRoundRect</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">width</span><span class="mtk1">, </span><span class="mtk13">height</span><span class="mtk1">, </span><span class="mtk13">ellipseWidth</span><span class="mtk1">, </span><span class="mtk13">ellipseHeight</span><span class="mtk1">, </span><span class="mtk13">color</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">, </span><span class="mtk13">drawStyle</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Rect Complex</span>
+<span class="mtk13">canvas</span><span class="mtk1">.</span><span class="mtk12">drawRoundRectComplex</span><span class="mtk1">(</span><span class="mtk13">x</span><span class="mtk1">, </span><span class="mtk13">y</span><span class="mtk1">, </span><span class="mtk13">width</span><span class="mtk1">, </span><span class="mtk13">height</span><span class="mtk1">, </span><span class="mtk13">topLeftRadius</span><span class="mtk1">, </span><span class="mtk13">topRightRadius</span><span class="mtk1">, </span><span class="mtk13">bottomLeftRadius</span><span class="mtk1">, </span><span class="mtk13">bottomRightRadius</span><span class="mtk1">, </span><span class="mtk13">color</span><span class="mtk1">, </span><span class="mtk13">lineStyle</span><span class="mtk1">, </span><span class="mtk13">drawStyle</span><span class="mtk1">);</span>
+</pre>
+<p>Use <code>canvas.fill(FlxColor.TRANSPARENT);</code> to clear the canvas.</p>
+<h2 id="hud">HUD</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// prevents the sprite to scroll with the camera</span>
+<span class="mtk13">scrollFactor</span><span class="mtk1">.</span><span class="mtk12">set</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">);</span>
+</pre>
+<h3 id="zooming-game-while-leaving-hud-intact">Zooming game while leaving HUD intact</h3>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">gameCamera</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxCamera</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk13">screenWidth</span><span class="mtk1">, </span><span class="mtk13">screenHeight</span><span class="mtk1">);</span>
+<span class="mtk13">uiCamera</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxCamera</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk13">screenWidth</span><span class="mtk1">, </span><span class="mtk13">screenHeight</span><span class="mtk1">);</span>
+
+<span class="mtk13">gameCamera</span><span class="mtk1">.</span><span class="mtk13">bgColor</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0xff626a71</span><span class="mtk1">;</span>
+<span class="mtk13">uiCamera</span><span class="mtk1">.</span><span class="mtk13">bgColor</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">TRANSPARENT</span><span class="mtk1">;</span>
+
+<span class="mtk13">gameCamera</span><span class="mtk1">.</span><span class="mtk13">zoom</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">0.5</span><span class="mtk1">;</span>
+
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">cameras</span><span class="mtk1">.</span><span class="mtk12">reset</span><span class="mtk1">(</span><span class="mtk13">gameCamera</span><span class="mtk1">);</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">cameras</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">uiCamera</span><span class="mtk1">);</span>
+
+<span class="mtk11">FlxCamera</span><span class="mtk1">.</span><span class="mtk13">defaultCameras</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> [</span><span class="mtk13">gameCamera</span><span class="mtk1">];</span>
+
+<span class="mtk13">hudElement</span><span class="mtk1">.</span><span class="mtk13">cameras</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> [</span><span class="mtk13">uiCamera</span><span class="mtk1">];</span>
+</pre>
+<h2 id="debugger">Debugger</h2>
+<p>Press <code>~ key</code> to open it during runtime, or open by code with <code>FlxG.debugger.visible = true</code>.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// Log</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">log</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk9">"My var: "</span><span class="mtk1"> </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk13">myVar</span><span class="mtk1">);</span>
+<span class="mtk4">// or</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">log</span><span class="mtk1">.</span><span class="mtk13">redirectTraces</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk5">trace</span><span class="mtk1">(</span><span class="mtk9">"My var: "</span><span class="mtk1">, </span><span class="mtk13">myVar</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Watch</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">watch</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">object</span><span class="mtk1">, </span><span class="mtk9">"property"</span><span class="mtk1">);</span>
+
+<span class="mtk4">// Add world space mouse position to watch list</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">watch</span><span class="mtk1">.</span><span class="mtk12">addMouse</span><span class="mtk1">();</span>
+
+<span class="mtk4">// Create a tracker window for player (of class Player) showing "x", "y" and custom fields "jumping" and "ladder"</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">debugger</span><span class="mtk1">.</span><span class="mtk12">addTrackerProfile</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">TrackerProfile</span><span class="mtk1">(</span><span class="mtk11">Player</span><span class="mtk1">, [</span><span class="mtk9">"x"</span><span class="mtk1">, </span><span class="mtk9">"y"</span><span class="mtk1">, </span><span class="mtk9">"jumping"</span><span class="mtk1">, </span><span class="mtk9">"ladder"</span><span class="mtk1">], []));</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">debugger</span><span class="mtk1">.</span><span class="mtk12">track</span><span class="mtk1">(</span><span class="mtk13">player</span><span class="mtk1">, </span><span class="mtk9">"Hero"</span><span class="mtk1">);</span>
+</pre>
+<h2 id="hiding-cursor">Hiding Cursor</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk13">visible</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+</pre>
+<h2 id="adding-gravity">Adding Gravity</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">acceleration</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">600</span><span class="mtk1">;</span>
+</pre>
+<h2 id="sort-objects-in-flxgroup">Sort objects in FlxGroup</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// sort by Y for top-down game</span>
+<span class="mtk13">group</span><span class="mtk1">.</span><span class="mtk12">sort</span><span class="mtk1">(</span><span class="mtk11">FlxSort</span><span class="mtk1">.</span><span class="mtk13">byY</span><span class="mtk1">, </span><span class="mtk11">FlxSort</span><span class="mtk1">.</span><span class="mtk13">ASCENDING</span><span class="mtk1">);</span>
+
+<span class="mtk4">// sort with custom function (here: by Z)</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">group</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxTypedGroup</span><span class="mtk1">&lt;</span><span class="mtk11">ZSprite</span><span class="mtk1">&gt;();</span>
+<span class="mtk13">group</span><span class="mtk1">.</span><span class="mtk12">sort</span><span class="mtk1">(</span>
+<span class="mtk1">    </span><span class="mtk5">function</span><span class="mtk1">(</span><span class="mtk13">order</span><span class="mtk17">:</span><span class="mtk11">Int</span><span class="mtk1">, </span><span class="mtk13">sprite1</span><span class="mtk17">:</span><span class="mtk11">ZSprite</span><span class="mtk1">, </span><span class="mtk13">sprite2</span><span class="mtk17">:</span><span class="mtk11">ZSprite</span><span class="mtk1">)</span><span class="mtk17">:</span><span class="mtk11">Int</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk16">return</span><span class="mtk1"> </span><span class="mtk11">FlxSort</span><span class="mtk1">.</span><span class="mtk12">byValues</span><span class="mtk1">(</span><span class="mtk13">order</span><span class="mtk1">, </span><span class="mtk13">sprite1</span><span class="mtk1">.</span><span class="mtk13">z</span><span class="mtk1">, </span><span class="mtk13">sprite2</span><span class="mtk1">.</span><span class="mtk13">z</span><span class="mtk1">);</span>
+<span class="mtk1">    },</span>
+<span class="mtk1">    </span><span class="mtk11">FlxSort</span><span class="mtk1">.</span><span class="mtk13">ASCENDING</span>
+<span class="mtk1">);</span>
+</pre>
+<h2 id="flxpoint-pool">FlxPoint Pool</h2>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// get from FlxPoint pool</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">tileSize</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxPoint</span><span class="mtk1">.</span><span class="mtk12">get</span><span class="mtk1">(</span><span class="mtk8">16</span><span class="mtk1">, </span><span class="mtk8">16</span><span class="mtk1">);</span>
+
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">actionTileset</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxTileFrames</span><span class="mtk1">.</span><span class="mtk12">fromGraphic</span><span class="mtk1">(</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">bitmap</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk9">"assets/images/ui/actions.png"</span><span class="mtk1">), </span><span class="mtk13">tileSize</span><span class="mtk1">);</span>
+
+<span class="mtk4">// release it back in pool to reuse</span>
+<span class="mtk13">tileSize</span><span class="mtk1">.</span><span class="mtk12">put</span><span class="mtk1">();</span>
+</pre>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/resources">&lt; Resources</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/openfl-project-xml-format">XML Project Format &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

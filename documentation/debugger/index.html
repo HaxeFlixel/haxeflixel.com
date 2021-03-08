@@ -1,0 +1,444 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Debugger | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/haxeflixel-handbook&quot;">
+				<a href="/documentation/haxeflixel-handbook"> HaxeFlixel Handbook </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flixel-display-list&quot;">
+				<a href="/documentation/flixel-display-list"> Flixel Display List </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxgroup&quot;">
+				<a href="/documentation/flxgroup"> FlxGroup </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxsprite&quot;">
+				<a href="/documentation/flxsprite"> FlxSprite </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxstate&quot;">
+				<a href="/documentation/flxstate"> FlxState </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxsave&quot;">
+				<a href="/documentation/flxsave"> FlxSave </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/flxtween&quot;">
+				<a href="/documentation/flxtween"> FlxTween </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/haxeflixel-conditionals&quot;">
+				<a href="/documentation/haxeflixel-conditionals"> HaxeFlixel Conditionals </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/haxeflixel-targets&quot;">
+				<a href="/documentation/haxeflixel-targets"> HaxeFlixel Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/desktop-targets&quot;">
+				<a href="/documentation/desktop-targets"> Desktop Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/mobile-targets&quot;">
+				<a href="/documentation/mobile-targets"> Mobile Targets </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/android&quot;">
+				<a href="/documentation/android"> Android </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ios&quot;">
+				<a href="/documentation/ios"> iOS </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/neko&quot;">
+				<a href="/documentation/neko"> Neko </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/keyboard&quot;">
+				<a href="/documentation/keyboard"> Keyboard </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/mouse&quot;">
+				<a href="/documentation/mouse"> Mouse </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/gamepads&quot;">
+				<a href="/documentation/gamepads"> Gamepads </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/actions&quot;">
+				<a href="/documentation/actions"> Actions </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/troubleshooting&quot;">
+				<a href="/documentation/troubleshooting"> Troubleshooting </a>
+			</li>
+		
+			<li class="active" about="/documentation/debugger">
+				<a href="/documentation/debugger"> Debugger </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/debugger-interaction&quot;">
+				<a href="/documentation/debugger-interaction"> Debugger - Interaction </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Debugger</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/02_handbook/19-debugger.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>Flixel comes with a fairly powerful debugging overlay. You can open it with one of the default toggle keys (<code>F2</code>, ` and \ with a QWERTY keyboard layout). Note that these are configurable via <code>FlxG.debugger.toggleKeys</code>. Alternatively, you can do the same in code via the <code>FlxG.debugger.visible</code> flag.</p>
+<p>Note that the debugger does not exist when compiling with <code>FLX_NO_DEBUG</code>. With the default <code>Project.xml</code>, this is the case in release mode. On the command line, use the <code>-debug</code> flag to build in debug mode instead (e.g. <code>lime test neko -debug</code>).</p>
+<p><img src="../images/02_handbook/debugger/debugger-overlay.png" alt="" /></p>
+<h2 id="debug-draw">Debug draw</h2>
+<p><code>FlxG.debugger.drawDebug</code> can be enabled to display the hitboxes of every <code>FlxObject</code> added to the state (alternatively, press the cube button in the upper right corner of the debugger).</p>
+<p><img src="../images/02_handbook/debugger/draw-debug.png" alt="" /></p>
+<p>The hitboxes are color-coded based on the collision properties. For <code>FlxObject</code> and <code>FlxSprite</code> this means:</p>
+<ul>
+<li>Blue for <code>allowCollisions == FlxObject.NONE</code></li>
+<li>Green for <code>immovable</code> objects</li>
+<li>Red otherwise</li>
+</ul>
+<p>The color is customizable via the <code>debugBoundingBoxColor</code> property.</p>
+<p>The behavior of tiles in <code>FlxTilemap</code> is slightly different:</p>
+<ul>
+<li>Blue for <code>allowCollisions == FlxObject.NONE</code></li>
+<li>Green for <code>allowCollisions == FlxObject.ANY</code></li>
+<li>Pink for other values of <code>allowCollisions</code></li>
+</ul>
+<h2 id="the-log-window">The Log Window</h2>
+<p>The log window is used to display traces and can be accessed via <code>FlxG.log</code>. You can also redirect any <code>trace()</code>-calls to it with <code>FlxG.log.redirectTraces = true;</code>. Using it is mostly a matter of preference, some people prefer to have their traces displayed in their IDE of choice (FlashDevelop's output panel for example).</p>
+<p>Some flixel-internal errors will also be output to the log window.</p>
+<h3 id="log-styles">Log styles</h3>
+<p>It's possible to customize things like text color, size, style or add a prefix by using log styles. <code>FlxG.log.warn()</code>, <code>error()</code> and <code>notice()</code> use pre-defined log styles.</p>
+<p>Here's an example of how you could differentiate each trace by the player from others by adding a <code>[Player]</code> prefix and printing it in green:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">playerAction</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">LogStyle</span><span class="mtk1">(</span><span class="mtk9">"[Player]"</span><span class="mtk1">, </span><span class="mtk9">"00FF40"</span><span class="mtk1">);</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">log</span><span class="mtk1">.</span><span class="mtk12">advanced</span><span class="mtk1">(</span><span class="mtk9">" Shoot"</span><span class="mtk1">, </span><span class="mtk13">playerAction</span><span class="mtk1">);</span>
+</pre>
+<h2 id="the-watch-window">The Watch Window</h2>
+<p>It's very common to use <code>trace()</code>-calls to output the value of certain variables for debugging. However, this approach doesn't scale very well - at 60 fps, tracing the values of multiple variables results in a flood of messages. Breakpoints-debugging is great to inspect a game's internal state, but doesn't help when interrupting the execution is not an option, for example when debugging input logic.</p>
+<p>This is where the watch window comes into play. It displays the values of variables using reflection. For example, to keep track of the player's position:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">watch</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">_player</span><span class="mtk1">, </span><span class="mtk9">"x"</span><span class="mtk1">);</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">watch</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">_player</span><span class="mtk1">, </span><span class="mtk9">"y"</span><span class="mtk1">);</span>
+</pre>
+<p>The display string does not have to be the same as the variable's name, "numEnemies" is much more descriptive than "length" in this example:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">watch</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">_enemies</span><span class="mtk1">, </span><span class="mtk9">"length"</span><span class="mtk1">, </span><span class="mtk9">"numEnemies"</span><span class="mtk1">);</span>
+</pre>
+<p><img src="../images/02_handbook/debugger/watch-window.png" alt="" /></p>
+<p>For static variables, you pass the class instead of an object:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">watch</span><span class="mtk1">.</span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk11">FlxG</span><span class="mtk1">, </span><span class="mtk9">"height"</span><span class="mtk1">);</span>
+</pre>
+<p>It's also possible to edit the displayed values by clicking on them, entering a new value in the text field and pressing enter to confirm. This even works with <code>FlxPoint</code> objects.</p>
+<p>To remove a watch entry again, simply call <code>FlxG.watch.remove(object, variableName)</code>.</p>
+<h3 id="quick-watches">Quick watches</h3>
+<p>Quick watches are a lightweight alternative to a regular watch entry. They don't require a variable, they simply store a value for a <code>String</code> name. The following example stores the result of <code>FlxG.keys.anyPressed(["UP", "W"])</code> under the name <code>"Up key pressed"</code> - this is updated every frame since it happens in <code>update()</code>.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">update</span><span class="mtk1">()</span><span class="mtk17">:</span><span class="mtk11">Void</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">();</span>
+<span class="mtk1">    </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">watch</span><span class="mtk1">.</span><span class="mtk12">addQuick</span><span class="mtk1">(</span><span class="mtk9">"Up key pressed"</span><span class="mtk1">, </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk9">"UP"</span><span class="mtk1">, </span><span class="mtk9">"W"</span><span class="mtk1">]));</span>
+<span class="mtk1">}</span>
+</pre>
+<p>To remove a quick watch entry, call <code>FlxG.watch.removeQuick(name)</code>.
+Quick watch values can not be modified.</p>
+<h3 id="mouse-watch">Mouse watch</h3>
+<p><code>FlxG.watch.addMouse()</code> is a convenient helper to display the current mouse position in the watch window. This can be useful to find the right coordinates to position UI elements at. You can also use the console command <code>watchMouse</code> to call this function.</p>
+<h2 id="the-stats-window">The Stats Window</h2>
+<p>The stats window displays some basic profiling info:</p>
+<ol>
+<li>FPS value</li>
+<li>Memory usage in MB</li>
+<li>The amount of <code>update()</code> calls this frame (and the time it took in ms)</li>
+<li>The amount of <code>draw()</code> calls this frame (and the time it took in ms)</li>
+<li>The size of the <code>FlxQuadtree</code> pool for collision detection</li>
+<li>The size of the <code>FlxList</code> (used for quad trees) pool</li>
+</ol>
+<p>3 and 4 are especially useful when it comes to performance optimization ("Do I need to optimize my rendering or my update-logic?"). Of course this is only very basic data, profiling tools like <a href="https://creative.adobe.com/products/scout">Adobe Scout</a> or <a href="http://hxscout.com">hxScout</a> provide much more detailed information.</p>
+<p><img src="../images/02_handbook/debugger/stats-window.png" alt="" /></p>
+<h2 id="the-bitmap-log-window">The Bitmap Log Window</h2>
+<p>The Bitmap Log can be used to display <code>BitmapData</code> objects via <code>FlxG.bitmapLog.add(bitmapData)</code>. This can be useful to debug logic that manipulates some <code>BitmapData</code>. The window provides a slideshow to scroll through logged bitmaps. You can use the middle mouse button to move the graphic around and the mouse wheel to zoom in and out.</p>
+<p>You can also inspect flixel's internal <code>BitmapData</code> cache by calling <code>FlxG.bitmapLog.viewCache()</code> or entering the console command <code>viewCache</code>.</p>
+<p><img src="../images/02_handbook/debugger/view-cache.png" alt="" /></p>
+<h2 id="the-console-window">The Console Window</h2>
+<p>The console allows a limited subset of Haxe code to be parsed and executed at runtime via <a href="https://github.com/HaxeFoundation/hscript">hscript</a>. Commands like <code>state._player.x = 50</code> or <code>state._player.jump()</code> as you'd expect. Especially on targets with long compile times, this can speed up development substantially.</p>
+<p>It also supports auto completion for class fields and registered functions / objects / classes, similar to the completion popups in IDEs (albeit without documentation, which is not available at runtime).</p>
+<p><img src="../images/02_handbook/debugger/console-completion.png" alt="" /></p>
+<p><code>state</code> is the starting point for hscript and needs to be registered to the console to be available - Flixel already does this for you. The same goes for a few classes like <code>FlxG</code> or <code>Math</code>. To register further objects or classes, call <code>FlxG.console.registerObject()</code>.</p>
+<p>By default, the game is paused when the console text field receives focus. After a command is executed, the game progresses one frame so the effects can be seen.</p>
+<p>The console stores executed commands (use the up and down keys to cycle through them). This history is persistent across executions of your game (but not across different target platforms).</p>
+<h3 id="adding-custom-commands">Adding custom commands</h3>
+<p>Functions can also be registered to the console directly as commands via <code>FlxG.console.registerFunction()</code>. Here's an example with a function called <code>"spawnEnemy"</code>, spawning a new enemy at the current mouse position in the Mode demo.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// in PlayState#create()</span>
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">console</span><span class="mtk1">.</span><span class="mtk12">addCommand</span><span class="mtk1">(</span><span class="mtk9">"spawnEnemy"</span><span class="mtk1">, </span><span class="mtk5">function</span><span class="mtk1">() {</span>
+<span class="mtk1">    </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">mousePos</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">mouse</span><span class="mtk1">.</span><span class="mtk12">getWorldPosition</span><span class="mtk1">();</span>
+<span class="mtk1">    </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">enemy</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">_enemies</span><span class="mtk1">.</span><span class="mtk12">recycle</span><span class="mtk1">(</span><span class="mtk11">Enemy</span><span class="mtk1">);</span>
+<span class="mtk1">    </span><span class="mtk13">enemy</span><span class="mtk1">.</span><span class="mtk12">init</span><span class="mtk1">(</span><span class="mtk11">Std</span><span class="mtk1">.</span><span class="mtk12">int</span><span class="mtk1">(</span><span class="mtk13">mousePos</span><span class="mtk1">.</span><span class="mtk13">x</span><span class="mtk1">), </span><span class="mtk11">Std</span><span class="mtk1">.</span><span class="mtk12">int</span><span class="mtk1">(</span><span class="mtk13">mousePos</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1">), </span><span class="mtk13">_enemyBullets</span><span class="mtk1">, </span><span class="mtk13">_bigGibs</span><span class="mtk1">, </span><span class="mtk13">_player</span><span class="mtk1">);</span>
+<span class="mtk1">});</span>
+</pre>
+<h2 id="tracker-windows">Tracker Windows</h2>
+<p>Tracker windows are a convenient way to inspect the most important properties of a class / object. Each tracker window is basically a watch window instance. It's the only window type that can be closed.</p>
+<p>A <em>tracker profile</em> defines the properties that should be watched for a specific class. Let's take a look at the pre-defined tracker profile for <code>FlxSprite</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">TrackerProfile</span><span class="mtk1">(</span><span class="mtk11">FlxSprite</span><span class="mtk1">, [</span><span class="mtk9">"frameWidth"</span><span class="mtk1">, </span><span class="mtk9">"frameHeight"</span><span class="mtk1">, </span><span class="mtk9">"alpha"</span><span class="mtk1">, </span><span class="mtk9">"origin"</span><span class="mtk1">, </span><span class="mtk9">"offset"</span><span class="mtk1">, </span><span class="mtk9">"scale"</span><span class="mtk1">], [</span><span class="mtk11">FlxObject</span><span class="mtk1">])</span>
+</pre>
+<p>The first argument determines the class the profile belongs to, the second is an <code>Array&lt;String&gt;</code> containing the property names. The third argument is a list of extensions - in this case just <code>FlxObject</code>. This means that the properties defined in the tracker profile of <code>FlxObject</code> will be added to tracker windows for <code>FlxSprite</code> as well. This works recursively - <code>FlxObject</code> "extends" the <code>FlxBasic</code> tracker profile, so any properties of that profile will be added as well. This is why <code>FlxG.debugger.track(_player)</code> in Mode's <code>PlayState#create()</code> creates a window with a longer list of properties than you'd initially expect from the <code>FlxSprite</code> profile:</p>
+<p><img src="../images/02_handbook/debugger/track-player.png" alt="" /></p>
+<p>Alternatively, you can use the console to create tracker windows at runtime:</p>
+<p><code>track(FlxG.state._player)</code></p>
+<p>The real power of tracker windows comes with the ability to define custom profiles, for example for the <code>Player</code> class in Mode:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">debugger</span><span class="mtk1">.</span><span class="mtk12">addTrackerProfile</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">TrackerProfile</span><span class="mtk1">(</span><span class="mtk11">Player</span><span class="mtk1">, [</span><span class="mtk9">"isReadyToJump"</span><span class="mtk1">, </span><span class="mtk9">"_shootCounter"</span><span class="mtk1">, </span><span class="mtk9">"_jumpPower"</span><span class="mtk1">], [</span><span class="mtk11">FlxBasic</span><span class="mtk1">]));</span>
+</pre>
+<p>(Note: calling <code>addTrackerProfile()</code> causes a crash on the latest haxelib release due to a bug. As a workaround, you can call <code>FlxG.debugger.track(null);</code> beforehand).</p>
+<p><img src="../images/02_handbook/debugger/track-player-custom.png" alt="" /></p>
+<h2 id="the-vcr">The VCR</h2>
+<p>Flixel's VCR feature (recording and replaying via <code>FlxG.vcr</code>) is mostly disabled by default and can be activated with the <code>FLX_RECORD</code> define. Even so, a few features are still available by default via the middle three buttons of the debugger:</p>
+<p><img src="../images/02_handbook/debugger/vcr-disabled.png" alt="" /></p>
+<p>The left button resets the current state via <code>FlxG.resetState()</code>.</p>
+<p>The middle button pauses / unpauses the game.</p>
+<p>The right button pauses the game if it isn't already paused and skips ahead exactly one frame (one <code>update()</code> and one <code>draw()</code> call). This can be very useful for debugging certain issues.</p>
+<p>If <code>FLX_RECORD</code> is defined, two more buttons are available:</p>
+<p><img src="../images/02_handbook/debugger/vcr-enabled.png" alt="" /></p>
+<p>The circle starts a new recording - it also resets the current state, since the VCR does not support recordings that start mid-state. If a recording has already been started, the button stops it and opens a file dialog to save it.</p>
+<p>The button with the folder icon right allows loading record files and replaying them.</p>
+<h2 id="adding-debugger-buttons">Adding Debugger Buttons</h2>
+<p>You can add custom buttons to the debugger header using <code>FlxG.debugger.addButton()</code>. This is what <code>FlxNapeState</code> from flixel-addons does if you use it - it adds a convenient "N" button to toggle Nape's debug draw.</p>
+<p><img src="../images/02_handbook/debugger/nape-button.png" alt="" /></p>
+<p>Debugger buttons are persistent across states - <code>FlxG.debugger.removeButton()</code> has to be called manually to remove state-specific buttons.</p>
+<h2 id="debugger-layouts">Debugger Layouts</h2>
+<p>A debugger layout determines the initial position and size of each debugger window. The available layouts are described in the <a href="http://api.haxeflixel.com/flixel/system/debug/FlxDebuggerLayout.html">FlxDebuggerLayout</a> enum. You can change the current layout by calling <code>FlxG.debugger.setLayout()</code>.</p>
+<p>Here's an example of <code>FlxDebuggerLayout.RIGHT</code>:</p>
+<p><img src="../images/02_handbook/debugger/layout-right.png" alt="" /></p>
+<h2 id="the-interaction-tool">The Interaction Tool</h2>
+<p>The Interaction Tool, enabled by the <img src="../images/02_handbook/debugger/icons/interactive.png" alt="" /> icon in the debugger overlay, allows you to change game elements, e.g. move sprites, while the game is still running. <a href="/documentation/debugger-interaction">Click here</a> to learn more about the interaction tool.</p>
+<p><img src="../images/02_handbook/debugger/interaction-mover-shortcut.gif" alt="" /></p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/troubleshooting">&lt; Troubleshooting</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/debugger-interaction">Debugger - Interaction &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

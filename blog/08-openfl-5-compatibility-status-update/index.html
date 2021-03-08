@@ -1,0 +1,269 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>OpenFL 5 compatibility status update | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li class="active">
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li>
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+
+<div class="container container-main">
+
+<div class="col-md-8">
+
+    <h1 class="title">OpenFL 5 compatibility status update</h1>
+
+    <p class="post-date">May 13, 2017
+
+    </p><p>Hey, Beeblerox here!</p>
+<p>As you may know, HaxeFlixel is currently stuck with outdated versions of OpenFL and Lime due to some rendering incompatibilities, and updating it has turned out to be more work than expected. I want to give you a quick status update regarding my work towards making Flixel compatible with the latest versions of OpenFL again.</p>
+<p><strong>Note:</strong> I've switched to working on a new branch and closed the <a href="https://github.com/HaxeFlixel/flixel/pull/2032">previous pull request</a>. You can follow my progress in the new pull request <a href="https://github.com/HaxeFlixel/flixel/pull/2068">here</a>.</p>
+<h3 id="flxmaterial">FlxMaterial</h3>
+<p>I've added a <code>FlxMaterial</code> class (see <a href="https://github.com/Beeblerox/flixel/blob/939a61d8f5b5e952324cdc5b80a1de3f13952956/flixel/graphics/FlxMaterial.hx">here</a>). Currently, it's just a single render-pass material with multiple textures support. This enables more complex effects like 2D-lighting (by using normal maps generated with tools like <a href="https://www.codeandweb.com/spriteilluminator">SpriteIlluminator</a>). I've updated the <a href="https://github.com/Pixelbear/flixelighting">flixelighting lib</a> by <a href="https://github.com/Pixelbear">Pixelbear</a> to make it work with the new material system on my fork <a href="https://github.com/Beeblerox/flixelighting/tree/FlxMaterial/lighting">here</a>.</p>
+<p>Here is an example of how it can be used right now:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// create regular sprite</span>
+<span class="mtk13">shadedWall</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxSprite</span><span class="mtk1">(</span><span class="mtk8">100</span><span class="mtk1">, </span><span class="mtk8">200</span><span class="mtk1">, </span><span class="mtk9">"assets/rock.png"</span><span class="mtk1">);</span>
+<span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">shadedWall</span><span class="mtk1">);</span>
+<span class="mtk4">// create custom lighting material and apply to our sprite</span>
+<span class="mtk13">lightMaterial</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxLightingMaterial</span><span class="mtk1">();</span>
+<span class="mtk13">teapot</span><span class="mtk1">.</span><span class="mtk13">material</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">lightMaterial</span><span class="mtk1">;</span>
+<span class="mtk4">// tune light material properties</span>
+<span class="mtk13">lightMaterial</span><span class="mtk1">.</span><span class="mtk12">setAmbient</span><span class="mtk1">(</span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">YELLOW</span><span class="mtk1">, </span><span class="mtk8">0.2</span><span class="mtk1">);</span>
+<span class="mtk4">// add light source</span>
+<span class="mtk13">light</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxLight</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0.3</span><span class="mtk1">);</span>
+<span class="mtk13">light</span><span class="mtk1">.</span><span class="mtk13">lightColor</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">WHITE</span><span class="mtk1">;</span>
+<span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">light</span><span class="mtk1">);</span>
+<span class="mtk13">lightMaterial</span><span class="mtk1">.</span><span class="mtk12">addLight</span><span class="mtk1">(</span><span class="mtk13">light</span><span class="mtk1">);</span>
+<span class="mtk4">// and create normal map and apply it to our material</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">normalMap</span><span class="mtk17">:</span><span class="mtk11">FlxNormalMap</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxNormalMap</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk9">"assets/rock_n.png"</span><span class="mtk1">);</span>
+<span class="mtk13">lightMaterial</span><span class="mtk1">.</span><span class="mtk12">addNormalMap</span><span class="mtk1">(</span><span class="mtk13">normalMap</span><span class="mtk1">);</span>
+</pre>
+<p>And here is the result:</p>
+<p><img src="/images/blog/openfl5/lighting.jpg" alt="" /></p>
+<p>Now a few more details about sprite materials.</p>
+<p>Each sprite, tilemap, etc. now has a <code>material:FlxMaterial</code> property. A material stores information about an object's blend mode, smoothing, shader to use, data for the shader (values of shader uniforms) and an array of textures to use. So when you do <code>sprite.blend = BlendMode.ADD;</code>, in reality you change the blend mode <em>of its material</em>.</p>
+<p>By default, objects have materials without shaders (shader is <code>null</code>), which means that the renderer will use default shader and batch this object. If you do set a material's shader property, then the material will create a data object (<code>openfl.display.ShaderData</code>) to store info about shader uniforms which you could set later. Say your shader has a <code>uFill</code> uniform after setting <code>material.shader = myCustomShader</code>, you can set the value of this uniform like this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk13">material</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">uFill</span><span class="mtk1">.</span><span class="mtk13">value</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> [</span><span class="mtk8">0.5</span><span class="mtk1">];</span>
+</pre>
+<p>Setting a material's shader you will break the batch, but if several sprites share the same material, then they will be batched together again.</p>
+<p>The material class also has a <code>batchable:Bool</code> property which is <code>true</code> by default. This means that the renderer will try to batch objects with this material. But in case you have many sprites with different materials and you want them <em>not</em> to be batched (to minimize the amount of data which will be reuploaded to the GPU), you could set it to <code>false</code> to force this behavior (<code>sprite.material.batchable = false;</code>).</p>
+<h3 id="multipass">Multipass</h3>
+<p>For more complex effects which require multi-pass rendering, I've added <code>FlxRenderTarget</code> which extends the <code>FlxSprite</code> class. Basically it's the same as a <code>FlxSprite</code>, but you can render other sprites to its texture through underlying OpenGL calls (not with BitmapData's <code>draw()</code> method). I took the idea from <a href="https://github.com/photonstorm/phaser/blob/master/v3/src/gameobjects/renderpass/RenderPass.js">Phaser's RenderPass object</a>, which has a very simple API. Here is a usage example for it:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// create render target with the size of 256 by 512 pixels</span>
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">renderTexture</span><span class="mtk17">:</span><span class="mtk11">FlxRenderTarget</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxRenderTarget</span><span class="mtk1">(</span><span class="mtk8">256</span><span class="mtk1">, </span><span class="mtk8">512</span><span class="mtk1">);</span>
+<span class="mtk4">// specify camera which will be used for calculation of drawable sprites positions on this render texture.</span>
+<span class="mtk13">renderTexture</span><span class="mtk1">.</span><span class="mtk13">renderCamera</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">camera</span><span class="mtk1">;</span>
+<span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">renderTexture</span><span class="mtk1">);</span>
+<span class="mtk4">// set object's renderTarget, so it will be rendered only on its texture and won't appear on any camera.</span>
+<span class="mtk13">teapot</span><span class="mtk1">.</span><span class="mtk13">renderTarget</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">renderTexture</span><span class="mtk1">;</span>
+<span class="mtk4">// set render pass shader.</span>
+<span class="mtk13">renderTexture</span><span class="mtk1">.</span><span class="mtk13">shader</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">myCustomShader</span><span class="mtk1">;</span>
+</pre>
+<h3 id="camera-buffers">Camera buffers</h3>
+<p>Since the first iteration of the new renderer I've changed a lot of things. The biggest of them is the way objects are rendered to the camera and to the screen. Now, each camera has its own render texture to which all object are rendered, and then this texture is rendered to the screen.</p>
+<p><img src="/images/blog/openfl5/cameraBuffers.jpg" alt="" /></p>
+<p>This way of rendering helps minimize the number of array iterations, and also made it much easier for other features to be implemented (such as the <code>FlxRenderTarget</code> class).</p>
+<h3 id="debug-rendering">Debug rendering</h3>
+<p>I was disappointed by the performance of <code>drawDebug</code> rendering on native targets, so I've redone it and now it uses OpenGL instead of OpenFL's <code>Graphics</code> API.</p>
+<p><img src="/images/blog/openfl5/drawDebug.jpg" alt="" /></p>
+<h3 id="drawtriangles-">drawTriangles()</h3>
+<p>Last weekend I was busy with rewriting the <code>FlxStrip</code> and <code>FlxTrianglesData</code> classes. They are responsible for rendering complex meshes having hundreds of vertices.
+As you may know, <code>FlxStrip</code> is a subclass of <code>FlxSprite</code>. It's only purpose was to call the <code>drawTriangles()</code> method with <code>vertices</code>, <code>uvs</code>, <code>indices</code> and <code>colors</code> arguments specified by the user. Now, it's become much more flexible and easier to use for prototyping. 
+Each <code>FlxStrip</code> object has a <code>data:FlxTrianglesData</code> property which stores information about added vertices. In addition to getters and setters for <code>vertices</code>, <code>indices</code>, etc., it now has utility methods for adding a single vertex and a single triangle:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">data</span><span class="mtk17">:</span><span class="mtk11">FlxTrianglesData</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">mySprite</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">;</span>
+<span class="mtk4">// set vertices info in old way</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">vertices</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">Vector</span><span class="mtk1">.</span><span class="mtk12">ofArray</span><span class="mtk1">([</span><span class="mtk8">0.0</span><span class="mtk1">, </span><span class="mtk8">0.0</span><span class="mtk1">, </span><span class="mtk8">100.0</span><span class="mtk1">, </span><span class="mtk8">0.0</span><span class="mtk1">, </span><span class="mtk8">0.0</span><span class="mtk1">, </span><span class="mtk8">100.0</span><span class="mtk1">]);</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">colors</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">Vector</span><span class="mtk1">.</span><span class="mtk12">ofArray</span><span class="mtk1">([</span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">RED</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">GREEN</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">BLUE</span><span class="mtk1">]);</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">indices</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">Vector</span><span class="mtk1">.</span><span class="mtk12">ofArray</span><span class="mtk1">([</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">1</span><span class="mtk1">, </span><span class="mtk8">2</span><span class="mtk1">]);</span>
+<span class="mtk4">// and you can add it new way</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk12">start</span><span class="mtk1">();</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk12">addVertex</span><span class="mtk1">(</span><span class="mtk8">200</span><span class="mtk1">, </span><span class="mtk8">300</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">RED</span><span class="mtk1">);</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk12">addVertex</span><span class="mtk1">(</span><span class="mtk8">300</span><span class="mtk1">, </span><span class="mtk8">300</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">GREEN</span><span class="mtk1">);</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk12">addVertex</span><span class="mtk1">(</span><span class="mtk8">200</span><span class="mtk1">, </span><span class="mtk8">400</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk11">FlxColor</span><span class="mtk1">.</span><span class="mtk13">BLUE</span><span class="mtk1">);</span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk12">addTriangle</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk8">1</span><span class="mtk1">, </span><span class="mtk8">2</span><span class="mtk1">);</span>
+
+<span class="mtk4">// plus you can change data of individual vertex </span>
+<span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk12">setVertex</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk13">newX</span><span class="mtk1">, </span><span class="mtk13">newY</span><span class="mtk1">, </span><span class="mtk8">0.0</span><span class="mtk1">, </span><span class="mtk8">0.0</span><span class="mtk1">, </span><span class="mtk13">newColor</span><span class="mtk1">);</span>
+</pre>
+<p>This new API allows to minimize the iterations through inner data arrays which will be uploaded to GPU, which should result in a noticeable performance improvement.
+I also borrowed HaxePunk's code for GPU-accelerated rendering of graphics primitives (<a href="https://github.com/MattTuttle/HaxePunk/blob/draw-hardware/haxepunk/utils/Draw.hx"><code>Draw</code> class</a>) and adapted it to Flixel, so there is new <code>FlxDraw</code> class for rendering lines, rectangle, circles, polygons and curves.</p>
+<p><img src="/images/blog/openfl5/drawTriangles.png" alt="" /></p>
+<h3 id="next-steps">Next steps</h3>
+<p>Next, I'll start updating the flixel-addons classes and demos. Meanwhile, I'd be happy about any feedback you have for me - please post it in the <a href="https://github.com/HaxeFlixel/flixel/pull/2068">OpenFL 5 compatibility pull request</a>!</p>
+
+
+    <br />
+    <hr />
+    <br />
+
+    <div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = 'haxeflixel';
+		window.disqus_developer = '1';
+		window.disqus_url = 'https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update';
+		window.disqus_identifier = 'blog-08-openfl-5-compatibility-status-update';
+		window.disqus_title = 'OpenFL 5 compatibility status update';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

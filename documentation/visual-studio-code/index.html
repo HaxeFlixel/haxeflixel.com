@@ -1,0 +1,323 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Visual Studio Code | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/getting-started&quot;">
+				<a href="/documentation/getting-started"> Getting Started </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/install-haxeflixel&quot;">
+				<a href="/documentation/install-haxeflixel"> Install HaxeFlixel </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/hello-world&quot;">
+				<a href="/documentation/hello-world"> Hello World </a>
+			</li>
+		
+			<li class="active" about="/documentation/visual-studio-code">
+				<a href="/documentation/visual-studio-code"> Visual Studio Code </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/HaxeDevelop&quot;">
+				<a href="/documentation/HaxeDevelop"> HaxeDevelop </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/where-to-now&quot;">
+				<a href="/documentation/where-to-now"> Where to now? </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">Visual Studio Code</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/00_getting_started/03-visual-studio-code.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p><a href="https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack"><img src="../images/00_getting_started/vscode/vscode-plus-extensions.png" alt="" /></a></p>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> is an open-source, cross-platform, lightweight code editor by Microsoft. The <a href="https://marketplace.visualstudio.com/items?itemName=nadako.vshaxe">Haxe extension</a> seamlessly integrates with the compiler's <a href="https://haxe.org/manual/cr-completion.html">IDE services</a> and uses them for:</p>
+<ul>
+<li>Code Completion</li>
+<li>Go to Definition</li>
+<li>Go to Symbol</li>
+<li>Find Usages</li>
+<li>Finding Unused Imports</li>
+<li>etc...</li>
+</ul>
+<p>You can find detailed documentation for the Haxe extension in the <a href="https://github.com/vshaxe/vshaxe/wiki">Wiki</a>, this page focuses on the Flixel-specific parts.</p>
+<h3 id="installation">Installation</h3>
+<ul>
+<li>Download and install the latest version of <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
+<li><p>Go to the Extensions tab and install the <a href="https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension">Lime extension</a>. This automatically installs the Haxe extension as well.</p>
+<p>  <img src="../images/00_getting_started/vscode/lime-installation.png" alt="" /></p>
+</li>
+</ul>
+<h3 id="project-configuration">Project Configuration</h3>
+<p>VSCode stores its project-specific settings in a <code>.vscode</code> subfolder - <a href="http://haxeflixel.com/documentation/flixel-tools/">flixel-tools</a> can create one with sensible defaults for Flixel projects. Just select VSCode as your preferred editor during the <code>setup</code> command, or add <code>-ide vscode</code> to the command you're running.</p>
+<p><strong>Note:</strong> make sure you have the latest versions of flixel-tools and flixel-templates:</p>
+<pre><code>haxelib update flixel-tools
+haxelib update flixel-templates
+</code></pre><p>You have several options for creating projects with a <code>.vscode</code> configuration:</p>
+<ol>
+<li><p>Create a new, empty project:</p>
+<pre><code> flixel template -n "VSCodeTest" -ide vscode
+</code></pre></li>
+<li><p>Create a new project based on one of the <a href="/demos">demos</a>:</p>
+<pre><code> flixel create -ide vscode
+</code></pre></li>
+<li><p>Add the <code>.vscode</code> folder to a project that already exists, for instance the current working directory:</p>
+<pre><code> flixel configure . -ide vscode
+</code></pre></li>
+<li><p>Add VSCode config files to an entire directory of projects, like flixel-demos:</p>
+<pre><code> flixel configure C:\HaxeToolkit\haxe\lib\flixel-demos\git -ide vscode
+</code></pre></li>
+</ol>
+<h3 id="code-completion">Code Completion</h3>
+<p>Once you've installed the Lime extension and have a project with a <code>.vscode</code> folder, just open it with <code>File</code> -&gt; <code>Open Folder</code>. If the workspace was correctly detected as a Lime project (needs a <code>Project.xml</code> file), you should notice these dropdown menus appearing in the status bar:</p>
+<p><img src="../images/00_getting_started/vscode/lime-dropdowns.png" alt="" /></p>
+<p>Code completion features should work out of the box now:</p>
+<p><img src="../images/00_getting_started/vscode/completion.png" alt="" /></p>
+<p>If you're having trouble, please refer to the Haxe extension's <a href="https://github.com/vshaxe/vshaxe/wiki/Troubleshooting">Troubleshooting guide</a>.</p>
+<h3 id="building">Building</h3>
+<p>Building and running your projects in VSCode is done through <em>tasks</em>. You can view the list of available tasks via <code>Tasks</code> -&gt; <code>Run Task...</code>:</p>
+<p><img src="../images/00_getting_started/vscode/tasks.png" alt="" /></p>
+<p>To build and run your project, select the <code>lime: test</code> task. With Flixel's template, this is configured as the default build task, so you can also invoke it directly via <code>Tasks</code> -&gt; <code>Run Build Task...</code> or by pressing <code>Ctrl+Shift+B</code>:</p>
+<p><img src="../images/00_getting_started/vscode/run-build-task.png" alt="" /></p>
+<p>You may want to assign a shortcut to <code>Run Task...</code> or change the shortcut for <code>Run Build Task...</code> to something more convenient such as <code>F5</code>. You can do so in <code>File</code> -&gt; <code>Preferences</code> -&gt; <code>Keyboard Shortcuts</code>.</p>
+<p>Finally, you can change the current configuration (combination of target and Debug/Release/Final) by using the dropdown menu in the status bar:</p>
+<p><img src="../images/00_getting_started/vscode/change-config.gif" alt="" /></p>
+<h3 id="compiler-errors-problems-view">Compiler Errors / Problems View</h3>
+<p>By default, compiler errors and warnings are shown in the <em>Terminal</em> view at the bottom of the screen. You can navigate to the source of the error via <code>Ctrl</code>+<code>Click</code> on the file path:</p>
+<p><img src="../images/00_getting_started/vscode/terminal.png" alt="" /></p>
+<p>Alternatively, you can switch to the <em>Problems</em> tab which has a nicer presentation. It shows errors / warnings from compilation as well as diagnostics that are updated each time you save a file:</p>
+<p><img src="../images/00_getting_started/vscode/problems.png" alt="" /></p>
+<h3 id="debugging">Debugging</h3>
+<p>The <code>.vscode</code> template from flixel-tools already includes the <code>launch.json</code> needed for debugging. The Lime "Build + Debug" / "Debug" launch configurations support debugging with the following targets / extensions:</p>
+<ul>
+<li>Windows/Linux/Mac via <a href="https://marketplace.visualstudio.com/items?itemName=vshaxe.hxcpp-debugger">HXCPP Debugger</a></li>
+<li>HTML5 via <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome">Debugger for Chrome</a></li>
+<li>Flash via <a href="https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-debug">Flash Debugger</a></li>
+</ul>
+<p>Simply "Start Debugging" with the "Build + Debug" launch configuration (make sure the "Debug" configuration for the target you want to debug is selected in the status bar). This first builds the project and then starts the debugger.</p>
+<p><img src="../images/00_getting_started/vscode/launch-configs.png" alt="" /></p>
+<p>Here's what it should look like when you hit a breakpoint:</p>
+<p><img src="../images/00_getting_started/vscode/flash-debugging.png" style="width:100%;" /></p>
+<p>There is also a Macro launch configuration for debugging <a href="https://haxe.org/manual/macro.html">Haxe Macros</a>.</p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/hello-world">&lt; Hello World</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/HaxeDevelop">HaxeDevelop &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>13 - Multiple Platforms | HaxeFlixel 2D Game Engine</title>
+
+	<meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
+	<meta name="keywords" content="gamedev, game development, cross-platform, haxe, flixel" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!--[if lt IE 9]>
+	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+
+<body>
+
+<header>
+	<nav>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar">
+						<span class="icon-bar">
+						<span class="icon-bar">
+					</span></span></span></button>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+
+				<div class="navbar-collapse collapse">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+							<ul class="dropdown-menu inverse-dropdown">
+							  <li><a href="/demos">Demos</a></li>
+							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/showcase">Showcase</a>
+						</li>
+
+						<li>
+							<a href="/blog">Blog</a>
+						</li>
+
+						<li class="active">
+							<a href="/documentation">Docs</a>
+						</li>
+
+						<li>
+							<a href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						<li>
+							<a href="http://forum.haxeflixel.com/">Forum</a>
+						</li>
+
+					</ul>
+		
+					<form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+    <div class="form-group">
+        <input type="search" name="q" class="form-control" placeholder="Search" />
+        <input type="hidden" name="q" value="site:http://haxeflixel.com" />
+    </div>
+</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</nav>
+</header>
+
+<div class="container container-main">
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="doc-nav affix">
+				<ul class="nav">
+
+
+
+	<li>
+		<h4><a href="/documentation/getting-started">Getting Started</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/tutorial">Tutorial</a></h4><h4>
+	</h4></li>
+
+	
+		
+			<li class="about=&quot;/documentation/tutorial&quot;">
+				<a href="/documentation/tutorial"> Tutorial </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/the-power-of-haxeflixel&quot;">
+				<a href="/documentation/the-power-of-haxeflixel"> The Power of HaxeFlixel </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/setup&quot;">
+				<a href="/documentation/setup"> 1 - Setup </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-new-project&quot;">
+				<a href="/documentation/creating-a-new-project"> 2 - Creating a new project </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/groundwork&quot;">
+				<a href="/documentation/groundwork"> 3 - Groundwork </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sprites-and-animation&quot;">
+				<a href="/documentation/sprites-and-animation"> 4 - Sprites and Animation </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/creating-a-tilemap&quot;">
+				<a href="/documentation/creating-a-tilemap"> 5 - Creating a Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/loading-the-tilemap&quot;">
+				<a href="/documentation/loading-the-tilemap"> 6 - Loading the Tilemap </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/zoom-and-cameras&quot;">
+				<a href="/documentation/zoom-and-cameras"> 7 - Zoom and Cameras </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/pickups&quot;">
+				<a href="/documentation/pickups"> 8 - Pickups </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/enemies-and-basic-ai&quot;">
+				<a href="/documentation/enemies-and-basic-ai"> 9 - Enemies and Basic AI </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/ui-and-combat&quot;">
+				<a href="/documentation/ui-and-combat"> 10 - UI and Combat </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/game-over-menu&quot;">
+				<a href="/documentation/game-over-menu"> 11 - Game Over Menu </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/sound-and-music&quot;">
+				<a href="/documentation/sound-and-music"> 12 - Sound and Music </a>
+			</li>
+		
+			<li class="active" about="/documentation/multiple-platforms">
+				<a href="/documentation/multiple-platforms"> 13 - Multiple Platforms </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/polish&quot;">
+				<a href="/documentation/polish"> 14 - Polish </a>
+			</li>
+		
+			<li class="about=&quot;/documentation/conclusion&quot;">
+				<a href="/documentation/conclusion"> Conclusion </a>
+			</li>
+		
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/haxeflixel-handbook">HaxeFlixel Handbook</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/resources">Resources</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+	<li>
+		<h4><a href="/documentation/community">Community</a></h4><h4>
+	</h4></li>
+
+	
+
+
+
+</ul>
+			</div>
+		</div>
+
+		<div class="col-md-9 doc-content" role="main">
+			<h1 class="title">13 - Multiple Platforms</h1>
+
+			
+			<a href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_tutorial/14-13-multiple-platforms.html.md" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+
+			<p>One of the big advantages of using HaxeFlixel is the ability to build your games for multiple platforms. You can build a working HTML5, Windows, Linux, Mac, Android and iOS game - all from the same code! So far, we've been working with HTML5, and, for the most part, you don't have to do too much to get your game working on other platforms - if you test it under Windows right now, it should mostly work just fine (although, without music, which we'll discuss later). However, you might run into some issues if you try to build it for a mobile device - at the very least, you won't be able to play it without a keyboard. We'll focus on Windows and Android in this tutorial and add a few things to make them work better on those platforms.</p>
+<p>HaxeFlixel comes equipped with a powerful feature called <em>conditionals</em>. By adding some <a href="/documentation/haxeflixel-conditionals">conditionals</a> to your code, you can make it so that only certain pieces of code will be compiled depending on the conditionals you use. For example, if you are building for Android, which would probably not have a mouse, you could setup a conditional to skip over all mouse-related code. Alternately, you might also add some code to deal with touches, which would only work on mobile platforms, so you would make sure to wrap that logic in conditionals so that it doesn't try to build on Windows or HTML5.</p>
+<p>It's not all that complicated. We'll start with something simple: adding the ability to toggle fullscreen mode on Windows.</p>
+<p>Let's add a button to the <code>OptionsState</code>:</p>
+<ol>
+<li><p>When we initialize and interact with our button, we only want to do it on <code>desktop</code> platforms. So, at the top of the class, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if desktop</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">fullscreenButton</span><span class="mtk17">:</span><span class="mtk11">FlxButton</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+</li>
+<li><p>In <code>create()</code>, somewhere after we add our <code>volumeBar</code> object, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if desktop</span>
+<span class="mtk1"> </span><span class="mtk13">fullscreenButton</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxButton</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">, </span><span class="mtk13">volumeBar</span><span class="mtk1">.</span><span class="mtk13">y</span><span class="mtk1"> </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk13">volumeBar</span><span class="mtk1">.</span><span class="mtk13">height</span><span class="mtk1"> </span><span class="mtk17">+</span><span class="mtk1"> </span><span class="mtk8">8</span><span class="mtk1">, </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1"> </span><span class="mtk17">?</span><span class="mtk1"> </span><span class="mtk9">"FULLSCREEN"</span><span class="mtk1"> </span><span class="mtk17">:</span><span class="mtk1"> </span><span class="mtk9">"WINDOWED"</span><span class="mtk1">, </span><span class="mtk13">clickFullscreen</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk13">fullscreenButton</span><span class="mtk1">.</span><span class="mtk12">screenCenter</span><span class="mtk1">(</span><span class="mtk13">X</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">fullscreenButton</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+</li>
+<li><p>Then we need to add our callback function for that button:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if desktop</span>
+<span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">clickFullscreen</span><span class="mtk1">()</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk17">!</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1">;</span>
+<span class="mtk1">     </span><span class="mtk13">fullscreenButton</span><span class="mtk1">.</span><span class="mtk13">text</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1"> </span><span class="mtk17">?</span><span class="mtk1"> </span><span class="mtk9">"FULLSCREEN"</span><span class="mtk1"> </span><span class="mtk17">:</span><span class="mtk1"> </span><span class="mtk9">"WINDOWED"</span><span class="mtk1">;</span>
+<span class="mtk1">     </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1">;</span>
+<span class="mtk1"> }</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+<p> Yes, we wrap the entire function in our conditional - if we're not building for <code>desktop</code>, this function will not exist. You'll also notice that we are saving the value of <code>FlxG.fullscreen</code> - this will be used to 'remember' the game's screen state when they next launch the game.</p>
+</li>
+<li><p>Next, let's change around our <code>Main.hx</code> so that when the game starts it will launch into whatever state the game was last in - fullscreen or not. We need to move things around a little, since we need to find out if we're going into fullscreen or not BEFORE we call <code>new FlxGame()</code>, but we need to set the volume AFTER, so <code>new()</code> should look like this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">startFullscreen</span><span class="mtk17">:</span><span class="mtk11">Bool</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk17">:</span><span class="mtk11">FlxSave</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxSave</span><span class="mtk1">();</span>
+<span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk12">bind</span><span class="mtk1">(</span><span class="mtk9">"TurnBasedRPG"</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk18">#if desktop</span>
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1"> </span><span class="mtk17">!=</span><span class="mtk1"> </span><span class="mtk5">null</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk13">startFullscreen</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">fullscreen</span><span class="mtk1">;</span>
+<span class="mtk1"> }</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+
+<span class="mtk1"> </span><span class="mtk5">super</span><span class="mtk1">();</span>
+<span class="mtk1"> </span><span class="mtk12">addChild</span><span class="mtk1">(</span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxGame</span><span class="mtk1">(</span><span class="mtk8">320</span><span class="mtk1">, </span><span class="mtk8">240</span><span class="mtk1">, </span><span class="mtk11">MenuState</span><span class="mtk1">, </span><span class="mtk8">1</span><span class="mtk1">, </span><span class="mtk8">60</span><span class="mtk1">, </span><span class="mtk8">60</span><span class="mtk1">, </span><span class="mtk5">false</span><span class="mtk1">, </span><span class="mtk13">startFullscreen</span><span class="mtk1">));</span>
+
+<span class="mtk1"> </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">volume</span><span class="mtk1"> </span><span class="mtk17">!=</span><span class="mtk1"> </span><span class="mtk5">null</span><span class="mtk1">)</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">sound</span><span class="mtk1">.</span><span class="mtk13">volume</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk13">data</span><span class="mtk1">.</span><span class="mtk13">volume</span><span class="mtk1">;</span>
+<span class="mtk1"> }</span>
+<span class="mtk1"> </span><span class="mtk13">save</span><span class="mtk1">.</span><span class="mtk12">close</span><span class="mtk1">();</span>
+</pre>
+</li>
+<li><p>Next, we need to give players a way to exit the game if they're in fullscreen mode - since they won't easily have access to the close-button anymore.
+We do that by adding a new button to the <code>MenuState</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if desktop</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">exitButton</span><span class="mtk17">:</span><span class="mtk11">FlxButton</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+<p> And in <code>create()</code>:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if desktop</span>
+<span class="mtk1"> </span><span class="mtk13">exitButton</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxButton</span><span class="mtk1">(</span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">width</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk1"> </span><span class="mtk8">28</span><span class="mtk1">, </span><span class="mtk8">8</span><span class="mtk1">, </span><span class="mtk9">"X"</span><span class="mtk1">, </span><span class="mtk13">clickExit</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk13">exitButton</span><span class="mtk1">.</span><span class="mtk12">loadGraphic</span><span class="mtk1">(</span><span class="mtk11">AssetPaths</span><span class="mtk1">.</span><span class="mtk13">button__png</span><span class="mtk1">, </span><span class="mtk5">true</span><span class="mtk1">, </span><span class="mtk8">20</span><span class="mtk1">, </span><span class="mtk8">20</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">exitButton</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+<p> Then our callback function just looks like:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if desktop</span>
+<span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">clickExit</span><span class="mtk1">()</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk11">Sys</span><span class="mtk1">.</span><span class="mtk12">exit</span><span class="mtk1">(</span><span class="mtk8">0</span><span class="mtk1">);</span>
+<span class="mtk1"> }</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+</li>
+</ol>
+<p>There you go! Now try it out on both HTML5 and Windows targets and notice the differences - you can't go fullscreen in HTML5, and you can in Windows. You also get the button to exit the game on the MenuState while on Windows.</p>
+<p>To make our game work with Android, we have to make a few more changes. First, we need to make sure that our <code>Project.xml</code> is setup correctly so that our settings are right for Android.</p>
+<ol>
+<li><p>In your app tag, at the very top of the file, add this attribute:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> package="com.haxeflixel.turnBasedRPG"</span>
+</pre>
+<p> This will give your app a package name to be used on the Android device - it's best to be as unique as possible.</p>
+</li>
+<li><p>You might be wondering how we're going to allow the user to move around in our game on a device without the keyboard or mouse. Well, HaxeFlixel comes with a <code>FlxVirtualPad</code> class which we can use to accept touch input from the user and translate it into movement. Head over to <code>PlayState.hx</code>:</p>
+<p> Define:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if mobile</span>
+<span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">static</span><span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk17">:</span><span class="mtk11">FlxVirtualPad</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+<p> Create and add (in create):</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if mobile</span>
+<span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxVirtualPad</span><span class="mtk1">(</span><span class="mtk13">FULL</span><span class="mtk1">, </span><span class="mtk13">NONE</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">virtualPad</span><span class="mtk1">);</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+</li>
+<li><p>Since the player can't move while they're in combat, we're going to remove the distraction of our virtual pad while combat is happening. In the <code>startCombat()</code> function, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if mobile</span>
+<span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1">.</span><span class="mtk13">visible</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">false</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+<p> And, to make it reappear, in <code>update()</code>, somewhere around where we set <code>inCombat</code> to <code>false</code>, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if mobile</span>
+<span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1">.</span><span class="mtk13">visible</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">true</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+</li>
+<li><p>The only place where we actually check for button presses is in our <code>Player</code> class, in the <code>updateMovement()</code> function. We currently have a section of code that is setting different  gs to true based on keyboard input - but since the keyboard might be disabled on some platforms, we need to change that to look like this:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if FLX_KEYBOARD</span>
+<span class="mtk1"> </span><span class="mtk13">up</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">UP</span><span class="mtk1">, </span><span class="mtk13">W</span><span class="mtk1">]);</span>
+<span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">DOWN</span><span class="mtk1">, </span><span class="mtk13">S</span><span class="mtk1">]);</span>
+<span class="mtk1"> </span><span class="mtk13">left</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">LEFT</span><span class="mtk1">, </span><span class="mtk13">A</span><span class="mtk1">]);</span>
+<span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">keys</span><span class="mtk1">.</span><span class="mtk12">anyPressed</span><span class="mtk1">([</span><span class="mtk13">RIGHT</span><span class="mtk1">, </span><span class="mtk13">D</span><span class="mtk1">]);</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+</li>
+<li><p>Right after that logic, we'll add our logic that checks each of the buttons of our virtual pad to see which ones are pressed:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if mobile</span>
+<span class="mtk1"> </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk11">PlayState</span><span class="mtk1">.</span><span class="mtk13">virtualPad</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">up</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">up</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1">.</span><span class="mtk13">buttonUp</span><span class="mtk1">.</span><span class="mtk13">pressed</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">down</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1">.</span><span class="mtk13">buttonDown</span><span class="mtk1">.</span><span class="mtk13">pressed</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">left</span><span class="mtk1">  </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">left</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1">.</span><span class="mtk13">buttonLeft</span><span class="mtk1">.</span><span class="mtk13">pressed</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">right</span><span class="mtk1"> </span><span class="mtk17">||</span><span class="mtk1"> </span><span class="mtk13">virtualPad</span><span class="mtk1">.</span><span class="mtk13">buttonRight</span><span class="mtk1">.</span><span class="mtk13">pressed</span><span class="mtk1">;</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+<p> Because of the way we've structured our movement logic, we don't need to make any other changes! Getting <code>up</code> set to true via keyboard or our virtual pad will do the same thing.</p>
+</li>
+<li><p>Things are a little different for our combat screen. We could setup the virtual pad to work with our combat menu, but that would feel a little clunky, given that the user has the power to tap on whatever they want on the screen. Instead, we're going to utilize touches to figure out what the player wants to do.</p>
+<p> This means, in our update function, we need to wrap everything that's currently inside <code>updateKeyboardInput()</code> with:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk18">#if FLX_KEYBOARD</span>
+<span class="mtk1"> </span><span class="mtk17">...</span>
+<span class="mtk1"> </span><span class="mtk18">#end</span>
+</pre>
+</li>
+<li><p>Inside of our <code>if (!wait)</code> statement, add:</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk12">updateTouchInput</span><span class="mtk1">();</span>
+</pre>
+<p> And </p>
+<pre xmlns="" class="highlighted">
+<span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">updateTouchInput</span><span class="mtk1">()</span>
+<span class="mtk1"> {</span>
+<span class="mtk1">     </span><span class="mtk18">#if FLX_TOUCH</span>
+<span class="mtk1">     </span><span class="mtk16">for</span><span class="mtk1"> (</span><span class="mtk13">touch</span><span class="mtk1"> </span><span class="mtk5">in</span><span class="mtk1"> </span><span class="mtk11">FlxG</span><span class="mtk1">.</span><span class="mtk13">touches</span><span class="mtk1">.</span><span class="mtk12">justReleased</span><span class="mtk1">())</span>
+<span class="mtk1">     {</span>
+<span class="mtk1">         </span><span class="mtk16">for</span><span class="mtk1"> (</span><span class="mtk13">choice</span><span class="mtk1"> </span><span class="mtk5">in</span><span class="mtk1"> </span><span class="mtk13">choices</span><span class="mtk1">.</span><span class="mtk12">keys</span><span class="mtk1">())</span>
+<span class="mtk1">         {</span>
+<span class="mtk1">             </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">text</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">choices</span><span class="mtk1">[</span><span class="mtk13">choice</span><span class="mtk1">];</span>
+<span class="mtk1">             </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk13">touch</span><span class="mtk1">.</span><span class="mtk12">overlaps</span><span class="mtk1">(</span><span class="mtk13">text</span><span class="mtk1">))</span>
+<span class="mtk1">             {</span>
+<span class="mtk1">                 </span><span class="mtk13">selectSound</span><span class="mtk1">.</span><span class="mtk12">play</span><span class="mtk1">();</span>
+<span class="mtk1">                 </span><span class="mtk13">selected</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk13">choice</span><span class="mtk1">;</span>
+<span class="mtk1">                 </span><span class="mtk12">movePointer</span><span class="mtk1">();</span>
+<span class="mtk1">                 </span><span class="mtk12">makeChoice</span><span class="mtk1">();</span>
+<span class="mtk1">                 </span><span class="mtk16">return</span><span class="mtk1">;</span>
+<span class="mtk1">             }</span>
+<span class="mtk1">         }</span>
+<span class="mtk1">     }</span>
+<span class="mtk1">     </span><span class="mtk18">#end</span>
+<span class="mtk1"> }</span>
+</pre>
+<p> What this does is gets a list of all the touches that were just released this update and checks them one at a time to see if any were on top of one of our choices texts. If one of them is, we play our select sound, and act on the selection - ignoring any other touches that might have happened this update.</p>
+</li>
+</ol>
+<p>And that's everything! You should be able to run your game on HTML5, Windows (Neko, too!), and Android and have it work on each with slight variations. And you only have one project and one codebase!</p>
+<p>Next we'll polish up our game and add a little juice to make it POP!</p>
+
+
+			<br />
+			<hr />
+
+			<ul class="pager">
+				
+
+				<li class="previous">
+					<a href="/documentation/sound-and-music">&lt; 12 - Sound and Music</a>
+				</li>
+				
+
+
+				
+				<li class="next">
+					<a href="/documentation/polish">14 - Polish &gt;</a>
+				</li>
+				
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="footer-main">
+		<div class=" container">
+
+			<div class="footer-social">
+
+				<iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+
+				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a>
+
+				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="Patreon" title="Support us on Patreon">
+					<img src="/images/patreon-logo-small.svg" alt="Haxeflixel Patreon" title="Patreon" />
+				</a>
+
+				<script>!function (d, s, id)
+				{
+					var js, fjs = d.getElementsByTagName (s)[0];
+					if (!d.getElementById (id))
+					{
+						js = d.createElement (s);
+						js.id = id;
+						js.src = "//platform.twitter.com/widgets.js";
+						fjs.parentNode.insertBefore (js, fjs);
+					}
+				} (document, "script", "twitter-wjs");</script>
+
+			</div>
+
+			<div class="footer-powered-by">
+				<p>HaxeFlixel is powered by</p>
+				<a href="http://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				+
+				<a href="http://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				+
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-35511281-1');
+ga('send', 'pageview');</script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/dropdown.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/transition.js"></script><script defer="defer" src="/vendor/twitter-bootstrap-3/js/collapse.js"></script>
+
+
+
+
+</body></html>
