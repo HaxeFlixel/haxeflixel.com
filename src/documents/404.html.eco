@@ -11,7 +11,7 @@ layout: 404-layout
 <p>It might have been removed, lost or never existed.
 You could try and find it using <a href="https://google.com/search?q=site%3A<%= @site.url %> ">search</a>
 
-<p>Otherwise ask on our <a href="http://forum.haxeflixel.com/">forums</a></p>
+<p>Otherwise ask on our <a href="https://github.com/HaxeFlixel/flixel/discussions">forums</a></p>
 
 </div>
 </div>

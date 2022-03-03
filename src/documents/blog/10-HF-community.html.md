@@ -10,9 +10,9 @@ So you've [downloaded Flixel](http://haxeflixel.com/documentation/getting-starte
 
 There are a number of places where you'll find fellow Flixel-ers. It's really up to you where you want to hang. Here are some of the popular destinations:
 
-### [Forums](http://forum.haxeflixel.com/)
+### [Forums](https://github.com/HaxeFlixel/flixel/discussions)
 
-If you're new and having a bit of trouble getting into things, [the forums](http://forum.haxeflixel.com/) are a great place to start. Not only will any of your [questions](http://forum.haxeflixel.com/category/4/help) be answered, but you also have a nice place to [start posting](http://forum.haxeflixel.com/category/3/dev-logs) about what you're working on. Get some eyeballs on your cool new content and see what others are up to.
+If you're new and having a bit of trouble getting into things, [the forums](https://github.com/HaxeFlixel/flixel/discussions) are a great place to start. Not only will any of your questions be answered, but you also have a nice place to start posting about what you're working on. Get some eyeballs on your cool new content and see what others are up to.
 
 <img src="/images/blog/10_community/forums.png" width="100%" />
 

@@ -42,7 +42,7 @@
 						</li>
 
 						<li <%= @aforum %>>
-							<a href="http://forum.haxeflixel.com/">Forum</a>
+							<a href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
 						</li>
 
 					</ul>
