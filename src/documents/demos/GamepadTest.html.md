@@ -1,8 +1,8 @@
 ```
 title: "GamepadTest"
 layout: demo
-width: 650
-height: 440
+width: 720
+height: 540
 source: "Input/GamepadTest"
 targets: ['flash', 'html5']
 ```
