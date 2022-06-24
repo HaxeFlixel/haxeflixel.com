@@ -22,14 +22,14 @@ function runShell() {
 
 function runBuildImage() {
     removeBuildImage()
-    var containerID = execSync(`docker run --name="${BUILD_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`).toString().replace('\n', '')
+    var containerID = execSync(`docker run -d --name="${BUILD_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`).toString().replace('\n', '')
     console.log(`Created container ${BUILD_CONTAINER_NAME} ${containerID}`)
     return containerID
 }
 
 function buildSite() {
     execSync('rm -rf ./out')
-    execSync(`docker run --name="${BUILD_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`).toString().replace('\n', '')
+    removeBuildImage()
     execSync(`docker exec ${BUILD_CONTAINER_NAME} bash -c "npm run build"`, {stdio: [0, 1, 2]})
     execSync(`docker cp ${BUILD_CONTAINER_NAME}:/usr/src/app/out ./out`)
     // copy the images from the docs repo manually :(
