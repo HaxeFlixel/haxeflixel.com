@@ -1,10 +1,6 @@
-FROM nodesource/sid:4.4.7
+FROM node:16-alpine3.15
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 && apt-get update && apt-get install git imagemagick -y apt-transport-https --allow-unauthenticated
-
-ADD package.json package.json
+COPY package.json ./
 RUN npm install
-
-ADD . .
-
+COPY . ./
 EXPOSE 9778
