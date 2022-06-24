@@ -22,7 +22,7 @@ function runShell() {
 
 function runBuildImage() {
     removeBuildImage()
-    var containerID = execSync(`docker run -d --name="${BUILD_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`).toString().replace('\n', '')
+    var containerID = execSync(`docker run --name="${BUILD_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`).toString().replace('\n', '')
     console.log(`Created container ${BUILD_CONTAINER_NAME} ${containerID}`)
     return containerID
 }
