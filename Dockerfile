@@ -1,6 +1,6 @@
-FROM nodesource/sid:4.4.7
+FROM starefossen/node-imagemagick:4-6
 
-RUN apt-get update && apt-get install git imagemagick -y --allow-unauthenticated
+WORKDIR /app
 
 COPY package.json ./
 
