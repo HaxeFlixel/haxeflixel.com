@@ -1,6 +1,6 @@
 FROM starefossen/node-imagemagick:4-6
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 COPY package.json ./
 
