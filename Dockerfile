@@ -1,10 +1,11 @@
-FROM nodesource/sid:4.4.7
+FROM starefossen/node-imagemagick:4-6
 
-RUN apt-get update && apt-get install git imagemagick -y --allow-unauthenticated
+WORKDIR /usr/src/app
 
-ADD package.json package.json
-RUN npm install
+COPY package.json ./
 
-ADD . .
+RUN npm i
+
+COPY . .
 
 EXPOSE 9778

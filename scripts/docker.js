@@ -22,7 +22,7 @@ function runShell() {
 
 function runBuildImage() {
     removeBuildImage()
-    var containerID = execSync(`docker run --name="${BUILD_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`).toString().replace('\n', '')
+    var containerID = execSync(`docker run --name="${BUILD_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`)
     console.log(`Created container ${BUILD_CONTAINER_NAME} ${containerID}`)
     return containerID
 }
@@ -39,8 +39,8 @@ function buildSite() {
 
 function watchSite() {
     execSync(`docker rm -f ${WATCH_CONTAINER_NAME} &> /dev/null || true`)
-    var containerID = execSync(`docker run -p 9778 --name="${WATCH_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`).toString().replace('\n', '')
-    var ip = execSync(`docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${containerID}`).toString().replace('\n', '')
+    var containerID = execSync(`docker run -p 9778 --name="${WATCH_CONTAINER_NAME}" -dti ${IMAGE_NAME} bash`)
+    var ip = execSync(`docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${containerID}`)
     console.log(`Docpad site running on:${ip}:9778`)
     execSync(`docker exec -ti ${WATCH_CONTAINER_NAME} bash -c "npm run watch"`, {stdio: [0, 1, 2]})
 }
