@@ -1,8 +1,8 @@
 ```
 title: "Pathfinding"
 layout: demo
-width: 400
-height: 300
+width: 1200
+height: 800
 source: "Features/Pathfinding"
 targets: ['flash', 'html5']
 ```
