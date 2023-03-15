@@ -161,6 +161,12 @@ layout: showcases
 						<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
 					<% if showcase.steam: %></a><% end %>
 				</span>
+				
+				<span class="<%= @getShowcaseActive(showcase.switch) %>" title="Nintendo Switch">
+					<% if showcase.switch: %><a href="<%= showcase.switch %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="40px" src="/images/targets/switch-logo.svg">
+					<% if showcase.switch: %></a><% end %>
+				</span>
 			</div>
 
 		</div>
