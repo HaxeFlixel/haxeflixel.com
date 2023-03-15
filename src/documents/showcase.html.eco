@@ -83,9 +83,17 @@ layout: showcases
 				<% end %>
 
 				<% if showcase.xbox: %>
-					<span class="<%= @getShowcaseActive(showcase.xbox) %>" title="Xbox One">
+					<span class="<%= @getShowcaseActive(showcase.xbox) %>" title="Xbox">
 						<a href="<%= showcase.xbox %>" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/xbox-logo.svg">
+						</a>
+					</span>
+				<% end %>
+				
+				<% if showcase.switch: %>
+					<span class="<%= @getShowcaseActive(showcase.switch) %>" title="Nintendo Switch">
+						<a href="<%= showcase.switch %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/switch-logo.svg">
 						</a>
 					</span>
 				<% end %>
@@ -160,6 +168,24 @@ layout: showcases
 					<% if showcase.steam: %><a href="<%= showcase.steam %>" class="showcaseTarget" target="_blank"><% end %>
 						<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
 					<% if showcase.steam: %></a><% end %>
+				</span>
+				
+				<span class="<%= @getShowcaseActive(showcase.ps4) %>" title="PlayStation 4">
+					<% if showcase.ps4: %><a href="<%= showcase.ps4 %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="40px" src="/images/targets/ps-logo.svg">
+					<% if showcase.ps4: %></a><% end %>
+				</span>
+				
+				<span class="<%= @getShowcaseActive(showcase.psvita) %>" title="PlayStation Vita">
+					<% if showcase.psvita: %><a href="<%= showcase.psvita %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="40px" src="/images/targets/ps-logo.svg">
+					<% if showcase.psvita: %></a><% end %>
+				</span>
+				
+				<span class="<%= @getShowcaseActive(showcase.xbox) %>" title="XBox">
+					<% if showcase.xbox: %><a href="<%= showcase.xbox %>" class="showcaseTarget" target="_blank"><% end %>
+						<img width="40px" height="40px" src="/images/targets/xbox-logo.svg">
+					<% if showcase.xbox: %></a><% end %>
 				</span>
 				
 				<span class="<%= @getShowcaseActive(showcase.switch) %>" title="Nintendo Switch">
