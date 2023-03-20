@@ -13,7 +13,7 @@ This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with 
 [DocPad](http://docpad.org/).
 You can compile this website yourself with a local install of DocPad, pull requests are welcome.
 
-1. [Install DocPad](http://docpad.org/docs/install)
+1. [Install DocPad](https://docpad.bevry.me/start/install)
 
 2. Clone and run the server
 
