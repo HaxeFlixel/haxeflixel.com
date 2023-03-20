@@ -24,35 +24,45 @@ layout: showcases
 
 			<div class="showcase-targets">
 
-				<span class="<%= @getShowcaseActive(showcase.windows) %>" title="Windows">
-					<% if showcase.windows: %><a href="<%= showcase.windows %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="30px" height="40px" src="/images/targets/windows-logo.svg">
-					<% if showcase.windows: %></a><% end %>
-				</span>
+				<% if showcase.windows: %>
+					<span class="<%= @getShowcaseActive(showcase.windows) %>" title="Windows">
+						<a href="<%= showcase.windows %>" class="showcaseTarget" target="_blank">
+							<img width="30px" height="40px" src="/images/targets/windows-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.linux) %>" title="Linux">
-					<% if showcase.linux: %><a href="<%= showcase.linux %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="40px" height="49px" src="/images/targets/linux-logo.svg">
-					<% if showcase.linux: %></a><% end %>
-				</span>
+				<% if showcase.linux: %>
+					<span class="<%= @getShowcaseActive(showcase.linux) %>" title="Linux">
+						<a href="<%= showcase.linux %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="49px" src="/images/targets/linux-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.mac) %>" title="Mac">
-					<% if showcase.mac: %><a href="<%= showcase.mac %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="26px" height="40px" src="/images/targets/apple-logo.svg">
-					<% if showcase.mac: %></a><% end %>
-				</span>
+				<% if showcase.mac: %>
+					<span class="<%= @getShowcaseActive(showcase.mac) %>" title="Mac">
+						<a href="<%= showcase.mac %>" class="showcaseTarget" target="_blank">
+							<img width="26px" height="40px" src="/images/targets/apple-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.android) %>" title="Android">
-					<% if showcase.android: %><a href="<%= showcase.android %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="40px" height="40px" src="/images/targets/android-logo.svg">
-					<% if showcase.android: %></a><% end %>
-				</span>
+				<% if showcase.android: %>
+					<span class="<%= @getShowcaseActive(showcase.android) %>" title="Android">
+						<a href="<%= showcase.android %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/android-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.ios) %>" title="iOS">
-					<% if showcase.ios: %><a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="40px" src="/images/targets/ios-logo.png">
-					<% if showcase.ios: %></a><% end %>
-				</span>
+				<% if showcase.ios: %>
+					<span class="<%= @getShowcaseActive(showcase.ios) %>" title="iOS">
+						<a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank">
+							<img width="40px" src="/images/targets/ios-logo.png">
+						</a>
+					</span>
+				<% end %>
 
 				<% if showcase.flash: %>
 					<span class="<%= @getShowcaseActive(showcase.flash) %>" title="Flash">
@@ -62,11 +72,13 @@ layout: showcases
 					</span>
 				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.steam) %>" title="Steam">
-					<% if showcase.steam: %><a href="<%= showcase.steam %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
-					<% if showcase.steam: %></a><% end %>
-				</span>
+				<% if showcase.steam: %>
+					<span class="<%= @getShowcaseActive(showcase.steam) %>" title="Steam">
+						<a href="<%= showcase.steam %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
 				<% if showcase.ps4: %>
 					<span class="<%= @getShowcaseActive(showcase.ps4) %>" title="PlayStation 4">
@@ -130,35 +142,45 @@ layout: showcases
 
 			<div class="showcase-targets">
 
-				<span class="<%= @getShowcaseActive(showcase.windows) %>" title="Windows">
-					<% if showcase.windows: %><a href="<%= showcase.windows %>" class="showcaseTarget" target="_blank"><% end %>
-					<img width="30px" height="40px" src="/images/targets/windows-logo.svg">
-					<% if showcase.windows: %></a><% end %>
-				</span>
+				<% if showcase.windows: %>
+					<span class="<%= @getShowcaseActive(showcase.windows) %>" title="Windows">
+						<a href="<%= showcase.windows %>" class="showcaseTarget" target="_blank">
+							<img width="30px" height="40px" src="/images/targets/windows-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.linux) %>" title="Linux">
-					<% if showcase.linux: %><a href="<%= showcase.linux %>" class="showcaseTarget" target="_blank"><% end %>
-					<img width="40px" height="49px" src="/images/targets/linux-logo.svg">
-					<% if showcase.linux: %></a><% end %>
-				</span>
+				<% if showcase.linux: %>
+					<span class="<%= @getShowcaseActive(showcase.linux) %>" title="Linux">
+						<a href="<%= showcase.linux %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="49px" src="/images/targets/linux-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.mac) %>" title="Mac">
-					<% if showcase.mac: %><a href="<%= showcase.mac %>" class="showcaseTarget" target="_blank"><% end %>
-					<img width="26px" height="40px" src="/images/targets/apple-logo.svg">
-					<% if showcase.mac: %></a><% end %>
-				</span>
+				<% if showcase.mac: %>
+					<span class="<%= @getShowcaseActive(showcase.mac) %>" title="Mac">
+						<a href="<%= showcase.mac %>" class="showcaseTarget" target="_blank">
+							<img width="26px" height="40px" src="/images/targets/apple-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.android) %>" title="Android">
-					<% if showcase.android: %><a href="<%= showcase.android %>" class="showcaseTarget" target="_blank"><% end %>
-					<img width="40px" height="40px" src="/images/targets/android-logo.svg">
-					<% if showcase.android: %></a><% end %>
-				</span>
+				<% if showcase.android: %>
+					<span class="<%= @getShowcaseActive(showcase.android) %>" title="Android">
+						<a href="<%= showcase.android %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/android-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.ios) %>" title="iOS">
-					<% if showcase.ios: %><a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank"><% end %>
-					<img width="40px" src="/images/targets/ios-logo.png">
-					<% if showcase.ios: %></a><% end %>
-				</span>
+				<% if showcase.ios: %>
+					<span class="<%= @getShowcaseActive(showcase.ios) %>" title="iOS">
+						<a href="<%= showcase.ios %>" class="showcaseTarget" target="_blank">
+							<img width="40px" src="/images/targets/ios-logo.png">
+						</a>
+					</span>
+				<% end %>
 
 				<% if showcase.flash: %>
 					<span class="<%= @getShowcaseActive(showcase.flash) %>" title="Flash">
@@ -168,11 +190,13 @@ layout: showcases
 					</span>
 				<% end %>
 
-				<span class="<%= @getShowcaseActive(showcase.steam) %>" title="Steam">
-					<% if showcase.steam: %><a href="<%= showcase.steam %>" class="showcaseTarget" target="_blank"><% end %>
-						<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
-					<% if showcase.steam: %></a><% end %>
-				</span>
+				<% if showcase.steam: %>
+					<span class="<%= @getShowcaseActive(showcase.steam) %>" title="Steam">
+						<a href="<%= showcase.steam %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
 				<% if showcase.ps4: %>
 					<span class="<%= @getShowcaseActive(showcase.ps4) %>" title="PlayStation 4">
