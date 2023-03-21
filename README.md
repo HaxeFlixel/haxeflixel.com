@@ -96,19 +96,23 @@ Should be compiled with `FLX_NO_DEBUG` (to show the flixel splash screen) and in
 following this example:
 
     ```
-        layout: showcase
-        title: "BOSSES FOREVER 2.BRO"
-        flash: http://www.bossesforever.com/
-        windows: http://www.bossesforever.com/
-        ouya: https://www.ouya.tv/game/BOSSES-FOREVER-2BRO/
-        mac: http://www.bossesforever.com/
-        website: http://www.bossesforever.com/
+    layout: showcase
+    title: "Go! Go! PogoGirl"
+    itch: https://ohsat-andrej.itch.io/go-go-pogogirl
+    website: https://www.ohsat.com/game/go-go-pogogirl/
+    steam: https://store.steampowered.com/app/1681010/Go_Go_PogoGirl/
+    switch: https://www.nintendo.com/store/products/go-go-pogogirl-switch/
+    ps4: https://store.playstation.com/en-us/product/UP0891-PPSA10169_00-GOGOPOGOGIRLRATG
+    xbox: https://www.microsoft.com/store/productid/9P10H7L6QCCJ
+    date: "2-1-2022"
     ```
+    
+    Note that `date` is currently unused but will eventually be used to sort, dates should use US format of month-day-20XX
     
     Note that by adding a URL to one of the supported targets, the icon will automatically become coloured on the 
     [showcase page](http://haxeflixel.com/showcase) and link to that URL.
 
-2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `BOSSES FOREVER 2.BRO.png` 
+2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `Go! Go! PogoGirl.png` 
 to [`/src/files/images/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/images/showcase). 
 They are resized and cropped to 500x260, so it's best to use the same ratio.
 
