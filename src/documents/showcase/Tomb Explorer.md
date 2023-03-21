@@ -1,6 +1,6 @@
 ```
 layout: showcase
 title: "Tomb Explorer"
-windows: https://johndimi.itch.io/tombexplorer
-website: https://johndimi.itch.io/tombexplorer
+itch: https://johndimi.itch.io/tombexplorer
+date: "2-19-2017"
 ```

@@ -111,6 +111,30 @@ layout: showcases
 						</a>
 					</span>
 				<% end %>
+				
+				<% if showcase.itch: %>
+					<span class="<%= @getShowcaseActive(showcase.itch) %>" title="itch.io">
+						<a href="<%= showcase.itch %>" class="showcaseTarget" target="_blank">
+							<img width="35px" height="40px" src="/images/targets/itch-logo.svg">
+						</a>
+					</span>
+				<% end %>
+				
+				<% if showcase.humble: %>
+					<span class="<%= @getShowcaseActive(showcase.humble) %>" title="Humble Bundle">
+						<a href="<%= showcase.humble %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/humble-logo.svg">
+						</a>
+					</span>
+				<% end %>
+				
+				<% if showcase.newgrounds: %>
+					<span class="<%= @getShowcaseActive(showcase.newgrounds) %>" title="Newgrounds">
+						<a href="<%= showcase.newgrounds %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/newgrounds-logo.svg">
+						</a>
+					</span>
+				<% end %>
 
 			</div>
 
@@ -226,6 +250,30 @@ layout: showcases
 					<span class="<%= @getShowcaseActive(showcase.switch) %>" title="Nintendo Switch">
 						<a href="<%= showcase.switch %>" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/switch-logo.svg">
+						</a>
+					</span>
+				<% end %>
+				
+				<% if showcase.itch: %>
+					<span class="<%= @getShowcaseActive(showcase.itch) %>" title="itch.io">
+						<a href="<%= showcase.itch %>" class="showcaseTarget" target="_blank">
+							<img width="35px" height="40px" src="/images/targets/itch-logo.svg">
+						</a>
+					</span>
+				<% end %>
+				
+				<% if showcase.humble: %>
+					<span class="<%= @getShowcaseActive(showcase.humble) %>" title="Humble Bundle">
+						<a href="<%= showcase.humble %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/humble-logo.svg">
+						</a>
+					</span>
+				<% end %>
+				
+				<% if showcase.newgrounds: %>
+					<span class="<%= @getShowcaseActive(showcase.newgrounds) %>" title="Newgrounds">
+						<a href="<%= showcase.newgrounds %>" class="showcaseTarget" target="_blank">
+							<img width="40px" height="40px" src="/images/targets/newgrounds-logo.svg">
 						</a>
 					</span>
 				<% end %>

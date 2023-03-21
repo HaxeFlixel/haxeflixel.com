@@ -9,7 +9,7 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2013-07-03T13:48Z
+ * date: "2013-07-03"T13:48Z
  */
 (function (window, undefined)
 {
@@ -1187,7 +1187,7 @@
      * Released under the MIT license
      * http://jquery.org/license
      *
-     * Date: 2013-07-03
+     * date: "2013-07-03"
      */
     (function (window, undefined)
     {
