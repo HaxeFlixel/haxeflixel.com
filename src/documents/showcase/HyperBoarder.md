@@ -4,4 +4,5 @@ title: "HyperBoarder"
 flash: http://www.kongregate.com/games/lportion/hyperboarder
 android: https://play.google.com/store/apps/details?id=com.lportion.hyperboarder
 website: http://www.kongregate.com/games/lportion/hyperboarder
+date: "9-16-2016"
 ```

@@ -1,7 +1,6 @@
 ```
 layout: showcase
 title: "Slime Time"
-windows: https://incredible-ape.itch.io/slime-time
-mac: https://incredible-ape.itch.io/slime-time
-website: https://incredible-ape.itch.io/slime-time
+itch: https://incredible-ape.itch.io/slime-time
+date: "2-18-2017"
 ```
