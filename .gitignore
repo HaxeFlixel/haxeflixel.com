@@ -6,3 +6,4 @@ src/documents/documentation
 npm-debug.log*
 out
 debug.log
+package-lock.json
