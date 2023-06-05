@@ -16,12 +16,11 @@ HaxeFlixel's first major release in over 6 years! Be sure to check out the [Migr
 Most people never knew we had a FlxVector class with a bunch of incredibly handy math operations, so we moved them all into FlxPoint.
 
 ### Collision Improvements
-One small tweaks to preserve momentum and a new feature that let's objects ride other non-immovable objects.
-<video width="320" height="240" controls>
-  <source src="images/blog/15_blogs_back/platforming.mp4" type="video/mp4">
+One small tweaks to preserve momentum and a new feature that let's objects ride other non-immovable objects. The dirty minds following us on [Twitter](https://twitter.com/HaxeFlixel/status/1600844100923961344) got really excited about this.
+<video width="479" height="360" controls>
+  <source src="/images/blog/15_blogs_back/platforming.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-The dirty minds following us on [Twitter](https://twitter.com/HaxeFlixel/status/1600844100923961344) got really excited about this.
 
 ### Pathfinding Overhaul
 Create custom pathfinders.
