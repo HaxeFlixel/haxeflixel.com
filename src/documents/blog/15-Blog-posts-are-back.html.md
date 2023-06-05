@@ -18,7 +18,7 @@ Most people never knew we had a FlxVector class with a bunch of incredibly handy
 ### Collision Improvements
 One small tweaks to preserve momentum and a new feature that let's objects ride other non-immovable objects.
 <video width="320" height="240" controls>
-  <source src="images/blog/15_blogs_back/platforming.mp4" type="video/mp4">
+  <source src="/images/blog/15_blogs_back/platforming.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 The dirty minds following us on [Twitter](https://twitter.com/HaxeFlixel/status/1600844100923961344) got really excited about this.
