@@ -10,7 +10,7 @@ Hello everyone! George, here, gladly announceing the return of the HaxeFlixel bl
 Since [the last release blog post](https://haxeflixel.com/blog/12-HaxeFlixel-4-4-0/), we have released 24 new versions of HaxeFlixel! There's too many changes to go over in just one blog post, so if you're far behind, be sure to look at [the changelog](https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md) for details on every release. I do want to go over some big milestones from these past few years.
 
 ## Flixel 5.0.0
-HaxeFlixel's first major release in over 6 years! Be sure to check out the [Migration Guide](https://github.com/HaxeFlixel/flixel/wiki/Flixel-5.0.0-Migration-guide) for more info on the bigger changes as well as info on how to upgrade you're old projects from version 4. Here's a brief list of the changes ([the changelog](https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md#500-alpha-november-19-2022) has them all, of course)
+HaxeFlixel's first major release in over 6 years! Be sure to check out the [Migration Guide](https://github.com/HaxeFlixel/flixel/wiki/Flixel-5.0.0-Migration-guide) for more info on the bigger changes as well as info on how to upgrade your old projects from version 4. Here's a brief list of the changes ([the changelog](https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md#500-alpha-november-19-2022) has them all, of course)
 
 ### FlxPoint absorbed FlxVector
 Most people never knew we had a FlxVector class with a bunch of incredibly handy math operations, so we moved them all into FlxPoint.
