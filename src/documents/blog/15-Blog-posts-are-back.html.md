@@ -34,7 +34,7 @@ Hard to express with pictures, but AssetPaths is actually usuable now! And FlxSa
 It's about time I formally introduced myself. My name is George Kurelic and I've been the lead maintainer of HaxeFlixel since around January 2022. I've used Flixel since the flash days, but I've only started making contributions to HaxeFlixel in late 2018. While I have enourmous shoes to fill, I'm very passionate about open source software, and gamedev, and I have a lot of plans for the framework. You can usually find me in [the #flixel channel of the Haxe Discord server](https://discordapp.com/invite/rqEBAgF)
 
 # What's next?
-Get used to seeing more blog posts if you wanna see what's cookin, but here's what is currently planned
+Get used to seeing more blog posts if you wanna see what's cookin, but here's what is currently planned.
 
 [Flixel 5.4.0](https://github.com/HaxeFlixel/flixel/milestone/14) is mostly finished, which is planned to have the abilty to combine altases from separate images, which should make it easier for FNF mods with huge hd character assets.
 
