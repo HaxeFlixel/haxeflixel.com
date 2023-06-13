@@ -1,7 +1,7 @@
 ```
 title: "FlxSkewedSprite"
 layout: demo
-width: 300
+width: 600
 height: 200
 source: "Effects/FlxSkewedSprite"
 targets: ['flash', 'html5']
