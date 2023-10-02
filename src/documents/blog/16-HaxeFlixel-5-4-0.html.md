@@ -21,7 +21,7 @@ By far the biggest development of HaxeFlixel 5.4.0 is the various tools that uti
 (Made using the [Animated Pixel Adventurer](https://rvros.itch.io/animated-pixel-hero) set by [rvros](https://rvros.itch.io/))
 
 The resulting atlas can easily be applied to a sprite with the following code using the [addAseAtlasTagsByPrefix](https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByPrefix) or [addAseAtlasTagsByIndex](https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByIndex) to create an animation for every tag in your .aseprite file.
-```hx
+```haxe
 hero = new FlxSprite(50, 50);
 hero.loadAseAtlasAndTagsByPrefix("assets/images/adventurer.png", "assets/images/adventurer.json");
 hero.animation.play("idle");
@@ -29,7 +29,7 @@ add(hero);
 ```
 
 You can expect more Aseprite focus tools to come now that we've created handy [typedefs for Aseprite atlas metadata](https://github.com/HaxeFlixel/flixel/blob/master/flixel/graphics/atlas/AseAtlas.hx). One future plan is to use Aseprite's [slicing feature](https://www.aseprite.org/docs/slices/) to generate 9-slice data or per-frame hitboxes, but it's much easier for you to use this data to roll your own features, for example to see per-frame slice data on an atlas's labelled "attackRect":
-```hx
+```haxe
 var atlasData:AseAtlas = Assets.getText(myAtlasJsonPath);
 for (slice in atlasData.meta.slices)
 {
@@ -54,7 +54,7 @@ This project's art pipeline could really benefit from multi-atlas since each cha
 (Art by Adam V., you should [hire him](https://twitter.com/Koolboyman/status/1672366422767591424)!)
 
 Here's an example of how to add atlases to another
-```hx
+```haxe
 // create an atlas for each file
 var idleAtlas = FlxAtlasFrames.fromAseprite('assets/images/snowman-idle.png', 'assets/images/snowman-idle.json');
 var jumpAtlas = FlxAtlasFrames.fromAseprite('assets/images/snowman-jump.png', 'assets/images/snowman-jump.json');
