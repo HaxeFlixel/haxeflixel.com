@@ -11,7 +11,7 @@ We try to release new versions of HaxeFlixel around once a month, and have been,
 
 Another reason the release was delayed was that George, our lead maintainer finally went on his honeymoon. He didn't feel like touching a computer while visiting his motherland for most of September, with views like this, I'm sure you wouldn't want to either!
 
-![](/images/blog/16_release/split.png)
+<img src="/images/blog/16_release/split.jpg" width="100%" />
 
 # Aseprite Utils
 By far the biggest development of HaxeFlixel 5.4.0 is the various tools that utilize [Aseprite's](https://www.aseprite.org/) [atlas exporting](https://aseprite.com/docs/sprite-sheet/#texture-atlases tools). For those unaware, Aseprite is a very popular animated sprite editor and pixel art tool, we can't recommend it enough for anyone using HaxeFlixel, especially for pixel-art games. The main goal of [FlxAsepriteUtil](https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html) is to allow devs to define animation data using Aseprite's tags rather than in code.
