@@ -50,7 +50,8 @@ We have immediate plans to utilize more Aseprite fields, such as the tags' "Repe
 This feature was specifically made with our Funkin' devs and modders in mind. As the demand for HD atlases with large amounts of animations increase, their atlas image size grows well beyond the limit that flixel can currently handle. By combining multiple atlases at runtime devs can better compartmentalize their animations, ultimately allowing FlxSprites to have more animations without having to switch graphics every time you change a sprite's animation. Splitting up animations also allows you to load them separately, for instance, if you only need certain animations on certain levels.
 
 This project's art pipeline could really benefit from multi-atlas since each character is made from about a dozen different aseprite files, each with potentially dozens of frames.
-![](/images/blog/16_release/snowman.png)
+
+<img src="/images/blog/16_release/snowman.png" width="100%" />
 (Art by Adam V., you should [hire him](https://twitter.com/Koolboyman/status/1672366422767591424)!)
 
 Here's an example of how to add atlases to another
@@ -91,7 +92,7 @@ Your browser does not support the video tag.
 # A List of Every Asset
 Lastly, we've added the `allFiles` field to classes generated via [FlxAssets.buildFileReferences](https://api.haxeflixel.com/flixel/system/FlxAssets.html#buildFileReferences), AKA: `AssetPaths`. This is just an easy way to iterate or search a list of every asset included in this build. if you don't like the name `allFiles` you can specify a custom name in the `listField` arg of `buildFileReferences`.
 
-![](/images/blog/16_release/all_files.png)
+<img src="/images/blog/16_release/all_files.png" width="100%" />
 
 # What's Next?
 - **More animation tools:** Our goal is to improve upon these tools before jumping on to another big project, so we'd love feedback and suggestions. As mentioned above we already have additions planned for `FlxAseAtlasUtils` and `FlxAnimation`.
