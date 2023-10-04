@@ -44,7 +44,7 @@ for (slice in atlasData.meta.slices)
 }
 ```
 
-We have immediate plans to utilize more Aseprite fields, such as the tags' "Repeat" and "Animation Direction" fields. You can expect those in the next release.
+We have immediate plans to utilize more Aseprite fields, such as the tags' "Repeat" and "Animation Direction" fields. You can expect those in the next release (**Update (5.4.1):** this change has been added!).
 
 # Combining Multiple Atlases
 This feature was specifically made with our Funkin' devs and modders in mind. As the demand for HD atlases with large amounts of animations increase, their atlas image size grows well beyond the limit that flixel can currently handle. By combining multiple atlases at runtime devs can better compartmentalize their animations, ultimately allowing FlxSprites to have more animations without having to switch graphics every time you change a sprite's animation. Splitting up animations also allows you to load them separately, for instance, if you only need certain animations on certain levels.
@@ -88,6 +88,8 @@ We've added a [timeScale field to FlxAnimationController](https://api.haxeflixel
   <source src="/images/blog/16_release/anim-time_scale.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+
+**Update (5.4.1):** We've also added the `timeScale` field to each individual animation, rather than just the animation controller.
 
 # A List of Every Asset
 Lastly, we've added the `allFiles` field to classes generated via [FlxAssets.buildFileReferences](https://api.haxeflixel.com/flixel/system/FlxAssets.html#buildFileReferences), AKA: `AssetPaths`. This is just an easy way to iterate or search a list of every asset included in this build. if you don't like the name `allFiles` you can specify a custom name in the `listField` arg of `buildFileReferences`.
