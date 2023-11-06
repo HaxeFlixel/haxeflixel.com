@@ -1,5 +1,5 @@
 ```
-title: "FlxAsepriteUtils"
+title: "FlxAsepriteUtil"
 layout: demo
 width: 640
 height: 480
