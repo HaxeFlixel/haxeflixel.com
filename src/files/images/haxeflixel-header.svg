@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126.78 24.49">
+  <defs>
+    <style>
+      .b {
+        letter-spacing: 0em;
+      }
+
+      .c {
+        fill: #fff;
+        font-family: Ubuntu-Light, Ubuntu;
+        font-size: 21px;
+        font-weight: 300;
+      }
+
+      .d {
+        letter-spacing: 0em;
+      }
+
+      .e {
+        letter-spacing: 0em;
+      }
+
+      .f {
+        fill: #45b649;
+      }
+
+      .f, .g, .h, .i, .j {
+        stroke-width: 0px;
+      }
+
+      .g {
+        fill: #4958a7;
+      }
+
+      .h {
+        fill: #35c6f4;
+      }
+
+      .i {
+        fill: #ffcd34;
+      }
+
+      .j {
+        fill: #ee3a68;
+      }
+    </style>
+  </defs>
+  <path class="f" d="m3,3h18v18H3V3Z"/>
+  <path class="i" d="m0,0h6l6,3L3,12,0,6V0Z"/>
+  <path class="j" d="m12,3l6-3h6v6l-3,6L12,3Z"/>
+  <path class="g" d="m3,12l9,9-6,3H0v-6l3-6Z"/>
+  <path class="h" d="m21,12l3,6v6h-6l-6-3,9-9Z"/>
+  <text class="c" transform="translate(30.14 20.37)"><tspan class="b" x="0" y="0">Ha</tspan><tspan class="e" x="25.47" y="0">x</tspan><tspan class="b" x="35.87" y="0">eFli</tspan><tspan class="d" x="69.13" y="0">x</tspan><tspan class="b" x="79.53" y="0">el</tspan></text>
+</svg>
