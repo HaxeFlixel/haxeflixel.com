@@ -11,6 +11,7 @@
 	<meta name="author" content="<%= @author %>"/>
 	<meta name="viewport" content="width=device-width"/>
 
+	<link rel="icon" href="/images/haxeflixel.svg">
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
 	<!--[if lt IE 9]>
