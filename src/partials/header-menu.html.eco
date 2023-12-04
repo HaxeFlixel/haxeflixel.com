@@ -10,7 +10,7 @@
 						<span class="icon-bar" />
 						<span class="icon-bar" />
 					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.svg" height="31" alt="HaxeFlixel" /></a>
 				</div>
 
 				<div class="navbar-collapse collapse">
