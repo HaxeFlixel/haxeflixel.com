@@ -136,6 +136,14 @@ layout: showcases
 					</span>
 				<% end %>
 
+				<% if showcase.github: %>
+					<span class="<%= @getShowcaseActive(showcase.github) %>" title="GitHub">
+						<a href="<%= showcase.github %>" class="showcaseTarget" target="_blank">
+							<img height="40px" src="/images/targets/github-logo.svg">
+						</a>
+					</span>
+				<% end %>
+
 			</div>
 
 	</div>
@@ -274,6 +282,14 @@ layout: showcases
 					<span class="<%= @getShowcaseActive(showcase.newgrounds) %>" title="Newgrounds">
 						<a href="<%= showcase.newgrounds %>" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/newgrounds-logo.svg">
+						</a>
+					</span>
+				<% end %>
+
+				<% if showcase.github: %>
+					<span class="<%= @getShowcaseActive(showcase.github) %>" title="GitHub">
+						<a href="<%= showcase.github %>" class="showcaseTarget" target="_blank">
+							<img height="40px" src="/images/targets/github-logo.svg">
 						</a>
 					</span>
 				<% end %>
