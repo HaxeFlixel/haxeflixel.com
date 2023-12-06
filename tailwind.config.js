@@ -33,7 +33,7 @@ module.exports = {
         'social': {
           "github": colors.purple,
           "twitter": "#1DA1F2",
-          "discord": "#7289DA",
+          "discord": "#5865F2",
           "patreon": "#F96854",
           
         },
