@@ -1,11 +1,43 @@
 <footer class="flex flex-col bg-black">
-	<div class="w-screen flex flex-row h-1 justify-stretch">
-		<div class="grow bg-hf-yellow h-full"></div>
-		<div class="grow bg-hf-red h-full"></div>
-		<div class="grow bg-hf-green h-full"></div>
-		<div class="grow bg-hf-blue h-full"></div>
-		<div class="grow bg-hf-light-blue h-full"></div>
+	
+	<div id="footer-splash" class="w-screen flex flex-row h-1 justify-stretch cursor-pointer">
+		<div id="foot-yellow" class="grow bg-hf-yellow h-full"></div>
+		<div id="foot-red" class="grow bg-hf-red h-full"></div>
+		<div id="foot-green" class="grow bg-hf-green h-full"></div>
+		<div id="foot-blue" class="grow bg-hf-blue h-full"></div>
+		<div id="foot-light-blue" class="grow bg-hf-light-blue h-full"></div>
 	</div>
+
+	<script>
+		var audio = new Audio('_includes/flixel.ogg');
+		document.getElementById('footer-splash').addEventListener('click', function() {
+			
+			if (audio.paused) {
+				
+
+				let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+				let footCol = ["foot-green", "foot-yellow", "foot-light-blue", "foot-red", "foot-blue"];
+
+				for (let i = 0; i < times.length; i++) {
+					document.getElementById(footCol[i]).style.opacity = 0;
+				}
+
+				setTimeout(function() {
+					// code to be executed
+					audio.play();
+					for(let i = 0; i < times.length; i++) {
+					setTimeout(function() {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+				}, 1000);
+
+				
+			}
+		});
+	</script>
+
 	<div class="flex flex-row w-2/3 self-center max-h-60 py-8 justify-start space-x-20 items-center">
 		
 		<div class="flex justify-center items-center text-white">

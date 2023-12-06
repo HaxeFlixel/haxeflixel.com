@@ -35,7 +35,8 @@ module.exports = {
           "twitter": "#1DA1F2",
           "discord": "#7289DA",
           "patreon": "#F96854",
-        }
+          
+        },
 
       }
     },
