@@ -28,7 +28,7 @@ title: 'Home'
     <div class="flex flex-row text-white bg-black px-80 py-10 min-h-80 h-fit space-x-6 justify-around items-center w-full">
 
         <div class="flex flex-col w-1/2">
-            <h1 class="text-2xl font-black">Cross compile your games <a class="hover:scale-110 invert-0" href="documentation/about"><i>natively</i></a> to: <span id="hover-target" >...</span></h1>
+            <h1 class="text-2xl font-black">Cross compile your games <a class="hover:scale-110 invert-0" href="documentation/about"><i>natively</i></a> to: <span id="hover-target">...</span></h1>
             <script>
                 let nInterval;
                 let hoverElement = document.getElementById("hover-target");
@@ -44,6 +44,7 @@ title: 'Home'
                     hoverElement.textContent = messages[index];
                     index = (index + 1) % messages.length;
                     hoverElement.classList = classes[Math.floor(Math.random() * classes.length)];
+                    hoverElement.classList.add("cursor-default");
                     hoverElement.style.opacity = 1;
 
                     clearInterval(nInterval);
