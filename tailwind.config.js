@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: 
@@ -28,6 +30,12 @@ module.exports = {
           '800': '#f68b2d',
           DEFAULT: '#EA8220',
         },
+        'social': {
+          "github": colors.purple,
+          "twitter": "#1DA1F2",
+          "discord": "#7289DA",
+          "patreon": "#F96854",
+        }
 
       }
     },

@@ -1,46 +1,37 @@
-<footer>
-	<div class="footer-main">
-		<div class="container">
-
-			<div class="footer-social">
-
-				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
-						allowtransparency="true"
-						src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
-
-				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
-				   data-lang="en" data-size="small">Follow @haxeflixel</a>
-
-				<a class="footer-patreon" href="https://www.patreon.com/haxeflixel" alt="HaxeFlixel Patreon" title="Support us on Patreon">
-					<img class="patreon-logo" src="/images/patreon-logo.svg"  title="HaxeFlixel Patreon">
-					<img class="patreon-wordmark" src="/images/patreon-wordmark.svg" title="HaxeFlixel Patreon">
-				</a>
-
-				<script>!function (d, s, id)
-				{
-					var js, fjs = d.getElementsByTagName (s)[0];
-					if (!d.getElementById (id))
-					{
-						js = d.createElement (s);
-						js.id = id;
-						js.src = "//platform.twitter.com/widgets.js";
-						fjs.parentNode.insertBefore (js, fjs);
-					}
-				} (document, "script", "twitter-wjs");</script>
-
-			</div>
-
-			
-
+<footer class="flex flex-col bg-black">
+	<div class="w-screen flex flex-row h-1 justify-stretch">
+		<div class="grow bg-hf-yellow h-full"></div>
+		<div class="grow bg-hf-red h-full"></div>
+		<div class="grow bg-hf-green h-full"></div>
+		<div class="grow bg-hf-blue h-full"></div>
+		<div class="grow bg-hf-light-blue h-full"></div>
+	</div>
+	<div class="flex flex-row w-2/3 self-center max-h-60 py-8 justify-start space-x-20 items-center">
+		
+		<div class="flex justify-center items-center text-white">
+			<a href="https://haxeflixel.com"><img src="/images/haxeflixel.svg" alt="Haxe" title="Haxe"></a>
 		</div>
+
+		<div class="flex flex-col text-white">
+			<h1 class="text-slate-300 font-bold">HaxeFlixel.com</h1>
+			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-yellow" href="">HaxeFlixel Blog</a>
+			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-red" href="">Docs</a>
+			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-green" href="">API</a>
+			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-blue" href="">Forum</a>
+		</div>
+
+		<div class="text-white flex flex-col">
+			<h1 class="font-semibold">The Net</h1>
+			<a class="font-black transition-all ease-out hover:bg-social-github-500 hover:text-black" href="">GitHub</a>
+			<a class="font-black transition-all ease-out hover:bg-social-twitter hover:text-black" href="">Twitter</a>
+			<a class="font-black transition-all ease-out hover:bg-social-discord hover:text-black" href="">Discord</a>
+			<a class="font-black transition-all ease-out hover:bg-social-patreon hover:text-black" href="">Patreon</a>
+		</div>
+
+		
+
+		
 	</div>
 
-	<div class="flex justify-center items-center">
-		<p >HaxeFlixel is powered by</p>
-		<a href="https://haxe.org"><img src="/images/haxe.svg" alt="Haxe" title="Haxe"></a>
-		+
-		<a href="https://openfl.org"><img class="openfl-footer-logo" src="/images/openfl.svg" alt="OpenFL" title="OpenFL"></a>
-		+
-		<a href="https://flixel.org"><img class="flixel-footer-logo" src="/images/flixel.svg" alt="Flixel" title="Flixel"></a>
-	</div>
+	
 </footer>
