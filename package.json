@@ -18,12 +18,25 @@
     "docpad-plugin-repocloner": "2.2.2",
     "docpad-plugin-services": "2.6.0",
     "docpad-plugin-thumbnails": "2.1.2",
-    "remove-markdown": "0.1.0",
-    "graceful-fs": "4.2.6"
+    "graceful-fs": "4.2.6",
+    "remove-markdown": "0.1.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "docpad run",
-    "build": "docpad generate --env static"
+    "start": "npm-run-all -p dev:*",
+    "build": "run-s build:*",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "tailwindcss -i bundle.css -o bundle.out.css --watch --postcss",
+    "build:11ty": "eleventy",
+    "build:css": "tailwindcss -i bundle.css -o bundle.out.css --postcss"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "eleventy-plugin-postcss": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
   }
 }

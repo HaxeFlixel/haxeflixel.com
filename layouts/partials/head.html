@@ -4,7 +4,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-	<title><%= @title %></title>
+	<title>{{ title }}</title>
 
 	<meta name="description" content="<%= @description %>"/>
 	<meta name="keywords" content="<%= @keywords %>"/>
@@ -14,10 +14,12 @@
 	<link rel="icon" href="/images/haxeflixel.svg">
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
+	<link rel="stylesheet" href="{{ 'bundle.css' | url}}"/>
+
 	<!--[if lt IE 9]>
 	<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<%- @styles %>
+	<!-- <%- @styles %> -->
 
 </head>
