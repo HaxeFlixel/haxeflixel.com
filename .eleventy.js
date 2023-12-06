@@ -7,9 +7,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(PostCSSPlugin);
 
-    eleventyConfig.addPassthroughCopy({"src/files/images": "images"});
+    // eleventyConfig.addPassthroughCopy({"src/files/images": "images"});
     eleventyConfig.addPassthroughCopy({"bundle.out.css": "bundle.css"});
     eleventyConfig.addPassthroughCopy("_includes");
+    eleventyConfig.addPassthroughCopy({"_includes/images": "images"});
 
     eleventyConfig.setUseGitIgnore(false);
     return {
