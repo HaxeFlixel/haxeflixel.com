@@ -7,7 +7,7 @@ title: 'Home'
     <div class="flex flex-col items-center space-y-2 w-screen">
 
         <a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
-            <img src="images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
+            <img class="transition ease-out hover:scale-110" src="images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
         </a>
 
         <h1 class="text-6xl font-bold">HaxeFlixel</h1>
@@ -17,31 +17,69 @@ title: 'Home'
         <p class="text-3xl">All with one codebase.</p>
 
         <div class="flex flex-row justify-evenly h-auto w-screen text-4xl">
-            <a class="text-center outline outline-indigo-500 hover:bg-indigo-500 hover:text-white py-4 px-8 rounded-full" href="/documentation/getting-started">Getting Started</button>
-            <a class="text-center outline outline-indigo-500 hover:bg-indigo-500 hover:text-white py-4 px-8 rounded-full" href="https://github.com/HaxeFlixel">GitHub</a>
+            <a class="text-center outline outline-hf-blue hover:bg-hf-blue hover:text-white py-4 px-8 rounded-full" href="/documentation/getting-started">Getting Started</button>
+            <a class="text-center outline outline-hf-blue hover:bg-hf-blue hover:text-white py-4 px-8 rounded-full" href="https://github.com/HaxeFlixel">GitHub</a>
         </div>
             
         
     </div>
+    
 
-    <hr>
+    <div class="flex flex-row text-white bg-black px-80 py-10 h-80 space-x-6 justify-around">
 
-    <div class="flex flex-col items-center space-y-4">
+        <div class="flex flex-col w-1/2 self-center">
+            <h1 class="text-2xl font-black">Cross compile your games <a class="hover:scale-110 invert-0" href="documentation/about"><i>natively</i></a> to: <span id="hover-target" >...</span></h1>
+            <script>
+                let nInterval;
+                let hoverElement = document.getElementById("hover-target");
+                let index = 0;
 
-        <h1 class="text-4xl ">Cross-compile your games <a href="documentation/about">natively</a> to:</h1>
+                hoverElement.addEventListener("mouseover", hoverOrClick);
+                hoverElement.addEventListener("mousedown", hoverOrClick);
 
-        <div class="flex flex-row gap-10 justify-center h-14 items-center">
-            <img class="transition ease-out h-full hover:scale-110" src="images/targets/windows-logo.svg" alt="Windows" title="Windows">
-            <img class="transition ease-out h-full hover:scale-110" src="images/targets/linux-logo.svg" alt="Linux" title="Linux">
-            <img class="transition ease-out h-full hover:scale-110" src="images/targets/apple-logo.svg" alt="Mac" title="Mac">
-            <img class="transition ease-out h-full hover:scale-110" src="images/targets/android-logo.svg" alt="Android" title="Android">
-            <img class="transition ease-out h-full hover:scale-110" src="images/targets/ios-logo.png" alt="iOS" title="iOS">
-            <img class="transition ease-out h-full hover:scale-110" src="images/targets/flash-logo.svg" alt="Flash" title="Flash">
-            <img class="transition ease-out h-full hover:scale-110" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
+                function hoverOrClick() {
+                    const messages = ["Windows", "Mac", "Linux", "iOS", "Android", "HTML5"];
+                    const classes = ["text-hf-blue", "text-hf-green", "text-hf-red", "text-hf-yellow", "text-hf-light-blue"];
+                    
+                    hoverElement.textContent = messages[index];
+                    index = (index + 1) % messages.length;
+                    hoverElement.classList = classes[Math.floor(Math.random() * classes.length)];
+                    hoverElement.style.opacity = 1;
+
+                    clearInterval(nInterval);
+                    nInterval = setInterval(hoverOrClick, 1500);
+                }
+
+                nInterval = setInterval(hoverOrClick, 1500);
+
+                function step() {
+                    hoverElement.style.opacity = hoverElement.style.opacity - 0.005;
+                    window.requestAnimationFrame(step);
+                }
+
+                window.requestAnimationFrame(step);
+
+            </script>
+
+            <!-- <div class="flex flex-row flex-wrap gap-10 justify-center h-14 items-center invert ">
+                <img class="transition ease-out h-full hover:scale-110" src="images/targets/windows-logo.svg" alt="Windows" title="Windows">
+                <img class="transition ease-out h-full hover:scale-110" src="images/targets/linux-logo.svg" alt="Linux" title="Linux">
+                <img class="transition ease-out h-full hover:scale-110" src="images/targets/apple-logo.svg" alt="Mac" title="Mac">
+                <img class="transition ease-out h-full hover:scale-110" src="images/targets/android-logo.svg" alt="Android" title="Android">
+                <img class="transition ease-out h-full hover:scale-110" src="images/targets/ios-logo.png" alt="iOS" title="iOS">
+                <img class="transition ease-out h-full hover:scale-110" src="images/targets/flash-logo.svg" alt="Flash" title="Flash">
+                <img class="transition ease-out h-full hover:scale-110" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
+            </div> -->
         </div>
+        <div class="w-1/2 text-lg font-bold">
+            <p>HaxeFlixel is a damn easy, damn fun framework to create 2D games. </p>
+            <br>
+            <p>HaxeFlixel is easy to learn, extend and customize to make games as small as weekend gamejam prototypes, to full commercialy released independent games.</p>
+        </div>
+        
+        
     </div>
 
-    <hr>
 
     <div class="demos-home home-section">
         <!-- <p class="lead-line-large">Browse and learn from our <a href="/demos"><%= @getCollection('demos').length %> demos</a>:</h3></p> -->
@@ -56,33 +94,21 @@ title: 'Home'
 
     </div>
 
-    <hr>
 
 
-   <div class="home-section-powered">
+   <div class="flex flex-col items-center space-y-4 w-screen h-52 justify-center text-3xl font-bold">
 
-        <p class="lead-line-large">Powered by open source cross-platform tech:</p>
+        <p>Powered by <a class="text-haxe hover:text-haxe-100 " href="https://github.com/haxeflixel">open source</a> cross-platform tech:</p>
 
-        <br/>
-
-        <a href="https://haxe.org"><img src="/images/haxe.svg" alt="Haxe Logo" title="Haxe" height="120"></a>
-
-        <span><b>+</b></span>
-
-        <a href="https://openfl.org"><img src="/images/openfl.svg" alt="OpenFL Logo" title="OpenFL" height="120"></a>
-
-        <span><b>+</b></span>
-
-        <a href="https://flixel.org"><img src="/images/flixel.svg" alt="Flixel Logo" title="Flixel" height="120"></a>
-
-        <span><b>=</b></span>
-
-        <a href="https://haxeflixel.com"><img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" title="HaxeFlixel" height="120"></a>
-
-        </p>
-
-        <br/>
-
+        <div class="flex flex-row items-center items-stretch text-center justify-between w-1/2 h-25 space-x-0 text-6xl">
+            <a class="h-full transition ease-out h-full hover:scale-110" href="https://haxe.org"><img class="h-full" src="/images/haxe.svg" alt="Haxe Logo" title="Haxe" ></a>
+            <p class="flex items-center">+</p>
+            <a class="h-full transition ease-out h-full hover:scale-110" href="https://openfl.org"><img class="h-full" src="/images/openfl.svg" alt="OpenFL Logo" title="OpenFL" ></a>
+            <p class="flex items-center">+</p>
+            <a class="h-full transition ease-out h-full hover:scale-110" href="https://flixel.org"><img class="h-full" src="/images/flixel.svg" alt="Flixel Logo" title="Flixel" ></a>
+            <p class="flex items-center">=</p>
+            <a class="h-full transition ease-out h-full hover:scale-110" href="https://haxeflixel.com"><img class="h-full" src="/images/haxeflixel.svg" alt="HaxeFlixel logo" title="HaxeFlixel" ></a>
+        </div>
     </div>
 
     <hr>
