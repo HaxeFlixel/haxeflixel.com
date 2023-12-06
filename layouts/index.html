@@ -3,8 +3,8 @@ layout: 'default.html'
 title: 'Home'
 ---
 
-<div class="container">
-    <div class="home-header home-section">
+<div class="flex flex-col space-y-5 ">
+    <div class="flex flex-col items-center space-y-2 w-screen">
 
         <a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
             <img src="images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
@@ -13,66 +13,31 @@ title: 'Home'
         <h1 class="text-6xl font-bold">HaxeFlixel</h1>
 
 
-        <p >Create cross-platform games easier and free.<br> All with one codebase.</p>
+        <p class="text-3xl">Create cross-platform games easier and free.</p>
+        <p class="text-3xl">All with one codebase.</p>
 
-        <p>
-            <a class="home-button" href="/documentation/getting-started">Getting Started</a>
-            <a class="home-button" href="https://github.com/HaxeFlixel">GitHub</a>
-        </p>
-
-        <hr class="backer-hr">
-
-        <div class="home-social">
-
-            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
-                    allowtransparency="true"
-                    src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"
-            ></iframe>
-
-            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
-                    allowtransparency="true"
-                    src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"
-            ></iframe>
-
-            <br />
-
-            <a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en"
-               data-size="large">Follow @haxeflixel</a>
-
-            <script>!function (d, s, id)
-            {
-                var js, fjs = d.getElementsByTagName (s)[0];
-                if (!d.getElementById (id))
-                {
-                    js = d.createElement (s);
-                    js.id = id;
-                    js.src = "//platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore (js, fjs);
-                }
-            } (document, "script", "twitter-wjs");</script>
-
-            <br />
-            <a href="https://discordapp.com/invite/rqEBAgF"><img src="https://img.shields.io/discord/162395145352904705.svg?logo=discord" alt="Discord"></a>
-            <a href="https://www.patreon.com/haxeflixel"><img src="https://img.shields.io/badge/donate-patreon-blue.svg" alt="Patreon"></a>
-
+        <div class="flex flex-row justify-evenly h-auto w-screen text-4xl">
+            <a class="text-center outline outline-indigo-500 hover:bg-indigo-500 hover:text-white py-4 px-8 rounded-full" href="/documentation/getting-started">Getting Started</button>
+            <a class="text-center outline outline-indigo-500 hover:bg-indigo-500 hover:text-white py-4 px-8 rounded-full" href="https://github.com/HaxeFlixel">GitHub</a>
         </div>
-
+            
+        
     </div>
 
     <hr>
 
-    <div class="home-section">
+    <div class="flex flex-col items-center space-y-4">
 
-        <p class="lead-line-large">Cross-compile your games <a href="documentation/about">natively</a> to:</p>
+        <h1 class="text-4xl ">Cross-compile your games <a href="documentation/about">natively</a> to:</h1>
 
-        <div class="platform-logos-home">
-            <img width="80px" height="80px" src="images/targets/windows-logo.svg" alt="Windows" title="Windows">
-            <img width="80px" height="85px" src="images/targets/linux-logo.svg" alt="Linux" title="Linux">
-            <img width="80px" height="85px" src="images/targets/apple-logo.svg" alt="Mac" title="Mac">
-            <img width="80px" height="85px" src="images/targets/android-logo.svg" alt="Android" title="Android">
-            <img width="100px" src="images/targets/ios-logo.png" alt="iOS" title="iOS">
-            <img width="80px" height="80px" src="images/targets/flash-logo.svg" alt="Flash" title="Flash">
-            <img width="85px" height="85px" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
+        <div class="flex flex-row gap-10 justify-center h-14 items-center">
+            <img class="transition ease-out h-full hover:scale-110" src="images/targets/windows-logo.svg" alt="Windows" title="Windows">
+            <img class="transition ease-out h-full hover:scale-110" src="images/targets/linux-logo.svg" alt="Linux" title="Linux">
+            <img class="transition ease-out h-full hover:scale-110" src="images/targets/apple-logo.svg" alt="Mac" title="Mac">
+            <img class="transition ease-out h-full hover:scale-110" src="images/targets/android-logo.svg" alt="Android" title="Android">
+            <img class="transition ease-out h-full hover:scale-110" src="images/targets/ios-logo.png" alt="iOS" title="iOS">
+            <img class="transition ease-out h-full hover:scale-110" src="images/targets/flash-logo.svg" alt="Flash" title="Flash">
+            <img class="transition ease-out h-full hover:scale-110" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
         </div>
     </div>
 

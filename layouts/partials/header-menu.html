@@ -1,59 +1,50 @@
-<header>
-	<nav>
+<header class="flex flex-row bg-black items-center justify-between h-12 px-20 text-center">
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
+	<div class="flex basis-1/4 h-4/5">
+		<a href="/" class="h-full"><img class="h-full" src="/images/haxeflixel-header.svg" alt="HaxeFlixel" /></a>
+	</div>
+	
+	<div class="flex basis-1/2 justify-around">
+		<p class="text-white">Learn</p>
+		<p class="text-white">Showcase</p>
+		<p class="text-white">Contribute</p>
+	</div>
+	<p class="text-white basis-1/4">Q</p>
 
-				<div class="navbar-header">
-					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-						<span class="icon-bar" />
-						<span class="icon-bar" />
-						<span class="icon-bar" />
-					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.svg" height="31" alt="HaxeFlixel" /></a>
-				</div>
+			<!-- <div class="navbar-collapse collapse">
 
-				<!-- <div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
 
-					<ul class="nav navbar-nav">
+					<li <%= @ademos %> class="dropdown ">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+						<ul class="dropdown-menu inverse-dropdown">
+						  <li><a href="/demos">Demos</a></li>
+						  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+						</ul>
+					</li>
 
-						<li <%= @ademos %> class="dropdown ">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
-							<ul class="dropdown-menu inverse-dropdown">
-							  <li><a href="/demos">Demos</a></li>
-							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
-							</ul>
-						</li>
+					<li <%= @ashowcase %>>
+						<a href="/showcase">Showcase</a>
+					</li>
 
-						<li <%= @ashowcase %>>
-							<a href="/showcase">Showcase</a>
-						</li>
+					<li <%= @ablog %>>
+						<a href="/blog">Blog</a>
+					</li>
 
-						<li <%= @ablog %>>
-							<a href="/blog">Blog</a>
-						</li>
+					<li <%= @adocs %>>
+						<a href="/documentation">Docs</a>
+					</li>
 
-						<li <%= @adocs %>>
-							<a href="/documentation">Docs</a>
-						</li>
+					<li>
+						<a href="http://api.haxeflixel.com">API</a>
+					</li>
 
-						<li>
-							<a href="http://api.haxeflixel.com">API</a>
-						</li>
+					<li <%= @aforum %>>
+						<a href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
+					</li>
 
-						<li <%= @aforum %>>
-							<a href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
-						</li>
+				</ul>
+	
+				<!-- <%- @partial('search.html') %> -->
 
-					</ul>
-		
-					<!-- <%- @partial('search.html') %> -->
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</nav>
 </header>

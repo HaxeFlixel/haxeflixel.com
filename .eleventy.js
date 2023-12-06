@@ -9,6 +9,8 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({"src/files/images": "images"});
     eleventyConfig.addPassthroughCopy({"bundle.out.css": "bundle.css"});
+
+    eleventyConfig.setUseGitIgnore(false);
     return {
         dir: {
             input: "index.md",
