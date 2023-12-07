@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth focus:scroll-auto">
+<html lang="en">
 <!-- <%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css"]).toHTML()} ) %> -->
 
 {% renderFile "layouts/partials/head.html" %}
 
-<body>
+<body >
 
 	{% renderFile "layouts/partials/header-menu.html" %}
 
@@ -15,10 +15,12 @@
 		
 
 <!-- <%-@partial('footer.html')%> -->
-{% renderFile "layouts/partials/footer.html" %}
+	
 
 <!-- <%- @getBlock('scripts').add(@site.scripts).toHTML() %> -->
-
+	{% renderFile "layouts/partials/footer.html" %}
 </body>
+
+
 
 </html>

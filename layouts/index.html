@@ -4,7 +4,7 @@ title: 'Home'
 ---
 
 <div class="flex flex-col">
-    <div class="flex flex-col items-center space-y-2 w-screen pb-8">
+    <div class="flex flex-col items-center space-y-2 w-full pb-8">
 
         <a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
             <img class="transition ease-out hover:scale-110" src="images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
@@ -25,9 +25,9 @@ title: 'Home'
     </div>
     
 
-    <div class="flex flex-row text-white bg-black px-80 py-10 min-h-80 h-fit space-x-6 justify-around items-center w-full">
+    <div class="flex flex-col md:flex-row text-white bg-black px-80 py-10 min-h-80 h-fit spaxe-y-6 md:space-x-6 justify-around items-center w-screen">
 
-        <div class="flex flex-col w-1/2">
+        <div class="flex flex-col w-screen md:w-2/3">
             <h1 class="text-2xl font-black">Cross compile your games <a class="hover:scale-110 invert-0" href="documentation/about"><i>natively</i></a> to: <span id="hover-target">...</span></h1>
             <script>
                 let nInterval;
@@ -72,7 +72,7 @@ title: 'Home'
                 <img class="transition ease-out h-full hover:scale-110" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
             </div> -->
         </div>
-        <div class="w-1/2 text-lg font-bold sm:w-200">
+        <div class="w-screen md:w-1/2 text-lg font-normal md:font-bold">
             <p>HaxeFlixel is the damn easy, damn fun framework for creating 2D games.</p>
             <br>
             <p>Easy to learn, extend, and customize, HaxeFlixel gives you the power to make anything from small weekend gamejam prototypes, to full commercialy released independent games.</p>
@@ -95,7 +95,7 @@ title: 'Home'
 
     </div>
 
-    <div class="flex flex-col items-center space-y-10 bg-amber-200 py-4">
+    <div class="flex flex-col items-center space-y-10 bg-amber-200 py-4 w-full min-h-80 min-w-full">
 
         <p class="text-5xl font-semibold">Thank you to our platnium sponsors</p>
 
