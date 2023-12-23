@@ -12,13 +12,16 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("_includes");
     eleventyConfig.addPassthroughCopy({"_includes/images": "images"});
 
+    eleventyConfig.addLayoutAlias('blog-post', 'blog/post.html');
+
+
     eleventyConfig.setUseGitIgnore(false);
     return {
         dir: {
-            input: "index.md",
+            input: "content",
             output: "out",
-            includes: "_includes",
-            layouts: "layouts"
+            includes: "../_includes",
+            layouts: "../layouts"
         }
     }
 }
