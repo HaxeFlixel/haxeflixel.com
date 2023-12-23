@@ -26,9 +26,9 @@
     "start": "npm-run-all -p dev:*",
     "build": "run-s build:*",
     "dev:11ty": "eleventy --serve",
-    "dev:css": "tailwindcss -i bundle.css -o public/css/bundle.css --watch --postcss",
+    "dev:css": "tailwindcss -i bundle.css -o out/css/bundle.css --watch --postcss",
     "build:11ty": "eleventy",
-    "build:css": "tailwindcss -i bundle.css -o public/css/bundle.css --postcss"
+    "build:css": "tailwindcss -i bundle.css -o out/css/bundle.css --postcss"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

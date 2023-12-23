@@ -15,13 +15,11 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addLayoutAlias('blog-post', 'layouts/blog/post.html');
 
-
-    eleventyConfig.setUseGitIgnore(false);
     return {
         dir: {
             input: "content",
             output: "out",
             includes: "../_includes"
         }
-    }
+    };
 }

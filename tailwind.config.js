@@ -6,7 +6,8 @@ module.exports = {
   {
       relateive: true,
       files: [
-        "./layouts/**/*.{html,js}"
+        "./_includes/layouts/**/*.{html,js}",
+        "./content/**/*.{html,js}"
       ]
   },
   theme: {
