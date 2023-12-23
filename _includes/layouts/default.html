@@ -2,11 +2,11 @@
 <html lang="en">
 <!-- <%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css"]).toHTML()} ) %> -->
 
-{% renderFile "layouts/partials/head.html" %}
+{% include  "layouts/head.html" %}
 
 <body class="min-h-screen flex flex-col">
 
-	{% renderFile "layouts/partials/header-menu.html" %}
+	{% include "layouts/header-menu.html" %}
 
 	<br>
 	<br>
@@ -18,7 +18,7 @@
 	
 
 <!-- <%- @getBlock('scripts').add(@site.scripts).toHTML() %> -->
-	{% renderFile "layouts/partials/footer.html" %}
+	{% include "layouts/footer.html" %}
 </body>
 
 
