@@ -1,8 +1,8 @@
-```
+---
 title: "HaxeFlixel 5.4.0"
 layout: blog-post
 postDate: "October 2, 2023"
-```
+---
 
 We've finally released Haxeflixel 5.4.0, our largest release in quite some time, arguably larger than the 5.0.0 release! This release focuses heavily on assets and animations, like the new FlxAsepriteUtil and the new Multi-Atlas system.
 

@@ -1,8 +1,8 @@
-```
+---
 title: "HaxeFlixel 4.1.0"
 layout: blog-post
 postDate: "July 10, 2016"
-```
+---
 
 HaxeFlixel 4.1.0 has just been released to Haxelib (as well as new versions of flixel-addons, ui and demos)! The [full changelog](https://github.com/HaxeFlixel/flixel/blob/4.1.0/CHANGELOG.md) contains a long list of minor improvements and bugfixes.
 
