@@ -1,17 +1,40 @@
-<header class="flex flex-row bg-black items-center justify-between h-12 px-20 text-center">
-
+<header
+	class="flex flex-row bg-black items-center justify-between h-12 px-20 text-center"
+>
 	<div class="flex basis-1/4 h-4/5">
-		<a href="/" class="h-full"><img class="h-full" src="/images/haxeflixel-header.svg" alt="HaxeFlixel" /></a>
+		<a href="/" class="h-full"
+			><img class="h-full" src="/images/haxeflixel-header.svg" alt="HaxeFlixel"
+		/></a>
 	</div>
-	
+
 	<div class="flex basis-1/2 justify-around">
 		<p class="text-white">Learn</p>
 		<p class="text-white">Showcase</p>
 		<p class="text-white">Contribute</p>
 	</div>
 	<p class="text-white basis-1/4">Q</p>
+	<button type="button" class="darkModeButton text-white">Dark Mode</a>
+	<script>
+		var darkMode = document.querySelector(".darkModeButton");
+		darkMode.addEventListener("click", () => {
+			document.documentElement.classList.toggle("dark");
+			localStorage.theme = document.documentElement.classList.contains("dark")
+				? "dark"
+				: "light";
+		});
 
-			<!-- <div class="navbar-collapse collapse">
+		localStorage.theme = document.documentElement.classList.contains("dark")
+			? "dark"
+			: "light";
+
+		if (localStorage.theme === "dark") {
+			document.documentElement.classList.add("dark");
+		} else {
+			document.documentElement.classList.remove("dark");
+		}
+	</script>
+
+	<!-- <div class="navbar-collapse collapse">
 
 				<ul class="nav navbar-nav">
 
@@ -46,5 +69,4 @@
 				</ul>
 	
 				<!-- <%- @partial('search.html') %> -->
-
 </header>

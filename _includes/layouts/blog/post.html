@@ -1,14 +1,14 @@
 ---
 layout: layouts/default.html
 ---
-<div class="flex flex-col">
-    <div class="flex flex-col items-center">
-        <h1 class="font-bold text-4xl">{{title}}</h1>
-        <h3 class="font-light text-sm">{{postDate}}</h3>
-    </div>
-    
-    <div class="text-xl w-2/3 self-center">
-        {{content}}
-    </div>
-    
+
+<div class="flex flex-col dark:text-white">
+	<div class="flex flex-col items-center">
+		<h1 class="font-bold text-4xl">{{title}}</h1>
+		<h3 class="font-light text-sm">{{postDate}}</h3>
+	</div>
+
+	<div class="contentdiv w-2/3 self-center space-y-3 text-xl dark:font-medium pb-20">
+		{{content}}
+	</div>
 </div>
