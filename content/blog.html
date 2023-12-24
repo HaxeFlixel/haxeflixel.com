@@ -1,0 +1,14 @@
+---
+layout: layouts/blog/blog.html
+title: Blog
+---
+
+<div class="grid grid-cols-2 mx-5 w-1/2 gap-4 self-center pb-10">
+{%- for post in collections.blog-post reversed -%}
+
+<a class="bg-slate-950 border-black grow text-xl font-bold text-white px-3" href="{{post.url}}">{{post.data.title}} - <span class="font-extralight">{{post.data.postDate}}</span></a>
+
+{%- endfor -%}
+</div>
+<!-- {{ include "postslist.njk" }} -->
+
