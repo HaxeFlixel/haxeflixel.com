@@ -10,6 +10,17 @@
     h3 {
       @apply text-lg;
     }
+
+    ul, ol {
+      list-style: revert;
+      list-style-position: inside;
+      @apply space-y-4;
+    }
+    ul {
+      ul {
+        @apply ps-5 mt-2 space-y-1;
+      }
+    }
   }
 
 @tailwind components;

@@ -12,6 +12,8 @@ module.exports = function(eleventyConfig) {
 
     // eleventyConfig.addPassthroughCopy({"src/files/images": "images"});
     eleventyConfig.addPassthroughCopy({"./public/": "/"});
+    eleventyConfig.addWatchTarget("./out/css/bundle.css");
+
 
     eleventyConfig.addLayoutAlias('blog-post', 'layouts/blog/post.html');
 
