@@ -5,10 +5,10 @@
       @apply text-4xl font-bold mt-5 mb-2;
     }
     h2 {
-      @apply text-xl font-semibold;
+      @apply text-3xl font-semibold;
     }
     h3 {
-      @apply text-lg;
+      @apply text-2xl;
     }
 
     ul, ol {

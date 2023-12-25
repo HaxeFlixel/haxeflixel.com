@@ -21,6 +21,7 @@ By far the biggest development of HaxeFlixel 5.4.0 is the various tools that uti
 (Made using the [Animated Pixel Adventurer](https://rvros.itch.io/animated-pixel-hero) set by [rvros](https://rvros.itch.io/))
 
 The resulting atlas can easily be applied to a sprite with the following code using the [addAseAtlasTagsByPrefix](https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByPrefix) or [addAseAtlasTagsByIndex](https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByIndex) to create an animation for every tag in your .aseprite file.
+
 ```haxe
 hero = new FlxSprite(50, 50);
 hero.loadAseAtlasAndTagsByPrefix("assets/images/adventurer.png", "assets/images/adventurer.json");
@@ -52,6 +53,7 @@ This feature was specifically made with our Funkin' devs and modders in mind. As
 This project's art pipeline could really benefit from multi-atlas since each character is made from about a dozen different aseprite files, each with potentially dozens of frames.
 
 <img src="/images/blog/16_release/snowman.png" width="100%" />
+
 (Art by Adam V., you should [hire him](https://twitter.com/Koolboyman/status/1672366422767591424)!)
 
 Here's an example of how to add atlases to another
