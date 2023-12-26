@@ -21,6 +21,12 @@
         @apply ps-5 mt-2 space-y-1;
       }
     }
+
+    .blog-post {
+      a {
+        @apply text-hf-blue font-semibold hover:underline dark:text-hf-light-blue dark:font-bold;
+      }
+    }
   }
 
 @tailwind components;
