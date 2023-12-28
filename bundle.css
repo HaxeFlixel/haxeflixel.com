@@ -10,7 +10,7 @@
     h3 {
       @apply text-2xl;
     }
-
+    
     ul, ol {
       list-style: revert;
       list-style-position: inside;
@@ -22,9 +22,13 @@
       }
     }
 
+    .checkboxes ul {
+      @apply list-none;
+    }
+
     .blog-post {
       a {
-        @apply text-hf-blue font-semibold hover:underline dark:text-hf-light-blue dark:font-bold;
+        @apply text-hf-blue font-semibold hover:underline decoration-4 dark:text-hf-light-blue dark:font-bold;
       }
     }
   }
