@@ -12,7 +12,17 @@
 		<p class="text-white">Showcase</p>
 		<p class="text-white">Contribute</p>
 	</div>
-	<p class="text-white basis-1/4">Q</p>
+
+	<form>
+		<div class="relative group">
+			<input class="peer outline-none font-medium caret-hf-red dark:bg-slate-900 hover:bg-slate-200 bg-slate-100 dark:hover:bg-slate-800 hover:ring-1 focus:ring-2 px-3 ring-hf-red" autocomplete="off" type="text" id="Name" placeholder="Search"  >
+			<button class="text-white absolute end-2.5 bg-hf-red bottom-1 top-1 text-xs px-4 font-bold saturate-0 peer-focus:valid:saturate-100" type="submit">Search</button>
+		</div>
+		
+	</form>
+
+	
+
 	<button type="button" class="darkModeButton text-white">Dark Mode</a>
 	<script>
 		var darkMode = document.querySelector(".darkModeButton");

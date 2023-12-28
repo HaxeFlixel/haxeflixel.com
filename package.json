@@ -18,6 +18,7 @@
     "docpad-plugin-repocloner": "2.2.2",
     "docpad-plugin-services": "2.6.0",
     "docpad-plugin-thumbnails": "2.1.2",
+    "fuse.js": "^7.0.0",
     "graceful-fs": "4.2.6",
     "remove-markdown": "0.1.0"
   },
