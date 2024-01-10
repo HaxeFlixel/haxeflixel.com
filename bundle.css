@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
 	h1 {
@@ -38,8 +40,7 @@
 	}
 }
 
-@tailwind components;
-@tailwind utilities;
+
 
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+haxe&plugins=data-uri-highlight */

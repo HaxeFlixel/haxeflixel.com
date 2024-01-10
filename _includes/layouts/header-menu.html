@@ -28,6 +28,29 @@
 		var darkMode = document.querySelector(".darkModeButton");
 		darkMode.addEventListener("click", () => {
 			document.documentElement.classList.toggle("dark");
+
+
+			
+			var giscusDiv = document.querySelector(".giscus");
+			if (giscusDiv) {
+				var newScript = document.createElement("script");
+				newScript.src = "https://giscus.app/client.js";
+				newScript.setAttribute("data-repo", "ninjamuffin99/haxeflixel.com");
+				newScript.setAttribute("data-repo-id", "R_kgDOK1cA1A");
+				newScript.setAttribute("data-category", "Announcements");
+				newScript.setAttribute("data-category-id", "DIC_kwDOK1cA1M4CcVfM");
+				newScript.setAttribute("data-mapping", "pathname");
+				newScript.setAttribute("data-strict", "0");
+				newScript.setAttribute("data-reactions-enabled", "1");
+				newScript.setAttribute("data-emit-metadata", "0");
+				newScript.setAttribute("data-input-position", "top");
+				newScript.setAttribute("data-theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+				newScript.setAttribute("data-lang", "en");
+				newScript.setAttribute("crossorigin", "anonymous");
+				newScript.setAttribute("async", "");
+				giscusDiv.parentNode.replaceChild(newScript, giscusDiv);
+			}
+
 			localStorage.theme = document.documentElement.classList.contains("dark")
 				? "dark"
 				: "light";
