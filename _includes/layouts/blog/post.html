@@ -10,7 +10,7 @@ layout: layouts/default.html
 
 	
 
-	<div class="blog-post w-2/3 self-center space-y-3 text-xl dark:font-medium pb-20">
+	<div class="blog-post w-2/3 self-center space-y-4 text-xl dark:font-medium pb-20">
 		<div id="footer-splash" class="min-w-fit flex flex-row h-1 justify-stretch cursor-pointer">
 			<div id="foot-yellow" class="grow bg-hf-yellow h-full"></div>
 			<div id="foot-red" class="grow bg-hf-red h-full"></div>
@@ -18,10 +18,11 @@ layout: layouts/default.html
 			<div id="foot-blue" class="grow bg-hf-blue h-full"></div>
 			<div id="foot-light-blue" class="grow bg-hf-light-blue h-full"></div>
 		</div>
-		{{content}}
-
-
-			<script src="https://giscus.app/client.js"
+		<div class="space-y-2 pb-2">
+			{{content}}
+		</div>	
+		<hr class="pb-2">
+		<script src="https://giscus.app/client.js"
 					data-repo="ninjamuffin99/haxeflixel.com"
 					data-repo-id="R_kgDOK1cA1A"
 					data-category="Announcements"
@@ -35,7 +36,7 @@ layout: layouts/default.html
 					data-lang="en"
 					crossorigin="anonymous"
 					async>
-			</script>
+		</script>
 
 		
 	</div>
