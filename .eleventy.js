@@ -13,7 +13,9 @@ module.exports = function (eleventyConfig) {
 
 	// eleventyConfig.addPassthroughCopy({"src/files/images": "images"});
 	eleventyConfig.addPassthroughCopy({ "./public/": "/" });
+	eleventyConfig.addPassthroughCopy({ "./content/documentation/flixel-docs/documentation/images/": "/documentation/images/" });
 	eleventyConfig.addWatchTarget("./out/css/bundle.css");
+
 
 	eleventyConfig.addLayoutAlias("blog-post", "layouts/blog/post.html");
 
@@ -31,7 +33,7 @@ module.exports = function (eleventyConfig) {
 		let replacedValue = value.replace(/^[\d\-]+/, "");
 		replacedValue = replacedValue.replace(/\.html$/, "");
 
-  		return replacedValue;
+		return replacedValue;
 	});
 
 	return {
