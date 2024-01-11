@@ -1,7 +1,7 @@
 ---
 title: "Blog Posts are Back"
 layout: blog-post
-postDate: "June 7, 2023"
+date: 2023-06-07
 ---
 
 Hello everyone! George, here, gladly announceing the return of the HaxeFlixel blog after a long hiatus. While there have been many ongoing changes to the HaxeFlixel framework, we've sadly neglected to broadcast those changes on the website. Let's take this time to get everybody up to speed with all we've done these last 3 years.

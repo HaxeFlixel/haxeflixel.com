@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@octokit/core": "^5.0.2",
+    "date-and-time": "^3.1.0",
     "docpad": "6.78.4",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-eco": "2.1.0",

@@ -1588,7 +1588,7 @@
                 functionCode: '[code]', //function calls it internally, it's the content of the function
                 attribute: quote, //node calls it internally, it's an html attribute value
                 string: quote,
-                date: quote,
+            date: quote,
                 regexp: literal, //regex
                 number: literal,
                 'boolean': literal

@@ -1,7 +1,7 @@
 ---
 title: "HaxeFlixel Patreon"
 layout: blog-post
-postDate: "May 20, 2015"
+date: 2015-05-20
 ---
 
 Hello HaxeFlixel enthusiast, [gamedevsam](https://twitter.com/gamedevsam) here!

@@ -12,7 +12,7 @@ layout: blog-layout
         <a href="<%= blog.url %>" property="dc:title">
             <h3><%= blog.title %></h3>
         </a>
-        <div class="post-date post-date-preview"><%= blog.postDate %></div>
+        <div class="post-date post-date-preview"><%= blog.date %></div>
 
         <p><%- blog.contentPreview %> <a href="<%= blog.url %>"> read more</a></p>
 

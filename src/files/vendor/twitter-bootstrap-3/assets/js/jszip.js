@@ -56,7 +56,7 @@ JSZip.defaults = {
     base64: false,
     binary: false,
     dir: false,
-    date: null,
+date: null,
     compression: null
 };
 

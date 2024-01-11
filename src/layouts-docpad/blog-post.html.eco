@@ -14,7 +14,7 @@
 
     <h1 class="title"><%= @document.title %></h1>
 
-    <p class="post-date"><%= @document.postDate %></h1>
+    <p class="post-date"><%= @document.date %></h1>
 
     <%- @content %>
 

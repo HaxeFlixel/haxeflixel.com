@@ -1,7 +1,7 @@
 ---
 title: "HaxeFlixel 4.2.0"
 layout: blog-post
-postDate: "October 11, 2016"
+date: 2016-10-11
 ---
 
 We've just released HaxeFlixel 4.2.0! There are a lot of small additions and improvements, like exposing the [`length`](http://api.haxeflixel.com/flixel/system/FlxSound.html?#length) of `FlxSound` objects or allowing you to configure their [`endTime`](http://api.haxeflixel.com/flixel/system/FlxSound.html?#endTime).

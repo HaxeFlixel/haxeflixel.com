@@ -1,7 +1,7 @@
 ---
 title: "HaxeFlixel Mechanics"
 layout: blog-post
-postDate: "March 2, 2017"
+date: 2017-03-02
 ---
 
 Hey everybody, Tim here to share something with you: Does this sound familiar?

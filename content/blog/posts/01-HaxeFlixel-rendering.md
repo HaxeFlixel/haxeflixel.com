@@ -1,7 +1,7 @@
 ---
 title: "Tilesheet rendering"
 layout: blog-post
-postDate: "July 31, 2014"
+date: 2014-07-31
 ---
 
 Hi, [gamedevsam](https://github.com/gamedevsam) here, I'm a developer and evangelist of HaxeFlixel.

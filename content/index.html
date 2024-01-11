@@ -82,6 +82,13 @@ title: 'Home'
     </div>
 
 
+    <div class="flex flex-row justify-evenly items-center text-5xl font-extrabold bg-hf-red py-10">
+        <p class="uppercase font-light">Latest from the <a class="font-medium hover:underline" href="/blog/">blog</a></p>
+        {% assign post = collections.blog-post[0] -%}
+        <a class="hover:underline" href="{{post.url}}">{{post.data.title}}<br><span class="font-medium">{{ post.date | toDateString}}</span></a>
+
+    </div>
+
     <div class="demos-home home-section">
         <!-- <p class="lead-line-large">Browse and learn from our <a href="/demos"><%= @getCollection('demos').length %> demos</a>:</h3></p> -->
 
