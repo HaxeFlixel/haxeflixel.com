@@ -110,9 +110,13 @@ pre{
 .token.function-name {
 	@apply text-vscode-theme-light-selector dark:text-vscode-theme-dark-selector;
 }
-.token.boolean,
+
 .token.function {
 	@apply text-vscode-theme-light-variable-and-parameter-name dark:text-vscode-theme-dark-variable-and-parameter-name;
+}
+
+.token.boolean {
+	@apply text-vscode-theme-light-types-declaration-and-references dark:text-vscode-theme-dark-types-declaration-and-references;
 }
 
 .token.number {
