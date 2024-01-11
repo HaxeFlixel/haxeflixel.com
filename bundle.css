@@ -41,7 +41,7 @@
 }
 
 
-code {
+:not(pre) > code {
 	@apply text-lg bg-slate-200 dark:bg-slate-800 px-1 py-0.5 hover:bg-slate-300 dark:hover:bg-slate-700;
 }
 
