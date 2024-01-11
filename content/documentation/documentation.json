@@ -1,4 +1,5 @@
 {
     "permalink": "/documentation/{{ page.fileSlug | docsRegexp }}",
-    "tags": "docs"
+    "tags": "docs",
+    "layout": "layouts/blog/post.html"
 }
