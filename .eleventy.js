@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.ignores.add("content/documentation/flixel-docs/api/");
 	eleventyConfig.addFilter("docsRegexp", function (value) {
 		let replacedValue = value.replace(/^[\d\-]+/, "");
+		replacedValue = replacedValue.replace(/\.html$/, "");
 
   		return replacedValue;
 	});
