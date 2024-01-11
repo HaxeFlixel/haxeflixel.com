@@ -1,0 +1,13 @@
+---
+layout: layouts/blog/blog.html
+title: Documentation
+---
+
+<div class="grid grid-cols-2 mx-5 w-1/2 gap-4 self-center pb-10">
+{%- for doc in collections.docs reversed -%}
+
+<a class="bg-slate-950 border-black grow text-xl font-bold text-white px-3" href="{{doc.url}}">{{doc.fileSlug}} - <span class="font-extralight">{{doc.data.postDate}}</span></a>
+
+{%- endfor -%}
+</div>
+<!-- {{ include "docslist.njk" }} -->

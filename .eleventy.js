@@ -24,8 +24,14 @@ module.exports = function (eleventyConfig) {
 	};
 
 	eleventyConfig.setLibrary("md", markdownIt(options));
-    eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownItTasklist));
+	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItTasklist));
 
+	eleventyConfig.ignores.add("content/documentation/flixel-docs/api/");
+	eleventyConfig.addFilter("docsRegexp", function (value) {
+		let replacedValue = value.replace(/^[\d\-]+/, "");
+
+  		return replacedValue;
+	});
 
 	return {
 		dir: {

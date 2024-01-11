@@ -7,6 +7,7 @@
     "url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
   },
   "dependencies": {
+    "@octokit/core": "^5.0.2",
     "docpad": "6.78.4",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-eco": "2.1.0",
@@ -19,11 +20,14 @@
     "docpad-plugin-services": "2.6.0",
     "docpad-plugin-thumbnails": "2.1.2",
     "fuse.js": "^7.0.0",
+    "git-pull-or-clone": "^2.0.2",
     "graceful-fs": "4.2.6",
-    "remove-markdown": "0.1.0"
+    "remove-markdown": "0.1.0",
+    "shelljs": "^0.8.5"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
+    "preinstall": "node scripts/install-flixel-docs.js",
     "start": "npm-run-all -p dev:*",
     "build": "run-s build:*",
     "dev:11ty": "eleventy --serve",
