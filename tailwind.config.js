@@ -92,7 +92,6 @@ module.exports = {
           "puncutation": "#000000",
           
         },
-
       }
     },
   },

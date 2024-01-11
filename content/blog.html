@@ -3,12 +3,37 @@ layout: layouts/blog/blog.html
 title: Blog
 ---
 
-<div class="grid grid-cols-2 mx-5 w-1/2 gap-4 self-center pb-10">
-{%- for post in collections.blog-post reversed -%}
+<div class="flex flex-col mx-5 w-2/3 self-center">
+    
+    <h1 class="dark:text-white underline dark:no-underline">The HaxeFlixel Blog</h1>
 
-<a class="bg-slate-950 border-black grow text-xl font-bold text-white px-3" href="{{post.url}}">{{post.data.title}} - <span class="font-extralight">{{post.date | toDateString }}</span></a>
-
-{%- endfor -%}
+    <div class="grid grid-cols-2 gap-4 self-center pb-10">
+        {%- for post in collections.blog-post reversed -%}
+        
+        {% if forloop.index == 1 %}
+        
+        <a class="transition-all ease-out col-span-2 bg-slate-100 hover:{% cycle 'bg-hf-yellow', 'bg-hf-red', 'bg-hf-green', 'bg-hf-blue', 'bg-hf-light-blue', %} dark:bg-slate-950  ring-1 ring-black dark:ring-white py-2 text-xl font-bold text-black dark:text-white px-3" href="{{post.url}}">
+            <p class="text-5xl">{{post.data.title}} </p>
+            <p class="font-light">{{post.date | toDateString }}</p>
+            <p class="text-sm font-normal">{{post.content | strip_html |truncate: 600}}</p>
+        </a>
+        
+        {% else %}
+        
+        <a class="transition-all ease-out bg-slate-100 hover:{% cycle 'bg-hf-yellow', 'bg-hf-red', 'bg-hf-green', 'bg-hf-blue', 'bg-hf-light-blue', %} dark:bg-slate-950 ring-1 ring-black dark:ring-white py-2 text-xl font-bold text-black dark:text-white px-3" href="{{post.url}}">
+        
+            <p class="font-bold">{{post.data.title}} </p>
+            <p class="font-extralight">{{post.date | toDateString }}</p>
+            <p class="text-sm font-normal">{{post.content | strip_html |truncate: 144}}</p>
+        </a>
+        
+        {% endif %}
+        
+        {%- endfor -%}
+        </div>
 </div>
+
+
+
 <!-- {{ include "postslist.njk" }} -->
 
