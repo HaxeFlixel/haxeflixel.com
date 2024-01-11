@@ -19,14 +19,18 @@
 
 	ul,
 	ol {
-		list-style: revert;
-		list-style-position: inside;
-		@apply space-y-4;
+		list-style:revert;
+		list-style-position:outside;
+		@apply space-y-4 ps-5;
 	}
 	ul {
 		ul {
 			@apply ps-5 mt-2 space-y-1;
 		}
+	}
+
+	::marker {
+		@apply font-bold dark:font-extrabold;
 	}
 
 	.checkboxes ul {
@@ -36,6 +40,10 @@
 	.blog-post {
 		a {
 			@apply text-hf-blue font-semibold hover:underline decoration-4 dark:text-hf-light-blue dark:font-bold;
+		}
+
+		img {
+			@apply inline-block self-center align-middle justify-center;
 		}
 	}
 }
