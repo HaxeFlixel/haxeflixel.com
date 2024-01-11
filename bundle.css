@@ -41,15 +41,19 @@
 }
 
 
+code {
+	@apply text-lg bg-slate-200 dark:bg-slate-800 px-1 py-0.5 hover:bg-slate-300 dark:hover:bg-slate-700;
+}
 
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+haxe&plugins=data-uri-highlight */
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #ccc;
+	@apply text-vscode-theme-light-attribute-name dark:text-vscode-theme-dark-attribute-name;
+
 	background: 0 0;
 	font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-	font-size: 1em;
+	@apply text-sm ;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -68,10 +72,11 @@ pre[class*="language-"] {
 	padding: 1em;
 	margin: 0.5em 0;
 	overflow: auto;
+
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #2d2d2d;
+	@apply bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 hover:dark:bg-slate-800;
 }
 :not(pre) > code[class*="language-"] {
 	padding: 0.1em;
@@ -83,10 +88,10 @@ pre[class*="language-"] {
 .token.comment,
 .token.doctype,
 .token.prolog {
-	color: #999;
+	@apply text-vscode-theme-light-comment dark:text-vscode-theme-dark-comment;
 }
 .token.punctuation {
-	color: #ccc;
+	@apply text-vscode-theme-light-puncutation dark:text-vscode-theme-dark-punctuation;
 }
 .token.attr-name,
 .token.deleted,
@@ -95,37 +100,41 @@ pre[class*="language-"] {
 	color: #e2777a;
 }
 .token.function-name {
-	color: #6196cc;
+	@apply text-vscode-theme-light-selector dark:text-vscode-theme-dark-selector;
 }
 .token.boolean,
-.token.function,
-.token.number {
-	color: #f08d49;
+.token.function {
+	@apply text-vscode-theme-light-variable-and-parameter-name dark:text-vscode-theme-dark-variable-and-parameter-name;
 }
+
+.token.number {
+	@apply text-vscode-theme-light-numberLiteral dark:text-vscode-theme-dark-numberLiteral;
+}
+
 .token.class-name,
 .token.constant,
 .token.property,
 .token.symbol {
-	color: #f8c555;
+	@apply text-vscode-theme-light-types-declaration-and-references-ts dark:text-vscode-theme-dark-types-declaration-and-references-ts;
 }
 .token.atrule,
 .token.builtin,
 .token.important,
 .token.keyword,
 .token.selector {
-	color: #cc99cd;
+	@apply text-vscode-theme-light-control-flow-special-keywords dark:text-vscode-theme-dark-control-flow-special-keywords;
 }
 .token.attr-value,
 .token.char,
 .token.regex,
 .token.string,
 .token.variable {
-	color: #7ec699;
+	@apply text-vscode-theme-light-variable-and-parameter-name dark:text-vscode-theme-dark-variable-and-parameter-name;
 }
 .token.entity,
 .token.operator,
 .token.url {
-	color: #67cdcc;
+	@apply text-vscode-theme-light-entity-name-label dark:text-vscode-theme-dark-entity-name-label;
 }
 .token.bold,
 .token.important {
@@ -140,3 +149,4 @@ pre[class*="language-"] {
 .token.inserted {
 	color: green;
 }
+
