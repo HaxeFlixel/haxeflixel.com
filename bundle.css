@@ -55,8 +55,8 @@
 
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=clike+haxe&plugins=data-uri-highlight */
-code[class*="language-"],
-pre[class*="language-"] {
+code,
+pre {
 	@apply text-vscode-theme-light-attribute-name dark:text-vscode-theme-dark-attribute-name;
 
 	background: 0 0;
@@ -76,17 +76,17 @@ pre[class*="language-"] {
 	-ms-hyphens: none;
 	hyphens: none;
 }
-pre[class*="language-"] {
+pre {
 	padding: 1em;
 	margin: 0.5em 0;
 	overflow: auto;
 
 }
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code,
+pre{
 	@apply bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 hover:dark:bg-slate-800;
 }
-:not(pre) > code[class*="language-"] {
+:not(pre) > code {
 	padding: 0.1em;
 	border-radius: 0.3em;
 	white-space: normal;
