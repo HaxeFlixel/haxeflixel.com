@@ -1,50 +1,50 @@
 {
-  "name": "haxeflixel.com",
-  "version": "0.2.0",
-  "description": "New DocPad project without using a skeleton",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
-  },
-  "dependencies": {
-    "@octokit/core": "^5.0.2",
-    "date-and-time": "^3.1.0",
-    "docpad": "6.78.4",
-    "docpad-plugin-cleanurls": "2.11.0",
-    "docpad-plugin-eco": "2.1.0",
-    "docpad-plugin-gist": "2.1.1",
-    "docpad-plugin-less": "2.4.1",
-    "docpad-plugin-livereload": "2.7.1",
-    "docpad-plugin-marked": "2.3.0",
-    "docpad-plugin-partials": "2.8.1",
-    "docpad-plugin-repocloner": "2.2.2",
-    "docpad-plugin-services": "2.6.0",
-    "docpad-plugin-thumbnails": "2.1.2",
-    "fuse.js": "^7.0.0",
-    "git-pull-or-clone": "^2.0.2",
-    "graceful-fs": "4.2.6",
-    "remove-markdown": "0.1.0",
-    "shelljs": "^0.8.5"
-  },
-  "main": "node_modules/docpad/bin/docpad-server",
-  "scripts": {
-    "preinstall": "node scripts/install-flixel-docs.js",
-    "start": "npm-run-all -p dev:*",
-    "build": "run-s build:*",
-    "dev:11ty": "eleventy --serve",
-    "dev:css": "tailwindcss -i bundle.css -o out/css/bundle.css --watch --postcss",
-    "build:11ty": "eleventy",
-    "build:css": "tailwindcss -i bundle.css -o out/css/bundle.css --postcss"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "autoprefixer": "^10.4.16",
-    "eleventy-plugin-postcss": "^1.0.4",
-    "markdown-it": "^14.0.0",
-    "markdown-it-task-lists": "^2.1.1",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.32",
-    "tailwindcss": "^3.3.6"
-  }
+	"name": "haxeflixel.com",
+	"version": "0.2.0",
+	"description": "New DocPad project without using a skeleton",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
+	},
+	"dependencies": {
+		"@octokit/core": "^5.0.2",
+		"date-and-time": "^3.1.0",
+		"docpad": "6.78.4",
+		"docpad-plugin-cleanurls": "2.11.0",
+		"docpad-plugin-eco": "2.1.0",
+		"docpad-plugin-gist": "2.1.1",
+		"docpad-plugin-less": "2.4.1",
+		"docpad-plugin-livereload": "2.7.1",
+		"docpad-plugin-marked": "2.3.0",
+		"docpad-plugin-partials": "2.8.1",
+		"docpad-plugin-repocloner": "2.2.2",
+		"docpad-plugin-services": "2.6.0",
+		"docpad-plugin-thumbnails": "2.1.2",
+		"fuse.js": "^7.0.0",
+		"git-pull-or-clone": "^2.0.2",
+		"graceful-fs": "4.2.6",
+		"remove-markdown": "0.1.0",
+		"shelljs": "^0.8.5"
+	},
+	"main": "node_modules/docpad/bin/docpad-server",
+	"scripts": {
+		"preinstall": "node scripts/install-flixel-docs.js",
+		"start": "npm-run-all -p dev:*",
+		"build": "run-s build:*",
+		"dev:11ty": "eleventy --serve",
+		"dev:css": "tailwindcss -i bundle.css -o out/css/bundle.css --watch --postcss",
+		"build:11ty": "eleventy",
+		"build:css": "tailwindcss -i bundle.css -o out/css/bundle.css --postcss"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"autoprefixer": "^10.4.16",
+		"eleventy-plugin-postcss": "^1.0.4",
+		"markdown-it": "^14.0.0",
+		"markdown-it-task-lists": "^2.1.1",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.32",
+		"tailwindcss": "^3.3.6"
+	}
 }

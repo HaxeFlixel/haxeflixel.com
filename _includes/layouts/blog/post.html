@@ -3,43 +3,46 @@ layout: layouts/default.html
 ---
 
 <div class="flex flex-col dark:text-white space-y-2">
-	<div class="flex flex-col items-center">
-		<h1 class="font-bold text-4xl">{{title}}</h1>
-		<h3 class="font-light text-sm">{{date | toDateString}}</h3>
-	</div>
+    <div class="flex flex-col items-center">
+        <h1 class="font-bold text-4xl">{{title}}</h1>
+        <h3 class="font-light text-sm">{{date | toDateString}}</h3>
+    </div>
 
-	
+    <div class="blog-post w-2/3 self-center space-y-4 text-xl dark:font-medium pb-20">
+        <div id="footer-splash" class="min-w-fit flex flex-row h-1 justify-stretch cursor-pointer">
+            <div id="foot-yellow" class="grow bg-hf-yellow h-full"></div>
+            <div id="foot-red" class="grow bg-hf-red h-full"></div>
+            <div id="foot-green" class="grow bg-hf-green h-full"></div>
+            <div id="foot-blue" class="grow bg-hf-blue h-full"></div>
+            <div id="foot-light-blue" class="grow bg-hf-light-blue h-full"></div>
+        </div>
+        <div class="space-y-2 pb-2">
+            {{content}}
+        </div>
+        <div class="flex flex-row justify-stretch">
+            {% assign prevPost = collections.blog-post | getPreviousCollectionItem %}
+            {% if prevPost %}
 
-	<div class="blog-post w-2/3 self-center space-y-4 text-xl dark:font-medium pb-20">
-		<div id="footer-splash" class="min-w-fit flex flex-row h-1 justify-stretch cursor-pointer">
-			<div id="foot-yellow" class="grow bg-hf-yellow h-full"></div>
-			<div id="foot-red" class="grow bg-hf-red h-full"></div>
-			<div id="foot-green" class="grow bg-hf-green h-full"></div>
-			<div id="foot-blue" class="grow bg-hf-blue h-full"></div>
-			<div id="foot-light-blue" class="grow bg-hf-light-blue h-full"></div>
-		</div>
-		<div class="space-y-2 pb-2">
-			{{content}}
-		</div>	
-		<hr class="pb-2">
-		<script src="https://giscus.app/client.js"
-					data-repo="ninjamuffin99/haxeflixel.com"
-					data-repo-id="R_kgDOK1cA1A"
-					data-category="Announcements"
-					data-category-id="DIC_kwDOK1cA1M4CcVfM"
-					data-mapping="pathname"
-					data-strict="0"
-					data-reactions-enabled="1"
-					data-emit-metadata="0"
-					data-input-position="top"
-					data-theme="light"
-					data-lang="en"
-					crossorigin="anonymous"
-					async>
-		</script>
+            <a class="basis-1/2" href="{{prevPost.url}}"><span class="font-light">Previous
+                    post</span><br>{{prevPost.data.title}}</a>
+            {% endif %}
 
-		
-	</div>
+            {% assign nextPost = collections.blog-post | getNextCollectionItem %}
+            {% if nextPost %}
+            <a class="text-right basis-1/2" href="{{nextPost.url}}"><span class="font-light">Next
+                    post</span><br>{{nextPost.data.title}}</a>
+            {% endif %}
+            <a>
+        </div>
+        <hr class="py-3 my-2">
+        <script src="https://giscus.app/client.js" data-repo="ninjamuffin99/haxeflixel.com" data-repo-id="R_kgDOK1cA1A"
+            data-category="Announcements" data-category-id="DIC_kwDOK1cA1M4CcVfM" data-mapping="pathname"
+            data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top"
+            data-theme="light" data-lang="en" crossorigin="anonymous" async>
+            </script>
 
-	
+
+    </div>
+
+
 </div>

@@ -1,66 +1,73 @@
 <footer class="flex flex-col bg-black w-screen mt-auto">
-	<div id="footer-splash" class="min-w-full flex flex-row h-1 justify-stretch cursor-pointer">
-		<div id="foot-yellow" class="grow bg-hf-yellow h-full"></div>
-		<div id="foot-red" class="grow bg-hf-red h-full"></div>
-		<div id="foot-green" class="grow bg-hf-green h-full"></div>
-		<div id="foot-blue" class="grow bg-hf-blue h-full"></div>
-		<div id="foot-light-blue" class="grow bg-hf-light-blue h-full"></div>
-	</div>
+    <div id="footer-splash" class="min-w-full flex flex-row h-1 justify-stretch cursor-pointer">
+        <div id="foot-yellow" class="grow bg-hf-yellow h-full"></div>
+        <div id="foot-red" class="grow bg-hf-red h-full"></div>
+        <div id="foot-green" class="grow bg-hf-green h-full"></div>
+        <div id="foot-blue" class="grow bg-hf-blue h-full"></div>
+        <div id="foot-light-blue" class="grow bg-hf-light-blue h-full"></div>
+    </div>
 
-	<script>
-		var audio = new Audio('/flixel.ogg');
-		document.getElementById('footer-splash').addEventListener('click', function() {
-			
-			if (audio.paused) {
-				
+    <script>
+        var audio = new Audio('/flixel.ogg');
+        document.getElementById('footer-splash').addEventListener('click', function () {
 
-				let times = [0.041, 0.184, 0.334, 0.495, 0.636];
-				let footCol = ["foot-green", "foot-yellow", "foot-light-blue", "foot-red", "foot-blue"];
+            if (audio.paused) {
 
-				for (let i = 0; i < times.length; i++) {
-					document.getElementById(footCol[i]).style.opacity = 0;
-				}
 
-				setTimeout(function() {
-					// code to be executed
-					audio.play();
-					for(let i = 0; i < times.length; i++) {
-					setTimeout(function() {
-						// code to be executed
-						document.getElementById(footCol[i]).style.opacity = 1;
-					}, times[i] * 1000);
-				}
-				}, 1000);
+                let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+                let footCol = ["foot-green", "foot-yellow", "foot-light-blue", "foot-red", "foot-blue"];
 
-				
-			}
-		});
-	</script>
+                for (let i = 0; i < times.length; i++) {
+                    document.getElementById(footCol[i]).style.opacity = 0;
+                }
 
-	<div class="flex flex-row w-2/3 self-center max-h-60 py-8 justify-start space-x-20 items-center">
-		
-		<div class="flex justify-center items-center text-white">
-			<a href="/"><img src="/images/haxeflixel.svg" alt="Haxe" title="Haxe"></a>
-		</div>
+                setTimeout(function () {
+                    // code to be executed
+                    audio.play();
+                    for (let i = 0; i < times.length; i++) {
+                        setTimeout(function () {
+                            // code to be executed
+                            document.getElementById(footCol[i]).style.opacity = 1;
+                        }, times[i] * 1000);
+                    }
+                }, 1000);
 
-		<a class="text-white font-extrabold" href="https://github.com/ninjamuffin99/haxeflixel.com/issues">TODO LIST</a>
 
-		<div class="flex flex-col text-white">
-			<h4 class="text-slate-300 font-bold">HaxeFlixel.com</h1>
-			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-yellow" href="/blog/">HaxeFlixel Blog</a>
-			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-red" href="/documentation/">Docs</a>
-			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-green" href="/">API</a>
-			<a class="font-black transition-all ease-out hover:text-black hover:bg-hf-blue" href="/">Forum</a>
-		</div>
+            }
+        });
+    </script>
 
-		<div class="text-white flex flex-col ">
-			<h4 class="font-semibold">The Net</h1>
-			<a class="font-black transition-all ease-out hover:bg-social-github-500 hover:text-black" href="https://github.com/HaxeFlixel/flixel">GitHub</a>
-			<a class="font-black transition-all ease-out hover:bg-social-twitter hover:text-black" href="https://twitter.com/haxeflixel">Twitter</a>
-			<a class="font-black transition-all ease-out hover:bg-social-discord hover:text-black" href="https://discordapp.com/invite/rqEBAgF">Discord</a>
-			<a class="font-black transition-all ease-out hover:bg-social-patreon hover:text-black" href="https://www.patreon.com/haxeflixel">Patreon</a>
-		</div>
-	</div>
+    <div class="flex flex-row w-2/3 self-center max-h-60 py-8 justify-start space-x-20 items-center">
 
-	
+        <div class="flex justify-center items-center text-white">
+            <a href="/"><img src="/images/haxeflixel.svg" alt="Haxe" title="Haxe"></a>
+        </div>
+
+        <a class="text-white font-extrabold" href="https://github.com/ninjamuffin99/haxeflixel.com/issues">TODO LIST</a>
+
+        <div class="flex flex-col text-white">
+            <h4 class="text-slate-300 font-bold">HaxeFlixel.com</h1>
+                <a class="font-black transition-all ease-out hover:text-black hover:bg-hf-yellow"
+                    href="/blog/">HaxeFlixel Blog</a>
+                <a class="font-black transition-all ease-out hover:text-black hover:bg-hf-red"
+                    href="/documentation/">Docs</a>
+                <a class="font-black transition-all ease-out hover:text-black hover:bg-hf-green" href="/">API</a>
+                <a class="font-black transition-all ease-out hover:text-black hover:bg-hf-blue" href="/">Forum</a>
+                <a class="font-black transition-all ease-out hover:text-black hover:bg-hf-blue" href="/feed.xml">RSS</a>
+        </div>
+
+        <div class="text-white flex flex-col ">
+            <h4 class="font-semibold">The Net</h1>
+                <a class="font-black transition-all ease-out hover:bg-social-github-500 hover:text-black"
+                    href="https://github.com/HaxeFlixel/flixel">GitHub</a>
+                <a class="font-black transition-all ease-out hover:bg-social-twitter hover:text-black"
+                    href="https://twitter.com/haxeflixel">Twitter</a>
+                <a class="font-black transition-all ease-out hover:bg-social-discord hover:text-black"
+                    href="https://discordapp.com/invite/rqEBAgF">Discord</a>
+                <a class="font-black transition-all ease-out hover:bg-social-patreon hover:text-black"
+                    href="https://www.patreon.com/haxeflixel">Patreon</a>
+        </div>
+    </div>
+
+
 </footer>

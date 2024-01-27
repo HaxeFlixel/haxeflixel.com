@@ -4,8 +4,7 @@ const PostCSSPlugin = require("eleventy-plugin-postcss");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const markdownIt = require("markdown-it");
 const markdownItTasklist = require("markdown-it-task-lists");
-const date = require('date-and-time');
-
+const date = require("date-and-time");
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight);
@@ -15,14 +14,17 @@ module.exports = function (eleventyConfig) {
 
 	// eleventyConfig.addPassthroughCopy({"src/files/images": "images"});
 	eleventyConfig.addPassthroughCopy({ "./public/": "/" });
-	eleventyConfig.addPassthroughCopy({ "./content/documentation/flixel-docs/documentation/images/": "/documentation/images/" });
+	eleventyConfig.addPassthroughCopy({
+		"./content/documentation/flixel-docs/documentation/images/":
+			"/documentation/images/",
+	});
 	eleventyConfig.addWatchTarget("./out/css/bundle.css");
 
 	eleventyConfig.addFilter("toDateString", (dateObj) => {
 		let now = new Date(dateObj);
 
-		return date.format(now, 'MMMM D, YYYY');
-	  });
+		return date.format(now, "MMMM D, YYYY");
+	});
 
 	eleventyConfig.addLayoutAlias("blog-post", "layouts/blog/post.html");
 
