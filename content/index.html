@@ -82,10 +82,16 @@ title: 'Home'
     </div>
 
 
-    <div class="flex flex-row justify-evenly items-center text-5xl font-extrabold bg-hf-red py-10">
-        <p class="uppercase font-light">Latest from the <a class="font-medium hover:underline" href="/blog/">blog</a></p>
+    <div class="flex flex-row items-center align-middle text-5xl font-extrabold bg-hf-red py-10">
+        <p class="uppercase font-light basis-1/2 pl-10">Latest from the <a class="font-medium hover:underline" href="/blog/">blog</a></p>
         {% assign post = collections.blog-post.last -%}
-        <a class="hover:underline" href="{{post.url}}">{{post.data.title}}<br><span class="font-medium">{{ post.date | toDateString}}</span></a>
+        <div class="basis-1/2 pr-10">
+            <a class="hover:underline" href="{{post.url}}">{{post.data.title}}</a>
+            <p class="font-medium text-2xl">{{ post.date | toDateString}}</p>
+            <a class="text-base font-normal pt-2 block" href="{{post.url}}">{{ post.content  | strip_html |truncate: 600}}</a>
+            <a class="hover:underline font-medium text-2xl" href="{{post.url}}">Read more about {{post.data.title}}</a>
+        </div>
+        
 
     </div>
 
