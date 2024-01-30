@@ -45,6 +45,17 @@ module.exports = function (eleventyConfig) {
 		return replacedValue;
 	});
 
+	let fuseList = [];
+	eleventyConfig.addCollection("searchCollection", function (collectionAPI) {
+		collectionAPI.getAll().forEach(async function (element) {
+			if (element.data.title && !fuseList.includes(element.data.title)) fuseList.push(element.data.title);
+		});
+
+		return collectionAPI.getAll();
+	});
+
+	eleventyConfig.addGlobalData("searchList", { search: fuseList });
+
 	return {
 		dir: {
 			input: "content",

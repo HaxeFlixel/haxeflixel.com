@@ -1,73 +1,106 @@
-<header
-	class="flex flex-row bg-black items-center justify-between h-12 px-20 text-center"
->
-	<div class="flex basis-1/4 h-4/5">
-		<a href="/" class="h-full"
-			><img class="h-full" src="/images/haxeflixel-header.svg" alt="HaxeFlixel"
-		/></a>
-	</div>
+<header class="flex flex-row bg-black items-center justify-between h-12 px-20 text-center">
+    <div class="flex basis-1/4 h-4/5">
+        <a href="/" class="h-full"><img class="h-full" src="/images/haxeflixel-header.svg" alt="HaxeFlixel" /></a>
+    </div>
 
-	<div class="flex basis-1/2 justify-around">
-		<a class="text-white" href="/documentation/">Learn</a>
-		<p class="text-white opacity-50">Showcase</p>
-		<p class="text-white opacity-50">Contribute</p>
-	</div>
+    <div class="flex basis-1/2 justify-around">
+        <a class="text-white" href="/documentation/">Learn</a>
+        <p class="text-white opacity-50">Showcase</p>
+        <p class="text-white opacity-50">Contribute</p>
+    </div>
 
-	<form>
-		<div class="relative group">
-			<input class="peer outline-none font-medium caret-hf-red dark:bg-slate-900 hover:bg-slate-200 bg-slate-100 dark:hover:bg-slate-800 hover:ring-1 focus:ring-2 px-3 ring-hf-red" autocomplete="off" type="text" id="Name" placeholder="Search"  >
-			<button class="text-white absolute end-2.5 bg-hf-red bottom-1 top-1 text-xs px-4 font-bold saturate-0 peer-focus:valid:saturate-100" type="submit">Search</button>
-		</div>
-		
-	</form>
+    <script>
+        let funArray = [];
 
-	
+        {% for swag in searchList.search %}
+            funArray.push("{{swag}}");
+        {% endfor %}
 
-	<button type="button" class="darkModeButton text-white">Dark Mode</a>
-	<script>
-		var darkMode = document.querySelector(".darkModeButton");
-		darkMode.addEventListener("click", () => {
-			document.documentElement.classList.toggle("dark");
+        let fuse = new Fuse(funArray);
+        let handleChange = function (e) {
+            let searchBar = document.querySelector("#searchBar");
+            searchBar.innerHTML = "";
+            let list = document.createElement("ul");
+            searchBar.appendChild(list);
+            let results = fuse.search(e);
+
+            results.slice(0, 5).forEach((result) => {
+                let li = document.createElement("li");
+                li.innerHTML += result.item;
+                list.appendChild(li);
+            });
+            console.log(fuse.search(e));
+        };
+        
+    </script>
+
+    <form>
+        <div class=" relative group">
+            <input
+                class="peer outline-none font-medium caret-hf-red dark:bg-slate-900 hover:bg-slate-200 bg-slate-100 dark:hover:bg-slate-800 hover:ring-1 focus:ring-2 px-3 ring-hf-red"
+                autocomplete="off" type="search" id="Name" placeholder="Search" oninput="handleChange(this.value)" }>
+            <button
+                class="text-white absolute end-2.5 bg-hf-red bottom-1 top-1 text-xs px-4 font-bold saturate-0 peer-focus:valid:saturate-100"
+                type="submit">Search</button>
+
+            <div id="searchBar" class="fixed top-12">
+                    <ul>
+                        <li>swag</li>
+                    </ul>
+            </div>
+        </div>
+
+    </form>
+
+    
 
 
-			
-			var giscusDiv = document.querySelector(".giscus");
-			if (giscusDiv) {
-				var newScript = document.createElement("script");
-				newScript.src = "https://giscus.app/client.js";
-				newScript.setAttribute("data-repo", "ninjamuffin99/haxeflixel.com");
-				newScript.setAttribute("data-repo-id", "R_kgDOK1cA1A");
-				newScript.setAttribute("data-category", "Announcements");
-				newScript.setAttribute("data-category-id", "DIC_kwDOK1cA1M4CcVfM");
-				newScript.setAttribute("data-mapping", "pathname");
-				newScript.setAttribute("data-strict", "0");
-				newScript.setAttribute("data-reactions-enabled", "1");
-				newScript.setAttribute("data-emit-metadata", "0");
-				newScript.setAttribute("data-input-position", "top");
-				newScript.setAttribute("data-theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
-				newScript.setAttribute("data-lang", "en");
-				newScript.setAttribute("crossorigin", "anonymous");
-				newScript.setAttribute("async", "");
-				giscusDiv.parentNode.replaceChild(newScript, giscusDiv);
-			}
 
-			localStorage.theme = document.documentElement.classList.contains("dark")
-				? "dark"
-				: "light";
-		});
+    <button type="button" class="darkModeButton text-white">Dark Mode</a>
+        <script>
+            var darkMode = document.querySelector(".darkModeButton");
+            darkMode.addEventListener("click", () => {
+                document.documentElement.classList.toggle("dark");
 
-		localStorage.theme = document.documentElement.classList.contains("dark")
-			? "dark"
-			: "light";
 
-		if (localStorage.theme === "dark") {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
-	</script>
 
-	<!-- <div class="navbar-collapse collapse">
+                var giscusDiv = document.querySelector(".giscus");
+                if (giscusDiv) {
+                    var newScript = document.createElement("script");
+                    newScript.src = "https://giscus.app/client.js";
+                    newScript.setAttribute("data-repo", "ninjamuffin99/haxeflixel.com");
+                    newScript.setAttribute("data-repo-id", "R_kgDOK1cA1A");
+                    newScript.setAttribute("data-category", "Announcements");
+                    newScript.setAttribute("data-category-id", "DIC_kwDOK1cA1M4CcVfM");
+                    newScript.setAttribute("data-mapping", "pathname");
+                    newScript.setAttribute("data-strict", "0");
+                    newScript.setAttribute("data-reactions-enabled", "1");
+                    newScript.setAttribute("data-emit-metadata", "0");
+                    newScript.setAttribute("data-input-position", "top");
+                    newScript.setAttribute("data-theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+                    newScript.setAttribute("data-lang", "en");
+                    newScript.setAttribute("crossorigin", "anonymous");
+                    newScript.setAttribute("async", "");
+                    giscusDiv.parentNode.replaceChild(newScript, giscusDiv);
+                }
+
+                localStorage.theme = document.documentElement.classList.contains("dark")
+                    ? "dark"
+                    : "light";
+            });
+
+            localStorage.theme = document.documentElement.classList.contains("dark")
+                ? "dark"
+                : "light";
+
+            if (localStorage.theme === "dark") {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+
+        <!-- <div class="navbar-collapse collapse">
 
 				<ul class="nav navbar-nav">
 
@@ -100,6 +133,6 @@
 					</li>
 
 				</ul>
-	
+
 				<!-- <%- @partial('search.html') %> -->
 </header>
