@@ -17,7 +17,8 @@
     "docpad-plugin-repocloner": "2.3.1",
     "docpad-plugin-services": "2.7.0",
     "docpad-plugin-thumbnails": "2.1.2",
-    "remove-markdown": "github:stiang/remove-markdown"
+    "remove-markdown": "github:stiang/remove-markdown",
+    "graceful-fs": "4.2.6"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
