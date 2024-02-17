@@ -7,19 +7,17 @@
     "url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
   },
   "dependencies": {
-    "docpad": "6.78.4",
+    "docpad": "6.79.x",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-eco": "2.1.0",
-    "docpad-plugin-gist": "2.1.1",
-    "docpad-plugin-less": "2.4.1",
-    "docpad-plugin-livereload": "2.7.1",
-    "docpad-plugin-marked": "2.3.0",
-    "docpad-plugin-partials": "2.8.1",
-    "docpad-plugin-repocloner": "2.2.2",
-    "docpad-plugin-services": "2.6.0",
+    "docpad-plugin-less": "2.5.1",
+    "docpad-plugin-livereload": "2.9.0",
+    "docpad-plugin-marked": "2.4.0",
+    "docpad-plugin-partials": "2.12.0",
+    "docpad-plugin-repocloner": "2.3.1",
+    "docpad-plugin-services": "2.7.0",
     "docpad-plugin-thumbnails": "2.1.2",
-    "remove-markdown": "0.1.0",
-    "graceful-fs": "4.2.6"
+    "remove-markdown": "github:stiang/remove-markdown"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
