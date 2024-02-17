@@ -1,4 +1,4 @@
-```
+---
 layout: showcase
 title: "Friday Night Funkin'"
 featured: true
@@ -8,4 +8,4 @@ github: https://github.com/FunkinCrew/funkin
 website: https://ninja-muffin24.itch.io/funkin
 github: https://github.com/FunkinCrew/funkin
 date: "2-20-2021"
-```
+---

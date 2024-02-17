@@ -1,8 +1,8 @@
-```
+---
 title: "FlxLightPuzzle Demo"
 layout: blog-post
 postDate: "March 28, 2018"
-```
+---
 
 We have a new demo made by yours truly [Nick](https://twitter.com/MSGhero16): a puzzle game of reflecting light and combining colors. Featuring...
 

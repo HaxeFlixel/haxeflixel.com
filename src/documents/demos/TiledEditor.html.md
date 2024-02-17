@@ -1,9 +1,9 @@
-```
+---
 title: "TiledEditor"
 layout: demo
 source: "Editors/TiledEditor"
 targets: ['flash', 'html5']
-```
+---
 
 This sample shows how to load a map from the [Tiled Map Editor](http://www.mapeditor.org/).
 

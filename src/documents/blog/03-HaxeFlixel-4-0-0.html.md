@@ -1,8 +1,8 @@
-```
+---
 title: "HaxeFlixel 4.0.0"
 layout: blog-post
 postDate: "February 16, 2016"
-```
+---
 
 We are proud to announce the release of HaxeFlixel 4.0.0! This is without a doubt the biggest release yet, with nearly 2000 new commits on the core repository alone since the last release.
 

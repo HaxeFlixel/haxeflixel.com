@@ -1,4 +1,4 @@
-```
+---
 layout: showcase
 title: "Defender's Quest꞉ Valley of the Forgotten"
 featured: true
@@ -8,4 +8,4 @@ psvita: https://www.playstation.com/en-us/games/defenders-quest-valley-of-the-fo
 xbox: https://www.microsoft.com/en-us/p/defenders-quest-valley-of-the-forgotten-dx/c1tbcx541jw7
 website: http://www.defendersquest.com/1/
 date: "7-20-2016"
-```
+---

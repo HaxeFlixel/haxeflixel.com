@@ -1,4 +1,4 @@
-```
+---
 layout: showcase
 title: "Go! Go! PogoGirl"
 featured: true
@@ -9,4 +9,4 @@ switch: https://www.nintendo.com/store/products/go-go-pogogirl-switch/
 ps4: https://store.playstation.com/en-us/product/UP0891-PPSA10169_00-GOGOPOGOGIRLRATG
 xbox: https://www.microsoft.com/store/productid/9P10H7L6QCCJ
 date: "2-1-2022"
-```
+---

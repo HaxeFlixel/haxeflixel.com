@@ -1,8 +1,8 @@
-```
+---
 title: "HaxeFlixel now has a blog!"
 layout: blog-post
 postDate: "July 30, 2014"
-```
+---
 
 The HaxeFlixel project and it's active community of game dev enthusiasts, have opened this 
 blog up to post about the latest updates, news and anything awesome happening related to

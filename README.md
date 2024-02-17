@@ -61,13 +61,13 @@ please review the readme there for more info on updating the haxeflixel.com/docu
 following this example:
 
     ```
-        ```
+        ---
         title: "Demo-Name"
         layout: demo
         width: 800
         height: 500
         source: "flixel-demos-subdirectory/Demo-Name"
-        ```
+        ---
         Here goes the actual description of the demo in  GitHub-Flavored-Markdown:
         * What the demo displays
         * Who created it
@@ -95,7 +95,7 @@ Should be compiled with `FLX_NO_DEBUG` (to show the flixel splash screen) and in
 [`/src/documents/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/showcase) 
 following this example:
 
-    ```
+    ---
     layout: showcase
     title: "Go! Go! PogoGirl"
     itch: https://ohsat-andrej.itch.io/go-go-pogogirl
@@ -105,7 +105,7 @@ following this example:
     ps4: https://store.playstation.com/en-us/product/UP0891-PPSA10169_00-GOGOPOGOGIRLRATG
     xbox: https://www.microsoft.com/store/productid/9P10H7L6QCCJ
     date: "2-1-2022"
-    ```
+    ---
     
     Note that `date` is currently unused but will eventually be used to sort, dates should use US format of month-day-20XX
     

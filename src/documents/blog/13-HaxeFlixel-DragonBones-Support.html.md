@@ -1,8 +1,8 @@
-```
+---
 title: "HaxeFlixel DragonBones Support"
 layout: blog-post
 postDate: "September 1, 2018"
-```
+---
 
 Hi there, I’m Troy ([@RouStudios](https://twitter.com/roustudios)), creator and maintainer of the [HaxeFlixel backend for DragonBones](https://github.com/openfl/dragonbones). I’m here to write a post about DragonBones support for HaxeFlixel and how to use it. 
 

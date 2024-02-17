@@ -1,8 +1,8 @@
-```
+---
 title: "HaxeFlixel 4.4.0"
 layout: blog-post
 postDate: "May 4, 2018"
-```
+---
 
 HaxeFlixel 4.4.0 is now available on Haxelib, adding **support for OpenFL 8** and Lime 6.3.0! [Breaking changes](/documentation/upgrade-guide-4-0-0/) are mostly limited to blend modes and a slightly different shader syntax. Additionally, 4.4.0 is still fully-backwards-compatible with OpenFL 3.6.1 legacy or next, so even if you don't plan on upgrading to OpenFL 8 just yet, don't let that stop you from taking advantage of the [other fixes and improvements in the 4.4.0 release](https://github.com/HaxeFlixel/flixel/blob/4.4.0/CHANGELOG.md).
 

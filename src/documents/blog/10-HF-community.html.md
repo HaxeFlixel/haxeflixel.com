@@ -1,8 +1,8 @@
-```
+---
 title: "The Flixel Community"
 layout: blog-post
 postDate: "September 17, 2017"
-```
+---
 
 So you've [downloaded Flixel](http://haxeflixel.com/documentation/getting-started/), skipped around in the [tutorial](http://haxeflixel.com/documentation/tutorial/), and are wondering what's next. You could start making that game you've been thinking about. Or, better yet, make that game while also talking to other people who are using Flixel! They're not scary, I promise.
 

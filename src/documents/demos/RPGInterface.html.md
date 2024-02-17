@@ -1,11 +1,11 @@
-```
+---
 title: "RPGInterface"
 layout: demo
 width: 800
 height: 600
 source: "UserInterface/RPGInterface"
 targets: ['flash', 'html5']
-```
+---
 
 This is a simple demonstration of the flixel-ui engine in a fictional RPG.
 
