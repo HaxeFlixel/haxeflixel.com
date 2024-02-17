@@ -19,13 +19,13 @@ jobs:
         node scripts/docker.js buildSite
         ls -lah
         haxe --run RemoveRedirects
-    - name: Highlighting
-      run: |
-        git clone --recursive https://github.com/ninjamuffin99/Highlighter
-        cd Highlighter
-        npm install
-        node bin/highlighter.js ../out
-        cd ..
+    # - name: Highlighting
+    #   run: |
+    #     git clone --recursive https://github.com/ninjamuffin99/Highlighter
+    #     cd Highlighter
+    #     npm install
+    #     node bin/highlighter.js ../out
+    #     cd ..
     - name: Deploy Master
       uses: peaceiris/actions-gh-pages@v3
       with:

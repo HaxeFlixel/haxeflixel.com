@@ -10,6 +10,7 @@
     "docpad": "6.79.x",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-eco": "2.1.0",
+    "docpad-plugin-highlightjs": "^2.5.0",
     "docpad-plugin-less": "2.5.1",
     "docpad-plugin-livereload": "2.9.0",
     "docpad-plugin-marked": "2.4.0",
