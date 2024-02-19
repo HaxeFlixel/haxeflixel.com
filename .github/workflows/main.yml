@@ -4,12 +4,12 @@ on: [push, pull_request, workflow_dispatch, repository_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
-        node-version: '10.x'
+        node-version: 'latest'
     - uses: krdlab/setup-haxe@v1
     - name: Build Docker Image
       run: node scripts/docker.js buildImage
@@ -19,13 +19,13 @@ jobs:
         node scripts/docker.js buildSite
         ls -lah
         haxe --run RemoveRedirects
-    - name: Highlighting
-      run: |
-        git clone --recursive https://github.com/Gama11/Highlighter
-        cd Highlighter
-        npm install
-        node bin/highlighter.js ../out
-        cd ..
+    # - name: Highlighting
+    #   run: |
+    #     git clone --recursive https://github.com/ninjamuffin99/Highlighter
+    #     cd Highlighter
+    #     npm install
+    #     node bin/highlighter.js ../out
+    #     cd ..
     - name: Deploy Master
       uses: peaceiris/actions-gh-pages@v3
       with:
