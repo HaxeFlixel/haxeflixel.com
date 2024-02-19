@@ -1,9 +1,9 @@
-```
+---
 title: "FlxBunnyMark"
 layout: demo
 source: "Performance/FlxBunnyMark"
 targets: ['flash', 'html5']
-```
+---
 
 This is a HaxeFlixel port of the BunnyMark Benchmark. 
 

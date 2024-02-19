@@ -1,9 +1,9 @@
-```
+---
 title: "FlxRandom"
 layout: demo
 source: "Performance/FlxRandom"
 targets: ['flash', 'html5']
-```
+---
 
 This is simply a collection of functions to test the updated FlxRandom class in HaxeFlixel.
 

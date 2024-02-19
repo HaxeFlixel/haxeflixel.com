@@ -1,11 +1,11 @@
-```
+---
 title: "SplitScreen"
 layout: demo
 width: 400
 height: 300
 source: "Features/SplitScreen"
 targets: ['flash', 'html5']
-```
+---
 
 A port and improvement of the [Split Screen demo](https://github.com/phmongeau/SplitScreen) by [Philippe Mongeau](https://twitter.com/phmongeau) featured on [flixel.org/features](http://flixel.org/features.html).
 

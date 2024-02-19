@@ -1,4 +1,4 @@
-```
+---
 layout: showcase
 title: "Blasting Agent꞉ Ultimate Edition"
 windows: http://www.blastingagent.com/
@@ -7,4 +7,4 @@ ps4: https://store.playstation.com/en-us/product/UP0891-CUSA06555_00-RGBLASTINGA
 itch: https://axolstudio.itch.io/blasting-agent
 website: https://axolstudio.com/projects/blasting-agent/
 date: "8-17-2016"
-```
+---

@@ -1,8 +1,8 @@
-```
+---
 title: "OpenFL 5 compatibility status update"
 layout: blog-post
 postDate: "May 13, 2017"
-```
+---
 
 Hey, Beeblerox here!
 

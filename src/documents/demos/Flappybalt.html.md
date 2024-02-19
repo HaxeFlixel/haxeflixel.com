@@ -1,4 +1,4 @@
-```
+---
 title: "Flappybalt"
 layout: demo
 width: 480
@@ -6,7 +6,7 @@ height: 720
 source: "Arcade/Flappybalt"
 tags: ['homepage_demo']
 targets: ['flash', 'html5']
-```
+---
 
 Controls: Spacebar
 

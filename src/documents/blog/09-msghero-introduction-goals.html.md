@@ -1,8 +1,8 @@
-```
+---
 title: "Introducing Nick (MSGHero)"
 layout: blog-post
 postDate: "August 26, 2017"
-```
+---
 
 Hi everyone!
 
