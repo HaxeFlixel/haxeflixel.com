@@ -9,8 +9,8 @@
 
 ## About
 
-This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with a Node.js static site generator called 
-[DocPad](http://docpad.org/).
+This is the source of [haxeflixel.com](https://haxeflixel.com/). It is made with a Node.js static site generator called 
+[DocPad](https://docpad.bevry.me/).
 You can compile this website yourself with a local install of DocPad, pull requests are welcome.
 
 1. [Install DocPad](https://docpad.bevry.me/start/install)
@@ -110,7 +110,7 @@ following this example:
     Note that `date` is currently unused but will eventually be used to sort, dates should use US format of month-day-20XX
     
     Note that by adding a URL to one of the supported targets, the icon will automatically become coloured on the 
-    [showcase page](http://haxeflixel.com/showcase) and link to that URL.
+    [showcase page](https://haxeflixel.com/showcase) and link to that URL.
 
 2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `Go! Go! PogoGirl.png` 
 to [`/src/files/images/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/images/showcase). 
@@ -122,7 +122,7 @@ Showcases that are not officially released yet are only accepted in special case
 
 ## Compile the live site
 
-haxeflixel.com is being hosted from a [static build of docpad](http://docpad.org/docs/deploy). To update the site
+haxeflixel.com is being hosted from a [static build of docpad](https://docpad.bevry.me/start/deploy). To update the site
 run the `compile.sh` or `compile.bat` which uses `docpad generate --env static`.
 
 Note that although both the `run` and `compile` scripts update the `out` folder they are different commands and 
