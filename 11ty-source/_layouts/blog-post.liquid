@@ -1,0 +1,23 @@
+---
+layout: default.liquid
+---
+
+
+<!-- <%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %> -->
+
+<div class="col-md-8">
+
+    <h1 class="title">{{ title }}</h1>
+
+    <p class="post-date">{{ postDate }}</h1>
+
+        {{ content }}
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- <%- @getDisqus() %> -->
+
+</div>
+

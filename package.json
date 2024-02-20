@@ -22,7 +22,15 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "docpad run",
-    "build": "docpad generate --env static"
+    "start": "run-s start:*",
+    "start:11ty": "eleventy",
+    "start:docpad": "docpad run",
+    "build": "run-p build:*",
+    "build:docpad": "docpad generate --env static",
+    "build:11ty": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "npm-run-all2": "^6.1.2"
   }
 }

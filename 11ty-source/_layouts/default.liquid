@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% comment %} <%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css", "/vendor/highlightjs/styles/an-old-hope.min.css"]).toHTML()} ) %> {% endcomment %}
+{% renderFile "./11ty-source/_layouts/partials/head.liquid" %}
+<body>
+
+{% renderFile "./11ty-source/_layouts/partials/header-menu.liquid" %}
+
+<div class="container container-main">
+		{% comment %} Make sure each class renders it's title {% endcomment %}
+	{{ content }}
+</div>
+
+{% renderFile "./11ty-source/_layouts/partials/footer.html" %}
+
+{% comment %} <%- @getBlock('scripts').add(@site.scripts).toHTML() %> {% endcomment %}
+
+</body>
+
+</html>
