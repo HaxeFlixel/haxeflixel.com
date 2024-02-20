@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       deploy_gh_pages:
-        description: 'Deploy to gh_pages branch'
+        description: 'Deploy to gh_pages branch (for use in forks)'
         required: false
         type: boolean
 
@@ -25,7 +25,7 @@ jobs:
     - name: Build Site
       run: |
         ls -lah
-        node scripts/docker.js buildSite
+        npm run build
         ls -lah
         haxe --run RemoveRedirects
     # - name: Highlighting
