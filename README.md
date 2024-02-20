@@ -9,8 +9,8 @@
 
 ## About
 
-This is the source of [haxeflixel.com](http://haxeflixel.com/). It is made with a Node.js static site generator called 
-[DocPad](http://docpad.org/).
+This is the source of [haxeflixel.com](http://haxeflixel.com/). It was orgiginally made with a Node.js static site generator called 
+[DocPad](http://docpad.org/), but it's in a transition to [11ty](https://www.11ty.dev/)
 You can compile this website yourself with a local install of DocPad, pull requests are welcome.
 
 1. [Install DocPad](https://docpad.bevry.me/start/install)
@@ -25,7 +25,7 @@ You can compile this website yourself with a local install of DocPad, pull reque
     
     ```batch
     npm install
-    docpad run
+    npm run start
     ```
     Or if you are a windows user:
     
@@ -38,8 +38,8 @@ You can compile this website yourself with a local install of DocPad, pull reque
 
 3. [Open http://localhost:9778/](http://localhost:9778/)
 
-4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save 
-the files you modify.
+<!-- 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save 
+the files you modify. -->
 
 ## Contributing
 

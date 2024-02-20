@@ -6,7 +6,7 @@ layout: blog-layout
 <div class="container">
 <div class="row">
 
-    {%- for blog in collections.blogpost-%}
+    {%- for blog in collections.blogpost -%}
 
         <a href="{{blog.url}}" property="dc:title">
             <h3>{{ blog.data.title }}</h3>
