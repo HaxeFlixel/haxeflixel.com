@@ -16,6 +16,9 @@
 
 {% comment %} <%- @getBlock('scripts').add(@site.scripts).toHTML() %> {% endcomment %}
 
+{%renderFile "./11ty-source/cdn-scripts.liquid"%}
+<script src="/11ty-bundle.js"></script>
+
 </body>
 
 </html>
