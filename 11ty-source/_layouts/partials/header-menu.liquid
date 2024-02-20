@@ -17,9 +17,7 @@
 
 					<ul class="nav navbar-nav">
 						
-						{% comment %} These old docpad partials use variables from current page, getting if the class is "active" {% endcomment %}
-						{% comment %} <li <%= @ademos %> class="dropdown "> {% endcomment %}
-						<li class="dropdown">
+						<li class="dropdown {% dropdownActive 'demos' %}">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
 							<ul class="dropdown-menu inverse-dropdown">
 							  <li><a href="/demos">Demos</a></li>
@@ -27,22 +25,21 @@
 							</ul>
 						</li>
 
-						{% comment %} <li <%= @ashowcase %>> {% endcomment %}
-						<li>
+						<li class={% dropdownActive 'showcase' %}>
 							<a href="/showcase">Showcase</a>
 						</li>
 
 						{% comment %} <li <%= @ablog %>> {% endcomment %}
-						<li>
+						<li class={% dropdownActive 'blog' %}>
 							<a href="/blog">Blog</a>
 						</li>
 
 						{% comment %} <li <%= @adocs %>> {% endcomment %}
-						<li>
+						<li class={% dropdownActive 'documentation' %}>
 							<a href="/documentation">Docs</a>
 						</li>
 
-						<li>
+						<li >
 							<a href="http://api.haxeflixel.com">API</a>
 						</li>
 
