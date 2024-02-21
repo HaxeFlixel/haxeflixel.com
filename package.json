@@ -29,8 +29,8 @@
     "build": "run-p build:*",
     "build:docpad": "docpad generate --env static",
     "build:11ty": "eleventy",
-    "test": "standard"
-    
+    "test": "standard",
+    "fix-lints": "standard --fix"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

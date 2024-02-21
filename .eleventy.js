@@ -12,16 +12,17 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("image", async function(src, alt, width, height) {
-      let metadata = await Image(src, { 
+      let resizedImage = await resizeImage(src, width, height, "cover");
+
+      let metadata = await Image(resizedImage, { 
         formats: ["webp", "png"],
-        widths: [width],
         outputDir: "out/img"
       });
   
       let imageAttributes = {
         alt,
         width: width,
-        height: 100,
+        height: height,
         loading: "lazy",
         decoding: "async",
       };
