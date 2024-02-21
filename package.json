@@ -18,7 +18,8 @@
     "docpad-plugin-repocloner": "2.3.1",
     "docpad-plugin-services": "2.7.0",
     "docpad-plugin-thumbnails": "2.1.2",
-    "remove-markdown": "github:stiang/remove-markdown#main"
+    "remove-markdown": "github:stiang/remove-markdown#main",
+    "sharp": "^0.33.2"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
@@ -27,11 +28,19 @@
     "start:docpad": "docpad run",
     "build": "run-p build:*",
     "build:docpad": "docpad generate --env static",
-    "build:11ty": "eleventy"
+    "build:11ty": "eleventy",
+    "test": "standard"
+    
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^4.0.2",
-    "npm-run-all2": "^6.1.2"
+    "npm-run-all2": "^6.1.2",
+    "standard": "^17.1.0"
+  },
+  "standard": {
+    "ignore": [
+      "**/vendor/"
+    ]
   }
 }

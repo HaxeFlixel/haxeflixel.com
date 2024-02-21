@@ -16,9 +16,11 @@ layout: showcase
 		<h3>{{showcase.data.title}}</h3>
 
 		<a class="showcase-game-thumbnail" href="{{showcase.data.website}}" property="dc:title" target="_blank">
-
-			<img src="<%= @getThumbnail("/images/showcase/#{showcase.title}.png", "zoomcrop", { w: 500, h: 260 }) %>"
-				alt="{{showcase.data.title}}" title="{{showcase.data.website}}">
+			{% comment %} This capture is here because idk how to properly use the showcase title in the image source lol! {% endcomment %}
+			{% capture imgURL %}src/files/images/showcase/{{showcase.data.title}}.png{% endcapture %}
+			{% image imgURL, showcase.data.title, "500", "260" %}
+			{% comment %} <img src="<%= @getThumbnail("/images/showcase/#{showcase.title}.png", "zoomcrop", ) %>" {% endcomment %}
+				{% comment %} alt="{{showcase.data.title}}" title="{{showcase.data.website}}"> {% endcomment %}
 
 		</a>
 
