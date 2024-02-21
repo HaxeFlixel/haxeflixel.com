@@ -1,6 +1,6 @@
 ---
 layout: showcase
-title: "Defender's Quest꞉ Valley of the Forgotten"
+title: "Defender's Quest: Valley of the Forgotten"
 featured: true
 steam: http://store.steampowered.com/app/218410/
 ps4: https://www.playstation.com/en-us/games/defenders-quest-valley-of-the-forgotten-dx-ps4/
