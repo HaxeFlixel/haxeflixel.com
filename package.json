@@ -26,7 +26,7 @@
     "start": "run-s start:*",
     "start:11ty": "eleventy",
     "start:docpad": "docpad run",
-    "build": "run-p build:*",
+    "build": "run-s build:*",
     "build:docpad": "docpad generate --env static",
     "build:11ty": "eleventy",
     "test": "standard",
