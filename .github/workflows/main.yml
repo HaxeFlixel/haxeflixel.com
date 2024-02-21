@@ -1,6 +1,15 @@
 name: CI
 
-on: [push, pull_request, workflow_dispatch, repository_dispatch]
+on: 
+  push:
+  pull_request:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      deploy_gh_pages:
+        description: 'Deploy to gh_pages branch (for use in forks)'
+        required: false
+        type: boolean
 
 jobs:
   build:
@@ -11,12 +20,14 @@ jobs:
       with:
         node-version: 'latest'
     - uses: krdlab/setup-haxe@v1
-    - name: Build Docker Image
-      run: node scripts/docker.js buildImage
+    # - name: Build Docker Image
+    #   run: node scripts/docker.js buildImage
+    - run: sudo apt-get update && sudo apt-get install -y imagemagick
     - name: Build Site
       run: |
         ls -lah
-        node scripts/docker.js buildSite
+        npm install
+        npm run build
         ls -lah
         haxe --run RemoveRedirects
     # - name: Highlighting
@@ -26,6 +37,13 @@ jobs:
     #     npm install
     #     node bin/highlighter.js ../out
     #     cd ..
+    - name: Deploy gh_pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: ./out
+        force_orphan: true
+      if: inputs.deploy_gh_pages == true
     - name: Deploy Master
       uses: peaceiris/actions-gh-pages@v3
       with:
