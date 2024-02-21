@@ -9,8 +9,8 @@
 
 ## About
 
-This is the source of [haxeflixel.com](https://haxeflixel.com/). It was orgiginally made with a Node.js static site generator called 
-[DocPad](https://docpad.bevry.me/), but it's in a transition to [11ty](https://www.11ty.dev/)
+This is the source of [haxeflixel.com](https://haxeflixel.com/). It was orgiginally made with [DocPad](https://docpad.bevry.me/), but it's in a transition to [11ty](https://www.11ty.dev/).
+
 You can compile this website yourself with a local install of DocPad, pull requests are welcome.
 
 1. [Install DocPad](https://docpad.bevry.me/start/install)
@@ -27,9 +27,6 @@ You can compile this website yourself with a local install of DocPad, pull reque
     npm install
     npm run start
     ```
-    Or if you are a windows user:
-    
-    ...run `install.bat`, then `run.bat`
     
     The website uses [docpad-plugin-thumbnails](https://github.com/rantecki/docpad-plugin-thumbnails)
     
@@ -104,7 +101,7 @@ following this example:
     switch: https://www.nintendo.com/store/products/go-go-pogogirl-switch/
     ps4: https://store.playstation.com/en-us/product/UP0891-PPSA10169_00-GOGOPOGOGIRLRATG
     xbox: https://www.microsoft.com/store/productid/9P10H7L6QCCJ
-    date: "2-1-2022"
+    date: "2022-02-01"
     ---
     
     Note that `date` is currently unused but will eventually be used to sort, dates should use US format of month-day-20XX
