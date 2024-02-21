@@ -94,7 +94,7 @@ Should be compiled with `FLX_NO_DEBUG` (to show the flixel splash screen) and in
 1. Create a `.md` file in 
 [`/src/documents/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/showcase) 
 following this example:
-
+```
     ---
     layout: showcase
     title: "Go! Go! PogoGirl"
@@ -111,7 +111,7 @@ following this example:
     
     Note that by adding a URL to one of the supported targets, the icon will automatically become coloured on the 
     [showcase page](https://haxeflixel.com/showcase) and link to that URL.
-
+```
 2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `Go! Go! PogoGirl.png` 
 to [`/src/files/images/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/images/showcase). 
 They are resized and cropped to 500x260, so it's best to use the same ratio.
