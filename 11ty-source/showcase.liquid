@@ -28,7 +28,7 @@ layout: showcase
 
 				{% if  showcase.data.windows %}
 					<span class="<%= @getShowcaseActive( showcase.data.windows) %>" title="Windows">
-						<a href="<%=  showcase.data.windows %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.windows }}" class="showcaseTarget" target="_blank">
 							<img width="30px" height="40px" src="/images/targets/windows-logo.svg">
 						</a>
 					</span>
@@ -36,7 +36,7 @@ layout: showcase
 
 				{% if  showcase.data.linux %}
 					<span class="<%= @getShowcaseActive( showcase.data.linux) %>" title="Linux">
-						<a href="<%=  showcase.data.linux %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.linux }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="49px" src="/images/targets/linux-logo.svg">
 						</a>
 					</span>
@@ -44,7 +44,7 @@ layout: showcase
 
 				{% if  showcase.data.mac %}
 					<span class="<%= @getShowcaseActive( showcase.data.mac) %>" title="Mac">
-						<a href="<%=  showcase.data.mac %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.mac }}" class="showcaseTarget" target="_blank">
 							<img width="26px" height="40px" src="/images/targets/apple-logo.svg">
 						</a>
 					</span>
@@ -52,7 +52,7 @@ layout: showcase
 
 				{% if  showcase.data.android %}
 					<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
-						<a href="<%=  showcase.data.android %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.android }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/android-logo.svg">
 						</a>
 					</span>
@@ -60,7 +60,7 @@ layout: showcase
 
 				{% if  showcase.data.ios  %}
 					<span class="<%= @getShowcaseActive( showcase.data.ios) %>" title="iOS">
-						<a href="<%=  showcase.data.ios %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.ios }}" class="showcaseTarget" target="_blank">
 							<img width="40px" src="/images/targets/ios-logo.png">
 						</a>
 					</span>
@@ -68,7 +68,7 @@ layout: showcase
 
 				{% if  showcase.data.flash  %}
 					<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
-						<a href="<%=  showcase.data.flash %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.flash }}" class="showcaseTarget" target="_blank">
 							<img width="32px" height="40px" src="/images/targets/flash-logo.svg">
 						</a>
 					</span>
@@ -76,7 +76,7 @@ layout: showcase
 
 				{% if  showcase.data.steam %}
 					<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
-						<a href="<%=  showcase.data.steam %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.steam }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/steam-logo.svg">
 						</a>
 					</span>
@@ -84,7 +84,7 @@ layout: showcase
 
 				{% if  showcase.data.ps4 %}
 					<span class="<%= @getShowcaseActive( showcase.data.ps4) %>" title="PlayStation 4">
-						<a href="<%=  showcase.data.ps4 %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.ps4 }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/ps-logo.svg">
 						</a>
 					</span>
@@ -92,7 +92,7 @@ layout: showcase
 
 				{% if  showcase.data.psvita %}
 					<span class="<%= @getShowcaseActive( showcase.data.psvita) %>" title="PlayStation Vita">
-						<a href="<%=  showcase.data.psvita %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.psvita }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/ps-logo.svg">
 						</a>
 					</span>
@@ -100,7 +100,7 @@ layout: showcase
 
 				{% if  showcase.data.xbox %}
 					<span class="<%= @getShowcaseActive( showcase.data.xbox) %>" title="XBox">
-						<a href="<%=  showcase.data.xbox %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.xbox }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/xbox-logo.svg">
 						</a>
 					</span>
@@ -108,7 +108,7 @@ layout: showcase
 				
 				{% if  showcase.data.switch %}
 					<span class="<%= @getShowcaseActive( showcase.data.switch) %>" title="Nintendo Switch">
-						<a href="<%=  showcase.data.switch %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.switch }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/switch-logo.svg">
 						</a>
 					</span>
@@ -116,7 +116,7 @@ layout: showcase
 				
 				{% if  showcase.data.itch %}
 					<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
-						<a href="<%=  showcase.data.itch %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.itch }}" class="showcaseTarget" target="_blank">
 							<img width="35px" height="40px" src="/images/targets/itch-logo.svg">
 						</a>
 					</span>
@@ -124,7 +124,7 @@ layout: showcase
 				
 				{% if  showcase.data.humble %}
 					<span class="<%= @getShowcaseActive( showcase.data.humble) %>" title="Humble Bundle">
-						<a href="<%=  showcase.data.humble %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.humble }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/humble-logo.svg">
 						</a>
 					</span>
@@ -132,7 +132,7 @@ layout: showcase
 				
 				{% if  showcase.data.newgrounds %}
 					<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
-						<a href="<%=  showcase.data.newgrounds %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.newgrounds }}" class="showcaseTarget" target="_blank">
 							<img width="40px" height="40px" src="/images/targets/newgrounds-logo.svg">
 						</a>
 					</span>
@@ -140,7 +140,7 @@ layout: showcase
 
 				{% if  showcase.data.github %}
 					<span class="<%= @getShowcaseActive( showcase.data.github) %>" title="GitHub">
-						<a href="<%=  showcase.data.github %>" class="showcaseTarget" target="_blank">
+						<a href="{{ showcase.data.github }}" class="showcaseTarget" target="_blank">
 							<img height="40px" src="/images/targets/github-logo.svg">
 						</a>
 					</span>
