@@ -7,7 +7,7 @@
     "url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
   },
   "dependencies": {
-    "docpad": "6.79.x",
+    "docpad": "6.83.x",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-eco": "2.1.0",
     "docpad-plugin-highlightjs": "^2.5.0",
