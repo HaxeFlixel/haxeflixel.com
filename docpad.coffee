@@ -2,7 +2,6 @@
 removeMd          = require 'remove-markdown'
 backers           = require './src/files/backers.json'
 
-demoBaseUrl = 'https://demos.haxeflixel.com/html5/'
 
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
@@ -63,11 +62,6 @@ docpadConfig = {
       else
         @site.title
 
-    getShowcaseActive: (status) ->
-      if status
-        return 'showcases-target-actives'
-      else
-        return 'showcases-target'
 
     # Get the prepared site/document description
     getPreparedDescription: ->
@@ -79,12 +73,6 @@ docpadConfig = {
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
-    getDemoTarget: (document) ->
-      if document.targets? and 'html5' in document.targets and 'flash' in document.targets
-        return {html5: demoBaseUrl + document.title, flash: true}
-      else if document.targets? and 'html5' in document.targets
-        return {html5: demoBaseUrl + document.title}
-      else return {flash: true}
 
     getPagerNext: (collection) ->
       docsCollection = @getCollection(collection)
@@ -142,19 +130,6 @@ docpadConfig = {
             contentPreview
           })
 
-    demos: (database) ->
-      database.findAllLive({layout:$has:'demo'}, [title:1]).on 'add', (document) ->
-        document.setMetaDefaults({
-          width: 640
-          height: 480
-        })
-
-    showcase: (database) ->
-      database.findAllLive({layout:$has:'showcase'}, [title:1])
-
-    homepage_demos: (database) ->
-      database.findAllLive({tags:$has:'homepage_demo'}, [title:1])
-
     getting_started: (database) ->
       docpadConfig.templateData.getDocCollection(database, '00_getting_started', 'getting_started', 'Getting Started')
 
@@ -196,8 +171,6 @@ docpadConfig = {
   # Plugins
 
   plugins:
-    cleanurls:
-      enabled: true
 
     markedOptions:
       gfm: true
