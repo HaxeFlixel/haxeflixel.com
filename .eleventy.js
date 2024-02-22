@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
       let resizedImage = await resizeImage(src, width, height, "cover");
 
       let metadata = await Image(resizedImage, { 
-        formats: ["webp", "png"],
+        formats: ["png"],
         outputDir: "out/img"
       });
   
@@ -45,6 +45,9 @@ module.exports = function(eleventyConfig) {
 
 async function resizeImage(src, width, height, mode) {
     return await Sharp(src)
-        .resize({ width: width, height: height, fit: mode })
+        .resize({ width: width, height: height, fit: mode, options:{
+          kernel: "nearest",
+          fastShrinkOnLoad: false
+        }})
         .toBuffer();
 }
