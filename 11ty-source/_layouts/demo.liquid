@@ -48,20 +48,23 @@ layout: default.liquid
 			<hr>
 
 			<ul class="pager">
+				
                 {% assign prevDemo = collections.demo-item | getPreviousCollectionItem %}
 				{% if prevDemo %}
 				<li class="previous">
 					<a href="{{prevDemo.url}}" title="Previous"> 
-						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getPagerPrevious('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous"> {% endcomment %}
+						{% capture imgURL %}src/files/images/demos/{{prevDemo.data.title}}.png{% endcapture %}
+						{% image imgURL, "Previous", 70, 70 %}
 					</a>
 				</li>
 				{% endif  %}
 
-                {% comment %} this is to loop back to the last demo, if you're on the first one {% endcomment %}
 				{% unless prevDemo %}
+				{% assign lastDemo = collections.demo-item | last %}
 				<li class="previous">
-					<a href="<%= @getLast('demos').attributes.url %>" title="Previous"> 
-						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getLast('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous"> {% endcomment %}
+					<a href="{{lastDemo.url}}" title="Previous"> 
+						{% capture imgURL %}src/files/images/demos/{{lastDemo.data.title}}.png{% endcapture %}
+						{% image imgURL, "Previous", 70, 70 %}
 					</a>
 				</li>
 				{% endunless  %}
@@ -70,16 +73,19 @@ layout: default.liquid
 				{% if nextDemo %}
 				<li class="next">
 					<a href="{{ nextDemo.url }}" title="Next">
-						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getPagerNext('demos').attributes.title}.png", "zoomcrop", {w: 70, h:70 }) %>" alt="Next">
-						> {% endcomment %}
+						{% capture imgURL %}src/files/images/demos/{{ nextDemo.data.title }}.png{% endcapture %}
+						{% image imgURL, "Next", 70, 70 %}
 					</a>
 				</li>
 				{% endif  %}
 
                 {% comment %} gets the first demo, if the "next" one doesn't exist {% endcomment %}
 				{% unless nextDemo %}
+				{% assign firstDemo = collections.demo-item | first %}
 				<li class="next">
-					<a href="{{ nextDemo.url }}" title="Next">
+					<a href="{{ firstDemo.url }}" title="Next">
+						{% capture imgURL %}src/files/images/demos/{{ firstDemo.data.title }}.png{% endcapture %}
+						{% image imgURL, "Next", 70, 70 %}
 						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getFirst('demos').attributes.title}.png", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
 						> {% endcomment %}
 					</a>
