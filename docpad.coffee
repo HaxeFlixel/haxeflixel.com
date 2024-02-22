@@ -202,9 +202,6 @@ docpadConfig = {
     markedOptions:
       gfm: true
 
-    thumbnails:
-      imageMagick: true
-
     repocloner:
       repos: [
         {

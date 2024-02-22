@@ -11,7 +11,7 @@
 
 This is the source of [haxeflixel.com](https://haxeflixel.com/). It was orgiginally made with [DocPad](https://docpad.bevry.me/), but it's in a transition to [11ty](https://www.11ty.dev/).
 
-You can compile this website yourself with a local install of DocPad, pull requests are welcome.
+You can compile this website yourself with an install of DocPad, pull requests are welcome.
 
 1. [Install DocPad](https://docpad.bevry.me/start/install)
 
@@ -21,7 +21,7 @@ You can compile this website yourself with a local install of DocPad, pull reque
     git clone https://github.com/HaxeFlixel/haxeflixel.com.git
     cd haxeflixel.com
     ```
-    To install dependencies and run docpad, run the following commands:
+    To install dependencies and build the site, run the following commands:
     
     ```batch
     npm install
@@ -53,8 +53,8 @@ please review the readme there for more info on updating the haxeflixel.com/docu
 
 ### How to add a demo
 
-1. Create a `.html.md` file in 
-[`/src/documents/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/demos) 
+1. Create a `.md` file in 
+[`/11ty-source/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/deev/11ty-source/demos) 
 following this example:
 
     ```
@@ -82,14 +82,10 @@ that contains the demo.
 2. Add a screenshot of the demo named `Demo-Name.png` to 
 [`/src/files/demos/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/images).
 
-3. Add the actual swf file of the demo named `Demo-Name.swf` to 
-[`/src/files/demos/swf`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/swf). 
-Should be compiled with `FLX_NO_DEBUG` (to show the flixel splash screen) and in release mode if possible!
-
 ### How to add a Showcase game
 
 1. Create a `.md` file in 
-[`/src/documents/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/showcase) 
+[`/11ty-source/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/dev/11ty-source/showcase) 
 following this example:
 ```
     ---
@@ -104,7 +100,7 @@ following this example:
     date: "2022-02-01"
     ---
     
-    Note that `date` is currently unused but will eventually be used to sort, dates should use US format of month-day-20XX
+    Dates should use YYYY-MM-DD
     
     Note that by adding a URL to one of the supported targets, the icon will automatically become coloured on the 
     [showcase page](https://haxeflixel.com/showcase) and link to that URL.
@@ -116,11 +112,3 @@ They are resized and cropped to 500x260, so it's best to use the same ratio.
 Showcases that are not officially released yet are only accepted in special cases. The same is true for games from game jams.
 
 ----
-
-## Compile the live site
-
-haxeflixel.com is being hosted from a [static build of docpad](https://docpad.bevry.me/start/deploy). To update the site
-run the `compile.sh` or `compile.bat` which uses `docpad generate --env static`.
-
-Note that although both the `run` and `compile` scripts update the `out` folder they are different commands and 
-`run` will not create everything the server needs.
