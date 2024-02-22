@@ -2,7 +2,7 @@
 title: "FlxSpine"
 layout: demo
 source: "Editors/FlxSpine"
-tags: ['homepage_demo']
+tags: homepage_demo
 targets: "html5"
 ---
 

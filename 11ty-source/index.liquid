@@ -6,8 +6,8 @@ title: 'Home'
 <div class="container">
     <div class="home-header home-section">
 
-        <a href="documentation/about" class="home-big-logo" title="About HaxeFlixel">
-            <img src="images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
+        <a href="/documentation/about" class="home-big-logo" title="About HaxeFlixel">
+            <img src="/images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
         </a>
 
         <h1>HaxeFlixel</h1>
@@ -79,15 +79,15 @@ title: 'Home'
 
     <div class="demos-home home-section">
 
-        <p class="lead-line-large">Browse and learn from our <a href="/demos"><%= @getCollection('demos').length %> demos</a>:</h3></p>
+        <p class="lead-line-large">Browse and learn from our <a href="/demos">{{ collections.demo-item.length }} demos</a>:</h3></p>
 
-        <% for demo in @getCollection('homepage_demos').toJSON(): %>
+        {% for demo in collections.homepage_demo %}
+            <a href="<%= demo.url %>" property="dc:title">
 
-        <a href="<%= demo.url %>" property="dc:title">
-            <img src="<%= @getThumbnail("/images/demos/#{demo.title}.png", "zoomcrop", { w:160, h:160 }) %>" alt="#{demo.title}" title = "<%= demo.title %>" />
+            {% capture imgURL %}src/files/images/demos/{{ demo.data.title }}.png{% endcapture %}
+            {% image imgURL, "#{{demo.data.title}}", 160, 160 %}
         </a>
-
-        <% end %>
+        {% endfor %}
 
     </div>
 

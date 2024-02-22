@@ -1,7 +1,7 @@
 ---
 title: "Mode"
 layout: demo
-tags: ['homepage_demo']
+tags: homepage_demo
 source: "Platformers/Mode"
 targets: "html5"
 ---

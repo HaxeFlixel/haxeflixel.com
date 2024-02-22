@@ -2,7 +2,7 @@
 title: "FlxNape"
 layout: demo
 source: "Features/FlxNape"
-tags: ['homepage_demo']
+tags: homepage_demo
 targets: "html5"
 ---
 

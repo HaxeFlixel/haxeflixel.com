@@ -4,7 +4,7 @@ layout: demo
 width: 480
 height: 720
 source: "Arcade/Flappybalt"
-tags: ['homepage_demo']
+tags: homepage_demo
 targets: "html5"
 ---
 
