@@ -1,0 +1,98 @@
+---
+layout: default.liquid
+---
+
+<br>
+<br>
+
+<div class="demo-container">
+{% if targets == "html5" %}
+    
+    {% unless height %}
+        {% assign height = 480 %}
+    {% endunless %}
+    
+    {% unless width %}
+        {% assign width = 640 %}
+    {% endunless %}
+    
+    <iframe class="html5-demo" src="https://demos.haxeflixel.com/html5/{{title}}"
+        width="{{width}}"
+        height="{{height}}"
+    ></iframe>
+{% endif %}
+
+{% if targets == "flash" %}
+    <div class="flash-demo">
+        <div id="demoSWF">
+        </div>
+    </div>
+{% endif  %}
+
+</div>
+
+	<div class="container-main-content">
+		<div class="demo-content">
+
+            <br>
+
+			<h1 class="title">{{ title }}</h1>
+
+			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/{{source}}/source" target="_blank" style="float: right;">
+			    <span class="glyphicon glyphicon-book"></span>
+			    source code
+			</a>
+
+			{{ content }}
+
+			<hr>
+
+			<ul class="pager">
+                {% assign prevDemo = collections.demo-item | getPreviousCollectionItem %}
+				{% if prevDemo %}
+				<li class="previous">
+					<a href="{{prevDemo.url}}" title="Previous"> 
+						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getPagerPrevious('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous"> {% endcomment %}
+					</a>
+				</li>
+				{% endif  %}
+
+                {% comment %} this is to loop back to the last demo, if you're on the first one {% endcomment %}
+				{% unless prevDemo %}
+				<li class="previous">
+					<a href="<%= @getLast('demos').attributes.url %>" title="Previous"> 
+						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getLast('demos').attributes.title}.png", "zoomcrop", { w: 70, h:70 }) %>" alt="Previous"> {% endcomment %}
+					</a>
+				</li>
+				{% endunless  %}
+
+                {% assign nextDemo = collections.demo-item | getNextCollectionItem %}
+				{% if nextDemo %}
+				<li class="next">
+					<a href="{{ nextDemo.url }}" title="Next">
+						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getPagerNext('demos').attributes.title}.png", "zoomcrop", {w: 70, h:70 }) %>" alt="Next">
+						> {% endcomment %}
+					</a>
+				</li>
+				{% endif  %}
+
+                {% comment %} gets the first demo, if the "next" one doesn't exist {% endcomment %}
+				{% unless nextDemo %}
+				<li class="next">
+					<a href="{{ nextDemo.url }}" title="Next">
+						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getFirst('demos').attributes.title}.png", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
+						> {% endcomment %}
+					</a>
+				</li>
+				{% endunless  %}
+			</ul>
+
+		</div>
+	</div>
+
+</div>
+
+
+{% if targets == "flash" %}
+<script type="text/javascript" src="/vendor/swfobject/swfobject/swfobject.js"></script>
+{% endif  %}
