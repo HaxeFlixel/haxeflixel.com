@@ -7,6 +7,7 @@
     "url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "docpad": "6.79.x",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-eco": "2.1.0",
@@ -23,6 +24,9 @@
     "start": "run-s start:*",
     "start:11ty": "eleventy",
     "start:docpad": "docpad run",
+    "style": "run-p style:*",
+    "style:sass": "sass --watch ./scss/style.scss ./out/styles/custom.css",
+    "style:11ty": "eleventy --serve",
     "build": "run-s build:*",
     "build:docpad": "docpad generate --env static",
     "build:11ty": "eleventy",
@@ -33,6 +37,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^4.0.2",
     "npm-run-all2": "^6.1.2",
+    "sass": "^1.71.1",
     "standard": "^17.1.0"
   },
   "standard": {

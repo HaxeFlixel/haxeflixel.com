@@ -1,51 +1,48 @@
 <header>
-	<nav>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
+				
+				<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.svg" height="31" alt="HaxeFlixel" /></a>
 
-				<div class="navbar-header">
-					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-						<span class="icon-bar" />
-						<span class="icon-bar" />
-						<span class="icon-bar" />
-					</button>
-					<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.svg" height="31" alt="HaxeFlixel" /></a>
-				</div>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			  
 
-				<div class="navbar-collapse collapse">
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-					<ul class="nav navbar-nav">
+					<ul class="navbar-nav">
 						
-						<li class="dropdown {% dropdownActive 'demos' %}">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examples <span class="caret"></span></a>
+						<li class="nav-item dropdown {% dropdownActive 'demos' %}">
+							<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Examples <span class="caret"></span></a>
 							<ul class="dropdown-menu inverse-dropdown">
-							  <li><a href="/demos">Demos</a></li>
-							  <li><a href="https://snippets.haxeflixel.com/">Snippets</a></li>
+							  <li><a class="dropdown-item" href="/demos">Demos</a></li>
+							  <li><a class="dropdown-item" href="https://snippets.haxeflixel.com/">Snippets</a></li>
 							</ul>
 						</li>
 
-						<li class={% dropdownActive 'showcase' %}>
-							<a href="/showcase">Showcase</a>
+						<li class="nav-item {% dropdownActive 'showcase' %}">
+							<a class="nav-link" href="/showcase">Showcase</a>
 						</li>
 
 						{% comment %} <li <%= @ablog %>> {% endcomment %}
-						<li class={% dropdownActive 'blog' %}>
-							<a href="/blog">Blog</a>
+						<li class="nav-item {% dropdownActive 'blog' %}">
+							<a class="nav-link" href="/blog">Blog</a>
 						</li>
 
 						{% comment %} <li <%= @adocs %>> {% endcomment %}
-						<li class={% dropdownActive 'documentation' %}>
-							<a href="/documentation">Docs</a>
+						<li class="nav-item {% dropdownActive 'documentation' %}">
+							<a class="nav-link" href="/documentation">Docs</a>
 						</li>
 
-						<li >
-							<a href="http://api.haxeflixel.com">API</a>
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
 						</li>
 
 						{% comment %} <li <%= @aforum %>> {% endcomment %}
-						<li>
-							<a href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
 						</li>
 
 					</ul>
@@ -56,7 +53,7 @@
 
 			</div>
 
-		</div>
+		
 
 	</nav>
 </header>
