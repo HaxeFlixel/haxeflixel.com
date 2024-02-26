@@ -4,7 +4,8 @@
 
 .footer-main {
     margin-top: 60px;
-    background: url("/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
+    background: #515151;
+    color: #FFF;
     min-height: 110px;
     text-shadow: none;
   }
@@ -21,14 +22,9 @@
   }
   
   .footer-powered-by {
-    color: #FFFFFF;
-    float: right;
     margin-top: 20px;
   }
-  
-  .footer-powered-by p {
-    display: inline;
-  }
+
   
   .footer-powered-by img {
     width: 40px;
@@ -52,36 +48,5 @@
     img.patreon-wordmark {
       height: 60px;
       margin-left: -15px;
-    }
-  }
-  
-  
-  #demoSWF {
-    display: block;
-    margin: 0 auto;
-  }
-  
-  @include media-breakpoint-down(md) {
-    .footer-powered-by {
-      float: none;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    white-space: nowrap;
-    
-      text-align: center;
-    }
-  
-    .footer-powered-by a{
-      display: inline-block;
-    }
-  
-    .footer-social {
-      float: none;
-      text-align: center;
-    }
-  
-    .footer-powered-by p {
-      display: inline-block;
-      margin-bottom: 26px;
     }
   }
