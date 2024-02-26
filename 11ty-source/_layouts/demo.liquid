@@ -2,9 +2,6 @@
 layout: default.liquid
 ---
 
-<br>
-<br>
-
 <div class="demo-container">
 {% if targets == "html5" %}
     
@@ -37,22 +34,23 @@ layout: default.liquid
             <br>
 
 			<h1 class="title">{{ title }}</h1>
-
-			<a href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/{{source}}/source" target="_blank" style="float: right;">
-			    <span class="glyphicon glyphicon-book"></span>
+			<a class="btn icon-link float-end" href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/{{source}}/source" target="_blank">
+				<i class="bi-box-seam" ></i>
 			    source code
-			</a>
-
+				</a>
 			{{ content }}
 
+			
+			<br>
 			<hr>
-
-			<ul class="pager">
+			<div>
+				<ul class="pagination pagination-lg justify-content-between">
 				
                 {% assign prevDemo = collections.demo-item | getPreviousCollectionItem %}
 				{% if prevDemo %}
-				<li class="previous">
-					<a href="{{prevDemo.url}}" title="Previous"> 
+				<li class="page-item">
+					<a class="page-link" href="{{prevDemo.url}}" title="Previous">
+						<i class="bi-arrow-left-square"></i>
 						{% capture imgURL %}src/files/images/demos/{{prevDemo.data.title}}.png{% endcapture %}
 						{% image imgURL, "Previous", 70, 70 %}
 					</a>
@@ -61,20 +59,24 @@ layout: default.liquid
 
 				{% unless prevDemo %}
 				{% assign lastDemo = collections.demo-item | last %}
-				<li class="previous">
-					<a href="{{lastDemo.url}}" title="Previous"> 
+				<li class="page-item">
+					<a class="page-link" href="{{lastDemo.url}}" title="Previous"> 
+						<i class="bi-arrow-left-square"></i>
 						{% capture imgURL %}src/files/images/demos/{{lastDemo.data.title}}.png{% endcapture %}
 						{% image imgURL, "Previous", 70, 70 %}
 					</a>
 				</li>
 				{% endunless  %}
+				
 
                 {% assign nextDemo = collections.demo-item | getNextCollectionItem %}
 				{% if nextDemo %}
-				<li class="next">
-					<a href="{{ nextDemo.url }}" title="Next">
+				<li class="page-item">
+					
+					<a class="page-link" href="{{ nextDemo.url }}" title="Next">
 						{% capture imgURL %}src/files/images/demos/{{ nextDemo.data.title }}.png{% endcapture %}
 						{% image imgURL, "Next", 70, 70 %}
+						<i class="bi-arrow-right-square"></i>
 					</a>
 				</li>
 				{% endif  %}
@@ -82,16 +84,21 @@ layout: default.liquid
                 {% comment %} gets the first demo, if the "next" one doesn't exist {% endcomment %}
 				{% unless nextDemo %}
 				{% assign firstDemo = collections.demo-item | first %}
-				<li class="next">
-					<a href="{{ firstDemo.url }}" title="Next">
+				<li class="page-item">
+					
+					<a class="page-link" href="{{ firstDemo.url }}" title="Next">
+						
 						{% capture imgURL %}src/files/images/demos/{{ firstDemo.data.title }}.png{% endcapture %}
 						{% image imgURL, "Next", 70, 70 %}
+						<i class="bi-arrow-right-square"></i>
 						{% comment %} <img src="<%= @getThumbnail("/images/demos/#{@getFirst('demos').attributes.title}.png", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
 						> {% endcomment %}
 					</a>
 				</li>
 				{% endunless  %}
 			</ul>
+			</div>
+			
 
 		</div>
 	</div>

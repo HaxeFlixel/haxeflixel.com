@@ -1,6 +1,8 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import "./mixins/helpers.scss";
 @import "./footer.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 body {
     background-image: url(/images/highlight-bg.png), url(/images/site-bg.png);
