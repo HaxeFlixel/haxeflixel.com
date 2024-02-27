@@ -1,5 +1,8 @@
 {
 	"files.associations": {
 		"*.eco": "html"
+	},
+	"[liquid]": {
+		"editor.formatOnSave": true
 	}
 }
