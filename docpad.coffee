@@ -1,6 +1,5 @@
 # For the blog preview page parse the markdown with github flavour.
 removeMd          = require 'remove-markdown'
-backers           = require './src/files/backers.json'
 
 
 # The DocPad Configuration File
@@ -46,10 +45,6 @@ docpadConfig = {
 
     # -----------------------------
     # Helper Functions
-
-    # Used in the fundraiser page for the indiegogo backer list
-    getBackers: ->
-      backers
 
     # Get the prepared site/document title
     # Often we would like to specify particular formatting to our page's title
@@ -121,15 +116,6 @@ docpadConfig = {
 
   collections:
 
-    blog: (database) ->
-      database.findAllLive({layout:$has:['blog-post', 'fundraiser-layout']}, [filename:-1]).on 'add', (document) ->
-        a = document.attributes
-        if a.layout != "fundraiser-layout"
-          contentPreview = removeMd(a.content).substring(0,150) + " ..."
-          document.setMetaDefaults({
-            contentPreview
-          })
-
     getting_started: (database) ->
       docpadConfig.templateData.getDocCollection(database, '00_getting_started', 'getting_started', 'Getting Started')
 
@@ -176,15 +162,6 @@ docpadConfig = {
       enabled: true
     markedOptions:
       gfm: true
-
-    repocloner:
-      repos: [
-        {
-          name: 'HaxeFlixelDocumentation'
-          path: 'src/documents/documentation'
-          url: 'https://github.com/HaxeFlixel/flixel-docs.git'
-        }
-      ]
 }
 
 # Export our DocPad Configuration

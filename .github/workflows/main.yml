@@ -20,9 +20,6 @@ jobs:
       with:
         node-version: 'latest'
     - uses: krdlab/setup-haxe@v1
-    # - name: Build Docker Image
-    #   run: node scripts/docker.js buildImage
-    - run: sudo apt-get update && sudo apt-get install -y imagemagick
     - name: Build Site
       run: |
         ls -lah
