@@ -1,20 +1,17 @@
 <header>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 
-				<a
-					href="/"
-					class="navbar-brand fs-3"
-					">
+				<a href="/" class="navbar-brand fs-3 fw-medium">
 					<img
-					src="/images/haxeflixel.svg"
-					height="31"
-					alt="HaxeFlixel"
-					class="d-inline-block align-text-bottom">
+					  src="/images/haxeflixel.svg"
+					  height="31"
+					  alt="HaxeFlixel"
+					  class="d-inline-block align-text-bottom">
 					HaxeFlixel
-				</a>
-
-				<button
+				  </a>
+			
+				  <button
 					class="navbar-toggler"
 					type="button"
 					data-bs-toggle="collapse"
@@ -23,7 +20,7 @@
 					aria-controls="navbarNavDropdown"
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>
+				  </button>
 
 
 				<div class="navbar-collapse collapse" id="navbarNavDropdown">

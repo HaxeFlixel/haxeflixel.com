@@ -26,6 +26,8 @@ body {
   a.showcaseTarget:hover > img {
     @include hover-scale-fx(1.10);
   }
+
+  
   
   
   
@@ -63,7 +65,19 @@ body {
   
   /* Navbar
   -------------------------------------------------- */
-  
+  .navbar {
+    background-color: #222;
+    a, li > a {
+      transition: all 0.25s ease 0s;
+      color: #FFF !important;
+    }
+    
+
+    a:hover, .navbar-brand {
+      color: #fff !important;
+    }
+  }
+
   .search-form {
     float: right;
   }
@@ -85,6 +99,25 @@ body {
 //       display: none;
 //     }
 //   }
+
+
+  .inverse-dropdown {
+    background-color: #222 !important;
+    border-color: #080808 !important;
+
+  }
+
+  .inverse-dropdown.divider {
+    background-color: #000 !important;
+  }
+
+  .inverse-dropdown>li>a {
+    color: #9d9d9d !important;
+  }
+  .inverse-dropdown>li>a:hover {
+    color: #fff !important;
+    background-color: #000 !important;
+  }
   
   
   .nav .caret {
@@ -206,22 +239,8 @@ body {
   .aseprite-logo {
     max-width: 234px;
   }
+
   
-  code {
-    padding: 0;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    margin: 0;
-    font-size: 85%;
-    background-color: rgba(27,31,35,0.05);
-    border-radius: 3px;
-    border: 0px;
-  }
-  
-  code:not(.hljs)::before, code:not(.hljs)::after {
-    letter-spacing: -0.2em;
-    content: "\00a0";
-  }
   
 
 
