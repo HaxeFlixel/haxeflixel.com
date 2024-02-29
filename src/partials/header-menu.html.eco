@@ -2,19 +2,28 @@
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 			<div class="container-fluid">
 
-				<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.svg" height="31" alt="HaxeFlixel" /></a>
-
+				<a
+					href="/"
+					class="navbar-brand fs-3"
+					">
+					<img
+					src="/images/haxeflixel.svg"
+					height="31"
+					alt="HaxeFlixel"
+					class="d-inline-block align-text-bottom">
+					HaxeFlixel
+				</a>
 
 				<button
-        		class="navbar-toggler"
-        		type="button"
-        		data-bs-toggle="collapse"
-        		data-bs-target="#navbarSupportedContent"
-        		aria-controls="navbarSupportedContent"
-        		aria-expanded="false"
-        		aria-label="Toggle navigation">
-        		<span class="navbar-toggler-icon"></span>
-      			</button>
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
 
 				<div class="navbar-collapse collapse" id="navbarNavDropdown">
