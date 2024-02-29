@@ -1,60 +1,79 @@
 <header>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
 
-				
-				<a href="/" class="navbar-brand"><img src="/images/haxeflixel-header.svg" height="31" alt="HaxeFlixel" /></a>
+      <a href="/" class="navbar-brand"><img
+          src="/images/haxeflixel-header.svg"
+          height="31"
+          alt="HaxeFlixel" /></a>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-			  
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-					<ul class="navbar-nav">
-						
-						<li class="nav-item dropdown {% dropdownActive 'demos' %}">
-							<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Examples <span class="caret"></span></a>
-							<ul class="dropdown-menu inverse-dropdown">
-							  <li><a class="dropdown-item" href="/demos">Demos</a></li>
-							  <li><a class="dropdown-item" href="https://snippets.haxeflixel.com/">Snippets</a></li>
-							</ul>
-						</li>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-						<li class="nav-item {% dropdownActive 'showcase' %}">
-							<a class="nav-link" href="/showcase">Showcase</a>
-						</li>
+        <ul class="navbar-nav">
 
-						{% comment %} <li <%= @ablog %>> {% endcomment %}
-						<li class="nav-item {% dropdownActive 'blog' %}">
-							<a class="nav-link" href="/blog">Blog</a>
-						</li>
+          <li class="nav-item dropdown {% dropdownActive 'demos' %}">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              role="button"
+              aria-expanded="false">Examples
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu inverse-dropdown">
+              <li>
+                <a class="dropdown-item" href="/demos">Demos</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://snippets.haxeflixel.com/">Snippets</a>
+              </li>
+            </ul>
+          </li>
 
-						{% comment %} <li <%= @adocs %>> {% endcomment %}
-						<li class="nav-item {% dropdownActive 'documentation' %}">
-							<a class="nav-link" href="/documentation">Docs</a>
-						</li>
+          <li class="nav-item {% dropdownActive 'showcase' %}">
+            <a class="nav-link" href="/showcase">Showcase</a>
+          </li>
 
-						<li class="nav-item">
-							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
-						</li>
+          {% comment %} <li <%= @ablog %>> {% endcomment %}
+          <li class="nav-item {% dropdownActive 'blog' %}">
+            <a class="nav-link" href="/blog">Blog</a>
+          </li>
 
-						{% comment %} <li <%= @aforum %>> {% endcomment %}
-						<li class="nav-item">
-							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
-						</li>
+          {% comment %} <li <%= @adocs %>> {% endcomment %}
+          <li class="nav-item {% dropdownActive 'documentation' %}">
+            <a class="nav-link" href="/documentation">Docs</a>
+          </li>
 
-					</ul>
-					
-					{% renderFile "./11ty-source/_layouts/partials/search.html" %}
-					{% comment %} <%- @partial('search.html') %> {% endcomment %}
+          <li class="nav-item">
+            <a class="nav-link" href="http://api.haxeflixel.com">API</a>
+          </li>
 
-				</div>
+          {% comment %} <li <%= @aforum %>> {% endcomment %}
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
+          </li>
 
-			</div>
+        </ul>
 
-		
+        {% renderFile "./11ty-source/_layouts/partials/search.html" %}
+      {% comment %} <%- @partial('search.html') %> {% endcomment %}
 
-	</nav>
+      </div>
+
+    </div>
+
+
+  </nav>
 </header>
