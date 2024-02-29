@@ -19,28 +19,31 @@
 		<div class="col-md-9 doc-content" role="main">
 			<h1 class="title"><%= @document.title %></h1>
 
-			<% if @document.apiPath: %>
-				<a href="http://api.haxeflixel.com/flixel/<%= @document.apiPath %>" class="btn btn-sm btn-api" target="_blank"><span class="glyphicon glyphicon-cog"></span> API </a>
-			<% end %>
-			<a href="<%= @document.editUrl %>" class="btn btn-sm btn-edit" target="_blank"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
+			<ul class="nav justify-content-end">
+				<% if @document.apiPath: %>
+					<a href="http://api.haxeflixel.com/flixel/<%= @document.apiPath %>" class="nav-link btn-edit" target="_blank"><i class="bi-gear"></i> API </a>
+				<% end %>
+				<a href="<%= @document.editUrl %>" class="nav-link btn-edit" target="_blank"><i class="bi-pencil"></i> Edit</a>
 
+			</ul>
+			
 			<%- @content %>
 
 			<br>
 			<hr>
 
-			<ul class="pager">
+			<ul class="pagination justify-content-end">
 				<% if @getPagerPrevious(@document.categoryName): %>
 
-				<li class="previous">
-					<a href="<%= @getPagerPrevious(@document.categoryName).attributes.url %>">< <%= @getPagerPrevious(@document.categoryName).attributes.title %></a>
+				<li class="page-item">
+					<a class="page-link" href="<%= @getPagerPrevious(@document.categoryName).attributes.url %>">< <%= @getPagerPrevious(@document.categoryName).attributes.title %></a>
 				</li>
 				<% end %>
 
 
 				<% if @getPagerNext(@document.categoryName): %>
-				<li class="next">
-					<a href="<%= @getPagerNext(@document.categoryName).attributes.url %>"><%= @getPagerNext(@document.categoryName).attributes.title %> ></a>
+				<li class="page-item float-end">
+					<a class="page-link" href="<%= @getPagerNext(@document.categoryName).attributes.url %>"><%= @getPagerNext(@document.categoryName).attributes.title %> ></a>
 				</li>
 				<% end %>
 			</ul>
@@ -53,6 +56,10 @@
 <%-@partial('footer.html')%>
 
 <%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"></script>
 
 </body>
 

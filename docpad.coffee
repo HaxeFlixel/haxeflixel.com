@@ -8,7 +8,9 @@ docpadConfig = {
 
   # Ignore the api docs from the flixel-docs repo
   ignorePaths: [
-    __dirname + '/src/documents/documentation/api'
+    __dirname + '/src/documents/documentation/api',
+    __dirname + '/src/documents/styles',
+    __dirname + '/src/files/vendor',
   ]
 
   # Template Data
@@ -28,15 +30,9 @@ docpadConfig = {
         gamedev, game development, cross-platform, haxe, flixel
         """
       styles: [
-        "/styles/style.css",
         "/vendor/highlightjs/styles/an-old-hope.min.css"
       ]
       scripts: [
-        "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
-        "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
-        "/vendor/twitter-bootstrap-3/js/dropdown.js",
-        "/vendor/twitter-bootstrap-3/js/transition.js",
-        "/vendor/twitter-bootstrap-3/js/collapse.js",
         "/vendor/highlightjs/highlight.min.js"
       ]
       services:

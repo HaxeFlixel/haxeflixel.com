@@ -7,3 +7,4 @@ npm-debug.log*
 out
 debug.log
 .DS_Store
+package-log.json
