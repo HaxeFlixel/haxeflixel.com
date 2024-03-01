@@ -1,0 +1,65 @@
+---
+title: "Documentation"
+layout: "documentation-layout"
+---
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Getting Started',
+	collections: collections,
+	icon: 'play-fill'
+%}
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Tutorial',
+	collections: collections,
+	icon: 'check-square'
+%}
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'HaxeFlixel Handbook',
+	collections: collections,
+	icon: 'journals'
+%}
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Resources',
+	collections: collections,
+	icon: 'folder2-open'
+%}
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Community',
+	collections: collections,
+	icon: 'globe2'
+%}
+
+{% comment %}
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {icon: 'play', title: 'Getting Started'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('tutorial')}, {icon: 'check', title:'Tutorial'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {icon: 'book', title: 'HaxeFlixel Handbook'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {icon: 'folder-open', title:'Resources'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {icon: 'globe', title: 'Community'}) %>
+{% endcomment %}
+
+<hr>
+
+<a href="http://discover-haxeflixel.com/">
+	<h2>
+		<span class="glyphicon glyphicon-book"></span>
+		Discover HaxeFlixel Book
+	</h2>
+	<img
+		height="254"
+		src="/images/discover-haxeflixel.png">
+</a>

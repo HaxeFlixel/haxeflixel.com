@@ -32,6 +32,23 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addPassthroughCopy({ "src/files/images": "images" });
+
+    /**
+     * Will filter to add subcategories to the docs, based on folder structure
+     */
+    eleventyConfig.addFilter("docsSubcategories", function (value) {
+      console.log(value);
+      // Gets the current filename and it's parent folder via regex
+
+      return value;
+    });
+
+    eleventyConfig.addFilter("docsRegexp", function (value) {
+      let replacedValue = value.replace(/^[\d\-]+/, "");
+      replacedValue = replacedValue.replace(/\.html$/, "");
+  
+      return replacedValue;
+    });
   
     // Return your Object options:
     return {
