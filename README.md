@@ -45,7 +45,8 @@ support and approval on your changes.
 
 ### How to add Documentation
 
-Documentation for `/documentation` pulled automatically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository (via [scripts/install-flixel-docs-repo.js](scripts/install-flixel-docs-repo.js)).
+Documentation for `/documentation` pulled automatically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository (via a package.json `preinstall` script that runs [scripts/install-flixel-docs-repo.js](scripts/install-flixel-docs-repo.js)).
+
 Please review the readme in the [flixel-docs repo](https://github.com/HaxeFlixel/flixel-docs#readme) for more info on updating the haxeflixel.com/documentation pages.
 
 ### How to add a demo
