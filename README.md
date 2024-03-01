@@ -24,22 +24,19 @@ You can compile this website yourself with an install of DocPad, pull requests a
 
    To install dependencies and build the site, run the following commands:
 
-   ```batch
+   ```bash
    npm install
    npm run start
    ```
 
-   The website uses [docpad-plugin-thumbnails](https://github.com/rantecki/docpad-plugin-thumbnails)
+3. [Open http://localhost:8080/](http://localhost:8080/)
 
-   - This requires [GraphicsMagick](http://www.graphicsmagick.org/) or [ImageMagick](http://www.imagemagick.org/)
-     installed.
-
-3. [Open http://localhost:9778/](http://localhost:9778/)
+See [Contributing Code](#contributing-code) for more development information.
 
 <!-- 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save
 the files you modify. -->
 
-## Contributing
+## Contributing documentation (demos and showcases)
 
 If you want to contribute and improve our website please work on a
 [fork](https://github.com/HaxeFlixel/haxeflixel.com/fork) or feature branch. Only working and tested changes will
@@ -48,8 +45,8 @@ support and approval on your changes.
 
 ### How to add Documentation
 
-Documentation is pulled automatically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository,
-please review the readme there for more info on updating the haxeflixel.com/documentation pages.
+Documentation for `/documentation` pulled automatically from the [flixel-docs](https://github.com/HaxeFlixel/flixel-docs) repository (via [scripts/install-flixel-docs-repo.js](scripts/install-flixel-docs-repo.js)).
+Please review the readme in the [flixel-docs repo](https://github.com/HaxeFlixel/flixel-docs#readme) for more info on updating the haxeflixel.com/documentation pages.
 
 ### How to add a demo
 
@@ -114,4 +111,24 @@ please review the readme there for more info on updating the haxeflixel.com/docu
 
 Showcases that are not officially released yet are only accepted in special cases. The same is true for games from game jams.
 
----
+## Contributing code
+
+Along with installing and running commands normally (see [About](#about)), there are other useful commands / workflows.
+
+Everything you need should be installed with `npm install`. Using VSCode you can also install the [recommended extensions](.vscode/extensions.jsonc) for automatic formatting (on file save). However all workflows should be entirely usable via CLI.
+
+### `npm run start`
+
+Running `npm run start` will start up the eleventy site and the sass .scss, and will reload on changes.
+
+### `npm test`
+
+Running `npm test` will run formatting and linting tests for the project. You can simply run `npm test` if you want to run all tests (`test:js`, `test:liquid` and`test:prettier`).
+
+However you can alternatively run each test individually.
+
+- `npm run test:js` will test javascript via [standard](https://standardjs.com/). To automatically fix all, you can run `npm run `npm run fix:js`
+
+- `npm run test:liquid` will test if the site builds via [`eleventy --dryrun`](https://www.11ty.dev/docs/usage/#dryrun-to-do-a-little-testing).
+
+- `npm run test:prettier` will test general styling consistency using [prettier](https://prettier.io/). You can run `npm run fix:prettier` as an easy way to fix inconsistencies.
