@@ -10,7 +10,7 @@
 		{%- endif -%}
 	{%- endfor -%}
 
-	{% for doc in collections.docs %}
+	{% for doc in collections[docCollection] %}
 		<div class="col-md-3 doc-list-item">
 			<div class="list-group">
 				<a href="{{doc.url}}" class="list-group-item">

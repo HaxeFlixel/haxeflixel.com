@@ -1,6 +1,8 @@
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const Image = require("@11ty/eleventy-img");
 const Sharp = require('sharp');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(EleventyRenderPlugin);
@@ -31,17 +33,23 @@ module.exports = function(eleventyConfig) {
       return Image.generateHTML(metadata, imageAttributes);
     });
 
+    
     eleventyConfig.addPassthroughCopy({ "src/files/images": "images" });
+    
+    // gets folders for documentation collections, except for the images folder!
+    let docPath = path.join(__dirname, "11ty-source/documentation/flixel-docs/documentation");
+    let dirs = fs.readdirSync(docPath, { withFileTypes: true }).map(dirent => dirent.name).filter(dirent => dirent != "images");
+    
+    for (const dir in dirs)
+    {
+      const cleanDir = dirs[dir].replace(/^[^a-zA-Z]+/g, "");
+      console.log(cleanDir);
+      eleventyConfig.addCollection(cleanDir, function(collection) {
+        // console.log(collection.getFilteredByGlob(`**/${dirs[dir]}/*.md`));
+        return collection.getFilteredByGlob(`**/${dirs[dir]}/*.md`);
+      });
+    }
 
-    /**
-     * Will filter to add subcategories to the docs, based on folder structure
-     */
-    eleventyConfig.addFilter("docsSubcategories", function (value) {
-      console.log(value);
-      // Gets the current filename and it's parent folder via regex
-
-      return value;
-    });
 
     eleventyConfig.addFilter("docsRegexp", function (value) {
       let replacedValue = value.replace(/^[\d\-]+/, "");

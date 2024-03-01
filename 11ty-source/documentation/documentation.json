@@ -1,4 +1,4 @@
 {
 	"permalink": "/documentation/{{ page.fileSlug | docsRegexp }}/",
-	"tags": ["docs", "{{ page.filePathStem | docsSubcategories }}"]
+	"tags": "docs"
 }
