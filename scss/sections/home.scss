@@ -1,147 +1,148 @@
-@import 'https://fonts.googleapis.com/css?family=VT323';
+@import "https://fonts.googleapis.com/css?family=VT323";
 
 /* Homepage styles
 -------------------------------------------------- */
 
 .flixel-footer-logo {
-  height: 40px;
+	height: 40px;
 }
 
 .footer-powered-by img.openfl-footer-logo {
-  width: 46px;
+	width: 46px;
 }
 
 .lead-line {
-  font-size: 30px;
-  font-weight: 200;
-  padding-bottom: 30px;
+	font-size: 30px;
+	font-weight: 200;
+	padding-bottom: 30px;
 }
 
 .lead-line-large {
-  font-size: 30px;
-  font-weight: 200;
+	font-size: 30px;
+	font-weight: 200;
 }
 
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-  width: 100%;
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 100%;
 }
 
 .home-button {
-  @include button-style();
-  margin-left: 4;
-  margin-right: 4px;
-  text-align: center;
+	@include button-style();
+	margin-left: 4;
+	margin-right: 4px;
+	text-align: center;
 }
 
 .sponsors-button {
-  font-size: 24px;
-  display: block;
-  width: 300px;
-  margin: 0 auto;
+	font-size: 24px;
+	display: block;
+	width: 300px;
+	margin: 0 auto;
 }
 
 .platinum-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'VT323', monospace;
-  font-size: 56px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "VT323", monospace;
+	font-size: 56px;
 }
 
 .home-header {
-  margin-top: 5em;
+	margin-top: 5em;
 }
 
 .home-header h1 {
-  font-size: 6em;
-  line-height: 1;
+	font-size: 6em;
+	line-height: 1;
 }
 
 .home-social {
-  margin-top: 2em;
+	margin-top: 2em;
 }
 
 .home-section-features {
-  position: relative;
-  padding: 1em;
-  text-align: left;
-  font-size: 1.1em;
+	position: relative;
+	padding: 1em;
+	text-align: left;
+	font-size: 1.1em;
 }
 
 .home-section {
-  position: relative;
-  padding: 1em;
-  text-align: center;
+	position: relative;
+	padding: 1em;
+	text-align: center;
 }
 
 .demos-home img {
-  margin: 10px;
-  box-shadow: var(--bs-box-shadow);
+	margin: 10px;
+	box-shadow: var(--bs-box-shadow);
 }
 
 .platform-logos-home img {
-  padding: 10px;
-  @include opacityAll(.7);
-  @include hover-scale-fx(1.1);
-  @include grayscale();
+	padding: 10px;
+	@include opacityAll(0.7);
+	@include hover-scale-fx(1.1);
+	@include grayscale();
 }
 
 .platform-logos-home img:hover {
-    @include opacityAll(1);
-    @include nograyscale();
+	@include opacityAll(1);
+	@include nograyscale();
 }
 
 .platform-demos-home img {
-    @include hover-scale-fx(1.1);
-  padding: 10px;
+	@include hover-scale-fx(1.1);
+	padding: 10px;
 }
 
 .twitter-follow-button.twitter-follow-button {
-  height: 36px;
+	height: 36px;
 }
 
 .home-big-logo img {
-    @include hover-scale-fx(1.1);
+	@include hover-scale-fx(1.1);
 }
 
 .navbar-fixed-top {
-  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .icon-next.tweet-next {
-  right: 0;
-  position: absolute;
-  left: 100%;
+	right: 0;
+	position: absolute;
+	left: 100%;
 }
 
 .icon-prev.tweet-prev {
-  right: 100%;
-  position: absolute;
-  left: 0;
+	right: 100%;
+	position: absolute;
+	left: 0;
 }
 
 .home-section-powered {
-  text-align: center;
-  img {
-    @include hover-scale-fx(1.03);
-  }
+	text-align: center;
+	img {
+		@include hover-scale-fx(1.03);
+	}
 }
 
 .home-section-powered span {
-  font-size: 48px;
-  padding: 20px;
+	font-size: 48px;
+	padding: 20px;
 }
 
 .patreon-home {
-  img {
-    max-width: 240px;
-    vertical-align: top;
-    margin-left: 30px;
-  }
+	img {
+		max-width: 240px;
+		vertical-align: top;
+		margin-left: 30px;
+	}
 }
 
 .backer-hr {
-  margin-top: 60px;
+	margin-top: 60px;
 }
 
 // @media (max-width: @screen-md-min) {
@@ -176,10 +177,10 @@
 // }
 
 .home-sponsor-logos {
-  img {
-    margin: 16px;
-    max-height: 174px;
-  }
+	img {
+		margin: 16px;
+		max-height: 174px;
+	}
 }
 
 // @media (max-width: @screen-lg-min) {

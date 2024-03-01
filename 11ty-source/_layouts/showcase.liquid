@@ -1,11 +1,15 @@
 ---
 layout: default
 ---
+<h1 class="title">{{ title }}</h1>
 
-	<h1 class="title">{{title}}</h1>
+<iframe
+	width="180px"
+	scrolling="0"
+	height="30px"
+	frameborder="0"
+	id="githubBtn-tr-info"
+	allowtransparency="true"
+	src="https://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=haxeflixel.com&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 
-	<iframe width="180px" scrolling="0" height="30px" frameborder="0" id="githubBtn-tr-info"
-			allowtransparency="true"
-			src="https://ghbtns.com/github-btn.html?user=haxeflixel&amp;repo=haxeflixel.com&amp;type=watch&amp;count=true&amp;size=large"></iframe>
-
-	{{content}}
+{{ content }}

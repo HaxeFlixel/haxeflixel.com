@@ -1,55 +1,47 @@
 ---
 layout: default.liquid
 ---
-
 <div class="col-md-12">
+	<h1 class="title">{{ title }}</h1>
 
-  <h1 class="title">{{ title }}</h1>
+	<div class="container">
+		<div class="fundraiser-header">
+			<div class="fundraiser-header-container">
+				<div class="success-header">
+					<div class="success-text">
+						<img
+							width="128"
+							height="130"
+							src="/images/flixel-logos/haxeflixel-medal.gif">
+						<span>
+							<h2>Campaign success</h2>
+							<p>
+								The Indiegogo campaign of 2016 was a huge
+								<a href="https://www.indiegogo.com/projects/haxeflixel-games-software#/">success</a
+								>!
+							</p>
+						</span>
+					</div>
 
-  <div class="container">
+					<hr>
+					<br>
+					{{ content }}
+				</div>
+			</div>
+		</div>
 
-    <div class="fundraiser-header">
-
-      <div class="fundraiser-header-container">
-        <div class="success-header">
-          <div class="success-text">
-            <img
-              width="128"
-              height="130"
-              src="/images/flixel-logos/haxeflixel-medal.gif" />
-            <span>
-              <h2>Campaign success</h2>
-              <p>
-                The Indiegogo campaign of 2016 was a huge
-                <a href="https://www.indiegogo.com/projects/haxeflixel-games-software#/">success</a>!
-              </p>
-            </span>
-          </div>
-
-          <hr>
-          <br>
-          {{ content }}
-
-        </div>
-      </div>
-
-    </div>
-
-    <h3 class="thankyou-backers">We thank all our Indiegogo backers:</h3>
-    <ul class="backer-list">
-
-      {%- for backer in backers -%}
-        <li class="backer">
-          <h4>{{ backer.name }}</h4>
-          <img
-            src="{{ backer.imgSrc }}"
-            width="40"
-            height="40" />
-          <span class="backer-amount">{{ backer.amount }}</span>
-        </li>
-      {%- endfor -%}
-    </ul>
-
-  </div>
-
+		<h3 class="thankyou-backers">We thank all our Indiegogo backers:</h3>
+		<ul class="backer-list">
+			{%- for backer in backers -%}
+				<li class="backer">
+					<h4>{{ backer.name }}</h4>
+					<img
+						src="{{ backer.imgSrc }}"
+						width="40"
+						height="40">
+					<span class="backer-amount">{{ backer.amount }}</span>
+				</li>
+			{%- endfor -%}
+		</ul>
+	</div>
 </div>

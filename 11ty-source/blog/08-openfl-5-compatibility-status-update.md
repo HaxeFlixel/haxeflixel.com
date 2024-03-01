@@ -86,7 +86,7 @@ I was disappointed by the performance of `drawDebug` rendering on native targets
 ### drawTriangles()
 
 Last weekend I was busy with rewriting the `FlxStrip` and `FlxTrianglesData` classes. They are responsible for rendering complex meshes having hundreds of vertices.
-As you may know, `FlxStrip` is a subclass of `FlxSprite`. It's only purpose was to call the `drawTriangles()` method with `vertices`, `uvs`, `indices` and `colors` arguments specified by the user. Now, it's become much more flexible and easier to use for prototyping. 
+As you may know, `FlxStrip` is a subclass of `FlxSprite`. It's only purpose was to call the `drawTriangles()` method with `vertices`, `uvs`, `indices` and `colors` arguments specified by the user. Now, it's become much more flexible and easier to use for prototyping.
 Each `FlxStrip` object has a `data:FlxTrianglesData` property which stores information about added vertices. In addition to getters and setters for `vertices`, `indices`, etc., it now has utility methods for adding a single vertex and a single triangle:
 
 ```haxe
@@ -102,7 +102,7 @@ data.addVertex(300, 300, 0, 0, FlxColor.GREEN);
 data.addVertex(200, 400, 0, 0, FlxColor.BLUE);
 data.addTriangle(0, 1, 2);
 
-// plus you can change data of individual vertex 
+// plus you can change data of individual vertex
 data.setVertex(0, newX, newY, 0.0, 0.0, newColor);
 ```
 

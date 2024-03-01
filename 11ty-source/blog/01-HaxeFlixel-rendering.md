@@ -8,8 +8,7 @@ Hi, [gamedevsam](https://github.com/gamedevsam) here, I'm a developer and evange
 
 The following blog post was written by [Beeblerox](https://github.com/Beeblerox) (the original creator of HaxeFlixel) and was originally posted on his blog as a two part article ([part 1](http://beeblerox.tumblr.com/post/87678385538/tilesheet-rendering-part-1) and [part 2](http://beeblerox.tumblr.com/post/87778663958/tilesheet-rendering-part-2-some-details-about-flixel)). In it, he goes into detail on how HaxeFlixel's rendering system is built on top of OpenFL's Tilesheet API.
 
-----------
-
+---
 
 I want to tell you about tilesheet rendering in flixel, which is used on native targets by default (since some of you might me intereseted in it).
 
@@ -49,9 +48,9 @@ graphicsToUse = sprite.graphics;
 
 To draw the tiles on screen we need three things:
 
-1) Graphics to draw then on
+1. Graphics to draw then on
 
-2) Draw flag which tells to the program what tile transformations we want to use on our tiles in this drawcall.
+2. Draw flag which tells to the program what tile transformations we want to use on our tiles in this drawcall.
 
 The simplest case is no transformation (we just draw rectangular region of image on specified position):
 
@@ -71,11 +70,11 @@ We can add TILE_ALPHA flag to be able to change tile’s alpha:
 drawFlag |= Tilesheet.TILE_ALPHA;
 ```
 
-There are also ```TILE_ROTATION``` and ```TILE_SCALE``` (for uniform tile scaling) constants for “simple” transformations of a tile. But if you want to achieve some more complex transformation (like non-uniform scaling or skewing) then you have ```TILE_TRANS_2x2``` constant.
+There are also `TILE_ROTATION` and `TILE_SCALE` (for uniform tile scaling) constants for “simple” transformations of a tile. But if you want to achieve some more complex transformation (like non-uniform scaling or skewing) then you have `TILE_TRANS_2x2` constant.
 
-And finally there are ```TILE_BLEND_ADD``` constant for addition blending and ```TILE_SMOOTH``` for smoothing scaled up graphics.
+And finally there are `TILE_BLEND_ADD` constant for addition blending and `TILE_SMOOTH` for smoothing scaled up graphics.
 
-3) We also need actual information about tile’s type, position and transformation. The second argument of drawTiles() method - data array - is responsible for it.
+3. We also need actual information about tile’s type, position and transformation. The second argument of drawTiles() method - data array - is responsible for it.
 
 The amount of data for each tile depends on drawFlags value:
 
@@ -99,7 +98,7 @@ data = [x1, y1, tileID1, scale1, angle1, red1, green1, blue1, alpha1,  x2, y1, t
 
 where red, green, blue and alpha are values between 0 and 1 (result color of each pixel will be product of these coefficients and original pixel colors).
 
-- and the most complex case is when you’re using ```TILE_TRANS_2x2```:
+- and the most complex case is when you’re using `TILE_TRANS_2x2`:
 
 ```
 data = [x, y, tileID1, a, b, c, d, red, green, blue, alpha];
@@ -124,15 +123,11 @@ So finally you can draw your tiles on the screen:
 tilesheet.drawTiles(graphicsToUse, data, false, drawFlags);
 ```
 
-
-----------
-
+---
 
 If you want to see some working example, then i recommend you to look at Tiles sample project in nme library: [https://github.com/haxenme/nme/tree/master/samples/20-Tiles](https://github.com/haxenme/nme/tree/master/samples/20-Tiles)
 
-
-----------
-
+---
 
 Now when we know everything we need about Tilesheet class, it’s time to talk about flixel renderer a bit.
 
@@ -140,7 +135,7 @@ As you remember we need Graphics object to render our tiles. FlxCamera objects c
 
 We also need data to render and render flags, which reflect what types of transformations (like rotation and tinting) apply to rendered tiles. This information is gathered every render cycle: we iterate through each sprite we have in our game. But to keep drawCalls as low as possible we need some sort of batching, which tries to draw everything with the same graphics in one draw call, and when we change graphics it breaks the batch and starts another. This functionality is split between FlxCamera. FlxSprite class and subclasses and DrawStackItem helper class.
 
-DrawStackItem objects store information about current batch: Tilesheet object to use for rendering, draw data array, information about draw flags (do we need to tint our tiles in the batch, or use blending), and the link to next DrawStackItem object (DrawStackItems are organized into linked list). Each camera have _headOfDrawStack variable which is head of DrawStackItems linked list.
+DrawStackItem objects store information about current batch: Tilesheet object to use for rendering, draw data array, information about draw flags (do we need to tint our tiles in the batch, or use blending), and the link to next DrawStackItem object (DrawStackItems are organized into linked list). Each camera have \_headOfDrawStack variable which is head of DrawStackItems linked list.
 
 FlxSprite draw() method does the following:
 
@@ -154,6 +149,6 @@ It iterate through each camera, clear graphics of cameras, fill them with backgr
 
 That is how tilesheet rendering works in flixel. Feel free to ask me questions about it.
 
-----------
+---
 
 You can reach Beeblerox on Twitter [@teormech](https://twitter.com/teormech).

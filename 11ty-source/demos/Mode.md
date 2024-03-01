@@ -10,6 +10,6 @@ targets: "html5"
 
 **Controls:**
 
-* Arrow keys - Move
-* X - Jump
-* C - Shoot
+- Arrow keys - Move
+- X - Jump
+- C - Shoot

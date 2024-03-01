@@ -18,7 +18,7 @@ New major versions of OpenFL and Lime have been released yesterday. Installing F
 
 This was necessary because this major release of OpenFL includes breaking changes that make it non-trivial for Flixel to support:
 
-* the `drawTiles` API has been removed - this is the API used by Flixel for rendering on native targets. There is a replacement API called `Tilemap`, but it doesn't support all features Flixel needs / `drawTiles` did.
-* OpenFL Legacy has been removed - not as much of a problem, Flixel has been compatible with OpenFL Next for a while (although still defaulting to Legacy).
+- the `drawTiles` API has been removed - this is the API used by Flixel for rendering on native targets. There is a replacement API called `Tilemap`, but it doesn't support all features Flixel needs / `drawTiles` did.
+- OpenFL Legacy has been removed - not as much of a problem, Flixel has been compatible with OpenFL Next for a while (although still defaulting to Legacy).
 
 Flixel will definitely be compatible with OpenFL 4 in the future, but this will take some time.

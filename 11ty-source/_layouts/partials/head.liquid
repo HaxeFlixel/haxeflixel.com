@@ -1,21 +1,24 @@
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <meta charset="utf-8" />
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>{{ title }}</title>
 
-  <title>{{ title }}</title>
+	<meta
+		name="description"
+		content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+	<meta name="keywords" content="<%= @keywords %>">
+	<meta name="author" content="<%= @author %>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!" />
-  <meta name="keywords" content="<%= @keywords %>" />
-  <meta name="author" content="<%= @author %>" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/images/haxeflixel.svg">
+	<link rel="shortcut icon" href="/images/favicon.ico">
 
-  <link rel="icon" href="/images/haxeflixel.svg">
-  <link rel="shortcut icon" href="/images/favicon.ico">
-
-  <!-- [if lt IE 9]>
-  <script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif] -->
-  {% comment %} <%- @styles %> {% endcomment %}
-  <link rel="stylesheet" href="/styles/style.css">
+	<!--
+		[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
+	-->
+	{% comment %} <%- @styles %> {% endcomment %}
+	<link rel="stylesheet" href="/styles/style.css">
 </head>

@@ -1,24 +1,20 @@
 <!doctype html>
 <html lang="en">
+	{% comment %} <%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css", "/vendor/highlightjs/styles/an-old-hope.min.css"]).toHTML()} ) %> {% endcomment %}
+	{% renderFile "./11ty-source/_layouts/partials/head.liquid" %}
+	<body>
+		{% renderFile "./11ty-source/_layouts/partials/header-menu.liquid" %}
 
-{% comment %} <%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css", "/vendor/highlightjs/styles/an-old-hope.min.css"]).toHTML()} ) %> {% endcomment %}
-{% renderFile "./11ty-source/_layouts/partials/head.liquid" %}
-<body>
+		<div class="container container-main">
+			{% comment %} Make sure each class renders it's title {% endcomment %}
+			{{ content }}
+		</div>
 
-{% renderFile "./11ty-source/_layouts/partials/header-menu.liquid" %}
+		{% renderFile "./11ty-source/_layouts/partials/footer.liquid" %}
 
-<div class="container container-main">
-		{% comment %} Make sure each class renders it's title {% endcomment %}
-	{{ content }}
-</div>
+		{% comment %} <%- @getBlock('scripts').add(@site.scripts).toHTML() %> {% endcomment %}
 
-{% renderFile "./11ty-source/_layouts/partials/footer.liquid" %}
-
-{% comment %} <%- @getBlock('scripts').add(@site.scripts).toHTML() %> {% endcomment %}
-
-{%renderFile "./11ty-source/cdn-scripts.liquid"%}
-<script src="/11ty-bundle.js"></script>
-
-</body>
-
+		{% renderFile "./11ty-source/cdn-scripts.liquid" %}
+		<script src="/11ty-bundle.js"></script>
+	</body>
 </html>

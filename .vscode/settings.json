@@ -1,8 +1,15 @@
 {
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
 	"files.associations": {
 		"*.eco": "html"
 	},
 	"[liquid]": {
-		"editor.formatOnSave": true
-	}
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "standard.vscode-standard"
+	},
+	"standard.autoFixOnSave": true
 }

@@ -3,6 +3,7 @@ node_modules/
 docpad.js
 .idea
 src/documents/documentation
+11ty-source/documentation
 npm-debug.log*
 out
 debug.log

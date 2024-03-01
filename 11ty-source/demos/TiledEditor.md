@@ -9,5 +9,5 @@ This sample shows how to load a map from the [Tiled Map Editor](http://www.maped
 
 Demo Controls:
 
-*   Arrow Keys - Move
-*   Space - Jump
+- Arrow Keys - Move
+- Space - Jump
