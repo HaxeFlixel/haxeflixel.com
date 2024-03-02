@@ -7,6 +7,9 @@ const path = require('path');
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(EleventyRenderPlugin);
 
+    eleventyConfig.ignores.add("**/README.md");
+    eleventyConfig.ignores.add("**/LICENSE.md");
+
     // used to set the current active dropdown list item to active, depending on current page
     eleventyConfig.addShortcode("dropdownActive", function(dropdownItem) {
       let isActive = this.page.url.includes(`/${dropdownItem}/`);
@@ -43,10 +46,17 @@ module.exports = function(eleventyConfig) {
     for (const dir in dirs)
     {
       const cleanDir = dirs[dir].replace(/^[^a-zA-Z]+/g, "");
-      console.log(cleanDir);
+      console.log("Clean DIR: ", cleanDir);
       eleventyConfig.addCollection(cleanDir, function(collection) {
-        // console.log(collection.getFilteredByGlob(`**/${dirs[dir]}/*.md`));
-        return collection.getFilteredByGlob(`**/${dirs[dir]}/*.md`);
+        let cool = fs.readdirSync(path.join(docPath, dirs[dir]));
+        // console.log("Dir: ", dirs[dir]);
+        var collectionItem = collection.getFilteredByGlob(`**/flixel-docs/documentation/${dirs[dir]}/**`);
+        // console.log("Collection item: ", collectionItem);
+        collectionItem.map(item => item.data.tags.push(cleanDir));
+        collectionItem.map(item => item.data.docGroup = cleanDir);
+        // collectionItem.map(item => console.log(item.data));
+        // collectionItem.data.push(cleanDir);
+        return collectionItem;
       });
     }
 
@@ -54,7 +64,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("docsRegexp", function (value) {
       let replacedValue = value.replace(/^[\d\-]+/, "");
       replacedValue = replacedValue.replace(/\.html$/, "");
-  
+      // console.log(replacedValue);
       return replacedValue;
     });
   

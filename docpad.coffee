@@ -64,29 +64,6 @@ docpadConfig = {
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
-
-    getPagerNext: (collection) ->
-      docsCollection = @getCollection(collection)
-      for item,index in docsCollection.models
-        if item.id is @document.id
-          break
-      return docsCollection.models[index+1]
-
-    getPagerPrevious: (collection) ->
-      docsCollection = @getCollection(collection)
-      for item,index in docsCollection.models
-        if item.id is @document.id
-          break
-      return docsCollection.models[index-1]
-
-    getFirst: (collection) ->
-      docsCollection = @getCollection(collection)
-      return docsCollection.models[0]
-
-    getLast: (collection) ->
-      docsCollection = @getCollection(collection)
-      return docsCollection.models[docsCollection.length-1]
-
     getDocCollection: (database, dir, categoryName, categoryTitle) ->
       query =
         write: true

@@ -8,21 +8,13 @@
 	},
 	"dependencies": {
 		"bootstrap": "^5.3.3",
-		"docpad": "6.79.x",
-		"docpad-plugin-cleanurls": "2.11.0",
-		"docpad-plugin-eco": "2.1.0",
-		"docpad-plugin-highlightjs": "2.3.0",
-		"docpad-plugin-marked": "2.4.0",
-		"docpad-plugin-partials": "2.12.0",
 		"remove-markdown": "github:stiang/remove-markdown#main",
 		"sharp": "^0.33.2"
 	},
-	"main": "node_modules/docpad/bin/docpad-server",
 	"scripts": {
 		"preinstall": "node scripts/install-flixel-docs-repo.js",
 		"start": "run-p start:*",
 		"start:11ty": "eleventy --serve",
-		"start:docpad": "docpad generate --env static",
 		"start:style": "sass --watch ./scss/style.scss ./out/styles/style.css",
 		"build": "run-s build:*",
 		"build:docpad": "docpad generate --env static",
