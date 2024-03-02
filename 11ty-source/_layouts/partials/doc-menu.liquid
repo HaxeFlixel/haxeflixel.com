@@ -1,21 +1,24 @@
 <ul class="list-group list-group-flush">
+	{% assign rootDocsSplit = rootDocs | split: ', ' %}
 
-{% assign rootDocsSplit = rootDocs | split: ", " %}
-
-{% for rootDoc in rootDocsSplit %}
-
-<h4><a class="list-group-item list-group-item-action {% if docGroup == rootDoc %}list-group-item-primary{% endif %}" href="{{ collections[rootDoc].first.url }}">
-		{{ collections[rootDoc].first.data.title }}
-	</a></h4>
-	{% if rootDoc == docGroup %}
-	<ul class="list-group list-group-flush">
-		{% for coolDoc in collections[docGroup] %}
-		<a class="list-group-item list-group-item-action {% if pageTitle == coolDoc.data.title %}active{% endif %}" href="{{coolDoc.url}}"> {{ coolDoc.data.title }} </a>
-		{% endfor %}
-	</ul>
-		
-	{% endif %}
-
-{% endfor %}
-
+	{% for rootDoc in rootDocsSplit %}
+		<h4>
+			<a
+				class="list-group-item list-group-item-action {% if docGroup == rootDoc %}list-group-item-primary{% endif %}"
+				href="{{ collections[rootDoc].first.url }}">
+				{{ collections[rootDoc].first.data.title }}
+			</a>
+		</h4>
+		{% if rootDoc == docGroup %}
+			<ul class="list-group list-group-flush">
+				{% for coolDoc in collections[docGroup] %}
+					<a
+						class="list-group-item list-group-item-action {% if pageTitle == coolDoc.data.title %}active{% endif %}"
+						href="{{coolDoc.url}}">
+						{{ coolDoc.data.title }}
+					</a>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	{% endfor %}
 </ul>
