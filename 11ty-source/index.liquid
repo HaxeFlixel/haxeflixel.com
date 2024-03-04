@@ -2,154 +2,183 @@
 layout: 'home'
 title: 'Home'
 ---
-
 <div class="container text-center">
-    <div class="home-header home-section">
+	<div class="home-header home-section">
+		<a href="/documentation/about" class="home-big-logo" title="About HaxeFlixel">
+			<img src="/images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
+		</a>
 
-        <a href="/documentation/about" class="home-big-logo" title="About HaxeFlixel">
-            <img src="/images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
-        </a>
+		<h1>HaxeFlixel</h1>
 
-        <h1>HaxeFlixel</h1>
+		<p class="lead-line">
+			Create cross-platform games easier and free.<br>
+			All with one codebase.
+		</p>
 
-        <p class="lead-line">Create cross-platform games easier and free.<br> All with one codebase.</p>
+		<div class="d-flex justify-content-around">
+			<a role="button" class="btn btn-outline-primary btn-lg" href="/documentation/getting-started"
+				>Getting Started <i class="bi-list-ol"></i
+			></a>
+			<a role="button" class="btn btn-outline-primary btn-lg" href="https://github.com/HaxeFlixel"
+				>GitHub <i class="bi-github"></i
+			></a>
+		</div>
 
-        <div class="d-flex justify-content-around">
-            <a role="button" class="btn btn-outline-primary btn-lg" href="/documentation/getting-started">Getting Started <i class="bi-list-ol" ></i></a>
-            <a role="button" class="btn btn-outline-primary btn-lg"  href="https://github.com/HaxeFlixel">GitHub <i class="bi-github" ></i></a>
-        </div>
+		<hr class="backer-hr">
 
-        <hr class="backer-hr">
+		<div class="home-social">
+			<iframe
+				width="160px"
+				scrolling="0"
+				height="30px"
+				frameborder="0"
+				allowtransparency="true"
+				src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"></iframe>
 
-        <div class="home-social">
+			<iframe
+				width="160px"
+				scrolling="0"
+				height="30px"
+				frameborder="0"
+				allowtransparency="true"
+				src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"></iframe>
 
-            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
-                    allowtransparency="true"
-                    src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"
-            ></iframe>
+			<br>
 
-            <iframe width="160px" scrolling="0" height="30px" frameborder="0"
-                    allowtransparency="true"
-                    src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=fork&amp;count=true&amp;size=large"
-            ></iframe>
+			<a
+				href="https://twitter.com/haxeflixel"
+				class="twitter-follow-button"
+				data-show-count="true"
+				data-lang="en"
+				data-size="large"
+				>Follow @haxeflixel</a
+			>
 
-            <br />
+			<script>
+				!(function (d, s, id) {
+					var js,
+						fjs = d.getElementsByTagName(s)[0];
+					if (!d.getElementById(id)) {
+						js = d.createElement(s);
+						js.id = id;
+						js.src = '//platform.twitter.com/widgets.js';
+						fjs.parentNode.insertBefore(js, fjs);
+					}
+				})(document, 'script', 'twitter-wjs');
+			</script>
 
-            <a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en"
-               data-size="large">Follow @haxeflixel</a>
+			<br>
+			<a href="https://discordapp.com/invite/rqEBAgF"
+				><img src="https://img.shields.io/discord/162395145352904705.svg?logo=discord" alt="Discord"
+			></a>
+			<a href="https://www.patreon.com/haxeflixel"
+				><img src="https://img.shields.io/badge/donate-patreon-blue.svg" alt="Patreon"
+			></a>
+		</div>
+	</div>
 
-            <script>!function (d, s, id)
-            {
-                var js, fjs = d.getElementsByTagName (s)[0];
-                if (!d.getElementById (id))
-                {
-                    js = d.createElement (s);
-                    js.id = id;
-                    js.src = "//platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore (js, fjs);
-                }
-            } (document, "script", "twitter-wjs");</script>
+	<hr>
 
-            <br />
-            <a href="https://discordapp.com/invite/rqEBAgF"><img src="https://img.shields.io/discord/162395145352904705.svg?logo=discord" alt="Discord"></a>
-            <a href="https://www.patreon.com/haxeflixel"><img src="https://img.shields.io/badge/donate-patreon-blue.svg" alt="Patreon"></a>
+	<div class="home-section">
+		<p class="lead-line-large">
+			Cross-compile your games <a href="documentation/about">natively</a> to:
+		</p>
 
-        </div>
+		<div class="platform-logos-home">
+			<img
+				width="80px"
+				height="80px"
+				src="images/targets/windows-logo.svg"
+				alt="Windows"
+				title="Windows">
+			<img width="80px" height="85px" src="images/targets/linux-logo.svg" alt="Linux" title="Linux">
+			<img width="80px" height="85px" src="images/targets/apple-logo.svg" alt="Mac" title="Mac">
+			<img
+				width="80px"
+				height="85px"
+				src="images/targets/android-logo.svg"
+				alt="Android"
+				title="Android">
+			<img width="100px" src="images/targets/ios-logo.png" alt="iOS" title="iOS">
+			<img width="80px" height="80px" src="images/targets/flash-logo.svg" alt="Flash" title="Flash">
+			<img width="85px" height="85px" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
+		</div>
+	</div>
 
-    </div>
+	<hr>
 
-    <hr>
+	<div class="demos-home home-section">
+		<h3>
+			<p class="lead-line-large">
+				Browse and learn from our <a href="/demos">{{ collections['demo-item'].length }} demos</a>:
+			</p>
+		</h3>
 
-    <div class="home-section">
+		{% for demo in collections.homepage_demo %}
+			<a href="{{ demo.url }}" property="dc:title">
+				{% capture imgURL %}src/files/images/demos/{{ demo.data.title }}.png{% endcapture %}
+				{% image imgURL, "#{{demo.data.title}}", 160, 160 %}
+			</a>
+		{% endfor %}
+	</div>
 
-        <p class="lead-line-large">Cross-compile your games <a href="documentation/about">natively</a> to:</p>
+	<hr>
 
-        <div class="platform-logos-home">
-            <img width="80px" height="80px" src="images/targets/windows-logo.svg" alt="Windows" title="Windows">
-            <img width="80px" height="85px" src="images/targets/linux-logo.svg" alt="Linux" title="Linux">
-            <img width="80px" height="85px" src="images/targets/apple-logo.svg" alt="Mac" title="Mac">
-            <img width="80px" height="85px" src="images/targets/android-logo.svg" alt="Android" title="Android">
-            <img width="100px" src="images/targets/ios-logo.png" alt="iOS" title="iOS">
-            <img width="80px" height="80px" src="images/targets/flash-logo.svg" alt="Flash" title="Flash">
-            <img width="85px" height="85px" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
-        </div>
-    </div>
+	<div class="home-section-powered">
+		<p class="lead-line-large">Powered by open source cross-platform tech:</p>
 
-    <hr>
+		<br>
 
-    <div class="demos-home home-section">
+		<a href="https://haxe.org" data-bs-toggle="tooltip" data-bs-title="Default tooltip"
+			><img src="/images/haxe.svg" alt="Haxe Logo" title="Haxe" height="120"
+		></a>
 
-        <p class="lead-line-large">Browse and learn from our <a href="/demos">{{ collections.demo-item.length }} demos</a>:</h3></p>
+		<span><b>+</b></span>
 
-        {% for demo in collections.homepage_demo %}
-            <a href="{{ demo.url }}" property="dc:title">
+		<a href="https://openfl.org"
+			><img src="/images/openfl.svg" alt="OpenFL Logo" title="OpenFL" height="120"
+		></a>
 
-            {% capture imgURL %}src/files/images/demos/{{ demo.data.title }}.png{% endcapture %}
-            {% image imgURL, "#{{demo.data.title}}", 160, 160 %}
-        </a>
-        {% endfor %}
+		<span><b>+</b></span>
 
-    </div>
+		<a href="https://flixel.org"
+			><img src="/images/flixel.svg" alt="Flixel Logo" title="Flixel" height="120"
+		></a>
 
-    <hr>
+		<span><b>=</b></span>
 
+		<a href="https://haxeflixel.com">
+			<img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" title="HaxeFlixel" height="120">
+		</a>
 
-   <div class="home-section-powered">
+		<br>
+	</div>
 
-        <p class="lead-line-large">Powered by open source cross-platform tech:</p>
+	<hr>
 
-        <br/>
+	<div class="home-sponsor-logos">
+		<p class="lead-line-large">Our platinum and gold sponsors:</p>
 
-        <a href="https://haxe.org" data-bs-toggle="tooltip" data-bs-title="Default tooltip"><img src="/images/haxe.svg" alt="Haxe Logo" title="Haxe" height="120"></a>
+		<div class="sponsor-logos-container">
+			<a class="platinum" href="http://www.defendersquest.com">
+				<img src="/images/sponsors/platinum/level-up-labs/lul_logo_circle.png">
+			</a>
 
-        <span><b>+</b></span>
+			<a class="platinum" href="http://bluebottlegames.com">
+				<img src="/images/sponsors/platinum/blue-bottle-games/bbgLogoColor256x256.png">
+			</a>
 
-        <a href="https://openfl.org"><img src="/images/openfl.svg" alt="OpenFL Logo" title="OpenFL" height="120"></a>
+			<a class="gold" href="http://www.kongregate.com">
+				<img src="/images/sponsors/gold/kongregate/kongregate_anthill.svg">
+			</a>
 
-        <span><b>+</b></span>
+			<a class="gold" href="http://www.solarpoweredgames.de">
+				<img src="/images/sponsors/gold/solar-powered/logo-solarpoweredgames-inverted-256.png">
+			</a>
+		</div>
 
-        <a href="https://flixel.org"><img src="/images/flixel.svg" alt="Flixel Logo" title="Flixel" height="120"></a>
+		<br>
 
-        <span><b>=</b></span>
-
-        <a href="https://haxeflixel.com"><img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" title="HaxeFlixel" height="120"></a>
-
-        </p>
-
-        <br/>
-
-    </div>
-
-    <hr>
-
-    <div class="home-sponsor-logos">
-
-        <p class="lead-line-large">Our platinum and gold sponsors:</p>
-
-        <div class="sponsor-logos-container">
-            <a class="platinum" href="http://www.defendersquest.com">
-                <img src="/images/sponsors/platinum/level-up-labs/lul_logo_circle.png" />
-            </a>
-
-            <a class="platinum" href="http://bluebottlegames.com">
-                <img src="/images/sponsors/platinum/blue-bottle-games/bbgLogoColor256x256.png" />
-            </a>
-
-            <a class="gold" href="http://www.kongregate.com">
-                <img src="/images/sponsors/gold/kongregate/kongregate_anthill.svg" />
-            </a>
-
-            <a class="gold" href="http://www.solarpoweredgames.de">
-                <img src="/images/sponsors/gold/solar-powered/logo-solarpoweredgames-inverted-256.png" />
-            </a>
-        </div>
-
-        <br />
-
-        <a class="btn btn-primary btn-lg" href="/sponsors">
-            See all our Sponsors
-        </a>
-
-    </div>
-
+		<a class="btn btn-primary btn-lg" href="/sponsors"> See all our Sponsors </a>
+	</div>
 </div>

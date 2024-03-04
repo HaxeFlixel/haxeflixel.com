@@ -1,47 +1,47 @@
 {
-  "name": "haxeflixel.com",
-  "version": "0.2.0",
-  "description": "New DocPad project without using a skeleton",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
-  },
-  "dependencies": {
-    "bootstrap": "^5.3.3",
-    "docpad": "6.79.x",
-    "docpad-plugin-cleanurls": "2.11.0",
-    "docpad-plugin-eco": "2.1.0",
-    "docpad-plugin-highlightjs": "2.3.0",
-    "docpad-plugin-marked": "2.4.0",
-    "docpad-plugin-partials": "2.12.0",
-    "remove-markdown": "github:stiang/remove-markdown#main",
-    "sharp": "^0.33.2"
-  },
-  "main": "node_modules/docpad/bin/docpad-server",
-  "scripts": {
-    "preinstall": "node scripts/install-flixel-docs-repo.js",
-    "start": "run-p start:*",
-    "start:11ty": "eleventy --serve",
-    "start:docpad": "docpad generate --env static",
-    "start:style": "sass --watch ./scss/style.scss ./out/styles/style.css",
-    "build": "run-s build:*",
-    "build:docpad": "docpad generate --env static",
-    "build:11ty": "eleventy",
-    "build:style": "sass ./scss/style.scss ./out/styles/style.css",
-    "test": "standard",
-    "fix-lints": "standard --fix"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^4.0.2",
-    "npm-run-all2": "^6.1.2",
-    "sass": "^1.71.1",
-    "shelljs": "^0.8.5",
-    "standard": "^17.1.0"
-  },
-  "standard": {
-    "ignore": [
-      "**/vendor/"
-    ]
-  }
+	"name": "haxeflixel.com",
+	"version": "0.2.0",
+	"description": "New DocPad project without using a skeleton",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"remove-markdown": "github:stiang/remove-markdown#main",
+		"sharp": "^0.33.2"
+	},
+	"scripts": {
+		"preinstall": "node scripts/install-flixel-docs-repo.js",
+		"start": "run-p start:*",
+		"start:11ty": "eleventy --serve",
+		"start:style": "sass --watch ./scss/style.scss ./out/styles/style.css",
+		"build": "run-s \"build:11ty -- --pathprefix={1}\" build:style --",
+		"build:11ty": "eleventy",
+		"build:style": "sass ./scss/style.scss ./out/styles/style.css",
+		"test": "run-s test:* -c",
+		"test:js": "standard --verbose | snazzy",
+		"test:liquid": "eleventy --dryrun",
+		"test:prettier": "prettier . --check",
+		"fix": "run-s fix:*",
+		"fix:js": "standard --fix",
+		"fix:prettier": "prettier . --write"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-img": "^4.0.2",
+		"@liquify/prettier-config": "^1.2.1",
+		"@shopify/prettier-plugin-liquid": "^1.4.4",
+		"npm-run-all2": "^6.1.2",
+		"prettier": "^3.2.5",
+		"sass": "^1.71.1",
+		"shelljs": "^0.8.5",
+		"snazzy": "^9.0.0",
+		"standard": "*"
+	},
+	"standard": {
+		"ignore": [
+			"**/vendor/"
+		]
+	}
 }

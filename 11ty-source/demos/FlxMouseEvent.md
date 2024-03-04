@@ -13,7 +13,7 @@ To activate it, simply add sprites and implement the event callbacks:
 import flixel.input.mouse.FlxMouseEvent;
 
 var sprite = new FlxSprite();
-FlxMouseEvent.add(sprite, onMouseDown, onMouseUp, onMouseOver, onMouseOut); 
+FlxMouseEvent.add(sprite, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
 
 function onMouseDown(sprite:FlxSprite) {}
 function onMouseUp(sprite:FlxSprite) {}

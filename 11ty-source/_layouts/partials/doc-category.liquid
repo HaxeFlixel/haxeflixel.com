@@ -1,0 +1,22 @@
+<div class="row">
+	{%- for docThing in collections.docs -%}
+		{%- capture docTitle -%} {{ docThing.data.title}} {%- endcapture -%}
+		{%- if docTitle == inputTitle -%}
+			<div class="col-md-12 doc-list">
+				<a href="{{ docThing.url }}">
+					<h2><i class="bi-{{icon}}"></i> {{ docThing.data.title }}</h2>
+				</a>
+			</div>
+		{%- endif -%}
+	{%- endfor -%}
+
+	{% for doc in collections[docCollection] %}
+		<div class="col-md-3 doc-list-item">
+			<div class="list-group">
+				<a href="{{doc.url}}" class="list-group-item">
+					{{ doc.data.title }}
+				</a>
+			</div>
+		</div>
+	{% endfor %}
+</div>

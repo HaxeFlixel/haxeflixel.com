@@ -18,13 +18,13 @@ Dealing with distribution of the funds will likely involve some trial and error.
 
 Here's how the money will be distributed:
 
-* 25% - US Taxes
-* 25% - Website hosting costs (might change)
-* 50% - Development contributions
+- 25% - US Taxes
+- 25% - Website hosting costs (might change)
+- 50% - Development contributions
 
 The first two points are pretty straight forward. Since I live in the US, I have to pay taxes on any money I receive in exchange for a service (in my case 25%). Another 25% will be sent to Chris (impaler) to cover the expense he incurs from hosting HaxeFlixel.com website. This might seem high to some of you, but keep in mind Chris has been hosting the website out of his own pocket for the last 2 years. This percentage might change with time (depending on how much money is raised, or if Chris wishes to receive a lesser amount).
 
-The final point is a bit vague, and that is on purpose. Instead of me deciding what to do with all the money, I'd like the community to have the power to decide who should get money and for what reason. If you think HaxeFlixel should reward someone monetarily for a contribution he/she made to the project, or if you know of a great open source project that could use our funding, [send me an email](http://sambatista.com/contact) with the subject line __HaxeFlixel Funding Request__, and include a description or a link to a web page that explains why this person or project deserves funding. If you think a person deserves funding for a contribution he/she made, don't forget to __include their contact, or PayPal information in your request__.
+The final point is a bit vague, and that is on purpose. Instead of me deciding what to do with all the money, I'd like the community to have the power to decide who should get money and for what reason. If you think HaxeFlixel should reward someone monetarily for a contribution he/she made to the project, or if you know of a great open source project that could use our funding, [send me an email](http://sambatista.com/contact) with the subject line **HaxeFlixel Funding Request**, and include a description or a link to a web page that explains why this person or project deserves funding. If you think a person deserves funding for a contribution he/she made, don't forget to **include their contact, or PayPal information in your request**.
 
 At this point I'm the one responsible for making decisions how the money will be spent, and I will have the final say on whether to distribute the funds (and how much). Obviously if the person making the request is a long time supporter of the project, their request will be more likely to be fulfilled.
 
