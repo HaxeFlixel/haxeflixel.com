@@ -3,9 +3,11 @@ const Image = require("@11ty/eleventy-img");
 const Sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(EleventyRenderPlugin);
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
     eleventyConfig.ignores.add("**/README.md");
     eleventyConfig.ignores.add("**/LICENSE.md");
