@@ -24,7 +24,7 @@ jobs:
         run: |
           ls -lah
           npm install
-          npm run build ${{ inputs.deploy_gh_pages && format('{0}{1}', '--pathprefix=', github.event.repository.name ) || '' }}
+          npm run build ${{ inputs.deploy_gh_pages && format('{0}{1}', '-- --pathprefix=', github.event.repository.name ) || '' }}
           ls -lah
           haxe --run RemoveRedirects
       # - name: Highlighting
