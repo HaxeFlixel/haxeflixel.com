@@ -4,10 +4,20 @@ const Sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const hljs = require('eleventy-plugin-highlightjs');
+const markdownAnchor = require('markdown-it-anchor');
 
 module.exports = function(eleventyConfig) {
+
+    eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownAnchor, {permalink: markdownAnchor.permalink.headerLink({ safariReaderFix: true })}));
+
     eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+    eleventyConfig.addPlugin(hljs);
+    eleventyConfig.addWatchTarget("./scss/");
+
+    eleventyConfig.addPassthroughCopy({ "node_modules/highlight.js/styles/*.css": "styles/highlights" });
+
 
     eleventyConfig.ignores.add("**/README.md");
     eleventyConfig.ignores.add("**/LICENSE.md");
@@ -69,7 +79,7 @@ module.exports = function(eleventyConfig) {
       // console.log(replacedValue);
       return replacedValue;
     });
-  
+
     // Return your Object options:
     return {
       dir: {

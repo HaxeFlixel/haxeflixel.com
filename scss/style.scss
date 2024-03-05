@@ -1,5 +1,4 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import "../node_modules/bootstrap/scss/bootstrap";
 @import "./mixins/helpers.scss";
 @import "./footer.scss";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
@@ -30,6 +29,29 @@ a.showcaseTarget:hover > img {
 	@include hover-scale-fx(1.1);
 }
 
+a.header-anchor {
+	color: var(--bs-body-color);
+}
+
+a.header-anchor::after {
+	content: " #";
+	opacity: 0;
+	transition: all 0.1s ease-out;
+}
+
+a.header-anchor:hover::after {
+	opacity: 1;
+}
+
+//anchor links adjustment
+a.header-anchor::before {
+	display: block;
+	content: " ";
+	margin-top: -60px;
+	height: 60px;
+	visibility: hidden;
+}
+
 //   .columns-2 {
 //     @include columns(2);
 //   }
@@ -37,15 +59,6 @@ a.showcaseTarget:hover > img {
 .members-list img {
 	max-width: 40px;
 	float: left;
-}
-
-//anchor links adjustment
-h3:before {
-	display: block;
-	content: " ";
-	margin-top: -60px;
-	height: 60px;
-	visibility: hidden;
 }
 
 .columns-2 > h3 {
@@ -72,12 +85,16 @@ h3:before {
 		color: #fff !important;
 	}
 
+	.navbar-toggler {
+		color: #fff;
+		font-size: 2rem;
+	}
+
 	a:hover,
 	.navbar-brand {
 		color: #fff !important;
 	}
 }
-
 .search-form {
 	float: right;
 }
@@ -263,22 +280,32 @@ pre .title:before {
 	max-width: 234px;
 }
 
-code {
-	padding: 0;
-	padding-top: 0.2em;
-	padding-bottom: 0.2em;
-	margin: 0;
-	font-size: 85%;
-	background-color: rgba(27, 31, 35, 0.05);
-	border-radius: 3px;
-	border: 0px;
+pre {
+	outline-style: solid;
+	outline-width: 1px;
+	outline-color: #000;
+	white-space: pre;
+	display: block;
 }
 
-code:not(.hljs)::before,
-code:not(.hljs)::after {
-	letter-spacing: -0.2em;
-	content: "\00a0";
-}
+// pre {
+// 	background-color: #1e1e1e;
+// 	display: block;
+// 	overflow-x: auto;
+// 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+// 	font-size: 14px;
+// 	color: #ffffff;
+// }
+// code {
+// 	padding: 0;
+// 	padding-top: 0.2em;
+// 	padding-bottom: 0.2em;
+// 	margin: 0;
+// 	font-size: 85%;
+// 	background-color: rgba(27, 31, 35, 0.05);
+// 	border-radius: 3px;
+// 	border: 0px;
+// }
 
 @import "sections/home.scss";
 @import "sections/blog.scss";
