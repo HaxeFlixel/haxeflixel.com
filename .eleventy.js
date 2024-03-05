@@ -4,10 +4,35 @@ const Sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const hljs = require('highlight.js');
+const markdownAnchor = require('markdown-it-anchor');
 
 module.exports = function(eleventyConfig) {
+
+    eleventyConfig.amendLibrary("md", mdLib => mdLib.use(markdownAnchor, {permalink: markdownAnchor.permalink.headerLink({ safariReaderFix: true })}));
+    
+    // Highlights code
+    eleventyConfig.amendLibrary("md", mdLib => mdLib.set({highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return '<pre class="position-relative"><code class="hljs">' +
+                 hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+                 `</code><small class='highlight-language position-absolute top-0 end-0'>${lang.toUpperCase()}</small></pre>`;
+        } catch (__) {}
+      }
+  
+      return '<pre><code class="hljs">' + mdLib.utils.escapeHtml(str) + '</code></pre>';
+    }
+  
+  }));
+
     eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+    
+    eleventyConfig.addWatchTarget("./scss/");
+
+    eleventyConfig.addPassthroughCopy({ "node_modules/highlight.js/styles/*.css": "styles/highlights" });
+
 
     eleventyConfig.ignores.add("**/README.md");
     eleventyConfig.ignores.add("**/LICENSE.md");
@@ -69,7 +94,7 @@ module.exports = function(eleventyConfig) {
       // console.log(replacedValue);
       return replacedValue;
     });
-  
+
     // Return your Object options:
     return {
       dir: {
