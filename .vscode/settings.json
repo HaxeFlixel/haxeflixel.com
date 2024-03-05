@@ -9,7 +9,7 @@
 	},
 	"[javascript]": {
 		"editor.formatOnSave": true,
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "standard.vscode-standard"
 	},
 	"standard.autoFixOnSave": true
 }
