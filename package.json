@@ -8,7 +8,6 @@
 	},
 	"dependencies": {
 		"bootstrap": "^5.3.3",
-		"eleventy-plugin-highlightjs": "^1.1.0",
 		"highlight.js": "^11.9.0",
 		"markdown-it-anchor": "^8.6.7",
 		"sharp": "^0.33.2"

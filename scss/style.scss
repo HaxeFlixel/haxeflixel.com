@@ -288,6 +288,13 @@ pre {
 	display: block;
 }
 
+.highlight-language {
+	background-color: rgba(#fff, 0.75);
+	padding-right: 5px;
+	padding-left: 5px;
+	border-bottom-left-radius: 5px;
+}
+
 // pre {
 // 	background-color: #1e1e1e;
 // 	display: block;
@@ -296,16 +303,16 @@ pre {
 // 	font-size: 14px;
 // 	color: #ffffff;
 // }
-// code {
-// 	padding: 0;
-// 	padding-top: 0.2em;
-// 	padding-bottom: 0.2em;
-// 	margin: 0;
-// 	font-size: 85%;
-// 	background-color: rgba(27, 31, 35, 0.05);
-// 	border-radius: 3px;
-// 	border: 0px;
-// }
+code {
+	padding: 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin: 0;
+	font-size: 85%;
+	background-color: rgba(27, 31, 35, 0.05);
+	border-radius: 3px;
+	border: 0px;
+}
 
 @import "sections/home.scss";
 @import "sections/blog.scss";
