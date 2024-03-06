@@ -4,9 +4,11 @@ layout: default.liquid
 <!-- <%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %> -->
 
 <div class="col-12">
-	<h1 class="title">{{ title }}</h1>
-
-	<p class="post-date">{{ postDate }}</p>
+	<div>
+		<h1 class="title"><a class="icon-link icon-link-hover" style="color:var(--bs-body-color)" onclick="copyAnchorLink()">{{ title }} <i class="bi-link-45deg" aria-hidden="true"></i></a></h1>
+		<p class="post-date">{{ postDate }}</p>
+	</div>
+	
 
 	{{ content }}
 
