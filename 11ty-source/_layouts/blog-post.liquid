@@ -5,10 +5,17 @@ layout: default.liquid
 
 <div class="col-12">
 	<div>
-		<h1 class="title"><a class="icon-link icon-link-hover" style="color:var(--bs-body-color)" onclick="copyAnchorLink()">{{ title }} <i class="bi-link-45deg" aria-hidden="true"></i></a></h1>
+		<h1 class="title">
+			<a
+				class="icon-link icon-link-hover"
+				style="color:var(--bs-body-color)"
+				onclick="copyAnchorLink()">
+				{{- title }}
+				<i class="bi-link-45deg" aria-hidden="true"></i
+			></a>
+		</h1>
 		<p class="post-date">{{ postDate }}</p>
 	</div>
-	
 
 	{{ content }}
 
