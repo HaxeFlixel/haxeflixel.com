@@ -26,7 +26,10 @@ layout: default
 					><i class="bi-gear"></i> API
 				</a>
 			{% endif %}
-			<a href="<%= @document.editUrl %>" class="nav-link btn-edit" target="_blank"
+			<a
+				href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/{{ page.inputPath | getApiPath}}/"
+				class="nav-link btn-edit"
+				target="_blank"
 				><i class="bi-pencil"></i> Edit</a
 			>
 		</ul>

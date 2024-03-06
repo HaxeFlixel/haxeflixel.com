@@ -95,6 +95,12 @@ module.exports = function(eleventyConfig) {
       return replacedValue;
     });
 
+    eleventyConfig.addFilter("getApiPath", function (value) {
+      // replace 11ty-source/documentation/flixel-docs/documentation/ with ""
+      let replacedValue = value.replace(/11ty-source\/documentation\/flixel-docs\/documentation\//, "");
+      return replacedValue;
+    });
+
     // Return your Object options:
     return {
       dir: {
