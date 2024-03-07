@@ -2,57 +2,87 @@
 layout: default
 ---
 <div class="row">
-	<div class="col-md-3">
-		<div class="doc-nav affix">
-			{% render '_layouts/partials/doc-menu.liquid',
-				docGroup: docGroup,
-				rootDocs: 'getting_started, tutorial, handbook, resources, community',
-				icon: 'check-square',
-				collections: collections,
-				pageTitle: title
-			%}
-			{% comment %} <%- @partial('doc-menu.html.eco', {document:@document}, {documents:@getCollection(@document.categoryName).toJSON()}, {rootDocuments:@getCollection('rootDocuments').toJSON() } ) %> {% endcomment %}
-		</div>
-	</div>
+  <div class="col-md-3">
+    <div>
+      {% render '_layouts/partials/doc-menu.liquid'
+        ,		docGroup: docGroup
+        , 	rootDocs: 'getting_started, tutorial, handbook, resources, community'
+        ,		icon: 'check-square'
+        ,		collections: collections
+        , 	pageTitle: title
+      %}
+    {% comment %} <%- @partial('doc-menu.html.eco', {document:@document}, {documents:@getCollection(@document.categoryName).toJSON()}, {rootDocuments:@getCollection('rootDocuments').toJSON() } ) %> {% endcomment %}
+    </div>
+  </div>
 
-	<div class="col-md-9 doc-content" role="main">
-		<h1 class="title">{{ title }}</h1>
-		<ul class="nav justify-content-end">
-			{% if apiPath %}
-				<a
-					href="http://api.haxeflixel.com/flixel/{{ apiPath }}"
-					class="nav-link btn-edit"
-					target="_blank"
-					><i class="bi-gear"></i> API
-				</a>
-			{% endif %}
-			<a
-				href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/{{ page.inputPath | getApiPath}}/"
-				class="nav-link btn-edit"
-				target="_blank"
-				><i class="bi-pencil"></i> Edit</a
-			>
-		</ul>
-		{{ content }}
+  <div class="col-md-9 doc-content" role="main">
+    <h1 class="title">{{ title }}</h1>
+    <ul class="nav justify-content-end">
+      {% if apiPath %}
+        <a
+          href="http://api.haxeflixel.com/flixel/{{ apiPath }}"
+          class="nav-link btn-edit"
+          target="_blank">
+          <i class="bi-gear"></i>
+          API
+        </a>
+      {% endif %}
+      <a
+        href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/{{ page.inputPath | getApiPath}}/"
+        class="nav-link btn-edit"
+        target="_blank">
+        <i class="bi-pencil"></i>
+        Edit</a>
+    </ul>
+    {{ content }}
 
-		<br>
-		<hr>
 
-		<ul class="pagination justify-content-center">
-			{% assign prevPost = collections[docGroup] | getPreviousCollectionItem %}
-			{% assign nextPost = collections[docGroup] | getNextCollectionItem %}
+    <br>
+    <hr>
 
-			{% if prevPost %}
-				<li class="page-item">
-					<a class="page-link" href="{{ prevPost.url }}">Previous: {{ prevPost.data.title }}</a>
-				</li>
-			{% endif %}
+    <ul class="pagination justify-content-center">
+      {% assign prevPost = collections[docGroup] | getPreviousCollectionItem %}
+      {% assign nextPost = collections[docGroup] | getNextCollectionItem %}
 
-			{% if nextPost %}
-				<li class="page-item float-end">
-					<a class="page-link" href="{{ nextPost.url }}">Next: {{ nextPost.data.title }}</a>
-				</li>
-			{% endif %}
-		</ul>
-	</div>
+      {% if prevPost %}
+        <li class="page-item">
+          <a class="page-link" href="{{ prevPost.url }}">Previous: {{ prevPost.data.title }}</a>
+        </li>
+      {% endif %}
+
+      {% if nextPost %}
+        <li class="page-item float-end">
+          <a class="page-link" href="{{ nextPost.url }}">Next: {{ nextPost.data.title }}</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
 </div>
+
+<div
+  class="progress fixed-bottom"
+  role="progressbar"
+  aria-label="Basic example"
+  aria-valuenow="0"
+  aria-valuemin="0"
+  aria-valuemax="100">
+  <div class="progress-bar scroll-progress" style="transition: none"></div>
+</div>
+
+<script>
+  function getScrollProgress(element) {
+  	const scrollTop = Math.max(0, window.scrollY - element.offsetTop);
+  	const documentHeight = element.offsetHeight - window.innerHeight;
+  	const scrollProgress = (scrollTop / documentHeight) * 100;
+  	return scrollProgress;
+  }
+
+  let content = document.querySelector('.doc-content');
+  let progress = 0;
+  const progressBar = document.getElementsByClassName('scroll-progress');
+  window.addEventListener('scroll', (_) => {
+
+  	progress = getScrollProgress(content);
+  	progressBar[0].style.width = progress + '%';
+  });
+</script>
