@@ -31,8 +31,9 @@ module.exports = function(eleventyConfig) {
     
     eleventyConfig.addWatchTarget("./scss/");
 
-    eleventyConfig.addPassthroughCopy({ "node_modules/highlight.js/styles/*.css": "styles/highlights" });
-
+    eleventyConfig.addPassthroughCopy({ "node_modules/highlight.js/styles/*.min.css": "styles/highlights" });
+    eleventyConfig.addPassthroughCopy({ "static/": "/" });
+    eleventyConfig.addPassthroughCopy({ "11ty-source/documentation/flixel-docs/documentation/images/": "/documentation/images" });
 
     eleventyConfig.ignores.add("**/README.md");
     eleventyConfig.ignores.add("**/LICENSE.md");
@@ -64,7 +65,6 @@ module.exports = function(eleventyConfig) {
     });
 
     
-    eleventyConfig.addPassthroughCopy({ "src/files/images": "images" });
     
     // gets folders for documentation collections, except for the images folder!
     let docPath = path.join(__dirname, "11ty-source/documentation/flixel-docs/documentation");

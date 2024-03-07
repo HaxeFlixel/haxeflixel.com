@@ -79,7 +79,7 @@ Please review the readme in the [flixel-docs repo](https://github.com/HaxeFlixel
 `width` and `height` default to 640 and 480 and should be omitted in that case.
 
 2. Add a screenshot of the demo named `Demo-Name.png` to
-   [`/src/files/demos/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/images).
+   [`/static/demos/images`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/demos/images).
 
 ### How to add a Showcase game
 
@@ -107,7 +107,7 @@ Please review the readme in the [flixel-docs repo](https://github.com/HaxeFlixel
 ```
 
 2. Add a screenshot of the showcase using the same title used in the `*.md` file, e.g. `Go! Go! PogoGirl.png`
-   to [`/src/files/images/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/images/showcase).
+   to [`/static/images/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/files/images/showcase).
    They are resized and cropped to 500x260, so it's best to use the same ratio.
 
 Showcases that are not officially released yet are only accepted in special cases. The same is true for games from game jams.

@@ -3,14 +3,14 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	{% echo title %}
-	{% if title != nil %}
+	{% if title != null %}
 		{% capture preparedTitle %} {{ title }} | HaxeFlixel - 2D Game Engine{% endcapture %}
 	{% else %}
-		{% assign preparedTitle = "HaxeFlixel - 2D Game Engine" %}
+		{% assign preparedTitle = 'HaxeFlixel - 2D Game Engine' %}
 	{% endif %}
 	<title>{{ preparedTitle }}</title>
 
-	<meta property="og:title" content="{{ preparedTitle }}" />
+	<meta property="og:title" content="{{ preparedTitle }}">
 	<meta
 		name="description"
 		content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
@@ -27,5 +27,5 @@
 	-->
 	{% comment %} <%- @styles %> {% endcomment %}
 	<link rel="stylesheet" href="/styles/style.css">
-	<link rel="stylesheet" href="/styles/highlights/vs2015.css">
+	<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
 </head>

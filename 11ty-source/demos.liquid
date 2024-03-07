@@ -6,7 +6,7 @@ layout: "demos-layout"
 	{% for demo in collections['demo-item'] %}
 		<a href="{{ demo.url }}" property="dc:title">
 			<p>{{ demo.data.title }}</p>
-			{% capture imgURL %}src/files/images/demos/{{ demo.data.title }}.png{% endcapture %}
+			{% capture imgURL %}static/images/demos/{{ demo.data.title }}.png{% endcapture %}
 			{% image imgURL, "{{demo.data.title}}", 190, 190 %}
 		</a>
 	{% endfor %}
