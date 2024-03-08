@@ -2,31 +2,77 @@
 layout: default.liquid
 ---
 <div class="row">
-	<div class="col-md-8">
-		<h1 class="title">{{ title }}</h1>
-		{{ content }}
-	</div>
+  <div class="col-md-8">
+    <h1 class="title">{{ title }}</h1>
+    {{ content }}
+  </div>
 
-	<div class="col-md-4 twitter-widget">
-		<a
-			class="twitter-timeline"
-			href="https://twitter.com/HaxeFlixel"
-			data-widget-id="491877121183080448"
-			data-height="850"
-			>Tweets by @HaxeFlixel</a
-		>
-		<script>
-			!(function (d, s, id) {
-				var js,
-					fjs = d.getElementsByTagName(s)[0],
-					p = /^http:/.test(d.location) ? 'http' : 'https';
-				if (!d.getElementById(id)) {
-					js = d.createElement(s);
-					js.id = id;
-					js.src = p + '://platform.twitter.com/widgets.js';
-					fjs.parentNode.insertBefore(js, fjs);
-				}
-			})(document, 'script', 'twitter-wjs');
-		</script>
-	</div>
+  <div class="col-md-4 twitter-widget">
+    <a
+      class="twitter-timeline"
+      data-height="850"
+      data-tweet-limit="3"
+      href="https://twitter.com/HaxeFlixel?ref_src=twsrc%5Etfw">
+	  <button class="card btn btn-outline-dark" type="button" disabled>
+                <div class="card-body">
+        		  <h5 class="card-title fw-semibold">
+					<div class="d-flex align-items-center">
+						<span>Loading tweets from @HaxeFlixel</span>
+                  		<span class="spinner-border" role="status"></span>
+					</div>
+        			
+                  <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                  </p>
+    
+                </div>
+    
+        </button>
+	</a>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"></script>
+  {% comment %} <a
+              class="twitter-timeline"
+              href="https://twitter.com/HaxeFlixel"
+              data-widget-id="491877121183080448"
+              data-height="850"
+        	  data-tweet-limit="10">
+              <div class="card">
+                <div class="card-body ">
+        		  <h5 class="card-title fw-semibold">
+        			<span class="col-6">Loading tweets from @HaxeFlixel</span>
+                  <span class="spinner-border" role="status"></span>
+                  <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                  </p>
+    
+                </div>
+    
+              </div>
+    
+            </a>
+            <script async>
+              			!(function (d, s, id) {
+              				var js,
+              					fjs = d.getElementsByTagName(s)[0],
+              					p = /^http:/.test(d.location) ? 'http' : 'https';
+              				if (!d.getElementById(id)) {
+              					js = d.createElement(s);
+              					js.id = id;
+              					js.src = p + '://platform.twitter.com/widgets.js';
+              					fjs.parentNode.insertBefore(js, fjs);
+              				}
+              			})(document, 'script', 'twitter-wjs');
+        </script> {% endcomment %}
+  </div>
 </div>

@@ -3,7 +3,6 @@ layout: default
 ---
 <div class="row">
 	<div class="col-md-3">
-		<div>
 			{% render '_layouts/partials/doc-menu.liquid',
 				docGroup: docGroup,
 				rootDocs: 'getting_started, tutorial, handbook, resources, community',
@@ -12,10 +11,9 @@ layout: default
 				pageTitle: title
 			%}
 			{% comment %} <%- @partial('doc-menu.html.eco', {document:@document}, {documents:@getCollection(@document.categoryName).toJSON()}, {rootDocuments:@getCollection('rootDocuments').toJSON() } ) %> {% endcomment %}
-		</div>
 	</div>
 
-	<div class="col-md-9 doc-content" role="main">
+	<div class="col-lg-9 doc-content" role="main">
 		<h1 class="title">{{ title }}</h1>
 		<ul class="nav justify-content-end">
 			{% if apiPath %}

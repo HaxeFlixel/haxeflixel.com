@@ -1,29 +1,47 @@
 <header>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
+      <div class="row gx-6 ms-4">
+        {% assign docs_page_info = page.url | split: "/" %}
+        {% if docs_page_info[1] == "documentation" and docs_page_info.length > 2 %}
+        <a class="d-lg-none align-baseline fs-2 col" type="button" data-bs-toggle="offcanvas" data-bs-target="#doc-menu-offcanvas" aria-controls="doc-menu-offcanvas"><i class="bi-book"></i></a>
+        {% endif %}
+        
+        
+        
+        <a href="/" class="navbar-brand fs-3 fw-medium col">
+          <img
+            src="/images/haxeflixel.svg"
+            height="31"
+            alt="HaxeFlixel"
+            class="d-inline-block align-text-bottom">
+          HaxeFlixel
+        </a>
+      </div>
+      
+      
+      <div class="row me-4">
+        
+        <button
+          class="navbar-toggler btn-outline-light col"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbarNavDropdown"
+          aria-expanded="false"
+          aria-controls="navbarNavDropdown"
+          aria-label="Toggle navigation">
+          <span class="bi-list"></span>
+        </button>
+      </div>
+      
 
-      <button
-        class="navbar-toggler btn-outline-light"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-expanded="false"
-        aria-controls="navbarNavDropdown"
-        aria-label="Toggle navigation">
-        <span class="bi-list"></span>
-      </button>
-      <a href="/" class="navbar-brand fs-3 fw-medium">
-        <img
-          src="/images/haxeflixel.svg"
-          height="31"
-          alt="HaxeFlixel"
-          class="d-inline-block align-text-bottom">
-        HaxeFlixel
-      </a>
-
-
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav nav-underline">
+      <div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
           <li class="nav-item dropdown">
             <a
               href="#"
@@ -69,12 +87,23 @@
             <a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum
             </a>
           </li>
+          <div class="nav-item me-4 h2 col d-inline-flex ">
+            <a class="nav-link ms-auto" href="https://github.com/HaxeFlixel/flixel" target="_blank">
+              <i class="bi-github"></i>
+            </a>
+        </div>
         </ul>
+        </div>
+        
 
       {% comment %} {% renderFile "./11ty-source/_layouts/partials/search.html" %} {% endcomment %}
 
       {% comment %} <%- @partial('search.html') %> {% endcomment %}
       </div>
+
+      
+      
+      
     </div>
   </nav>
 </header>
