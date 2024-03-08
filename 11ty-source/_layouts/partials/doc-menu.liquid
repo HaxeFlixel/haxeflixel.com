@@ -1,33 +1,35 @@
 <div class="accordion overflow-y-auto vh-100" id="doc-menu-accordion">
-  {% assign rootDocsSplit = rootDocs | split: ', ' %}
+	{% assign rootDocsSplit = rootDocs | split: ', ' %}
 
-  {% for rootDoc in rootDocsSplit %}
-    <div class="accordian-item">
-      <h2 class="accordion-header sticky-top">
-        <button
-          data-bs-target="#collapse{{ rootDoc }}"
-          type="button"
-          class="accordion-button {% if docGroup == rootDoc %}fw-bold{% else %}fw-medium{% endif %}"
-          data-bs-toggle="collapse"
-          aria-expanded="{% if docGroup == rootDoc %}true{% else %}false{% endif %}"
-          aria-controls="collapse{{ rootDoc }}">
-          {{ collections[rootDoc].first.data.title }}
-        </button>
-      </h2>
+	{% for rootDoc in rootDocsSplit %}
+		<div class="accordian-item">
+			<h2 class="accordion-header sticky-top">
+				<button
+					data-bs-target="#collapse{{ rootDoc }}"
+					type="button"
+					class="accordion-button {% if docGroup == rootDoc %}fw-bold{% else %}fw-medium{% endif %}"
+					data-bs-toggle="collapse"
+					aria-expanded="{% if docGroup == rootDoc %}true{% else %}false{% endif %}"
+					aria-controls="collapse{{ rootDoc }}">
+					{{ collections[rootDoc].first.data.title }}
+				</button>
+			</h2>
 
-      <div id="collapse{{ rootDoc }}" class="accordion-collapse collapse {% if docGroup == rootDoc %}show{% endif %}">
-        <div class="accordion-body p-0">
-          <div class="list-group list-group-flush w-100">
-            {% for coolDoc in collections[rootDoc] %}
-              <a class="list-group-item list-group-item-action {% if pageTitle == coolDoc.data.title %}active fw-bold {% else %}fw-light{% endif %}" href="{{coolDoc.url}}">
-                {{ coolDoc.data.title }}
-              </a>
-            {% endfor %}
-          </div>
-
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-
+			<div
+				id="collapse{{ rootDoc }}"
+				class="accordion-collapse collapse {% if docGroup == rootDoc %}show{% endif %}">
+				<div class="accordion-body p-0">
+					<div class="list-group list-group-flush w-100">
+						{% for coolDoc in collections[rootDoc] %}
+							<a
+								class="list-group-item list-group-item-action {% if pageTitle == coolDoc.data.title %}active fw-bold {% else %}fw-light{% endif %}"
+								href="{{coolDoc.url}}">
+								{{ coolDoc.data.title }}
+							</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
 </div>

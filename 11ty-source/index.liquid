@@ -4,8 +4,14 @@ title: 'Home'
 ---
 <div class="container text-center">
 	<div class="home-header home-section">
-		<a href="/documentation/about" class="home-big-logo" title="About HaxeFlixel">
-			<img src="/images/haxeflixel.svg" width="200" alt="HaxeFlixel Logo">
+		<a
+			href="/documentation/about"
+			class="home-big-logo"
+			title="About HaxeFlixel">
+			<img
+				src="/images/haxeflixel.svg"
+				width="200"
+				alt="HaxeFlixel Logo">
 		</a>
 
 		<h1>HaxeFlixel</h1>
@@ -16,12 +22,20 @@ title: 'Home'
 		</p>
 
 		<div class="d-flex justify-content-around">
-			<a role="button" class="btn btn-outline-primary btn-lg" href="/documentation/getting-started"
-				>Getting Started <i class="bi-list-ol"></i
-			></a>
-			<a role="button" class="btn btn-outline-primary btn-lg" href="https://github.com/HaxeFlixel"
-				>GitHub <i class="bi-github"></i
-			></a>
+			<a
+				role="button"
+				class="btn btn-outline-primary btn-lg"
+				href="/documentation/getting-started"
+				>Getting Started
+				<i class="bi-list-ol"></i>
+			</a>
+			<a
+				role="button"
+				class="btn btn-outline-primary btn-lg"
+				href="https://github.com/HaxeFlixel"
+				>GitHub
+				<i class="bi-github"></i>
+			</a>
 		</div>
 
 		<hr class="backer-hr">
@@ -81,7 +95,9 @@ title: 'Home'
 
 	<div class="home-section">
 		<p class="lead-line-large">
-			Cross-compile your games <a href="documentation/about">natively</a> to:
+			Cross-compile your games
+			<a href="documentation/about">natively</a>
+			to:
 		</p>
 
 		<div class="platform-logos-home">
@@ -91,17 +107,41 @@ title: 'Home'
 				src="images/targets/windows-logo.svg"
 				alt="Windows"
 				title="Windows">
-			<img width="80px" height="85px" src="images/targets/linux-logo.svg" alt="Linux" title="Linux">
-			<img width="80px" height="85px" src="images/targets/apple-logo.svg" alt="Mac" title="Mac">
+			<img
+				width="80px"
+				height="85px"
+				src="images/targets/linux-logo.svg"
+				alt="Linux"
+				title="Linux">
+			<img
+				width="80px"
+				height="85px"
+				src="images/targets/apple-logo.svg"
+				alt="Mac"
+				title="Mac">
 			<img
 				width="80px"
 				height="85px"
 				src="images/targets/android-logo.svg"
 				alt="Android"
 				title="Android">
-			<img width="100px" src="images/targets/ios-logo.png" alt="iOS" title="iOS">
-			<img width="80px" height="80px" src="images/targets/flash-logo.svg" alt="Flash" title="Flash">
-			<img width="85px" height="85px" src="images/targets/html5-logo.svg" alt="HTML5" title="HTML5">
+			<img
+				width="100px"
+				src="images/targets/ios-logo.png"
+				alt="iOS"
+				title="iOS">
+			<img
+				width="80px"
+				height="80px"
+				src="images/targets/flash-logo.svg"
+				alt="Flash"
+				title="Flash">
+			<img
+				width="85px"
+				height="85px"
+				src="images/targets/html5-logo.svg"
+				alt="HTML5"
+				title="HTML5">
 		</div>
 	</div>
 
@@ -110,14 +150,17 @@ title: 'Home'
 	<div class="demos-home home-section">
 		<h3>
 			<p class="lead-line-large">
-				Browse and learn from our <a href="/demos">{{ collections['demo-item'].length }} demos</a>:
+				Browse and learn from our
+				<a href="/demos">{{ collections['demo-item'].length }} demos</a>:
 			</p>
 		</h3>
 
 		{% for demo in collections.homepage_demo %}
 			<a href="{{ demo.url }}" property="dc:title">
 				{% capture imgURL %}static/images/demos/{{ demo.data.title }}.png{% endcapture %}
-				{% image imgURL, "#{{demo.data.title}}", 160, 160 %}
+				{% liquid
+					image imgURL, "#{{demo.data.title}}", 160, 160
+				%}
 			</a>
 		{% endfor %}
 	</div>
@@ -129,26 +172,51 @@ title: 'Home'
 
 		<br>
 
-		<a href="https://haxe.org" data-bs-toggle="tooltip" data-bs-title="Default tooltip"
-			><img src="/images/haxe.svg" alt="Haxe Logo" title="Haxe" height="120"
+		<a
+			href="https://haxe.org"
+			data-bs-toggle="tooltip"
+			data-bs-title="Default tooltip"
+			><img
+				src="/images/haxe.svg"
+				alt="Haxe Logo"
+				title="Haxe"
+				height="120"
 		></a>
 
-		<span><b>+</b></span>
+		<span>
+			<b>+</b>
+		</span>
 
 		<a href="https://openfl.org"
-			><img src="/images/openfl.svg" alt="OpenFL Logo" title="OpenFL" height="120"
+			><img
+				src="/images/openfl.svg"
+				alt="OpenFL Logo"
+				title="OpenFL"
+				height="120"
 		></a>
 
-		<span><b>+</b></span>
+		<span>
+			<b>+</b>
+		</span>
 
 		<a href="https://flixel.org"
-			><img src="/images/flixel.svg" alt="Flixel Logo" title="Flixel" height="120"
+			><img
+				src="/images/flixel.svg"
+				alt="Flixel Logo"
+				title="Flixel"
+				height="120"
 		></a>
 
-		<span><b>=</b></span>
+		<span>
+			<b>=</b>
+		</span>
 
 		<a href="https://haxeflixel.com">
-			<img src="/images/haxeflixel.svg" alt="HaxeFlixel logo" title="HaxeFlixel" height="120">
+			<img
+				src="/images/haxeflixel.svg"
+				alt="HaxeFlixel logo"
+				title="HaxeFlixel"
+				height="120">
 		</a>
 
 		<br>

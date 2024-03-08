@@ -272,7 +272,6 @@ pre .title:before {
 }
 
 .center-align-a {
-	padding: 1em;
 	text-align: center;
 }
 
@@ -280,10 +279,10 @@ pre .title:before {
 	position: relative;
 	padding: 14px;
 	display: inline-table;
+	@include hover-scale-fx(1.1);
 }
 
 .container-main {
-	margin-top: 24px;
 	margin-bottom: 150px;
 	background: #ffffff;
 	border: 1px solid #d0d0d0;

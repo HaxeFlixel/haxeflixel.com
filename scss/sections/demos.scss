@@ -9,7 +9,7 @@
 	display: inline;
 	position: absolute;
 	text-align: center;
-	width: 190px;
+	width: 100%;
 	color: white;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 10px;
@@ -46,12 +46,6 @@
 .html5-button.active .logo,
 .html5-button:hover .logo {
 	fill: orange;
-}
-
-.flash-warning {
-	margin: 0 auto;
-	display: none;
-	text-align: center;
 }
 
 .html5-demo {

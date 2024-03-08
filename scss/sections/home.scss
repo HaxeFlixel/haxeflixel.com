@@ -54,7 +54,7 @@
 }
 
 .home-header h1 {
-	font-size: 6em;
+	@include font-size(8rem);
 	line-height: 1;
 }
 
