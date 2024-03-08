@@ -1,14 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-      <div class="row gx-6 ms-4">
-        {% assign docs_page_info = page.url | split: "/" %}
-        {% if docs_page_info[1] == "documentation" and docs_page_info.length > 2 %}
-        <a class="d-lg-none align-baseline fs-2 col" type="button" data-bs-toggle="offcanvas" data-bs-target="#doc-menu-offcanvas" aria-controls="doc-menu-offcanvas"><i class="bi-book"></i></a>
-        {% endif %}
-        
-        
-        
+      <div class="row gx-6">
         <a href="/" class="navbar-brand fs-3 fw-medium col">
           <img
             src="/images/haxeflixel.svg"
@@ -17,10 +10,15 @@
             class="d-inline-block align-text-bottom">
           HaxeFlixel
         </a>
+
+        {% assign docs_page_info = page.url | split: "/" %}
+        {% if docs_page_info[1] == "documentation" and docs_page_info.length > 2 %}
+        <a class="d-lg-none align-baseline fs-2 col" type="button" data-bs-toggle="offcanvas" data-bs-target="#doc-menu-offcanvas" aria-controls="doc-menu-offcanvas"><i class="bi-book"></i></a>
+        {% endif %}
       </div>
       
       
-      <div class="row me-4">
+      <div class="row">
         
         <button
           class="navbar-toggler btn-outline-light col"
