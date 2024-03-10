@@ -87,6 +87,20 @@
 	@include grayscale();
 }
 
+$color-mode-type: data;
+
+@include color-mode(dark) {
+	.platform-logos-home img {
+		@include opacityAll(1);
+		filter: invert(0.7);
+	}
+
+	.platform-logos-home img:hover {
+		@include opacityAll(1);
+		filter: invert(0.9);
+	}
+}
+
 .platform-logos-home img:hover {
 	@include opacityAll(1);
 	@include nograyscale();
