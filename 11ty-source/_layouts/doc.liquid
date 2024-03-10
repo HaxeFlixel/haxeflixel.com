@@ -3,14 +3,14 @@ layout: default
 ---
 <div class="row">
 	<div class="col-md-3">
-			{% render '_layouts/partials/doc-menu.liquid',
-				docGroup: docGroup,
-				rootDocs: 'getting_started, tutorial, handbook, resources, community',
-				icon: 'check-square',
-				collections: collections,
-				pageTitle: title
-			%}
-			{% comment %} <%- @partial('doc-menu.html.eco', {document:@document}, {documents:@getCollection(@document.categoryName).toJSON()}, {rootDocuments:@getCollection('rootDocuments').toJSON() } ) %> {% endcomment %}
+		{% render '_layouts/partials/doc-menu.liquid',
+			docGroup: docGroup,
+			rootDocs: 'getting_started, tutorial, handbook, resources, community',
+			icon: 'check-square',
+			collections: collections,
+			pageTitle: title
+		%}
+		{% comment %} <%- @partial('doc-menu.html.eco', {document:@document}, {documents:@getCollection(@document.categoryName).toJSON()}, {rootDocuments:@getCollection('rootDocuments').toJSON() } ) %> {% endcomment %}
 	</div>
 
 	<div class="col-lg-9 doc-content" role="main">

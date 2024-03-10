@@ -1,43 +1,49 @@
-
 <div class="offcanvas-lg offcanvas-start" data-bs-scroll="true" id="doc-menu-offcanvas">
 	<div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasLabel"><i class="bi-book"></i> Documentation</h5>
-    	<button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#doc-menu-offcanvas" aria-label="Close"></button>
-  	</div>
+		<h5 class="offcanvas-title" id="offcanvasLabel"><i class="bi-book"></i> Documentation</h5>
+		<button
+			type="button"
+			class="btn-close"
+			data-bs-dismiss="offcanvas"
+			data-bs-target="#doc-menu-offcanvas"
+			aria-label="Close"></button>
+	</div>
 
-	<div class="accordion overflow-y-auto " style="max-height:85vh"id="doc-menu-accordion">
-	{% assign rootDocsSplit = rootDocs | split: ', ' %}
+	<div class="accordion overflow-y-auto " style="max-height:85vh" id="doc-menu-accordion">
+		{% assign rootDocsSplit = rootDocs | split: ', ' %}
 
-  	{% for rootDoc in rootDocsSplit %}
-    {% assign is_root_doc = docGroup == rootDoc %}
+		{% for rootDoc in rootDocsSplit %}
+			{% assign is_root_doc = docGroup == rootDoc %}
 
-    <div class="accordian-item">
- 	<h2 class="accordion-header sticky-top">
-        <button
-          data-bs-target="#collapse{{ rootDoc }}"
-          type="button"
-          class="accordion-button {% if is_root_doc %}fw-bold {% else %}fw-semibold{% endif %}"
-          data-bs-toggle="collapse"
-          aria-expanded="{{is_root_doc}}"
-          aria-controls="collapse{{ rootDoc }}">
-          {{ collections[rootDoc].first.data.title }}
-        </button>
-      </h2>
-	  
-	  <div id="collapse{{ rootDoc }}" class="accordion-collapse collapse {% if is_root_doc %}show{% endif %}">
-      	<div class="accordion-body p-0">
-        	<div class="list-group list-group-flush w-100">
-          {% for coolDoc in collections[rootDoc] %}
-            <a class="list-group-item list-group-item-action {% if pageTitle == coolDoc.data.title %}active fw-bold{% else %}fw-normal{% endif %}" href="{{coolDoc.url}}">
-              {{ coolDoc.data.title }}
-            </a>
-          {% endfor %}
-        	</div>
-      	</div>
-      </div>
-      
-    </div>
-  {% endfor %}
-  </div>
-  
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapse{{ rootDoc }}"
+						type="button"
+						class="accordion-button {% if is_root_doc %}fw-bold {% else %}fw-semibold{% endif %}"
+						data-bs-toggle="collapse"
+						aria-expanded="{{is_root_doc}}"
+						aria-controls="collapse{{ rootDoc }}">
+						{{ collections[rootDoc].first.data.title }}
+					</button>
+				</h2>
+
+				<div
+					id="collapse{{ rootDoc }}"
+					class="accordion-collapse collapse {% if is_root_doc %}show{% endif %}">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							{% for coolDoc in collections[rootDoc] %}
+								<a
+									class="list-group-item list-group-item-action {% if pageTitle == coolDoc.data.title %}active fw-bold{% else %}fw-normal{% endif %}"
+									href="{{coolDoc.url}}">
+									{{ coolDoc.data.title }}
+								</a>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 </div>
