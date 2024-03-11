@@ -1,3 +1,5 @@
+@import "./flixel-colors.scss";
+
 $color-mode-type: data;
 
 @include color-mode(dark) {

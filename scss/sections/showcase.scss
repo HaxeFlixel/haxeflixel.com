@@ -3,6 +3,19 @@
 	@include opacityAll(0.7);
 }
 
+h1,
+h3 {
+	color: var(--bs-emphasis-color);
+}
+
+$color-mode-type: data;
+
+@include color-mode(dark) {
+	.showcase-targets img {
+		filter: invert(1);
+	}
+}
+
 .showcases-target-active img {
 	@include nograyscale();
 	@include opacityAll(0.7);

@@ -3,6 +3,7 @@
 @import "./footer.scss";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import "./darkmode-style.scss";
+@import "./flixel-colors.scss";
 
 * {
 	transition: background-color 0.5s ease;
@@ -52,8 +53,8 @@ a.header-anchor:hover::after {
 a.header-anchor::before {
 	display: block;
 	content: " ";
-	margin-top: -60px;
-	height: 60px;
+	margin-top: -75px;
+	height: 75px;
 	visibility: hidden;
 }
 
@@ -234,6 +235,7 @@ a.header-anchor::before {
 .title {
 	position: relative;
 	padding-bottom: 14px;
+	color: var(--bs-emphasis-color);
 }
 
 .title:before {
@@ -295,7 +297,7 @@ pre .title:before {
 	min-height: 820px;
 	padding: 16px;
 	overflow: hidden;
-	color: rgba(var(--bs-emphasis-color));
+	color: rgba(var(--bs-body-color));
 }
 
 .container-main-content {
