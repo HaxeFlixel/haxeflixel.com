@@ -2,11 +2,21 @@
 -------------------------------------------------- */
 
 .footer-main {
-	margin-top: 60px;
 	background: #515151;
 	color: #fff;
 	min-height: 110px;
 	text-shadow: none;
+}
+
+$color-mode-type: data;
+@include color-mode(dark) {
+	.footer-main {
+		background: var(--bs-body-bg-subtle);
+	}
+
+	.footer-patreon {
+		filter: invert(1);
+	}
 }
 
 footer:before {
@@ -44,23 +54,14 @@ footer:before {
 	right: 0;
 }
 
-.footer-powered-by {
-	margin-top: 20px;
-}
-
 .footer-powered-by img {
 	width: 40px;
 	@include hover-scale-fx(1.2);
-	margin: 6px;
-}
-
-.footer-social {
-	margin-top: 28px;
-	float: left;
+	margin-left: 6px;
+	margin-right: 6px;
 }
 
 .footer-patreon {
-	margin-left: 20px;
 	white-space: nowrap;
 	img {
 		height: 40px;

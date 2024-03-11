@@ -6,7 +6,7 @@
 	},
 	"[liquid]": {
 		"editor.defaultFormatter": "sissel.shopify-liquid",
-		"editor.formatOnSave": false
+		"editor.formatOnSave": true
 	},
 	"[javascript]": {
 		"editor.formatOnSave": true,
