@@ -80,9 +80,25 @@ a.header-anchor::before {
 	animation-iteration-count: 3;
 }
 
+@keyframes fadeIn {
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
 .icon-link-hover:active > i::after {
+	display: inline-block;
+	position: absolute;
+	width: auto;
+	font-size: medium;
+	top: 0.5em;
+	text-wrap: nowrap;
 	content: " link copied to clipboard";
-	opacity: 0.2;
+	opacity: 0.8;
+	animation: fadeIn 0.1s ease-out;
 }
 
 .icon-link-hover > i {
