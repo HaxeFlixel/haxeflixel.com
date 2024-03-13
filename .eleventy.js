@@ -32,8 +32,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("./scss/");
 
     eleventyConfig.addPassthroughCopy({ "node_modules/highlight.js/styles/*.min.css": "styles/highlights" });
-    eleventyConfig.addPassthroughCopy({ "static/": "/" });
-    eleventyConfig.addPassthroughCopy({ "11ty-source/documentation/flixel-docs/documentation/images/": "/documentation/images" });
+    eleventyConfig.addPassthroughCopy({ "content/_static/": "/" });
+    eleventyConfig.addPassthroughCopy({ "content/documentation/flixel-docs/documentation/images/": "/documentation/images" });
 
     eleventyConfig.ignores.add("**/README.md");
     eleventyConfig.ignores.add("**/LICENSE.md");
@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
     
     
     // gets folders for documentation collections, except for the images folder!
-    let docPath = path.join(__dirname, "11ty-source/documentation/flixel-docs/documentation");
+    let docPath = path.join(__dirname, "content/documentation/flixel-docs/documentation");
     let dirs = fs.readdirSync(docPath, { withFileTypes: true }).map(dirent => dirent.name).filter(dirent => dirent != "images");
     
     for (const dir in dirs)
@@ -96,8 +96,8 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("getApiPath", function (value) {
-      // replace 11ty-source/documentation/flixel-docs/documentation/ with ""
-      let replacedValue = value.replace(/11ty-source\/documentation\/flixel-docs\/documentation\//, "");
+      // replace content/documentation/flixel-docs/documentation/ with ""
+      let replacedValue = value.replace(/content\/documentation\/flixel-docs\/documentation\//, "");
       return replacedValue;
     });
 
@@ -105,7 +105,7 @@ module.exports = function(eleventyConfig) {
     return {
       dir: {
         layouts: "_layouts",
-        input: "11ty-source",
+        input: "content",
         output: "out"
       }
     }

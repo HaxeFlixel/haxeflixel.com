@@ -9,13 +9,12 @@
 
 ## About
 
-This is the source of [haxeflixel.com](https://haxeflixel.com/). It was orgiginally made with [DocPad](https://docpad.bevry.me/), but it's in a transition to [11ty](https://www.11ty.dev/).
+This is the source of [haxeflixel.com](https://haxeflixel.com/). It uses [11ty](https://www.11ty.dev/) for static site generation, and [Bootstrap 5](https://getbootstrap.com/) for styling.
 
-You can compile this website yourself with an install of DocPad, pull requests are welcome.
+You must have NPM / nodejs to compile the site, pull requests are welcome.
 
-1. [Install DocPad](https://docpad.bevry.me/start/install)
-
-2. Clone and run the server
+0. Install [NodeJS](https://nodejs.org/en)
+1. Clone and run the site
 
    ```bash
    git clone https://github.com/HaxeFlixel/haxeflixel.com.git
@@ -25,16 +24,18 @@ You can compile this website yourself with an install of DocPad, pull requests a
    To install dependencies and build the site, run the following commands:
 
    ```bash
+   # downloads dependencies, and clones flixel-docs
    npm install
+
+   # runs the start command from package.json, which boots up the static site generator and scss styling for live reload
    npm run start
    ```
 
-3. [Open http://localhost:8080/](http://localhost:8080/)
+2. [Open http://localhost:8080/](http://localhost:8080/)
+
+3. Start hacking away by modifying the `content/`, `content/_layouts/`, and `content/_scss/` directories. The site will live reload as you save the files you modify.
 
 See [Contributing Code](#contributing-code) for more development information.
-
-<!-- 4. Start hacking away by modifying the `src` directory, the live reload plugin will compile the site as you save
-the files you modify. -->
 
 ## Contributing documentation (demos and showcases)
 
@@ -52,7 +53,7 @@ Please review the readme in the [flixel-docs repo](https://github.com/HaxeFlixel
 ### How to add a demo
 
 1.  Create a `.md` file in
-    [`/11ty-source/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/deev/11ty-source/demos)
+    [`/content/demos`](https://github.com/HaxeFlixel/haxeflixel.com/tree/deev/content/demos)
     following this example:
 
         ```
@@ -84,7 +85,7 @@ Please review the readme in the [flixel-docs repo](https://github.com/HaxeFlixel
 ### How to add a Showcase game
 
 1. Create a `.md` file in
-   [`/11ty-source/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/dev/11ty-source/showcase)
+   [`/content/showcase`](https://github.com/HaxeFlixel/haxeflixel.com/tree/dev/content/showcase)
    following this example:
 
 ```
@@ -118,6 +119,12 @@ Along with installing and running commands normally (see [About](#about)), there
 
 Everything you need should be installed with `npm install`. Using VSCode you can also install the [recommended extensions](.vscode/extensions.jsonc) for automatic formatting (on file save). However all workflows should be entirely usable via CLI.
 
+### `content/_static`
+
+All static files (usually / mostly images) get copied to the root directory of the site with their directory info kept in-tact. So `content/_static/images/` will turn to `out/images`, and should be referenced from the site with just `/images/`.
+
+## Helpful commands
+
 ### `npm run start`
 
 Running `npm run start` will start up the eleventy site and the sass .scss, and will reload on changes.
@@ -133,3 +140,7 @@ However you can alternatively run each test individually.
 - `npm run test:liquid` will test if the site builds via [`eleventy --dryrun`](https://www.11ty.dev/docs/usage/#dryrun-to-do-a-little-testing).
 
 - `npm run test:prettier` will test general styling consistency using [prettier](https://prettier.io/). You can run `npm run fix:prettier` as an easy way to fix inconsistencies.
+
+### `npm fix`
+
+Running `npm fix` will do automatic formatting to the code to match it with [`standardjs`](https://standardjs.com/), [`.liquidrc`](/.liquidrc), and [`.prettierrc.yaml`](/.prettier.yaml). Usually you'd want to run before submitting PR!

@@ -123,7 +123,7 @@ title: 'Home'
 
 		{% for demo in collections.homepage_demo %}
 			<a href="{{ demo.url }}" property="dc:title">
-				{% capture imgURL %}static/images/demos/{{ demo.data.title }}.png{% endcapture %}
+				{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
 				{% liquid
 					image imgURL, "#{{demo.data.title}}", 160, 160
 				%}

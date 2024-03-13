@@ -9,7 +9,7 @@ layout: "demos-layout"
 			href="{{ demo.url }}"
 			property="dc:title">
 			<p class="fw-semibold" style="width: 190px">{{ demo.data.title }}</p>
-			{% capture imgURL %}static/images/demos/{{ demo.data.title }}.png{% endcapture %}
+			{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
 			{% liquid
 				image imgURL, "{{demo.data.title}}", 190, 190
 			%}

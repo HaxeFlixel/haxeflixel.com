@@ -35,18 +35,18 @@
 	</head>
 
 	<body>
-		{% renderFile "./11ty-source/_layouts/partials/header-menu.liquid" %}
+		{% renderFile "./content/_layouts/partials/header-menu.liquid" %}
 
 		<div class="container-md container-main">
 			{% comment %} Make sure each class renders it's title {% endcomment %}
 			{{ content }}
 		</div>
 
-		{% renderFile "./11ty-source/_layouts/partials/footer.liquid" %}
+		{% renderFile "./content/_layouts/partials/footer.liquid" %}
 
 		{% comment %} <%- @getBlock('scripts').add(@site.scripts).toHTML() %> {% endcomment %}
 
-		{% renderFile "./11ty-source/cdn-scripts.liquid" %}
+		{% renderFile "./content/cdn-scripts.liquid" %}
 		<script src="/11ty-bundle.js"></script>
 	</body>
 </html>

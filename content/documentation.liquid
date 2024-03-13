@@ -2,6 +2,21 @@
 title: "Documentation"
 layout: "documentation-layout"
 ---
+
+{% comment %} 
+NOTE:
+These use {% render %}, which shouldn't be confused with the 11ty `renderFile` or `renderTemplate` functions/shortcodes!
+This is so we can supply variables to them easier, however the pathing is slightly different!
+
+The `render` tag is a Liquid tag, docs can be read here:
+https://liquidjs.com/tags/render.html
+
+The 11ty `renderFile` and `renderTemplate` tags can be read about here:
+https://www.11ty.dev/docs/plugins/render/
+
+{% endcomment %}
+
+
 {% render '_layouts/partials/doc-category.liquid',
 	inputTitle: 'Getting Started',
 	collections: collections,

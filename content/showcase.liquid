@@ -30,7 +30,7 @@ layout: showcase
 						{% comment %}
 							This capture is here because idk how to properly use the showcase title in the image source lol!
 						{% endcomment %}
-						{% capture imgURL %}static/images/showcase/{{showcase.fileSlug}}.png{% endcapture %}
+						{% capture imgURL %}content/_static/images/showcase/{{showcase.fileSlug}}.png{% endcapture %}
 						{% liquid
 							image imgURL, showcase.data.title, 500, 260
 						%}
@@ -269,7 +269,7 @@ layout: showcase
 						href="{{ showcase.data.website }}"
 						property="dc:title"
 						target="_blank">
-						{% capture imgURL %}static/images/showcase/{{showcase.fileSlug}}.png{% endcapture %}
+						{% capture imgURL %}content/_static/images/showcase/{{showcase.fileSlug}}.png{% endcapture %}
 						{% liquid
 							image imgURL, showcase.data.title, 345, 184
 						%}
