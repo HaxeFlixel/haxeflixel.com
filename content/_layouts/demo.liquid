@@ -50,7 +50,7 @@ layout: default.liquid
 							<i class="bi-arrow-left-square"></i>
 							{% capture imgURL %}content/_static/images/demos/{{prevDemo.data.title}}.png{% endcapture %}
 							{% image imgURL, "Previous", 70, 70 %}
-							<span>{{prevDemo.data.title}}</span>
+							<span>{{ prevDemo.data.title }}</span>
 						</a>
 					</li>
 				{% endif %}
@@ -62,8 +62,7 @@ layout: default.liquid
 							<i class="bi-arrow-left-square"></i>
 							{% capture imgURL %}content/_static/images/demos/{{lastDemo.data.title}}.png{% endcapture %}
 							{% image imgURL, "Previous", 70, 70 %}
-							<span>{{lastDemo.data.title}}</span>
-
+							<span>{{ lastDemo.data.title }}</span>
 						</a>
 					</li>
 				{% endunless %}
@@ -72,7 +71,7 @@ layout: default.liquid
 				{% if nextDemo %}
 					<li class="page-item">
 						<a class="page-link" href="{{ nextDemo.url }}" title="Next">
-							<span>{{nextDemo.data.title}}</span>
+							<span>{{ nextDemo.data.title }}</span>
 
 							{% capture imgURL %}content/_static/images/demos/{{ nextDemo.data.title }}.png{% endcapture %}
 							{% image imgURL, "Next", 70, 70 %}
@@ -86,7 +85,7 @@ layout: default.liquid
 					{% assign firstDemo = collections['demo-item'] | first %}
 					<li class="page-item">
 						<a class="page-link" href="{{ firstDemo.url }}" title="Next">
-							<span>{{firstDemo.data.title}}</span>
+							<span>{{ firstDemo.data.title }}</span>
 
 							{% capture imgURL %}content/_static/images/demos/{{ firstDemo.data.title }}.png{% endcapture %}
 							{% image imgURL, "Next", 70, 70 %}
