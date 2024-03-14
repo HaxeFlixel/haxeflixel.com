@@ -1,8 +1,6 @@
 # For the blog preview page parse the markdown with github flavour.
 removeMd          = require 'remove-markdown'
-backers           = require './src/files/backers.json'
 
-demoBaseUrl = 'https://demos.haxeflixel.com/html5/'
 
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
@@ -10,7 +8,9 @@ docpadConfig = {
 
   # Ignore the api docs from the flixel-docs repo
   ignorePaths: [
-    __dirname + '/src/documents/documentation/api'
+    __dirname + '/src/documents/documentation/api',
+    __dirname + '/src/documents/styles',
+    __dirname + '/src/files/vendor',
   ]
 
   # Template Data
@@ -30,14 +30,10 @@ docpadConfig = {
         gamedev, game development, cross-platform, haxe, flixel
         """
       styles: [
-        "/styles/style.css"
+        "/vendor/highlightjs/styles/an-old-hope.min.css"
       ]
       scripts: [
-        "//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
-        "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
-        "/vendor/twitter-bootstrap-3/js/dropdown.js",
-        "/vendor/twitter-bootstrap-3/js/transition.js",
-        "/vendor/twitter-bootstrap-3/js/collapse.js"
+        "/vendor/highlightjs/highlight.min.js"
       ]
       services:
         googleAnalytics: 'UA-35511281-1'
@@ -45,10 +41,6 @@ docpadConfig = {
 
     # -----------------------------
     # Helper Functions
-
-    # Used in the fundraiser page for the indiegogo backer list
-    getBackers: ->
-      backers
 
     # Get the prepared site/document title
     # Often we would like to specify particular formatting to our page's title
@@ -61,11 +53,6 @@ docpadConfig = {
       else
         @site.title
 
-    getShowcaseActive: (status) ->
-      if status
-        return 'showcases-target-actives'
-      else
-        return 'showcases-target'
 
     # Get the prepared site/document description
     getPreparedDescription: ->
@@ -76,35 +63,6 @@ docpadConfig = {
     getPreparedKeywords: ->
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
-
-    getDemoTarget: (document) ->
-      if document.targets? and 'html5' in document.targets and 'flash' in document.targets
-        return {html5: demoBaseUrl + document.title, flash: true}
-      else if document.targets? and 'html5' in document.targets
-        return {html5: demoBaseUrl + document.title}
-      else return {flash: true}
-
-    getPagerNext: (collection) ->
-      docsCollection = @getCollection(collection)
-      for item,index in docsCollection.models
-        if item.id is @document.id
-          break
-      return docsCollection.models[index+1]
-
-    getPagerPrevious: (collection) ->
-      docsCollection = @getCollection(collection)
-      for item,index in docsCollection.models
-        if item.id is @document.id
-          break
-      return docsCollection.models[index-1]
-
-    getFirst: (collection) ->
-      docsCollection = @getCollection(collection)
-      return docsCollection.models[0]
-
-    getLast: (collection) ->
-      docsCollection = @getCollection(collection)
-      return docsCollection.models[docsCollection.length-1]
 
     getDocCollection: (database, dir, categoryName, categoryTitle) ->
       query =
@@ -130,28 +88,6 @@ docpadConfig = {
   # =================================
 
   collections:
-
-    blog: (database) ->
-      database.findAllLive({layout:$has:['blog-post', 'fundraiser-layout']}, [filename:-1]).on 'add', (document) ->
-        a = document.attributes
-        if a.layout != "fundraiser-layout"
-          contentPreview = removeMd(a.content).substring(0,150) + " ..."
-          document.setMetaDefaults({
-            contentPreview
-          })
-
-    demos: (database) ->
-      database.findAllLive({layout:$has:'demo'}, [title:1]).on 'add', (document) ->
-        document.setMetaDefaults({
-          width: 640
-          height: 480
-        })
-
-    showcase: (database) ->
-      database.findAllLive({layout:$has:'showcase'}, [title:1])
-
-    homepage_demos: (database) ->
-      database.findAllLive({tags:$has:'homepage_demo'}, [title:1])
 
     getting_started: (database) ->
       docpadConfig.templateData.getDocCollection(database, '00_getting_started', 'getting_started', 'Getting Started')
@@ -194,23 +130,11 @@ docpadConfig = {
   # Plugins
 
   plugins:
+
     cleanurls:
       enabled: true
-
     markedOptions:
       gfm: true
-
-    thumbnails:
-      imageMagick: true
-
-    repocloner:
-      repos: [
-        {
-          name: 'HaxeFlixelDocumentation'
-          path: 'src/documents/documentation'
-          url: 'https://github.com/HaxeFlixel/flixel-docs.git'
-        }
-      ]
 }
 
 # Export our DocPad Configuration

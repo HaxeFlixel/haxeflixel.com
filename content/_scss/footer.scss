@@ -1,0 +1,79 @@
+/* Footer
+-------------------------------------------------- */
+
+.footer-main {
+	background: #515151;
+	color: #fff;
+	min-height: 110px;
+	text-shadow: none;
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+}
+
+$color-mode-type: data;
+@include color-mode(dark) {
+	.footer-main {
+		background: var(--bs-body-bg-subtle);
+	}
+
+	.footer-patreon {
+		filter: invert(1);
+	}
+}
+
+footer:before {
+	background-image: -webkit-linear-gradient(
+		left,
+		#ffbf37 0%,
+		#ffbf37 20%,
+		#ff2346 20%,
+		#ff2346 40%,
+		#00b92b 40%,
+		#00b92b 60%,
+		#3b43ff 60%,
+		#3b43ff 80%,
+		#0bc8ff 80%,
+		#0bc8ff 100%
+	);
+	background-image: -moz-linear-gradient(
+		left center,
+		#ffbf37 0%,
+		#ffbf37 20%,
+		#ff2346 20%,
+		#ff2346 40%,
+		#00b92b 40%,
+		#00b92b 60%,
+		#3b43ff 60%,
+		#3b43ff 80%,
+		#0bc8ff 80%,
+		#0bc8ff 100%
+	);
+	top: 1;
+	content: "";
+	height: 4px;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.footer-powered-by img {
+	width: 40px;
+	@include hover-scale-fx(1.2);
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.footer-patreon {
+	white-space: nowrap;
+	img {
+		height: 40px;
+		margin-left: 0px;
+	}
+
+	img.patreon-wordmark {
+		height: 60px;
+		margin-left: -15px;
+	}
+}

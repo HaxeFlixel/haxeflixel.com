@@ -1,0 +1,68 @@
+.fundraiser-header {
+	display: flex;
+}
+
+.indiegogo-frame {
+	margin: 20px;
+}
+
+.success-text {
+	display: flex;
+}
+
+.success-text span {
+	margin: 10px;
+}
+
+.thankyou-backers {
+	text-align: center;
+}
+
+.backer-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+}
+
+.backer {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 240px;
+	height: 120px;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #c4c4c4;
+	border-radius: 4px;
+}
+
+.backer-amount {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	padding: 10px;
+}
+
+.backer h4 {
+	margin: 10px;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 740px) {
+	.indiegogo-frame {
+		display: none;
+	}
+
+	.fundraiser-header {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+}

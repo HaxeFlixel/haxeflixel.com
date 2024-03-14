@@ -1,0 +1,18 @@
+---
+title: "Demos"
+layout: "demos-layout"
+---
+<div class="demo-page center-align-a row row-cols-auto justify-content-center">
+	{% for demo in collections['demo-item'] %}
+		<a
+			class="col-1 col-md-3"
+			href="{{ demo.url }}"
+			property="dc:title">
+			<p class="fw-semibold" style="width: 190px">{{ demo.data.title }}</p>
+			{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
+			{% liquid
+				image imgURL, "{{demo.data.title}}", 190, 190
+			%}
+		</a>
+	{% endfor %}
+</div>

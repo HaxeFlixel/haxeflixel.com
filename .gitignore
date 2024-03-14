@@ -3,7 +3,9 @@ node_modules/
 docpad.js
 .idea
 src/documents/documentation
+flixel-docs/
 npm-debug.log*
 out
 debug.log
+.DS_Store
 package-lock.json
