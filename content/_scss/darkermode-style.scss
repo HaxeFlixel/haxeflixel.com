@@ -1,0 +1,19 @@
+[data-bs-theme="darker"] {
+	--bs-body-bg: var(--bs-black);
+	--bs-secondary-bg: var(--bs-black);
+	--bs-body-color: var(--bs-white);
+	--bs-emphasis-color: var(--bs-white);
+	--bs-tertiary-bg: var(--bs-black);
+
+	body {
+		background-color: var(--bs-body-bg);
+	}
+
+	.navbar {
+		background-color: var(--bs-black);
+	}
+
+	.footer-main {
+		background-color: var(--bs-black);
+	}
+}

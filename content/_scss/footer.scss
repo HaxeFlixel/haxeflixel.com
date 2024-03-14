@@ -23,6 +23,12 @@ $color-mode-type: data;
 	}
 }
 
+@include color-mode(darker) {
+	.footer-patreon {
+		filter: invert(1);
+	}
+}
+
 footer:before {
 	background-image: -webkit-linear-gradient(
 		left,

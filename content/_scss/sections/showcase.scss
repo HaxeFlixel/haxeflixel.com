@@ -15,6 +15,11 @@ $color-mode-type: data;
 		filter: invert(1);
 	}
 }
+@include color-mode(darker) {
+	.showcase-targets img {
+		filter: invert(1);
+	}
+}
 
 .showcases-target-active img {
 	@include nograyscale();
