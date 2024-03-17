@@ -44,20 +44,23 @@ module.exports = function(eleventyConfig) {
       return isActive ? "active" : "";
     });
 
-    eleventyConfig.addShortcode("image", async function(src, alt, width, height) {
+    eleventyConfig.addShortcode("image", async function(src, alt, width, height, classes = "") {
       let resizedImage = await resizeImage(src, width, height, "cover");
 
       let metadata = await Image(resizedImage, { 
         formats: ["png"],
         outputDir: "out/img"
       });
-  
+
+      
+
       let imageAttributes = {
         alt,
         width: width,
         height: height,
         loading: "lazy",
         decoding: "async",
+        class: classes
       };
   
       // You bet we throw an error on a missing alt (alt="" works okay)

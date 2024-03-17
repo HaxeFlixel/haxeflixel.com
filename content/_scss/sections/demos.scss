@@ -3,16 +3,19 @@
 
 .demo-page.center-align-a img {
 	box-shadow: var(--bs-box-shadow);
+	width: 100%;
+	height: auto;
 }
 
 .demo-page.center-align-a p {
-	display: inline;
-	position: absolute;
+	@include font-size(1rem);
 	text-align: center;
+	position: relative;
 	width: 100%;
+	margin: 0;
+	top: 2em;
 	color: white;
 	background: rgba(0, 0, 0, 0.7);
-	padding: 10px;
 }
 
 #page-tr-info {

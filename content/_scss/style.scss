@@ -299,9 +299,6 @@ pre .title:before {
 }
 
 .center-align-a > a {
-	position: relative;
-	padding: 14px;
-	display: inline-table;
 	@include hover-scale-fx(1.1);
 }
 

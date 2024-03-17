@@ -2,16 +2,16 @@
 title: "Demos"
 layout: "demos-layout"
 ---
-<div class="demo-page center-align-a row row-cols-auto justify-content-center">
+<div class="demo-page center-align-a row row-cols-sm-2 row-cols-3 g-3 justify-content-center mx-sm-4">
 	{% for demo in collections['demo-item'] %}
+		
 		<a
-			class="col-1 col-md-3"
-			href="{{ demo.url }}"
-			property="dc:title">
-			<p class="fw-semibold" style="width: 190px">{{ demo.data.title }}</p>
+			class="col-6 col-sm-4 col-md-3"
+			href="{{ demo.url }}">
+			<p class="fw-semibold py-2">{{ demo.data.title }}</p>
 			{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
 			{% liquid
-				image imgURL, "{{demo.data.title}}", 190, 190
+				image imgURL, "{{demo.data.title}}", 200, 200
 			%}
 		</a>
 	{% endfor %}
