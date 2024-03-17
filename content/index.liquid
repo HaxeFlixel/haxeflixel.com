@@ -127,7 +127,7 @@ title: 'Home'
 				<a href="/demos">{{ collections['demo-item'].length }} demos</a>:
 			</p>
 		</h3>
-
+		
 		{% for demo in collections.homepage_demo %}
 			<a href="{{ demo.url }}" property="dc:title">
 				{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
