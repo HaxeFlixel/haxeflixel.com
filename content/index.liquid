@@ -21,20 +21,24 @@ title: 'Home'
 			All with one codebase.
 		</p>
 
-		<div class="d-flex justify-content-around">
+		<div 
+			class="d-flex justify-content-center"
+			style="gap: 2em"
+		>
 			<a
 				role="button"
 				class="btn btn-outline-primary btn-lg"
 				href="/documentation/getting-started"
-				>Getting Started
-				<i class="bi-list-ol"></i>
+				><i class="bi-list-ol"></i>
+				Getting Started
 			</a>
 			<a
 				role="button"
 				class="btn btn-outline-primary btn-lg"
 				href="https://github.com/HaxeFlixel"
-				>GitHub
+				>
 				<i class="bi-github"></i>
+				GitHub
 			</a>
 		</div>
 
@@ -140,6 +144,28 @@ title: 'Home'
 
 	<hr>
 
+	<div class="games-home home-section">
+		<h3>
+			<p class="lead-line-large">
+				These popular games use HaxeFlixel:
+			</p>
+		</h3>
+
+		<div class="showcase-list">
+			{% for showcase in collections['showcase-item'] reversed %}
+				{% if showcase.data.featured %}
+					<a href="{{showcase.data.website}}">
+						{% capture imgURL %}content/_static/images/showcase/{{showcase.fileSlug}}.png{% endcapture %}
+							{% liquid
+								image imgURL, showcase.data.title, 250, 130
+							%}
+					</a>
+				{% endif %}
+			{% endfor %}
+	</div>
+
+	<hr>
+
 	<div class="home-section-powered">
 		<p class="lead-line-large">Powered by open source cross-platform tech:</p>
 
@@ -188,16 +214,6 @@ title: 'Home'
 		</a>
 
 		</div>
-		
-
-		
-
-		
-
-		
-
-		
-
 		<br>
 	</div>
 

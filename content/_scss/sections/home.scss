@@ -15,6 +15,7 @@
 	font-size: 30px;
 	font-weight: 200;
 	padding-bottom: 30px;
+	padding-top: 10px;
 }
 
 .lead-line-large {
@@ -80,10 +81,20 @@
 	box-shadow: var(--bs-box-shadow);
 }
 
+.games-home .showcase-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.games-home a {
+	margin: 0.5em;
+	gap: 0.25em;
+}
+
 .platform-logos-home img {
 	padding: 10px;
 	@include opacityAll(0.7);
-	@include hover-scale-fx(1.1);
 	@include grayscale();
 }
 
@@ -94,16 +105,6 @@ $color-mode-type: data;
 		@include opacityAll(1);
 		filter: invert(0.7);
 	}
-
-	.platform-logos-home img:hover {
-		@include opacityAll(1);
-		filter: invert(0.9);
-	}
-}
-
-.platform-logos-home img:hover {
-	@include opacityAll(1);
-	@include nograyscale();
 }
 
 .platform-demos-home img {
@@ -117,6 +118,7 @@ $color-mode-type: data;
 
 .home-big-logo img {
 	@include hover-scale-fx(1.1);
+	padding-bottom: 15px;
 }
 
 .navbar-fixed-top {
