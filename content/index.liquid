@@ -21,20 +21,22 @@ title: 'Home'
 			All with one codebase.
 		</p>
 
-		<div class="d-flex justify-content-around">
+		<div
+			class="d-flex justify-content-center"
+			style="gap: 2em">
 			<a
 				role="button"
 				class="btn btn-outline-primary btn-lg"
 				href="/documentation/getting-started"
-				>Getting Started
-				<i class="bi-list-ol"></i>
+				><i class="bi-list-ol"></i>
+				Getting Started
 			</a>
 			<a
 				role="button"
 				class="btn btn-outline-primary btn-lg"
-				href="https://github.com/HaxeFlixel"
-				>GitHub
+				href="https://github.com/HaxeFlixel">
 				<i class="bi-github"></i>
+				GitHub
 			</a>
 		</div>
 
@@ -127,7 +129,7 @@ title: 'Home'
 				<a href="/demos">{{ collections['demo-item'].length }} demos</a>:
 			</p>
 		</h3>
-		
+
 		{% for demo in collections.homepage_demo %}
 			<a href="{{ demo.url }}" property="dc:title">
 				{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
@@ -140,92 +142,102 @@ title: 'Home'
 
 	<hr>
 
-	<div class="home-section-powered">
-		<p class="lead-line-large">Powered by open source cross-platform tech:</p>
+	<div class="games-home home-section">
+		<h3>
+			<p class="lead-line-large">These popular games use HaxeFlixel:</p>
+		</h3>
 
-		<br>
-		<div class="row my-auto g-0 align-items-center justify-content-evenly">
-			<a  class="col-2"
-			href="https://haxe.org"
-			data-bs-toggle="tooltip"
-			data-bs-title="Default tooltip"
-			><img
-				src="/images/haxe.svg"
-				alt="Haxe Logo"
-				title="Haxe"
-			></a>
-			<span class="col-1">
-				<b>+</b>
-			</span> 
-			<a class="col-2" href="https://openfl.org"
-				><img
-				src="/images/openfl.svg"
-				alt="OpenFL Logo"
-				title="OpenFL"
-			></a>
-
-		<span class="col-1">
-			<b>+</b>
-		</span> 
-
-		<a class="col-2" href="https://flixel.org"
-			><img
-				src="/images/flixel.svg"
-				alt="Flixel Logo"
-				title="Flixel"
-		></a>
-
-		<span class="col-1">
-			<b>=</b>
-		</span> 
-
-		<a class="col-2" href="https://haxeflixel.com">
-			<img
-				src="/images/haxeflixel.svg"
-				alt="HaxeFlixel logo"
-				title="HaxeFlixel"
-				>
-		</a>
-
-		</div>
-		
-
-		
-
-		
-
-		
-
-		
-
-		<br>
-	</div>
-
-	<hr>
-
-	<div class="home-sponsor-logos">
-		<p class="lead-line-large">Our platinum and gold sponsors:</p>
-
-		<div class="sponsor-logos-container">
-			<a class="platinum" href="http://www.defendersquest.com">
-				<img src="/images/sponsors/platinum/level-up-labs/lul_logo_circle.png">
-			</a>
-
-			<a class="platinum" href="http://bluebottlegames.com">
-				<img src="/images/sponsors/platinum/blue-bottle-games/bbgLogoColor256x256.png">
-			</a>
-
-			<a class="gold" href="http://www.kongregate.com">
-				<img src="/images/sponsors/gold/kongregate/kongregate_anthill.svg">
-			</a>
-
-			<a class="gold" href="http://www.solarpoweredgames.de">
-				<img src="/images/sponsors/gold/solar-powered/logo-solarpoweredgames-inverted-256.png">
-			</a>
+		<div class="showcase-list">
+			{% for showcase in collections['showcase-item'] reversed %}
+				{% if showcase.data.featured %}
+					<a href="{{showcase.data.website}}">
+						{% capture imgURL %}content/_static/images/showcase/{{showcase.fileSlug}}.png{% endcapture %}
+						{% liquid
+							image imgURL, showcase.data.title, 250, 130
+						%}
+					</a>
+				{% endif %}
+			{% endfor %}
 		</div>
 
-		<br>
+		<hr>
 
-		<a class="btn btn-primary btn-lg" href="/sponsors"> See all our Sponsors </a>
+		<div class="home-section-powered">
+			<p class="lead-line-large">Powered by open source cross-platform tech:</p>
+
+			<br>
+			<div class="row my-auto g-0 align-items-center justify-content-evenly">
+				<a
+					class="col-2"
+					href="https://haxe.org"
+					data-bs-toggle="tooltip"
+					data-bs-title="Default tooltip"
+					><img
+						src="/images/haxe.svg"
+						alt="Haxe Logo"
+						title="Haxe"
+				></a>
+				<span class="col-1">
+					<b>+</b>
+				</span>
+				<a class="col-2" href="https://openfl.org"
+					><img
+						src="/images/openfl.svg"
+						alt="OpenFL Logo"
+						title="OpenFL"
+				></a>
+
+				<span class="col-1">
+					<b>+</b>
+				</span>
+
+				<a class="col-2" href="https://flixel.org"
+					><img
+						src="/images/flixel.svg"
+						alt="Flixel Logo"
+						title="Flixel"
+				></a>
+
+				<span class="col-1">
+					<b>=</b>
+				</span>
+
+				<a class="col-2" href="https://haxeflixel.com">
+					<img
+						src="/images/haxeflixel.svg"
+						alt="HaxeFlixel logo"
+						title="HaxeFlixel">
+				</a>
+			</div>
+			<br>
+		</div>
+
+		<hr>
+
+		<div class="home-sponsor-logos">
+			<p class="lead-line-large">Our platinum and gold sponsors:</p>
+
+			<div class="sponsor-logos-container">
+				<a class="platinum" href="http://www.defendersquest.com">
+					<img src="/images/sponsors/platinum/level-up-labs/lul_logo_circle.png">
+				</a>
+
+				<a class="platinum" href="http://bluebottlegames.com">
+					<img src="/images/sponsors/platinum/blue-bottle-games/bbgLogoColor256x256.png">
+				</a>
+
+				<a class="gold" href="http://www.kongregate.com">
+					<img src="/images/sponsors/gold/kongregate/kongregate_anthill.svg">
+				</a>
+
+				<a class="gold" href="http://www.solarpoweredgames.de">
+					<img src="/images/sponsors/gold/solar-powered/logo-solarpoweredgames-inverted-256.png">
+				</a>
+			</div>
+
+			<br>
+
+			<a class="btn btn-primary btn-lg" href="/sponsors"> See all our Sponsors </a>
+		</div>
 	</div>
 </div>
