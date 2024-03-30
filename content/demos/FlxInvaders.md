@@ -10,3 +10,10 @@ A simple invaders game in flixel originally created by [Adam "Atomic" Saltsman](
 Controls:
 
 Left / right to move and spacebar to shoot.
+
+Sound effects created with [ChipTone](https://sfbgames.itch.io/chiptone)
+
+Music: 
+https://www.newgrounds.com/audio/listen/806085
+
+Music Licensed under CC BY 3.0 ([link to license](https://creativecommons.org/licenses/by/3.0/))
