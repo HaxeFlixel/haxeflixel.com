@@ -1,7 +1,7 @@
 ---
 layout: default.liquid
 ---
-<div class="demo-container">
+<div class="demo-container position-relative mx-auto" style="width: fit-content;">
 	{% if targets == 'html5' %}
 		{% unless height %}
 			{% assign height = 480 %}
@@ -10,17 +10,18 @@ layout: default.liquid
 		{% unless width %}
 			{% assign width = 640 %}
 		{% endunless %}
-		<div class="position-relative" style="height: {{height}}; width={{width}}">
+
+			<button type="button" class="btn btn-outline-primary position-absolute bottom-0 end-0 m-2" onclick="toggleFullscreen();">
+				<i class="bi bi-arrows-fullscreen"></i>
+				</button>
 			<iframe
 				class="html5-demo"
 				src="https://demos.haxeflixel.com/html5/{{title}}"
 				width="{{width}}"
-				height="{{height}}" allowfullscreen></iframe>
-			<button type="button" class="btn btn-outline-primary position-absolute bottom-0 end-0" onclick="toggleFullscreen();">
-				<i class="bi bi-arrows-fullscreen"></i>
-				</button>
+				height="{{height}}" allow="fullscreen"></iframe>
+			
 				
-		</div>
+
 		
 	{% endif %}
 
