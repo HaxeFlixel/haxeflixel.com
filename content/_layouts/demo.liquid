@@ -40,14 +40,19 @@ layout: default.liquid
 			{{ title }}
 
 			<div class="hstack gap-3 my-auto float-end h4 align-middle">
-				<a href="https://github.com/HaxeFlixel/haxeflixel.com/edit/dev/content/demos/{{title}}.md"
+				<a
+					href="https://github.com/HaxeFlixel/haxeflixel.com/edit/dev/content/demos/{{title}}.md"
+					data-bs-toggle="tooltip"
+					data-bs-title="Edit Demo Info"
 					><i class="bi bi-pencil"></i
 				></a>
 				<div class="vr"></div>
 				<a
 					class="icon-link"
 					href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/{{source}}/source"
-					target="_blank">
+					target="_blank"
+					data-bs-toggle="tooltip"
+					data-bs-title="Demo Source Code">
 					<i class="bi-github"></i>
 				</a>
 			</div>
