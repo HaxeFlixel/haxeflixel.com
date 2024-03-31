@@ -1,7 +1,7 @@
 ---
 layout: default.liquid
 ---
-<div class="demo-container">
+<div class="demo-container position-relative mx-auto" style="width: fit-content;">
 	{% if targets == 'html5' %}
 		{% unless height %}
 			{% assign height = 480 %}
@@ -11,11 +11,18 @@ layout: default.liquid
 			{% assign width = 640 %}
 		{% endunless %}
 
+		<button
+			type="button"
+			class="btn btn-outline-primary position-absolute bottom-0 end-0 m-2"
+			onclick="toggleFullscreen();">
+			<i class="bi bi-arrows-fullscreen"></i>
+		</button>
 		<iframe
 			class="html5-demo"
 			src="https://demos.haxeflixel.com/html5/{{title}}"
 			width="{{width}}"
-			height="{{height}}"></iframe>
+			height="{{height}}"
+			allow="fullscreen"></iframe>
 	{% endif %}
 
 	{% if targets == 'flash' %}
@@ -102,6 +109,13 @@ layout: default.liquid
 	</div>
 </div>
 
+<script type="text/javascript">
+	function toggleFullscreen() {
+		let iframe = document.querySelector('.html5-demo');
+		iframe.requestFullscreen();
+	}
+</script>
+
 {% if targets == 'flash' %}
-	<script type="text/javascript" src="/vendor/swfobject/swfobject/swfobject.js"></script>
+	{% comment %} <script type="text/javascript" src="/vendor/swfobject/swfobject/swfobject.js"></script> {% endcomment %}
 {% endif %}
