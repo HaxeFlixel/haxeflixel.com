@@ -36,14 +36,23 @@ layout: default.liquid
 	<div class="demo-content">
 		<br>
 
-		<h1 class="title">{{ title }}</h1>
-		<a
-			class="btn icon-link float-end"
-			href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/{{source}}/source"
-			target="_blank">
-			<i class="bi-box-seam"></i>
-			source code
-		</a>
+		<h1 class="title">
+			{{ title }}
+
+			<div class="hstack gap-3 my-auto float-end h4 align-middle">
+				<a href="https://github.com/HaxeFlixel/haxeflixel.com/edit/dev/content/demos/{{title}}.md"
+					><i class="bi bi-pencil"></i
+				></a>
+				<div class="vr"></div>
+				<a
+					class="icon-link"
+					href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/{{source}}/source"
+					target="_blank">
+					<i class="bi-github"></i>
+				</a>
+			</div>
+		</h1>
+
 		{{ content }}
 
 		<br>
