@@ -1,4 +1,4 @@
----
+a---
 title: "FlxRandom"
 layout: demo
 source: "Performance/FlxRandom"
