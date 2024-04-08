@@ -3,7 +3,6 @@ title: "Filters"
 layout: demo
 source: "Effects/Filters"
 tags: homepage_demo
-targets: "html5"
 ---
 
 A demo showcasing various filter effects, applied to the game using either `FlxG.camera.filters` or `FlxG.game.filters`.

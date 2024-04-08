@@ -2,7 +2,6 @@
 title: "FlxTrailArea"
 layout: demo
 source: "Effects/FlxTrailArea"
-targets: "html5"
 ---
 
 This demo shows the effects that can be accomplished with [`FlxTrailArea`](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/effects/FlxTrailArea.hx).

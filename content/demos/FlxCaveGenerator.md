@@ -2,7 +2,6 @@
 title: "FlxCaveGenerator"
 layout: demo
 source: "Platformers/FlxCaveGenerator"
-targets: "html5"
 ---
 
 A demo showing off the capabilites of [FlxCaveGenerator](https://github.com/HaxeFlixel/flixel-addons/blob/master/flixel/addons/tile/FlxCaveGenerator.hx).
