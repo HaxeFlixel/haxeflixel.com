@@ -1,7 +1,7 @@
 ---
-title: "SubState"
+title: "FlxSubState"
 layout: demo
-source: "Features/SubState"
+source: "Features/FlxSubState"
 ---
 
 An example of `flixel.FlxSubState`.
