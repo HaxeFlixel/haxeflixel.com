@@ -2,6 +2,7 @@
 title: "FlxGameOfLife"
 layout: demo
 source: "Other/FlxGameOfLife"
+targets: "html5"
 ---
 
 This is a demonstration of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) recreated in HaxeFlixel.
