@@ -4,6 +4,7 @@ layout: demo
 source: "Features/FlxSound"
 targets: "html5"
 ---
+
 Shows how to use `flixel.sound.FlxSound`, or rather, `FlxG.sound`, to play and control music and sounds.
 
 ["Sound Effects and Music"](https://haxeflixel.com/documentation/cheat-sheet/#sound-effects-and-music) section in the [Cheat Sheet](https://haxeflixel.com/documentation/cheat-sheet/) documentation is a useful reference.

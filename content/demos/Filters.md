@@ -9,6 +9,7 @@ targets: "html5"
 A demo showcasing various filter effects, applied to the game using either `FlxG.camera.filters` or `FlxG.game.filters`.
 
 Filters in this demo:
+
 - [ShaderFilter](https://api.openfl.org/openfl/filters/ShaderFilter.html)
   - [Scanline](https://github.com/HaxeFlixel/flixel-demos/blob/dev/Effects/Filters/source/filters/Scanline.hx)
   - [Hq2x](https://github.com/HaxeFlixel/flixel-demos/blob/dev/Effects/Filters/source/filters/Hq2x.hx)
