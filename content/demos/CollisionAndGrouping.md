@@ -4,7 +4,6 @@ layout: demo
 width: 400
 height: 300
 source: "Features/CollisionAndGrouping"
-targets: "html5"
 ---
 
 A port of the [Collision and Grouping demo](https://github.com/TestSubject06/CollisionsDemo) by [Zachary Tarvit](https://twitter.com/TestSubject06) featured on [flixel.org/features](http://flixel.org/features.html).

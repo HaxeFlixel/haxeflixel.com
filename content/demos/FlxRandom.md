@@ -2,7 +2,6 @@
 title: "FlxRandom"
 layout: demo
 source: "Performance/FlxRandom"
-targets: "html5"
 ---
 
 This is simply a collection of functions to test the updated FlxRandom class in HaxeFlixel.

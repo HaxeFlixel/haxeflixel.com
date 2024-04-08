@@ -2,7 +2,6 @@
 title: "Breakout"
 layout: demo
 source: "Arcade/Breakout"
-targets: "html5"
 ---
 
 A very simple, but solid Breakout clone originally created by [Photonstorm](http://www.photonstorm.com/)&nbsp;(Richard Davey)&nbsp;in 20 minutes.

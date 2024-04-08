@@ -3,7 +3,6 @@ title: "FlxNape"
 layout: demo
 source: "Features/FlxNape"
 tags: homepage_demo
-targets: "html5"
 ---
 
 This demo showcases the integration of the [Nape Physics Engine](https://joecreates.github.io/napephys/) with HaxeFlixel.

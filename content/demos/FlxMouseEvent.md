@@ -2,7 +2,6 @@
 title: "FlxMouseEvent"
 layout: demo
 source: "Input/FlxMouseEvent"
-targets: "html5"
 ---
 
 [FlxMouseEvent](https://api.haxeflixel.com/flixel/input/mouse/FlxMouseEvent.html) allows `FlxSprite`s to listen to mouse events like `MouseDown`, `MouseUp`, `MouseOver` and `MouseOut`.

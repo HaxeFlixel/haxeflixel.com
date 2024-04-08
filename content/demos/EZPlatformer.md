@@ -2,7 +2,6 @@
 title: "EZPlatformer"
 layout: demo
 source: "Platformers/EZPlatformer"
-targets: "html5"
 ---
 
 EZPlatformer is a really simple platformer which was originally created by [Adam "Atomic" Saltsman](https://twitter.com/adamatomic) as a tutorial for creating platformers with flixel.

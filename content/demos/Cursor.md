@@ -2,7 +2,6 @@
 title: "Cursor"
 layout: demo
 source: "UserInterface/Cursor"
-targets: "html5"
 ---
 
 A demo showcasing keyboard navigation with a [flixel-ui](http://github.com/HaxeFlixel/flixel-ui) instance. You can navigate

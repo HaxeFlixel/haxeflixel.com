@@ -4,5 +4,4 @@ layout: demo
 width: 512
 height: 288
 source: "Arcade/FlxLightPuzzle"
-targets: "html5"
 ---

@@ -2,7 +2,6 @@
 title: "FlxAsyncLoop"
 layout: demo
 source: "Other/FlxAsyncLoop"
-targets: "html5"
 ---
 
 Demonstration for the `FlxAsyncLoop` class, created by [SeiferTim](http://tims-world.com/) (Tim I Hely).

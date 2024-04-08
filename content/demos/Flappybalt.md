@@ -5,7 +5,6 @@ width: 480
 height: 720
 source: "Arcade/Flappybalt"
 tags: homepage_demo
-targets: "html5"
 ---
 
 Controls: Spacebar
