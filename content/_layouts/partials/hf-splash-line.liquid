@@ -1,0 +1,35 @@
+<div id="footer-splash" class="row py-1 align-items-stretch">
+    <div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+    <div id="foot-red" class="col text-bg-flixel-red "></div>
+    <div id="foot-green" class="col text-bg-flixel-green "></div>
+    <div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+    <div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+        var audio = new Audio('/sounds/flixel.ogg');
+        document.getElementById('footer-splash').addEventListener('click', function () {
+
+            if (audio.paused) {
+                let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+                let footCol = ["foot-green", "foot-yellow", "foot-light-blue", "foot-red", "foot-blue"];
+
+                for (let i = 0; i < times.length; i++) {
+                    document.getElementById(footCol[i]).style.opacity = 0;
+                }
+
+                setTimeout(function () {
+                    // code to be executed
+                    audio.play();
+                    for (let i = 0; i < times.length; i++) {
+                        setTimeout(function () {
+                            // code to be executed
+                            document.getElementById(footCol[i]).style.opacity = 1;
+                        }, times[i] * 1000);
+                    }
+                }, 1000);
+
+
+            }
+        });
+    </script>

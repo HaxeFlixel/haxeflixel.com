@@ -3,3 +3,13 @@ $flixel-yellow: #ffbf37;
 $flixel-red: #ff2346;
 $flixel-green: #00b92b;
 $flixel-light-blue: #0bc8ff;
+
+$flixel-colors: (
+	flixel-dark-blue: $flixel-dark-blue,
+	flixel-yellow: $flixel-yellow,
+	flixel-red: $flixel-red,
+	flixel-green: $flixel-green,
+	flixel-light-blue: $flixel-light-blue,
+);
+
+$theme-colors: map-merge($theme-colors, $flixel-colors);

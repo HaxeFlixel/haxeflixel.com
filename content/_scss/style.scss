@@ -1,9 +1,15 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+@import "./flixel-colors.scss"; // adds flixel colors to bootstrap color map
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 @import "./mixins/helpers.scss";
 @import "./footer.scss";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import "./color-styles.scss";
-@import "./flixel-colors.scss";
 
 * {
 	transition: background-color 0.5s ease;

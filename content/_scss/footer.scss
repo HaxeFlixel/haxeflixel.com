@@ -25,39 +25,11 @@ $color-mode-type: data;
 	}
 }
 
-footer:before {
-	background-image: -webkit-linear-gradient(
-		left,
-		#ffbf37 0%,
-		#ffbf37 20%,
-		#ff2346 20%,
-		#ff2346 40%,
-		#00b92b 40%,
-		#00b92b 60%,
-		#3b43ff 60%,
-		#3b43ff 80%,
-		#0bc8ff 80%,
-		#0bc8ff 100%
-	);
-	background-image: -moz-linear-gradient(
-		left center,
-		#ffbf37 0%,
-		#ffbf37 20%,
-		#ff2346 20%,
-		#ff2346 40%,
-		#00b92b 40%,
-		#00b92b 60%,
-		#3b43ff 60%,
-		#3b43ff 80%,
-		#0bc8ff 80%,
-		#0bc8ff 100%
-	);
-	top: 1;
-	content: "";
-	height: 4px;
-	left: 0;
-	position: absolute;
-	right: 0;
+#footer-splash {
+	cursor: pointer;
+	> * {
+		padding-top: 0.25rem;
+	}
 }
 
 .footer-powered-by img {
