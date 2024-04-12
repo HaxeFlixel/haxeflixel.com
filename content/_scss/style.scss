@@ -2,7 +2,7 @@
 @import "./mixins/helpers.scss";
 @import "./footer.scss";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-@import "./darkmode-style.scss";
+@import "./color-styles.scss";
 @import "./flixel-colors.scss";
 
 * {
@@ -257,29 +257,29 @@ a.header-anchor::before {
 .title:before {
 	background-image: -webkit-linear-gradient(
 		left,
-		#ffbf37 0%,
-		#ffbf37 20%,
-		#ff2346 20%,
-		#ff2346 40%,
-		#00b92b 40%,
-		#00b92b 60%,
-		#3b43ff 60%,
-		#3b43ff 80%,
-		#0bc8ff 80%,
-		#0bc8ff 100%
+		$flixel-yellow 0%,
+		$flixel-yellow 20%,
+		$flixel-red 20%,
+		$flixel-red 40%,
+		$flixel-green 40%,
+		$flixel-green 60%,
+		$flixel-dark-blue 60%,
+		$flixel-dark-blue 80%,
+		$flixel-light-blue 80%,
+		$flixel-light-blue 100%
 	);
 	background-image: -moz-linear-gradient(
 		left center,
-		#ffbf37 0%,
-		#ffbf37 20%,
-		#ff2346 20%,
-		#ff2346 40%,
-		#00b92b 40%,
-		#00b92b 60%,
-		#3b43ff 60%,
-		#3b43ff 80%,
-		#0bc8ff 80%,
-		#0bc8ff 100%
+		$flixel-yellow 0%,
+		$flixel-yellow 20%,
+		$flixel-red 20%,
+		$flixel-red 40%,
+		$flixel-green 40%,
+		$flixel-green 60%,
+		$flixel-dark-blue 60%,
+		$flixel-dark-blue 80%,
+		$flixel-light-blue 80%,
+		$flixel-light-blue 100%
 	);
 	bottom: -6px;
 	content: "";
