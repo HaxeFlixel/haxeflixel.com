@@ -12,14 +12,16 @@
 	}
 }
 
+// always white patreon logo in footer!
+// can prob edit the svg file...
+.footer-patreon {
+	filter: invert(1);
+}
+
 $color-mode-type: data;
 @include color-mode(dark) {
 	.footer-main {
 		background: var(--bs-body-bg-subtle);
-	}
-
-	.footer-patreon {
-		filter: invert(1);
 	}
 }
 
