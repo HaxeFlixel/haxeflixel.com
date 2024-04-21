@@ -44,6 +44,13 @@ module.exports = function(eleventyConfig) {
       return isActive ? "active" : "";
     });
 
+    // shortcode to calculate readtime
+    eleventyConfig.addShortcode("readtime", function(content) {
+      let words = content.split(" ").length;
+      let minutes = Math.ceil(words / 265);
+      return minutes;
+    });
+
     eleventyConfig.addShortcode("image", async function(src, alt, width, height, classes = "") {
       let resizedImage = await resizeImage(src, width, height, "cover");
 
@@ -51,8 +58,6 @@ module.exports = function(eleventyConfig) {
         formats: ["png"],
         outputDir: "out/img"
       });
-
-      
 
       let imageAttributes = {
         alt,
