@@ -5,17 +5,24 @@ layout: blog-layout
 <div class="container">
 	<div class="row">
 		{%- for blog in collections.blogpost reversed -%}
-			<a href="{{blog.url}}" property="dc:title">
-				<h3>{{ blog.data.title }}</h3>
-			</a>
-			<div class="post-date post-date-preview">{{ blog.data.postDate }}</div>
-			<p>
-				{{ blog.content | strip_html | truncate: 150 -}}
-				<a href="{{blog.url}}"> read more</a>
-			</p>
-			{% comment %} <p><%- blog.contentPreview %> <a href="<%= blog.url %>"> read more</a></p> {% endcomment %}
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">{{ blog.data.title }}</h3>
 
-			<hr>
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							{% readtime blog.content %} min read | {{ blog.data.postDate }}
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						{{ blog.content | strip_html | truncate: 250 -}}
+						<a href="{{blog.url}}" class="stretched-link"> read more</a>
+					</p>
+					{% comment %} <p><%- blog.contentPreview %> <a href="<%= blog.url %>"> read more</a></p> {% endcomment %}
+				</div>
+			</div>
+
+			<hr class="my-3">
 		{%- endfor -%}
 	</div>
 </div>

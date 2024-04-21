@@ -12,4 +12,3 @@ Demo showcasing loading `flixel.text.FlxBitmapText` and `flixel.graphics.frames.
 - `HELLO WORLD!...` is using `FlxBitmapFont.fromAngelCode()` and loading a `.fnt` file
 - `ROBOCOP RULES!!!` is using `FlxBitmapFont.fromMonospace()`
 - `You can even define and use Unicode Combining Diacritical Marks!` is using `FlxBitmapFont.fromAngelCode()` and loading a `.xml` file.
-
