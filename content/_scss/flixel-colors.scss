@@ -12,4 +12,7 @@ $flixel-colors: (
 	flixel-light-blue: $flixel-light-blue,
 );
 
+$link-color: $flixel-dark-blue;
+$link-color-dark: $flixel-light-blue;
+
 $theme-colors: map-merge($theme-colors, $flixel-colors);

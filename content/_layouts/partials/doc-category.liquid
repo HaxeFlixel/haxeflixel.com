@@ -11,8 +11,11 @@
 	{%- endfor -%}
 
 	{% for doc in collections[docCollection] %}
-		<div class="col-md-3 col-12 col-sm-6 doc-list-item">
-			<div class="list-group p-1">
+		{% capture flixelcol %} 
+	{% cycle "--bs-flixel-yellow", "--bs-flixel-red", "--bs-flixel-green", "--bs-flixel-dark-blue", "--bs-flixel-light-blue" %}
+	{% endcapture %}
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var({{flixelcol}})">
 				<a href="{{doc.url}}" class="list-group-item list-group-item-action fw-semibold">
 					{{ doc.data.title }}
 				</a>
