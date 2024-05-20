@@ -1,0 +1,51 @@
+---
+layout: default.liquid
+---
+<div class="row">
+	<div class="col-md-8">
+		<h1 class="title">{{ title }}</h1>
+		{{ content }}
+	</div>
+
+	<div class="col-md-4 twitter-widget">
+		<a
+			class="twitter-timeline"
+			data-theme="auto"
+			data-height="850"
+			data-tweet-limit="3"
+			href="https://twitter.com/HaxeFlixel?ref_src=twsrc%5Etfw">
+			<button class="card btn" type="button" disabled>
+				<div class="card-body">
+					<h5 class="card-title fw-semibold">
+						<div class="d-flex align-items-center">
+							<span>Loading tweets from @HaxeFlixel</span>
+							<span class="spinner-border" role="status"></span>
+						</div>
+					</h5>
+
+					<p class="card-text placeholder-glow">
+						<span class="placeholder col-7"></span>
+						<span class="placeholder col-4"></span>
+						<span class="placeholder col-4"></span>
+						<span class="placeholder col-6"></span>
+						<span class="placeholder col-8"></span>
+					</p>
+				</div>
+			</button>
+		</a>
+
+		<script>
+			let twit = document.querySelector('.twitter-timeline');
+			twit.setAttribute('data-theme', localStorage.getItem('theme'));
+
+			let btn = document.querySelector('.card.btn');
+			let btnColor = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+			btn.classList.add('btn-outline-' + btnColor);
+		</script>
+
+		<script
+			async
+			src="https://platform.twitter.com/widgets.js"
+			charset="utf-8"></script>
+	</div>
+</div>

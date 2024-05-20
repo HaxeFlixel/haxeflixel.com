@@ -1,0 +1,30 @@
+---
+title: "The HaxeFlixel Blog"
+layout: blog-layout
+---
+<div class="container">
+	<div class="row gy-4 pt-3">
+		{%- for blog in collections.blogpost reversed -%}
+			{% capture border_color %}{% cycle  "flixel-yellow", "flixel-red", "flixel-green", "flixel-dark-blue",  "flixel-light-blue" %}{% endcapture %}
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-{{ border_color }}"
+				style="outline-color: var(--bs-{{border_color}});">
+				<div class="card-body">
+					<h3 class="card-title">{{ blog.data.title }}</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							{% readtime blog.content %} min read | {{ blog.data.postDate }}
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						{{ blog.content | strip_html | truncate: 350 -}}
+						<a href="{{blog.url}}" class="stretched-link"> read more</a>
+					</p>
+					{% comment %} <p><%- blog.contentPreview %> <a href="<%= blog.url %>"> read more</a></p> {% endcomment %}
+				</div>
+			</div>
+		{%- endfor -%}
+	</div>
+</div>

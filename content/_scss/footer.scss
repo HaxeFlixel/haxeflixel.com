@@ -1,0 +1,51 @@
+/* Footer
+-------------------------------------------------- */
+
+.footer-main {
+	background: #515151;
+	color: #fff;
+	min-height: 110px;
+	text-shadow: none;
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+}
+
+// always white patreon logo in footer!
+// can prob edit the svg file...
+.footer-patreon {
+	filter: invert(1);
+}
+
+$color-mode-type: data;
+@include color-mode(dark) {
+	.footer-main {
+		background: var(--bs-body-bg-subtle);
+	}
+}
+
+#footer-splash {
+	cursor: pointer;
+	> * {
+		padding-top: 0.25rem;
+	}
+}
+
+.footer-powered-by img {
+	width: 40px;
+	@include hover-scale-fx(1.2);
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.footer-patreon {
+	img {
+		margin-left: 0px;
+	}
+
+	img.patreon-wordmark {
+		height: 60px;
+		margin-left: -15px;
+	}
+}

@@ -1,0 +1,25 @@
+<div class="row mb-2">
+	{%- for docThing in collections.docs -%}
+		{%- capture docTitle -%} {{ docThing.data.title}} {%- endcapture -%}
+		{%- if docTitle == inputTitle -%}
+			<div class="col-md-12 doc-list">
+				<a href="{{ docThing.url }}">
+					<h2 class="fw-bold"><i class="bi-{{icon}}"></i> {{ docThing.data.title }}</h2>
+				</a>
+			</div>
+		{%- endif -%}
+	{%- endfor -%}
+
+	{% for doc in collections[docCollection] %}
+		{% capture flixelcol %} 
+	{% cycle "--bs-flixel-yellow", "--bs-flixel-red", "--bs-flixel-green", "--bs-flixel-dark-blue", "--bs-flixel-light-blue" %}
+	{% endcapture %}
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var({{flixelcol}})">
+				<a href="{{doc.url}}" class="list-group-item list-group-item-action fw-semibold">
+					{{ doc.data.title }}
+				</a>
+			</div>
+		</div>
+	{% endfor %}
+</div>

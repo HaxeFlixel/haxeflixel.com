@@ -1,45 +1,60 @@
 name: CI
 
-on: [push, pull_request, workflow_dispatch, repository_dispatch]
+on:
+  push:
+  pull_request:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      deploy_gh_pages:
+        description: "Deploy to gh_pages branch (for use in forks)"
+        required: false
+        type: boolean
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - uses: krdlab/setup-haxe@v1
-    - name: Build Docker Image
-      run: node scripts/docker.js buildImage
-    - name: Build Site
-      run: |
-        ls -lah
-        node scripts/docker.js buildSite
-        ls -lah
-        haxe --run RemoveRedirects
-    - name: Highlighting
-      run: |
-        git clone --recursive https://github.com/Gama11/Highlighter
-        cd Highlighter
-        npm install
-        node bin/highlighter.js ../out
-        cd ..
-    - name: Deploy Master
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
-        publish_dir: ./out
-        force_orphan: true
-        cname: haxeflixel.com
-      if: github.ref == 'refs/heads/master'
-    - name: Deploy Dev
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        personal_token: ${{secrets.ACCESS_TOKEN}}
-        publish_dir: ./out
-        force_orphan: true
-        cname: dev.haxeflixel.com
-        external_repository: HaxeFlixel/dev.haxeflixel.com
-      if: github.ref == 'refs/heads/dev'
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - uses: krdlab/setup-haxe@v1
+      - name: Build Site
+        run: |
+          ls -lah
+          npm install
+          npm run build ${{ inputs.deploy_gh_pages && format('{0}', github.event.repository.name ) || '' }}
+          ls -lah
+          haxe --run RemoveRedirects
+      # - name: Highlighting
+      #   run: |
+      #     git clone --recursive https://github.com/ninjamuffin99/Highlighter
+      #     cd Highlighter
+      #     npm install
+      #     node bin/highlighter.js ../out
+      #     cd ..
+      - name: Deploy gh_pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: ./out
+          force_orphan: true
+        if: inputs.deploy_gh_pages == true
+      - name: Deploy Master
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: ./out
+          force_orphan: true
+          cname: haxeflixel.com
+        if: github.ref == 'refs/heads/master'
+      - name: Deploy Dev
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{secrets.ACCESS_TOKEN}}
+          publish_dir: ./out
+          force_orphan: true
+          cname: dev.haxeflixel.com
+          external_repository: HaxeFlixel/dev.haxeflixel.com
+        if: github.ref == 'refs/heads/dev'

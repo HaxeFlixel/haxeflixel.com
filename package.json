@@ -1,29 +1,48 @@
 {
-  "name": "haxeflixel.com",
-  "version": "0.2.0",
-  "description": "New DocPad project without using a skeleton",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
-  },
-  "dependencies": {
-    "docpad": "6.78.4",
-    "docpad-plugin-cleanurls": "2.11.0",
-    "docpad-plugin-eco": "2.1.0",
-    "docpad-plugin-gist": "2.1.1",
-    "docpad-plugin-less": "2.4.1",
-    "docpad-plugin-livereload": "2.7.1",
-    "docpad-plugin-marked": "2.3.0",
-    "docpad-plugin-partials": "2.8.1",
-    "docpad-plugin-repocloner": "2.2.2",
-    "docpad-plugin-services": "2.6.0",
-    "docpad-plugin-thumbnails": "2.1.2",
-    "remove-markdown": "0.1.0",
-    "graceful-fs": "4.2.6"
-  },
-  "main": "node_modules/docpad/bin/docpad-server",
-  "scripts": {
-    "start": "docpad run",
-    "build": "docpad generate --env static"
-  }
+	"name": "haxeflixel.com",
+	"version": "0.2.0",
+	"description": "New DocPad project without using a skeleton",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.3",
+		"highlight.js": "^11.9.0",
+		"markdown-it-anchor": "^8.6.7",
+		"sharp": "^0.33.2"
+	},
+	"scripts": {
+		"preinstall": "node scripts/install-flixel-docs-repo.js",
+		"start": "run-p start:*",
+		"start:11ty": "eleventy --serve",
+		"start:style": "sass --watch ./content/_scss/style.scss ./out/styles/style.css",
+		"build": "run-s \"build:11ty -- --pathprefix={1}\" build:style --",
+		"build:11ty": "eleventy",
+		"build:style": "sass ./content/_scss/style.scss ./out/styles/style.css",
+		"test": "run-s test:* -c",
+		"test:js": "standard --verbose | snazzy",
+		"test:liquid": "eleventy --dryrun",
+		"test:prettier": "prettier . --check",
+		"fix": "run-s fix:*",
+		"fix:js": "standard --fix",
+		"fix:prettier": "prettier . --write"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-img": "^4.0.2",
+		"@liquify/prettier-config": "^1.2.1",
+		"@shopify/prettier-plugin-liquid": "^1.4.4",
+		"npm-run-all2": "^6.1.2",
+		"prettier": "^3.2.5",
+		"sass": "^1.71.1",
+		"shelljs": "^0.8.5",
+		"snazzy": "^9.0.0",
+		"standard": "*"
+	},
+	"standard": {
+		"ignore": [
+			"**/vendor/"
+		]
+	}
 }

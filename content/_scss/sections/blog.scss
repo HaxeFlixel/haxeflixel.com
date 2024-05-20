@@ -1,0 +1,26 @@
+/* Blog
+-------------------------------------------------- */
+.twitter-widget {
+	margin-top: 70px;
+}
+
+.post-date {
+	text-align: right;
+	color: #b8b8b8;
+}
+
+.blog-card:hover {
+	outline-width: 4px;
+}
+
+.blog-card {
+	transition: outline-width 0.1s ease-out;
+	outline-width: 0px;
+	outline-style: solid;
+}
+
+.post-date-preview {
+	position: relative;
+	top: -35px;
+	height: 0px;
+}

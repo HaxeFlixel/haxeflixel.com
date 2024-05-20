@@ -1,0 +1,55 @@
+/* Demos
+-------------------------------------------------- */
+
+.demo-page.center-align-a img {
+	box-shadow: var(--bs-box-shadow);
+	width: 100%;
+	height: auto;
+}
+
+.demo-page.center-align-a p {
+	@include font-size(1rem);
+	text-align: center;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	top: 2em;
+	color: white;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#page-tr-info {
+	float: right;
+	margin-top: -60px;
+	position: relative;
+	z-index: 99;
+}
+
+.demo-button {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.demo-button .logo {
+	fill: #afafaf;
+}
+
+.flash-button.active .logo,
+.flash-button:hover .logo {
+	fill: red;
+}
+
+.html5-button.active .logo,
+.html5-button:hover .logo {
+	fill: orange;
+}
+
+.html5-demo {
+	border: none;
+	margin: 0 auto;
+	display: block;
+}
+
+.install-flash-player-prompt {
+	width: 110px;
+}

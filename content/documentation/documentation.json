@@ -1,0 +1,5 @@
+{
+	"permalink": "/documentation/{{ page.fileSlug | docsRegexp }}/",
+	"tags": ["docs"],
+	"layout": "doc.liquid"
+}

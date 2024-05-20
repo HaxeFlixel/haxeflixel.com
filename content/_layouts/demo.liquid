@@ -1,0 +1,123 @@
+---
+layout: default.liquid
+---
+<div class="demo-container position-relative mx-auto" style="width: fit-content;">
+	{% unless height %}
+		{% assign height = 480 %}
+	{% endunless %}
+
+	{% unless width %}
+		{% assign width = 640 %}
+	{% endunless %}
+
+	<button
+		type="button"
+		class="btn btn-outline-primary position-absolute bottom-0 end-0 m-2"
+		onclick="toggleFullscreen();">
+		<i class="bi bi-arrows-fullscreen"></i>
+	</button>
+	<iframe
+		class="html5-demo"
+		src="https://demos.haxeflixel.com/html5/{{title}}"
+		width="{{width}}"
+		height="{{height}}"
+		allow="fullscreen"></iframe>
+</div>
+
+<div class="container-main-content">
+	<div class="demo-content">
+		<br>
+
+		<h1 class="title">
+			{{ title }}
+
+			<div class="hstack gap-3 my-auto float-end h4 align-middle">
+				<a
+					href="https://github.com/HaxeFlixel/haxeflixel.com/edit/dev/content/demos/{{title}}.md"
+					data-bs-toggle="tooltip"
+					data-bs-title="Edit Demo Info"
+					><i class="bi bi-pencil"></i
+				></a>
+				<div class="vr"></div>
+				<a
+					class="icon-link"
+					href="https://github.com/HaxeFlixel/flixel-demos/tree/dev/{{source}}/source"
+					target="_blank"
+					data-bs-toggle="tooltip"
+					data-bs-title="Demo Source Code">
+					<i class="bi-github"></i>
+				</a>
+			</div>
+		</h1>
+
+		{{ content }}
+
+		<br>
+		<hr>
+		<div>
+			<ul class="pagination pagination-lg justify-content-between">
+				{% assign prevDemo = collections['demo-item'] | getPreviousCollectionItem %}
+				{% if prevDemo %}
+					<li class="page-item">
+						<a class="page-link" href="{{prevDemo.url}}" title="Previous">
+							<i class="bi-arrow-left-square"></i>
+							{% capture imgURL %}content/_static/images/demos/{{prevDemo.data.title}}.png{% endcapture %}
+							{% image imgURL, "Previous", 70, 70 %}
+							<span>{{ prevDemo.data.title }}</span>
+						</a>
+					</li>
+				{% endif %}
+
+				{% unless prevDemo %}
+					{% assign lastDemo = collections['demo-item'] | last %}
+					<li class="page-item">
+						<a class="page-link" href="{{lastDemo.url}}" title="Previous">
+							<i class="bi-arrow-left-square"></i>
+							{% capture imgURL %}content/_static/images/demos/{{lastDemo.data.title}}.png{% endcapture %}
+							{% image imgURL, "Previous", 70, 70 %}
+							<span>{{ lastDemo.data.title }}</span>
+						</a>
+					</li>
+				{% endunless %}
+
+				{% assign nextDemo = collections['demo-item'] | getNextCollectionItem %}
+				{% if nextDemo %}
+					<li class="page-item">
+						<a class="page-link" href="{{ nextDemo.url }}" title="Next">
+							<span>{{ nextDemo.data.title }}</span>
+
+							{% capture imgURL %}content/_static/images/demos/{{ nextDemo.data.title }}.png{% endcapture %}
+							{% image imgURL, "Next", 70, 70 %}
+							<i class="bi-arrow-right-square"></i>
+						</a>
+					</li>
+				{% endif %}
+
+				{% comment %} gets the first demo, if the "next" one doesn't exist {% endcomment %}
+				{% unless nextDemo %}
+					{% assign firstDemo = collections['demo-item'] | first %}
+					<li class="page-item">
+						<a class="page-link" href="{{ firstDemo.url }}" title="Next">
+							<span>{{ firstDemo.data.title }}</span>
+
+							{% capture imgURL %}content/_static/images/demos/{{ firstDemo.data.title }}.png{% endcapture %}
+							{% image imgURL, "Next", 70, 70 %}
+							<i class="bi-arrow-right-square"></i>
+							{% comment %}
+								<img src="<%= @getThumbnail("/images/demos/#{@getFirst('demos').attributes.title}.png", "zoomcrop", { w:70, h:70 }) %>" alt="Next">
+								>
+							{% endcomment %}
+						</a>
+					</li>
+				{% endunless %}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function toggleFullscreen() {
+		let iframe = document.querySelector('.html5-demo');
+		iframe.requestFullscreen();
+	}
+</script>

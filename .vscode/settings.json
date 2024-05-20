@@ -1,5 +1,16 @@
 {
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
 	"files.associations": {
 		"*.eco": "html"
-	}
+	},
+	"[liquid]": {
+		"editor.defaultFormatter": "sissel.shopify-liquid",
+		"editor.formatOnSave": false
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "standard.vscode-standard"
+	},
+	"standard.autoFixOnSave": true
 }

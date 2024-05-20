@@ -1,0 +1,49 @@
+.showcase-targets img {
+	padding-top: 10px;
+	@include opacityAll(0.7);
+}
+
+h1,
+h3 {
+	color: var(--bs-emphasis-color);
+}
+
+$color-mode-type: data;
+
+@include color-mode(dark) {
+	.showcase-targets img {
+		filter: invert(1);
+	}
+}
+
+.showcases-target-active img {
+	@include nograyscale();
+	@include opacityAll(0.7);
+}
+
+.showcases-target img {
+	@include grayscale();
+	@include opacityAll(0.1);
+}
+
+.showcase-grid .col-md-4:nth-child(3n + 1) {
+	clear: both;
+}
+.showcase-game-thumbnail img {
+	box-shadow: var(--bs-box-shadow);
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+}
+
+.showcase-game {
+	padding-bottom: 40px;
+	h3 {
+		height: 60px;
+		width: 540px;
+		position: relative;
+		bottom: 10px;
+		display: table-cell;
+		vertical-align: bottom;
+	}
+}

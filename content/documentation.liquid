@@ -1,0 +1,90 @@
+---
+title: "Documentation"
+layout: "documentation-layout"
+---
+{% comment %}
+	NOTE:
+	These use {% render %}, which shouldn't be confused with the 11ty `renderFile` or `renderTemplate` functions/shortcodes!
+	This is so we can supply variables to them easier, however the pathing is slightly different!
+
+	The `render` tag is a Liquid tag, docs can be read here:
+	https://liquidjs.com/tags/render.html
+
+	The 11ty `renderFile` and `renderTemplate` tags can be read about here:
+	https://www.11ty.dev/docs/plugins/render/
+{% endcomment %}
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Getting Started',
+	collections: collections,
+	icon: 'play-fill',
+	docCollection: 'getting_started'
+%}
+
+<hr>
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Tutorial',
+	collections: collections,
+	icon: 'check-square',
+	docCollection: 'tutorial'
+%}
+
+<hr>
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'HaxeFlixel Handbook',
+	collections: collections,
+	icon: 'journals',
+	docCollection: 'handbook'
+%}
+
+<hr>
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Resources',
+	collections: collections,
+	icon: 'folder2-open',
+	docCollection: 'resources'
+%}
+
+<hr>
+
+{% render '_layouts/partials/doc-category.liquid',
+	inputTitle: 'Community',
+	collections: collections,
+	icon: 'globe2',
+	docCollection: 'community'
+%}
+
+{% comment %}
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('getting_started')}, {icon: 'play', title: 'Getting Started'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('tutorial')}, {icon: 'check', title:'Tutorial'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('handbook')}, {icon: 'book', title: 'HaxeFlixel Handbook'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('resources')}, {icon: 'folder-open', title:'Resources'}) %>
+
+	<hr>
+
+	<%- @partial('doc-category.html.eco', {docs:@getCollection('community')}, {icon: 'globe', title: 'Community'}) %>
+{% endcomment %}
+
+<hr>
+
+<a href="http://discover-haxeflixel.com/">
+	<h2>
+		<i class="bi-book"></i>
+		Discover HaxeFlixel Book
+	</h2>
+	<img
+		height="254"
+		src="/images/discover-haxeflixel.png">
+</a>
