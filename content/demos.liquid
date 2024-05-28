@@ -3,9 +3,12 @@ title: "Demos"
 layout: "demos-layout"
 ---
 <div class="demo-page center-align-a row row-cols-sm-2 row-cols-3 g-3 justify-content-center mx-sm-4">
-	{% for demo in collections['demo-item'] %}
+	{% assign demos_sorted = collections['demo-item'] | sort %}
+	{% for demo in demos_sorted %}
 		<a
-			class="col-6 col-sm-4 col-md-3"
+			class="col-6 col-sm-4 col-md-3 demo-item"
+			data-source="{{demo.data.source}}"
+			data-title="{{demo.data.title}}"
 			href="{{ demo.url }}">
 			<p class="fw-semibold py-2">{{ demo.data.title }}</p>
 			{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
@@ -15,3 +18,54 @@ layout: "demos-layout"
 		</a>
 	{% endfor %}
 </div>
+
+<script>
+	function sort() {
+		var nodeList = document.querySelectorAll('.demo-item');
+
+		var itemsArray = [];
+		var parent = nodeList[0].parentNode;
+		for (var i = 0; i < nodeList.length; i++) {    
+			itemsArray.push(parent.removeChild(nodeList[i]));
+		}
+
+		//sortBySource(itemsArray, parent);
+		sortByAlphabetically(itemsArray, parent);
+	}
+
+	function sortBySource(itemsArray, parent) {
+		itemsArray.sort(function(nodeA, nodeB) {
+			var titleA = nodeA.dataset.source;
+			var titleB = nodeB.dataset.source;
+
+			titleA = titleA.toLowerCase();
+			titleB = titleB.toLowerCase();
+
+			if (titleA > titleB) return 1;
+			if (titleA < titleB) return -1;
+				return 0;
+			})
+			.forEach(function(node) {
+			parent.appendChild(node)
+		});
+	}
+
+	function sortByAlphabetically(itemsArray, parent) {
+		itemsArray.sort(function(nodeA, nodeB) {
+			var titleA = nodeA.dataset.title;
+			var titleB = nodeB.dataset.title;
+
+			titleA = titleA.toLowerCase();
+			titleB = titleB.toLowerCase();
+
+			if (titleA > titleB) return 1;
+			if (titleA < titleB) return -1;
+				return 0;
+			})
+			.forEach(function(node) {
+			parent.appendChild(node)
+		});
+	}
+
+	sort();
+</script>
