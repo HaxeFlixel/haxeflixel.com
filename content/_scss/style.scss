@@ -4,6 +4,10 @@
 
 @import "./flixel-colors.scss"; // adds flixel colors to bootstrap color map
 
+$btn-border-radius: 0px !important;
+$pagination-border-radius: 0px !important;
+$dropdown-border-radius: 0px !important;
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 @import "./mixins/helpers.scss";
