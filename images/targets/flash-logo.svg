@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This is a florin (currency) sign on a red background. -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="80"
+   height="80"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="flash-logo.svg"
+   viewbox="0 0 80 80">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1517"
+     inkscape:window-height="881"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="4.6976726"
+     inkscape:cx="43.170169"
+     inkscape:cy="34.585342"
+     inkscape:window-x="2040"
+     inkscape:window-y="40"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:none"
+     d="M 0 0 L 0 80 L 80 80 L 80 0 L 0 0 z M 60 15 L 60 25 C 56.111111 25 53.484606 26.085706 51.035156 28.535156 C 49.535258 30.035054 48.127997 32.173615 46.910156 35 L 55 35 L 55 45 L 43.755859 45 C 41.971554 50.509031 39.486846 55.083466 36.035156 58.535156 C 31.817939 62.752373 26.111111 65 20 65 L 20 55 C 23.888889 55 26.515394 53.914294 28.964844 51.464844 C 31.414294 49.015394 33.624439 44.883104 35.148438 38.787109 C 36.957771 31.54977 39.747627 25.682061 43.964844 21.464844 C 48.182061 17.247627 53.888889 15 60 15 z "
+     id="rect4" />
+</svg>
