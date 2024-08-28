@@ -1,6 +1,8 @@
 ---
 title: "FlxLightPuzzle"
 layout: demo
+width: 1024
+height: 576
 source: "Arcade/FlxLightPuzzle"
 ---
 
