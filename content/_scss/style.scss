@@ -125,16 +125,11 @@ a.header-anchor::before {
 //     @include columns(2);
 //   }
 
-.members-list img {
-	max-width: 40px;
-	float: left;
-}
-
 .doc-content img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
 }
 
 .columns-2 > h3 {
