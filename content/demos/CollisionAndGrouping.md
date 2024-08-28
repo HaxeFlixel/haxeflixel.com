@@ -1,8 +1,8 @@
 ---
 title: "CollisionAndGrouping"
 layout: demo
-width: 400
-height: 300
+width: 800
+height: 600
 source: "Features/CollisionAndGrouping"
 ---
 
