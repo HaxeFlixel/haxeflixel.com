@@ -1,8 +1,6 @@
 ---
 title: "Save"
 layout: demo
-width: 400
-height: 300
 source: "Features/Save"
 ---
 
