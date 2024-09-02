@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
-	{% comment %} <%- @partial('head.html.eco', {title:@getPreparedTitle()}, {description:@getPreparedDescription()}, {keywords:@getPreparedKeywords()}, {author:@site.author or ''}, {styles:@getBlock("styles").add(["/styles/style.css", "/vendor/highlightjs/styles/an-old-hope.min.css"]).toHTML()} ) %> {% endcomment %}
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -21,11 +20,6 @@
 		<link rel="icon" href="/images/haxeflixel.svg">
 		<link rel="shortcut icon" href="/images/favicon.ico">
 
-		<!--
-			[if lt IE 9]>
-			<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
-		-->
-		{% comment %} <%- @styles %> {% endcomment %}
 		<link rel="stylesheet" href="/styles/style.css">
 		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
 
@@ -38,13 +32,10 @@
 		{% renderFile "./content/_layouts/partials/header-menu.liquid" %}
 
 		<div class="container-md container-main rounded-0">
-			{% comment %} Make sure each class renders it's title {% endcomment %}
 			{{ content }}
 		</div>
 
 		{% renderFile "./content/_layouts/partials/footer.liquid" %}
-
-		{% comment %} <%- @getBlock('scripts').add(@site.scripts).toHTML() %> {% endcomment %}
 
 		{% renderFile "./content/cdn-scripts.liquid" %}
 		<script src="/11ty-bundle.js"></script>
