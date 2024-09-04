@@ -2,28 +2,21 @@
 title: "Demos"
 layout: "demos-layout"
 ---
-<div class="demo-page row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center g-3">
+<div class="demo-page row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center g-2 g-sm-3 mx-sm-2 mx-md-4">
 	{% for demo in collections['demo-item'] %}
 		
 		{% capture shadow_color %}{% cycle  "flixel-yellow", "flixel-red", "flixel-green", "flixel-dark-blue",  "flixel-light-blue" %}{% endcapture %}
 		<div class="col demo-card text-white">
 			<a class="card px-0 text-center text-reset link-{{shadow_color}}" href="{{demo.url}}">
-			{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
-			{% liquid
-				image imgURL, "{{demo.data.title}}", 400, 400, "card-img img-fluid"
-			%}
-			<div class="card-img-overlay p-0">
-				<p class="card-title py-2 fw-bold bg-black">{{ demo.data.title }}</p>
-				<p class="card-text">{{ demo.data.description }}</p>
-			</div>
-		</a>
+				{% capture imgURL %}content/_static/images/demos/{{ demo.data.title }}.png{% endcapture %}
+				{% liquid
+					image imgURL, "{{demo.data.title}}", 400, 400, "card-img img-fluid"
+				%}
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">{{ demo.data.title }}</p>
+					<p class="card-text">{{ demo.data.description }}</p>
+				</div>
+			</a>
 		</div>
-		
-		{% comment %} <a
-			class="col-6 col-sm-4 col-md-3 link-{{shadow_color}}"
-			href="{{ demo.url }}">
-			<p class="fw-bold py-1 text-center text-bg-{{shadow_color}} text-black">{{ demo.data.title }}</p>
-			
-		</a> {% endcomment %}
 	{% endfor %}
 </div>
