@@ -76,6 +76,7 @@ module.exports = function (eleventyConfig) {
 		let metadata = await Image(resizedImage, {
 			formats: ["png"],
 			outputDir: "out/img",
+			sharpPngOptions: { progressive: true}
 		});
 
 		let imageAttributes = {
@@ -145,10 +146,6 @@ async function resizeImage(src, width, height, mode) {
 			width: width,
 			height: height,
 			fit: mode,
-			options: {
-				kernel: "nearest",
-				fastShrinkOnLoad: false,
-			},
 		})
 		.toBuffer();
 }
