@@ -22,9 +22,9 @@ Note that this tutorial is was originally written for AS3-Flixel. The concepts a
 
 - [Project Jumper Part 2: The bare minimum](http://chipacabra.blogspot.de/2010/12/project-jumper-part-2.html)
 
-- [Project Jumper: Interstice](http://Project Jumper: Interstice)
+- [Project Jumper: Interstice](https://chipacabra.blogspot.com/2010/12/project-jumper-interstice.html)
 
-- [Project Jumper Part 3: I love what you've done with the place](http://Project Jumper Part 3: I love what you)
+- [Project Jumper Part 3: I love what you've done with the place](https://chipacabra.blogspot.com/2010/12/project-jumper-part-3.html)
 
 - [Project Jumper Part 4: Introducing the opposition](http://chipacabra.blogspot.de/2010/12/project-jumper-part-4.html)
 
