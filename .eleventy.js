@@ -1,14 +1,17 @@
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const Image = require("@11ty/eleventy-img");
-const Sharp = require("sharp");
-const fs = require("fs");
-const path = require("path");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const hljs = require("highlight.js");
-const markdownIt = require("markdown-it");
-const markdownAnchor = require("markdown-it-anchor");
+import { RenderPlugin, HtmlBasePlugin } from "@11ty/eleventy";
+import Image from "@11ty/eleventy-img";
+import Sharp from "sharp";
+import fs from "fs";
+import path from "path";
+import hljs from "highlight.js";
+import markdownIt from "markdown-it";
+import markdownAnchor from "markdown-it-anchor";
+import UpgradeHelper from "@11ty/eleventy-upgrade-help";
+const __dirname = path.resolve();
 
-module.exports = function (eleventyConfig) {
+
+
+export default function (eleventyConfig) {
 	let options = {
 		html: true,
 		breaks: true,
@@ -41,8 +44,8 @@ module.exports = function (eleventyConfig) {
 		}),
 	);
 
-	eleventyConfig.addPlugin(EleventyRenderPlugin);
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	eleventyConfig.addPlugin(RenderPlugin);
+	eleventyConfig.addPlugin(HtmlBasePlugin);
 
 	eleventyConfig.addWatchTarget("./scss/");
 

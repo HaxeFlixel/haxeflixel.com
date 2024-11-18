@@ -2,6 +2,7 @@
 	"name": "haxeflixel.com",
 	"version": "0.2.0",
 	"description": "New DocPad project without using a skeleton",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
@@ -30,7 +31,7 @@
 		"fix:prettier": "prettier . --write"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy": "^3.0.0",
 		"@11ty/eleventy-img": "^4.0.2",
 		"@liquify/prettier-config": "^1.2.1",
 		"@shopify/prettier-plugin-liquid": "^1.4.4",
