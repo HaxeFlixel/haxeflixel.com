@@ -11,7 +11,7 @@
 		"bootstrap": "^5.3.3",
 		"highlight.js": "^11.9.0",
 		"markdown-it": "^14.1.0",
-		"markdown-it-anchor": "^9.1.0",
+		"markdown-it-anchor": "^9.2.0",
 		"sharp": "^0.33.2"
 	},
 	"scripts": {
@@ -32,12 +32,12 @@
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0",
-		"@11ty/eleventy-img": "^4.0.2",
+		"@11ty/eleventy-img": "^5.0.0",
 		"@liquify/prettier-config": "^1.2.1",
-		"@shopify/prettier-plugin-liquid": "^1.4.4",
-		"npm-run-all2": "^6.1.2",
+		"@shopify/prettier-plugin-liquid": "^1.6.0",
+		"npm-run-all2": "^7.0.1",
 		"prettier": "^3.2.5",
-		"sass": "^1.71.1",
+		"sass": "^1.81.0",
 		"shelljs": "^0.8.5",
 		"snazzy": "^9.0.0",
 		"standard": "*"

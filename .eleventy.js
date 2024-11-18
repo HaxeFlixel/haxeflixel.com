@@ -6,10 +6,7 @@ import path from "path";
 import hljs from "highlight.js";
 import markdownIt from "markdown-it";
 import markdownAnchor from "markdown-it-anchor";
-import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 const __dirname = path.resolve();
-
-
 
 export default function (eleventyConfig) {
 	let options = {

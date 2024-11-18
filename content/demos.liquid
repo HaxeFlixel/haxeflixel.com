@@ -4,7 +4,6 @@ layout: "demos-layout"
 ---
 <div class="demo-page row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center g-2 g-sm-3 mx-sm-2 mx-md-4">
 	{% for demo in collections['demo-item'] %}
-		
 		{% capture shadow_color %}{% cycle  "flixel-yellow", "flixel-red", "flixel-green", "flixel-dark-blue",  "flixel-light-blue" %}{% endcapture %}
 		<div class="col demo-card text-white">
 			<a class="card px-0 text-center text-reset link-{{shadow_color}}" href="{{demo.url}}">
