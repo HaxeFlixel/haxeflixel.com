@@ -15,7 +15,7 @@
 		"sharp": "^0.33.2"
 	},
 	"scripts": {
-		"preinstall": "node scripts/install-flixel-docs-repo.js",
+		"preinstall": "node scripts/install-flixel-docs-repo.cjs",
 		"start": "run-p start:*",
 		"start:11ty": "eleventy --serve",
 		"start:style": "sass --watch ./content/_scss/style.scss ./out/styles/style.css",
