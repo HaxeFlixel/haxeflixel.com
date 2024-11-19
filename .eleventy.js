@@ -6,7 +6,11 @@ import path from "path";
 import hljs from "highlight.js";
 import markdownIt from "markdown-it";
 import markdownAnchor from "markdown-it-anchor";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+
+
 const __dirname = path.resolve();
+
 
 export default function (eleventyConfig) {
 	let options = {
@@ -90,6 +94,25 @@ export default function (eleventyConfig) {
 
 		// You bet we throw an error on a missing alt (alt="" works okay)
 		return Image.generateHTML(metadata, imageAttributes);
+	});
+
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom", // or "rss", "json"
+		outputPath: "/feed.xml",
+		collection: {
+			name: "blogpost", // iterate over `collections.posts`
+			limit: 0,     // 0 means no limit
+		},
+		metadata: {
+			language: "en",
+			title: "HaxeFlixel Blog",
+			subtitle: "News and writings from the HaxeFlixel maintainers",
+			base: "https://haxeflixel.com/",
+			author: {
+				name: "HaxeFlixel Team",
+				email: "", // Optional
+			}
+		}
 	});
 
 	// gets folders for documentation collections, except for the images folder!

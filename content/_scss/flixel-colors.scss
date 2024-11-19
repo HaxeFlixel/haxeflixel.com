@@ -14,5 +14,7 @@ $flixel-colors: (
 
 $link-color: $flixel-dark-blue;
 $link-color-dark: $flixel-light-blue;
+$link-hover-color: $flixel-light-blue;
+$link-hover-color-dark: $flixel-dark-blue;
 
 $theme-colors: map-merge($theme-colors, $flixel-colors);

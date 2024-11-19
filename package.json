@@ -8,6 +8,7 @@
 		"url": "https://github.com/HaxeFlixel/haxeflixel.com.git"
 	},
 	"dependencies": {
+		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"bootstrap": "^5.3.3",
 		"highlight.js": "^11.9.0",
 		"markdown-it": "^14.1.0",
