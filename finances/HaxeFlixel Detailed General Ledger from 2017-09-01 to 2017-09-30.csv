@@ -1,0 +1,39 @@
+date,transaction,debit,credit
+Patreon,,,
+"Sept. 1, 2017",Income - Patreon Donations,139.00,0.00
+"Sept. 1, 2017",Expense - Processing Fees,0.00,6.17
+"Sept. 1, 2017",Expense -  Patreon Fees,0.00,6.95
+Total Patreon,,139.00,13.12
+Net Movement,,,125.88
+,,,
+Treasurer,,,
+"Sept. 6, 2017",Expense - Donation to Tim Hely for sponsoring a 09/2017 game jam,0.00,150.00
+"Sept. 17, 2017",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,32.05,0.00
+Total Treasurer,,32.05,150.00
+Net Movement,,,(117.95)
+,,,
+Patreon Donations,,,
+"Sept. 1, 2017",Income - Patreon Donations,0.00,139.00
+Total Patreon Donations,,0.00,139.00
+Net Movement,,,139.00
+,,,
+Book Sales,,,
+"Sept. 17, 2017",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,0.00,32.05
+Total Book Sales,,0.00,32.05
+Net Movement,,,32.05
+,,,
+Payment Fees,,,
+"Sept. 1, 2017",Expense - Processing Fees,6.17,0.00
+Total Payment Fees,,6.17,0.00
+Net Movement,,,6.17
+,,,
+Patreon Fees,,,
+"Sept. 1, 2017",Expense -  Patreon Fees,6.95,0.00
+Total Patreon Fees,,6.95,0.00
+Net Movement,,,6.95
+,,,
+Development Services,,,
+"Sept. 6, 2017",Expense - Donation to Tim Hely for sponsoring a 09/2017 game jam,150.00,0.00
+Total Development Services,,150.00,0.00
+Net Movement,,,150.00
+,,,
