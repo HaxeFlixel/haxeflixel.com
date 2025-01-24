@@ -1,7 +1,7 @@
 ---
 title: "HaxeFlixel 5.9.0"
 layout: blog-post
-postDate: "TBD"
+postDate: "January 24, 2025"
 ---
 
 After 8 long months since 5.8.0, I'm happy to announce the largest flixel release since I've taken over as lead. We don't like to go that far without releases, but new things just kept piling on. To name a few, we have:
