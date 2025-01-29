@@ -1,17 +1,6 @@
-<!doctype html>
-<html lang="en" data-bs-theme="dark">
-	{% renderFile "./content/_layouts/partials/head.liquid" %}
-
-	<body>
-		{% renderFile "./content/_layouts/partials/header-menu.liquid" %}
-
-		<div class="container-md container-main rounded-0">
-			{{ content }}
-		</div>
-
-		{% renderFile "./content/_layouts/partials/footer.liquid" %}
-
-		{% renderFile "./content/cdn-scripts.liquid" %}
-		<script src="/11ty-bundle.js"></script>
-	</body>
-</html>
+---
+layout: base
+---
+<div class="container-md container-main rounded-0">
+	{{ content }}
+</div>
