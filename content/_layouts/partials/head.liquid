@@ -11,20 +11,15 @@
 	<title>{{ preparedTitle }}</title>
 
 	<meta property="og:title" content="{{ preparedTitle }}">
+	<meta property="og:url" content="{{ page.url }}">
 	<meta
 		name="description"
 		content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
-	<meta name="keywords" content="<%= @keywords %>">
-	<meta name="author" content="<%= @author %>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="icon" href="/images/haxeflixel.svg">
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
-	<!--
-		[if lt IE 9]>
-		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
-	-->
 	{% comment %} <%- @styles %> {% endcomment %}
 	<link rel="stylesheet" href="/styles/style.css">
 	<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">

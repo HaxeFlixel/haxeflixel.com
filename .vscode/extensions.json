@@ -3,6 +3,6 @@
 		"sissel.shopify-liquid", // Liquid syntax highlighting
 		"syler.sass-indented", // Sass syntax highlighting
 		"standard.vscode-standard", // Javascript formatting / linting
-		"esbenp.prettier-vscode", // General linting (JSON + Liquid)
-	],
+		"esbenp.prettier-vscode" // General linting (JSON + Liquid)
+	]
 }
