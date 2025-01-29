@@ -28,7 +28,7 @@
 		"test:liquid": "eleventy --dryrun",
 		"test:prettier": "prettier . --check",
 		"fix": "run-s fix:*",
-		"fix:js": "standard --fix",
+		"fix:js": "standard --fix '**/*.js' '**/*.cjs'",
 		"fix:prettier": "prettier . --write"
 	},
 	"devDependencies": {
