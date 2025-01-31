@@ -1,0 +1,1228 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> Documentation | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" Documentation | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/documentation/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#3b43ff">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<h1 class="title">
+	Documentation
+
+	<div class="float-end">
+		<a
+			class="github-button"
+			href="https://github.com/haxeflixel/flixel-docs"
+			data-color-scheme="no-preference: light_high_contrast; light: light_high_contrast; dark: dark_high_contrast;"
+			data-size="large"
+			data-show-count="true"
+			aria-label="Star haxeflixel/flixel on GitHub"
+			>haxeflixel/flixel-docs</a
+		>
+	</div>
+</h1>
+
+<p>
+	The HaxeFlixel documentation is provided from the
+	<a href="https://github.com/HaxeFlixel/flixel-docs">flixel-docs repository</a> and is open for
+	contributions on GitHub that will be pushed here.
+</p>
+
+
+
+<div class="row mb-2"><div class="col-md-12 doc-list">
+				<a href="/documentation/getting-started/">
+					<h2 class="fw-bold"><i class="bi-play-fill"></i> Getting Started</h2>
+				</a>
+			</div>
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/getting-started/" class="list-group-item list-group-item-action fw-semibold">
+					Getting Started
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/install-haxeflixel/" class="list-group-item list-group-item-action fw-semibold">
+					Install HaxeFlixel
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/hello-world/" class="list-group-item list-group-item-action fw-semibold">
+					Hello World
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/visual-studio-code/" class="list-group-item list-group-item-action fw-semibold">
+					Visual Studio Code
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/where-to-now/" class="list-group-item list-group-item-action fw-semibold">
+					Where to now?
+				</a>
+			</div>
+		</div>
+	
+</div>
+
+
+<hr>
+
+<div class="row mb-2"><div class="col-md-12 doc-list">
+				<a href="/documentation/tutorial/">
+					<h2 class="fw-bold"><i class="bi-check-square"></i> Tutorial</h2>
+				</a>
+			</div>
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/tutorial/" class="list-group-item list-group-item-action fw-semibold">
+					Tutorial
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/the-power-of-haxeflixel/" class="list-group-item list-group-item-action fw-semibold">
+					The Power of HaxeFlixel
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/setup/" class="list-group-item list-group-item-action fw-semibold">
+					1 - Setup
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/creating-a-new-project/" class="list-group-item list-group-item-action fw-semibold">
+					2 - Creating a new project
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/groundwork/" class="list-group-item list-group-item-action fw-semibold">
+					3 - Groundwork
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/sprites-and-animation/" class="list-group-item list-group-item-action fw-semibold">
+					4 - Sprites and Animation
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/creating-a-tilemap/" class="list-group-item list-group-item-action fw-semibold">
+					5 - Creating a Tilemap
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/loading-the-tilemap/" class="list-group-item list-group-item-action fw-semibold">
+					6 - Loading the Tilemap
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/zoom-and-cameras/" class="list-group-item list-group-item-action fw-semibold">
+					7 - Zoom and Cameras
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/pickups/" class="list-group-item list-group-item-action fw-semibold">
+					8 - Pickups
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/enemies-and-basic-ai/" class="list-group-item list-group-item-action fw-semibold">
+					9 - Enemies and Basic AI
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/ui-and-combat/" class="list-group-item list-group-item-action fw-semibold">
+					10 - UI and Combat
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/game-over-menu/" class="list-group-item list-group-item-action fw-semibold">
+					11 - Game Over Menu
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/sound-and-music/" class="list-group-item list-group-item-action fw-semibold">
+					12 - Sound and Music
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/multiple-platforms/" class="list-group-item list-group-item-action fw-semibold">
+					13 - Multiple Platforms
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/polish/" class="list-group-item list-group-item-action fw-semibold">
+					14 - Polish
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/conclusion/" class="list-group-item list-group-item-action fw-semibold">
+					Conclusion
+				</a>
+			</div>
+		</div>
+	
+</div>
+
+
+<hr>
+
+<div class="row mb-2"><div class="col-md-12 doc-list">
+				<a href="/documentation/haxeflixel-handbook/">
+					<h2 class="fw-bold"><i class="bi-journals"></i> HaxeFlixel Handbook</h2>
+				</a>
+			</div>
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/haxeflixel-handbook/" class="list-group-item list-group-item-action fw-semibold">
+					HaxeFlixel Handbook
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/flixel-display-list/" class="list-group-item list-group-item-action fw-semibold">
+					Flixel Display List
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/flxgroup/" class="list-group-item list-group-item-action fw-semibold">
+					FlxGroup
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/flxsprite/" class="list-group-item list-group-item-action fw-semibold">
+					FlxSprite
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/flxstate/" class="list-group-item list-group-item-action fw-semibold">
+					FlxState
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/flxsave/" class="list-group-item list-group-item-action fw-semibold">
+					FlxSave
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/flxtween/" class="list-group-item list-group-item-action fw-semibold">
+					FlxTween
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/haxeflixel-conditionals/" class="list-group-item list-group-item-action fw-semibold">
+					HaxeFlixel Conditionals
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/haxeflixel-targets/" class="list-group-item list-group-item-action fw-semibold">
+					HaxeFlixel Targets
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/desktop-targets/" class="list-group-item list-group-item-action fw-semibold">
+					Desktop Targets
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/mobile-targets/" class="list-group-item list-group-item-action fw-semibold">
+					Mobile Targets
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/android/" class="list-group-item list-group-item-action fw-semibold">
+					Android
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/ios/" class="list-group-item list-group-item-action fw-semibold">
+					iOS
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/neko/" class="list-group-item list-group-item-action fw-semibold">
+					Neko
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/keyboard/" class="list-group-item list-group-item-action fw-semibold">
+					Keyboard
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/mouse/" class="list-group-item list-group-item-action fw-semibold">
+					Mouse
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/gamepads/" class="list-group-item list-group-item-action fw-semibold">
+					Gamepads
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/actions/" class="list-group-item list-group-item-action fw-semibold">
+					Actions
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/troubleshooting/" class="list-group-item list-group-item-action fw-semibold">
+					Troubleshooting
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/debugger/" class="list-group-item list-group-item-action fw-semibold">
+					Debugger
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/debugger-interaction/" class="list-group-item list-group-item-action fw-semibold">
+					Debugger - Interaction
+				</a>
+			</div>
+		</div>
+	
+</div>
+
+
+<hr>
+
+<div class="row mb-2"><div class="col-md-12 doc-list">
+				<a href="/documentation/resources/">
+					<h2 class="fw-bold"><i class="bi-folder2-open"></i> Resources</h2>
+				</a>
+			</div>
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/resources/" class="list-group-item list-group-item-action fw-semibold">
+					Resources
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/cheat-sheet/" class="list-group-item list-group-item-action fw-semibold">
+					Cheat Sheet
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/openfl-project-xml-format/" class="list-group-item list-group-item-action fw-semibold">
+					XML Project Format
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/game-development-tools/" class="list-group-item list-group-item-action fw-semibold">
+					Game Development Tools
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/compiler-conditionals/" class="list-group-item list-group-item-action fw-semibold">
+					Compiler Conditionals
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/using-haxelib/" class="list-group-item list-group-item-action fw-semibold">
+					Using Haxelib
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/faq/" class="list-group-item list-group-item-action fw-semibold">
+					FAQ
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/community-tutorials/" class="list-group-item list-group-item-action fw-semibold">
+					Community Tutorials
+				</a>
+			</div>
+		</div>
+	
+</div>
+
+
+<hr>
+
+<div class="row mb-2"><div class="col-md-12 doc-list">
+				<a href="/documentation/community/">
+					<h2 class="fw-bold"><i class="bi-globe2"></i> Community</h2>
+				</a>
+			</div>
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/community/" class="list-group-item list-group-item-action fw-semibold">
+					Community
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/about/" class="list-group-item list-group-item-action fw-semibold">
+					About
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/why-haxe/" class="list-group-item list-group-item-action fw-semibold">
+					Why a Haxe Version
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/introduction-to-haxe/" class="list-group-item list-group-item-action fw-semibold">
+					Introduction to Haxe
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/introduction-to-openfl/" class="list-group-item list-group-item-action fw-semibold">
+					Introduction to OpenFL
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/contributing/" class="list-group-item list-group-item-action fw-semibold">
+					Contributing
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/code-contributions/" class="list-group-item list-group-item-action fw-semibold">
+					Code Contributions
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/code-style/" class="list-group-item list-group-item-action fw-semibold">
+					Code Style
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/website-docs/" class="list-group-item list-group-item-action fw-semibold">
+					HaxeFlixel Website
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-light-blue
+	)">
+				<a href="/documentation/upgrade-guide-3-x/" class="list-group-item list-group-item-action fw-semibold">
+					Upgrade Guide 3.x
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-yellow
+	)">
+				<a href="/documentation/flixel-addons/" class="list-group-item list-group-item-action fw-semibold">
+					Flixel Addons
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-red
+	)">
+				<a href="/documentation/upgrade-guide-4-0-0/" class="list-group-item list-group-item-action fw-semibold">
+					Upgrade Guide 4.0.0
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-green
+	)">
+				<a href="/documentation/flixel-tools/" class="list-group-item list-group-item-action fw-semibold">
+					Flixel Tools
+				</a>
+			</div>
+		</div>
+	
+		
+		<div class="col-md-3 col-12 col-sm-6 doc-list-item gy-2">
+			<div class="list-group p-0 rounded-0 blog-card" style="outline-color: var( 
+	--bs-flixel-dark-blue
+	)">
+				<a href="/documentation/install-development-flixel/" class="list-group-item list-group-item-action fw-semibold">
+					Install development Flixel
+				</a>
+			</div>
+		</div>
+	
+</div>
+
+
+
+
+<hr>
+
+<a href="http://discover-haxeflixel.com/">
+	<h2>
+		<i class="bi-book"></i>
+		Discover HaxeFlixel Book
+	</h2>
+	<img
+		height="254"
+		src="/images/discover-haxeflixel.png">
+</a>
+
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

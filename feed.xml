@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>HaxeFlixel Blog</title>
+  <subtitle>News and writings from the HaxeFlixel maintainers</subtitle>
+  <link href="https://haxeflixel.com/feed.xml" rel="self" />
+  <link href="https://haxeflixel.com/" />
+  <updated>2025-01-31T17:59:20Z</updated>
+  <id>https://haxeflixel.com/</id>
+  <author>
+    <name>HaxeFlixel Team</name>
+  </author>
+  <entry>
+    <title>HaxeFlixel 5.9.0</title>
+    <link href="https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/</id>
+    <content type="html">&lt;p&gt;After 8 long months since 5.8.0, I&#39;m happy to announce the largest Flixel release since I&#39;ve taken over as lead. We don&#39;t like to go that far without releases, but new things just kept piling on. To name a few, we have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A new FlxInputText to replace the old Flixel-UI.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FlxG.assets&lt;/code&gt;, for customization to Flixel&#39;s asset management (hot-reloading!).&lt;/li&gt;
+&lt;li&gt;Major additions to tilemaps, for both collision, iteration and general ease-of-use.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md#590-december-12-2024&quot;&gt;Much much more&lt;/a&gt; that we can&#39;t possibly cover, here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;when-will-flixel-6-be-released%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#when-will-flixel-6-be-released%3F&quot;&gt;&lt;span&gt;When will Flixel 6 be released?&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The next release will be version 6.0.0, unless for some reason an urgent patch is needed for 5.9.0. For the current list of changes in Flixel 6, look &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/release6/CHANGELOG.md&quot;&gt;here&lt;/a&gt;. Many devs are using 6.0.0 already, and you can too! Just run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;haxelib git flixel https://github.com/HaxeFlixel/flixel.git release6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you have been compiling with &lt;code&gt;no-deprecation-warnings&lt;/code&gt; in your project&#39;s build command, now is the time to fix all of those, otherwise your project will not compile in Flixel 6. I also recommend using a haxe version of 4.3 or higher, which allows Flixel to suppress various internal deprecation warnings that were left in for backwards compatibility. If you have any issues with any of this don&#39;t hesitate to let me know, either in github or the Haxe discord&#39;s Flixel channel.&lt;/p&gt;
+&lt;h2 id=&quot;new-and-improved-flxinputtext&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#new-and-improved-flxinputtext&quot;&gt;&lt;span&gt;New and improved FlxInputText&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Special thanks to &lt;a href=&quot;https://github.com/Starmapo&quot;&gt;Starmapo&lt;/a&gt; for completely redoing &lt;code&gt;FlxInputText&lt;/code&gt; from the ground up! New features include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple characters can now be selected at once, either through holding and dragging the mouse or holding the shift key while moving the selection cursor.
+&lt;ul&gt;
+&lt;li&gt;Double pressing on the text field will select the closest word at that position.&lt;/li&gt;
+&lt;li&gt;You can select all of the text with Ctrl+A.&lt;/li&gt;
+&lt;li&gt;The currently selected text can be copied or cut with Ctrl+C and Ctrl+X respectively.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectionBeginIndex&lt;/code&gt; and &lt;code&gt;selectionEndIndex&lt;/code&gt; variables added so you can get the span of the current selection.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectionColor&lt;/code&gt; and &lt;code&gt;selectedTextColor&lt;/code&gt; variables can be changed to set the selection background and the selected text&#39;s color respectively. The custom format for the selected text can be disabled with &lt;code&gt;useSelectedTextFormat&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;You can set the selection directly with &lt;code&gt;setSelection()&lt;/code&gt; and replace the currently selected text with &lt;code&gt;replaceSelectedText()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Multiline is now properly supported, with an added &lt;code&gt;multiline&lt;/code&gt; variable to dictate whether new lines can be created by the user.&lt;/li&gt;
+&lt;li&gt;The text field can now be scrolled by using the mouse wheel, and is automatically scrolled whenever moving the selection cursor to a character that is out of view.
+&lt;ul&gt;
+&lt;li&gt;The scroll can be modified with the &lt;code&gt;scrollH&lt;/code&gt; and &lt;code&gt;scrollV&lt;/code&gt; variables. &lt;code&gt;bottomScrollV&lt;/code&gt;, &lt;code&gt;maxScrollH&lt;/code&gt; and &lt;code&gt;maxScrollV&lt;/code&gt; have also been added as helper read-only variables.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mouseWheelEnabled&lt;/code&gt; dictates whether or not the text field can be scrolled with the mouse wheel, by default set to true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The selection cursor can now be moved to the start/end of the current line (Home/End or Ctrl+Up/Down) or to the previous/next word (Ctrl+Left/Right).&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;background&lt;/code&gt; variable can now be changed to toggle the background on/off.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectable&lt;/code&gt; and &lt;code&gt;editable&lt;/code&gt; variables to dictate whether the text field can be selected/edited.&lt;/li&gt;
+&lt;li&gt;Enums have been added for &lt;code&gt;forceCase&lt;/code&gt;, &lt;code&gt;filterMode&lt;/code&gt; and the callback&#39;s action types.
+&lt;ul&gt;
+&lt;li&gt;The callback is now also dispatched for when the text field is scrolled in some way (SCROLL_ACTION).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Other Flixel keybinds will be paused while an input text is active (e.g. volume keys and debugger toggle key).&lt;/li&gt;
+&lt;li&gt;The window&#39;s text input rect is now set accordingly so the text field isn&#39;t blocked by any keyboard overlays.&lt;/li&gt;
+&lt;li&gt;Touches are now supported.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Check out these features in the new &lt;a href=&quot;https://haxeflixel.com/demos/FlxInputText/&quot;&gt;FlxInputText Demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With the addition of &lt;code&gt;InputTextFrontEnd&lt;/code&gt;, which controls the text input events used to power &lt;code&gt;FlxInputText&lt;/code&gt;, creating other text inputs will be much easier, expect a &lt;code&gt;FlxBitmapInputText&lt;/code&gt;, soon!&lt;/p&gt;
+&lt;h2 id=&quot;assetfrontend&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#assetfrontend&quot;&gt;&lt;span&gt;AssetFrontEnd&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you&#39;re sick of doing &lt;code&gt;sprite.loadGraphic(Paths.image(&amp;quot;hero&amp;quot;))&lt;/code&gt;, well, you&#39;re in luck! FlxG.assets, is the new customizable interface that takes string asset paths and gives the desired assets. by setting the following dynamic method:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;dynamic&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;getAssetUnsafe&lt;/span&gt;&lt;/span&gt;(id:&lt;span class=&quot;hljs-type&quot;&gt;String&lt;/span&gt;, type:&lt;span class=&quot;hljs-type&quot;&gt;FlxAssetType&lt;/span&gt;, useCache = &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;):&lt;span class=&quot;hljs-type&quot;&gt;Null&lt;/span&gt;&amp;lt;Any&amp;gt;
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HX&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;Here are just a few neat uses for this:&lt;/p&gt;
+&lt;h3 id=&quot;simplifying-asset-paths&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#simplifying-asset-paths&quot;&gt;&lt;span&gt;Simplifying asset paths&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The above example that loads the hero sprite can be simplified to &lt;code&gt;sprite.loadGraphic(&amp;quot;hero&amp;quot;)&lt;/code&gt;, like so:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;// Edit the simplified id before passing it to the old method&lt;/span&gt;
+&lt;span class=&quot;hljs-title function_&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;path&lt;/span&gt;&lt;/span&gt;(id:&lt;span class=&quot;hljs-type&quot;&gt;String&lt;/span&gt;, type:&lt;span class=&quot;hljs-type&quot;&gt;FlxAssetType&lt;/span&gt;)
+{
+  &lt;span class=&quot;hljs-comment&quot;&gt;// for flixel assets, just pass them to the old method&lt;/span&gt;
+  &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (StringTools.startsWith(id, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;flixel/&amp;quot;&lt;/span&gt;) || StringTools.contains(id, &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;:&amp;#x27;&lt;/span&gt;))
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; id;
+
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;switch&lt;/span&gt; type
+  {
+    &lt;span class=&quot;hljs-keyword&quot;&gt;case&lt;/span&gt; BINARY: &lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt;&amp;#x27;assets/data/&lt;span class=&quot;hljs-variable&quot;&gt;$id&lt;/span&gt;&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;; // expects extension already&amp;#x27;&lt;/span&gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;case&lt;/span&gt; TEXT  : &lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt;&amp;#x27;assets/data/&lt;span class=&quot;hljs-variable&quot;&gt;$id&lt;/span&gt;.json&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;;
+    case IMAGE : &amp;#x27;&lt;/span&gt;assets/images/&lt;span class=&quot;hljs-variable&quot;&gt;$id&lt;/span&gt;.png&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;;
+    case SOUND : &amp;#x27;&lt;/span&gt;assets/sounds/&lt;span class=&quot;hljs-variable&quot;&gt;$id&lt;/span&gt;.ogg&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;;
+    case FONT  : &amp;#x27;&lt;/span&gt;assets/font/&lt;span class=&quot;hljs-variable&quot;&gt;$id&lt;/span&gt;.ttf&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;;
+  };
+}
+
+final assets = FlxG.assets;
+
+// Save the old methods, call them with the full path
+final oldExists = assets.exists;
+assets.exists = (id, ?type)-&amp;gt;oldExists(path(id, type ?? BINARY), type);
+
+final oldIsLocal = assets.isLocal;
+assets.isLocal = (id, ?type, cache = true)-&amp;gt;oldIsLocal(path(id, type ?? BINARY), type, cache);
+
+final oldGet = assets.getAssetUnsafe;
+assets.getAssetUnsafe = (id, type, cache = true)-&amp;gt;oldGet(path(id, type), type, cache);
+&lt;/span&gt;&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HX&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;hot-reloading&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#hot-reloading&quot;&gt;&lt;span&gt;Hot-Reloading&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Sick of building the game just to see some asset change in the game? Simply add the following flag to your build command, and the compiled game will look at the source assets whenever it&#39;s run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;-DFLX_CUSTOM_ASSETS_DIRECTORY=&amp;quot;assets&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Not only will this save time on dev builds in projects with many assets, but you can modify assets and see them in your game without recompiling.&lt;/p&gt;
+&lt;h3 id=&quot;automatically-append-sound-file-extensions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#automatically-append-sound-file-extensions&quot;&gt;&lt;span&gt;Automatically append sound file extensions&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Define flag &lt;code&gt;-DFLX_DEFAULT_SOUND_EXT=&amp;quot;ogg&amp;quot;&lt;/code&gt; to allow sound asset ids to omit the extension. Useful when targeting multiple platforms that use different sound files. Can also use the flag to determine the desired sound extension, setting the flags value to &amp;quot;mp3&amp;quot; &amp;quot;wav&amp;quot; or &amp;quot;ogg&amp;quot; will use that extension. The default extension can be read via &lt;code&gt;FlxG.assets.defaultSoundExtension&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;collision%2C-tilemaps-and-tiles%2C-oh-my!&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#collision%2C-tilemaps-and-tiles%2C-oh-my!&quot;&gt;&lt;span&gt;Collision, Tilemaps and Tiles, Oh my!&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Plenty of improvements, features and helpers have been added. Let&#39;s go over a few&lt;/p&gt;
+&lt;h3 id=&quot;flxtiles&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#flxtiles&quot;&gt;&lt;span&gt;FlxTiles&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New dynamic &lt;code&gt;overlapsObject&lt;/code&gt; method in FlxTile, can be extended or set to allow custom overlap detection for tiles whose hit shape is smaller than the tileGrid&lt;/li&gt;
+&lt;li&gt;New &lt;code&gt;onCollide&lt;/code&gt; signal, dispatched when overlaps are checked for collision reasons&lt;/li&gt;
+&lt;li&gt;Improved debug drawing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;flxtilemaps&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#flxtilemaps&quot;&gt;&lt;span&gt;FlxTilemaps&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tons of new helpers: &lt;code&gt;getMapIndex&lt;/code&gt;, &lt;code&gt;getRow&lt;/code&gt;, &lt;code&gt;getColumn&lt;/code&gt;, &lt;code&gt;getTileIndex&lt;/code&gt;, &lt;code&gt;getTileData&lt;/code&gt;, &lt;code&gt;tileExists&lt;/code&gt;, &lt;code&gt;setTileIndex&lt;/code&gt;, &lt;code&gt;getColumnAt&lt;/code&gt;, &lt;code&gt;getRowAt&lt;/code&gt;, &lt;code&gt;columnExists&lt;/code&gt;, &lt;code&gt;rowExists&lt;/code&gt;, &lt;code&gt;getColumnPos&lt;/code&gt;, &lt;code&gt;getRowPos&lt;/code&gt;, &lt;code&gt;getColumnPosAt&lt;/code&gt;, &lt;code&gt;getRowPosAt&lt;/code&gt;, &lt;code&gt;getTilePos&lt;/code&gt;, &lt;code&gt;getTilePosAt&lt;/code&gt;, &lt;code&gt;getAllTilePos&lt;/code&gt;, &lt;code&gt;forEachMapIndex&lt;/code&gt;, &lt;code&gt;getMapIndexAt&lt;/code&gt;, &lt;code&gt;tileExistsAt&lt;/code&gt;, &lt;code&gt;columnExistsAt&lt;/code&gt;, &lt;code&gt;rowExistsAt&lt;/code&gt;, &lt;code&gt;getTileIndexAt&lt;/code&gt;, &lt;code&gt;getTileDataAt&lt;/code&gt; and &lt;code&gt;setTileIndexAt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overloaded various existing helpers to allow easier usage&lt;/li&gt;
+&lt;li&gt;New &lt;code&gt;forEachOverlappingTile&lt;/code&gt; method in FlxTilemap, to retrieve every tile that is overlapping the given object&lt;/li&gt;
+&lt;li&gt;Added new &lt;code&gt;isOverlappingTile&lt;/code&gt; method, allows you to check all tiles overlapping an object&lt;/li&gt;
+&lt;li&gt;Added new &lt;code&gt;objectOverlapsTiles&lt;/code&gt; to replace the now deprecated &lt;code&gt;overlapsWithCallbacks&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Eschews &lt;code&gt;flipCallbackParams&lt;/code&gt; arg, allowing better typing of both callback params&lt;/li&gt;
+&lt;li&gt;Adds &lt;code&gt;isCollision&lt;/code&gt; flag to control whether the Tiles&#39; collision callbacks are fired and allows for processing non-solid tiles&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Added &lt;code&gt;FlxTypedTilemap&amp;lt;T:FlxTile&amp;gt;&lt;/code&gt; for easier extension, with custom tile types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We also broke apart Flixel&#39;s collision tools into smaller parts that can be used to customize the collision of any FlxObject.&lt;/p&gt;
+&lt;h3 id=&quot;misc-shout-outs&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/#misc-shout-outs&quot;&gt;&lt;span&gt;Misc shout outs&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;FlxSave&lt;/code&gt;: Allow custom handling of parsing errors (&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/3286&quot;&gt;#3286&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Gamepads: Add &lt;code&gt;acceptMode&lt;/code&gt; and &amp;quot;mapped inputs&amp;quot; (&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/3276&quot;&gt;#3276&lt;/a&gt;) (&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/3280&quot;&gt;#3280&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;ACCEPT&lt;/code&gt; and &lt;code&gt;CANCEL&lt;/code&gt; input IDs that conditionally map to either &lt;code&gt;A&lt;/code&gt; or &lt;code&gt;B&lt;/code&gt; depending on &lt;code&gt;FlxG.gamepads.acceptMode&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;gamepad.getMappedInput&lt;/code&gt; to get an enum value of every possible gamepad input from various devices, i.e. &lt;code&gt;PS4(PS4ID.X)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FlxStrip&lt;/code&gt;: Add support for blendmodes (&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/3213&quot;&gt;#3213&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FlxBasePath&lt;/code&gt;: A simpler FlxPath without all the BS(&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/3153&quot;&gt;#3153&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Various FlxDebugger improvements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more updates, follow HaxeFlixel on &lt;a href=&quot;https://bsky.app/profile/haxeflixel.bsky.social&quot;&gt;BlueSky&lt;/a&gt; or check us out on &lt;a href=&quot;https://github.com/HaxeFlixel/flixel&quot;&gt;Github&lt;/a&gt; and &lt;a href=&quot;https://discordapp.com/invite/rqEBAgF&quot;&gt;Discord&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel Site Update!</title>
+    <link href="https://haxeflixel.com/blog/17-site-update/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/17-site-update/</id>
+    <content type="html">&lt;p&gt;The HaxeFlixel site finally got a bit of a facelift! After 4 years of Docpad being deprecated (we were on an even older version!), and 2 years of the initial &amp;quot;&lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com/issues/182&quot;&gt;Should we replace docpad?&lt;/a&gt;&amp;quot; Github issue raised by RichardBray, we have FINALLY migrated the static site generation code fully off Docpad, and we are now using &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt; to generate the Haxeflixel site! This was lead by me, ninjamuffin99, as a small side project that begun the R&amp;amp;D phase in December, and started the serious work near the beginning of February.&lt;/p&gt;
+&lt;p&gt;The goals for the site update I aimed for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Updating the site to be low maintenance. 11ty was chosen for their track record of very stable releases that are easy to update versions with little breaking changes. &lt;em&gt;&amp;quot;We’ve shipped 56 releases dating back December 2017 and only two of those releases have had Eleventy-specific breaking changes.&amp;quot;&lt;/em&gt;&lt;a href=&quot;https://www.11ty.dev/blog/stability/&quot;&gt;^1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Very flexible, which I wanted for a few reasons. I didn&#39;t want to do too much heavy porting or html rewriting. I think now we have the potential to work towards updating pages, content, layouts, etc. but for updating from Docpad to 11ty, I needed something where I might have to fit a square peg into a round hole.&lt;/li&gt;
+&lt;li&gt;No heavy CSS / redesign. Initially I played around with &lt;a href=&quot;https://tailwindcss.com/&quot;&gt;tailwindcss&lt;/a&gt;, and found it very lovely and fun! However I think a &lt;em&gt;redesign&lt;/em&gt; I think would be better for another time, and focusing in on just updating Bootstrap, which we&#39;ve updated from Bootstrap 3.0 (released 2013) -&amp;gt; Bootstrap 5 (5.3.3 released February 2024). This also made porting the styles much more manageable, as I could re-use many of the styles we already have but still giving the site a fresher look.&lt;/li&gt;
+&lt;li&gt;Darkmode (and light mode)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Total work was a bit on and off over a few weeks, but finally got the site fully updated to have no Docpad related code around February 20th 2024!&lt;/p&gt;
+&lt;p&gt;Removing Docpad wasn&#39;t just a case of &amp;quot;old tech bad, new tech fun and good&amp;quot;, there are many things that make the developer experience when working on the site much nicer now!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easier local development. Previously you&#39;d need to &lt;code&gt;npm install&lt;/code&gt;, which installed a bit of an older version of Docpad, and you also had to install ImageMagick for thumbnail generation (and you&#39;d still run into issues!). Now when you &lt;code&gt;npm install&lt;/code&gt;, you should simply have everything you need, on latest versions of it all.&lt;/li&gt;
+&lt;li&gt;Faster builds. On my machine™ building the site takes about 1.85s, and when developing you can use &lt;code&gt;--incremental&lt;/code&gt; to only build the files that have changes for very fast builds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now with new site generation backend, we are aiming for some cool new features for the site in future updates&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com/issues/256&quot;&gt;Better site search&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com/issues/253&quot;&gt;Giscus/github based comments on blogs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com/issues/222&quot;&gt;Dedicated pages for showcase items&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com/issues/255&quot;&gt;Adding &amp;quot;reading time&amp;quot; to blogs and docs pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com/issues/251&quot;&gt;Porting API documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have any suggestions for site features, content, or bug reports, do feel free to file an issue in the &lt;code&gt;haxeflixel/haxeflixel.com&lt;/code&gt; repo! &lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com/issues&quot;&gt;https://github.com/HaxeFlixel/haxeflixel.com/issues&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And if you&#39;d like to contribute to the site, take a look at the &lt;a href=&quot;http://readme.md&quot;&gt;readme.md&lt;/a&gt;: &lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel.com?tab=readme-ov-file#about&quot;&gt;https://github.com/HaxeFlixel/haxeflixel.com?tab=readme-ov-file#about&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel 5.4.0</title>
+    <link href="https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/</id>
+    <content type="html">&lt;p&gt;We&#39;ve finally released Haxeflixel 5.4.0, our largest release in quite some time, arguably larger than the 5.0.0 release! This release focuses heavily on assets and animations, like the new FlxAsepriteUtil and the new Multi-Atlas system.&lt;/p&gt;
+&lt;h1 id=&quot;what-took-so-long%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/#what-took-so-long%3F&quot;&gt;&lt;span&gt;What took so long?&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;We try to release new versions of HaxeFlixel around once a month, and have been, for the most part. This one took much longer, the previous version, 5.3.1, was released in early May, that&#39;s almost 5 months! The main reason is because we really wanted to get things right, The Aseprite utils, alone, add around 20+ new types and it&#39;s not good to release them prematurely, only to rename, reorganize or retool them in a later patch. This ended being a good call, since we did end up iterating on and organizing these utils, later.&lt;/p&gt;
+&lt;p&gt;Another reason the release was delayed was that George, our lead maintainer finally went on his honeymoon. He didn&#39;t feel like touching a computer while visiting his motherland for most of September, with views like this, I&#39;m sure you wouldn&#39;t want to either!&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/16_release/split.jpg&quot; width=&quot;100%&quot;&gt;
+&lt;h1 id=&quot;aseprite-utils&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/#aseprite-utils&quot;&gt;&lt;span&gt;Aseprite Utils&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;By far the biggest development of HaxeFlixel 5.4.0 is the various tools that utilize &lt;a href=&quot;https://www.aseprite.org/&quot;&gt;Aseprite&#39;s&lt;/a&gt; &lt;a href=&quot;https://aseprite.com/docs/sprite-sheet/#texture-atlases&quot;&gt;atlas exporting&lt;/a&gt; tools. For those unaware, Aseprite is a very popular animated sprite editor and pixel art tool, we can&#39;t recommend it enough for anyone using HaxeFlixel, especially for pixel-art games. The main goal of &lt;a href=&quot;https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html&quot;&gt;FlxAsepriteUtil&lt;/a&gt; is to allow devs to define animation data using Aseprite&#39;s tags rather than in code.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/16_release/export-sheet.png&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;(Made using the &lt;a href=&quot;https://rvros.itch.io/animated-pixel-hero&quot;&gt;Animated Pixel Adventurer&lt;/a&gt; set by &lt;a href=&quot;https://rvros.itch.io/&quot;&gt;rvros&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;The resulting atlas can easily be applied to a sprite with the following code using the &lt;a href=&quot;https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByPrefix&quot;&gt;addAseAtlasTagsByPrefix&lt;/a&gt; or &lt;a href=&quot;https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByIndex&quot;&gt;addAseAtlasTagsByIndex&lt;/a&gt; to create an animation for every tag in your .aseprite file.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;hero = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlxSprite(&lt;span class=&quot;hljs-number&quot;&gt;50&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;50&lt;/span&gt;);
+hero.loadAseAtlasAndTagsByPrefix(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;assets/images/adventurer.png&amp;quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;assets/images/adventurer.json&amp;quot;&lt;/span&gt;);
+hero.animation.play(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;idle&amp;quot;&lt;/span&gt;);
+add(hero);
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;You can expect more Aseprite focus tools to come now that we&#39;ve created handy &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/master/flixel/graphics/atlas/AseAtlas.hx&quot;&gt;typedefs for Aseprite atlas metadata&lt;/a&gt;. One future plan is to use Aseprite&#39;s &lt;a href=&quot;https://www.aseprite.org/docs/slices/&quot;&gt;slicing feature&lt;/a&gt; to generate 9-slice data or per-frame hitboxes, but it&#39;s much easier for you to use this data to roll your own features, for example to see per-frame slice data on an atlas&#39;s labelled &amp;quot;attackRect&amp;quot;:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; atlasData:&lt;span class=&quot;hljs-type&quot;&gt;AseAtlas &lt;/span&gt;= Assets.getText(myAtlasJsonPath);
+&lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (slice &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; atlasData.meta.slices)
+{
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (slice.name == &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;attackRect&amp;quot;&lt;/span&gt;)
+    {
+        &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (key &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; slice.keys)
+        {
+            &lt;span class=&quot;hljs-comment&quot;&gt;// store per-frame slice data&lt;/span&gt;
+            &lt;span class=&quot;hljs-built_in&quot;&gt;trace&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;frame: &lt;span class=&quot;hljs-subst&quot;&gt;${key.frame}&lt;/span&gt; bounds: &lt;span class=&quot;hljs-subst&quot;&gt;${key.bounds}&lt;/span&gt;&amp;#x27;&lt;/span&gt;);
+        }
+    }
+}
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;We have immediate plans to utilize more Aseprite fields, such as the tags&#39; &amp;quot;Repeat&amp;quot; and &amp;quot;Animation Direction&amp;quot; fields. You can expect those in the next release (&lt;strong&gt;Update (5.4.1):&lt;/strong&gt; this change has been added!).&lt;/p&gt;
+&lt;h1 id=&quot;combining-multiple-atlases&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/#combining-multiple-atlases&quot;&gt;&lt;span&gt;Combining Multiple Atlases&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;This feature was specifically made with our Funkin&#39; devs and modders in mind. As the demand for HD atlases with large amounts of animations increase, their atlas image size grows well beyond the limit that flixel can currently handle. By combining multiple atlases at runtime devs can better compartmentalize their animations, ultimately allowing FlxSprites to have more animations without having to switch graphics every time you change a sprite&#39;s animation. Splitting up animations also allows you to load them separately, for instance, if you only need certain animations on certain levels.&lt;/p&gt;
+&lt;p&gt;This project&#39;s art pipeline could really benefit from multi-atlas since each character is made from about a dozen different aseprite files, each with potentially dozens of frames.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/16_release/snowman.png&quot; width=&quot;100%&quot;&gt;
+(Art by Adam V., you should [hire him](https://twitter.com/Koolboyman/status/1672366422767591424)!)
+&lt;p&gt;Here&#39;s an example of how to add atlases to another&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;// create an atlas for each file&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; idleAtlas = FlxAtlasFrames.fromAseprite(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-idle.png&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-idle.json&amp;#x27;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; jumpAtlas = FlxAtlasFrames.fromAseprite(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-jump.png&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-jump.json&amp;#x27;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; walkAtlas = FlxAtlasFrames.fromAseprite(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-walk.png&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-walk.json&amp;#x27;&lt;/span&gt;);
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; blockAtlas = FlxAtlasFrames.fromAseprite(&lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-block.png&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;#x27;assets/images/snowman-block.json&amp;#x27;&lt;/span&gt;);
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// combine all the atlases by adding to the idle atlas&lt;/span&gt;
+idleAtlas.addAtlas(jumpAtlas);
+idleAtlas.addAtlas(walkAtlas);
+idleAtlas.addAtlas(blockAtlas);
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// create the FlxSprite&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; snowman = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlxSprite();
+snowman.frames = idleAtlas;
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// add all the anims&lt;/span&gt;
+snowman.animation.addByPrefix(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;idle&amp;quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;snowman-idle_anim&amp;quot;&lt;/span&gt;);
+snowman.animation.addByPrefix(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;jump&amp;quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;snowman-jump_anim&amp;quot;&lt;/span&gt;);
+snowman.animation.addByPrefix(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;walk&amp;quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;snowman-walk_anim&amp;quot;&lt;/span&gt;);
+snowman.animation.addByPrefix(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;block&amp;quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;snowman-block_anim&amp;quot;&lt;/span&gt;);
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// add it to the state&lt;/span&gt;
+add(snowman);
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;animation-time-scaling&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/#animation-time-scaling&quot;&gt;&lt;span&gt;Animation Time Scaling&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;We&#39;ve added a &lt;a href=&quot;https://api.haxeflixel.com/flixel/animation/FlxAnimationController.html#timeScale&quot;&gt;timeScale field to FlxAnimationController&lt;/a&gt;. This can be used to slow down or speed up animations. For instance, you can change a walk cycle&#39;s animation speed to match the sprite&#39;s changing movement speed, or you can easily implement a power up or skill that increases attack rate. Here&#39;s an example of 4 sprites using different timescale properties whenever the attack animation is played:&lt;/p&gt;
+&lt;video width=&quot;794&quot; height=&quot;174&quot; controls=&quot;&quot;&gt;
+  &lt;source src=&quot;https://haxeflixel.com/images/blog/16_release/anim-time_scale.mp4&quot; type=&quot;video/mp4&quot;&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;
+&lt;p&gt;&lt;strong&gt;Update (5.4.1):&lt;/strong&gt; We&#39;ve also added the &lt;code&gt;timeScale&lt;/code&gt; field to each individual animation, rather than just the animation controller.&lt;/p&gt;
+&lt;h1 id=&quot;a-list-of-every-asset&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/#a-list-of-every-asset&quot;&gt;&lt;span&gt;A List of Every Asset&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Lastly, we&#39;ve added the &lt;code&gt;allFiles&lt;/code&gt; field to classes generated via &lt;a href=&quot;https://api.haxeflixel.com/flixel/system/FlxAssets.html#buildFileReferences&quot;&gt;FlxAssets.buildFileReferences&lt;/a&gt;, AKA: &lt;code&gt;AssetPaths&lt;/code&gt;. This is just an easy way to iterate or search a list of every asset included in this build. if you don&#39;t like the name &lt;code&gt;allFiles&lt;/code&gt; you can specify a custom name in the &lt;code&gt;listField&lt;/code&gt; arg of &lt;code&gt;buildFileReferences&lt;/code&gt;.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/16_release/all_files.png&quot; width=&quot;100%&quot;&gt;
+&lt;h1 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/#what&#39;s-next%3F&quot;&gt;&lt;span&gt;What&#39;s Next?&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;More animation tools:&lt;/strong&gt; Our goal is to improve upon these tools before jumping on to another big project, so we&#39;d love feedback and suggestions. As mentioned above we already have additions planned for &lt;code&gt;FlxAseAtlasUtils&lt;/code&gt; and &lt;code&gt;FlxAnimation&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improving the Wiki:&lt;/strong&gt; We&#39;ve added new pages to &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/wiki&quot;&gt;the HaxeFlixel wiki on Github&lt;/a&gt;. These are still a work in progress, but once they are fleshed out we&#39;ll develop a way to automatically publish them on &lt;a href=&quot;https://haxeflixel.com&quot;&gt;haxeflixel.com&lt;/a&gt;. Some notable pages are:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/wiki/External-Tools&quot;&gt;External Tools&lt;/a&gt;: This will list all the various tools being developed for HaxeFlixel, unofficially.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/wiki/Contribution-Guide&quot;&gt;Contribution Guide&lt;/a&gt;: To help people unfamiliar with contributing to open-source software, Git, or Github.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/wiki/Accessible-Contributions&quot;&gt;Accessible Contributions&lt;/a&gt;: A list of bugs, issues and feature requests that newcomers could easily implement for HaxeFlixel. Mainly things like adding snippets and demos, which are always great to have more of.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flixel 6.0.0:&lt;/strong&gt; We still have some minor versions planned to release before the next major version, but we are currently getting all &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/milestone/13&quot;&gt;our ducks in a row&lt;/a&gt; for it, nonetheless.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2915&quot;&gt;Flixel rendering overhaul&lt;/a&gt;:&lt;/strong&gt; We&#39;re looking for talented devs to revive the important effort of upgrading HaxeFlixel&#39;s rendering capabilities. &lt;strong&gt;This is paid work!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Blog Posts are Back</title>
+    <link href="https://haxeflixel.com/blog/15-Blog-posts-are-back/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/15-Blog-posts-are-back/</id>
+    <content type="html">&lt;p&gt;Hello everyone! George, here, gladly announceing the return of the HaxeFlixel blog after a long hiatus. While there have been many ongoing changes to the HaxeFlixel framework, we&#39;ve sadly neglected to broadcast those changes on the website. Let&#39;s take this time to get everybody up to speed with all we&#39;ve done these last 3 years.&lt;/p&gt;
+&lt;h1 id=&quot;what&#39;s-new%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#what&#39;s-new%3F&quot;&gt;&lt;span&gt;What&#39;s New?&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Since &lt;a href=&quot;https://haxeflixel.com/blog/12-HaxeFlixel-4-4-0/&quot;&gt;the last release blog post&lt;/a&gt;, we have released 24 new versions of HaxeFlixel! There&#39;s too many changes to go over in just one blog post, so if you&#39;re far behind, be sure to look at &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md&quot;&gt;the changelog&lt;/a&gt; for details on every release. I do want to go over some big milestones from these past few years.&lt;/p&gt;
+&lt;h2 id=&quot;flixel-5.0.0&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#flixel-5.0.0&quot;&gt;&lt;span&gt;Flixel 5.0.0&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;HaxeFlixel&#39;s first major release in over 6 years! Be sure to check out the &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/wiki/Flixel-5.0.0-Migration-guide&quot;&gt;Migration Guide&lt;/a&gt; for more info on the bigger changes as well as info on how to upgrade your old projects from version 4. Here&#39;s a brief list of the changes (&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md#500-alpha-november-19-2022&quot;&gt;the changelog&lt;/a&gt; has them all, of course)&lt;/p&gt;
+&lt;h3 id=&quot;flxpoint-absorbed-flxvector&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#flxpoint-absorbed-flxvector&quot;&gt;&lt;span&gt;FlxPoint absorbed FlxVector&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Most people never knew we had a FlxVector class with a bunch of incredibly handy math operations, so we moved them all into FlxPoint.&lt;/p&gt;
+&lt;h3 id=&quot;collision-improvements&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#collision-improvements&quot;&gt;&lt;span&gt;Collision Improvements&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;One small tweaks to preserve momentum and a new feature that let&#39;s objects ride other non-immovable objects. The dirty minds following us on &lt;a href=&quot;https://twitter.com/HaxeFlixel/status/1600844100923961344&quot;&gt;Twitter&lt;/a&gt; got really excited about this.&lt;br&gt;
+&lt;video width=&quot;479&quot; height=&quot;360&quot; controls=&quot;&quot;&gt;&lt;/video&gt;&lt;/p&gt;
+  &lt;source src=&quot;https://haxeflixel.com/images/blog/15_blogs_back/platforming.mp4&quot; type=&quot;video/mp4&quot;&gt;
+Your browser does not support the video tag.
+
+&lt;h3 id=&quot;pathfinding-overhaul&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#pathfinding-overhaul&quot;&gt;&lt;span&gt;Pathfinding Overhaul&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Create custom pathfinders.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/15_blogs_back/pathfinding.png&quot; width=&quot;100%&quot;&gt;
+&lt;h3 id=&quot;assetpaths-and-flxsave-overhaul&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#assetpaths-and-flxsave-overhaul&quot;&gt;&lt;span&gt;AssetPaths and FlxSave Overhaul&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Hard to express with pictures, but AssetPaths is actually usuable now! And FlxSave allows you to use custom directory locations&lt;/p&gt;
+&lt;h2 id=&quot;who&#39;s-george%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#who&#39;s-george%3F&quot;&gt;&lt;span&gt;Who&#39;s George?&lt;/span&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It&#39;s about time I formally introduced myself. My name is George Kurelic and I&#39;ve been the lead maintainer of HaxeFlixel since around January 2022. I&#39;ve used Flixel since the flash days, but I&#39;ve only started making contributions to HaxeFlixel in late 2018. While I have enourmous shoes to fill, I&#39;m very passionate about open source software, and gamedev, and I have a lot of plans for the framework. You can usually find me in &lt;a href=&quot;https://discordapp.com/invite/rqEBAgF&quot;&gt;the #flixel channel of the Haxe Discord server&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;what&#39;s-next%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/15-Blog-posts-are-back/#what&#39;s-next%3F&quot;&gt;&lt;span&gt;What&#39;s next?&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Get used to seeing more blog posts if you wanna see what&#39;s cookin, but here&#39;s what is currently planned.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/milestone/14&quot;&gt;Flixel 5.4.0&lt;/a&gt; is mostly finished, which is planned to have the abilty to combine altases from separate images, which should make it easier for FNF mods with huge hd character assets.&lt;/p&gt;
+&lt;p&gt;We haven&#39;t decided which of these features we&#39;ll put in 6.0.0, but many large changes are planned, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2816&quot;&gt;Animation Frame Events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2716&quot;&gt;Expanding Collider Shapes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2541&quot;&gt;Take a function in FlxG.switchState&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2717&quot;&gt;Expanding FlxBitmapText&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2828&quot;&gt;Record Gamepad and Touch Events in FlxReplay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2717&quot;&gt;Improving FlxBitmapText&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Newgrounds Game Jam</title>
+    <link href="https://haxeflixel.com/blog/14-newgrounds-game-jam/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/14-newgrounds-game-jam/</id>
+    <content type="html">&lt;p&gt;Newgrounds is hosting a HaxeFlixel game jam with a $1,300 prize pool! The theme is &amp;quot;Alone, Together&amp;quot; and submissions have to be uploaded to Newgrounds by Monday, April 27th with the tag &amp;quot;HaxeFlixelJam&amp;quot; included. For more information, check out &lt;a href=&quot;https://www.newgrounds.com/bbs/topic/1450269/1&quot;&gt;their official announcement&lt;/a&gt;.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/14_newgrounds_jam/ng_loves_flixel.png&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;We also modernized our &lt;a href=&quot;https://haxeflixel.com/documentation/tutorial/&quot;&gt;Tutorial&lt;/a&gt; to use Ogmo 3, Visual Studio Code and HTML5, so it&#39;s a great time to learn HaxeFlixel if you&#39;re new to it! If you get stuck, just &lt;a href=&quot;https://discordapp.com/invite/rqEBAgF&quot;&gt;hop onto our Discord channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let&#39;s make some amazing games!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel DragonBones Support</title>
+    <link href="https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/</id>
+    <content type="html">&lt;p&gt;Hi there, I’m Troy (&lt;a href=&quot;https://twitter.com/roustudios&quot;&gt;@RouStudios&lt;/a&gt;), creator and maintainer of the &lt;a href=&quot;https://github.com/openfl/dragonbones&quot;&gt;HaxeFlixel backend for DragonBones&lt;/a&gt;. I’m here to write a post about DragonBones support for HaxeFlixel and how to use it.&lt;/p&gt;
+&lt;p&gt;First of all, what is DragonBones? DragonBones is a free *open source alternative to the popular 2D bone animation tool &lt;a href=&quot;http://esotericsoftware.com/&quot;&gt;Spine&lt;/a&gt; (which Flixel already has support for). Its a tool which allows you to animate static 2D images programmatically (similar to Flash tweening) without having to painstakingly animate each individual frame in a spritesheet. Why would one use it over Spine? Well Spine can potentially be &lt;a href=&quot;https://esotericsoftware.com/spine-purchase&quot;&gt;quite expensive&lt;/a&gt; for new indie devs, and DragonBones is free. Not only that, DragonBones is a fully featured, intuitive bone animation editor and has &lt;a href=&quot;https://www.youtube.com/watch?v=XPH_ZBzCtfY&quot;&gt;Mesh Deformation support&lt;/a&gt; just like Spine. Quite a deal for free!&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/13_dragonbones/dragonbones_stock.jpg&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;*One caveat is that DragonBones is not truly open source (if you care about that sort of thing), only the runtime is. If you want a truly open source editor which can export to the DragonBones format while also being fully featured, check out the great alternative &lt;a href=&quot;https://github.com/ndee85/coa_tools&quot;&gt;COA Tools&lt;/a&gt; for Blender. Its DragonBones export should also work with the Flixel backend I’ve created.&lt;/p&gt;
+&lt;p&gt;How exactly do you use DragonBones with Flixel? Well, that’s what I’ll be showing you, so let’s get started.&lt;/p&gt;
+&lt;h3 id=&quot;install&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#install&quot;&gt;&lt;span&gt;Install&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;First install the library from haxelib using:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;haxelib install dragonbones
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Although it’s better to install directly from GitHub in order to always keep up with the latest updates:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;haxelib git dragonbones https://github.com/openfl/dragonbones
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;create-project&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#create-project&quot;&gt;&lt;span&gt;Create Project&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Then create a new Flixel project template with &lt;a href=&quot;http://haxeflixel.com/documentation/flixel-tools/&quot;&gt;Flixel Tools&lt;/a&gt;, and add DragonBones to your &lt;code&gt;Project.xml&lt;/code&gt;. You can also download &lt;a href=&quot;https://github.com/openfl/dragonbones/tree/master/samples/HelloDragonBones&quot;&gt;the sample project&lt;/a&gt; instead to follow along.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;haxelib&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;dragonbones&amp;quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;XML&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to &lt;code&gt;File &amp;gt; Export&lt;/code&gt; and export the animation using &lt;code&gt;Data Version: 5.0&lt;/code&gt; and &lt;code&gt;Image Type: Texture Atlas&lt;/code&gt;. Then save it to the &lt;code&gt;assets&lt;/code&gt; folder in your Flixel project.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/13_dragonbones/dragonbones_export.png&quot; width=&quot;100%&quot;&gt;
+&lt;h3 id=&quot;packages&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#packages&quot;&gt;&lt;span&gt;Packages&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;First, import the packages we&#39;ll be using.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; haxe.Json;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; openfl.Assets;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; flixel.FlxG;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; flixel.FlxState;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; flixel.group.FlxGroup;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; dragonBones.objects.DragonBonesData;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; dragonBones.flixel.FlixelTextureAtlasData;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; dragonBones.flixel.FlixelArmatureDisplay;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; dragonBones.flixel.FlixelArmatureCollider;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; dragonBones.flixel.FlixelFactory;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; dragonBones.flixel.FlixelEvent;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; dragonBones.animation.WorldClock;
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;create-factory&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#create-factory&quot;&gt;&lt;span&gt;Create Factory&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Then, inside the &lt;code&gt;create&lt;/code&gt; function under your &lt;code&gt;FlxState&lt;/code&gt; class you have to create a &lt;code&gt;FlixelFactory&lt;/code&gt; which generates flixel objects for DragonBones like so:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; _factory = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlixelFactory();
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;parse-data&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#parse-data&quot;&gt;&lt;span&gt;Parse Data&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Then you have to use the factory to parse the animation files that you’ve exported in order to read their data.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; dragonBonesData:&lt;span class=&quot;hljs-type&quot;&gt;DragonBonesData &lt;/span&gt;= _factory.parseDragonBonesData(
+	Json.parse(Assets.getText(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;assets/dragonboy_flixel_ske.json&amp;quot;&lt;/span&gt;))
+);
+
+_factory.parseTextureAtlasData(
+	Json.parse(Assets.getText(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;assets/dragonboy_flixel_tex.json&amp;quot;&lt;/span&gt;)),
+	Assets.getBitmapData(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;assets/dragonboy_flixel_tex.png&amp;quot;&lt;/span&gt;)
+);
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;build-armature&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#build-armature&quot;&gt;&lt;span&gt;Build Armature&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Then you have to create a &lt;code&gt;FlxGroup&lt;/code&gt; which will contain all the DragonBones Flixel Sprites. You can do so by declaring a variable and then assigning the new &lt;code&gt;FlxGroup&lt;/code&gt; to it which you will generate using the factory.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; armatureGroup = _factory.buildArmatureDisplay(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlixelArmatureCollider(&lt;span class=&quot;hljs-number&quot;&gt;250&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;250&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;27&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;25&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;13&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;), dragonBonesData.armatureNames[&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;]);
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;One thing to note is you also have to pass in a collision box similar to the Flixel Spine plugin. This is because with many different sprites, if you want to check the collisions of the entire “character” then you have to have one large collision box. You also pass in the name of the armature (the animations skeleton). Generally you’ll only have one armature, so just pass in the first index of the &lt;code&gt;armatureNames&lt;/code&gt; array from the data you got earlier. Otherwise, check your animation in DragonBones to find the name and pass it in as a string.&lt;/p&gt;
+&lt;h3 id=&quot;set-properties&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#set-properties&quot;&gt;&lt;span&gt;Set Properties&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Then you iterate through all of the sprites in the &lt;code&gt;FlxGroup&lt;/code&gt; to set their initial properties (such as scale, placement in the world, ect.) as you please.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;armatureGroup.forEach(&lt;span class=&quot;hljs-title function_&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;&lt;/span&gt;(display:&lt;span class=&quot;hljs-type&quot;&gt;FlixelArmatureDisplay&lt;/span&gt;) {
+	display.antialiasing = &lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;;
+	display.x = &lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;;
+	display.y = &lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;;
+	display.scaleX = &lt;span class=&quot;hljs-number&quot;&gt;0.50&lt;/span&gt;;
+	display.scaleY = &lt;span class=&quot;hljs-number&quot;&gt;0.50&lt;/span&gt;;
+});
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;start-animation&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#start-animation&quot;&gt;&lt;span&gt;Start Animation&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Now you do the same thing to start the initial animation. Again we grab the first index from the list of animation names to keep it simple.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;armatureGroup.forEach(&lt;span class=&quot;hljs-title function_&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt;&lt;/span&gt;(display:&lt;span class=&quot;hljs-type&quot;&gt;FlixelArmatureDisplay&lt;/span&gt;) {
+	display.animation.play(display.animation.animationNames[&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;]);
+});
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;update-animation&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#update-animation&quot;&gt;&lt;span&gt;Update Animation&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Then, inside the update loop of the &lt;code&gt;FlxState&lt;/code&gt; class, add &lt;code&gt;FlixelFactory._clock.advanceTime(-1);&lt;/code&gt; to update the animation clock so that the factory knows what point it&#39;s at on the timeline.&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;update&lt;/span&gt;&lt;/span&gt;(elapsed:&lt;span class=&quot;hljs-type&quot;&gt;Float&lt;/span&gt;):&lt;span class=&quot;hljs-type&quot;&gt;Void&lt;/span&gt;
+{
+	FlixelFactory&lt;span class=&quot;hljs-number&quot;&gt;._&lt;/span&gt;clock.advanceTime(&lt;span class=&quot;hljs-number&quot;&gt;-1&lt;/span&gt;);
+	&lt;span class=&quot;hljs-keyword&quot;&gt;super&lt;/span&gt;.update(elapsed);
+}
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;render&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#render&quot;&gt;&lt;span&gt;Render&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Finally, we add the &lt;code&gt;FlxGroup&lt;/code&gt; to the &lt;code&gt;FlxState&lt;/code&gt; inside the &lt;code&gt;create&lt;/code&gt; function so it can be rendered!&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;add(armatureGroup);
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;preview&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/#preview&quot;&gt;&lt;span&gt;Preview&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;That’s it! Once you compile with &lt;code&gt;lime test html5&lt;/code&gt;, it should look like this:&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/13_dragonbones/dragonbones_preview.gif&quot; width=&quot;100%&quot;&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel 4.4.0</title>
+    <link href="https://haxeflixel.com/blog/12-HaxeFlixel-4-4-0/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/12-HaxeFlixel-4-4-0/</id>
+    <content type="html">&lt;p&gt;HaxeFlixel 4.4.0 is now available on Haxelib, adding &lt;strong&gt;support for OpenFL 8&lt;/strong&gt; and Lime 6.3.0! &lt;a href=&quot;https://haxeflixel.com/documentation/upgrade-guide-4-0-0/&quot;&gt;Breaking changes&lt;/a&gt; are mostly limited to blend modes and a slightly different shader syntax. Additionally, 4.4.0 is still fully-backwards-compatible with OpenFL 3.6.1 legacy or next, so even if you don&#39;t plan on upgrading to OpenFL 8 just yet, don&#39;t let that stop you from taking advantage of the &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/4.4.0/CHANGELOG.md&quot;&gt;other fixes and improvements in the 4.4.0 release&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;OpenFL &lt;s&gt;5&lt;/s&gt; &lt;s&gt;6&lt;/s&gt; &lt;s&gt;7&lt;/s&gt; 8 support has been long-awaited. OpenFL 3.6.1 is still working fine for many people, so why be excited about this? Well, there&#39;s many reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;HTML5 support in OpenFL 8 is vastly improved. WebGL is now the default renderer, which also means - GLSL shaders by default:&lt;/p&gt;
+&lt;br&gt;
+&lt;iframe class=&quot;html5-demo&quot; src=&quot;https://haxeflixel.com/demos/html5/Filters&quot; width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+&lt;br&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://haxeflixel.com/demos&quot;&gt;demos page&lt;/a&gt;, we&#39;ve updated all of them with OpenFL 8 builds so you can see the improvements in action.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We can now take advantage of all the fixes and improvements that happened between OpenFL 3.6.1 and OpenFL 8 - this has already meant that tens of old issues could be closed across the issue trackers of Flixel repositories.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;OpenFL 3.6.1 will eventually stop working with latest Haxe - there&#39;s already some minor compiler errors with the latest Haxe development branch. A similar issue exists in the Android world, with Ant being switched out for Gradle as the build tool. Latest HXCPP was also causing some trouble.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Latest OpenFL enables HaxeFlixel to use the HashLink target in the future, &lt;a href=&quot;https://github.com/openfl/lime/milestone/18&quot;&gt;once support for it is implemented in Lime&lt;/a&gt;. If you haven&#39;t heard about &lt;a href=&quot;https://hashlink.haxe.org/&quot;&gt;HashLink&lt;/a&gt;, it&#39;s a new Haxe target and VM that&#39;s Neko&#39;s spiritual successor, but &lt;em&gt;much&lt;/em&gt; faster. It has amazing features such as &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=HaxeFoundation.haxe-hl&quot;&gt;source-level debugging&lt;/a&gt; and native C compilation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since these reasons have surely managed to excite you as much as us, what else do you need to know about OpenFL 8? Here&#39;s a few things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Neko target &lt;em&gt;will&lt;/em&gt; be considerably slower in OpenFL 8. This is because more of OpenFL is written in Haxe now, whereas there was a large native / C++ component in 3.6.1 / legacy. Until HashLink support becomes a reality, you may want to consider retiring Neko as your &amp;quot;fast-to-compile&amp;quot;- / default test target in favor of HTML5. With WebGL, it is now very close to HXCPP builds when it comes to rendering.&lt;/li&gt;
+&lt;li&gt;There are some &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/issues/2143&quot;&gt;known remaining issues&lt;/a&gt; that will be worked out in future OpenFL and Flixel releases. If you find any more, please let us know!&lt;/li&gt;
+&lt;li&gt;OpenFL 8 and HaxeFlixel 4.4.0 is best used with Visual Studio Code and the Lime extension. We have a &lt;a href=&quot;https://haxeflixel.com/documentation/visual-studio-code/&quot;&gt;comprehensive guide&lt;/a&gt; to help you with setting it up and how you can debug the HTML5 and Flash targets.&lt;/li&gt;
+&lt;li&gt;The easiest way to update is to run &lt;code&gt;haxelib upgrade&lt;/code&gt;. Alternatively, you can run &lt;code&gt;haxelib update&lt;/code&gt; manually on the different libraries.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, a huge thanks goes to &lt;a href=&quot;https://twitter.com/singmajesty&quot;&gt;Joshua Granick&lt;/a&gt;, the maintainer of OpenFL. He invested &lt;em&gt;a lot&lt;/em&gt; of time to make sure that this transition can happen smoothly. The &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/2136/files&quot;&gt;fairly short diff&lt;/a&gt; of the pull request on the Flixel end of things doesn&#39;t begin to do all the behind-the-scenes improvements and bugfixes that happened in OpenFL and Lime justice!&lt;/p&gt;
+&lt;p&gt;That&#39;s all for now. If you have any more questions, &lt;a href=&quot;https://haxeflixel.com/documentation/community/&quot;&gt;get in touch with the community&lt;/a&gt;. Keep on making awesome games!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;- The HaxeFlixel team&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;P.S. Don&#39;t forget to check out the &lt;a href=&quot;https://summit.haxe.org/us/2018/#stream&quot;&gt;livestream of the Haxe US summit&lt;/a&gt; that is going on right now!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>FlxLightPuzzle Demo</title>
+    <link href="https://haxeflixel.com/blog/11-light-puzzle-demo/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/11-light-puzzle-demo/</id>
+    <content type="html">&lt;p&gt;We have a new demo made by yours truly &lt;a href=&quot;https://twitter.com/MSGhero16&quot;&gt;Nick&lt;/a&gt;: a puzzle game of reflecting light and combining colors. Featuring...&lt;/p&gt;
+&lt;h3 id=&quot;flxlightpuzzle-demo&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/11-light-puzzle-demo/#flxlightpuzzle-demo&quot;&gt;&lt;span&gt;FlxLightPuzzle Demo&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/11_light/flp_logo_594x382.png&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;In addition to being a &lt;a href=&quot;https://www.newgrounds.com/portal/view/705467&quot;&gt;fully playable game&lt;/a&gt;, the FlxLightPuzzle Demo heavily features the &lt;a href=&quot;https://api.haxeflixel.com/flixel/math/FlxVector.html&quot;&gt;FlxVector class&lt;/a&gt;. Vector math is a nightmare, and I was actually surprised to see how much of it FlxVector handles for you.&lt;/p&gt;
+&lt;p&gt;The source code is &lt;a href=&quot;https://github.com/HaxeFlixel/flixel-demos/tree/master/Arcade/FlxLightPuzzle&quot;&gt;here&lt;/a&gt;, which you&#39;re free to look at and edit to make your own version of the game. Maybe you add more levels, real graphics, or more obstacles that the player has to solve around. I&#39;ll leave that to you.&lt;/p&gt;
+&lt;h3 id=&quot;development-and-design-decisions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/11-light-puzzle-demo/#development-and-design-decisions&quot;&gt;&lt;span&gt;Development and design decisions&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I think color-based mechanics and reflection-based mechanics are super cool, and that&#39;s about all the backstory there is. The graphics are simple shapes (&lt;a href=&quot;https://api.haxeflixel.com/flixel/util/FlxSpriteUtil.html&quot;&gt;FlxSpriteUtil&lt;/a&gt;) to avoid any fuss about art, and the &lt;a href=&quot;https://www.newgrounds.com/audio/listen/755011&quot;&gt;music&lt;/a&gt; is a random find that I happened to enjoy (used with permission, of course).&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/11_light/flp_menu.png&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;You&#39;ll quickly notice that you can play the game in RBY, RGB, or CMY color spaces. I couldn&#39;t really decide whether RBY+orange/green/purple or RGB+yellow/cyan/magenta would be better to play in. On one hand, you have the &amp;quot;normal&amp;quot; primary colors that everyone is used to; on the other, there are the &amp;quot;correct&amp;quot; primary colors for light. So I added both, and CMY for anyone in the printing business playing the game.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/11_light/flp_level4.png&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;On the third level, you learn that you can mix primary colors to hit secondary targets. On the fourth (my favorite), you learn that secondary colors can&#39;t hit primary targets. It wasn&#39;t always like that! I asked a number of people who said that it lessened the challenge if, say, green light could hit yellow targets. When that mechanic was changed, I thought that made level four impossible to solve. It was pure coincidence that it resulted in clever level design.&lt;/p&gt;
+&lt;p&gt;Iterating to improve is a big part of level design. I&#39;ve played through each level dozens of times now, fiddling with numbers and colors until I got to a pretty good result. The first and last levels haven&#39;t changed since day one — and you&#39;ll see why when you play through — but the middle eight have been through a lot. I still have fun every time I play, even if I can (almost) play through the whole thing without any do-overs. I call that a success.&lt;/p&gt;
+&lt;h3 id=&quot;the-code&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/11-light-puzzle-demo/#the-code&quot;&gt;&lt;span&gt;The code&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;You are free to do whatever you want to the code under the MIT license. There are a number of things to learn from, such as vector math, object pooling, subtle tweening effects, physics and optics, and level data files. I added way more comments than I normally do to describe some of that. If you want to keep it simple, though, editing the levels or adding new ones is your best bet. There are a lot of places the code can go, and I limited the scope of the demo so that you could be creative with a solid foundation.&lt;/p&gt;
+&lt;p&gt;So, go be creative! Don&#39;t forget to check out the other demos as well. There is plenty to learn from. I&#39;ll be back soon with a look at a &lt;a href=&quot;https://github.com/haxeui/haxeui-flixel&quot;&gt;UI library&lt;/a&gt; that recently got Flixel support.&lt;/p&gt;
+&lt;p&gt;Stay tuned.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>The Flixel Community</title>
+    <link href="https://haxeflixel.com/blog/10-HF-community/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/10-HF-community/</id>
+    <content type="html">&lt;p&gt;So you&#39;ve &lt;a href=&quot;http://haxeflixel.com/documentation/getting-started/&quot;&gt;downloaded Flixel&lt;/a&gt;, skipped around in the &lt;a href=&quot;http://haxeflixel.com/documentation/tutorial/&quot;&gt;tutorial&lt;/a&gt;, and are wondering what&#39;s next. You could start making that game you&#39;ve been thinking about. Or, better yet, make that game while also talking to other people who are using Flixel! They&#39;re not scary, I promise.&lt;/p&gt;
+&lt;h3 id=&quot;join-the-community&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/10-HF-community/#join-the-community&quot;&gt;&lt;span&gt;Join the community&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;There are a number of places where you&#39;ll find fellow Flixel-ers. It&#39;s really up to you where you want to hang. Here are some of the popular destinations:&lt;/p&gt;
+&lt;h3 id=&quot;forums&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/10-HF-community/#forums&quot;&gt;&lt;span&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/discussions&quot;&gt;Forums&lt;/a&gt;&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;If you&#39;re new and having a bit of trouble getting into things, &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/discussions&quot;&gt;the forums&lt;/a&gt; are a great place to start. Not only will any of your questions be answered, but you also have a nice place to start posting about what you&#39;re working on. Get some eyeballs on your cool new content and see what others are up to.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/10_community/forums.png&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;The forum also just looks really nice. Like, come on. That looks so good.&lt;/p&gt;
+&lt;h3 id=&quot;slack-and-discord&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/10-HF-community/#slack-and-discord&quot;&gt;&lt;span&gt;Slack and Discord&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Slack and Discord are both chat apps. Slack is often used in companies as a team messenger. Discord is built for gamers, with voice chat capabilities. As far as Flixel goes, the Discord channel has more activity, but &amp;quot;activity&amp;quot; can sometimes include 200 off-topic posts about philosophy. The Slack channel is more focused but quieter. Check &#39;em both out and see for yourself! It&#39;s 100 percent possible to be a part of both, even if Kantian philosophy isn&#39;t your thing.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discordapp.com/invite/rqEBAgF&quot;&gt;Click here&lt;/a&gt; to join the Discord. Slack requires an invitation, so feel free to message me on Twitter (&lt;a href=&quot;https://twitter.com/MSGhero16&quot;&gt;@MSGhero16&lt;/a&gt;) for one.&lt;/p&gt;
+&lt;p&gt;Both Slack and Discord have desktop apps, web interfaces, and mobile apps. Flixel community on any device.&lt;/p&gt;
+&lt;h3 id=&quot;twitter&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/10-HF-community/#twitter&quot;&gt;&lt;span&gt;Twitter&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23haxeflixel&amp;amp;src=typd&quot;&gt;#HaxeFlixel&lt;/a&gt;. That&#39;s all you need to be a part of this one. Add it to your tweets to let everyone know that you&#39;re using an awesome library. The &lt;a href=&quot;https://twitter.com/HaxeFlixel&quot;&gt;main Flixel account&lt;/a&gt; will see this and might retweet your posts, extending your reach. Search that hashtag to find what everyone else is up to, maybe find some inspiration or new devs to follow. Tweets even show up in the Slack and Discord channels!&lt;/p&gt;
+&lt;p&gt;Twitter has the most open audience of the community hangouts: not everyone on Twitter has heard of Flixel. So help spread the word!&lt;/p&gt;
+&lt;h3 id=&quot;github&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/10-HF-community/#github&quot;&gt;&lt;span&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel&quot;&gt;GitHub&lt;/a&gt;&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/2107&quot;&gt;GitHub&lt;/a&gt; is less of a hangout than the others. It&#39;s where the code of Flixel is. The purpose of GitHub is for the community to find issues in the code and help fix them. Now, &amp;quot;issues in the code&amp;quot; and &amp;quot;issues in &lt;em&gt;your&lt;/em&gt; code&amp;quot; are two different things. If you&#39;re struggling or having problems, the forums, Slack, or Discord are definitely better options if you&#39;re new to this kind of thing.&lt;/p&gt;
+&lt;img src=&quot;https://haxeflixel.com/images/blog/10_community/github.png&quot; width=&quot;100%&quot;&gt;
+&lt;p&gt;An example of GitHub being used properly is &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/2107&quot;&gt;this code fix&lt;/a&gt;. The code of Flixel was actually incomplete, not being able to handle a specific use-case. So a member of the community brought it up and then fixed it. If you&#39;re interested in contributing in this way, there are numerous resources you can look up for how to use GitHub and version-control software. Or ask someone in the Slack/Discord!&lt;/p&gt;
+&lt;p&gt;For an itemized version of this post, check out our &lt;a href=&quot;http://haxeflixel.com/documentation/community/&quot;&gt;community docs page&lt;/a&gt;. It also mentions a few more, less popular interaction channels such as our IRC and our Subreddit.&lt;/p&gt;
+&lt;p&gt;So there you have it. A good number of ways to talk to everyone else using Flixel. Get to chatting!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Introducing Nick (MSGHero)</title>
+    <link href="https://haxeflixel.com/blog/09-msghero-introduction-goals/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/09-msghero-introduction-goals/</id>
+    <content type="html">&lt;p&gt;Hi everyone!&lt;/p&gt;
+&lt;p&gt;I&#39;m Nick (&lt;a href=&quot;https://twitter.com/MSGhero16&quot;&gt;@MSGhero16&lt;/a&gt;), and I&#39;ll be working for the HaxeFlixel community now. My goal is to drum up engagement with our favorite library by writing regular blog posts and creating new demos.&lt;/p&gt;
+&lt;p&gt;If you&#39;re new around these parts, here&#39;s a brief intro to what this is all about.&lt;/p&gt;
+&lt;h3 id=&quot;(haxe)flixel&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/09-msghero-introduction-goals/#(haxe)flixel&quot;&gt;&lt;span&gt;(Haxe)Flixel&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;HaxeFlixel is a free cross-platform, open-source library that makes your game-making easier. It&#39;s a modernized version of &lt;a href=&quot;http://flixel.org/&quot;&gt;the original Flixel library for Flash&lt;/a&gt;, which was hugely popular back in the day for how easy it was to get started with.&lt;/p&gt;
+&lt;p&gt;(I&#39;ll be referring to HaxeFlixel as Flixel or HF)&lt;/p&gt;
+&lt;p&gt;To get started making your first game or your 30th prototype, check out the &lt;a href=&quot;http://haxeflixel.com/documentation/getting-started/&quot;&gt;Getting Started page&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;me&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/09-msghero-introduction-goals/#me&quot;&gt;&lt;span&gt;Me&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I started coding with Flash about seven years ago, inspired by Newgrounds games like &lt;a href=&quot;http://www.newgrounds.com/portal/view/661076&quot;&gt;Super Chibi Knight&lt;/a&gt; and &lt;a href=&quot;http://www.newgrounds.com/portal/view/429765&quot;&gt;Castle Crashing the Beard&lt;/a&gt;. I made &lt;a href=&quot;http://msghero.newgrounds.com/games/&quot;&gt;a few games&lt;/a&gt; that did pretty well overall, keeping the coding as a hobby for my spare time.&lt;/p&gt;
+&lt;p&gt;I moved on to Haxe when I learned I could get HTML5 and CPP builds for (almost) free. The transition from AS3 to OpenFL was as smooth as silk, and I quickly found and exclusively started using Flixel. I am currently working on a new game, &lt;a href=&quot;http://enkiangames.tumblr.com/&quot;&gt;Enki Adventures&lt;/a&gt;, in addition to numerous little demos and projects that may one day see the light of day.&lt;/p&gt;
+&lt;p&gt;Flixel is great for me because I no longer have to even think about updating and rendering. Input is taken care of; spritesheets are handled. Life is good.&lt;/p&gt;
+&lt;p&gt;I&#39;m also helping with a UI library called &lt;a href=&quot;https://github.com/haxeui/haxeui-core&quot;&gt;HaxeUI&lt;/a&gt; that I&#39;ll be talking about in the future, specifically the Flixel backend (&lt;a href=&quot;https://github.com/haxeui/haxeui-flixel&quot;&gt;haxeui-flixel&lt;/a&gt;) that ties into the core library. Stay tuned for that one.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/msg_intro/haxeui.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;short-term-goals&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/09-msghero-introduction-goals/#short-term-goals&quot;&gt;&lt;span&gt;Short-term goals&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;People love this library; it&#39;s tied with its dependency as the most popular haxelib on GitHub. It&#39;s used in many Ludum Dare games, and lots of devs swear by it. It&#39;s rather easy to pick up, with &lt;a href=&quot;http://haxeflixel.com/demos/&quot;&gt;all the demos&lt;/a&gt; highlighting each feature.&lt;/p&gt;
+&lt;p&gt;So as my first demo for the community, I&#39;m thinking about making a game. Something simple, open-source (of course), fun, and kinda cool. I plan on publishing it as an HTML5 game on Newgrounds and on other portals. That way, the demo will get plenty of views outside of its typical audience. Even more if it&#39;s actually good and gets front-paged, but y&#39;know, one step at a time.&lt;/p&gt;
+&lt;p&gt;At least on NG, I am seeing a lot of Flash anxiety from devs, especially from people who are just getting started with making games. Spreading the gospel of Flixel is something I am increasingly doing there, and the demo seems like a great next step. I believe that current and future devs can only benefit from giving Flixel a try.&lt;/p&gt;
+&lt;h3 id=&quot;long-term-goals&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/09-msghero-introduction-goals/#long-term-goals&quot;&gt;&lt;span&gt;Long-term goals&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;From the successful &lt;a href=&quot;https://www.indiegogo.com/projects/haxeflixel-games-software&quot;&gt;IndieGoGo campaign&lt;/a&gt;, it&#39;s clear that there is interest in seeing Flixel improve. Aside from that, however, contributions to the library as well as community management have been performed out of the infinite goodness of people&#39;s hearts.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/msg_intro/indiegogo.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ultimately, we&#39;d like to drum up support for our _ &lt;strong&gt;&lt;a href=&quot;https://www.patreon.com/haxeflixel&quot;&gt;Patreon&lt;/a&gt;&lt;/strong&gt; _, to give more people more reason to contribute. At the moment, the plan is to allocate funds to people who put in the hours on GitHub or in the general community, as well as positions to increase community size and support, like mine.&lt;/p&gt;
+&lt;p&gt;More people making more games with better versions of Flixel. That&#39;s what it&#39;s all about.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>OpenFL 5 compatibility status update</title>
+    <link href="https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/</id>
+    <content type="html">&lt;p&gt;Hey, Beeblerox here!&lt;/p&gt;
+&lt;p&gt;As you may know, HaxeFlixel is currently stuck with outdated versions of OpenFL and Lime due to some rendering incompatibilities, and updating it has turned out to be more work than expected. I want to give you a quick status update regarding my work towards making Flixel compatible with the latest versions of OpenFL again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I&#39;ve switched to working on a new branch and closed the &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/2032&quot;&gt;previous pull request&lt;/a&gt;. You can follow my progress in the new pull request &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/2068&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;flxmaterial&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/#flxmaterial&quot;&gt;&lt;span&gt;FlxMaterial&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I&#39;ve added a &lt;code&gt;FlxMaterial&lt;/code&gt; class (see &lt;a href=&quot;https://github.com/Beeblerox/flixel/blob/939a61d8f5b5e952324cdc5b80a1de3f13952956/flixel/graphics/FlxMaterial.hx&quot;&gt;here&lt;/a&gt;). Currently, it&#39;s just a single render-pass material with multiple textures support. This enables more complex effects like 2D-lighting (by using normal maps generated with tools like &lt;a href=&quot;https://www.codeandweb.com/spriteilluminator&quot;&gt;SpriteIlluminator&lt;/a&gt;). I&#39;ve updated the &lt;a href=&quot;https://github.com/Pixelbear/flixelighting&quot;&gt;flixelighting lib&lt;/a&gt; by &lt;a href=&quot;https://github.com/Pixelbear&quot;&gt;Pixelbear&lt;/a&gt; to make it work with the new material system on my fork &lt;a href=&quot;https://github.com/Beeblerox/flixelighting/tree/FlxMaterial/lighting&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is an example of how it can be used right now:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;// create regular sprite&lt;/span&gt;
+shadedWall = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlxSprite(&lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;200&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;assets/rock.png&amp;quot;&lt;/span&gt;);
+add(shadedWall);
+&lt;span class=&quot;hljs-comment&quot;&gt;// create custom lighting material and apply to our sprite&lt;/span&gt;
+lightMaterial = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlxLightingMaterial();
+teapot.material = lightMaterial;
+&lt;span class=&quot;hljs-comment&quot;&gt;// tune light material properties&lt;/span&gt;
+lightMaterial.setAmbient(FlxColor.YELLOW, &lt;span class=&quot;hljs-number&quot;&gt;0.2&lt;/span&gt;);
+&lt;span class=&quot;hljs-comment&quot;&gt;// add light source&lt;/span&gt;
+light = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlxLight(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0.3&lt;/span&gt;);
+light.lightColor = FlxColor.WHITE;
+add(light);
+lightMaterial.addLight(light);
+&lt;span class=&quot;hljs-comment&quot;&gt;// and create normal map and apply it to our material&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; normalMap:&lt;span class=&quot;hljs-type&quot;&gt;FlxNormalMap &lt;/span&gt;= &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlxNormalMap(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;assets/rock_n.png&amp;quot;&lt;/span&gt;);
+lightMaterial.addNormalMap(normalMap);
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;And here is the result:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/openfl5/lighting.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now a few more details about sprite materials.&lt;/p&gt;
+&lt;p&gt;Each sprite, tilemap, etc. now has a &lt;code&gt;material:FlxMaterial&lt;/code&gt; property. A material stores information about an object&#39;s blend mode, smoothing, shader to use, data for the shader (values of shader uniforms) and an array of textures to use. So when you do &lt;code&gt;sprite.blend = BlendMode.ADD;&lt;/code&gt;, in reality you change the blend mode &lt;em&gt;of its material&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;By default, objects have materials without shaders (shader is &lt;code&gt;null&lt;/code&gt;), which means that the renderer will use default shader and batch this object. If you do set a material&#39;s shader property, then the material will create a data object (&lt;code&gt;openfl.display.ShaderData&lt;/code&gt;) to store info about shader uniforms which you could set later. Say your shader has a &lt;code&gt;uFill&lt;/code&gt; uniform after setting &lt;code&gt;material.shader = myCustomShader&lt;/code&gt;, you can set the value of this uniform like this:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;material.data.uFill.value = [&lt;span class=&quot;hljs-number&quot;&gt;0.5&lt;/span&gt;];
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;Setting a material&#39;s shader you will break the batch, but if several sprites share the same material, then they will be batched together again.&lt;/p&gt;
+&lt;p&gt;The material class also has a &lt;code&gt;batchable:Bool&lt;/code&gt; property which is &lt;code&gt;true&lt;/code&gt; by default. This means that the renderer will try to batch objects with this material. But in case you have many sprites with different materials and you want them &lt;em&gt;not&lt;/em&gt; to be batched (to minimize the amount of data which will be reuploaded to the GPU), you could set it to &lt;code&gt;false&lt;/code&gt; to force this behavior (&lt;code&gt;sprite.material.batchable = false;&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id=&quot;multipass&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/#multipass&quot;&gt;&lt;span&gt;Multipass&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For more complex effects which require multi-pass rendering, I&#39;ve added &lt;code&gt;FlxRenderTarget&lt;/code&gt; which extends the &lt;code&gt;FlxSprite&lt;/code&gt; class. Basically it&#39;s the same as a &lt;code&gt;FlxSprite&lt;/code&gt;, but you can render other sprites to its texture through underlying OpenGL calls (not with BitmapData&#39;s &lt;code&gt;draw()&lt;/code&gt; method). I took the idea from &lt;a href=&quot;https://github.com/photonstorm/phaser/blob/master/v3/src/gameobjects/renderpass/RenderPass.js&quot;&gt;Phaser&#39;s RenderPass object&lt;/a&gt;, which has a very simple API. Here is a usage example for it:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;// create render target with the size of 256 by 512 pixels&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; renderTexture:&lt;span class=&quot;hljs-type&quot;&gt;FlxRenderTarget &lt;/span&gt;= &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;hljs-type&quot;&gt;&lt;/span&gt; FlxRenderTarget(&lt;span class=&quot;hljs-number&quot;&gt;256&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;512&lt;/span&gt;);
+&lt;span class=&quot;hljs-comment&quot;&gt;// specify camera which will be used for calculation of drawable sprites positions on this render texture.&lt;/span&gt;
+renderTexture.renderCamera = FlxG.camera;
+add(renderTexture);
+&lt;span class=&quot;hljs-comment&quot;&gt;// set object&amp;#x27;s renderTarget, so it will be rendered only on its texture and won&amp;#x27;t appear on any camera.&lt;/span&gt;
+teapot.renderTarget = renderTexture;
+&lt;span class=&quot;hljs-comment&quot;&gt;// set render pass shader.&lt;/span&gt;
+renderTexture.shader = myCustomShader;
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;camera-buffers&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/#camera-buffers&quot;&gt;&lt;span&gt;Camera buffers&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Since the first iteration of the new renderer I&#39;ve changed a lot of things. The biggest of them is the way objects are rendered to the camera and to the screen. Now, each camera has its own render texture to which all object are rendered, and then this texture is rendered to the screen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/openfl5/cameraBuffers.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This way of rendering helps minimize the number of array iterations, and also made it much easier for other features to be implemented (such as the &lt;code&gt;FlxRenderTarget&lt;/code&gt; class).&lt;/p&gt;
+&lt;h3 id=&quot;debug-rendering&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/#debug-rendering&quot;&gt;&lt;span&gt;Debug rendering&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I was disappointed by the performance of &lt;code&gt;drawDebug&lt;/code&gt; rendering on native targets, so I&#39;ve redone it and now it uses OpenGL instead of OpenFL&#39;s &lt;code&gt;Graphics&lt;/code&gt; API.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/openfl5/drawDebug.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;drawtriangles()&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/#drawtriangles()&quot;&gt;&lt;span&gt;drawTriangles()&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Last weekend I was busy with rewriting the &lt;code&gt;FlxStrip&lt;/code&gt; and &lt;code&gt;FlxTrianglesData&lt;/code&gt; classes. They are responsible for rendering complex meshes having hundreds of vertices.&lt;br&gt;
+As you may know, &lt;code&gt;FlxStrip&lt;/code&gt; is a subclass of &lt;code&gt;FlxSprite&lt;/code&gt;. It&#39;s only purpose was to call the &lt;code&gt;drawTriangles()&lt;/code&gt; method with &lt;code&gt;vertices&lt;/code&gt;, &lt;code&gt;uvs&lt;/code&gt;, &lt;code&gt;indices&lt;/code&gt; and &lt;code&gt;colors&lt;/code&gt; arguments specified by the user. Now, it&#39;s become much more flexible and easier to use for prototyping.&lt;br&gt;
+Each &lt;code&gt;FlxStrip&lt;/code&gt; object has a &lt;code&gt;data:FlxTrianglesData&lt;/code&gt; property which stores information about added vertices. In addition to getters and setters for &lt;code&gt;vertices&lt;/code&gt;, &lt;code&gt;indices&lt;/code&gt;, etc., it now has utility methods for adding a single vertex and a single triangle:&lt;/p&gt;
+&lt;pre class=&quot;position-relative&quot;&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; data:&lt;span class=&quot;hljs-type&quot;&gt;FlxTrianglesData &lt;/span&gt;= mySprite.data;
+&lt;span class=&quot;hljs-comment&quot;&gt;// set vertices info in old way&lt;/span&gt;
+data.vertices = Vector.ofArray([&lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;100.0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;100.0&lt;/span&gt;]);
+data.colors = Vector.ofArray([FlxColor.RED, FlxColor.GREEN, FlxColor.BLUE]);
+data.indices = Vector.ofArray([&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;]);
+&lt;span class=&quot;hljs-comment&quot;&gt;// and you can add it new way&lt;/span&gt;
+data.start();
+data.addVertex(&lt;span class=&quot;hljs-number&quot;&gt;200&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;300&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, FlxColor.RED);
+data.addVertex(&lt;span class=&quot;hljs-number&quot;&gt;300&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;300&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, FlxColor.GREEN);
+data.addVertex(&lt;span class=&quot;hljs-number&quot;&gt;200&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;400&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, FlxColor.BLUE);
+data.addTriangle(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;);
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// plus you can change data of individual vertex&lt;/span&gt;
+data.setVertex(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;, newX, newY, &lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;0.0&lt;/span&gt;, newColor);
+&lt;/code&gt;&lt;small class=&quot;highlight-language position-absolute top-0 end-0&quot;&gt;HAXE&lt;/small&gt;&lt;/pre&gt;
+&lt;p&gt;This new API allows to minimize the iterations through inner data arrays which will be uploaded to GPU, which should result in a noticeable performance improvement.&lt;br&gt;
+I also borrowed HaxePunk&#39;s code for GPU-accelerated rendering of graphics primitives (&lt;a href=&quot;https://github.com/MattTuttle/HaxePunk/blob/draw-hardware/haxepunk/utils/Draw.hx&quot;&gt;&lt;code&gt;Draw&lt;/code&gt; class&lt;/a&gt;) and adapted it to Flixel, so there is new &lt;code&gt;FlxDraw&lt;/code&gt; class for rendering lines, rectangle, circles, polygons and curves.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/openfl5/drawTriangles.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;next-steps&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/#next-steps&quot;&gt;&lt;span&gt;Next steps&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Next, I&#39;ll start updating the flixel-addons classes and demos. Meanwhile, I&#39;d be happy about any feedback you have for me - please post it in the &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/2068&quot;&gt;OpenFL 5 compatibility pull request&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel Mechanics</title>
+    <link href="https://haxeflixel.com/blog/07-haxeflixel-mechanics/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/07-haxeflixel-mechanics/</id>
+    <content type="html">&lt;p&gt;Hey everybody, Tim here to share something with you: Does this sound familiar?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;I wish I could remember how to do this one, small thing in HaxeFlixel, and that I didn&#39;t have to dig through a massive tutorial just to jog my memory.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Or, how about:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;What&#39;s the &#39;right&#39; way to handle this, again?&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yeah, we&#39;ve all been there! Wouldn&#39;t it be nice if there was some kind of interactive repository of just about every conceivable useful snippet of code that you could use to answer these, and other questions?&lt;/p&gt;
+&lt;p&gt;Well, what if I told you that it &lt;em&gt;already exists&lt;/em&gt;!?&lt;/p&gt;
+&lt;object width=&quot;725&quot; height=&quot;85&quot; data=&quot;https://haxeflixel.com/images/blog/title-logo.swf&quot; style=&quot;display: block !important;&quot;&gt;
+    &lt;param name=&quot;wmode&quot; value=&quot;transparent&quot;&gt;
+  &lt;h1&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/hfm-logo.svg&quot; width=&quot;64&quot; style=&quot;vertical-align:text-top;&quot; alt=&quot;HaxeFlixel Logo&quot;&gt; HaxeFlixel Mechanics&lt;/h1&gt;
+&lt;/object&gt;
+&lt;p&gt;A couple of years back now (wow, time flies!), I had the idea of putting together a website that would showcase a ton of little samples of HaxeFlixel code, along with a demonstration of that code in action. It took some time, but I was able to get a pretty good start on this thing, and I called it &lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel-mechanics&quot;&gt;&lt;em&gt;HaxeFlixel Mechanics&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://haxeflixel.com/images/blog/hfscreen.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The plan was to get a bunch of samples in the project, and then invite collaborators to add more to help grow and flesh it out... and then Real Life™ got in the way and the project got pushed aside...&lt;/p&gt;
+&lt;p&gt;This year, let&#39;s work together to get HFMechanics back up and running again. Let&#39;s add more demos and snippets, and try to fill it with lots more good stuff.&lt;/p&gt;
+&lt;p&gt;If you&#39;d like to lend a hand, join us over in &lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel-mechanics&quot;&gt;the repository&lt;/a&gt;. Add an issue for suggestions or requests, or submit pull requests for snippets you&#39;ve created so we can add them to the site! You can find more detailed information about contributing &lt;a href=&quot;https://github.com/HaxeFlixel/haxeflixel-mechanics/wiki/Contributing&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;If you want to check out the site in action, you can visit &lt;a href=&quot;http://hfmechanics.nfshost.com/&quot;&gt;http://hfmechanics.nfshost.com/&lt;/a&gt; for a live version!&lt;/p&gt;
+&lt;p&gt;Thanks! ...and be sure to tell your friends!&lt;/p&gt;
+&lt;p&gt;-&lt;a href=&quot;http://tims-world.com/&quot;&gt;Tim I Hely&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tim is a versatile developer from St Louis, Missouri, who has been using and contributing to HaxeFlixel since &lt;em&gt;at least&lt;/em&gt; 2013.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel 4.2.0</title>
+    <link href="https://haxeflixel.com/blog/06-HaxeFlixel-4-2-0/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/06-HaxeFlixel-4-2-0/</id>
+    <content type="html">&lt;p&gt;We&#39;ve just released HaxeFlixel 4.2.0! There are a lot of small additions and improvements, like exposing the &lt;a href=&quot;http://api.haxeflixel.com/flixel/system/FlxSound.html?#length&quot;&gt;&lt;code&gt;length&lt;/code&gt;&lt;/a&gt; of &lt;code&gt;FlxSound&lt;/code&gt; objects or allowing you to configure their &lt;a href=&quot;http://api.haxeflixel.com/flixel/system/FlxSound.html?#endTime&quot;&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Apart from that, we also fixed a lot of bugs and took care of some old annoyances, like not being able to control which tweens or timers are paused when entering a substate (see &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/1934&quot;&gt;#1934&lt;/a&gt; for a detailed explanation + usage example). This is also one of the improvements that caused &lt;a href=&quot;http://haxeflixel.com/documentation/upgrade-guide-4-0-0/&quot;&gt;some minor breaking changes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The debugger overlay became &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/1862&quot;&gt;even more powerful&lt;/a&gt; (and can now be opened with &lt;code&gt;F2&lt;/code&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://haxeflixel.com/images/blog/debuggerInteraction.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;You can find the full changelog &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/4.2.0/CHANGELOG.md&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks to everybody who contributed to this release in any way!&lt;/p&gt;
+&lt;p&gt;By the way, in case you hadn&#39;t noticed: we recently released new versions of flixel-tools and flixel-templates as well, &lt;a href=&quot;http://haxeflixel.com/documentation/visual-studio-code/&quot;&gt;&lt;strong&gt;adding support for Visual Studio Code!&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;what-happened-to-openfl-4-support%3F&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/06-HaxeFlixel-4-2-0/#what-happened-to-openfl-4-support%3F&quot;&gt;&lt;span&gt;What happened to OpenFL 4 support?&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Don&#39;t worry, it&#39;s still coming! There are two reasons why it&#39;s not a part of 4.2.0:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&#39;s simply &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/pull/1940&quot;&gt;not quite finished yet&lt;/a&gt; - we didn&#39;t want to delay the release of 4.2.0.&lt;/li&gt;
+&lt;li&gt;We wanted to have another really stable release before making such major changes to the rendering system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&#39;re aiming to have support for OpenFL 4 starting with the next minor release (4.3.0).&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Fundraiser 2016</title>
+    <link href="https://haxeflixel.com/blog/05-fundraiser/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/05-fundraiser/</id>
+    <content type="html">&lt;p&gt;HaxeFlixel is developed by and is now furtherly &lt;em&gt;funded&lt;/em&gt; by, a community of&lt;br&gt;
+people who have a geniune passion for the project.&lt;/p&gt;
+&lt;p&gt;We thank everyone for their contributions over the past 5 years,&lt;br&gt;
+whether it has been spreading the word, fundraising, admin, testing,&lt;br&gt;
+reviewing &amp;amp; submitting code or teaching and supporting others.&lt;br&gt;
+All this keeps inspiring the community to continue HaxeFlixel to help&lt;br&gt;
+make cross platform games easier and free!&lt;/p&gt;
+&lt;p&gt;Also, none of this fundraiser would have even started without the dedicated effort from&lt;br&gt;
+Lars Doucet of &lt;a href=&quot;https://www.leveluplabs.com/&quot;&gt;Level Up Labs&lt;/a&gt;&lt;br&gt;
+leading this entire campaign, so a big thanks to Lars!&lt;/p&gt;
+&lt;p&gt;With the larger donations made in the campaign, it has also made it possible for HaxeFlixel to have&lt;br&gt;
+&lt;em&gt;official sponsors&lt;/em&gt;! After we gather all the logos for the page, we will add a dedicated sponsors page.&lt;/p&gt;
+&lt;p&gt;Read more about the campaign on&lt;br&gt;
+&lt;a href=&quot;https://www.indiegogo.com/projects/haxeflixel-games-software&quot;&gt;our Indiegogo page&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel 4.1.0</title>
+    <link href="https://haxeflixel.com/blog/04-HaxeFlixel-4-1-0/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/04-HaxeFlixel-4-1-0/</id>
+    <content type="html">&lt;p&gt;HaxeFlixel 4.1.0 has just been released to Haxelib (as well as new versions of flixel-addons, ui and demos)! The &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/4.1.0/CHANGELOG.md&quot;&gt;full changelog&lt;/a&gt; contains a long list of minor improvements and bugfixes.&lt;/p&gt;
+&lt;p&gt;Unlike previous minor releases, this release is intended to be used as a &lt;strong&gt;drop-in-replacement - there are no significant breaking changes&lt;/strong&gt;. If you do encounter any issues, please let us know.&lt;/p&gt;
+&lt;p&gt;The most exciting addition is probably the ability use GLSL shaders on single sprites and tilemaps (only supported with OpenFL Next and on native targets however). You can test this feature by compiling the &lt;code&gt;FlxBunnyMark&lt;/code&gt; demo to Cpp or Neko with &lt;code&gt;-Dnext&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://haxeflixel.com/images/blog/shadedBunnies.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;why-flixel-is-currently-incompatible-with-openfl-4&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://haxeflixel.com/blog/04-HaxeFlixel-4-1-0/#why-flixel-is-currently-incompatible-with-openfl-4&quot;&gt;&lt;span&gt;Why Flixel is currently incompatible with OpenFL 4&lt;/span&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;New major versions of OpenFL and Lime have been released yesterday. Installing Flixel 4.1.0 will also install OpenFL 3.6.1 and Lime 2.9.1 because we have locked it to these versions (although &lt;em&gt;older&lt;/em&gt; versions still work).&lt;/p&gt;
+&lt;p&gt;This was necessary because this major release of OpenFL includes breaking changes that make it non-trivial for Flixel to support:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;drawTiles&lt;/code&gt; API has been removed - this is the API used by Flixel for rendering on native targets. There is a replacement API called &lt;code&gt;Tilemap&lt;/code&gt;, but it doesn&#39;t support all features Flixel needs / &lt;code&gt;drawTiles&lt;/code&gt; did.&lt;/li&gt;
+&lt;li&gt;OpenFL Legacy has been removed - not as much of a problem, Flixel has been compatible with OpenFL Next for a while (although still defaulting to Legacy).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Flixel will definitely be compatible with OpenFL 4 in the future, but this will take some time.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel 4.0.0</title>
+    <link href="https://haxeflixel.com/blog/03-HaxeFlixel-4-0-0/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/03-HaxeFlixel-4-0-0/</id>
+    <content type="html">&lt;p&gt;We are proud to announce the release of HaxeFlixel 4.0.0! This is without a doubt the biggest release yet, with nearly 2000 new commits on the core repository alone since the last release.&lt;/p&gt;
+&lt;p&gt;The highlights of this release are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;an improved API structure&lt;/li&gt;
+&lt;li&gt;a refactored rendering system&lt;/li&gt;
+&lt;li&gt;a much improved gamepad API&lt;/li&gt;
+&lt;li&gt;improved HTML5 support&lt;/li&gt;
+&lt;li&gt;improved OpenFL Next compatibility&lt;/li&gt;
+&lt;li&gt;an improved debugger console (now using hscript) with auto-completion&lt;/li&gt;
+&lt;li&gt;over 20 new demos&lt;/li&gt;
+&lt;li&gt;...and much more&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a more in-depth breakdown of the changes, have a look at our &lt;a href=&quot;https://github.com/HaxeFlixel/flixel/blob/master/CHANGELOG.md&quot;&gt;changelog&lt;/a&gt;. If you are mostly interested in the breaking changes to upgrade a project using HaxeFlixel 3.3.x, please refer to the &lt;a href=&quot;http://haxeflixel.com/documentation/upgrade-guide-4-0-0/&quot;&gt;upgrade guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to thank all contributors who helped with this release in any way, as well as &lt;a href=&quot;https://www.patreon.com/user?u=94916&amp;amp;ty=p&quot;&gt;our Patreon supporters&lt;/a&gt;. Check out the &lt;a href=&quot;https://www.patreon.com/posts/4421829&quot;&gt;Financial Summary 06/15 - 02/16&lt;/a&gt; blog post on Patreon if you&#39;re wondering what we do with your donations.&lt;/p&gt;
+&lt;p&gt;Going forward, there are two things we want to focus on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A stable API&lt;/strong&gt; - Breaking changes should be the exception and only happen in major releases. This also means following &lt;a href=&quot;http://semver.org/&quot;&gt;semantic versioning&lt;/a&gt; more closely.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;More frequent releases&lt;/strong&gt; - 4.0.0 took longer than it should have. We aim to have smaller releases in the future, but release more frequently.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The HaxeFlixel team&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel Patreon</title>
+    <link href="https://haxeflixel.com/blog/02-HaxeFlixel-patreon/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/02-HaxeFlixel-patreon/</id>
+    <content type="html">&lt;p&gt;Hello HaxeFlixel enthusiast, &lt;a href=&quot;https://twitter.com/gamedevsam&quot;&gt;gamedevsam&lt;/a&gt; here!&lt;/p&gt;
+&lt;p&gt;I have some big news to share with the HaxeFlixel community: &lt;a href=&quot;http://www.patreon.com/haxeflixel&quot;&gt;HaxeFlixel is now on Patreon&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Patreon is a crowd-funding platform that collects monthly donations to support artists and projects that people love. HaxeFlixel has joined Patreon to collect funds in order to reward contributions to the project, and give back to other open source projects that we think are awesome and deserve our support.&lt;/p&gt;
+&lt;p&gt;Asking the community to give us money wasn&#39;t an easy decision. HaxeFlixel is a free, open source project, and every single one of our developers loves working on the engine, no one expects to get paid. We don&#39;t want our users to think we might some day charge for features or platforms. Every aspect of HaxeFlixel is free, and will always be free, that&#39;s the nature of open source projects.&lt;/p&gt;
+&lt;p&gt;The main reason we are now accepting donations is because some members of our community asked us if they could give us money instead of contributing code to the engine (maybe because they&#39;ve had success with the engine and want to give back, or maybe they don&#39;t have time to contribute code). For some time I was worried that dealing with money could lead to tensions within the community, but after thinking long and hard about it, I realized that this could be an opportunity to attract new talent to the project, an opportunity to help other open source projects that are also seeking funding, and an opportunity to reward long term members of this community that made all of this possible in the first place.&lt;/p&gt;
+&lt;p&gt;Dealing with distribution of the funds will likely involve some trial and error. Most well funded open source projects rely on a company that charges for support. We don&#39;t have that luxury, so I had to come up with a fair way to distribute the funds.&lt;/p&gt;
+&lt;p&gt;Here&#39;s how the money will be distributed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;25% - US Taxes&lt;/li&gt;
+&lt;li&gt;25% - Website hosting costs (might change)&lt;/li&gt;
+&lt;li&gt;50% - Development contributions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first two points are pretty straight forward. Since I live in the US, I have to pay taxes on any money I receive in exchange for a service (in my case 25%). Another 25% will be sent to Chris (impaler) to cover the expense he incurs from hosting &lt;a href=&quot;http://HaxeFlixel.com&quot;&gt;HaxeFlixel.com&lt;/a&gt; website. This might seem high to some of you, but keep in mind Chris has been hosting the website out of his own pocket for the last 2 years. This percentage might change with time (depending on how much money is raised, or if Chris wishes to receive a lesser amount).&lt;/p&gt;
+&lt;p&gt;The final point is a bit vague, and that is on purpose. Instead of me deciding what to do with all the money, I&#39;d like the community to have the power to decide who should get money and for what reason. If you think HaxeFlixel should reward someone monetarily for a contribution he/she made to the project, or if you know of a great open source project that could use our funding, &lt;a href=&quot;http://sambatista.com/contact&quot;&gt;send me an email&lt;/a&gt; with the subject line &lt;strong&gt;HaxeFlixel Funding Request&lt;/strong&gt;, and include a description or a link to a web page that explains why this person or project deserves funding. If you think a person deserves funding for a contribution he/she made, don&#39;t forget to &lt;strong&gt;include their contact, or PayPal information in your request&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;At this point I&#39;m the one responsible for making decisions how the money will be spent, and I will have the final say on whether to distribute the funds (and how much). Obviously if the person making the request is a long time supporter of the project, their request will be more likely to be fulfilled.&lt;/p&gt;
+&lt;p&gt;As a final note, anyone within the owners team has access to the Patreon account, so if I don&#39;t do this properly, or something happens to me, someone else can easily take over this role.&lt;/p&gt;
+&lt;p&gt;If you have any questions or concerns please get in touch with me via my &lt;a href=&quot;http://sambatista.com/contact&quot;&gt;website&#39;s contact form&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks for using HaxeFlixel, and please consider &lt;a href=&quot;http://www.patreon.com/haxeflixel&quot;&gt;supporting the project on Patreon&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Tilesheet rendering</title>
+    <link href="https://haxeflixel.com/blog/01-HaxeFlixel-rendering/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/01-HaxeFlixel-rendering/</id>
+    <content type="html">&lt;p&gt;Hi, &lt;a href=&quot;https://github.com/gamedevsam&quot;&gt;gamedevsam&lt;/a&gt; here, I&#39;m a developer and evangelist of HaxeFlixel.&lt;/p&gt;
+&lt;p&gt;The following blog post was written by &lt;a href=&quot;https://github.com/Beeblerox&quot;&gt;Beeblerox&lt;/a&gt; (the original creator of HaxeFlixel) and was originally posted on his blog as a two part article (&lt;a href=&quot;http://beeblerox.tumblr.com/post/87678385538/tilesheet-rendering-part-1&quot;&gt;part 1&lt;/a&gt; and &lt;a href=&quot;http://beeblerox.tumblr.com/post/87778663958/tilesheet-rendering-part-2-some-details-about-flixel&quot;&gt;part 2&lt;/a&gt;). In it, he goes into detail on how HaxeFlixel&#39;s rendering system is built on top of OpenFL&#39;s Tilesheet API.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;I want to tell you about tilesheet rendering in flixel, which is used on native targets by default (since some of you might me intereseted in it).&lt;/p&gt;
+&lt;p&gt;But let’s start from Tilesheet API and how you work with it (Feel free to skip this part if you know it already).&lt;/p&gt;
+&lt;p&gt;Tilesheet class allows you to draw multiple regions of image in one drawcall reasonably fast. These regions can be transformed (rotated, scaled, skewed) and tinted, plus they can have several blend modes (the most usefull is addition mode, which can be used for effects like fire and smoke).&lt;/p&gt;
+&lt;p&gt;Let’s assume that you have some image you want to draw - “assets/tiles.png”.&lt;/p&gt;
+&lt;p&gt;We are starting from instantiation of Tilesheet object:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;tilesheet = new Tilesheet(Assets.getBitmap(“assets/tiles.png”));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we should define region of image (or tile) we want to draw. This is achieved with addTileRect() method, which takes 2 arguments:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the first one is a Rectangle object - it is actual region of image to draw&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and the second one is a Pont object, which define “center” point of a tile. Added tile will be rotated around this point, if we apply rotation transformation to it. This point should be inside of a tile (or it will be bounded), so if you add tile with the size 32x32 pixels and the center at (50; 16), then actual center point will be at (32; 16).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Center point argument is optional, and if you omit it then tile will be rotated around it’s middle point.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;// adding tiles to the tilesheet
+tileID1 = tilesheet.addTileRect(newRectangle(0, 0, 32, 32), new Point(16, 16));
+tileID2 = tilesheet.addTileRect(newRectangle(32, 0, 32, 32), new Point(16, 16));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we should have some Graphics object to draw our tiles on.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;sprite = new Sprite();
+Lib.current.stage.addChild(sprite);
+graphicsToUse = sprite.graphics;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To draw the tiles on screen we need three things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Graphics to draw then on&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Draw flag which tells to the program what tile transformations we want to use on our tiles in this drawcall.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The simplest case is no transformation (we just draw rectangular region of image on specified position):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;drawFlag = 0;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can add tinting:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;drawFlag |= Tilesheet.TILE_RGB;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can add TILE_ALPHA flag to be able to change tile’s alpha:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;drawFlag |= Tilesheet.TILE_ALPHA;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are also &lt;code&gt;TILE_ROTATION&lt;/code&gt; and &lt;code&gt;TILE_SCALE&lt;/code&gt; (for uniform tile scaling) constants for “simple” transformations of a tile. But if you want to achieve some more complex transformation (like non-uniform scaling or skewing) then you have &lt;code&gt;TILE_TRANS_2x2&lt;/code&gt; constant.&lt;/p&gt;
+&lt;p&gt;And finally there are &lt;code&gt;TILE_BLEND_ADD&lt;/code&gt; constant for addition blending and &lt;code&gt;TILE_SMOOTH&lt;/code&gt; for smoothing scaled up graphics.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;We also need actual information about tile’s type, position and transformation. The second argument of drawTiles() method - data array - is responsible for it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The amount of data for each tile depends on drawFlags value:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if drawFlags is 0, then you should specify only tile’s position and id:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;data = [x1, y1, tileID1, x2, y2, tileID2];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;if you’re using uniform scale and rotation then data array will look like this:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;data = [x1, y1, tileID1, scale1, angle1, x2, y1, tileID2, scale2, angle2];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;if you’re adding tinting and alpha:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;data = [x1, y1, tileID1, scale1, angle1, red1, green1, blue1, alpha1,  x2, y1, tileID2, scale2, angle2, red2, green2, blue2, alpha2];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where red, green, blue and alpha are values between 0 and 1 (result color of each pixel will be product of these coefficients and original pixel colors).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;and the most complex case is when you’re using &lt;code&gt;TILE_TRANS_2x2&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;data = [x, y, tileID1, a, b, c, d, red, green, blue, alpha];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where (a, b, c, d) are the transfromation matrix coefficients. You can get their values in two ways:&lt;/p&gt;
+&lt;p&gt;a) by using Matrix class. For example, if you want to have non-uniform scale and rotation for your tile, then you can get it this way:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;matrix.identity();
+matrix.scale(scaleX, scaleY);
+matrix.rotate(angle);
+data = [x, y, tileID1, matrix.a, matrix.b, matrix.c, matrix.d, red, green, blue, alpha];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;b) or manually if you want to make some optimizations. That’s why drawing methods in flixels are so bloated - i just wanted to except some redundant calculations from it.&lt;/p&gt;
+&lt;p&gt;So finally you can draw your tiles on the screen:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;tilesheet.drawTiles(graphicsToUse, data, false, drawFlags);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;If you want to see some working example, then i recommend you to look at Tiles sample project in nme library: &lt;a href=&quot;https://github.com/haxenme/nme/tree/master/samples/20-Tiles&quot;&gt;https://github.com/haxenme/nme/tree/master/samples/20-Tiles&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Now when we know everything we need about Tilesheet class, it’s time to talk about flixel renderer a bit.&lt;/p&gt;
+&lt;p&gt;As you remember we need Graphics object to render our tiles. FlxCamera objects contain flashSprite:Sprite variable inside which we have canvas:Sprite which graphics we use for rendering on the camera. We need canvas spite to be nested inside flashSprite for easy camera rotations. So if you don’t plan to implement such feature then you might use just one sprite without nesting.&lt;/p&gt;
+&lt;p&gt;We also need data to render and render flags, which reflect what types of transformations (like rotation and tinting) apply to rendered tiles. This information is gathered every render cycle: we iterate through each sprite we have in our game. But to keep drawCalls as low as possible we need some sort of batching, which tries to draw everything with the same graphics in one draw call, and when we change graphics it breaks the batch and starts another. This functionality is split between FlxCamera. FlxSprite class and subclasses and DrawStackItem helper class.&lt;/p&gt;
+&lt;p&gt;DrawStackItem objects store information about current batch: Tilesheet object to use for rendering, draw data array, information about draw flags (do we need to tint our tiles in the batch, or use blending), and the link to next DrawStackItem object (DrawStackItems are organized into linked list). Each camera have _headOfDrawStack variable which is head of DrawStackItems linked list.&lt;/p&gt;
+&lt;p&gt;FlxSprite draw() method does the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;it gets DrawStackItem object to use from current FlxCamera. The result of this operation depends on sprite’s graphics, color and blend mode. So if one of these factors isn’t equal to the properties of current DrawStackItem, then current DrawStackItem will be “finalized” (breaks current batch) and new/empty DrawStackItem will be returned to sprite.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sprite will add info about itself in current DrawStackItem (positio, tileID, transformation matrix coefficients, tinting and alpha).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After we iterate through all sprites in our game state, game engine start actual render process.&lt;/p&gt;
+&lt;p&gt;It iterate through each camera, clear graphics of cameras, fill them with background color (with graphics.drawRect() method), and then each camera iterate through its list of DrawStackItems. This iteration stage takes DrawStackItem’s tilesheet, draw data, draw flag and render it with drawTiles() method on camera’s canvas.graphics.&lt;/p&gt;
+&lt;p&gt;That is how tilesheet rendering works in flixel. Feel free to ask me questions about it.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You can reach Beeblerox on Twitter &lt;a href=&quot;https://twitter.com/teormech&quot;&gt;@teormech&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>HaxeFlixel now has a blog!</title>
+    <link href="https://haxeflixel.com/blog/00-haxeflixel-has-a-blog/" />
+    <updated>2025-01-31T17:59:20Z</updated>
+    <id>https://haxeflixel.com/blog/00-haxeflixel-has-a-blog/</id>
+    <content type="html">&lt;p&gt;The HaxeFlixel project and it&#39;s active community of game dev enthusiasts, have opened this&lt;br&gt;
+blog up to post about the latest updates, news and anything awesome happening related to&lt;br&gt;
+making games with HaxeFlixel and the projects around it.&lt;/p&gt;
+&lt;p&gt;Although most of the HaxeFlixel activity happens on Github, Slack chat (ask for an invite)&lt;br&gt;
+and the @haxeflixel twitter and our google groups, this is resource can help keep users&lt;br&gt;
+up to date on the most important updates and changes to the codebase and community.&lt;/p&gt;
+&lt;p&gt;Like everything HaxeFlixel, this blog is open for contributions from github by editing the&lt;br&gt;
+markdown files, just like our &lt;a href=&quot;https://github.com/HaxeFlixel/flixel-docs&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Feel free to fork and improve these blog posts and the website itself.&lt;/p&gt;
+&lt;p&gt;So if you have ideas or requests shoot them at us ;)&lt;/p&gt;
+</content>
+  </entry>
+</feed>

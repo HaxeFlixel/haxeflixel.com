@@ -1,0 +1,1259 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> 3 - Groundwork | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" 3 - Groundwork | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/documentation/groundwork/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#3b43ff">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+					<a
+						class="d-lg-none ms-2 fs-2 col"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#doc-menu-offcanvas"
+						aria-controls="doc-menu-offcanvas"
+						><i class="bi-book d-inline-block align-text-top"></i
+					></a>
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<div class="row">
+	<div class="col-md-3">
+		<div class="offcanvas-lg offcanvas-start" data-bs-scroll="true" id="doc-menu-offcanvas">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasLabel"><i class="bi-book"></i> Documentation</h5>
+		<button
+			type="button"
+			class="btn-close"
+			data-bs-dismiss="offcanvas"
+			data-bs-target="#doc-menu-offcanvas"
+			aria-label="Close"></button>
+	</div>
+
+	<div class="accordion overflow-y-auto " style="max-height:85vh" id="doc-menu-accordion">
+		
+
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsegetting_started"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsegetting_started">
+						Getting Started
+					</button>
+				</h2>
+
+				<div
+					id="collapsegetting_started"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/getting-started/">
+									Getting Started
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/install-haxeflixel/">
+									Install HaxeFlixel
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/hello-world/">
+									Hello World
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/visual-studio-code/">
+									Visual Studio Code
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/where-to-now/">
+									Where to now?
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsetutorial"
+						type="button"
+						class="accordion-button fw-bold "
+						data-bs-toggle="collapse"
+						aria-expanded="true"
+						aria-controls="collapsetutorial">
+						Tutorial
+					</button>
+				</h2>
+
+				<div
+					id="collapsetutorial"
+					class="accordion-collapse collapse show">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/tutorial/">
+									Tutorial
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/the-power-of-haxeflixel/">
+									The Power of HaxeFlixel
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/setup/">
+									1 - Setup
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/creating-a-new-project/">
+									2 - Creating a new project
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action active fw-bold"
+									href="/documentation/groundwork/">
+									3 - Groundwork
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/sprites-and-animation/">
+									4 - Sprites and Animation
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/creating-a-tilemap/">
+									5 - Creating a Tilemap
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/loading-the-tilemap/">
+									6 - Loading the Tilemap
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/zoom-and-cameras/">
+									7 - Zoom and Cameras
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/pickups/">
+									8 - Pickups
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/enemies-and-basic-ai/">
+									9 - Enemies and Basic AI
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/ui-and-combat/">
+									10 - UI and Combat
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/game-over-menu/">
+									11 - Game Over Menu
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/sound-and-music/">
+									12 - Sound and Music
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/multiple-platforms/">
+									13 - Multiple Platforms
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/polish/">
+									14 - Polish
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/conclusion/">
+									Conclusion
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsehandbook"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsehandbook">
+						HaxeFlixel Handbook
+					</button>
+				</h2>
+
+				<div
+					id="collapsehandbook"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-handbook/">
+									HaxeFlixel Handbook
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-display-list/">
+									Flixel Display List
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxgroup/">
+									FlxGroup
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxsprite/">
+									FlxSprite
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxstate/">
+									FlxState
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxsave/">
+									FlxSave
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxtween/">
+									FlxTween
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-conditionals/">
+									HaxeFlixel Conditionals
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-targets/">
+									HaxeFlixel Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/desktop-targets/">
+									Desktop Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/mobile-targets/">
+									Mobile Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/android/">
+									Android
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/ios/">
+									iOS
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/neko/">
+									Neko
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/keyboard/">
+									Keyboard
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/mouse/">
+									Mouse
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/gamepads/">
+									Gamepads
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/actions/">
+									Actions
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/troubleshooting/">
+									Troubleshooting
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/debugger/">
+									Debugger
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/debugger-interaction/">
+									Debugger - Interaction
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapseresources"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapseresources">
+						Resources
+					</button>
+				</h2>
+
+				<div
+					id="collapseresources"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/resources/">
+									Resources
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/cheat-sheet/">
+									Cheat Sheet
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/openfl-project-xml-format/">
+									XML Project Format
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/game-development-tools/">
+									Game Development Tools
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/compiler-conditionals/">
+									Compiler Conditionals
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/using-haxelib/">
+									Using Haxelib
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/faq/">
+									FAQ
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/community-tutorials/">
+									Community Tutorials
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsecommunity"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsecommunity">
+						Community
+					</button>
+				</h2>
+
+				<div
+					id="collapsecommunity"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/community/">
+									Community
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/about/">
+									About
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/why-haxe/">
+									Why a Haxe Version
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/introduction-to-haxe/">
+									Introduction to Haxe
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/introduction-to-openfl/">
+									Introduction to OpenFL
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/contributing/">
+									Contributing
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/code-contributions/">
+									Code Contributions
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/code-style/">
+									Code Style
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/website-docs/">
+									HaxeFlixel Website
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/upgrade-guide-3-x/">
+									Upgrade Guide 3.x
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-addons/">
+									Flixel Addons
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/upgrade-guide-4-0-0/">
+									Upgrade Guide 4.0.0
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-tools/">
+									Flixel Tools
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/install-development-flixel/">
+									Install development Flixel
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+		
+	</div>
+
+	<div class="col-lg-9 doc-content" role="main">
+		<h1 class="title">3 - Groundwork</h1>
+		<ul class="nav justify-content-end">
+			
+			<a
+				href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/./01_tutorial/04-3-groundwork.html.md/"
+				class="nav-link btn-edit"
+				target="_blank">
+				<i class="bi-pencil"></i>
+				Edit</a
+			>
+		</ul>
+		<p>Now it's time to think about what we actually want our game to be, and how we're going to pull it off.</p>
+<p>The game we're going to help you build will be a very simple top-down 'dungeon crawler' game, where the player controls a single character, moves around a map, fights enemies and collects gold.</p>
+<p>So, what does that all actually translate to in HaxeFlixel?</p>
+<ul>
+<li>First, we're going to need to setup our 'world' - this just means we'll need to have a <code>FlxState</code> where all the action happens, and figure out what we're going to put in the world.</li>
+<li>For the dungeon itself, it will simply be a <code>FlxTilemap</code> - and we'll draw our maps in another tool.</li>
+<li>We will need a <code>FlxSprite</code> to represent the player on the screen. This will be the sprite that player will be able to control.</li>
+<li>Enemies will be <code>FlxSprite</code> objects as well, and we'll have a 'fancy' way to have different types of enemies.</li>
+<li>We'll also need a HUD/Interface for the player to do stuff with and see what's going on. These will be a combination of <code>FlxGroup</code>, <code>FlxSprite</code>, <code>FlxText</code>, <code>FlxButton</code> objects and some other things.</li>
+</ul>
+<p>We'll tackle each of these things one-by-one.</p>
+<p>First up, let's create a simple menu. Eventually, we'll want a fancy <code>MenuState</code> with a button for options, but for right now, we'll just have a button that says &quot;Play&quot; and switches to our <code>PlayState</code>.</p>
+<ol>
+<li>
+<p>Go ahead and delete the line we added for our &quot;Hello World&quot; test within the <code>PlayState</code>.</p>
+</li>
+<li>
+<p>Now, right-click the <code>source</code> folder in VSCode's Explorer, select <code>New File</code> and enter <code>MenuState.hx</code>.</p>
+<p>Then, you can just copy the content of <code>PlayState.hx</code> over, but replace the class name with <code>MenuState</code>:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-title class_"><span class="hljs-keyword">class</span> <span class="hljs-title">MenuState</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span> <span class="hljs-type">FlxState</span></span>
+</span>{
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>Right after the class declaration, we're going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new <code>FlxButton</code> variable to use as our 'play' button. So, type:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> playButton:<span class="hljs-type">FlxButton</span>;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>As before with <code>FlxText</code>, the import should be added automatically. If not, you can also add missing imports via the light bulb that should appear after saving the file when you have your cursor over <code>FlxButton</code>.</p>
+</li>
+<li>
+<p>Now, type the following on the lines before or after <code>super.create();</code> within the <code>create()</code> method:</p>
+<pre class="position-relative"><code class="hljs">playButton = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxButton(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">&quot;Play&quot;</span>, clickPlay);
+add(playButton);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>(<code>import flixel.ui.FlxButton;</code>)</p>
+<p>This creates a <code>FlxButton</code> object and assigns it to the <code>playButton</code> variable. We're telling it to make the button at position <code>(0, 0)</code> (the top left corner of the screen), to make it say &quot;Play&quot; on it, and to call the function <code>clickPlay()</code> when a user clicks the button (we yet have to implement <code>clickPlay()</code>).<br>
+Then we add the object to our state so that it can be shown and interacted with.<br>
+Don't worry about the position of the button right now, we're going to move it in a second.</p>
+</li>
+<li>
+<p>Now we need to define our <code>clickPlay()</code> function. Somewhere in the class, outside of any existing functions, type:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">clickPlay</span></span>()
+{
+	FlxG.switchState(<span class="hljs-keyword">new</span><span class="hljs-type"></span> PlayState());
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>(<code>import flixel.FlxG;</code>)</p>
+<p>This function calls <code>FlxG.switchState()</code>, which switches the state from whatever the current state is (<code>MenuState</code>) to a new instance of <code>PlayState</code>.</p>
+</li>
+<li>
+<p>Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we're missing a few things.<br>
+First, we want the button to be in a nicer place. Sure, we could set the <code>x</code> and <code>y</code> coordinates when we create it, but there's a simpler way to do it.</p>
+<p>Back in <code>create()</code>, add a new line somewhere after we create our <code>FlxButton</code>, and before <code>super.create();</code> type:</p>
+<pre class="position-relative"><code class="hljs">playButton.screenCenter();
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p><code>screenCenter()</code> is a function which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.</p>
+</li>
+<li>
+<p>Next, we need to make sure that the game actually starts with our <code>MenuState</code>. Open <code>Main.hx</code> and replace the <code>PlayState</code> reference with <code>MenuState</code>.</p>
+</li>
+<li>
+<p>If you test your game out now, it should go straight to a black screen with our 'Play' button in the middle, and clicking the button will take you to another black screen. If that's what you get, it works! So far, so good!</p>
+</li>
+</ol>
+<p>Next, let's make a simple player sprite that you can move around on the screen.</p>
+<p>First, we need to make a new <code>Player</code> class. You can think of classes as sort of a functional template. You can use them as-is in a project, but you also have the ability to extend them into new versions. You can kind of think of it as using tracing paper - when you extend a class, you put a new sheet of tracing paper on top - you can still see and use all the stuff in the original class (unless you draw over it), and you can add your own stuff.</p>
+<p>We're going to be extending the <code>FlxSprite</code> class to create our <code>Player</code> class.</p>
+<ol>
+<li>
+<p>Create another new file in the <code>source</code> folder, this time called <code>Player.hx</code>.</p>
+</li>
+<li>
+<p>Let's create a very basic class which extends <code>FlxSprite</code>:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">package</span>;
+
+<span class="hljs-keyword">import</span> flixel.FlxSprite;
+
+<span class="hljs-title class_"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span> <span class="hljs-type">FlxSprite</span></span>
+</span>{
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span></span>(x:<span class="hljs-type">Float </span>= <span class="hljs-number">0</span>, y:<span class="hljs-type">Float </span>= <span class="hljs-number">0</span>)
+	{
+		<span class="hljs-keyword">super</span>(x, y);
+	}
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>With classes, we use the <code>super</code> keyword to refer to the parent class. So by calling <code>super(x, y)</code> within our constructor (called <code>new</code>), we are basically saying to go up the chain to our parent class, in this case <code>FlxSprite</code>, and call <em>its</em> constructor, passing it the <code>x</code> and <code>y</code> arguments that were passed to us.</p>
+</li>
+<li>
+<p>Next, we'll want to create a placeholder image to show us where our sprite is, so under <code>super(x, y);</code>, add:</p>
+<pre class="position-relative"><code class="hljs">makeGraphic(<span class="hljs-number">16</span>, <span class="hljs-number">16</span>, FlxColor.BLUE);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>(<code>import flixel.util.FlxColor;</code>)</p>
+<p>All we're doing here is saying that we want to make this sprite's graphic be a 16x16 pixel blue square.</p>
+</li>
+<li>
+<p>For right now, we just want to get the <code>Player</code> class initialized, make sure that it works, and try adding it to our <code>PlayState</code>. It's not going to move or do anything yet, that will come in a minute. So save the changes to our <code>Player</code> class, and go back to the <code>PlayState</code>.<br>
+We need to define our <code>Player</code> variable, so underneath the class line, add:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> player:<span class="hljs-type">Player</span>;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>And in <code>create()</code>, before <code>super.create();</code> add:</p>
+<pre class="position-relative"><code class="hljs">player = <span class="hljs-keyword">new</span><span class="hljs-type"></span> Player(<span class="hljs-number">20</span>, <span class="hljs-number">20</span>);
+add(player);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>This simply assigns a new instance of our <code>Player</code> sprite to our <code>player</code> variable, telling it to be placed at <code>(20, 20)</code> on the screen, and adds it to our <code>PlayState</code>.</p>
+</li>
+<li>
+<p>If you run your project right now, you should see our blue player on the screen!</p>
+<p><img src="../images/01_tutorial/browser_blue_square.png" alt=""></p>
+<p>Now let's get it to move around!</p>
+</li>
+</ol>
+<p>So, how do we actually want our player to move around on the screen? Let's support both arrow keys and WASD keys, in 8 directions: up, down, left, right, and diagonally. The player should move at a relatively fixed speed, but have a slight deceleration before stopping to give it just a little bit of 'feeling'.</p>
+<p>First, define our player's movement speed and deceleration amounts:</p>
+<ol>
+<li>
+<p>In your player class, above the constructor, add:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">static</span> <span class="hljs-keyword">inline</span> <span class="hljs-keyword">var</span> SPEED:<span class="hljs-type">Float </span>= <span class="hljs-number">100</span>;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>Since this is a constant value that won't change, we make it <code>static inline</code> as well as following the <code>UPPER_CASE</code> naming convention.</p>
+<p>Then, in the constructor, after you call <code>makeGraphic()</code>, we need to add some <code>drag</code>:</p>
+<pre class="position-relative"><code class="hljs">drag.x = drag.y = <span class="hljs-number">800</span>;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p><code>drag</code>, in HaxeFlixel, is sort of a way to slow down an object when it's not being moved. This will prevent our player sprite from just running forever in the same direction when the user stops pressing any movement keys.<br>
+This is somewhat arbitrary based on what 'feels' right - we can come back and tweak the numbers later on.</p>
+</li>
+<li>
+<p>While there are plenty of ways to handle player movement, it can be simpler to add it to the <code>Player</code> class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">updateMovement</span></span>()
+{
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+</li>
+<li>
+<p>First, inside that new function, we want to define some helper variables so we can easily tell which keys were pressed later on in the function:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> up:<span class="hljs-type">Bool </span>= <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">var</span> down:<span class="hljs-type">Bool </span>= <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">var</span> left:<span class="hljs-type">Bool </span>= <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">var</span> right:<span class="hljs-type">Bool </span>= <span class="hljs-literal">false</span>;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+</li>
+<li>
+<p>Next, we want to actually find out which of these directions the player wants to move in. We'll do that by checking whether certain keys are currently being pressed:</p>
+<pre class="position-relative"><code class="hljs">up = FlxG.keys.anyPressed([UP, W]);
+down = FlxG.keys.anyPressed([DOWN, S]);
+left = FlxG.keys.anyPressed([LEFT, A]);
+right = FlxG.keys.anyPressed([RIGHT, D]);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>(<code>import flixel.FlxG;</code>)</p>
+<p>The <code>anyPressed()</code> function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of keys (their names) and it will return <code>true</code> if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.</p>
+</li>
+<li>
+<p>Next, we want to cancel out opposing directions - if the player is pressing up and down at the same time, we're not going to move anywhere:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">if</span> (up &amp;&amp; down)
+	up = down = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">if</span> (left &amp;&amp; right)
+	left = right = <span class="hljs-literal">false</span>;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+</li>
+<li>
+<p>Next, we'll want to do something when the player is actually moving:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">if</span> (up || down || left || right)
+{
+
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+</li>
+<li>
+<p>After that, we need to determine which direction to move the player in, and by how much. A common mistake in games that allow diagonal movement is something like this:</p>
+<pre class="position-relative"><code class="hljs">velocity.x = speed;
+velocity.y = speed;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">the way triangles work</a>. So, for our player to move, we're not just going to set its <code>velocity</code> to <code>speed</code> - that would be too easy! Instead, we're going to calculate exactly what its velocity should be with angles!</p>
+<p>The first part of this is to figure out what angle we want to have the player move based on the keys that are being pressed. With our player sprite's asset, angle 0 is to the right, and -90 (or 270) is up.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> newAngle:<span class="hljs-type">Float </span>= <span class="hljs-number">0</span>;
+<span class="hljs-keyword">if</span> (up)
+{
+	newAngle = <span class="hljs-number">-90</span>;
+	<span class="hljs-keyword">if</span> (left)
+		newAngle -= <span class="hljs-number">45</span>;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (right)
+		newAngle += <span class="hljs-number">45</span>;
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (down)
+{
+	newAngle = <span class="hljs-number">90</span>;
+	<span class="hljs-keyword">if</span> (left)
+		newAngle += <span class="hljs-number">45</span>;
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (right)
+		newAngle -= <span class="hljs-number">45</span>;
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (left)
+	newAngle = <span class="hljs-number">180</span>;
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (right)
+	newAngle = <span class="hljs-number">0</span>;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>All this will do is create a temporary variable to hold our angle, and then, based on which direction(s) the player is pressing, set that angle to the direction we plan on moving the player.</p>
+</li>
+<li>
+<p>Now that we know which angle the player should be moving in, we need to figure out with how much <code>velocity</code> it needs to move that way. We're going to do this by setting <code>velocity.x</code> to <code>speed</code> and <code>velocity.y</code> to <code>0</code>. Then we rotate that point around <code>(0, 0)</code> by <code>newAngle</code> degrees.</p>
+<pre class="position-relative"><code class="hljs">velocity.setPolarDegrees(SPEED, newAngle);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>(<code>import flixel.math.FlxPoint;</code>)</p>
+<p>...and that's the end of our <code>updateMovement()</code> function!</p>
+</li>
+<li>
+<p>The only thing left to do is to <code>override</code> the <code>update()</code> function in <code>Player.hx</code> as well and call <code>updateMovement()</code> from it. VSCode can generate the necessary boilerplate code for you, just type <code>override</code> and a space, after which a completion popup should appear:</p>
+<p><img src="../images/01_tutorial/vscode_override_completion.png" alt=""></p>
+<p>Select <code>update</code> and press enter.</p>
+<p>Now you just need to add the function call, after which it should look like this:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">override</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed:<span class="hljs-type">Float</span>)
+{
+	updateMovement();
+	<span class="hljs-keyword">super</span>.update(elapsed);
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>The <code>update()</code> function, as you should remember, is called each 'frame' of the game. So, each time our <code>PlayState</code> gets its <code>update()</code> called, it calls <code>update()</code> on all of its <code>members</code>, including the player's <code>update()</code>. This in turn will run our <code>updateMovement()</code> logic and adjust the player's <code>velocity</code> accordingly. After that, it call its <code>super.update()</code>, which will take the <code>velocity</code> that we've just changed into account and figures out where the player sprite should move to.</p>
+</li>
+</ol>
+<p>Whew! It sounds a lot more complicated than it really is - if you try out the game right now, you'll see that you can run around the screen by pressing any combination of arrow keys and WASD!</p>
+<p>Next, we'll work on making the player sprite actually look like something!</p>
+
+
+		<br>
+		<hr>
+
+		<ul class="pagination justify-content-center">
+			
+			
+
+			
+				<li class="page-item">
+					<a class="page-link" href="/documentation/creating-a-new-project/">Previous: 2 - Creating a new project</a>
+				</li>
+			
+
+			
+				<li class="page-item float-end">
+					<a class="page-link" href="/documentation/sprites-and-animation/">Next: 4 - Sprites and Animation</a>
+				</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div
+	class="progress fixed-bottom"
+	role="progressbar"
+	aria-label="Basic example"
+	aria-valuenow="0"
+	aria-valuemin="0"
+	aria-valuemax="100">
+	<div class="progress-bar scroll-progress" style="transition: none"></div>
+</div>
+
+<script>
+	function getScrollProgress(element) {
+		const scrollTop = Math.max(0, window.scrollY - element.offsetTop);
+		const documentHeight = element.offsetHeight - window.innerHeight;
+		const scrollProgress = (scrollTop / documentHeight) * 100;
+		return scrollProgress;
+	}
+
+	let content = document.querySelector('.doc-content');
+	let progress = 0;
+	const progressBar = document.getElementsByClassName('scroll-progress');
+	window.addEventListener('scroll', (_) => {
+		progress = getScrollProgress(content);
+		progressBar[0].style.width = progress + '%';
+	});
+</script>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

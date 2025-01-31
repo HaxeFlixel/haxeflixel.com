@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> Tilesheet rendering | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" Tilesheet rendering | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/blog/01-HaxeFlixel-rendering/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#00b92b">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<!-- <%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %> -->
+
+<div class="col-md-9 mx-auto">
+	<div>
+		<h1 class="title text-center">
+			<a
+				class="icon-link icon-link-hover"
+				style="color:var(--bs-body-color)"
+				onclick="copyAnchorLink()">Tilesheet rendering
+				<i class="bi-link-45deg" aria-hidden="true"></i
+			></a>
+		</h1>
+		<p class="post-date mx-auto text-center">5 min read | July 31, 2014</p>
+	</div>
+
+	<p>Hi, <a href="https://github.com/gamedevsam">gamedevsam</a> here, I'm a developer and evangelist of HaxeFlixel.</p>
+<p>The following blog post was written by <a href="https://github.com/Beeblerox">Beeblerox</a> (the original creator of HaxeFlixel) and was originally posted on his blog as a two part article (<a href="http://beeblerox.tumblr.com/post/87678385538/tilesheet-rendering-part-1">part 1</a> and <a href="http://beeblerox.tumblr.com/post/87778663958/tilesheet-rendering-part-2-some-details-about-flixel">part 2</a>). In it, he goes into detail on how HaxeFlixel's rendering system is built on top of OpenFL's Tilesheet API.</p>
+<hr>
+<p>I want to tell you about tilesheet rendering in flixel, which is used on native targets by default (since some of you might me intereseted in it).</p>
+<p>But let’s start from Tilesheet API and how you work with it (Feel free to skip this part if you know it already).</p>
+<p>Tilesheet class allows you to draw multiple regions of image in one drawcall reasonably fast. These regions can be transformed (rotated, scaled, skewed) and tinted, plus they can have several blend modes (the most usefull is addition mode, which can be used for effects like fire and smoke).</p>
+<p>Let’s assume that you have some image you want to draw - “assets/tiles.png”.</p>
+<p>We are starting from instantiation of Tilesheet object:</p>
+<pre><code class="hljs">tilesheet = new Tilesheet(Assets.getBitmap(“assets/tiles.png”));
+</code></pre>
+<p>Then we should define region of image (or tile) we want to draw. This is achieved with addTileRect() method, which takes 2 arguments:</p>
+<ul>
+<li>
+<p>the first one is a Rectangle object - it is actual region of image to draw</p>
+</li>
+<li>
+<p>and the second one is a Pont object, which define “center” point of a tile. Added tile will be rotated around this point, if we apply rotation transformation to it. This point should be inside of a tile (or it will be bounded), so if you add tile with the size 32x32 pixels and the center at (50; 16), then actual center point will be at (32; 16).</p>
+</li>
+</ul>
+<p>Center point argument is optional, and if you omit it then tile will be rotated around it’s middle point.</p>
+<pre><code class="hljs">// adding tiles to the tilesheet
+tileID1 = tilesheet.addTileRect(newRectangle(0, 0, 32, 32), new Point(16, 16));
+tileID2 = tilesheet.addTileRect(newRectangle(32, 0, 32, 32), new Point(16, 16));
+</code></pre>
+<p>Then we should have some Graphics object to draw our tiles on.</p>
+<pre><code class="hljs">sprite = new Sprite();
+Lib.current.stage.addChild(sprite);
+graphicsToUse = sprite.graphics;
+</code></pre>
+<p>To draw the tiles on screen we need three things:</p>
+<ol>
+<li>
+<p>Graphics to draw then on</p>
+</li>
+<li>
+<p>Draw flag which tells to the program what tile transformations we want to use on our tiles in this drawcall.</p>
+</li>
+</ol>
+<p>The simplest case is no transformation (we just draw rectangular region of image on specified position):</p>
+<pre><code class="hljs">drawFlag = 0;
+</code></pre>
+<p>You can add tinting:</p>
+<pre><code class="hljs">drawFlag |= Tilesheet.TILE_RGB;
+</code></pre>
+<p>We can add TILE_ALPHA flag to be able to change tile’s alpha:</p>
+<pre><code class="hljs">drawFlag |= Tilesheet.TILE_ALPHA;
+</code></pre>
+<p>There are also <code>TILE_ROTATION</code> and <code>TILE_SCALE</code> (for uniform tile scaling) constants for “simple” transformations of a tile. But if you want to achieve some more complex transformation (like non-uniform scaling or skewing) then you have <code>TILE_TRANS_2x2</code> constant.</p>
+<p>And finally there are <code>TILE_BLEND_ADD</code> constant for addition blending and <code>TILE_SMOOTH</code> for smoothing scaled up graphics.</p>
+<ol start="3">
+<li>We also need actual information about tile’s type, position and transformation. The second argument of drawTiles() method - data array - is responsible for it.</li>
+</ol>
+<p>The amount of data for each tile depends on drawFlags value:</p>
+<ul>
+<li>if drawFlags is 0, then you should specify only tile’s position and id:</li>
+</ul>
+<pre><code class="hljs">data = [x1, y1, tileID1, x2, y2, tileID2];
+</code></pre>
+<ul>
+<li>if you’re using uniform scale and rotation then data array will look like this:</li>
+</ul>
+<pre><code class="hljs">data = [x1, y1, tileID1, scale1, angle1, x2, y1, tileID2, scale2, angle2];
+</code></pre>
+<ul>
+<li>if you’re adding tinting and alpha:</li>
+</ul>
+<pre><code class="hljs">data = [x1, y1, tileID1, scale1, angle1, red1, green1, blue1, alpha1,  x2, y1, tileID2, scale2, angle2, red2, green2, blue2, alpha2];
+</code></pre>
+<p>where red, green, blue and alpha are values between 0 and 1 (result color of each pixel will be product of these coefficients and original pixel colors).</p>
+<ul>
+<li>and the most complex case is when you’re using <code>TILE_TRANS_2x2</code>:</li>
+</ul>
+<pre><code class="hljs">data = [x, y, tileID1, a, b, c, d, red, green, blue, alpha];
+</code></pre>
+<p>where (a, b, c, d) are the transfromation matrix coefficients. You can get their values in two ways:</p>
+<p>a) by using Matrix class. For example, if you want to have non-uniform scale and rotation for your tile, then you can get it this way:</p>
+<pre><code class="hljs">matrix.identity();
+matrix.scale(scaleX, scaleY);
+matrix.rotate(angle);
+data = [x, y, tileID1, matrix.a, matrix.b, matrix.c, matrix.d, red, green, blue, alpha];
+</code></pre>
+<p>b) or manually if you want to make some optimizations. That’s why drawing methods in flixels are so bloated - i just wanted to except some redundant calculations from it.</p>
+<p>So finally you can draw your tiles on the screen:</p>
+<pre><code class="hljs">tilesheet.drawTiles(graphicsToUse, data, false, drawFlags);
+</code></pre>
+<hr>
+<p>If you want to see some working example, then i recommend you to look at Tiles sample project in nme library: <a href="https://github.com/haxenme/nme/tree/master/samples/20-Tiles">https://github.com/haxenme/nme/tree/master/samples/20-Tiles</a></p>
+<hr>
+<p>Now when we know everything we need about Tilesheet class, it’s time to talk about flixel renderer a bit.</p>
+<p>As you remember we need Graphics object to render our tiles. FlxCamera objects contain flashSprite:Sprite variable inside which we have canvas:Sprite which graphics we use for rendering on the camera. We need canvas spite to be nested inside flashSprite for easy camera rotations. So if you don’t plan to implement such feature then you might use just one sprite without nesting.</p>
+<p>We also need data to render and render flags, which reflect what types of transformations (like rotation and tinting) apply to rendered tiles. This information is gathered every render cycle: we iterate through each sprite we have in our game. But to keep drawCalls as low as possible we need some sort of batching, which tries to draw everything with the same graphics in one draw call, and when we change graphics it breaks the batch and starts another. This functionality is split between FlxCamera. FlxSprite class and subclasses and DrawStackItem helper class.</p>
+<p>DrawStackItem objects store information about current batch: Tilesheet object to use for rendering, draw data array, information about draw flags (do we need to tint our tiles in the batch, or use blending), and the link to next DrawStackItem object (DrawStackItems are organized into linked list). Each camera have _headOfDrawStack variable which is head of DrawStackItems linked list.</p>
+<p>FlxSprite draw() method does the following:</p>
+<ul>
+<li>
+<p>it gets DrawStackItem object to use from current FlxCamera. The result of this operation depends on sprite’s graphics, color and blend mode. So if one of these factors isn’t equal to the properties of current DrawStackItem, then current DrawStackItem will be “finalized” (breaks current batch) and new/empty DrawStackItem will be returned to sprite.</p>
+</li>
+<li>
+<p>sprite will add info about itself in current DrawStackItem (positio, tileID, transformation matrix coefficients, tinting and alpha).</p>
+</li>
+</ul>
+<p>After we iterate through all sprites in our game state, game engine start actual render process.</p>
+<p>It iterate through each camera, clear graphics of cameras, fill them with background color (with graphics.drawRect() method), and then each camera iterate through its list of DrawStackItems. This iteration stage takes DrawStackItem’s tilesheet, draw data, draw flag and render it with drawTiles() method on camera’s canvas.graphics.</p>
+<p>That is how tilesheet rendering works in flixel. Feel free to ask me questions about it.</p>
+<hr>
+<p>You can reach Beeblerox on Twitter <a href="https://twitter.com/teormech">@teormech</a>.</p>
+
+
+	<br>
+	<hr>
+	<br>
+
+	<!-- <%- @getDisqus() %> -->
+</div>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

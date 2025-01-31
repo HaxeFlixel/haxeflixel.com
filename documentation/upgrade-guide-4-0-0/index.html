@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> Upgrade Guide 4.0.0 | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" Upgrade Guide 4.0.0 | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/documentation/upgrade-guide-4-0-0/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#3b43ff">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+					<a
+						class="d-lg-none ms-2 fs-2 col"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#doc-menu-offcanvas"
+						aria-controls="doc-menu-offcanvas"
+						><i class="bi-book d-inline-block align-text-top"></i
+					></a>
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<div class="row">
+	<div class="col-md-3">
+		<div class="offcanvas-lg offcanvas-start" data-bs-scroll="true" id="doc-menu-offcanvas">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasLabel"><i class="bi-book"></i> Documentation</h5>
+		<button
+			type="button"
+			class="btn-close"
+			data-bs-dismiss="offcanvas"
+			data-bs-target="#doc-menu-offcanvas"
+			aria-label="Close"></button>
+	</div>
+
+	<div class="accordion overflow-y-auto " style="max-height:85vh" id="doc-menu-accordion">
+		
+
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsegetting_started"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsegetting_started">
+						Getting Started
+					</button>
+				</h2>
+
+				<div
+					id="collapsegetting_started"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/getting-started/">
+									Getting Started
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/install-haxeflixel/">
+									Install HaxeFlixel
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/hello-world/">
+									Hello World
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/visual-studio-code/">
+									Visual Studio Code
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/where-to-now/">
+									Where to now?
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsetutorial"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsetutorial">
+						Tutorial
+					</button>
+				</h2>
+
+				<div
+					id="collapsetutorial"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/tutorial/">
+									Tutorial
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/the-power-of-haxeflixel/">
+									The Power of HaxeFlixel
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/setup/">
+									1 - Setup
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/creating-a-new-project/">
+									2 - Creating a new project
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/groundwork/">
+									3 - Groundwork
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/sprites-and-animation/">
+									4 - Sprites and Animation
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/creating-a-tilemap/">
+									5 - Creating a Tilemap
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/loading-the-tilemap/">
+									6 - Loading the Tilemap
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/zoom-and-cameras/">
+									7 - Zoom and Cameras
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/pickups/">
+									8 - Pickups
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/enemies-and-basic-ai/">
+									9 - Enemies and Basic AI
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/ui-and-combat/">
+									10 - UI and Combat
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/game-over-menu/">
+									11 - Game Over Menu
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/sound-and-music/">
+									12 - Sound and Music
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/multiple-platforms/">
+									13 - Multiple Platforms
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/polish/">
+									14 - Polish
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/conclusion/">
+									Conclusion
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsehandbook"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsehandbook">
+						HaxeFlixel Handbook
+					</button>
+				</h2>
+
+				<div
+					id="collapsehandbook"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-handbook/">
+									HaxeFlixel Handbook
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-display-list/">
+									Flixel Display List
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxgroup/">
+									FlxGroup
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxsprite/">
+									FlxSprite
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxstate/">
+									FlxState
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxsave/">
+									FlxSave
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxtween/">
+									FlxTween
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-conditionals/">
+									HaxeFlixel Conditionals
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-targets/">
+									HaxeFlixel Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/desktop-targets/">
+									Desktop Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/mobile-targets/">
+									Mobile Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/android/">
+									Android
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/ios/">
+									iOS
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/neko/">
+									Neko
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/keyboard/">
+									Keyboard
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/mouse/">
+									Mouse
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/gamepads/">
+									Gamepads
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/actions/">
+									Actions
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/troubleshooting/">
+									Troubleshooting
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/debugger/">
+									Debugger
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/debugger-interaction/">
+									Debugger - Interaction
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapseresources"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapseresources">
+						Resources
+					</button>
+				</h2>
+
+				<div
+					id="collapseresources"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/resources/">
+									Resources
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/cheat-sheet/">
+									Cheat Sheet
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/openfl-project-xml-format/">
+									XML Project Format
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/game-development-tools/">
+									Game Development Tools
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/compiler-conditionals/">
+									Compiler Conditionals
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/using-haxelib/">
+									Using Haxelib
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/faq/">
+									FAQ
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/community-tutorials/">
+									Community Tutorials
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsecommunity"
+						type="button"
+						class="accordion-button fw-bold "
+						data-bs-toggle="collapse"
+						aria-expanded="true"
+						aria-controls="collapsecommunity">
+						Community
+					</button>
+				</h2>
+
+				<div
+					id="collapsecommunity"
+					class="accordion-collapse collapse show">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/community/">
+									Community
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/about/">
+									About
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/why-haxe/">
+									Why a Haxe Version
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/introduction-to-haxe/">
+									Introduction to Haxe
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/introduction-to-openfl/">
+									Introduction to OpenFL
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/contributing/">
+									Contributing
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/code-contributions/">
+									Code Contributions
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/code-style/">
+									Code Style
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/website-docs/">
+									HaxeFlixel Website
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/upgrade-guide-3-x/">
+									Upgrade Guide 3.x
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-addons/">
+									Flixel Addons
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action active fw-bold"
+									href="/documentation/upgrade-guide-4-0-0/">
+									Upgrade Guide 4.0.0
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-tools/">
+									Flixel Tools
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/install-development-flixel/">
+									Install development Flixel
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+		
+	</div>
+
+	<div class="col-lg-9 doc-content" role="main">
+		<h1 class="title">Upgrade Guide 4.0.0</h1>
+		<ul class="nav justify-content-end">
+			
+			<a
+				href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/./04_community/11-upgrade-guide-4-0-0.html.md/"
+				class="nav-link btn-edit"
+				target="_blank">
+				<i class="bi-pencil"></i>
+				Edit</a
+			>
+		</ul>
+		<h2 id="4.4.0" tabindex="-1"><a class="header-anchor" href="#4.4.0"><span>4.4.0</span></a></h2>
+<p>Breaking changes in 4.4.0 are limited to usage with OpenFL 8. OpenFL 3.6.1 (Legacy or Next) is still fully supported. The breaking changes when upgrading to OpenFL 8.0.0 and Lime 6.3.0 are as follows:</p>
+<ul>
+<li>There is no support for blend modes (<code>FlxSprite.blend</code>). This is because <code>drawQuads()</code> (the rendering API replacing <code>drawTiles()</code> in OpenFL 8), doesn't support them. In some cases, blend modes may be emulated using shaders. An example of this can be seen in our <a href="/demos/BlendModeShaders">BlendModeShaders</a> demo.</li>
+<li>Like already the case in OpenFL 3.6.1 + Next, the <code>flixel.effects.postprocess</code> API is not supported in OpenFL 8. As a replacement, a shader filter can be applied to the <code>FlxGame</code> instance or a <code>FlxCamera</code> as shown in the <a href="/demos/Filters">Filters</a> demo.</li>
+<li>OpenFL 3.6.1 with <code>-Dnext</code> had support for per-sprite, per-camera or game-wide GLSL shaders. All of these are still fully supported, but the syntax has changed a bit.</li>
+</ul>
+<p>Here's a simple example of a shader found in <a href="/demos/FlxBunnymark">FlxBunnyMark</a>:</p>
+<p><strong>With OpenFL 3.6.1 + Next:</strong></p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">import</span> openfl.display.Shader;
+
+<span class="hljs-title class_"><span class="hljs-keyword">class</span> <span class="hljs-title">Invert</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span> <span class="hljs-type">Shader</span></span>
+</span>{
+	<span class="hljs-meta">@fragment var fragment = &#x27;</span>
+		void main()
+		{
+			vec4 color = texture2D(${Shader.uSampler}, ${Shader.vTexCoord});
+			gl_FragColor = vec4((<span class="hljs-number">1.0</span> - color.r) * color.a, (<span class="hljs-number">1.0</span> - color.g) * color.a, (<span class="hljs-number">1.0</span> - color.b) * color.a, color.a);
+		}<span class="hljs-string">&#x27;;
+	
+	public function new()
+	{
+		super();
+	}
+}
+</span></code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p><strong>With OpenFL 8:</strong></p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">import</span> flixel.system.FlxAssets.FlxShader;
+
+<span class="hljs-title class_"><span class="hljs-keyword">class</span> <span class="hljs-title">Invert</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span> <span class="hljs-type">FlxShader</span></span>
+</span>{
+	<span class="hljs-meta">@:glFragmentSource</span>(<span class="hljs-string">&#x27;
+		#pragma header
+
+		void main()
+		{
+			vec4 color = flixel_texture2D(bitmap, openfl_TextureCoordv);
+			gl_FragColor = vec4((1.0 - color.r) * color.a, (1.0 - color.g) * color.a, (1.0 - color.b) * color.a,   color.a);
+		}&#x27;</span>
+	)
+	
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">new</span></span>()
+	{
+		<span class="hljs-keyword">super</span>();
+	}
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>To summarize the differences, shaders should...</p>
+<ul>
+<li>extend <code>flixel.system.FlxAssets.FlxShader</code> instead of <code>openfl.display.Shader</code></li>
+<li>use <code>@:glFragmentSource()</code> metadata for the shader source rather than a <code>@fragment var</code></li>
+<li>have <code>#pragma header</code> before <code>main()</code></li>
+</ul>
+<p>Attributes have changed as follows:</p>
+<table>
+<thead>
+<tr>
+<th>With OpenFL 3.6.1 + Next</th>
+<th>With OpenFL 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>${Shader.uSampler}</code></td>
+<td><code>bitmap</code></td>
+</tr>
+<tr>
+<td><code>${Shader.vTexCoord}</code></td>
+<td><code>openfl_TextureCoordv</code></td>
+</tr>
+<tr>
+<td><code>${Shader.uTextureSize}</code></td>
+<td><code>openfl_TextureSize</code></td>
+</tr>
+</tbody>
+</table>
+<p>You may also have noticed that in the invert shader example, <code>texture2D()</code> has been replaced with <code>flixel_texture2D()</code>. The former still works, but when using <code>flixel_texture2D()</code> in per-sprite shaders, the <code>alpha</code> and color transforms of a <code>FlxSprite</code> are already applied on the returned color, which was previously not supported. The effect of this can be seen when activating shaders as well as toggling &quot;Simple&quot; to &quot;Complex&quot; in FlxBunnyMark:</p>
+<table>
+<thead>
+<tr>
+<th>With OpenFL 3.6.1 + Next</th>
+<th>With OpenFL 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../images/04_community/upgrade-guide/openfl3-shaders.png" alt=""></td>
+<td><img src="../images/04_community/upgrade-guide/openfl8-shaders.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+<p>Further shader examples can be found in these demos, which are all compatible with both OpenFL 3.6.1 + Next and OpenFL 8:</p>
+<ul>
+<li><a href="/demos/Filters">Filters</a></li>
+<li><a href="/demos/FlxBunnymark">FlxBunnyMark</a></li>
+<li><a href="/demos/BlendModeShaders">BlendModeShaders</a></li>
+<li><a href="/demos/MosaicEffect">MosaicEffect</a></li>
+</ul>
+<h2 id="4.2.0" tabindex="-1"><a class="header-anchor" href="#4.2.0"><span>4.2.0</span></a></h2>
+<ul>
+<li><code>FlxTween.manager</code> is now <code>FlxTween.globalManager</code>.</li>
+<li><code>FlxTimer.manager</code> is now <code>FlxTimer.globalManager</code>.</li>
+<li><code>FlxCamera</code>'s scroll bounds now account for <code>zoom</code>. This means that you may need to adjust calls to <code>setScrollBounds()</code>, <code>setScrollBoundsRect()</code> or changes to the <code>minScrollX</code> / <code>Y</code> / <code>maxScrollX</code> / <code>Y</code> properties if they manually accounted for zoom.</li>
+<li>The <code>active</code> variable of objects in <code>flixel.util.helpers</code> now defaults to <code>true</code> instead of <code>false</code>.</li>
+</ul>
+<h2 id="4.0.0" tabindex="-1"><a class="header-anchor" href="#4.0.0"><span>4.0.0</span></a></h2>
+<p>This guide is intended for users upgrading projects from version 3.3.x to 4.0.0. For non-breaking changes, please refer to the <a href="https://github.com/HaxeFlixel/flixel/blob/master/CHANGELOG.md">changelog</a>.</p>
+<p>The minimum required Haxe version for this release is 3.2.0.</p>
+<p>A lot of changes can be handled with a simple find-and-replace in the editor of your choice.</p>
+<h3 id="elapsed-argument-added-to-update()" tabindex="-1"><a class="header-anchor" href="#elapsed-argument-added-to-update()"><span><code>elapsed</code> argument added to <code>update()</code></span></a></h3>
+<p>The function signature of <code>update()</code> changed to <code>update(elapsed:Float)</code>. <code>FlxG.elapsed</code> is still available, but it is recommended to use the argument value instead.</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>override public function update():Void</code></td>
+<td><code>override public function update(elapsed:Float):Void</code></td>
+</tr>
+<tr>
+<td><code>super.update();</code></td>
+<td><code>super.update(elapsed);</code></td>
+</tr>
+<tr>
+<td><code>x += 100 * FlxG.elapsed;</code></td>
+<td><code>x += 100 * elapsed;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="introduction-of-flixel.math" tabindex="-1"><a class="header-anchor" href="#introduction-of-flixel.math"><span>Introduction of <code>flixel.math</code></span></a></h3>
+<p>A new <code>flixel.math</code> package was added. A number of <code>flixel.util</code> classes have been moved there:</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import flixel.util.FlxMath</code></td>
+<td><code>import flixel.math.FlxMath</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxPoint</code></td>
+<td><code>import flixel.math.FlxPoint</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxVector</code></td>
+<td><code>import flixel.math.FlxVector</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxRect</code></td>
+<td><code>import flixel.math.FlxRect</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxAngle</code></td>
+<td><code>import flixel.math.FlxAngle</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxVelocity</code></td>
+<td><code>import flixel.math.FlxVelocity</code></td>
+</tr>
+<tr>
+<td><code>import flixel.util.FlxRandom</code></td>
+<td><code>import flixel.math.FlxRandom</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="move-of-%22typed%22-classes%3A" tabindex="-1"><a class="header-anchor" href="#move-of-%22typed%22-classes%3A"><span>Move of &quot;typed&quot; classes:</span></a></h3>
+<p>Typed classes have been moved into the modules of the non-typed versions:</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import flixel.group.FlxTypedGroup</code></td>
+<td><code>import flixel.group.FlxGroup</code></td>
+</tr>
+<tr>
+<td><code>import flixel.group.FlxTypedSpriteGroup</code></td>
+<td><code>import flixel.group.FlxSpriteGroup</code></td>
+</tr>
+<tr>
+<td><code>import flixel.effects.particles.FlxTypedEmitter</code></td>
+<td><code>import flixel.effects.particles.FlxEmitter</code></td>
+</tr>
+<tr>
+<td><code>import flixel.ui.FlxTypedButton</code></td>
+<td><code>import flixel.ui.FlxButton</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="changed-integer-constants-to-enums%3A" tabindex="-1"><a class="header-anchor" href="#changed-integer-constants-to-enums%3A"><span>Changed integer constants to enums:</span></a></h3>
+<p>ActionScript 3 does not have enums, which is why a lot of these &quot;value sets&quot; were implemented using integer constants. For improved type-safety and to better fit the Haxe coding style, they have been converted to enums:</p>
+<p>As long as it's not ambiguous, Haxe allows using just the enum value name without the enum's name. In the first case, the enum also does not need to be imported. For example, this means that both of these syntaxes are valid:</p>
+<pre class="position-relative"><code class="hljs">FlxG.camera.follow(LOCKON);
+FlxG.camera.follow(FlxCameraFollowStyle.LOCKON);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>Which of these two styles is used is mostly a matter of personal preference.</p>
+<h4 id="flxcamera-shake-modes%3A" tabindex="-1"><a class="header-anchor" href="#flxcamera-shake-modes%3A"><span><code>FlxCamera</code> shake modes:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxCamera.SHAKE_BOTH_AXES</code></td>
+<td><code>flixel.util.FlxAxes.XY</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.SHAKE_HORIZONTAL_ONLY</code></td>
+<td><code>flixel.util.FlxAxes.X</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.SHAKE_VERTICAL_ONLY</code></td>
+<td><code>flixel.util.FlxAxes.Y</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxcamera-follow-styles%3A" tabindex="-1"><a class="header-anchor" href="#flxcamera-follow-styles%3A"><span><code>FlxCamera</code> follow styles:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxCamera.STYLE_LOCKON</code></td>
+<td><code>FlxCameraFollowStyle.LOCKON</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_NO_DEAD_ZONE</code></td>
+<td><code>FlxCameraFollowStyle.NO_DEAD_ZONE</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_PLATFORMER</code></td>
+<td><code>FlxCameraFollowStyle.PLATFORMER</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_SCREEN_BY_SCREEN</code></td>
+<td><code>FlxCameraFollowStyle.SCREEN_BY_SCREEN</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_TOPDOWN</code></td>
+<td><code>FlxCameraFollowStyle.TOPDOWN</code></td>
+</tr>
+<tr>
+<td><code>FlxCamera.STYLE_TOPDOWN_TIGHT</code></td>
+<td><code>FlxCameraFollowStyle.TOPDOWN_TIGHT</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxtext-border-styles%3A" tabindex="-1"><a class="header-anchor" href="#flxtext-border-styles%3A"><span><code>FlxText</code> border styles:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxText.BORDER_NONE</code></td>
+<td><code>FlxTextBorderStyle.NONE</code></td>
+</tr>
+<tr>
+<td><code>FlxText.BORDER_OUTLINE</code></td>
+<td><code>FlxTextBorderStyle.OUTLINE</code></td>
+</tr>
+<tr>
+<td><code>FlxText.BORDER_OUTLINE_FAST</code></td>
+<td><code>FlxTextBorderStyle.OUTLINE_FAST</code></td>
+</tr>
+<tr>
+<td><code>FlxText.BORDER_SHADOW</code></td>
+<td><code>FlxTextBorderStyle.SHADOW</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxtilemap-auto-tiling-options%3A" tabindex="-1"><a class="header-anchor" href="#flxtilemap-auto-tiling-options%3A"><span><code>FlxTilemap</code> auto-tiling options:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxTilemap.ALT</code></td>
+<td><code>FlxTilemapAutoTiling.ALT</code></td>
+</tr>
+<tr>
+<td><code>FlxTilemap.AUTO</code></td>
+<td><code>FlxTilemapAutoTiling.AUTO</code></td>
+</tr>
+<tr>
+<td><code>FlxTilemap.OFF</code></td>
+<td><code>FlxTilemapAutoTiling.OFF</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxbar-fill-directions%3A" tabindex="-1"><a class="header-anchor" href="#flxbar-fill-directions%3A"><span><code>FlxBar</code> fill directions:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxBar.FILL_BOTTOM_TO_TOP</code></td>
+<td><code>FlxBarFillDirection.BOTTOM_TO_TOP</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_HORIZONTAL_INSIDE_OUT</code></td>
+<td><code>FlxBarFillDirection.HORIZONTAL_INSIDE_OUT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_HORIZONTAL_OUTSIDE_IN</code></td>
+<td><code>FlxBarFillDirection.HORIZONTAL_OUTSIDE_IN</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_LEFT_TO_RIGHT</code></td>
+<td><code>FlxBarFillDirection.LEFT_TO_RIGHT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_RIGHT_TO_LEFT</code></td>
+<td><code>FlxBarFillDirection.RIGHT_TO_LEFT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_TOP_TO_BOTTOM</code></td>
+<td><code>FlxBarFillDirection.TOP_TO_BOTTOM</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_VERTICAL_INSIDE_OUT</code></td>
+<td><code>FlxBarFillDirection.VERTICAL_INSIDE_OUT</code></td>
+</tr>
+<tr>
+<td><code>FlxBar.FILL_VERTICAL_OUTSIDE_IN</code></td>
+<td><code>FlxBarFillDirection.VERTICAL_OUTSIDE_IN</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxg.html5-browser-types%3A" tabindex="-1"><a class="header-anchor" href="#flxg.html5-browser-types%3A"><span><code>FlxG.html5</code> browser types:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HTML5FrontEnd.INTERNET_EXPLORER</code></td>
+<td><code>FlxBrowser.INTERNET_EXPLORER</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.CHROME</code></td>
+<td><code>FlxBrowser.CHROME</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.FIREFOX</code></td>
+<td><code>FlxBrowser.FIREFOX</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.SAFARI</code></td>
+<td><code>FlxBrowser.SAFARI</code></td>
+</tr>
+<tr>
+<td><code>HTML5FrontEnd.OPERA</code></td>
+<td><code>FlxBrowser.OPERA</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="changed-string-constants-to-abstract-enums%3A" tabindex="-1"><a class="header-anchor" href="#changed-string-constants-to-abstract-enums%3A"><span>Changed String constants to abstract enums:</span></a></h3>
+<p>Some static String constants have been changed to abstract enums. This is not a breaking changes, since the old String values are still compatible, but for the sake of type safety it is recommended to use the enum values instead:</p>
+<p>As with regular enums, the enum name may be omitted.</p>
+<h4 id="flxtext-alignment%3A" tabindex="-1"><a class="header-anchor" href="#flxtext-alignment%3A"><span><code>FlxText</code> alignment:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text.alignment = &quot;left&quot;;</code></td>
+<td><code>text.alignment = FlxTextAlign.LEFT;</code></td>
+</tr>
+<tr>
+<td><code>text.alignment = &quot;center&quot;;</code></td>
+<td><code>text.alignment = FlxTextAlign.CENTER;</code></td>
+</tr>
+<tr>
+<td><code>text.alignment = &quot;right&quot;;</code></td>
+<td><code>text.alignment = FlxTextAlign.RIGHT;</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxg.keys-keys%3A" tabindex="-1"><a class="header-anchor" href="#flxg.keys-keys%3A"><span><code>FlxG.keys</code> keys:</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxG.keys.anyPressed([&quot;SPACE&quot;, &quot;W&quot;])</code></td>
+<td><code>FlxG.keys.anyPressed([FlxKey.SPACE, FlxKey.W])</code></td>
+</tr>
+<tr>
+<td><code>FlxG.keys.anyPressed([&quot;SPACE&quot;, &quot;W&quot;])</code></td>
+<td><code>FlxG.keys.anyPressed([SPACE, W])</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxsprite%3A" tabindex="-1"><a class="header-anchor" href="#flxsprite%3A"><span><code>FlxSprite</code>:</span></a></h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getScreenXY()</code></td>
+<td><code>getScreenPosition()</code></td>
+</tr>
+<tr>
+<td><code>cachedGraphics</code></td>
+<td><code>graphic</code></td>
+</tr>
+<tr>
+<td><code>resetFrameBitmaps()</code></td>
+<td><em>removed</em> (set <code>dirty</code> to <code>true</code> to regen graphic)</td>
+</tr>
+<tr>
+<td><code>getFlxFrameBitmapData()</code></td>
+<td><code>updateFramePixels()</code></td>
+</tr>
+<tr>
+<td><code>loadGraphicFromTexture()</code></td>
+<td><em>removed</em> (assign a frames collection to <code>frames</code>)</td>
+</tr>
+<tr>
+<td><code>loadRotatedGraphicFromTexture()</code></td>
+<td><em>removed</em> (assign a frames collection to <code>frames</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxcamera%3A" tabindex="-1"><a class="header-anchor" href="#flxcamera%3A"><span><code>FlxCamera</code>:</span></a></h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bounds</code></td>
+<td><code>minScrollX</code>, <code>minScrollY</code>, <code>maxScrollX</code> and <code>maxScrollY</code></td>
+</tr>
+<tr>
+<td><code>setBounds()</code></td>
+<td><code>setScrollBoundsRect()</code></td>
+</tr>
+<tr>
+<td><code>follow()</code>'s <code>Offset</code> argument</td>
+<td><em>removed</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxtilemap%3A" tabindex="-1"><a class="header-anchor" href="#flxtilemap%3A"><span><code>FlxTilemap</code>:</span></a></h3>
+<p><code>loadMap()</code> has been split up into <code>loadMapFromArray()</code> and <code>loadMapFromCSV()</code>.</p>
+<h3 id="flxgroup%3A" tabindex="-1"><a class="header-anchor" href="#flxgroup%3A"><span><code>FlxGroup</code>:</span></a></h3>
+<p><code>callAll()</code> and <code>setAll()</code> have been removed - use <code>forEach()</code> instead:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 3.3.x</span>
+group.setAll(<span class="hljs-string">&quot;scrollFactor&quot;</span>, FlxPoint.<span class="hljs-keyword">get</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>));
+group.callAll(<span class="hljs-string">&quot;kill&quot;</span>);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 4.0.0</span>
+group.forEach(<span class="hljs-title function_"><span class="hljs-keyword">function</span></span>(basic:<span class="hljs-type">FlxBasic</span>)
+{
+	basic.scrollFactor.<span class="hljs-keyword">set</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+	basic.kill();
+});
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="flixel.input.gamepad%3A" tabindex="-1"><a class="header-anchor" href="#flixel.input.gamepad%3A"><span><code>flixel.input.gamepad</code>:</span></a></h3>
+<p>The hardware IDs of the different controller types are now mapped to a common <code>FlxGamepadInputID</code>. This avoids the need of having to handle multiple controller types - this now happens automatically under the hood.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">if</span> (gamepad.pressed(XboxButtonID.A) ||
+	gamepad.pressed(OUYAButtonID.O) ||
+	gamepad.pressed(LogitechButtonID.TWO)) {} 
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 4.0.0</span>
+<span class="hljs-keyword">if</span> (gamepad.anyPressed([FlxGamepadInputID.A])) {}
+<span class="hljs-comment">// or</span>
+<span class="hljs-keyword">if</span> (gamepad.pressed.A) {}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>It is still possible to use the IDs from the <code>flixel.input.gamepad.id</code> classes via the functions with the <code>Raw</code> suffix.</p>
+<p>Because of the poor driver support, the PS3 ID class / support for PS3 controllers have been removed.</p>
+<h3 id="flxtimer%3A" tabindex="-1"><a class="header-anchor" href="#flxtimer%3A"><span><code>FlxTimer</code>:</span></a></h3>
+<p>Timers cannot be started right at construction anymore, instead you need to call <code>start()</code>:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxTimer(time, onComplete, loops);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 4.0.0</span>
+<span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxTimer().start(time, onComplete, loops);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="flxpath%3A" tabindex="-1"><a class="header-anchor" href="#flxpath%3A"><span><code>FlxPath</code>:</span></a></h3>
+<p><code>FlxPath#start()</code> no longer takes a <code>FlxObject</code> argument, instead, <code>FlxObject</code> now has a path property. This means <code>FlxObject</code> takes care of updating the path, taking care of the issue that paths are not paused along with the objects they work on in substates.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">var</span> path = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxPath().start(object, points);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 4.0.0</span>
+object.path = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxPath().start(points);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="flxcolor-%2F-flxcolorutil-refactor%3A" tabindex="-1"><a class="header-anchor" href="#flxcolor-%2F-flxcolorutil-refactor%3A"><span><code>FlxColor</code> / <code>FlxColorUtil</code> refactor:</span></a></h3>
+<p><code>FlxColor</code> is now an <a href="http://haxe.org/manual/types-abstract.html"><code>abstract</code></a>, which means it can be used like an object, while the underlying type is still a regular <code>Int</code>. The static <code>FlxColorUtil</code> functions can now be used as member methods or properties:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">var</span> color:<span class="hljs-type">Int </span>= <span class="hljs-number">0x008080</span>;
+<span class="hljs-built_in">trace</span>(FlxColorUtil.getGreen(color));
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 4.0.0</span>
+<span class="hljs-keyword">var</span> color:<span class="hljs-type">FlxColor </span>= <span class="hljs-number">0x008080</span>;
+<span class="hljs-built_in">trace</span>(color.green);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>The amount of colors presets (<code>FlxColor.RED</code> etc..) has been reduced.</p>
+<h3 id="flxemitter-refactor%3A" tabindex="-1"><a class="header-anchor" href="#flxemitter-refactor%3A"><span><code>FlxEmitter</code> refactor:</span></a></h3>
+<p><code>FlxEmitterExt</code> has been merged into <code>FlxEmitter</code>. For circular emitters, <code>FlxEmitterMode.CIRCLE</code> can be used.</p>
+<p>Most properties are now <code>FlxRangeBounds</code> objects which have a <code>min</code> and a <code>max</code> <code>FlxRange</code> object.</p>
+<p>The separate color component <code>Bounds</code> have been merged into a <code>FlxRangeBounds&lt;FlxColor&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>at()</code></td>
+<td><code>focusOn()</code></td>
+</tr>
+<tr>
+<td><code>on</code></td>
+<td><code>emitting</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="flxparticle-changes%3A" tabindex="-1"><a class="header-anchor" href="#flxparticle-changes%3A"><span><code>FlxParticle</code> changes:</span></a></h4>
+<p>Most properties are now <code>FlxRange</code> objects which have a <code>start</code> and an <code>end</code> value (for example <code>velocityRange</code>).</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxLifespan</code></td>
+<td><code>lifespan</code></td>
+</tr>
+<tr>
+<td><code>lifespan</code></td>
+<td><code>age</code> (counts up instead of down)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxrandom-refactor%3A" tabindex="-1"><a class="header-anchor" href="#flxrandom-refactor%3A"><span><code>FlxRandom</code> refactor:</span></a></h3>
+<p><code>FlxRandom</code> can now be instantiated and the static functions are now member methods. A pre-created instance is available via <code>FlxG.random</code>.</p>
+<p>Some methods have also been renamed or removed:</p>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxRandom.intRanged(min, max)</code></td>
+<td><code>FlxG.random.int(min, max)</code></td>
+</tr>
+<tr>
+<td><code>FlxRandom.floatRanged(min, max)</code></td>
+<td><code>FlxG.random.float(min, max)</code></td>
+</tr>
+<tr>
+<td><code>FlxRandom.chanceRoll(chance)</code></td>
+<td><code>FlxG.random.bool(chance)</code></td>
+</tr>
+<tr>
+<td><code>FlxRandom.weightedGetObject()</code></td>
+<td><em>removed</em> (<code>getObject()</code> now has a range argument)</td>
+</tr>
+<tr>
+<td><code>FlxRandom.colorExt()</code></td>
+<td><em>removed</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="flxangle-changes%3A" tabindex="-1"><a class="header-anchor" href="#flxangle-changes%3A"><span><code>FlxAngle</code> changes:</span></a></h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlxAngle.getAngle(point1, point2)</code></td>
+<td><code>point1.angleBetween(point2)</code></td>
+</tr>
+<tr>
+<td><code>FlxAngle.angleLimit()</code></td>
+<td><em>removed</em> (use <code>FlxMath.bound()</code> instead)</td>
+</tr>
+</tbody>
+</table>
+<p>There have been several changes to <code>FlxAngle.rotatePoint()</code>:</p>
+<ul>
+<li>the y-axis is no longer inverted</li>
+<li>rotation is now clockwise</li>
+<li>moved to <code>FlxPoint</code> (<code>rotate()</code>)</li>
+</ul>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 3.3.x</span>
+<span class="hljs-keyword">var</span> angle = <span class="hljs-number">45</span>;
+<span class="hljs-keyword">var</span> point = FlxPoint.<span class="hljs-keyword">get</span>(<span class="hljs-number">10</span>, <span class="hljs-number">5</span>);
+FlxAngle.rotatePoint(x, y, pivotX, pivotY, angle, point);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// 4.0.0</span>
+<span class="hljs-keyword">var</span> angle = <span class="hljs-number">45</span>;
+<span class="hljs-keyword">var</span> point = FlxPoint.<span class="hljs-keyword">get</span>(<span class="hljs-number">10</span> + x, <span class="hljs-number">5</span> + y);
+<span class="hljs-keyword">var</span> pivot = FlxPoint.weak(pivotX, pivotY);
+point.rotate(pivot, angle);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="flxmath-changes%3A" tabindex="-1"><a class="header-anchor" href="#flxmath-changes%3A"><span><code>FlxMath</code> changes:</span></a></h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>newAmount = FlxMath.wrapValue(value, amount, max + 1)</code></td>
+<td><code>newAmount = FlxMath.wrapValue(value + amount, min, max)</code></td>
+</tr>
+<tr>
+<td><code>FlxMath.getDistance(point1, point2)</code></td>
+<td><code>point1.distanceTo(point2)</code></td>
+</tr>
+<tr>
+<td><code>FlxMath.MIN_VALUE</code></td>
+<td><code>FlxMath.MIN_VALUE_FLOAT</code></td>
+</tr>
+<tr>
+<td><code>FlxMath.MAX_VALUE</code></td>
+<td><code>FlxMath.MAX_VALUE_FLOAT</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other%3A" tabindex="-1"><a class="header-anchor" href="#other%3A"><span>Other:</span></a></h3>
+<table>
+<thead>
+<tr>
+<th>HaxeFlixel 3.3.x</th>
+<th>HaxeFlixel 4.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import flixel.text.FlxTextField</code></td>
+<td><code>import flixel.addons.text.FlxTextField</code></td>
+</tr>
+<tr>
+<td><code>FlxPoint#inFlxRect()</code></td>
+<td><code>FlxPoint#inRect()</code></td>
+</tr>
+<tr>
+<td><code>FlxRect#containsFlxPoint()</code></td>
+<td><code>FlxRect#containsPoint()</code></td>
+</tr>
+<tr>
+<td><code>flixel.plugin.MouseEventManager</code></td>
+<td><code>flixel.input.mouse.FlxMouseEventManager</code></td>
+</tr>
+<tr>
+<td><code>flixel.util.loaders.CachedGraphics</code></td>
+<td><code>flixel.graphics.FlxGraphic</code></td>
+</tr>
+<tr>
+<td><code>FlxArrayUtil.getRandom()</code></td>
+<td><code>FlxG.random.getObject()</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>FlxVelocity</code>'s <code>accelerateTowards*()</code>-functions now only take a single <code>maxSpeed</code> argument (instead of <code>x</code> and <code>y</code>).</p>
+<p>The <code>complete</code> option of <code>FlxTween</code> is now called <code>onComplete</code>.</p>
+<h2 id="flixel-addons" tabindex="-1"><a class="header-anchor" href="#flixel-addons"><span>flixel-addons</span></a></h2>
+<p>Not all flixel-addons changes are covered here. Please check the <a href="https://github.com/HaxeFlixel/flixel-addons/blob/master/CHANGELOG.md">changelog</a> for the rest.</p>
+<h3 id="flxnapestate-refactor%3A" tabindex="-1"><a class="header-anchor" href="#flxnapestate-refactor%3A"><span><code>FlxNapeState</code> refactor:</span></a></h3>
+<p><code>FlxNapeState</code> is now <code>FlxNapeSpace</code> and no longer extends <code>FlxState</code>. This makes it possible to use the <code>flixel.addons.nape</code> package along with other <code>FlxState</code> subclasses (for example <code>FlxUIState</code>).</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// flixel-addons 1.x.x</span>
+<span class="hljs-keyword">import</span> flixel.addons.nape.FlxNapeState;
+
+<span class="hljs-title class_"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayState</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span> <span class="hljs-type">FlxNapeState</span></span>
+</span>{
+	<span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>():<span class="hljs-type">Void</span>
+	{
+		<span class="hljs-keyword">super</span>.create();
+	}
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// flixel-addons 2.0.0</span>
+<span class="hljs-keyword">import</span> flixel.FlxState;
+<span class="hljs-keyword">import</span> flixel.addons.nape.FlxNapeSpace;
+
+<span class="hljs-title class_"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayState</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span> <span class="hljs-type">FlxState</span></span>
+</span>{
+	<span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span></span>():<span class="hljs-type">Void</span>
+	{
+		<span class="hljs-keyword">super</span>.create();
+		FlxNapeSpace.init();
+	}
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+
+
+		<br>
+		<hr>
+
+		<ul class="pagination justify-content-center">
+			
+			
+
+			
+				<li class="page-item">
+					<a class="page-link" href="/documentation/flixel-addons/">Previous: Flixel Addons</a>
+				</li>
+			
+
+			
+				<li class="page-item float-end">
+					<a class="page-link" href="/documentation/flixel-tools/">Next: Flixel Tools</a>
+				</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div
+	class="progress fixed-bottom"
+	role="progressbar"
+	aria-label="Basic example"
+	aria-valuenow="0"
+	aria-valuemin="0"
+	aria-valuemax="100">
+	<div class="progress-bar scroll-progress" style="transition: none"></div>
+</div>
+
+<script>
+	function getScrollProgress(element) {
+		const scrollTop = Math.max(0, window.scrollY - element.offsetTop);
+		const documentHeight = element.offsetHeight - window.innerHeight;
+		const scrollProgress = (scrollTop / documentHeight) * 100;
+		return scrollProgress;
+	}
+
+	let content = document.querySelector('.doc-content');
+	let progress = 0;
+	const progressBar = document.getElementsByClassName('scroll-progress');
+	window.addEventListener('scroll', (_) => {
+		progress = getScrollProgress(content);
+		progressBar[0].style.width = progress + '%';
+	});
+</script>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> Home | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" Home | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container text-center">
+	<div class="home-header home-section">
+		<a
+			href="/documentation/about"
+			class="home-big-logo"
+			title="About HaxeFlixel">
+			<img
+				src="/images/haxeflixel.svg"
+				width="200"
+				alt="HaxeFlixel Logo">
+		</a>
+
+		<h1>HaxeFlixel</h1>
+
+		<p class="lead-line">
+			Create cross-platform games easier and free.<br>
+			All with one codebase.
+		</p>
+
+		<div
+			class="d-flex justify-content-center"
+			style="gap: 2em">
+			<a
+				role="button"
+				class="btn btn-outline-primary btn-lg"
+				href="/documentation/getting-started"
+				><i class="bi-list-ol"></i>
+				Getting Started
+			</a>
+			<a
+				role="button"
+				class="btn btn-outline-primary btn-lg"
+				href="https://github.com/HaxeFlixel">
+				<i class="bi-github"></i>
+				GitHub
+			</a>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="home-section">
+		<h3 class="lead-line-large">
+			Cross-compile your games
+			<a class="fw-semibold" href="documentation/about">natively</a>
+			to:
+		</h3>
+
+		<div class="platform-logos-home">
+			<img
+				width="80px"
+				height="80px"
+				src="images/targets/windows-logo.svg"
+				alt="Windows"
+				title="Windows">
+			<img
+				width="80px"
+				height="85px"
+				src="images/targets/linux-logo.svg"
+				alt="Linux"
+				title="Linux">
+			<img
+				width="80px"
+				height="85px"
+				src="images/targets/apple-logo.svg"
+				alt="Mac"
+				title="Mac">
+			<img
+				width="80px"
+				height="85px"
+				src="images/targets/android-logo.svg"
+				alt="Android"
+				title="Android">
+			<img
+				width="100px"
+				src="images/targets/ios-logo.png"
+				alt="iOS"
+				title="iOS">
+			<img
+				width="80px"
+				height="80px"
+				src="images/targets/flash-logo.svg"
+				alt="Flash"
+				title="Flash">
+			<img
+				width="85px"
+				height="85px"
+				src="images/targets/html5-logo.svg"
+				alt="HTML5"
+				title="HTML5">
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="home-section-powered">
+		<h3 class="lead-line-large">
+			Proudly powered by
+			<a class="fw-semibold" href="https://github.com/HaxeFlixel/flixel">open source</a>,
+			cross-platform tech:
+		</h3>
+
+		<br>
+		<div class="row my-auto g-0 align-items-center justify-content-evenly">
+			<a
+				class="col-2"
+				href="https://haxe.org"
+				data-bs-toggle="tooltip"
+				data-bs-title="<b>Haxe</b><br>The language toolkit behind it all"
+				data-bs-html="true"
+				><img
+					src="/images/haxe.svg"
+					alt="Haxe Logo"
+					title="Haxe"
+			></a>
+			<span class="col-1">
+				<b>+</b>
+			</span>
+			<a
+				class="col-2"
+				href="https://openfl.org"
+				data-bs-toggle="tooltip"
+				data-bs-title="<b>OpenFL</b><br>Flash API for web, desktop, and mobile"
+				data-bs-html="true"
+				><img
+					src="/images/openfl.svg"
+					alt="OpenFL Logo"
+					title="OpenFL"
+			></a>
+
+			<span class="col-1">
+				<b>+</b>
+			</span>
+
+			<a
+				class="col-2"
+				href="https://flixel.org"
+				data-bs-toggle="tooltip"
+				data-bs-title="<b>Flixel</b><br>The inspiration, and DNA for..."
+				data-bs-html="true"
+				><img
+					src="/images/flixel.svg"
+					alt="Flixel Logo"
+					title="Flixel"
+			></a>
+
+			<span class="col-1">
+				<b>=</b>
+			</span>
+
+			<a
+				class="col-2"
+				href="https://haxeflixel.com"
+				data-bs-toggle="tooltip"
+				data-bs-title="<b>HaxeFlixel!</b>"
+				data-bs-html="true">
+				<img
+					src="/images/haxeflixel.svg"
+					alt="HaxeFlixel logo"
+					title="HaxeFlixel">
+			</a>
+		</div>
+		<br>
+	</div>
+
+	<hr>
+
+	<div class="demos-home home-section">
+		<h3>
+			<p class="lead-line-large">
+				Browse and learn from our
+				<a class="fw-semibold" href="/demos">79 demos</a>:
+			</p>
+		</h3>
+
+		
+			<a href="/demos/Filters/" property="dc:title">
+				
+				<img alt="#{{demo.data.title}}" width="160" height="160" loading="lazy" decoding="async" class="" src="/img/0CRX9UU0p8-160.png">
+			</a>
+		
+			<a href="/demos/Flappybalt/" property="dc:title">
+				
+				<img alt="#{{demo.data.title}}" width="160" height="160" loading="lazy" decoding="async" class="" src="/img/Kj8IVxCKyV-160.png">
+			</a>
+		
+			<a href="/demos/FlxNape/" property="dc:title">
+				
+				<img alt="#{{demo.data.title}}" width="160" height="160" loading="lazy" decoding="async" class="" src="/img/0JYg6UMTUO-160.png">
+			</a>
+		
+			<a href="/demos/FlxSpine/" property="dc:title">
+				
+				<img alt="#{{demo.data.title}}" width="160" height="160" loading="lazy" decoding="async" class="" src="/img/plCPMNTtA4-160.png">
+			</a>
+		
+			<a href="/demos/MinimalistTD/" property="dc:title">
+				
+				<img alt="#{{demo.data.title}}" width="160" height="160" loading="lazy" decoding="async" class="" src="/img/kgtFX7aGhA-160.png">
+			</a>
+		
+			<a href="/demos/Mode/" property="dc:title">
+				
+				<img alt="#{{demo.data.title}}" width="160" height="160" loading="lazy" decoding="async" class="" src="/img/VMdemjVQ0X-160.png">
+			</a>
+		
+	</div>
+
+	<hr>
+
+	<div class="games-home home-section">
+		<h3 class="lead-line-large">
+			<p>
+				These popular games use HaxeFlixel
+				<br>
+				(more in our <a class="m-0 p-0 fw-semibold" href="/showcase">Showcase</a>)
+			</p>
+		</h3>
+
+		<div class="showcase-list">
+			
+				
+			
+				
+					<a href="https://canabalt.com">
+						
+						<img alt="Canabalt" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/RX-ydAxJWk-250.png">
+					</a>
+				
+			
+				
+					<a href="https://www.ohsat.com/game/kid-bubblegum/">
+						
+						<img alt="Kid Bubblegum" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/JM8j7K0xjC-250.png">
+					</a>
+				
+			
+				
+					<a href="https://www.newgrounds.com/portal/view/893426">
+						
+						<img alt="Odd Verdure" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/u32I5pAPsx-250.png">
+					</a>
+				
+			
+				
+					<a href="https://www.ohsat.com/game/shino-kun/">
+						
+						<img alt="Chibi Ninja Shino-kun" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/seIPAvOU9K-250.png">
+					</a>
+				
+			
+				
+			
+				
+			
+				
+					<a href="https://bringiton.axolstudio.com/">
+						
+						<img alt="Bring It On!" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/YBof0_UScz-250.png">
+					</a>
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+					<a href="https://ninja-muffin24.itch.io/funkin">
+						
+						<img alt="Friday Night Funkin'" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/2Clc1pUWxk-250.png">
+					</a>
+				
+			
+				
+					<a href="http://www.notdoppler.com/renegaderacing/">
+						
+						<img alt="Renegade Racing" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/JBXoWgXEbU-250.png">
+					</a>
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+					<a href="http://www.defendersquest.com/1/">
+						
+						<img alt="Defender's Quest: Valley of the Forgotten" width="250" height="130" loading="lazy" decoding="async" class="" src="/img/aQuWetwvHG-250.png">
+					</a>
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		</div>
+
+		<hr>
+
+		<div class="home-social">
+			<!-- Place this tag where you want the button to render. -->
+			<a
+				class="github-button"
+				href="https://github.com/haxeflixel/flixel"
+				data-color-scheme="no-preference: light_high_contrast; light: light_high_contrast; dark: dark_high_contrast;"
+				data-size="large"
+				data-show-count="true"
+				aria-label="Star haxeflixel/flixel on GitHub"
+				>haxeflixel/flixel</a
+			>
+
+			<br>
+
+			<br>
+			<a href="https://discordapp.com/invite/rqEBAgF"
+				><img src="https://img.shields.io/discord/162395145352904705.svg?logo=discord" alt="Discord"
+			></a>
+			<a href="https://www.patreon.com/haxeflixel"
+				><img src="https://img.shields.io/badge/donate-patreon-blue.svg" alt="Patreon"
+			></a>
+		</div>
+
+		<hr>
+
+		<div class="home-sponsor-logos">
+			<h3 class="lead-line-large">
+				Our platinum and gold <a class="fw-semibold m-0 p-0" href="/sponsors">Sponsors</a>
+			</h3>
+
+			<div class="sponsor-logos-container">
+				<a class="platinum" href="http://www.defendersquest.com">
+					<img src="/images/sponsors/platinum/level-up-labs/lul_logo_circle.png">
+				</a>
+
+				<a class="platinum" href="http://bluebottlegames.com">
+					<img src="/images/sponsors/platinum/blue-bottle-games/bbgLogoColor256x256.png">
+				</a>
+
+				<a class="gold" href="http://www.kongregate.com">
+					<img src="/images/sponsors/gold/kongregate/kongregate_anthill.svg">
+				</a>
+
+				<a class="gold" href="http://www.solarpoweredgames.de">
+					<img src="/images/sponsors/gold/solar-powered/logo-solarpoweredgames-inverted-256.png">
+				</a>
+			</div>
+
+			<br>
+		</div>
+	</div>
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

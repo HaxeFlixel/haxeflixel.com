@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> HaxeFlixel Conditionals | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" HaxeFlixel Conditionals | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/documentation/haxeflixel-conditionals/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#3b43ff">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+					<a
+						class="d-lg-none ms-2 fs-2 col"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#doc-menu-offcanvas"
+						aria-controls="doc-menu-offcanvas"
+						><i class="bi-book d-inline-block align-text-top"></i
+					></a>
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<div class="row">
+	<div class="col-md-3">
+		<div class="offcanvas-lg offcanvas-start" data-bs-scroll="true" id="doc-menu-offcanvas">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasLabel"><i class="bi-book"></i> Documentation</h5>
+		<button
+			type="button"
+			class="btn-close"
+			data-bs-dismiss="offcanvas"
+			data-bs-target="#doc-menu-offcanvas"
+			aria-label="Close"></button>
+	</div>
+
+	<div class="accordion overflow-y-auto " style="max-height:85vh" id="doc-menu-accordion">
+		
+
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsegetting_started"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsegetting_started">
+						Getting Started
+					</button>
+				</h2>
+
+				<div
+					id="collapsegetting_started"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/getting-started/">
+									Getting Started
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/install-haxeflixel/">
+									Install HaxeFlixel
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/hello-world/">
+									Hello World
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/visual-studio-code/">
+									Visual Studio Code
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/where-to-now/">
+									Where to now?
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsetutorial"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsetutorial">
+						Tutorial
+					</button>
+				</h2>
+
+				<div
+					id="collapsetutorial"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/tutorial/">
+									Tutorial
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/the-power-of-haxeflixel/">
+									The Power of HaxeFlixel
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/setup/">
+									1 - Setup
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/creating-a-new-project/">
+									2 - Creating a new project
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/groundwork/">
+									3 - Groundwork
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/sprites-and-animation/">
+									4 - Sprites and Animation
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/creating-a-tilemap/">
+									5 - Creating a Tilemap
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/loading-the-tilemap/">
+									6 - Loading the Tilemap
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/zoom-and-cameras/">
+									7 - Zoom and Cameras
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/pickups/">
+									8 - Pickups
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/enemies-and-basic-ai/">
+									9 - Enemies and Basic AI
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/ui-and-combat/">
+									10 - UI and Combat
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/game-over-menu/">
+									11 - Game Over Menu
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/sound-and-music/">
+									12 - Sound and Music
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/multiple-platforms/">
+									13 - Multiple Platforms
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/polish/">
+									14 - Polish
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/conclusion/">
+									Conclusion
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsehandbook"
+						type="button"
+						class="accordion-button fw-bold "
+						data-bs-toggle="collapse"
+						aria-expanded="true"
+						aria-controls="collapsehandbook">
+						HaxeFlixel Handbook
+					</button>
+				</h2>
+
+				<div
+					id="collapsehandbook"
+					class="accordion-collapse collapse show">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-handbook/">
+									HaxeFlixel Handbook
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-display-list/">
+									Flixel Display List
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxgroup/">
+									FlxGroup
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxsprite/">
+									FlxSprite
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxstate/">
+									FlxState
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxsave/">
+									FlxSave
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flxtween/">
+									FlxTween
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action active fw-bold"
+									href="/documentation/haxeflixel-conditionals/">
+									HaxeFlixel Conditionals
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/haxeflixel-targets/">
+									HaxeFlixel Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/desktop-targets/">
+									Desktop Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/mobile-targets/">
+									Mobile Targets
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/android/">
+									Android
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/ios/">
+									iOS
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/neko/">
+									Neko
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/keyboard/">
+									Keyboard
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/mouse/">
+									Mouse
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/gamepads/">
+									Gamepads
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/actions/">
+									Actions
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/troubleshooting/">
+									Troubleshooting
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/debugger/">
+									Debugger
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/debugger-interaction/">
+									Debugger - Interaction
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapseresources"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapseresources">
+						Resources
+					</button>
+				</h2>
+
+				<div
+					id="collapseresources"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/resources/">
+									Resources
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/cheat-sheet/">
+									Cheat Sheet
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/openfl-project-xml-format/">
+									XML Project Format
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/game-development-tools/">
+									Game Development Tools
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/compiler-conditionals/">
+									Compiler Conditionals
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/using-haxelib/">
+									Using Haxelib
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/faq/">
+									FAQ
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/community-tutorials/">
+									Community Tutorials
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			
+
+			<div class="accordian-item">
+				<h2 class="accordion-header sticky-top">
+					<button
+						data-bs-target="#collapsecommunity"
+						type="button"
+						class="accordion-button fw-semibold"
+						data-bs-toggle="collapse"
+						aria-expanded="false"
+						aria-controls="collapsecommunity">
+						Community
+					</button>
+				</h2>
+
+				<div
+					id="collapsecommunity"
+					class="accordion-collapse collapse ">
+					<div class="accordion-body p-0">
+						<div class="list-group list-group-flush w-100">
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/community/">
+									Community
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/about/">
+									About
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/why-haxe/">
+									Why a Haxe Version
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/introduction-to-haxe/">
+									Introduction to Haxe
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/introduction-to-openfl/">
+									Introduction to OpenFL
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/contributing/">
+									Contributing
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/code-contributions/">
+									Code Contributions
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/code-style/">
+									Code Style
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/website-docs/">
+									HaxeFlixel Website
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/upgrade-guide-3-x/">
+									Upgrade Guide 3.x
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-addons/">
+									Flixel Addons
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/upgrade-guide-4-0-0/">
+									Upgrade Guide 4.0.0
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/flixel-tools/">
+									Flixel Tools
+								</a>
+							
+								<a
+									class="list-group-item list-group-item-action fw-normal"
+									href="/documentation/install-development-flixel/">
+									Install development Flixel
+								</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+		
+	</div>
+
+	<div class="col-lg-9 doc-content" role="main">
+		<h1 class="title">HaxeFlixel Conditionals</h1>
+		<ul class="nav justify-content-end">
+			
+			<a
+				href="https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/./02_handbook/07-haxeflixel-conditionals.html.md/"
+				class="nav-link btn-edit"
+				target="_blank">
+				<i class="bi-pencil"></i>
+				Edit</a
+			>
+		</ul>
+		<h3 id="what-is-%22conditional-compilation%22%3F" tabindex="-1"><a class="header-anchor" href="#what-is-%22conditional-compilation%22%3F"><span>What is &quot;conditional compilation&quot;?</span></a></h3>
+<p><a href="http://haxe.org/manual/lf-condition-compilation.html">Conditional compilation flags</a> are a powerful feature Haxe offers to optimize your code by only compiling certain parts of it. For example, the following pseudo-code optimizes inputs based on the target platform:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-meta">#<span class="hljs-keyword">if</span> (web || desktop)</span>
+keyboardControls();
+mouseControls();
+<span class="hljs-meta">#<span class="hljs-keyword">end</span></span>
+
+<span class="hljs-meta">#<span class="hljs-keyword">if</span> desktop</span>
+gamepadControls();
+<span class="hljs-meta">#<span class="hljs-keyword">end</span></span>
+
+<span class="hljs-meta">#<span class="hljs-keyword">if</span> mobile</span>
+touchControls();
+<span class="hljs-meta">#<span class="hljs-keyword">end</span></span>
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>Basically, this means that for web or desktop targets, we want to have mouse and keyboard controls. In case of a mobile target, we want touch input. Like you can see, these so-called defines can also be nested: We only  want gamepad controls to be available on non-web targets (line 4). So, all in all, these defines can be used largely like traditional if-statements, except their syntax varies slightly.</p>
+<p>For more information on what defines are available, by default check out the <a href="https://web.archive.org/web/20131130081557/http://www.openfl.org/archive/developer/documentation/conditional-compilation">OpenFL documentation</a> on this topic.</p>
+<h3 id="haxeflixel-specific-defines" tabindex="-1"><a class="header-anchor" href="#haxeflixel-specific-defines"><span>HaxeFlixel specific defines</span></a></h3>
+<p>If you had a look at the OpenFL documentation, you might have found out that you can also set your own defines. When working with OpenFL, it's convenient to do so in the Project XML file.<br>
+HaxeFlixel makes use of this feature and allows you to optimize your game using the following defines (a list of them can also be found in the <a href="https://github.com/HaxeFlixel/flixel-templates/blob/master/default/Project.xml.tpl">template</a>):</p>
+<pre><code class="hljs">// Example xml node to enable to Flixel record system.
+&lt;haxedef name=&quot;FLX_RECORD&quot; /&gt;
+</code></pre>
+<h4 id="flx_record" tabindex="-1"><a class="header-anchor" href="#flx_record"><span>FLX_RECORD</span></a></h4>
+<p>Flixel features a powerful recording / playback feature which captures mouse and keyboard input. Since it's used rarely, we decided that it makes sense to turn it off by default. Setting this define however will enable it again.</p>
+<h4 id="flx_mouse_advanced" tabindex="-1"><a class="header-anchor" href="#flx_mouse_advanced"><span>FLX_MOUSE_ADVANCED</span></a></h4>
+<p>This define is required for middle and right mouse button input. On the flash target, a minimum flash player version of 11.2 is required. Listening to right click input will also disable the right-click menu of the flash player. There is currently no HTML5 support for this feature.</p>
+<h4 id="flx_no_native_cursor" tabindex="-1"><a class="header-anchor" href="#flx_no_native_cursor"><span>FLX_NO_NATIVE_CURSOR</span></a></h4>
+<p>By default, flixel uses the flash <a href="http://www.adobe.com/devnet/flashplayer/articles/native-mouse-cursors.html">native cursor API</a>. This gets rid of the almost unbearable mouse lag that is unavoidable otherwise. This define allows you to disable that - reasons for this might be that you want to target a flash player version older than 10.2 or that you need to use a cursor bigger than 32x32, which is not possible using the native cursor API.</p>
+<h4 id="flx_no_mouse" tabindex="-1"><a class="header-anchor" href="#flx_no_mouse"><span>FLX_NO_MOUSE</span></a></h4>
+<p>This allows you to optimize your game by compiling it without any mouse-related code, which can make sense for mobile targets. This is why in the template, <code>if=&quot;mobile&quot;</code>  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to <code>FlxG.mouse</code>, which does not exist if this define is set.</p>
+<h4 id="flx_no_keyboard" tabindex="-1"><a class="header-anchor" href="#flx_no_keyboard"><span>FLX_NO_KEYBOARD</span></a></h4>
+<p>This allows you to optimize your game by compiling it without any keyboard-related code, which can make sense for mobile targets. This is why in the template, <code>if=&quot;mobile&quot;</code>  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to <code>FlxG.keyboard</code> or <code>FlxG.keys</code>, which do not exist if this define is set.</p>
+<h4 id="flx_no_touch" tabindex="-1"><a class="header-anchor" href="#flx_no_touch"><span>FLX_NO_TOUCH</span></a></h4>
+<p>This allows you to optimize your game by compiling it without any touch-related code, which can make sense for desktop targets. This is why in the template, <code>if=&quot;desktop&quot;</code>  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to <code>FlxG.touches</code>, which does not exist if this define is set.</p>
+<h4 id="flx_no_gamepad" tabindex="-1"><a class="header-anchor" href="#flx_no_gamepad"><span>FLX_NO_GAMEPAD</span></a></h4>
+<p>This allows you to optimize your game by compiling it without any gamepad-related code. Keep in mind that this might require you to use conditionals in your own code for anything related to <code>FlxG.gamepads</code>, which does not exist if this define is set.</p>
+<h4 id="flx_no_sound_tray" tabindex="-1"><a class="header-anchor" href="#flx_no_sound_tray"><span>FLX_NO_SOUND_TRAY</span></a></h4>
+<p>This disables the flixel core sound tray, which appears whenever your adjust the volume via the 0 (mute the game), + or - keys. Note that this does not disable the ability to control the game's volume using these hotkeys, just the soundtray itself. You can disable volume control entirely by setting <code>FlxG.sound.muteKeys</code>, <code>FlxG.sound.volumeUpKeys</code> and <code>FlxG.sound.volumeDownKeys</code> to <code>null</code>.</p>
+<h4 id="flx_no_focus_lost_screen" tabindex="-1"><a class="header-anchor" href="#flx_no_focus_lost_screen"><span>FLX_NO_FOCUS_LOST_SCREEN</span></a></h4>
+<p>Flixel automatically pauses the game when it loses focus and shows its so-called &quot;focus lost screen&quot;, which is basically an overlay darkening the screen area with a white &quot;play-button&quot; in the middle. Using this define disables that screen, but not the feature to automatically pause - use the <code>FlxG.autoPause</code> Bool for that.</p>
+<h4 id="flx_no_debug" tabindex="-1"><a class="header-anchor" href="#flx_no_debug"><span>FLX_NO_DEBUG</span></a></h4>
+<p>This disables the flixel core debugger, which you can toggle using the \ and ` keys. It makes sense to do so for release build, which is why <code>unless=&quot;debug&quot;</code>  is added to this tag in the template. It basically means that the flixel debugger is disabled when compiling a release, and enabled when compiling a debug build.</p>
+
+
+		<br>
+		<hr>
+
+		<ul class="pagination justify-content-center">
+			
+			
+
+			
+				<li class="page-item">
+					<a class="page-link" href="/documentation/flxtween/">Previous: FlxTween</a>
+				</li>
+			
+
+			
+				<li class="page-item float-end">
+					<a class="page-link" href="/documentation/haxeflixel-targets/">Next: HaxeFlixel Targets</a>
+				</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div
+	class="progress fixed-bottom"
+	role="progressbar"
+	aria-label="Basic example"
+	aria-valuenow="0"
+	aria-valuemin="0"
+	aria-valuemax="100">
+	<div class="progress-bar scroll-progress" style="transition: none"></div>
+</div>
+
+<script>
+	function getScrollProgress(element) {
+		const scrollTop = Math.max(0, window.scrollY - element.offsetTop);
+		const documentHeight = element.offsetHeight - window.innerHeight;
+		const scrollProgress = (scrollTop / documentHeight) * 100;
+		return scrollProgress;
+	}
+
+	let content = document.querySelector('.doc-content');
+	let progress = 0;
+	const progressBar = document.getElementsByClassName('scroll-progress');
+	window.addEventListener('scroll', (_) => {
+		progress = getScrollProgress(content);
+		progressBar[0].style.width = progress + '%';
+	});
+</script>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

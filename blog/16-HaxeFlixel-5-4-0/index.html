@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> HaxeFlixel 5.4.0 | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" HaxeFlixel 5.4.0 | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/blog/16-HaxeFlixel-5-4-0/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#00b92b">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<!-- <%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %> -->
+
+<div class="col-md-9 mx-auto">
+	<div>
+		<h1 class="title text-center">
+			<a
+				class="icon-link icon-link-hover"
+				style="color:var(--bs-body-color)"
+				onclick="copyAnchorLink()">HaxeFlixel 5.4.0
+				<i class="bi-link-45deg" aria-hidden="true"></i
+			></a>
+		</h1>
+		<p class="post-date mx-auto text-center">5 min read | October 2, 2023</p>
+	</div>
+
+	<p>We've finally released Haxeflixel 5.4.0, our largest release in quite some time, arguably larger than the 5.0.0 release! This release focuses heavily on assets and animations, like the new FlxAsepriteUtil and the new Multi-Atlas system.</p>
+<h1 id="what-took-so-long%3F" tabindex="-1"><a class="header-anchor" href="#what-took-so-long%3F"><span>What took so long?</span></a></h1>
+<p>We try to release new versions of HaxeFlixel around once a month, and have been, for the most part. This one took much longer, the previous version, 5.3.1, was released in early May, that's almost 5 months! The main reason is because we really wanted to get things right, The Aseprite utils, alone, add around 20+ new types and it's not good to release them prematurely, only to rename, reorganize or retool them in a later patch. This ended being a good call, since we did end up iterating on and organizing these utils, later.</p>
+<p>Another reason the release was delayed was that George, our lead maintainer finally went on his honeymoon. He didn't feel like touching a computer while visiting his motherland for most of September, with views like this, I'm sure you wouldn't want to either!</p>
+<img src="/images/blog/16_release/split.jpg" width="100%" />
+<h1 id="aseprite-utils" tabindex="-1"><a class="header-anchor" href="#aseprite-utils"><span>Aseprite Utils</span></a></h1>
+<p>By far the biggest development of HaxeFlixel 5.4.0 is the various tools that utilize <a href="https://www.aseprite.org/">Aseprite's</a> <a href="https://aseprite.com/docs/sprite-sheet/#texture-atlases">atlas exporting</a> tools. For those unaware, Aseprite is a very popular animated sprite editor and pixel art tool, we can't recommend it enough for anyone using HaxeFlixel, especially for pixel-art games. The main goal of <a href="https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html">FlxAsepriteUtil</a> is to allow devs to define animation data using Aseprite's tags rather than in code.</p>
+<img src="/images/blog/16_release/export-sheet.png" width="100%" />
+<p>(Made using the <a href="https://rvros.itch.io/animated-pixel-hero">Animated Pixel Adventurer</a> set by <a href="https://rvros.itch.io/">rvros</a>)</p>
+<p>The resulting atlas can easily be applied to a sprite with the following code using the <a href="https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByPrefix">addAseAtlasTagsByPrefix</a> or <a href="https://api.haxeflixel.com/flixel/graphics/FlxAsepriteUtil.html#addAseAtlasTagsByIndex">addAseAtlasTagsByIndex</a> to create an animation for every tag in your .aseprite file.</p>
+<pre class="position-relative"><code class="hljs">hero = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxSprite(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>);
+hero.loadAseAtlasAndTagsByPrefix(<span class="hljs-string">&quot;assets/images/adventurer.png&quot;</span>, <span class="hljs-string">&quot;assets/images/adventurer.json&quot;</span>);
+hero.animation.play(<span class="hljs-string">&quot;idle&quot;</span>);
+add(hero);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>You can expect more Aseprite focus tools to come now that we've created handy <a href="https://github.com/HaxeFlixel/flixel/blob/master/flixel/graphics/atlas/AseAtlas.hx">typedefs for Aseprite atlas metadata</a>. One future plan is to use Aseprite's <a href="https://www.aseprite.org/docs/slices/">slicing feature</a> to generate 9-slice data or per-frame hitboxes, but it's much easier for you to use this data to roll your own features, for example to see per-frame slice data on an atlas's labelled &quot;attackRect&quot;:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> atlasData:<span class="hljs-type">AseAtlas </span>= Assets.getText(myAtlasJsonPath);
+<span class="hljs-keyword">for</span> (slice <span class="hljs-keyword">in</span> atlasData.meta.slices)
+{
+    <span class="hljs-keyword">if</span> (slice.name == <span class="hljs-string">&quot;attackRect&quot;</span>)
+    {
+        <span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> slice.keys)
+        {
+            <span class="hljs-comment">// store per-frame slice data</span>
+            <span class="hljs-built_in">trace</span>(<span class="hljs-string">&#x27;frame: <span class="hljs-subst">${key.frame}</span> bounds: <span class="hljs-subst">${key.bounds}</span>&#x27;</span>);
+        }
+    }
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>We have immediate plans to utilize more Aseprite fields, such as the tags' &quot;Repeat&quot; and &quot;Animation Direction&quot; fields. You can expect those in the next release (<strong>Update (5.4.1):</strong> this change has been added!).</p>
+<h1 id="combining-multiple-atlases" tabindex="-1"><a class="header-anchor" href="#combining-multiple-atlases"><span>Combining Multiple Atlases</span></a></h1>
+<p>This feature was specifically made with our Funkin' devs and modders in mind. As the demand for HD atlases with large amounts of animations increase, their atlas image size grows well beyond the limit that flixel can currently handle. By combining multiple atlases at runtime devs can better compartmentalize their animations, ultimately allowing FlxSprites to have more animations without having to switch graphics every time you change a sprite's animation. Splitting up animations also allows you to load them separately, for instance, if you only need certain animations on certain levels.</p>
+<p>This project's art pipeline could really benefit from multi-atlas since each character is made from about a dozen different aseprite files, each with potentially dozens of frames.</p>
+<img src="/images/blog/16_release/snowman.png" width="100%" />
+(Art by Adam V., you should [hire him](https://twitter.com/Koolboyman/status/1672366422767591424)!)
+<p>Here's an example of how to add atlases to another</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// create an atlas for each file</span>
+<span class="hljs-keyword">var</span> idleAtlas = FlxAtlasFrames.fromAseprite(<span class="hljs-string">&#x27;assets/images/snowman-idle.png&#x27;</span>, <span class="hljs-string">&#x27;assets/images/snowman-idle.json&#x27;</span>);
+<span class="hljs-keyword">var</span> jumpAtlas = FlxAtlasFrames.fromAseprite(<span class="hljs-string">&#x27;assets/images/snowman-jump.png&#x27;</span>, <span class="hljs-string">&#x27;assets/images/snowman-jump.json&#x27;</span>);
+<span class="hljs-keyword">var</span> walkAtlas = FlxAtlasFrames.fromAseprite(<span class="hljs-string">&#x27;assets/images/snowman-walk.png&#x27;</span>, <span class="hljs-string">&#x27;assets/images/snowman-walk.json&#x27;</span>);
+<span class="hljs-keyword">var</span> blockAtlas = FlxAtlasFrames.fromAseprite(<span class="hljs-string">&#x27;assets/images/snowman-block.png&#x27;</span>, <span class="hljs-string">&#x27;assets/images/snowman-block.json&#x27;</span>);
+
+<span class="hljs-comment">// combine all the atlases by adding to the idle atlas</span>
+idleAtlas.addAtlas(jumpAtlas);
+idleAtlas.addAtlas(walkAtlas);
+idleAtlas.addAtlas(blockAtlas);
+
+<span class="hljs-comment">// create the FlxSprite</span>
+<span class="hljs-keyword">var</span> snowman = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxSprite();
+snowman.frames = idleAtlas;
+
+<span class="hljs-comment">// add all the anims</span>
+snowman.animation.addByPrefix(<span class="hljs-string">&quot;idle&quot;</span>, <span class="hljs-string">&quot;snowman-idle_anim&quot;</span>);
+snowman.animation.addByPrefix(<span class="hljs-string">&quot;jump&quot;</span>, <span class="hljs-string">&quot;snowman-jump_anim&quot;</span>);
+snowman.animation.addByPrefix(<span class="hljs-string">&quot;walk&quot;</span>, <span class="hljs-string">&quot;snowman-walk_anim&quot;</span>);
+snowman.animation.addByPrefix(<span class="hljs-string">&quot;block&quot;</span>, <span class="hljs-string">&quot;snowman-block_anim&quot;</span>);
+
+<span class="hljs-comment">// add it to the state</span>
+add(snowman);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h1 id="animation-time-scaling" tabindex="-1"><a class="header-anchor" href="#animation-time-scaling"><span>Animation Time Scaling</span></a></h1>
+<p>We've added a <a href="https://api.haxeflixel.com/flixel/animation/FlxAnimationController.html#timeScale">timeScale field to FlxAnimationController</a>. This can be used to slow down or speed up animations. For instance, you can change a walk cycle's animation speed to match the sprite's changing movement speed, or you can easily implement a power up or skill that increases attack rate. Here's an example of 4 sprites using different timescale properties whenever the attack animation is played:</p>
+<video width="794" height="174" controls="">
+  <source src="/images/blog/16_release/anim-time_scale.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p><strong>Update (5.4.1):</strong> We've also added the <code>timeScale</code> field to each individual animation, rather than just the animation controller.</p>
+<h1 id="a-list-of-every-asset" tabindex="-1"><a class="header-anchor" href="#a-list-of-every-asset"><span>A List of Every Asset</span></a></h1>
+<p>Lastly, we've added the <code>allFiles</code> field to classes generated via <a href="https://api.haxeflixel.com/flixel/system/FlxAssets.html#buildFileReferences">FlxAssets.buildFileReferences</a>, AKA: <code>AssetPaths</code>. This is just an easy way to iterate or search a list of every asset included in this build. if you don't like the name <code>allFiles</code> you can specify a custom name in the <code>listField</code> arg of <code>buildFileReferences</code>.</p>
+<img src="/images/blog/16_release/all_files.png" width="100%" />
+<h1 id="what's-next%3F" tabindex="-1"><a class="header-anchor" href="#what's-next%3F"><span>What's Next?</span></a></h1>
+<ul>
+<li><strong>More animation tools:</strong> Our goal is to improve upon these tools before jumping on to another big project, so we'd love feedback and suggestions. As mentioned above we already have additions planned for <code>FlxAseAtlasUtils</code> and <code>FlxAnimation</code>.</li>
+<li><strong>Improving the Wiki:</strong> We've added new pages to <a href="https://github.com/HaxeFlixel/flixel/wiki">the HaxeFlixel wiki on Github</a>. These are still a work in progress, but once they are fleshed out we'll develop a way to automatically publish them on <a href="https://haxeflixel.com">haxeflixel.com</a>. Some notable pages are:
+<ul>
+<li><a href="https://github.com/HaxeFlixel/flixel/wiki/External-Tools">External Tools</a>: This will list all the various tools being developed for HaxeFlixel, unofficially.</li>
+<li><a href="https://github.com/HaxeFlixel/flixel/wiki/Contribution-Guide">Contribution Guide</a>: To help people unfamiliar with contributing to open-source software, Git, or Github.</li>
+<li><a href="https://github.com/HaxeFlixel/flixel/wiki/Accessible-Contributions">Accessible Contributions</a>: A list of bugs, issues and feature requests that newcomers could easily implement for HaxeFlixel. Mainly things like adding snippets and demos, which are always great to have more of.</li>
+</ul>
+</li>
+<li><strong>Flixel 6.0.0:</strong> We still have some minor versions planned to release before the next major version, but we are currently getting all <a href="https://github.com/HaxeFlixel/flixel/milestone/13">our ducks in a row</a> for it, nonetheless.</li>
+<li><strong><a href="https://github.com/HaxeFlixel/flixel/issues/2915">Flixel rendering overhaul</a>:</strong> We're looking for talented devs to revive the important effort of upgrading HaxeFlixel's rendering capabilities. <strong>This is paid work!</strong></li>
+</ul>
+
+
+	<br>
+	<hr>
+	<br>
+
+	<!-- <%- @getDisqus() %> -->
+</div>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

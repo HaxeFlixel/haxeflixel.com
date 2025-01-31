@@ -1,0 +1,47 @@
+date,transaction,debit,credit
+Patreon,,,
+"Aug. 1, 2017",Income - Patreon Donations,139.00,0.00
+"Aug. 1, 2017",Expense - Processing Fees,0.00,6.07
+"Aug. 1, 2017",Expense -  Patreon Fees,0.00,6.95
+"Aug. 22, 2017",Transfer to Treasurer,0.00,"2,723.15"
+Total Patreon,,139.00,"2,736.17"
+Net Movement,,,"(2,597.17)"
+,,,
+Treasurer,,,
+"Aug. 22, 2017",Transfer from Patreon,"2,723.15",0.00
+"Aug. 22, 2017",Expense - PayPal Transfer Fee,0.00,19.00
+"Aug. 26, 2017",Expense - Donation to msghero for blog post published on 08/26/2017,0.00,50.00
+"Aug. 22, 2017",Expense - US Income Taxes (25% of 2704.15),0.00,676.04
+Total Treasurer,,"2,723.15",745.04
+Net Movement,,,"1,978.11"
+,,,
+Patreon Donations,,,
+"Aug. 1, 2017",Income - Patreon Donations,0.00,139.00
+Total Patreon Donations,,0.00,139.00
+Net Movement,,,139.00
+,,,
+Payment Fees,,,
+"Aug. 1, 2017",Expense - Processing Fees,6.07,0.00
+Total Payment Fees,,6.07,0.00
+Net Movement,,,6.07
+,,,
+Patreon Fees,,,
+"Aug. 1, 2017",Expense -  Patreon Fees,6.95,0.00
+Total Patreon Fees,,6.95,0.00
+Net Movement,,,6.95
+,,,
+PayPal Fee,,,
+"Aug. 22, 2017",Expense - PayPal Transfer Fee,19.00,0.00
+Total PayPal Fee,,19.00,0.00
+Net Movement,,,19.00
+,,,
+Tax Fees,,,
+"Aug. 22, 2017",Expense - US Income Taxes (25% of 2704.15),676.04,0.00
+Total Tax Fees,,676.04,0.00
+Net Movement,,,676.04
+,,,
+Development Services,,,
+"Aug. 26, 2017",Expense - Donation to msghero for blog post published on 08/26/2017,50.00,0.00
+Total Development Services,,50.00,0.00
+Net Movement,,,50.00
+,,,

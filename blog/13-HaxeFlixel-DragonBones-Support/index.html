@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> HaxeFlixel DragonBones Support | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" HaxeFlixel DragonBones Support | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/blog/13-HaxeFlixel-DragonBones-Support/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#00b92b">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<!-- <%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %> -->
+
+<div class="col-md-9 mx-auto">
+	<div>
+		<h1 class="title text-center">
+			<a
+				class="icon-link icon-link-hover"
+				style="color:var(--bs-body-color)"
+				onclick="copyAnchorLink()">HaxeFlixel DragonBones Support
+				<i class="bi-link-45deg" aria-hidden="true"></i
+			></a>
+		</h1>
+		<p class="post-date mx-auto text-center">4 min read | September 1, 2018</p>
+	</div>
+
+	<p>Hi there, I’m Troy (<a href="https://twitter.com/roustudios">@RouStudios</a>), creator and maintainer of the <a href="https://github.com/openfl/dragonbones">HaxeFlixel backend for DragonBones</a>. I’m here to write a post about DragonBones support for HaxeFlixel and how to use it.</p>
+<p>First of all, what is DragonBones? DragonBones is a free *open source alternative to the popular 2D bone animation tool <a href="http://esotericsoftware.com/">Spine</a> (which Flixel already has support for). Its a tool which allows you to animate static 2D images programmatically (similar to Flash tweening) without having to painstakingly animate each individual frame in a spritesheet. Why would one use it over Spine? Well Spine can potentially be <a href="https://esotericsoftware.com/spine-purchase">quite expensive</a> for new indie devs, and DragonBones is free. Not only that, DragonBones is a fully featured, intuitive bone animation editor and has <a href="https://www.youtube.com/watch?v=XPH_ZBzCtfY">Mesh Deformation support</a> just like Spine. Quite a deal for free!</p>
+<img src="/images/blog/13_dragonbones/dragonbones_stock.jpg" width="100%" />
+<p>*One caveat is that DragonBones is not truly open source (if you care about that sort of thing), only the runtime is. If you want a truly open source editor which can export to the DragonBones format while also being fully featured, check out the great alternative <a href="https://github.com/ndee85/coa_tools">COA Tools</a> for Blender. Its DragonBones export should also work with the Flixel backend I’ve created.</p>
+<p>How exactly do you use DragonBones with Flixel? Well, that’s what I’ll be showing you, so let’s get started.</p>
+<h3 id="install" tabindex="-1"><a class="header-anchor" href="#install"><span>Install</span></a></h3>
+<p>First install the library from haxelib using:</p>
+<pre><code class="hljs">haxelib install dragonbones
+</code></pre>
+<p>Although it’s better to install directly from GitHub in order to always keep up with the latest updates:</p>
+<pre><code class="hljs">haxelib git dragonbones https://github.com/openfl/dragonbones
+</code></pre>
+<h3 id="create-project" tabindex="-1"><a class="header-anchor" href="#create-project"><span>Create Project</span></a></h3>
+<p>Then create a new Flixel project template with <a href="http://haxeflixel.com/documentation/flixel-tools/">Flixel Tools</a>, and add DragonBones to your <code>Project.xml</code>. You can also download <a href="https://github.com/openfl/dragonbones/tree/master/samples/HelloDragonBones">the sample project</a> instead to follow along.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">haxelib</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dragonbones&quot;</span> /&gt;</span>
+</code><small class='highlight-language position-absolute top-0 end-0'>XML</small></pre>
+<p>Then create a new animation using DragonBones. For the sake of this tutorial, we’re going to use a premade project that comes with DragonBones called DragonBoy that you can select from the starting menu. Once you’re done, go to <code>File &gt; Export</code> and export the animation using <code>Data Version: 5.0</code> and <code>Image Type: Texture Atlas</code>. Then save it to the <code>assets</code> folder in your Flixel project.</p>
+<img src="/images/blog/13_dragonbones/dragonbones_export.png" width="100%" />
+<h3 id="packages" tabindex="-1"><a class="header-anchor" href="#packages"><span>Packages</span></a></h3>
+<p>First, import the packages we'll be using.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">import</span> haxe.Json;
+<span class="hljs-keyword">import</span> openfl.Assets;
+<span class="hljs-keyword">import</span> flixel.FlxG;
+<span class="hljs-keyword">import</span> flixel.FlxState;
+<span class="hljs-keyword">import</span> flixel.group.FlxGroup;
+<span class="hljs-keyword">import</span> dragonBones.objects.DragonBonesData;
+<span class="hljs-keyword">import</span> dragonBones.flixel.FlixelTextureAtlasData;
+<span class="hljs-keyword">import</span> dragonBones.flixel.FlixelArmatureDisplay;
+<span class="hljs-keyword">import</span> dragonBones.flixel.FlixelArmatureCollider;
+<span class="hljs-keyword">import</span> dragonBones.flixel.FlixelFactory;
+<span class="hljs-keyword">import</span> dragonBones.flixel.FlixelEvent;
+<span class="hljs-keyword">import</span> dragonBones.animation.WorldClock;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="create-factory" tabindex="-1"><a class="header-anchor" href="#create-factory"><span>Create Factory</span></a></h3>
+<p>Then, inside the <code>create</code> function under your <code>FlxState</code> class you have to create a <code>FlixelFactory</code> which generates flixel objects for DragonBones like so:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> _factory = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlixelFactory();
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="parse-data" tabindex="-1"><a class="header-anchor" href="#parse-data"><span>Parse Data</span></a></h3>
+<p>Then you have to use the factory to parse the animation files that you’ve exported in order to read their data.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> dragonBonesData:<span class="hljs-type">DragonBonesData </span>= _factory.parseDragonBonesData(
+	Json.parse(Assets.getText(<span class="hljs-string">&quot;assets/dragonboy_flixel_ske.json&quot;</span>))
+);
+
+_factory.parseTextureAtlasData(
+	Json.parse(Assets.getText(<span class="hljs-string">&quot;assets/dragonboy_flixel_tex.json&quot;</span>)),
+	Assets.getBitmapData(<span class="hljs-string">&quot;assets/dragonboy_flixel_tex.png&quot;</span>)
+);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="build-armature" tabindex="-1"><a class="header-anchor" href="#build-armature"><span>Build Armature</span></a></h3>
+<p>Then you have to create a <code>FlxGroup</code> which will contain all the DragonBones Flixel Sprites. You can do so by declaring a variable and then assigning the new <code>FlxGroup</code> to it which you will generate using the factory.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> armatureGroup = _factory.buildArmatureDisplay(<span class="hljs-keyword">new</span><span class="hljs-type"></span> FlixelArmatureCollider(<span class="hljs-number">250</span>, <span class="hljs-number">250</span>, <span class="hljs-number">27</span>, <span class="hljs-number">25</span>, <span class="hljs-number">13</span>, <span class="hljs-number">8</span>), dragonBonesData.armatureNames[<span class="hljs-number">0</span>]);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>One thing to note is you also have to pass in a collision box similar to the Flixel Spine plugin. This is because with many different sprites, if you want to check the collisions of the entire “character” then you have to have one large collision box. You also pass in the name of the armature (the animations skeleton). Generally you’ll only have one armature, so just pass in the first index of the <code>armatureNames</code> array from the data you got earlier. Otherwise, check your animation in DragonBones to find the name and pass it in as a string.</p>
+<h3 id="set-properties" tabindex="-1"><a class="header-anchor" href="#set-properties"><span>Set Properties</span></a></h3>
+<p>Then you iterate through all of the sprites in the <code>FlxGroup</code> to set their initial properties (such as scale, placement in the world, ect.) as you please.</p>
+<pre class="position-relative"><code class="hljs">armatureGroup.forEach(<span class="hljs-title function_"><span class="hljs-keyword">function</span></span>(display:<span class="hljs-type">FlixelArmatureDisplay</span>) {
+	display.antialiasing = <span class="hljs-literal">true</span>;
+	display.x = <span class="hljs-number">100</span>;
+	display.y = <span class="hljs-number">100</span>;
+	display.scaleX = <span class="hljs-number">0.50</span>;
+	display.scaleY = <span class="hljs-number">0.50</span>;
+});
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="start-animation" tabindex="-1"><a class="header-anchor" href="#start-animation"><span>Start Animation</span></a></h3>
+<p>Now you do the same thing to start the initial animation. Again we grab the first index from the list of animation names to keep it simple.</p>
+<pre class="position-relative"><code class="hljs">armatureGroup.forEach(<span class="hljs-title function_"><span class="hljs-keyword">function</span></span>(display:<span class="hljs-type">FlixelArmatureDisplay</span>) {
+	display.animation.play(display.animation.animationNames[<span class="hljs-number">0</span>]);
+});
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="update-animation" tabindex="-1"><a class="header-anchor" href="#update-animation"><span>Update Animation</span></a></h3>
+<p>Then, inside the update loop of the <code>FlxState</code> class, add <code>FlixelFactory._clock.advanceTime(-1);</code> to update the animation clock so that the factory knows what point it's at on the timeline.</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">override</span> <span class="hljs-keyword">public</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span></span>(elapsed:<span class="hljs-type">Float</span>):<span class="hljs-type">Void</span>
+{
+	FlixelFactory<span class="hljs-number">._</span>clock.advanceTime(<span class="hljs-number">-1</span>);
+	<span class="hljs-keyword">super</span>.update(elapsed);
+}
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="render" tabindex="-1"><a class="header-anchor" href="#render"><span>Render</span></a></h3>
+<p>Finally, we add the <code>FlxGroup</code> to the <code>FlxState</code> inside the <code>create</code> function so it can be rendered!</p>
+<pre class="position-relative"><code class="hljs">add(armatureGroup);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="preview" tabindex="-1"><a class="header-anchor" href="#preview"><span>Preview</span></a></h3>
+<p>That’s it! Once you compile with <code>lime test html5</code>, it should look like this:</p>
+<img src="/images/blog/13_dragonbones/dragonbones_preview.gif" width="100%" />
+
+
+	<br>
+	<hr>
+	<br>
+
+	<!-- <%- @getDisqus() %> -->
+</div>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

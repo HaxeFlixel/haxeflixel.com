@@ -1,0 +1,23 @@
+date,transaction,debit,credit
+Patreon,,,
+"Dec. 1, 2017",Income - Patreon Donations,129.00,0.00
+"Dec. 1, 2017",Expense - Processing Fees,0.00,5.55
+"Dec. 1, 2017",Expense -  Patreon Fees,0.00,6.45
+Total Patreon,,129.00,12.00
+Net Movement,,,117.00
+,,,
+Patreon Donations,,,
+"Dec. 1, 2017",Income - Patreon Donations,0.00,129.00
+Total Patreon Donations,,0.00,129.00
+Net Movement,,,129.00
+,,,
+Payment Fees,,,
+"Dec. 1, 2017",Expense - Processing Fees,5.55,0.00
+Total Payment Fees,,5.55,0.00
+Net Movement,,,5.55
+,,,
+Patreon Fees,,,
+"Dec. 1, 2017",Expense -  Patreon Fees,6.45,0.00
+Total Patreon Fees,,6.45,0.00
+Net Movement,,,6.45
+,,,

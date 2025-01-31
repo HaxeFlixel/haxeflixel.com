@@ -1,0 +1,1394 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> Demos | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" Demos | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/demos/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#ffbf37">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle active"
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<h1 class="title">
+	Demos
+	<div class="float-end">
+		<a
+			class="github-button"
+			href="https://github.com/haxeflixel/flixel-demos"
+			data-color-scheme="no-preference: light_high_contrast; light: light_high_contrast; dark: dark_high_contrast;"
+			data-size="large"
+			data-show-count="true"
+			aria-label="Star haxeflixel/flixel on GitHub"
+			>haxeflixel/flixel-demos</a
+		>
+	</div>
+</h1>
+
+<div class="demo-page row row-cols-2 row-cols-md-3 row-cols-lg-5 justify-content-center g-2 g-sm-3 mx-sm-2 mx-md-4">
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/BSPMapGen/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/4xXEdcHStl-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">BSPMapGen</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/BlendModeShaders/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/jXfMAcFdJf-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">BlendModeShaders</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/Breakout/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/34i3-ZdMKg-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Breakout</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/Calculator/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/IWNmiHAhXw-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Calculator</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/CollisionAndGrouping/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/F3MUWIbeAn-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">CollisionAndGrouping</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/Colors/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/TC6dv5HFNs-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Colors</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/Cursor/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/LmcwUfThP_-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Cursor</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/DynamicShadows/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/4t4uLsdP0D-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">DynamicShadows</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/EZPlatformer/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/voxoE_APus-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">EZPlatformer</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FileBrowse/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/FyXxKVWj1G-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FileBrowse</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/Filters/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/oW6Y2oDgge-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Filters</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/Flappybalt/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/0LA_CWkYSx-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Flappybalt</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlipRotationAnimationTiles/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/L92yl79SAg-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlipRotationAnimationTiles</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/Flixius/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/-R80YgpELn-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Flixius</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FloodFill/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/8LPpz2nmpi-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FloodFill</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxAction/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/tWBn355_7u-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxAction</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxAsepriteUtil/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/HLze8nuiEi-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxAsepriteUtil</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxAsyncLoop/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/w58LmTdRs3-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxAsyncLoop</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxAtlas/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/TmwOhcU0dv-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxAtlas</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FlxBitmapText/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/0A0Z6q31y7-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxBitmapText</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxBunnymark/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/OkeOjQJPXy-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxBunnyMark</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxCamera/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/_sdaFG9PDo-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxCamera</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxCaveGenerator/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/pX5cjp3-48-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxCaveGenerator</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxClothSprite/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/EogUE3K7XT-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxClothSprite</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FlxCollisions/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/--2BPk3cNN-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxCollisions</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxEffectSprite/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/fvpBQh86HU-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxEffectSprite</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxFSM/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/rYBLVAGZxc-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxFSM</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxGameOfLife/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/BQiru8W0m7-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxGameOfLife</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxInputText/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/x9l_8pzc64-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxInputText</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FlxInvaders/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/oxh83Ys3yU-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxInvaders</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxLightPuzzle/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/5OXCM2k2-2-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxLightPuzzle</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxMouseEvent/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/qefCh5WCKw-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxMouseEvent</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxNape/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/OCY2U0Lhb1-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxNape</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxNapeTerrain/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/Dqldaq4Yuv-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxNapeTerrain</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FlxNapeTilemap/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/HBvMgTs0-m-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxNapeTilemap</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxPexParser/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/vVwm4nmZbi-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxPexParser</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxPieDial/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/wdapICmibk-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxPieDial</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxPongApi/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/jOAjuKoGgy-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxPongApi</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxRandom/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/iyptdT5lwO-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxRandom</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FlxScene/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/Vnnq-OdLz7-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxScene</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxShape/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/YrZDYoI69r-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxShape</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxSimplex/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/60wd5Ejl2z-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxSimplex</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxSkewedSprite/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/DGtNAK_Q7H-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxSkewedSprite</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxSnake/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/U-u_V2i7ef-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxSnake</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FlxSound/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/YZ9ikIvwZk-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxSound</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxSpine/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/khdGN9-K0J-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxSpine</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxSpriteFilters/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/B3h2SlziLd-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxSpriteFilters</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxSubState/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/CNnHyztWCM-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxSubState</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxTeroids/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/eUKvBqScvD-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxTeroids</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FlxTextFormat/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/GDmYJ4glWN-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxTextFormat</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/FlxTilemapExt/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/McOkTv4u-V-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxTilemapExt</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/FlxTrailArea/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/oXWMTyeCk0-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxTrailArea</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/FlxTween/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/4I00B309_8-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxTween</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/FlxTypeText/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/T7lYv5h1Mh-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FlxTypeText</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/FrameCollections/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/jB2cNFYCnR-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">FrameCollections</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/GamepadTest/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/LKiGfN-CpT-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">GamepadTest</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/GridMovement/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/Cr7fnTVnBo-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">GridMovement</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/HeatmapPathfinding/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/qXvatt3oZZ-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">HeatmapPathfinding</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/MinimalistTD/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/7wq2qaQB2I-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">MinimalistTD</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/Mode/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/oIb0nKQduL-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Mode</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/MosaicEffect/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/SbZuV6oelw-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">MosaicEffect</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/Parallax/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/ueibbnNio5-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Parallax</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/Particles/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/3cMxitUWTX-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Particles</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/Pathfinding/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/SZ6TuLgyzv-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Pathfinding</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/PixelPerfectCollision/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/fiTkFMA6LQ-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">PixelPerfectCollision</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/ProjectJumper/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/WuFT348m5U-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">ProjectJumper</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/RPGInterface/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/k0dSkA5j7l-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">RPGInterface</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/Replay/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/7k4UaF49oD-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Replay</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/Revenge/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/0pUv5xG23i-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Revenge</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/Save/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/DkGdDsCWoS-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Save</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/ScaleModes/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/SvspXfDq9N-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">ScaleModes</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/SetTileProperties/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/9ySX0bHfAn-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">SetTileProperties</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/SplitScreen/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/zvHsoGduLM-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">SplitScreen</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/TexturePackerAtlas/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/YeguZP9Z01-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">TexturePackerAtlas</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-light-blue" href="/demos/TileMap/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/xGF5mRk8Lk-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Tilemap</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-yellow" href="/demos/TiledEditor/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/5fvN4sBobk-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">TiledEditor</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-red" href="/demos/Tooltips/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/6IytYlEBRw-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Tooltips</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-green" href="/demos/Transitions/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/yCNxq6BL6h-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">Transitions</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+		
+		<div class="col demo-card text-white">
+			<a class="card px-0 text-center text-reset link-flixel-dark-blue" href="/demos/TurnBasedRPG/">
+				
+				<img alt="{{demo.data.title}}" width="400" height="400" loading="lazy" decoding="async" class="card-img img-fluid" src="/img/FshOwzS2SL-400.png">
+				<div class="card-img-overlay p-0">
+					<p class="card-title py-2 fw-bold bg-black">TurnBasedRPG</p>
+					<p class="card-text"></p>
+				</div>
+			</a>
+		</div>
+	
+</div>
+
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

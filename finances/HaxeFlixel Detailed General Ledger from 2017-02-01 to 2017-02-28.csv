@@ -1,0 +1,39 @@
+date,transaction,debit,credit
+Patreon,,,
+"Feb. 1, 2017",Income - Patreon Donations,157.00,0.00
+"Feb. 1, 2017",Expense - Processing Fees,0.00,6.97
+"Feb. 1, 2017",Expense -  Patreon Fees,0.00,7.85
+Total Patreon,,157.00,14.82
+Net Movement,,,142.18
+,,,
+Treasurer,,,
+"Feb. 7, 2017",Expense - Donation to Jens Fischer (Gama11) for long term HaxeFlixel support,0.00,330.00
+"Feb. 25, 2017",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,29.70,0.00
+Total Treasurer,,29.70,330.00
+Net Movement,,,(300.30)
+,,,
+Patreon Donations,,,
+"Feb. 1, 2017",Income - Patreon Donations,0.00,157.00
+Total Patreon Donations,,0.00,157.00
+Net Movement,,,157.00
+,,,
+Book Sales,,,
+"Feb. 25, 2017",Income - Discover Haxeflixel Book Contributions from Leonardo Cavaletti,0.00,29.70
+Total Book Sales,,0.00,29.70
+Net Movement,,,29.70
+,,,
+Payment Fees,,,
+"Feb. 1, 2017",Expense - Processing Fees,6.97,0.00
+Total Payment Fees,,6.97,0.00
+Net Movement,,,6.97
+,,,
+Patreon Fees,,,
+"Feb. 1, 2017",Expense -  Patreon Fees,7.85,0.00
+Total Patreon Fees,,7.85,0.00
+Net Movement,,,7.85
+,,,
+Development Services,,,
+"Feb. 7, 2017",Expense - Donation to Jens Fischer (Gama11) for long term HaxeFlixel support,330.00,0.00
+Total Development Services,,330.00,0.00
+Net Movement,,,330.00
+,,,

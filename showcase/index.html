@@ -1,0 +1,4410 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> Showcase | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" Showcase | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/showcase/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#ff2346">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link active" href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<h1 class="title">
+	Showcase
+
+	<div class="float-end">
+		<a
+			class="github-button"
+			href="https://github.com/haxeflixel/haxeflixel.com?tab=readme-ov-file#how-to-add-a-showcase-game"
+			data-color-scheme="no-preference: light_high_contrast; light: light_high_contrast; dark: dark_high_contrast;"
+			data-size="large"
+			data-show-count="true"
+			aria-label="Star haxeflixel/flixel on GitHub"
+			>haxeflixel/haxeflixel.com</a
+		>
+	</div>
+</h1>
+
+
+
+<div class="center-align-a">
+	<div class="row justify-content-center">
+		
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Canabalt
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://canabalt.com"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Canabalt" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/DhPbG_ytP_-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://finji.itch.io/canabalt-classic"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/510303"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.github) %>" title="GitHub">
+								<a
+									href="https://github.com/ninjamuffin99/canabalt-hf"
+									class="showcaseTarget"
+									target="_blank">
+									<img height="40px" src="/images/targets/github-logo.svg">
+								</a>
+							</span>
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Kid Bubblegum
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://www.ohsat.com/game/kid-bubblegum/"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Kid Bubblegum" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/SJqZ3k9Gkn-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/2441500/Kid_Bubblegum/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://ohsat-andrej.itch.io/kid-bubblegum"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Odd Verdure
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://www.newgrounds.com/portal/view/893426"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Odd Verdure" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/VZyT9P3AJ9-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/893426"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Chibi Ninja Shino-kun
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://www.ohsat.com/game/shino-kun/"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Chibi Ninja Shino-kun" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/bkqRjr0owE-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/2175640/Chibi_Ninja_Shinokun_Treasure_of_Demon_Tower/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://ohsat-andrej.itch.io/chibi-ninja-shino-kun"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Bring It On!
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://bringiton.axolstudio.com/"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Bring It On!" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/qWmwXdG570-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/2020460/Bring_It_On/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://axolstudio.itch.io/bring-it-on"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+			
+			
+			
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Friday Night Funkin'
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://ninja-muffin24.itch.io/funkin"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Friday Night Funkin'" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/kmEBHiT7RC-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://ninja-muffin24.itch.io/funkin"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/770371"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.github) %>" title="GitHub">
+								<a
+									href="https://github.com/FunkinCrew/funkin"
+									class="showcaseTarget"
+									target="_blank">
+									<img height="40px" src="/images/targets/github-logo.svg">
+								</a>
+							</span>
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Renegade Racing
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.notdoppler.com/renegaderacing/"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Renegade Racing" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/NUQLhXPdlR-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.notdoppler.renegaderacing"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ios) %>" title="iOS">
+								<a
+									href="https://apps.apple.com/gb/app/renegade-racing/id1355912318"
+									class="showcaseTarget"
+									target="_blank">
+									<img width="40px" src="/images/targets/ios-logo.png">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				<div class="col-md-6 showcase-game">
+					<h1 class="fw-medium">
+						Defender's Quest: Valley of the Forgotten
+					</h1>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.defendersquest.com/1/"
+						property="dc:title"
+						target="_blank">
+						
+						
+						<img alt="Defender's Quest: Valley of the Forgotten" width="500" height="260" loading="lazy" decoding="async" class="" src="/img/uu7-PaGqJ2-500.png">
+						
+						
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/218410/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ps4) %>" title="PlayStation 4">
+								<a
+									href="https://www.playstation.com/en-us/games/defenders-quest-valley-of-the-forgotten-dx-ps4/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/ps-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span
+								class="<%= @getShowcaseActive( showcase.data.psvita) %>"
+								title="PlayStation Vita">
+								<a
+									href="https://www.playstation.com/en-us/games/defenders-quest-valley-of-the-forgotten-dx-psvita/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/ps-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.xbox) %>" title="XBox">
+								<a
+									href="https://www.microsoft.com/en-us/p/defenders-quest-valley-of-the-forgotten-dx/c1tbcx541jw7"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/xbox-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+
+	<div class="row showcase-grid">
+		
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Defender's Quest II
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.defendersquest.com/2/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Defender's Quest II" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/yIF9VjGBRs-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/252190/Defenders_Quest_2_Mists_of_Ruin/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+			
+			
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						[Speer DX]
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://www.ohsat.com/game/speer-dx/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="[Speer DX]" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/_Q2A_7Vy0A-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/1945800/Speer_DX/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Future Knight DX
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://john0032.itch.io/future-knight-dx"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Future Knight DX" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/mpvLthDyxm-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://john0032.itch.io/future-knight-dx"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.github) %>" title="GitHub">
+								<a
+									href="https://github.com/john32b/futureknightdx"
+									class="showcaseTarget"
+									target="_blank">
+									<img height="40px" src="/images/targets/github-logo.svg">
+								</a>
+							</span>
+						
+					</div>
+				</div>
+			
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						millstone
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://01010111.itch.io/millstone"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="millstone" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/7v10BxCERj-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://01010111.itch.io/millstone"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Go! Go! PogoGirl
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://www.ohsat.com/game/go-go-pogogirl/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Go! Go! PogoGirl" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/FlmJA0V9Yp-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/1681010/Go_Go_PogoGirl/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ps4) %>" title="PlayStation 4">
+								<a
+									href="https://store.playstation.com/en-us/product/UP0891-PPSA10169_00-GOGOPOGOGIRLRATG"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/ps-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.xbox) %>" title="XBox">
+								<a
+									href="https://www.microsoft.com/store/productid/9P10H7L6QCCJ"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/xbox-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span
+								class="<%= @getShowcaseActive( showcase.data.switch) %>"
+								title="Nintendo Switch">
+								<a
+									href="https://www.nintendo.com/store/products/go-go-pogogirl-switch/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/switch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://ohsat-andrej.itch.io/go-go-pogogirl"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						UPSQUID
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://01010111.itch.io/upsquid"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="UPSQUID" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/3qtrsCa3pi-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://01010111.itch.io/upsquid"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Eggsolotl
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://axolstudio.com/projects/eggsolotl/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Eggsolotl" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/RJiTdhOYxu-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://axolstudio.itch.io/eggsolotl"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/807055"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Spooksville, USA
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://axolstudio.com/projects/spooksville/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Spooksville, USA" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/2ltzTEetIo-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://axolstudio.itch.io/spooksville-usa"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/782808"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Heck House
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://axolstudio.com/projects/heck_house/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Heck House" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/cbC4fiKzoT-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://axolstudio.itch.io/heck-house"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/781468"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Monster Match
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://axolstudio.com/projects/monster_match/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Monster Match" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/0b9OgfNTCD-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://axolstudio.itch.io/monster-match"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/804030"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Peasant Knight
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://pk.fouramgames.com"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Peasant Knight" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/0Gf9fG8W4o-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/424610/Peasant_Knight/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+							<span
+								class="<%= @getShowcaseActive( showcase.data.switch) %>"
+								title="Nintendo Switch">
+								<a
+									href="https://www.nintendo.com/store/products/peasant-knight-switch/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/switch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://ohmnivore.itch.io/peasant-knight"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Solid Aether
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://www.fal-works.com/solid-aether"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Solid Aether" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/UgbV2Z3PNV-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/910730/Solid_Aether/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://fal-works.itch.io/solid-aether"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Flitter Inc.
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://play.google.com/store/apps/details?id=com.deadelectronstudios.flitterinc"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Flitter Inc." width="345" height="184" loading="lazy" decoding="async" class="" src="/img/OuycK56Rys-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.deadelectronstudios.flitterinc"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Super Slime Arena
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://superslimearena.net"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Super Slime Arena" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/IIzHaCWf4i-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/706960/Super_Slime_Arena/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="http://jellyteam.itch.io/super-slime-arena/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Cheap Golf
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://cheapgolf.co/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Cheap Golf" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/MyaQPyy1Ln-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+							<span class="<%= @getShowcaseActive( showcase.data.windows) %>" title="Windows">
+								<a
+									href="http://store.steampowered.com/app/616520/Cheap_Golf/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="30px"
+										height="40px"
+										src="/images/targets/windows-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.linux) %>" title="Linux">
+								<a
+									href="http://store.steampowered.com/app/616520/Cheap_Golf/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="49px"
+										src="/images/targets/linux-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.mac) %>" title="Mac">
+								<a
+									href="http://store.steampowered.com/app/616520/Cheap_Golf/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="26px"
+										height="40px"
+										src="/images/targets/apple-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/616520/Cheap_Golf/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://pixeljam.itch.io/cheap-golf"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/719840"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Even the Ocean
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.eventheocean.com/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Even the Ocean" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/_EK5L4Y-pR-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/265470"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://han-tani.itch.io/even-the-ocean"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.github) %>" title="GitHub">
+								<a
+									href="https://github.com/analgesicproductions/Even-The-Ocean-Open-Source"
+									class="showcaseTarget"
+									target="_blank">
+									<img height="40px" src="/images/targets/github-logo.svg">
+								</a>
+							</span>
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Fist's Elimination Tower
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://kyatt7.itch.io/fists-elimination-tower"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Fist's Elimination Tower" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/JvAJem3dMW-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/630460/Fists_Elimination_Tower/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://kyatt7.itch.io/fists-elimination-tower/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Glorch's Great Escape
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://store.steampowered.com/app/549790/Glorchs_Great_Escape_Walking_is_for_Chumps/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Glorch's Great Escape" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/MRz5TE7nHX-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/549790/Glorchs_Great_Escape_Walking_is_for_Chumps/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						The Wolf's Bite
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.thewolfsbite.com/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="The Wolf's Bite" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/n4mE98WGTZ-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+							<span class="<%= @getShowcaseActive( showcase.data.windows) %>" title="Windows">
+								<a
+									href="http://store.steampowered.com/app/656040/The_Wolfs_Bite/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="30px"
+										height="40px"
+										src="/images/targets/windows-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.mac) %>" title="Mac">
+								<a
+									href="http://store.steampowered.com/app/656040/The_Wolfs_Bite/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="26px"
+										height="40px"
+										src="/images/targets/apple-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/656040/The_Wolfs_Bite/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://ericmbernier.itch.io/the-wolfs-bite"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Holobunnies: Pause Café
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://store.steampowered.com/app/497710/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Holobunnies: Pause Café" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/HwEQ34pRhv-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/497710/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Tomb Explorer
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://johndimi.itch.io/tombexplorer"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Tomb Explorer" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/8y3GnE0Jn3-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://johndimi.itch.io/tombexplorer"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Slime Time
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://incredible-ape.itch.io/slime-time"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Slime Time" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/YN4oZgXTup-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://incredible-ape.itch.io/slime-time"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Willy and Mathilda's Houseboat Adventure
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://ibwwg.com/?id=5"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Willy and Mathilda's Houseboat Adventure" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/nZMBsOI2V3-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://ibwwg.itch.io/mathildagame"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Blasting Agent: Ultimate Edition
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://axolstudio.com/projects/blasting-agent/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Blasting Agent: Ultimate Edition" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/9aeyZcsQSZ-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+							<span class="<%= @getShowcaseActive( showcase.data.windows) %>" title="Windows">
+								<a
+									href="http://www.blastingagent.com/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="30px"
+										height="40px"
+										src="/images/targets/windows-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/453810"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ps4) %>" title="PlayStation 4">
+								<a
+									href="https://store.playstation.com/en-us/product/UP0891-CUSA06555_00-RGBLASTINGAGENTU"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/ps-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://axolstudio.itch.io/blasting-agent"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						One Ship Two Ship Redshift Blueshift
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://github.com/01010111/OneShiftTwoShift"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="One Ship Two Ship Redshift Blueshift" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/C1P05t6iMQ-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="https://store.steampowered.com/app/367430/One_Ship_Two_Ship_Redshift_Blueshift/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						HyperBoarder
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.kongregate.com/games/lportion/hyperboarder"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="HyperBoarder" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/GItMr2wZEg-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://www.kongregate.com/games/lportion/hyperboarder"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Sort!Sort!Sort!
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://play.google.com/store/apps/details?id=com.n06rin.sortsortsort"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Sort!Sort!Sort!" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/ZRTtgljNst-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.n06rin.sortsortsort"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Genial Santa Claus 2
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://netforza.com/play/genial-santa-claus-2/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Genial Santa Claus 2" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/9eo6hvpB_t-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.netforza.GenialSantaClaus2"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ios) %>" title="iOS">
+								<a
+									href="https://itunes.apple.com/app/genial-santa-claus-2-christmas/id1064711553?mt=8"
+									class="showcaseTarget"
+									target="_blank">
+									<img width="40px" src="/images/targets/ios-logo.png">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://www.kongregate.com/games/Netforza/genial-santa-claus-2-the-christmas-cards"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						The Enchanted Cave 2
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://dustinauxier.com/the-enchanted-cave-2"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="The Enchanted Cave 2" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/IpKckUgfxf-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.okshur.enchantedCave2"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ios) %>" title="iOS">
+								<a
+									href="https://itunes.apple.com/us/app/the-enchanted-cave-2/id983868842?ls=1&mt=8"
+									class="showcaseTarget"
+									target="_blank">
+									<img width="40px" src="/images/targets/ios-logo.png">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://www.kongregate.com/games/DustinAux/the-enchanted-cave-2"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/368610"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Werewolf Tycoon
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://joecreates.co.uk/werewolftycoon/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Werewolf Tycoon" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/E0YNCelTcl-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ios) %>" title="iOS">
+								<a
+									href="https://apps.apple.com/in/app/werewolf-tycoon/id939738216"
+									class="showcaseTarget"
+									target="_blank">
+									<img width="40px" src="/images/targets/ios-logo.png">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://gamejolt.com/games/arcade/werewolf-tycoon/41745/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Spacejacked
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.spacejacked.com/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Spacejacked" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/bL9mBQ7vwc-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://gamejolt.com/games/arcade/spacejacked-endless-mode/50894/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/390680/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Shifter
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.newgrounds.com/portal/view/652084"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Shifter" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/vp0lBtMXL5-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="http://www.newgrounds.com/portal/view/652084"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Dfragmente
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://hexdie.itch.io/dfragmente"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Dfragmente" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/5eL0v6ChQf-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://hexdie.itch.io/dfragmente"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="http://hexdie.itch.io/dfragmente"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Viking Warfare
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.kongregate.com/games/Junjo/viking-warfare"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Viking Warfare" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/mTM3ZVopav-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://www.kongregate.com/games/Junjo/viking-warfare"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Polaritron
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://leongotgame.itch.io/polaritron"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Polaritron" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/aZwDPaa8QC-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.leongame.polaritron"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://leongotgame.itch.io/polaritron"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="http://leongotgame.itch.io/polaritron"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						LAZA KNITEZ!!
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://glitchnap.itch.io/lazaknitez"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="LAZA KNITEZ!!" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/1dpermOTHU-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/352640/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="http://glitchnap.itch.io/lazaknitez"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Glitch Lab
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://armorgames.com/play/16042/glitch-lab"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Glitch Lab" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/6uSp2sYbOa-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://armorgames.com/play/16042/glitch-lab"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Cardinal Quest 2
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://cardinalquest2.com/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Cardinal Quest 2" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/8REf5vLDuP-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.kongregate.mobile.cardinalquest.google"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.ios) %>" title="iOS">
+								<a
+									href="https://itunes.apple.com/app/id732353646"
+									class="showcaseTarget"
+									target="_blank">
+									<img width="40px" src="/images/targets/ios-logo.png">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://www.kongregate.com/games/randomnine/cardinal-quest-2"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.steam) %>" title="Steam">
+								<a
+									href="http://store.steampowered.com/app/378030/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/steam-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						spaceSpuds
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://jonathanhirz.itch.io/spacespuds/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="spaceSpuds" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/nBFxmHnZjh-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="http://jonathanhirz.itch.io/spacespuds/"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Idle Farmer
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://www.kongregate.com/games/junjo/idle-farmer"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Idle Farmer" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/YlwZjOZGHG-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.flash) %>" title="Flash">
+								<a
+									href="http://www.kongregate.com/games/junjo/idle-farmer"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="32px"
+										height="40px"
+										src="/images/targets/flash-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Bronko Blue
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://bronko.bytecombo.com"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Bronko Blue" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/NFVa2o5Oe7-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.newgrounds) %>" title="Newgrounds">
+								<a
+									href="https://www.newgrounds.com/portal/view/644217"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/newgrounds-logo.svg">
+								</a>
+							</span>
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Saving Alley Cats!
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://play.google.com/store/apps/details?id=pl.vigeo.saving.alley.cats"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Saving Alley Cats!" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/lnscvKosnL-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=pl.vigeo.saving.alley.cats"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						SLIDE-0000
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="http://jeremyoduber.itch.io/slide-0000"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="SLIDE-0000" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/KHw0mMbTPD-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.jeremyoduber.slide"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="http://jeremyoduber.itch.io/slide-0000"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						GULAG PARADISE
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://armelgibson.itch.io/gulag-paradise"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="GULAG PARADISE" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/-fip-S3m_i-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://armelgibson.itch.io/gulag-paradise"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						BOSSES FOREVER 2.BRO
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://picklesiidx.itch.io/bosses-forever-2bro"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="BOSSES FOREVER 2.BRO" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/z4VYlvZpbB-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://picklesiidx.itch.io/bosses-forever-2bro"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+					</div>
+				</div>
+			
+			
+				<div class="col-md-4 showcase-game">
+					<h3 class="fw-medium">
+						Don't Move
+					</h3>
+
+					<a
+						class="showcase-game-thumbnail"
+						href="https://www.dontmove.co/"
+						property="dc:title"
+						target="_blank">
+						
+						<img alt="Don't Move" width="345" height="184" loading="lazy" decoding="async" class="" src="/img/trYC_g3sRD-345.png">
+					</a>
+
+					<div class="showcase-targets">
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.android) %>" title="Android">
+								<a
+									href="https://www.humblebundle.com/store/dont-move"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/android-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.itch) %>" title="itch.io">
+								<a
+									href="https://stvr.itch.io/dont-move"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="35px"
+										height="40px"
+										src="/images/targets/itch-logo.svg">
+								</a>
+							</span>
+						
+
+						
+							<span class="<%= @getShowcaseActive( showcase.data.humble) %>" title="Humble Bundle">
+								<a
+									href="https://www.humblebundle.com/store/dont-move"
+									class="showcaseTarget"
+									target="_blank">
+									<img
+										width="40px"
+										height="40px"
+										src="/images/targets/humble-logo.svg">
+								</a>
+							</span>
+						
+
+						
+
+						
+					</div>
+				</div>
+			</div>
+</div>
+
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

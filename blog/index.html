@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> The HaxeFlixel Blog | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" The HaxeFlixel Blog | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/blog/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#00b92b">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<div class="row">
+	<div class="col-md-8">
+		<h1 class="title">
+			The HaxeFlixel Blog
+			<a class="float-end link-body-emphasis" href="/feed.xml"><i class="h4 bi bi-rss"></i></a>
+		</h1>
+		<div class="container">
+	<div class="row gy-4 pt-3">
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-yellow"
+				style="outline-color: var(--bs-flixel-yellow);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel 5.9.0</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							5 min read | January 24, 2025
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						After 8 long months since 5.8.0, I'm happy to announce the largest Flixel release since I've taken over as lead. We don't like to go that far without releases, but new things just kept piling on. To name a few, we have:
+
+A new FlxInputText to replace the old Flixel-UI.
+FlxG.assets, for customization to Flixel's asset management (hot-reloading!)....<a href="/blog/18-Haxeflixel-5-9-0/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-red"
+				style="outline-color: var(--bs-flixel-red);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel Site Update!</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							2 min read | April 4, 2024
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						The HaxeFlixel site finally got a bit of a facelift! After 4 years of Docpad being deprecated (we were on an even older version!), and 2 years of the initial &quot;Should we replace docpad?&quot; Github issue raised by RichardBray, we have FINALLY migrated the static site generation code fully off Docpad, and we are now using 11ty to generate th...<a href="/blog/17-site-update/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-green"
+				style="outline-color: var(--bs-flixel-green);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel 5.4.0</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							5 min read | October 2, 2023
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						We've finally released Haxeflixel 5.4.0, our largest release in quite some time, arguably larger than the 5.0.0 release! This release focuses heavily on assets and animations, like the new FlxAsepriteUtil and the new Multi-Atlas system.
+What took so long?
+We try to release new versions of HaxeFlixel around once a month, and have been, for the mo...<a href="/blog/16-HaxeFlixel-5-4-0/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-dark-blue"
+				style="outline-color: var(--bs-flixel-dark-blue);">
+				<div class="card-body">
+					<h3 class="card-title">Blog Posts are Back</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							2 min read | June 7, 2023
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Hello everyone! George, here, gladly announceing the return of the HaxeFlixel blog after a long hiatus. While there have been many ongoing changes to the HaxeFlixel framework, we've sadly neglected to broadcast those changes on the website. Let's take this time to get everybody up to speed with all we've done these last 3 years.
+What's New?
+Sinc...<a href="/blog/15-Blog-posts-are-back/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-light-blue"
+				style="outline-color: var(--bs-flixel-light-blue);">
+				<div class="card-body">
+					<h3 class="card-title">Newgrounds Game Jam</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							1 min read | March 25, 2020
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Newgrounds is hosting a HaxeFlixel game jam with a $1,300 prize pool! The theme is &quot;Alone, Together&quot; and submissions have to be uploaded to Newgrounds by Monday, April 27th with the tag &quot;HaxeFlixelJam&quot; included. For more information, check out their official announcement.
+
+We also modernized our Tutorial to use Ogmo 3, Visual...<a href="/blog/14-newgrounds-game-jam/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-yellow"
+				style="outline-color: var(--bs-flixel-yellow);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel DragonBones Support</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							4 min read | September 1, 2018
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Hi there, I’m Troy (@RouStudios), creator and maintainer of the HaxeFlixel backend for DragonBones. I’m here to write a post about DragonBones support for HaxeFlixel and how to use it.
+First of all, what is DragonBones? DragonBones is a free *open source alternative to the popular 2D bone animation tool Spine (which Flixel already has support fo...<a href="/blog/13-HaxeFlixel-DragonBones-Support/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-red"
+				style="outline-color: var(--bs-flixel-red);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel 4.4.0</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							3 min read | May 4, 2018
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						HaxeFlixel 4.4.0 is now available on Haxelib, adding support for OpenFL 8 and Lime 6.3.0! Breaking changes are mostly limited to blend modes and a slightly different shader syntax. Additionally, 4.4.0 is still fully-backwards-compatible with OpenFL 3.6.1 legacy or next, so even if you don't plan on upgrading to OpenFL 8 just yet, don't let that ...<a href="/blog/12-HaxeFlixel-4-4-0/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-green"
+				style="outline-color: var(--bs-flixel-green);">
+				<div class="card-body">
+					<h3 class="card-title">FlxLightPuzzle Demo</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							3 min read | March 28, 2018
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						We have a new demo made by yours truly Nick: a puzzle game of reflecting light and combining colors. Featuring...
+FlxLightPuzzle Demo
+
+In addition to being a fully playable game, the FlxLightPuzzle Demo heavily features the FlxVector class. Vector math is a nightmare, and I was actually surprised to see how much of it FlxVector handles for you.
+...<a href="/blog/11-light-puzzle-demo/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-dark-blue"
+				style="outline-color: var(--bs-flixel-dark-blue);">
+				<div class="card-body">
+					<h3 class="card-title">The Flixel Community</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							3 min read | September 17, 2017
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						So you've downloaded Flixel, skipped around in the tutorial, and are wondering what's next. You could start making that game you've been thinking about. Or, better yet, make that game while also talking to other people who are using Flixel! They're not scary, I promise.
+Join the community
+There are a number of places where you'll find fellow Fli...<a href="/blog/10-HF-community/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-light-blue"
+				style="outline-color: var(--bs-flixel-light-blue);">
+				<div class="card-body">
+					<h3 class="card-title">Introducing Nick (MSGHero)</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							3 min read | August 26, 2017
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Hi everyone!
+I'm Nick (@MSGhero16), and I'll be working for the HaxeFlixel community now. My goal is to drum up engagement with our favorite library by writing regular blog posts and creating new demos.
+If you're new around these parts, here's a brief intro to what this is all about.
+(Haxe)Flixel
+HaxeFlixel is a free cross-platform, open-source ...<a href="/blog/09-msghero-introduction-goals/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-yellow"
+				style="outline-color: var(--bs-flixel-yellow);">
+				<div class="card-body">
+					<h3 class="card-title">OpenFL 5 compatibility status update</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							4 min read | May 13, 2017
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Hey, Beeblerox here!
+As you may know, HaxeFlixel is currently stuck with outdated versions of OpenFL and Lime due to some rendering incompatibilities, and updating it has turned out to be more work than expected. I want to give you a quick status update regarding my work towards making Flixel compatible with the latest versions of OpenFL again.
+...<a href="/blog/08-openfl-5-compatibility-status-update/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-red"
+				style="outline-color: var(--bs-flixel-red);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel Mechanics</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							2 min read | March 2, 2017
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Hey everybody, Tim here to share something with you: Does this sound familiar?
+
+&quot;I wish I could remember how to do this one, small thing in HaxeFlixel, and that I didn't have to dig through a massive tutorial just to jog my memory.&quot;
+
+Or, how about:
+
+&quot;What's the 'right' way to handle this, again?&quot;
+
+Yeah, we've all been there! ...<a href="/blog/07-haxeflixel-mechanics/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-green"
+				style="outline-color: var(--bs-flixel-green);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel 4.2.0</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							1 min read | October 11, 2016
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						We've just released HaxeFlixel 4.2.0! There are a lot of small additions and improvements, like exposing the length of FlxSound objects or allowing you to configure their endTime.
+Apart from that, we also fixed a lot of bugs and took care of some old annoyances, like not being able to control which tweens or timers are paused when entering a sub...<a href="/blog/06-HaxeFlixel-4-2-0/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-dark-blue"
+				style="outline-color: var(--bs-flixel-dark-blue);">
+				<div class="card-body">
+					<h3 class="card-title">Fundraiser 2016</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							1 min read | August 27, 2016
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						HaxeFlixel is developed by and is now furtherly funded by, a community of
+people who have a geniune passion for the project.
+We thank everyone for their contributions over the past 5 years,
+whether it has been spreading the word, fundraising, admin, testing,
+reviewing &amp; submitting code or teaching and supporting others.
+All this keeps inspir...<a href="/blog/05-fundraiser/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-light-blue"
+				style="outline-color: var(--bs-flixel-light-blue);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel 4.1.0</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							1 min read | July 10, 2016
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						HaxeFlixel 4.1.0 has just been released to Haxelib (as well as new versions of flixel-addons, ui and demos)! The full changelog contains a long list of minor improvements and bugfixes.
+Unlike previous minor releases, this release is intended to be used as a drop-in-replacement - there are no significant breaking changes. If you do encounter any ...<a href="/blog/04-HaxeFlixel-4-1-0/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-yellow"
+				style="outline-color: var(--bs-flixel-yellow);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel 4.0.0</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							1 min read | February 16, 2016
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						We are proud to announce the release of HaxeFlixel 4.0.0! This is without a doubt the biggest release yet, with nearly 2000 new commits on the core repository alone since the last release.
+The highlights of this release are:
+
+an improved API structure
+a refactored rendering system
+a much improved gamepad API
+improved HTML5 support
+improved OpenF...<a href="/blog/03-HaxeFlixel-4-0-0/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-red"
+				style="outline-color: var(--bs-flixel-red);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel Patreon</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							3 min read | May 20, 2015
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Hello HaxeFlixel enthusiast, gamedevsam here!
+I have some big news to share with the HaxeFlixel community: HaxeFlixel is now on Patreon.
+Patreon is a crowd-funding platform that collects monthly donations to support artists and projects that people love. HaxeFlixel has joined Patreon to collect funds in order to reward contributions to the proje...<a href="/blog/02-HaxeFlixel-patreon/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-green"
+				style="outline-color: var(--bs-flixel-green);">
+				<div class="card-body">
+					<h3 class="card-title">Tilesheet rendering</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							5 min read | July 31, 2014
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						Hi, gamedevsam here, I'm a developer and evangelist of HaxeFlixel.
+The following blog post was written by Beeblerox (the original creator of HaxeFlixel) and was originally posted on his blog as a two part article (part 1 and part 2). In it, he goes into detail on how HaxeFlixel's rendering system is built on top of OpenFL's Tilesheet API.
+
+I wan...<a href="/blog/01-HaxeFlixel-rendering/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div>
+
+			<div
+				class="blog-card card rounded-0 border-1 opacity-0-hover border-flixel-dark-blue"
+				style="outline-color: var(--bs-flixel-dark-blue);">
+				<div class="card-body">
+					<h3 class="card-title">HaxeFlixel now has a blog!</h3>
+
+					<div class="card-subtitle text-body-secondary float-end">
+						<div class="post-date-preview">
+							1 min read | July 30, 2014
+						</div>
+					</div>
+					<p class="mb-0 card-text">
+						The HaxeFlixel project and it's active community of game dev enthusiasts, have opened this
+blog up to post about the latest updates, news and anything awesome happening related to
+making games with HaxeFlixel and the projects around it.
+Although most of the HaxeFlixel activity happens on Github, Slack chat (ask for an invite)
+and the @haxeflixel...<a href="/blog/00-haxeflixel-has-a-blog/" class="stretched-link"> read more</a>
+					</p>
+					
+				</div>
+			</div></div>
+</div>
+
+	</div>
+
+	<div class="col-md-4 twitter-widget">
+		<a
+			class="twitter-timeline"
+			data-theme="auto"
+			data-height="850"
+			data-tweet-limit="3"
+			href="https://twitter.com/HaxeFlixel?ref_src=twsrc%5Etfw">
+			<button class="card btn" type="button" disabled>
+				<div class="card-body">
+					<h5 class="card-title fw-semibold">
+						<div class="d-flex align-items-center">
+							<span>Loading tweets from @HaxeFlixel</span>
+							<span class="spinner-border" role="status"></span>
+						</div>
+					</h5>
+
+					<p class="card-text placeholder-glow">
+						<span class="placeholder col-7"></span>
+						<span class="placeholder col-4"></span>
+						<span class="placeholder col-4"></span>
+						<span class="placeholder col-6"></span>
+						<span class="placeholder col-8"></span>
+					</p>
+				</div>
+			</button>
+		</a>
+
+		<script>
+			let twit = document.querySelector('.twitter-timeline');
+			twit.setAttribute('data-theme', localStorage.getItem('theme'));
+
+			let btn = document.querySelector('.card.btn');
+			let btnColor = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+			btn.classList.add('btn-outline-' + btnColor);
+		</script>
+
+		<script
+			async
+			src="https://platform.twitter.com/widgets.js"
+			charset="utf-8"></script>
+	</div>
+</div>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

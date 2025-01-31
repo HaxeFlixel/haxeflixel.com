@@ -1,0 +1,1706 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> Fundraiser 2016 | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" Fundraiser 2016 | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/blog/05-fundraiser/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<div class="col-md-12">
+	<h1 class="title">Fundraiser 2016</h1>
+
+	<div class="container">
+		<div class="fundraiser-header">
+			<div class="fundraiser-header-container">
+				<div class="success-header">
+					<div class="success-text">
+						<img
+							width="128"
+							height="130"
+							src="/images/flixel-logos/haxeflixel-medal.gif">
+						<span>
+							<h2>Campaign success</h2>
+							<p>
+								The Indiegogo campaign of 2016 was a huge
+								<a href="https://www.indiegogo.com/projects/haxeflixel-games-software#/">success</a
+								>!
+							</p>
+						</span>
+					</div>
+
+					<hr>
+					<br>
+					<p>HaxeFlixel is developed by and is now furtherly <em>funded</em> by, a community of<br>
+people who have a geniune passion for the project.</p>
+<p>We thank everyone for their contributions over the past 5 years,<br>
+whether it has been spreading the word, fundraising, admin, testing,<br>
+reviewing &amp; submitting code or teaching and supporting others.<br>
+All this keeps inspiring the community to continue HaxeFlixel to help<br>
+make cross platform games easier and free!</p>
+<p>Also, none of this fundraiser would have even started without the dedicated effort from<br>
+Lars Doucet of <a href="https://www.leveluplabs.com/">Level Up Labs</a><br>
+leading this entire campaign, so a big thanks to Lars!</p>
+<p>With the larger donations made in the campaign, it has also made it possible for HaxeFlixel to have<br>
+<em>official sponsors</em>! After we gather all the logos for the page, we will add a dedicated sponsors page.</p>
+<p>Read more about the campaign on<br>
+<a href="https://www.indiegogo.com/projects/haxeflixel-games-software">our Indiegogo page</a>.</p>
+
+				</div>
+			</div>
+		</div>
+
+		<h3 class="thankyou-backers">We thank all our Indiegogo backers:</h3>
+		<ul class="backer-list"><li class="backer">
+					<h4>Blue Bottle Games, LLC</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$1000</span>
+				</li><li class="backer">
+					<h4>Solar Powered Games , e.K.</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1470131024/ka0bt0vx1idui18cbzxq.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$500</span>
+				</li><li class="backer">
+					<h4>Gian Prescilla</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$500</span>
+				</li><li class="backer">
+					<h4>Etienne Bégué</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432580536/bfuuk1kxyezf6lmhxxwe.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$250</span>
+				</li><li class="backer">
+					<h4>David Capello</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432406390/z3byby5ue7p5t6ucdtod.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$250</span>
+				</li><li class="backer">
+					<h4>Ludoko Studios</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$250</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$250</span>
+				</li><li class="backer">
+					<h4>Kevin Purcell</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432500557/raup3wrfxy8h2k77omve.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$125</span>
+				</li><li class="backer">
+					<h4>George Kurelic</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$125</span>
+				</li><li class="backer">
+					<h4>Axel Anceau</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$125</span>
+				</li><li class="backer">
+					<h4>Peter Tripp</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$125</span>
+				</li><li class="backer">
+					<h4>Rotten Mage</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>David Gallant</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432467899/cbx928u9cjorrky7vj3k.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>Justin Ma</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>Tiago Ling Alexandre</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>Terry Langeveld</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>yuto togashi</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>franco.ponticelli</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>icculus</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$100</span>
+				</li><li class="backer">
+					<h4>Guilherme Medeiros</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Erik Winkels</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Justo Delgado Baudí</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Matt Roszak</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Stickleback Games</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>hosey hosey</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Roméo Jr. Labonté</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Benjamin Van Treese</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>sano98</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Mark Beiline</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1469591475/jboygam8hbumbla9eo82.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>dwlt</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Victor Lee</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1470800455/nfiymcwktmlcbteoc7fr.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Sébastien Bernery</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>NME</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Tarwin Stroh-Spijer</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432609727/acjbeq3jw3kgcwhgkqhv.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Darran D. Rimron-Soutter</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Ben Morris</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Justin Loudermilk</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Nick Johnson</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>Chimango Games</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$50</span>
+				</li><li class="backer">
+					<h4>louisbl</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432347477/wfyajjxbfksgbujkfxfm.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$40</span>
+				</li><li class="backer">
+					<h4>Sam Twidale</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Nathan Chowning</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Alexander A</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Juan C. Inostroza</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Fernando Bevilacqua</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Chris Porter</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Ruthie Edwards</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Manish Mathai</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Nick Klumpp</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>foolmoron</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Matthew Finnell</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Tommy Brosman</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>jeffzaroyko</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Carl Furrow</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432576275/tqyeamqimumnff5ggzx8.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>John Cooney</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432599177/ks6o3leuvqsacjis2ioj.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Eric Bernier</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Tim Stoddard</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432568230/m8sltlml5fleptfpzow1.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Vincent Blanchet</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Timothy Hely</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1469548303/qejfqoxat8nyqdx38vuf.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$35</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$30</span>
+				</li><li class="backer">
+					<h4>poVoq</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Dmitriy Barabanschikov</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Dariusz Szlufarski</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Gabriel Diosan</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Marcin Kotz</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Daniel Brüggemann</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1445928760/vqcfyzfqz2fnjhcgaw5w.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Valentin Lemière</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1469550914/r8tvjvi8wixll4rj1zuv.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Philippe</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432519690/tmty7crwwt5kpeyyxvbj.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Miguel Murça</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Jérémy Faivre</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Igor S.</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Michael Martin-Smucker</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Waynetron</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Kieran McGrory</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Chris Burnham</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Sebastian Joseph</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>SMRenaud</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Andy Li</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1469561145/ws5spwdtyuiwrzxgvzh2.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$25</span>
+				</li><li class="backer">
+					<h4>Thomas van den Berg (noio)</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$20</span>
+				</li><li class="backer">
+					<h4>John Langewisch</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$20</span>
+				</li><li class="backer">
+					<h4>Dmitry Vorobiev</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Osrandil</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Pawel Strejczek</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Miguel Hernandez</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Lachlan Cooper</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>numero 15</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Liam Sauvé</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Henry Smith</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432583716/rdvinpmxdimv3k0plo8m.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>T. Anta</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>elvis.slavic</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Duy Vo Van</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Daniel Dambrowski</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>dj_pale</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Scaine</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>C C Magnus Gustavsson</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Sam Bellman</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1470003905/vth2wjf2nfbxkivcocsy.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Adriano Valle</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>jhice</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Daniel Pinheiro Lima</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>MisterTtocS</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Zachary Knight</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1456245820/bdbpgqswdy817xyrybkd.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Alvaro S.</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>John Doughty</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Javier San Juan</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Patrick Oliver</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Ben Reeves</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Cédric Coulon</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Aitor García</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>David Johnson</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Austin East</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Tom Platten-Higgins</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>system.grand</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Rajasekaran Senthil Kumaran</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Chris Kelly</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Takaaki Takeuchi</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Jim Agett</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>John Hattan</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1444512583/uglldjbzjuzeoqktu8fx.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Jonah Wallerstein</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>runvs</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Devin Curry</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Kristian Macanga</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Leonardo Cavaletti</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Miguel Mariano</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Erik Letson</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Aaron Styles</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432409579/ubg3rspb3c5rna4woo33.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>KJB of IBwWG</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Clayton Shaffer</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>iLKke</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>matej244</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Leandro Maguna</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Sven Camrath</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Daryl Yeo</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1471501501/mgob2toors1dfpo76lbc.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>LoadUpGames.com</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>MouseCaneta</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Simone Conia</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432380255/jlqy6ksxarrchwvrdd5f.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>SASANUMA Takashi</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Manno Bult</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Richard Powell</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Christopher Butler</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Photon Storm</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>eng.awad</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Patric Vormstein</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Wai Yin Leong</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Benjamín StuMx Martínez</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>waneck</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Banagher Links</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Gerritt Dorland</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Edward "Ted" Barton / @MrTeduardo</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Ville Nuutinen</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432579300/edgqfq1vajoieu6bxleq.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Matthew Baldo</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Eric Stets</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Andreas Johansson</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>Jacek Szymański</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>nullzero</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1432587950/cgjgj1ffnesyrittjky5.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>TJ Cordes</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1452622536/y8tlf1rxaxemhhm4jz9y.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$15</span>
+				</li><li class="backer">
+					<h4>christoph.wolk</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$10</span>
+				</li><li class="backer">
+					<h4>John Fletcher</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$10</span>
+				</li><li class="backer">
+					<h4>cdoty</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$5</span>
+				</li><li class="backer">
+					<h4>Alyssa Arce</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$5</span>
+				</li><li class="backer">
+					<h4>rudibonfiglioli</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$5</span>
+				</li><li class="backer">
+					<h4>Phillip Whitelow</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$5</span>
+				</li><li class="backer">
+					<h4>hodginson</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$5</span>
+				</li><li class="backer">
+					<h4>happymaskmac</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$5</span>
+				</li><li class="backer">
+					<h4>maxion</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$4</span>
+				</li><li class="backer">
+					<h4>Carlos Cárdenas</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$4</span>
+				</li><li class="backer">
+					<h4>Anonymous</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$1</span>
+				</li><li class="backer">
+					<h4>Samuli Saari</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$1</span>
+				</li><li class="backer">
+					<h4>Jeremy Selwyn</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">$1</span>
+				</li><li class="backer">
+					<h4>Danilo Junior</h4>
+					<img
+						src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_50,w_50/v1469677655/qgylaudfhpfmzqstmp7k.jpg"
+						width="40"
+						height="40">
+					<span class="backer-amount">$1</span>
+				</li><li class="backer">
+					<h4>Daniel Lin</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">Private</span>
+				</li><li class="backer">
+					<h4>Johnny Rivera</h4>
+					<img
+						src="https://g0.iggcdn.com/assets/individuals/missing/cubepeep-3c70b9b8bef12ca70a38d32e7c635576ae8a66bc7cfff10612ba6876fd7c68c7.png"
+						width="40"
+						height="40">
+					<span class="backer-amount">Private</span>
+				</li></ul>
+	</div>
+</div>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

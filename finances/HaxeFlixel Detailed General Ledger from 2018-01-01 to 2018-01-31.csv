@@ -1,0 +1,33 @@
+date,transaction,debit,credit
+Patreon,,,
+"Jan. 1, 2018",Income - Patreon Donations,128.70,0.00
+"Jan. 1, 2018",Expense - Processing Fees,0.00,5.06
+"Jan. 1, 2018",Expense -  Patreon Fees,0.00,6.44
+Total Patreon,,128.70,11.50
+Net Movement,,,117.20
+,,,
+Treasurer,,,
+"Jan. 20, 2018",Expense - MsgHero receivable,0.00,300.00
+Total Treasurer,,0.00,300.00
+Net Movement,,,(300.00)
+,,,
+Patreon Donations,,,
+"Jan. 1, 2018",Income - Patreon Donations,0.00,128.70
+Total Patreon Donations,,0.00,128.70
+Net Movement,,,128.70
+,,,
+Payment Fees,,,
+"Jan. 1, 2018",Expense - Processing Fees,5.06,0.00
+Total Payment Fees,,5.06,0.00
+Net Movement,,,5.06
+,,,
+Patreon Fees,,,
+"Jan. 1, 2018",Expense -  Patreon Fees,6.44,0.00
+Total Patreon Fees,,6.44,0.00
+Net Movement,,,6.44
+,,,
+Development Services,,,
+"Jan. 20, 2018",Expense - MsgHero receivable,300.00,0.00
+Total Development Services,,300.00,0.00
+Net Movement,,,300.00
+,,,

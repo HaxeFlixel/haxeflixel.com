@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> OpenFL 5 compatibility status update | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" OpenFL 5 compatibility status update | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/blog/08-openfl-5-compatibility-status-update/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#00b92b">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<!-- <%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %> -->
+
+<div class="col-md-9 mx-auto">
+	<div>
+		<h1 class="title text-center">
+			<a
+				class="icon-link icon-link-hover"
+				style="color:var(--bs-body-color)"
+				onclick="copyAnchorLink()">OpenFL 5 compatibility status update
+				<i class="bi-link-45deg" aria-hidden="true"></i
+			></a>
+		</h1>
+		<p class="post-date mx-auto text-center">4 min read | May 13, 2017</p>
+	</div>
+
+	<p>Hey, Beeblerox here!</p>
+<p>As you may know, HaxeFlixel is currently stuck with outdated versions of OpenFL and Lime due to some rendering incompatibilities, and updating it has turned out to be more work than expected. I want to give you a quick status update regarding my work towards making Flixel compatible with the latest versions of OpenFL again.</p>
+<p><strong>Note:</strong> I've switched to working on a new branch and closed the <a href="https://github.com/HaxeFlixel/flixel/pull/2032">previous pull request</a>. You can follow my progress in the new pull request <a href="https://github.com/HaxeFlixel/flixel/pull/2068">here</a>.</p>
+<h3 id="flxmaterial" tabindex="-1"><a class="header-anchor" href="#flxmaterial"><span>FlxMaterial</span></a></h3>
+<p>I've added a <code>FlxMaterial</code> class (see <a href="https://github.com/Beeblerox/flixel/blob/939a61d8f5b5e952324cdc5b80a1de3f13952956/flixel/graphics/FlxMaterial.hx">here</a>). Currently, it's just a single render-pass material with multiple textures support. This enables more complex effects like 2D-lighting (by using normal maps generated with tools like <a href="https://www.codeandweb.com/spriteilluminator">SpriteIlluminator</a>). I've updated the <a href="https://github.com/Pixelbear/flixelighting">flixelighting lib</a> by <a href="https://github.com/Pixelbear">Pixelbear</a> to make it work with the new material system on my fork <a href="https://github.com/Beeblerox/flixelighting/tree/FlxMaterial/lighting">here</a>.</p>
+<p>Here is an example of how it can be used right now:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// create regular sprite</span>
+shadedWall = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxSprite(<span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-string">&quot;assets/rock.png&quot;</span>);
+add(shadedWall);
+<span class="hljs-comment">// create custom lighting material and apply to our sprite</span>
+lightMaterial = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxLightingMaterial();
+teapot.material = lightMaterial;
+<span class="hljs-comment">// tune light material properties</span>
+lightMaterial.setAmbient(FlxColor.YELLOW, <span class="hljs-number">0.2</span>);
+<span class="hljs-comment">// add light source</span>
+light = <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxLight(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.3</span>);
+light.lightColor = FlxColor.WHITE;
+add(light);
+lightMaterial.addLight(light);
+<span class="hljs-comment">// and create normal map and apply it to our material</span>
+<span class="hljs-keyword">var</span> normalMap:<span class="hljs-type">FlxNormalMap </span>= <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxNormalMap(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">&quot;assets/rock_n.png&quot;</span>);
+lightMaterial.addNormalMap(normalMap);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>And here is the result:</p>
+<p><img src="/images/blog/openfl5/lighting.jpg" alt=""></p>
+<p>Now a few more details about sprite materials.</p>
+<p>Each sprite, tilemap, etc. now has a <code>material:FlxMaterial</code> property. A material stores information about an object's blend mode, smoothing, shader to use, data for the shader (values of shader uniforms) and an array of textures to use. So when you do <code>sprite.blend = BlendMode.ADD;</code>, in reality you change the blend mode <em>of its material</em>.</p>
+<p>By default, objects have materials without shaders (shader is <code>null</code>), which means that the renderer will use default shader and batch this object. If you do set a material's shader property, then the material will create a data object (<code>openfl.display.ShaderData</code>) to store info about shader uniforms which you could set later. Say your shader has a <code>uFill</code> uniform after setting <code>material.shader = myCustomShader</code>, you can set the value of this uniform like this:</p>
+<pre class="position-relative"><code class="hljs">material.data.uFill.value = [<span class="hljs-number">0.5</span>];
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>Setting a material's shader you will break the batch, but if several sprites share the same material, then they will be batched together again.</p>
+<p>The material class also has a <code>batchable:Bool</code> property which is <code>true</code> by default. This means that the renderer will try to batch objects with this material. But in case you have many sprites with different materials and you want them <em>not</em> to be batched (to minimize the amount of data which will be reuploaded to the GPU), you could set it to <code>false</code> to force this behavior (<code>sprite.material.batchable = false;</code>).</p>
+<h3 id="multipass" tabindex="-1"><a class="header-anchor" href="#multipass"><span>Multipass</span></a></h3>
+<p>For more complex effects which require multi-pass rendering, I've added <code>FlxRenderTarget</code> which extends the <code>FlxSprite</code> class. Basically it's the same as a <code>FlxSprite</code>, but you can render other sprites to its texture through underlying OpenGL calls (not with BitmapData's <code>draw()</code> method). I took the idea from <a href="https://github.com/photonstorm/phaser/blob/master/v3/src/gameobjects/renderpass/RenderPass.js">Phaser's RenderPass object</a>, which has a very simple API. Here is a usage example for it:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// create render target with the size of 256 by 512 pixels</span>
+<span class="hljs-keyword">var</span> renderTexture:<span class="hljs-type">FlxRenderTarget </span>= <span class="hljs-keyword">new</span><span class="hljs-type"></span> FlxRenderTarget(<span class="hljs-number">256</span>, <span class="hljs-number">512</span>);
+<span class="hljs-comment">// specify camera which will be used for calculation of drawable sprites positions on this render texture.</span>
+renderTexture.renderCamera = FlxG.camera;
+add(renderTexture);
+<span class="hljs-comment">// set object&#x27;s renderTarget, so it will be rendered only on its texture and won&#x27;t appear on any camera.</span>
+teapot.renderTarget = renderTexture;
+<span class="hljs-comment">// set render pass shader.</span>
+renderTexture.shader = myCustomShader;
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<h3 id="camera-buffers" tabindex="-1"><a class="header-anchor" href="#camera-buffers"><span>Camera buffers</span></a></h3>
+<p>Since the first iteration of the new renderer I've changed a lot of things. The biggest of them is the way objects are rendered to the camera and to the screen. Now, each camera has its own render texture to which all object are rendered, and then this texture is rendered to the screen.</p>
+<p><img src="/images/blog/openfl5/cameraBuffers.jpg" alt=""></p>
+<p>This way of rendering helps minimize the number of array iterations, and also made it much easier for other features to be implemented (such as the <code>FlxRenderTarget</code> class).</p>
+<h3 id="debug-rendering" tabindex="-1"><a class="header-anchor" href="#debug-rendering"><span>Debug rendering</span></a></h3>
+<p>I was disappointed by the performance of <code>drawDebug</code> rendering on native targets, so I've redone it and now it uses OpenGL instead of OpenFL's <code>Graphics</code> API.</p>
+<p><img src="/images/blog/openfl5/drawDebug.jpg" alt=""></p>
+<h3 id="drawtriangles()" tabindex="-1"><a class="header-anchor" href="#drawtriangles()"><span>drawTriangles()</span></a></h3>
+<p>Last weekend I was busy with rewriting the <code>FlxStrip</code> and <code>FlxTrianglesData</code> classes. They are responsible for rendering complex meshes having hundreds of vertices.<br>
+As you may know, <code>FlxStrip</code> is a subclass of <code>FlxSprite</code>. It's only purpose was to call the <code>drawTriangles()</code> method with <code>vertices</code>, <code>uvs</code>, <code>indices</code> and <code>colors</code> arguments specified by the user. Now, it's become much more flexible and easier to use for prototyping.<br>
+Each <code>FlxStrip</code> object has a <code>data:FlxTrianglesData</code> property which stores information about added vertices. In addition to getters and setters for <code>vertices</code>, <code>indices</code>, etc., it now has utility methods for adding a single vertex and a single triangle:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">var</span> data:<span class="hljs-type">FlxTrianglesData </span>= mySprite.data;
+<span class="hljs-comment">// set vertices info in old way</span>
+data.vertices = Vector.ofArray([<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">100.0</span>]);
+data.colors = Vector.ofArray([FlxColor.RED, FlxColor.GREEN, FlxColor.BLUE]);
+data.indices = Vector.ofArray([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);
+<span class="hljs-comment">// and you can add it new way</span>
+data.start();
+data.addVertex(<span class="hljs-number">200</span>, <span class="hljs-number">300</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, FlxColor.RED);
+data.addVertex(<span class="hljs-number">300</span>, <span class="hljs-number">300</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, FlxColor.GREEN);
+data.addVertex(<span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, FlxColor.BLUE);
+data.addTriangle(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+
+<span class="hljs-comment">// plus you can change data of individual vertex</span>
+data.setVertex(<span class="hljs-number">0</span>, newX, newY, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, newColor);
+</code><small class='highlight-language position-absolute top-0 end-0'>HAXE</small></pre>
+<p>This new API allows to minimize the iterations through inner data arrays which will be uploaded to GPU, which should result in a noticeable performance improvement.<br>
+I also borrowed HaxePunk's code for GPU-accelerated rendering of graphics primitives (<a href="https://github.com/MattTuttle/HaxePunk/blob/draw-hardware/haxepunk/utils/Draw.hx"><code>Draw</code> class</a>) and adapted it to Flixel, so there is new <code>FlxDraw</code> class for rendering lines, rectangle, circles, polygons and curves.</p>
+<p><img src="/images/blog/openfl5/drawTriangles.png" alt=""></p>
+<h3 id="next-steps" tabindex="-1"><a class="header-anchor" href="#next-steps"><span>Next steps</span></a></h3>
+<p>Next, I'll start updating the flixel-addons classes and demos. Meanwhile, I'd be happy about any feedback you have for me - please post it in the <a href="https://github.com/HaxeFlixel/flixel/pull/2068">OpenFL 5 compatibility pull request</a>!</p>
+
+
+	<br>
+	<hr>
+	<br>
+
+	<!-- <%- @getDisqus() %> -->
+</div>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>

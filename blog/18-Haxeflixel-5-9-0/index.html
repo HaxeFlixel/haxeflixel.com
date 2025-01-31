@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			
+		
+		<title> HaxeFlixel 5.9.0 | HaxeFlixel - 2D Game Engine</title>
+
+		<meta
+			name="description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+
+		<meta property="og:title" content=" HaxeFlixel 5.9.0 | HaxeFlixel - 2D Game Engine">
+		<meta
+			property="og:description"
+			content="HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology!">
+		<meta property="og:url" content="https://haxeflixel.com/blog/18-Haxeflixel-5-9-0/">
+		<meta property="og:site_name" content="HaxeFlixel">
+		<meta name="theme-color" content="#00b92b">
+		<meta name="generator" content="Eleventy v3.0.0">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="icon" href="/images/haxeflixel.svg">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+
+		<link rel="stylesheet" href="/styles/style.css">
+		<link rel="stylesheet" href="/styles/highlights/vs2015.min.css">
+
+		<script>
+			/*!
+ * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+ * Copyright 2011-2024 The Bootstrap Authors
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ */
+
+(() => {
+  'use strict'
+
+  const getStoredTheme = () => window.localStorage.getItem('theme')
+  const setStoredTheme = theme => window.localStorage.setItem('theme', theme)
+
+  const getPreferredTheme = () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme) {
+      return storedTheme
+    }
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+
+  const setTheme = theme => {
+    if (theme === 'auto') {
+      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+  }
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = (theme, focus = false) => {
+    const themeSwitcher = document.querySelector('#bd-theme')
+
+    if (!themeSwitcher) {
+      return
+    }
+
+    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const activeThemeIcon = document.querySelector('.theme-icon-active')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    const svgOfActiveBtn = btnToActive.querySelector('i')
+
+    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+      element.classList.remove('active')
+      element.setAttribute('aria-pressed', 'false')
+    })
+
+    btnToActive.classList.add('active')
+    btnToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.className = svgOfActiveBtn.className + ' theme-icon-active'
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+    if (focus) {
+      themeSwitcher.focus()
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    const storedTheme = getStoredTheme()
+    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('DOMContentLoaded', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          setStoredTheme(theme)
+          setTheme(theme)
+          showActiveTheme(theme, true)
+        })
+      })
+  })
+})()
+
+		</script>
+	</head>
+
+	<body>
+		<header>
+	<nav class="navbar navbar-expand-lg fixed-top">
+		<div class="container-md">
+			<div class="row gx-6">
+				
+				
+
+				<a href="/" class="navbar-brand fs-3 fw-medium col">
+					<img
+						src="/images/haxeflixel.svg"
+						height="31"
+						alt="HaxeFlixel"
+						class="align-text-bottom">
+					HaxeFlixel
+				</a>
+			</div>
+
+			<div class="row ms-2 me-2">
+				<button
+					class="navbar-toggler btn-outline-light col"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#navbarNavDropdown"
+					aria-expanded="false"
+					aria-controls="navbarNavDropdown"
+					aria-label="Toggle navigation">
+					<span class="bi-list"></span>
+				</button>
+			</div>
+
+			<div class="offcanvas offcanvas-end text-bg-dark" id="navbarNavDropdown">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">HaxeFlixel.com</h5>
+					<button
+						type="button"
+						class="btn-close btn-close-white"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav nav-underline d-flex flex-grow-1 align-items-lg-center">
+						<li class="nav-item dropdown">
+							<a
+								href="#"
+								class="nav-link dropdown-toggle "
+								data-bs-toggle="dropdown"
+								role="button"
+								aria-expanded="false"
+								>Examples
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu inverse-dropdown">
+								<li>
+									<a class="dropdown-item" href="/demos">Demos</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://snippets.haxeflixel.com/">
+										<i class="bi bi-link-45deg"></i>
+										Snippets
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link " href="/showcase">Showcase</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link active" href="/blog">Blog</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link " href="/documentation"
+								>Docs</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="http://api.haxeflixel.com">API</a>
+						</li>
+
+						
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/HaxeFlixel/flixel/discussions">Forum </a>
+						</li>
+						<div class="nav-item me-4 h2 col d-inline-flex my-auto">
+							<a
+								class="nav-link ms-auto"
+								href="https://github.com/HaxeFlixel/flixel"
+								target="_blank">
+								<i class="bi-github"></i>
+							</a>
+						</div>
+					</ul>
+
+					<div class="nav-item dropdown my-auto">
+						<button
+							class="btn btn-link nav-link px-0 px-lg-2 dropdown-toggle align-items-center"
+							type="button"
+							data-bs-toggle="dropdown"
+							id="bd-theme">
+							
+							<i class="bi-moon-stars-fill theme-icon-active"></i>
+							<span class="d-lg-none" id="bd-theme-text">Toggle theme</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="light"
+									aria-pressed="false">
+									<i class="bi-sun-fill me-2"></i>
+									
+									Light
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="dark"
+									aria-pressed="false">
+									<i class="bi-moon-stars-fill me-2"></i>
+
+									
+									Dark
+									
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="dropdown-item d-flex align-items-center"
+									data-bs-theme-value="auto"
+									aria-pressed="false">
+									<i class="bi-circle-half me-2"></i>
+
+									
+									Auto
+									
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+
+				
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+		<div class="container-md container-main rounded-0">
+	<!-- <%- @partial('header-menu.html.eco', {ablog:"class='active'"}) %> -->
+
+<div class="col-md-9 mx-auto">
+	<div>
+		<h1 class="title text-center">
+			<a
+				class="icon-link icon-link-hover"
+				style="color:var(--bs-body-color)"
+				onclick="copyAnchorLink()">HaxeFlixel 5.9.0
+				<i class="bi-link-45deg" aria-hidden="true"></i
+			></a>
+		</h1>
+		<p class="post-date mx-auto text-center">5 min read | January 24, 2025</p>
+	</div>
+
+	<p>After 8 long months since 5.8.0, I'm happy to announce the largest Flixel release since I've taken over as lead. We don't like to go that far without releases, but new things just kept piling on. To name a few, we have:</p>
+<ul>
+<li>A new FlxInputText to replace the old Flixel-UI.</li>
+<li><code>FlxG.assets</code>, for customization to Flixel's asset management (hot-reloading!).</li>
+<li>Major additions to tilemaps, for both collision, iteration and general ease-of-use.</li>
+<li><a href="https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md#590-december-12-2024">Much much more</a> that we can't possibly cover, here.</li>
+</ul>
+<h2 id="when-will-flixel-6-be-released%3F" tabindex="-1"><a class="header-anchor" href="#when-will-flixel-6-be-released%3F"><span>When will Flixel 6 be released?</span></a></h2>
+<p>The next release will be version 6.0.0, unless for some reason an urgent patch is needed for 5.9.0. For the current list of changes in Flixel 6, look <a href="https://github.com/HaxeFlixel/flixel/blob/release6/CHANGELOG.md">here</a>. Many devs are using 6.0.0 already, and you can too! Just run:</p>
+<pre><code class="hljs">haxelib git flixel https://github.com/HaxeFlixel/flixel.git release6
+</code></pre>
+<p>If you have been compiling with <code>no-deprecation-warnings</code> in your project's build command, now is the time to fix all of those, otherwise your project will not compile in Flixel 6. I also recommend using a haxe version of 4.3 or higher, which allows Flixel to suppress various internal deprecation warnings that were left in for backwards compatibility. If you have any issues with any of this don't hesitate to let me know, either in github or the Haxe discord's Flixel channel.</p>
+<h2 id="new-and-improved-flxinputtext" tabindex="-1"><a class="header-anchor" href="#new-and-improved-flxinputtext"><span>New and improved FlxInputText</span></a></h2>
+<p>Special thanks to <a href="https://github.com/Starmapo">Starmapo</a> for completely redoing <code>FlxInputText</code> from the ground up! New features include:</p>
+<ul>
+<li>Multiple characters can now be selected at once, either through holding and dragging the mouse or holding the shift key while moving the selection cursor.
+<ul>
+<li>Double pressing on the text field will select the closest word at that position.</li>
+<li>You can select all of the text with Ctrl+A.</li>
+<li>The currently selected text can be copied or cut with Ctrl+C and Ctrl+X respectively.</li>
+<li><code>selectionBeginIndex</code> and <code>selectionEndIndex</code> variables added so you can get the span of the current selection.</li>
+<li><code>selectionColor</code> and <code>selectedTextColor</code> variables can be changed to set the selection background and the selected text's color respectively. The custom format for the selected text can be disabled with <code>useSelectedTextFormat</code>.</li>
+<li>You can set the selection directly with <code>setSelection()</code> and replace the currently selected text with <code>replaceSelectedText()</code>.</li>
+</ul>
+</li>
+<li>Multiline is now properly supported, with an added <code>multiline</code> variable to dictate whether new lines can be created by the user.</li>
+<li>The text field can now be scrolled by using the mouse wheel, and is automatically scrolled whenever moving the selection cursor to a character that is out of view.
+<ul>
+<li>The scroll can be modified with the <code>scrollH</code> and <code>scrollV</code> variables. <code>bottomScrollV</code>, <code>maxScrollH</code> and <code>maxScrollV</code> have also been added as helper read-only variables.</li>
+<li><code>mouseWheelEnabled</code> dictates whether or not the text field can be scrolled with the mouse wheel, by default set to true.</li>
+</ul>
+</li>
+<li>The selection cursor can now be moved to the start/end of the current line (Home/End or Ctrl+Up/Down) or to the previous/next word (Ctrl+Left/Right).</li>
+<li>The <code>background</code> variable can now be changed to toggle the background on/off.</li>
+<li><code>selectable</code> and <code>editable</code> variables to dictate whether the text field can be selected/edited.</li>
+<li>Enums have been added for <code>forceCase</code>, <code>filterMode</code> and the callback's action types.
+<ul>
+<li>The callback is now also dispatched for when the text field is scrolled in some way (SCROLL_ACTION).</li>
+</ul>
+</li>
+<li>Other Flixel keybinds will be paused while an input text is active (e.g. volume keys and debugger toggle key).</li>
+<li>The window's text input rect is now set accordingly so the text field isn't blocked by any keyboard overlays.</li>
+<li>Touches are now supported.</li>
+</ul>
+<p>Check out these features in the new <a href="https://haxeflixel.com/demos/FlxInputText/">FlxInputText Demo</a></p>
+<p>With the addition of <code>InputTextFrontEnd</code>, which controls the text input events used to power <code>FlxInputText</code>, creating other text inputs will be much easier, expect a <code>FlxBitmapInputText</code>, soon!</p>
+<h2 id="assetfrontend" tabindex="-1"><a class="header-anchor" href="#assetfrontend"><span>AssetFrontEnd</span></a></h2>
+<p>If you're sick of doing <code>sprite.loadGraphic(Paths.image(&quot;hero&quot;))</code>, well, you're in luck! FlxG.assets, is the new customizable interface that takes string asset paths and gives the desired assets. by setting the following dynamic method:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">dynamic</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">getAssetUnsafe</span></span>(id:<span class="hljs-type">String</span>, type:<span class="hljs-type">FlxAssetType</span>, useCache = <span class="hljs-literal">true</span>):<span class="hljs-type">Null</span>&lt;Any&gt;
+</code><small class='highlight-language position-absolute top-0 end-0'>HX</small></pre>
+<p>Here are just a few neat uses for this:</p>
+<h3 id="simplifying-asset-paths" tabindex="-1"><a class="header-anchor" href="#simplifying-asset-paths"><span>Simplifying asset paths</span></a></h3>
+<p>The above example that loads the hero sprite can be simplified to <code>sprite.loadGraphic(&quot;hero&quot;)</code>, like so:</p>
+<pre class="position-relative"><code class="hljs"><span class="hljs-comment">// Edit the simplified id before passing it to the old method</span>
+<span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">path</span></span>(id:<span class="hljs-type">String</span>, type:<span class="hljs-type">FlxAssetType</span>)
+{
+  <span class="hljs-comment">// for flixel assets, just pass them to the old method</span>
+  <span class="hljs-keyword">if</span> (StringTools.startsWith(id, <span class="hljs-string">&quot;flixel/&quot;</span>) || StringTools.contains(id, <span class="hljs-string">&#x27;:&#x27;</span>))
+    <span class="hljs-keyword">return</span> id;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">switch</span> type
+  {
+    <span class="hljs-keyword">case</span> BINARY: <span class="hljs-type"></span>&#x27;assets/data/<span class="hljs-variable">$id</span><span class="hljs-string">&#x27;; // expects extension already&#x27;</span>
+    <span class="hljs-keyword">case</span> TEXT  : <span class="hljs-type"></span>&#x27;assets/data/<span class="hljs-variable">$id</span>.json<span class="hljs-string">&#x27;;
+    case IMAGE : &#x27;</span>assets/images/<span class="hljs-variable">$id</span>.png<span class="hljs-string">&#x27;;
+    case SOUND : &#x27;</span>assets/sounds/<span class="hljs-variable">$id</span>.ogg<span class="hljs-string">&#x27;;
+    case FONT  : &#x27;</span>assets/font/<span class="hljs-variable">$id</span>.ttf<span class="hljs-string">&#x27;;
+  };
+}
+
+final assets = FlxG.assets;
+
+// Save the old methods, call them with the full path
+final oldExists = assets.exists;
+assets.exists = (id, ?type)-&gt;oldExists(path(id, type ?? BINARY), type);
+
+final oldIsLocal = assets.isLocal;
+assets.isLocal = (id, ?type, cache = true)-&gt;oldIsLocal(path(id, type ?? BINARY), type, cache);
+
+final oldGet = assets.getAssetUnsafe;
+assets.getAssetUnsafe = (id, type, cache = true)-&gt;oldGet(path(id, type), type, cache);
+</span></code><small class='highlight-language position-absolute top-0 end-0'>HX</small></pre>
+<h3 id="hot-reloading" tabindex="-1"><a class="header-anchor" href="#hot-reloading"><span>Hot-Reloading</span></a></h3>
+<p>Sick of building the game just to see some asset change in the game? Simply add the following flag to your build command, and the compiled game will look at the source assets whenever it's run:</p>
+<pre><code class="hljs">-DFLX_CUSTOM_ASSETS_DIRECTORY=&quot;assets&quot;
+</code></pre>
+<p>Not only will this save time on dev builds in projects with many assets, but you can modify assets and see them in your game without recompiling.</p>
+<h3 id="automatically-append-sound-file-extensions" tabindex="-1"><a class="header-anchor" href="#automatically-append-sound-file-extensions"><span>Automatically append sound file extensions</span></a></h3>
+<p>Define flag <code>-DFLX_DEFAULT_SOUND_EXT=&quot;ogg&quot;</code> to allow sound asset ids to omit the extension. Useful when targeting multiple platforms that use different sound files. Can also use the flag to determine the desired sound extension, setting the flags value to &quot;mp3&quot; &quot;wav&quot; or &quot;ogg&quot; will use that extension. The default extension can be read via <code>FlxG.assets.defaultSoundExtension</code></p>
+<h2 id="collision%2C-tilemaps-and-tiles%2C-oh-my!" tabindex="-1"><a class="header-anchor" href="#collision%2C-tilemaps-and-tiles%2C-oh-my!"><span>Collision, Tilemaps and Tiles, Oh my!</span></a></h2>
+<p>Plenty of improvements, features and helpers have been added. Let's go over a few</p>
+<h3 id="flxtiles" tabindex="-1"><a class="header-anchor" href="#flxtiles"><span>FlxTiles</span></a></h3>
+<ul>
+<li>New dynamic <code>overlapsObject</code> method in FlxTile, can be extended or set to allow custom overlap detection for tiles whose hit shape is smaller than the tileGrid</li>
+<li>New <code>onCollide</code> signal, dispatched when overlaps are checked for collision reasons</li>
+<li>Improved debug drawing</li>
+</ul>
+<h3 id="flxtilemaps" tabindex="-1"><a class="header-anchor" href="#flxtilemaps"><span>FlxTilemaps</span></a></h3>
+<ul>
+<li>Tons of new helpers: <code>getMapIndex</code>, <code>getRow</code>, <code>getColumn</code>, <code>getTileIndex</code>, <code>getTileData</code>, <code>tileExists</code>, <code>setTileIndex</code>, <code>getColumnAt</code>, <code>getRowAt</code>, <code>columnExists</code>, <code>rowExists</code>, <code>getColumnPos</code>, <code>getRowPos</code>, <code>getColumnPosAt</code>, <code>getRowPosAt</code>, <code>getTilePos</code>, <code>getTilePosAt</code>, <code>getAllTilePos</code>, <code>forEachMapIndex</code>, <code>getMapIndexAt</code>, <code>tileExistsAt</code>, <code>columnExistsAt</code>, <code>rowExistsAt</code>, <code>getTileIndexAt</code>, <code>getTileDataAt</code> and <code>setTileIndexAt</code></li>
+<li>Overloaded various existing helpers to allow easier usage</li>
+<li>New <code>forEachOverlappingTile</code> method in FlxTilemap, to retrieve every tile that is overlapping the given object</li>
+<li>Added new <code>isOverlappingTile</code> method, allows you to check all tiles overlapping an object</li>
+<li>Added new <code>objectOverlapsTiles</code> to replace the now deprecated <code>overlapsWithCallbacks</code>
+<ul>
+<li>Eschews <code>flipCallbackParams</code> arg, allowing better typing of both callback params</li>
+<li>Adds <code>isCollision</code> flag to control whether the Tiles' collision callbacks are fired and allows for processing non-solid tiles</li>
+</ul>
+</li>
+<li>Added <code>FlxTypedTilemap&lt;T:FlxTile&gt;</code> for easier extension, with custom tile types</li>
+</ul>
+<p>We also broke apart Flixel's collision tools into smaller parts that can be used to customize the collision of any FlxObject.</p>
+<h3 id="misc-shout-outs" tabindex="-1"><a class="header-anchor" href="#misc-shout-outs"><span>Misc shout outs</span></a></h3>
+<ul>
+<li><code>FlxSave</code>: Allow custom handling of parsing errors (<a href="https://github.com/HaxeFlixel/flixel/pull/3286">#3286</a>)</li>
+<li>Gamepads: Add <code>acceptMode</code> and &quot;mapped inputs&quot; (<a href="https://github.com/HaxeFlixel/flixel/pull/3276">#3276</a>) (<a href="https://github.com/HaxeFlixel/flixel/pull/3280">#3280</a>)
+<ul>
+<li>Add <code>ACCEPT</code> and <code>CANCEL</code> input IDs that conditionally map to either <code>A</code> or <code>B</code> depending on <code>FlxG.gamepads.acceptMode</code></li>
+<li>Add <code>gamepad.getMappedInput</code> to get an enum value of every possible gamepad input from various devices, i.e. <code>PS4(PS4ID.X)</code></li>
+</ul>
+</li>
+<li><code>FlxStrip</code>: Add support for blendmodes (<a href="https://github.com/HaxeFlixel/flixel/pull/3213">#3213</a>)</li>
+<li><code>FlxBasePath</code>: A simpler FlxPath without all the BS(<a href="https://github.com/HaxeFlixel/flixel/pull/3153">#3153</a>)</li>
+<li>Various FlxDebugger improvements</li>
+</ul>
+<p>For more updates, follow HaxeFlixel on <a href="https://bsky.app/profile/haxeflixel.bsky.social">BlueSky</a> or check us out on <a href="https://github.com/HaxeFlixel/flixel">Github</a> and <a href="https://discordapp.com/invite/rqEBAgF">Discord</a>!</p>
+
+
+	<br>
+	<hr>
+	<br>
+
+	<!-- <%- @getDisqus() %> -->
+</div>
+
+</div>
+
+
+		<footer class="container-fluid">
+	<div id="footer-splash" class="row py-1 align-items-stretch">
+	<div id="foot-yellow" class="col text-bg-flixel-yellow"></div>
+	<div id="foot-red" class="col text-bg-flixel-red "></div>
+	<div id="foot-green" class="col text-bg-flixel-green "></div>
+	<div id="foot-blue" class="col text-bg-flixel-dark-blue "></div>
+	<div id="foot-light-blue" class="col text-bg-flixel-light-blue"></div>
+</div>
+
+<script defer>
+	var audio = new Audio('/sounds/flixel.ogg');
+	document.getElementById('footer-splash').addEventListener('click', function () {
+		if (audio.paused) {
+			let times = [0.041, 0.184, 0.334, 0.495, 0.636];
+			let footCol = ['foot-green', 'foot-yellow', 'foot-light-blue', 'foot-red', 'foot-blue'];
+
+			for (let i = 0; i < times.length; i++) {
+				document.getElementById(footCol[i]).style.opacity = 0;
+			}
+
+			setTimeout(function () {
+				// code to be executed
+				audio.play();
+				for (let i = 0; i < times.length; i++) {
+					setTimeout(function () {
+						// code to be executed
+						document.getElementById(footCol[i]).style.opacity = 1;
+					}, times[i] * 1000);
+				}
+			}, 1000);
+		}
+	});
+</script>
+
+
+	<div class="footer-main py-3 mt-5">
+		<div class="container ">
+			<div class="footer-social row align-items-center fw-bold justify-content-between">
+				<div class="col d-flex flex-column justify-content-center text-center">
+					<ul class="list-unstyled">
+						<li>
+							<a href="https://twitter.com/haxeflixel">
+								<i class="bi-twitter"></i>
+								Twitter
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/haxeflixel">
+								<i class="bi-github"></i>
+								GitHub
+							</a>
+						</li>
+						<li>
+							<a href="https://discordapp.com/invite/rqEBAgF">
+								<i class="bi-discord"></i>
+								Discord
+							</a>
+						</li>
+						<li>
+							<a href="https://www.patreon.com/haxeflixel">
+								<img
+									class="footer-patreon"
+									src="/images/patreon-logo.svg"
+									width="16px">
+								Patreon
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col">
+					<a class="fw-normal" href="/">HaxeFlixel.com</a>
+					<div class="row row-cols-2">
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/documentation/about/">About</a>
+							</li>
+							<li>
+								<a href="/documentation">Docs</a>
+							</li>
+							<li>
+								<a href="https://api.haxeflixel.com">API</a>
+							</li>
+						</ul>
+						<ul class="list-unstyled col">
+							<li>
+								<a href="/demos">Demos</a>
+							</li>
+							<li>
+								<a href="/showcase">Showcase</a>
+							</li>
+							<li>
+								<a href="/blog">Blog</a>
+								<a class="ms-1" href="/feed.xml"><i class="fw-lighter bi bi-rss"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footer-powered-by col ">
+					<div class="text-center">
+						<p class="col my-auto mb-2">HaxeFlixel is powered by</p>
+						<div class="flex-row align-items-center d-flex justify-content-center">
+							<a class="me-1" href="https://haxe.org"
+								><img
+									src="/images/haxe.svg"
+									alt="Haxe"
+									title="Haxe"
+							></a>
+							<p class="my-auto">+</p>
+							<a class="ms-1" href="https://openfl.org"
+								><img
+									class="openfl-footer-logo"
+									src="/images/openfl.svg"
+									alt="OpenFL"
+									title="OpenFL"
+							></a>
+							<p class="my-auto ms-1">+</p>
+							<a class="ms-n4" href="https://flixel.org"
+								><img
+									class="flixel-footer-logo"
+									src="/images/flixel.svg"
+									alt="Flixel"
+									title="Flixel"
+							></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<script src="/11ty-bundle.js"></script>
+	</body>
+</html>
