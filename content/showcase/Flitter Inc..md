@@ -1,7 +1,7 @@
 ---
 layout: showcase
 title: "Flitter Inc."
-android: https://play.google.com/store/apps/details?id=com.deadelectronstudios.flitterinc
-website: https://play.google.com/store/apps/details?id=com.deadelectronstudios.flitterinc
+android: https://deadelectronstudios.itch.io/flitter-inc
+website: https://deadelectronstudios.itch.io/flitter-inc
 date: "2018-05-31"
 ---
