@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 512 512"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="html5-logo.svg">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="828"
+     inkscape:window-height="480"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="276.29524"
+     inkscape:cy="259.01451"
+     inkscape:window-x="2359"
+     inkscape:window-y="172"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title4">HTML5 Logo Badge</title>
+  <path
+     style="fill:#000000"
+     d="M 30 0 L 71 460 L 255 512 L 440 460 L 481 0 L 30 0 z M 114 94 L 255 94 L 256 94 L 397 94 L 396 109 L 393 138 L 392 150 L 256 150 L 255 150 L 176 150 L 181 208 L 255 208 L 256 208 L 371 208 L 387 208 L 385 223 L 372 372 L 371 382 L 256 413.72461 L 256 414 L 255 414 L 139 382 L 132 293 L 158 293 L 188 293 L 192 338 L 255 355 L 318 338 L 325 265 L 256 265 L 255 265 L 129 265 L 115 109 L 114 94 z "
+     id="path6" />
+</svg>

@@ -1,0 +1,29 @@
+date,transaction,debit,credit
+Patreon,,,
+"Aug. 1, 2015",Expense - Donation to Thorbjørn Lindeijer (https://www.patreon.com/bjorn),0.00,5.00
+"Aug. 1, 2015",Income - Patreon Donations,108.00,0.00
+"Aug. 1, 2015",Expense - Patreon Fees,0.00,5.40
+"Aug. 3, 2015",Expense - CC Fees,0.00,4.95
+Total Patreon,,108.00,15.35
+Net Movement,,,92.65
+,,,
+Patreon Donations,,,
+"Aug. 1, 2015",Income - Patreon Donations,0.00,108.00
+Total Patreon Donations,,0.00,108.00
+Net Movement,,,108.00
+,,,
+Payment Fees,,,
+"Aug. 3, 2015",Expense - CC Fees,4.95,0.00
+Total Payment Fees,,4.95,0.00
+Net Movement,,,4.95
+,,,
+Patreon Fees,,,
+"Aug. 1, 2015",Expense - Patreon Fees,5.40,0.00
+Total Patreon Fees,,5.40,0.00
+Net Movement,,,5.40
+,,,
+Development Services,,,
+"Aug. 1, 2015",Expense - Donation to Thorbjørn Lindeijer (https://www.patreon.com/bjorn),5.00,0.00
+Total Development Services,,5.00,0.00
+Net Movement,,,5.00
+,,,

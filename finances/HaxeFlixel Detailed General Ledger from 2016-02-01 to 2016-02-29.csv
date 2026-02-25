@@ -1,0 +1,23 @@
+date,transaction,debit,credit
+Patreon,,,
+"Feb. 1, 2016",Expense - Patreon Fees,0.00,6.50
+"Feb. 1, 2016",Expense - CC Fees,0.00,5.85
+"Feb. 1, 2016",Income - Patreon Donations,130.00,0.00
+Total Patreon,,130.00,12.35
+Net Movement,,,117.65
+,,,
+Patreon Donations,,,
+"Feb. 1, 2016",Income - Patreon Donations,0.00,130.00
+Total Patreon Donations,,0.00,130.00
+Net Movement,,,130.00
+,,,
+Payment Fees,,,
+"Feb. 1, 2016",Expense - CC Fees,5.85,0.00
+Total Payment Fees,,5.85,0.00
+Net Movement,,,5.85
+,,,
+Patreon Fees,,,
+"Feb. 1, 2016",Expense - Patreon Fees,6.50,0.00
+Total Patreon Fees,,6.50,0.00
+Net Movement,,,6.50
+,,,

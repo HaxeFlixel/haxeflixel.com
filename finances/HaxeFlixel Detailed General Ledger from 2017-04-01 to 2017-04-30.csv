@@ -1,0 +1,23 @@
+date,transaction,debit,credit
+Patreon,,,
+"April 1, 2017",Income - Patreon Donations,155.00,0.00
+"April 1, 2017",Expense - Processing Fees,0.00,7.39
+"April 1, 2017",Expense -  Patreon Fees,0.00,7.75
+Total Patreon,,155.00,15.14
+Net Movement,,,139.86
+,,,
+Patreon Donations,,,
+"April 1, 2017",Income - Patreon Donations,0.00,155.00
+Total Patreon Donations,,0.00,155.00
+Net Movement,,,155.00
+,,,
+Payment Fees,,,
+"April 1, 2017",Expense - Processing Fees,7.39,0.00
+Total Payment Fees,,7.39,0.00
+Net Movement,,,7.39
+,,,
+Patreon Fees,,,
+"April 1, 2017",Expense -  Patreon Fees,7.75,0.00
+Total Patreon Fees,,7.75,0.00
+Net Movement,,,7.75
+,,,

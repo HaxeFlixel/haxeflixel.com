@@ -1,0 +1,35 @@
+date,transaction,debit,credit
+Patreon,,,
+"March 1, 2016",Expense - CC Fees,0.00,6.38
+"March 1, 2016",Income - Patreon Donations,140.00,0.00
+"March 1, 2016",Expense - Patreon Fees,0.00,7.00
+Total Patreon,,140.00,13.38
+Net Movement,,,126.62
+,,,
+Treasurer,,,
+"March 15, 2016",Expense - Donation to Mika Palmu (FlashDevelop) for work improving HaxeFlixel Setup,0.00,150.00
+"March 15, 2016",Expense - PayPal Transfer Fee,0.00,0.75
+Total Treasurer,,0.00,150.75
+Net Movement,,,(150.75)
+,,,
+Patreon Donations,,,
+"March 1, 2016",Income - Patreon Donations,0.00,140.00
+Total Patreon Donations,,0.00,140.00
+Net Movement,,,140.00
+,,,
+Payment Fees,,,
+"March 1, 2016",Expense - CC Fees,6.38,0.00
+"March 15, 2016",Expense - PayPal Transfer Fee,0.75,0.00
+Total Payment Fees,,7.13,0.00
+Net Movement,,,7.13
+,,,
+Patreon Fees,,,
+"March 1, 2016",Expense - Patreon Fees,7.00,0.00
+Total Patreon Fees,,7.00,0.00
+Net Movement,,,7.00
+,,,
+Development Services,,,
+"March 15, 2016",Expense - Donation to Mika Palmu (FlashDevelop) for work improving HaxeFlixel Setup,150.00,0.00
+Total Development Services,,150.00,0.00
+Net Movement,,,150.00
+,,,

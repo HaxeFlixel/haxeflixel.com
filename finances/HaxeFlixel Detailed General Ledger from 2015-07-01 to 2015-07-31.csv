@@ -1,0 +1,53 @@
+date,transaction,debit,credit
+Patreon,,,
+"July 11, 2015",Transfer to Treasurer,0.00,159.96
+"July 1, 2015",Income - Patreon Donations,107.00,0.00
+"July 1, 2015",Expense - CC Fees,0.00,5.07
+"July 1, 2015",Expense - Patreon Fees,0.00,5.35
+"July 1, 2015",Expense - Donation to Thorbjørn Lindeijer (https://www.patreon.com/bjorn),0.00,5.00
+Total Patreon,,107.00,175.38
+Net Movement,,,(68.38)
+,,,
+Treasurer,,,
+"July 11, 2015",Transfer from Patreon,159.96,0.00
+"July 11, 2015",Expense - Transfer to Chris Decoster (impaler),0.00,39.99
+"July 11, 2015",Expense - Paypal Transfer Fees,0.00,0.40
+"July 11, 2015",Expense - US Taxes (25% of 159.96),0.00,39.99
+"July 13, 2015",Expense - PayPal Fees,0.00,0.40
+"July 13, 2015",Expense - Transfer to Justo Delgado for OpenFL shader API improvements,0.00,79.18
+Total Treasurer,,159.96,159.96
+Net Movement,,,0.00
+,,,
+Patreon Donations,,,
+"July 1, 2015",Income - Patreon Donations,0.00,107.00
+Total Patreon Donations,,0.00,107.00
+Net Movement,,,107.00
+,,,
+Payment Fees,,,
+"July 11, 2015",Expense - Paypal Transfer Fees,0.40,0.00
+"July 13, 2015",Expense - PayPal Fees,0.40,0.00
+"July 1, 2015",Expense - CC Fees,5.07,0.00
+Total Payment Fees,,5.87,0.00
+Net Movement,,,5.87
+,,,
+Patreon Fees,,,
+"July 1, 2015",Expense - Patreon Fees,5.35,0.00
+Total Patreon Fees,,5.35,0.00
+Net Movement,,,5.35
+,,,
+Website Maintenance,,,
+"July 11, 2015",Expense - Transfer to Chris Decoster (impaler),39.99,0.00
+Total Website Maintenance,,39.99,0.00
+Net Movement,,,39.99
+,,,
+Tax Fees,,,
+"July 11, 2015",Expense - US Taxes (25% of 159.96),39.99,0.00
+Total Tax Fees,,39.99,0.00
+Net Movement,,,39.99
+,,,
+Development Services,,,
+"July 13, 2015",Expense - Transfer to Justo Delgado for OpenFL shader API improvements,79.18,0.00
+"July 1, 2015",Expense - Donation to Thorbjørn Lindeijer (https://www.patreon.com/bjorn),5.00,0.00
+Total Development Services,,84.18,0.00
+Net Movement,,,84.18
+,,,
